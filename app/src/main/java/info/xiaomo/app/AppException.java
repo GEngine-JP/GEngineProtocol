@@ -6,12 +6,7 @@ import java.net.UnknownHostException;
 
 /**
  * 应用程序异常：用于捕获异常和提示错误信息
- *
- * @author FireAnt（http://my.oschina.net/LittleDY）
- * @author kymjs (kymjs123@gmali.com)
- * @created 2014年9月25日 下午5:34:05
  */
-@SuppressWarnings("serial")
 public class AppException extends Exception {
     /**
      * 定义异常类型

@@ -7,7 +7,6 @@ package info.xiaomo.app;
 
 public class AppConfig {
 
-
     private final static String APP_CONFIG = "config";
 
     public final static String CONF_COOKIE = "cookie";
@@ -25,11 +24,8 @@ public class AppConfig {
     public static final String KEY_TWEET_DRAFT = "KEY_TWEET_DRAFT";
     public static final String KEY_NOTE_DRAFT = "KEY_NOTE_DRAFT";
 
-    public static final String KEY_FRITST_START = "KEY_FRIST_START";
+    public static final String KEY_FRITST_START = "KEY_FIRST_START";
 
     public static final String KEY_NIGHT_MODE_SWITCH = "night_mode_switch";
-
-    public static final String APP_QQ_KEY = "100942993";
-
 
 }
