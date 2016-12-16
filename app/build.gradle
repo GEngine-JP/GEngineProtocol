@@ -28,5 +28,8 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:25.0.1'
+    compile 'org.kymjs.kjframe:kjframe:2.6'
+    compile group: 'com.squareup.okhttp3', name: 'okhttp', version: '3.5.0'
+    compile group: 'com.squareup.retrofit2', name: 'retrofit', version: '2.1.0'
     testCompile 'junit:junit:4.12'
 }
