@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">App</string>
+    <string name="fetch">获取数据</string>
 </resources>
