@@ -1,4 +1,16 @@
 <resources>
-    <string name="app_name">App</string>
-    <string name="fetch">获取数据</string>
+    <string name="app_name">GoachClient</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">账号</string>
+    <string name="prompt_password">密码</string>
+    <string name="action_sign_in">登录</string>
+    <string name="action_register">注册</string>
+    <string name="action_sign_in_short">登录密码太短</string>
+    <string name="error_invalid_email">这个账号是无效的</string>
+    <string name="error_invalid_password">这个密码太短了</string>
+    <string name="confirm">确认密码</string>
+    <string name="upload">文件上传</string>
+
 </resources>
