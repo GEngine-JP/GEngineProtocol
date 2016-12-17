@@ -11,21 +11,21 @@ import java.util.List;
 
 import info.xiaomo.app.R;
 import info.xiaomo.app.adapter.NewsAdapter;
-import info.xiaomo.app.api.INewsService;
+import info.xiaomo.app.api.LinkService;
 import info.xiaomo.app.model.base.Result;
-import info.xiaomo.app.model.NewItem;
-import info.xiaomo.app.model.News;
+import info.xiaomo.app.model.Link;
+import info.xiaomo.app.model.LinkList;
 import info.xiaomo.app.ui.base.BaseActivity;
 import info.xiaomo.app.util.HttpUtil;
 import retrofit2.Call;
 
-public class NewsActivity extends BaseActivity implements HttpUtil.RetrofitCallBack<News> {
+public class NewsActivity extends BaseActivity implements HttpUtil.RetrofitCallBack<LinkList> {
     private static final String TAG = "NewsActivity";
 
     private String mUserId;
     private RecyclerView mRecyclerView;
     private NewsAdapter mNewsAdapter;
-    private List<NewItem> mDataList;
+    private List<Link> mDataList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,17 +44,17 @@ public class NewsActivity extends BaseActivity implements HttpUtil.RetrofitCallB
     private void loadData() {
         mDialog.setMessage("正在加载中，请稍后...");
         mDialog.show();
-        INewsService newService = httpUtil.getAPIService(INewsService.class);
+        LinkService linkService = httpUtil.getAPIService(LinkService.class);
         Log.d(TAG, "mUserId=====" + mUserId);
-        final Call<Result<News>> repos = newService.userNews();
-        httpUtil.enqueueCall(repos, this);
+        final Call<Result<LinkList>> resp = linkService.findAll();
+        httpUtil.enqueueCall(resp, this);
     }
 
     @Override
-    public void onSuccess(Result<News> result) {
+    public void onSuccess(Result<LinkList> result) {
         mDialog.dismiss();
         mDataList.clear();
-        mDataList.addAll(result.getData().getNewsItem());
+        mDataList.addAll(result.getData().getLink());
         mNewsAdapter.notifyDataSetChanged();
     }
 

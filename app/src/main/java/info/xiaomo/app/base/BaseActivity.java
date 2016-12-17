@@ -8,8 +8,6 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 
-import org.kymjs.kjframe.utils.StringUtils;
-
 import info.xiaomo.app.R;
 
 
@@ -97,9 +95,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     }
 
     public void setActionBarTitle(String title) {
-        if (StringUtils.isEmpty(title)) {
-            title = getString(R.string.app_name);
-        }
+        title = getString(R.string.app_name);
         if (hasActionBar() && mActionBar != null) {
             mActionBar.setTitle(title);
         }
