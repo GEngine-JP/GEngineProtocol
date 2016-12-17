@@ -19,9 +19,6 @@ import java.util.regex.Pattern;
 
 /**
  * 对字符串的简单处理
- *
- * @author L.cm
- * @date 2013-6-6 下午5:08:06
  */
 public class StringUtil {
 
@@ -296,7 +293,6 @@ public class StringUtil {
             ch = input[i];
 
             if (ch > '>') {
-                continue;
             } else if (ch == '<') {
                 if (i > last) {
                     out.append(input, last, i - last);
@@ -444,7 +440,7 @@ public class StringUtil {
         }
 
         char[] arr_cSrc = strSrc.toCharArray();
-        StringBuffer buf = new StringBuffer(arr_cSrc.length);
+        StringBuilder buf = new StringBuilder(arr_cSrc.length);
         char ch;
 
         for (int i = 0; i < arr_cSrc.length; i++) {
@@ -591,8 +587,6 @@ public class StringUtil {
      *
      * @param str 要进行处理的字符串
      * @return 转换后的字符串
-     * @see fs_com.utils.CTools#toChinese
-     * @see fs_com.utils.CTools#null2Blank
      */
     public static String toChineseAndHtmlEncode(String str, int quotes) {
         return htmlEncode(toChinese(str), quotes);

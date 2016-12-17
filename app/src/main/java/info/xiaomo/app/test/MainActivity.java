@@ -25,8 +25,8 @@ public class MainActivity extends AppCompatActivity implements Button.OnClickLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        textView = (TextView) findViewById(R.id.textView);
-        btnDownload = (Button) findViewById(R.id.button);
+//        textView = (TextView) findViewById(R.id.textView);
+//        btnDownload = (Button) findViewById(R.id.button);
         btnDownload.setOnClickListener(this);
         Log.i("iSpring", "MainActivity -> onCreate, Thread name: " + Thread.currentThread().getName());
     }
