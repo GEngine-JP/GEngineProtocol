@@ -1,4 +1,4 @@
-package info.xiaomo.app.ui.activity;
+package info.xiaomo.app.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,10 +13,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import info.xiaomo.app.R;
+import info.xiaomo.app.activity.base.BaseActivity;
 import info.xiaomo.app.api.LoginService;
 import info.xiaomo.app.model.UserModel;
 import info.xiaomo.app.model.base.Result;
-import info.xiaomo.app.ui.base.BaseActivity;
 import info.xiaomo.app.util.HttpUtil;
 import retrofit2.Call;
 

@@ -1,19 +1,20 @@
-package info.xiaomo.app.ui.activity;
+package info.xiaomo.app.activity;
 
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import info.xiaomo.app.R;
+import info.xiaomo.app.activity.base.BaseActivity;
 import info.xiaomo.app.adapter.NewsAdapter;
 import info.xiaomo.app.api.LinkService;
 import info.xiaomo.app.model.Link;
 import info.xiaomo.app.model.base.Result;
-import info.xiaomo.app.ui.base.BaseActivity;
 import info.xiaomo.app.util.HttpUtil;
 import retrofit2.Call;
 
@@ -55,4 +56,5 @@ public class NewsActivity extends BaseActivity implements HttpUtil.RetrofitCallB
         mDialog.dismiss();
         Toast.makeText(NewsActivity.this, "请求出现异常" + error, Toast.LENGTH_SHORT).show();
     }
+
 }

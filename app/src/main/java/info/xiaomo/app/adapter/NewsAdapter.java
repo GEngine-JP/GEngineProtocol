@@ -17,41 +17,42 @@ import info.xiaomo.app.model.Link;
  * @version : 2016/6/15 0015 14:45
  */
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder> {
-    private Context mContext;
-    private List<Link> mDataList;
-    private LayoutInflater mInflater;
+    private List<Link> dataList;
+    private LayoutInflater inflater;
 
-    public NewsAdapter(Context context, List<Link> mDataList) {
-        this.mContext = context;
-        this.mDataList = mDataList;
-        mInflater = LayoutInflater.from(mContext);
+    public NewsAdapter(Context context, List<Link> dataList) {
+        this.dataList = dataList;
+        this.inflater = LayoutInflater.from(context);
     }
 
     @Override
     public NewsViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new NewsViewHolder(mInflater.inflate(R.layout.activity_news_item, parent, false));
+        return new NewsViewHolder(inflater.inflate(R.layout.activity_news_item, parent, false));
     }
 
     @Override
     public void onBindViewHolder(NewsViewHolder holder, int position) {
-        Link link = mDataList.get(position);
+        Link link = dataList.get(position);
         holder.mTitleTv.setText(link.getName());
         holder.mContentTv.setText(link.getUrl());
     }
 
     @Override
     public int getItemCount() {
-        return mDataList.size();
+        return dataList.size();
     }
 
-    public class NewsViewHolder extends RecyclerView.ViewHolder {
+
+    class NewsViewHolder extends RecyclerView.ViewHolder {
         private TextView mTitleTv;
         private TextView mContentTv;
 
-        public NewsViewHolder(View itemView) {
+        NewsViewHolder(View itemView) {
             super(itemView);
             mTitleTv = (TextView) itemView.findViewById(R.id.id_news_title);
             mContentTv = (TextView) itemView.findViewById(R.id.id_news_content);
         }
     }
+
+
 }
