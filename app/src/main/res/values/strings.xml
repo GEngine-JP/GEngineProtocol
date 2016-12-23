@@ -12,5 +12,6 @@
     <string name="error_invalid_password">这个密码太短了</string>
     <string name="confirm">确认密码</string>
     <string name="upload">文件上传</string>
+    <string name="action_settings">设置</string>
 
 </resources>
