@@ -3,9 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center">
+
     <Button
         android:layout_width="100dp"
         android:layout_height="40dp"
-        android:text="@string/upload"
-        android:onClick="uploadFile"/>
+        android:onClick="uploadFile"
+        android:text="@string/upload" />
 </RelativeLayout>

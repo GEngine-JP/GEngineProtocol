@@ -20,7 +20,7 @@ import info.xiaomo.app.model.base.Result;
 import info.xiaomo.app.util.HttpUtil;
 import retrofit2.Call;
 
-public class LoginActivity extends BaseActivity implements View.OnClickListener, HttpUtil.RetrofitCallBack<UserModel> {
+public class LoginActivity extends BaseActivity implements HttpUtil.RetrofitCallBack<UserModel>, View.OnClickListener, TextView.OnEditorActionListener {
 
     private AutoCompleteTextView mEmailView;
     private EditText mPasswordView;
@@ -31,13 +31,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
         setContentView(R.layout.activity_login);
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
         mPasswordView = (EditText) findViewById(R.id.password);
-        mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
-                return id == R.id.login || id == EditorInfo.IME_NULL;
-            }
-        });
-
+        mPasswordView.setOnEditorActionListener(this);
         Button mSignInButton = (Button) findViewById(R.id.sign_in_button);
         mSignInButton.setOnClickListener(this);
     }
@@ -77,6 +71,11 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
     public void onFailure(String error) {
         Toast.makeText(getBaseContext(), error, Toast.LENGTH_SHORT).show();
         mDialog.dismiss();
+    }
+
+    @Override
+    public boolean onEditorAction(TextView textView, int actionId, KeyEvent keyEvent) {
+        return actionId == R.id.login || actionId == EditorInfo.IME_NULL;
     }
 }
 
