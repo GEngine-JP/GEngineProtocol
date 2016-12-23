@@ -12,7 +12,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import info.xiaomo.app.R;
-import info.xiaomo.app.api.IRegisterService;
+import info.xiaomo.app.api.RegisterService;
 import info.xiaomo.app.model.UserModel;
 import info.xiaomo.app.ui.base.BaseActivity;
 import retrofit2.Call;
@@ -40,7 +40,7 @@ public class RegisterActivity extends BaseActivity implements Callback<UserModel
         if (!TextUtils.isEmpty(userName) && !TextUtils.isEmpty(password)
                 && !TextUtils.isEmpty(mConfirmation)) {
             if (password.equals(mConfirmation)) {
-                IRegisterService loginService = httpUtil.getAPIService(IRegisterService.class);
+                RegisterService loginService = httpUtil.getAPIService(RegisterService.class);
                 Map<String, String> mParamsMap = new HashMap<>();
                 mParamsMap.put("username", userName);
                 mParamsMap.put("password", password);

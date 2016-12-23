@@ -1,6 +1,5 @@
 package info.xiaomo.app.base;
 
-import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -12,15 +11,8 @@ import info.xiaomo.app.R;
 
 
 public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener {
-    public static final String INTENT_ACTION_EXIT_APP = "INTENT_ACTION_EXIT_APP";
-
-    private boolean _isVisible;
-    private ProgressDialog _waitDialog;
-
     protected LayoutInflater mInflater;
     protected ActionBar mActionBar;
-
-    private final String packageName4Umeng = this.getClass().getName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,12 +82,12 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
 
     public void setActionBarTitle(int resId) {
         if (resId != 0) {
-            setActionBarTitle(getString(resId));
+            setActionBarTitle();
         }
     }
 
-    public void setActionBarTitle(String title) {
-        title = getString(R.string.app_name);
+    public void setActionBarTitle() {
+        String title = getString(R.string.app_name);
         if (hasActionBar() && mActionBar != null) {
             mActionBar.setTitle(title);
         }
@@ -113,10 +105,4 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         }
         return super.onOptionsItemSelected(item);
     }
-
-    public void showToast(int msgResid, int icon, int gravity) {
-        showToast(Integer.parseInt(getString(msgResid)), icon, gravity);
-    }
-
-
 }

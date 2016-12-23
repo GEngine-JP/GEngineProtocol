@@ -12,7 +12,7 @@ import retrofit2.http.POST;
  * @author 小莫 (https://xiaomo.info) (https://github.com/syoubaku)
  * @version : 2016/6/4 0004 14:53
  */
-public interface IRegisterService {
+public interface RegisterService {
     @FormUrlEncoded
     @POST("RegisterDataServlet")
     Call<UserModel> createUser(@FieldMap Map<String ,String> params);

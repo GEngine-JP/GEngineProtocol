@@ -3,7 +3,6 @@ package info.xiaomo.app.ui.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -14,7 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import info.xiaomo.app.R;
-import info.xiaomo.app.api.ILoginService;
+import info.xiaomo.app.api.LoginService;
 import info.xiaomo.app.model.UserModel;
 import info.xiaomo.app.model.base.Result;
 import info.xiaomo.app.ui.base.BaseActivity;
@@ -23,12 +22,8 @@ import retrofit2.Call;
 
 public class LoginActivity extends BaseActivity implements View.OnClickListener, HttpUtil.RetrofitCallBack<UserModel> {
 
-    private static final String TAG = "LoginActivity";
-
     private AutoCompleteTextView mEmailView;
     private EditText mPasswordView;
-    private View mLoginFormView;
-    private Button mSignInButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,9 +38,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
             }
         });
 
-        mSignInButton = (Button) findViewById(R.id.sign_in_button);
+        Button mSignInButton = (Button) findViewById(R.id.sign_in_button);
         mSignInButton.setOnClickListener(this);
-        mLoginFormView = findViewById(R.id.login_form);
     }
 
     public void startRegister(View view) {
@@ -59,7 +53,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
             case R.id.sign_in_button:
                 mDialog.setMessage("正在登录中，请稍后...");
                 mDialog.show();
-                ILoginService loginService = httpUtil.getAPIService(ILoginService.class);
+                LoginService loginService = httpUtil.getAPIService(LoginService.class);
                 String username = mEmailView.getText().toString();
                 String password = mPasswordView.getText().toString();
                 if (!TextUtils.isEmpty(username) && !TextUtils.isEmpty(password)) {
@@ -72,7 +66,6 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
 
     @Override
     public void onSuccess(Result<UserModel> result) {
-        Log.d(TAG, "onResponse======" + result.getData().getResultCode());
         Intent intent = new Intent(LoginActivity.this, NewsActivity.class);
         intent.putExtra("intent_user_id", String.valueOf(result.getData().getId()));
         startActivity(intent);

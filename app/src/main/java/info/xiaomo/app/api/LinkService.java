@@ -1,8 +1,10 @@
 package info.xiaomo.app.api;
 
 
+import java.util.List;
+
+import info.xiaomo.app.model.Link;
 import info.xiaomo.app.model.base.Result;
-import info.xiaomo.app.model.LinkList;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
@@ -14,5 +16,5 @@ import retrofit2.http.Headers;
 public interface LinkService {
     @GET("link/findAll")
     @Headers("Cache-Control: public, max-age=30")
-    Call<Result<LinkList>> findAll();
+    Call<Result<List<Link>>> findAll();
 }
