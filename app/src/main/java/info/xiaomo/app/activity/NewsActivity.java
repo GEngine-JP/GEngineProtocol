@@ -29,7 +29,7 @@ public class NewsActivity extends BaseActivity implements HttpUtil.RetrofitCallB
         RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.id_news_recycler_view);
         LinearLayoutManager manager = new LinearLayoutManager(NewsActivity.this);
         mRecyclerView.setLayoutManager(manager);
-        mNewsAdapter = new NewsAdapter(NewsActivity.this, mDataList);
+        mNewsAdapter = new NewsAdapter(this, mDataList);
         mRecyclerView.setAdapter(mNewsAdapter);
         loadData();
     }

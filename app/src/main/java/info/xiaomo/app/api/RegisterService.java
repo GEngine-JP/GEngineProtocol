@@ -3,6 +3,7 @@ package info.xiaomo.app.api;
 import java.util.Map;
 
 import info.xiaomo.app.model.UserModel;
+import info.xiaomo.app.model.base.Result;
 import retrofit2.Call;
 import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
@@ -14,6 +15,6 @@ import retrofit2.http.POST;
  */
 public interface RegisterService {
     @FormUrlEncoded
-    @POST("RegisterDataServlet")
-    Call<UserModel> createUser(@FieldMap Map<String ,String> params);
+    @POST("/user/register")
+    Call<Result<UserModel>> createUser(@FieldMap Map<String ,String> params);
 }

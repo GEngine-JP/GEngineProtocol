@@ -15,11 +15,11 @@ import info.xiaomo.app.R;
 import info.xiaomo.app.activity.base.BaseActivity;
 import info.xiaomo.app.api.RegisterService;
 import info.xiaomo.app.model.UserModel;
+import info.xiaomo.app.model.base.Result;
+import info.xiaomo.app.util.HttpUtil;
 import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
-public class RegisterActivity extends BaseActivity implements Callback<UserModel> {
+public class RegisterActivity extends BaseActivity implements HttpUtil.RetrofitCallBack<UserModel> {
     private AutoCompleteTextView mUserName;
     private EditText mPasswordEditText;
     private EditText mConfirmationEditText;
@@ -44,8 +44,8 @@ public class RegisterActivity extends BaseActivity implements Callback<UserModel
                 Map<String, String> mParamsMap = new HashMap<>();
                 mParamsMap.put("username", userName);
                 mParamsMap.put("password", password);
-                Call<UserModel> call = loginService.createUser(mParamsMap);
-                call.enqueue(this);
+                Call<Result<UserModel>> call = loginService.createUser(mParamsMap);
+                httpUtil.enqueueCall(call, this);
             } else {
                 Toast.makeText(getBaseContext(), "密码不一致", Toast.LENGTH_SHORT).show();
             }
@@ -55,8 +55,8 @@ public class RegisterActivity extends BaseActivity implements Callback<UserModel
     }
 
     @Override
-    public void onResponse(Call<UserModel> call, Response<UserModel> response) {
-        if (response.body().getResultCode() == 1) {
+    public void onSuccess(Result<UserModel> result) {
+        if (result.getResultCode() == 200) {
             Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
             startActivity(intent);
         } else {
@@ -65,8 +65,8 @@ public class RegisterActivity extends BaseActivity implements Callback<UserModel
     }
 
     @Override
-    public void onFailure(Call<UserModel> call, Throwable t) {
-
+    public void onFailure(String error) {
+        Toast.makeText(getBaseContext(), "哎呀，出错了！", Toast.LENGTH_SHORT).show();
     }
 }
 
