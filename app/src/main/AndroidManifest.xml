@@ -35,7 +35,7 @@
         </activity>
 
         <activity android:name=".activity.RegisterActivity"/>
-        <activity android:name=".activity.NewsActivity" />
+        <activity android:name=".activity.ShikigamaActivity" />
 
     </application>
 

@@ -13,5 +13,6 @@
     <string name="confirm">确认密码</string>
     <string name="upload">文件上传</string>
     <string name="action_settings">设置</string>
+    <string name="shikigami_desc">式神图片</string>
 
 </resources>

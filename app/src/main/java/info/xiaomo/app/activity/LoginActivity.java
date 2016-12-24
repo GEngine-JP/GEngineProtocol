@@ -60,7 +60,7 @@ public class LoginActivity extends BaseActivity implements HttpUtil.RetrofitCall
 
     @Override
     public void onSuccess(Result<UserModel> result) {
-        Intent intent = new Intent(LoginActivity.this, NewsActivity.class);
+        Intent intent = new Intent(LoginActivity.this, ShikigamaActivity.class);
         intent.putExtra("intent_user_id", String.valueOf(result.getData().getId()));
         startActivity(intent);
         Toast.makeText(getBaseContext(), "登录成功", Toast.LENGTH_SHORT).show();

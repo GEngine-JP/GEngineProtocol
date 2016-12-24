@@ -3,7 +3,7 @@ package info.xiaomo.app.model;
 import lombok.Data;
 
 @Data
-public class Link {
+public class LinkModel {
 
     private int id;
 
