@@ -47,6 +47,8 @@ dependencies {
     compile 'javax.annotation:javax.annotation-api:1.2'
     // 图片操作
     compile 'com.github.bumptech.glide:glide:3.6.1'
+    // bottom bar
+    compile 'com.roughike:bottom-bar:2.0.2'
     //测试
     testCompile 'junit:junit:4.12'
 }

@@ -2,4 +2,5 @@
 <resources>
     <item name="shikigami_icon" type="id" />
     <item name="shikigami_name" type="id" />
+    <item name="shikigami_category" type="id" />
 </resources>

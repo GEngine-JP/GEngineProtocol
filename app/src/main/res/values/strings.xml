@@ -15,5 +15,9 @@
     <string name="action_settings">设置</string>
     <string name="shikigami_desc">式神图片</string>
     <string name="shikigami_name">一目连</string>
+    <string name="n">N</string>
+    <string name="r">R</string>
+    <string name="sr">SR</string>
+    <string name="ssr">SSR</string>
 
 </resources>

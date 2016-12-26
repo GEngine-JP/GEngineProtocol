@@ -3,6 +3,6 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="shikigami_size">80dp</dimen>
-    <dimen name="shikigami_height">60dp</dimen>
+    <dimen name="shikigami_height">80dp</dimen>
     <dimen name="dp_8">8dp</dimen>
 </resources>

@@ -11,7 +11,7 @@
         android:layout_width="@dimen/shikigami_size"
         android:layout_height="@dimen/shikigami_size"
         android:contentDescription="@string/shikigami_desc"
-        android:src="@drawable/yimulian" />
+        android:src="@drawable/pic_20160920150850532" />
 
     <TextView
         android:id="@id/shikigami_name"
@@ -21,5 +21,5 @@
         android:layout_marginTop="@dimen/dp_8"
         android:textColor="@android:color/black"
         android:text="@string/shikigami_name"
-        android:textSize="16sp" />
+        android:textSize="12sp" />
 </LinearLayout>
