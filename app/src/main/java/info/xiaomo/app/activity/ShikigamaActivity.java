@@ -1,8 +1,7 @@
 package info.xiaomo.app.activity;
 
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import android.widget.GridView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -18,19 +17,17 @@ import info.xiaomo.app.util.HttpUtil;
 import retrofit2.Call;
 
 public class ShikigamaActivity extends BaseActivity implements HttpUtil.RetrofitCallBack<List<ShikigamiModel>> {
-    private ShikigamiAdapter mNewsAdapter;
+    private ShikigamiAdapter shikigamiAdapter;
     private List<ShikigamiModel> mDataList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_news);
+        setContentView(R.layout.activity_shikigami);
         mDataList = new ArrayList<>();
-        RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.id_news_recycler_view);
-        LinearLayoutManager manager = new LinearLayoutManager(ShikigamaActivity.this);
-        mRecyclerView.setLayoutManager(manager);
-        mNewsAdapter = new ShikigamiAdapter(this, mDataList);
-        mRecyclerView.setAdapter(mNewsAdapter);
+        GridView gridView = (GridView) findViewById(R.id.id_news_recycler_view);
+        shikigamiAdapter = new ShikigamiAdapter(this, mDataList);
+        gridView.setAdapter(shikigamiAdapter);
         loadData();
     }
 
@@ -47,7 +44,7 @@ public class ShikigamaActivity extends BaseActivity implements HttpUtil.Retrofit
         mDialog.dismiss();
         mDataList.clear();
         mDataList.addAll(result.getData());
-        mNewsAdapter.notifyDataSetChanged();
+        shikigamiAdapter.notifyDataSetChanged();
     }
 
     @Override

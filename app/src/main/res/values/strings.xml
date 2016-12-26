@@ -14,5 +14,6 @@
     <string name="upload">文件上传</string>
     <string name="action_settings">设置</string>
     <string name="shikigami_desc">式神图片</string>
+    <string name="shikigami_name">一目连</string>
 
 </resources>
