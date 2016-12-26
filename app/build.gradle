@@ -45,6 +45,8 @@ dependencies {
     //简化代码
     compile group: 'org.projectlombok', name: 'lombok', version: '1.16.10'
     compile 'javax.annotation:javax.annotation-api:1.2'
+    // 图片操作
+    compile 'com.github.bumptech.glide:glide:3.6.1'
     //测试
     testCompile 'junit:junit:4.12'
 }
