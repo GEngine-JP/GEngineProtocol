@@ -19,5 +19,7 @@
     <string name="r">R</string>
     <string name="sr">SR</string>
     <string name="ssr">SSR</string>
+    <string name="nav_ui">底部</string>
+
 
 </resources>

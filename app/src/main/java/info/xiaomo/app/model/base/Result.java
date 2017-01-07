@@ -1,11 +1,8 @@
 package info.xiaomo.app.model.base;
 
-import lombok.Data;
-
 /**
  * 返回数据基类
  */
-@Data
 public class Result<T> {
 
     /**
@@ -22,6 +19,30 @@ public class Result<T> {
      * 实体消息
      */
     private T data;
+
+    public int getResultCode() {
+        return resultCode;
+    }
+
+    public void setResultCode(int resultCode) {
+        this.resultCode = resultCode;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public T getData() {
+        return data;
+    }
+
+    public void setData(T data) {
+        this.data = data;
+    }
 
     public Result(int resultCode) {
         this.resultCode = resultCode;
