@@ -16,5 +16,5 @@ import retrofit2.http.POST;
 public interface RegisterService {
     @FormUrlEncoded
     @POST("/user/register")
-    Call<Result<UserModel>> createUser(@FieldMap Map<String ,String> params);
+    Call<Result<UserModel>> createUser(@FieldMap Map<String, String> params);
 }

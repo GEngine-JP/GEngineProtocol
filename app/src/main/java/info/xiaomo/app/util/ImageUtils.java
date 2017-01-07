@@ -505,8 +505,8 @@ public class ImageUtils {
         int width = drawable.getIntrinsicWidth();
         int height = drawable.getIntrinsicHeight();
         Bitmap bitmap = Bitmap.createBitmap(width, height, drawable
-                .getOpacity() != PixelFormat.OPAQUE ? Bitmap.Config.ARGB_8888
-                : Bitmap.Config.RGB_565);
+                .getOpacity() != PixelFormat.OPAQUE ? Config.ARGB_8888
+                : Config.RGB_565);
         Canvas canvas = new Canvas(bitmap);
         drawable.setBounds(0, 0, width, height);
         drawable.draw(canvas);
@@ -788,7 +788,7 @@ public class ImageUtils {
                     @Override
                     public void run() {
                         try {
-                            bitmap = android.provider.MediaStore.Images.Media
+                            bitmap = MediaStore.Images.Media
                                     .getBitmap(context.getContentResolver(),
                                             uri);
                         } catch (FileNotFoundException e) {

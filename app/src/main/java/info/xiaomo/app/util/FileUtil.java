@@ -97,7 +97,7 @@ public class FileUtil {
         boolean writeSucc = false;
 
         boolean sdCardExist = Environment.getExternalStorageState().equals(
-                android.os.Environment.MEDIA_MOUNTED);
+                Environment.MEDIA_MOUNTED);
 
         String folderPath = "";
         if (sdCardExist) {

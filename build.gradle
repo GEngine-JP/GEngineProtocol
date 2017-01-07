@@ -7,6 +7,9 @@ buildscript {
     repositories {
         jcenter()
     }
+    dependencies {
+        classpath 'com.jakewharton:butterknife-gradle-plugin:8.4.0'
+    }
 }
 allprojects {
     repositories {
