@@ -11,15 +11,11 @@
     <string name="error_invalid_email">这个账号是无效的</string>
     <string name="error_invalid_password">这个密码太短了</string>
     <string name="confirm">确认密码</string>
-    <string name="upload">文件上传</string>
     <string name="action_settings">设置</string>
-    <string name="shikigami_desc">式神图片</string>
-    <string name="shikigami_name">一目连</string>
-    <string name="n">N</string>
-    <string name="r">R</string>
-    <string name="sr">SR</string>
-    <string name="ssr">SSR</string>
-    <string name="nav_ui">底部</string>
+    <string name="xiaomo">小莫</string>
+    <string name="project">项目</string>
+    <string name="work">工作</string>
+    <string name="me">我</string>
 
 
 </resources>

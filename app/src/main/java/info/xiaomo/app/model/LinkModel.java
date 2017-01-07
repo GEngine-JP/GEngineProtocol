@@ -1,21 +1,12 @@
 package info.xiaomo.app.model;
 
-public class LinkModel {
+import info.xiaomo.app.model.base.BaseModel;
 
-    private int id;
+public class LinkModel extends BaseModel {
 
     private String name;
 
     private String url;
-
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;

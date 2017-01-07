@@ -45,8 +45,8 @@ public class LoginActivity extends BaseActivity implements HttpUtil.RetrofitCall
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.sign_in_button:
-                mDialog.setMessage("正在登录中，请稍后...");
-                mDialog.show();
+                dialog.setMessage("正在登录中，请稍后...");
+                dialog.show();
                 LoginService loginService = httpUtil.getAPIService(LoginService.class);
                 String username = mEmailView.getText().toString();
                 String password = mPasswordView.getText().toString();
@@ -64,18 +64,18 @@ public class LoginActivity extends BaseActivity implements HttpUtil.RetrofitCall
         intent.putExtra("intent_user_id", String.valueOf(result.getData().getId()));
         startActivity(intent);
         Toast.makeText(getBaseContext(), "登录成功", Toast.LENGTH_SHORT).show();
-        mDialog.dismiss();
+        dialog.dismiss();
     }
 
     @Override
     public void onFailure(String error) {
         Toast.makeText(getBaseContext(), error, Toast.LENGTH_SHORT).show();
-        mDialog.dismiss();
+        dialog.dismiss();
     }
 
     @Override
     public boolean onEditorAction(TextView textView, int actionId, KeyEvent keyEvent) {
-        return actionId == R.id.login || actionId == EditorInfo.IME_NULL;
+        return actionId == R.id.login || actionId == EditorInfo.IME_ACTION_NONE;
     }
 }
 

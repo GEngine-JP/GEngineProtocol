@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.jakewharton.butterknife'
+apply plugin: 'com.jakewharton.butterknife' // 绑定view
+apply plugin: 'com.droidtitan.lintcleaner' // 清理未引用资源
 
 android {
     compileSdkVersion 25

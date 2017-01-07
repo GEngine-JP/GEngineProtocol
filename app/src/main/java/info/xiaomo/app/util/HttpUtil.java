@@ -37,11 +37,11 @@ import rx.functions.Func1;
 public class HttpUtil implements HttpLoggingInterceptor.Logger, Interceptor {
 
     private static final String TAG = "HttpUtil";
+    private static final String BASE_URL = "http://api.xiaomo.info:8080/";
     private static HttpUtil mInstance;
     private final Cache cache;
     private Retrofit mRetrofit;
     private Context mContext;
-    private static final String BASE_URL = "http://api.xiaomo.info:8080/";
     private Action1<String> onNextAction;
 
     private HttpUtil(Context context) {
@@ -107,49 +107,31 @@ public class HttpUtil implements HttpLoggingInterceptor.Logger, Interceptor {
      *
      * @param call             call
      * @param retrofitCallBack retrofitCallBack
-     * @param <D>              <D>
+     * @param <T>              <T>
      */
-    public <D> void enqueueCall(Call<Result<D>> call, final RetrofitCallBack<D> retrofitCallBack) {
-        call.enqueue(new Callback<Result<D>>() {
-            @Override
-            public void onResponse(Call<Result<D>> call, Response<Result<D>> response) {
-                Result<D> resp = response.body();
-                if (resp == null) {
-                    Toast.makeText(mContext, "暂时没有最新数据!", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                if (resp.getResultCode() == 200) {
-                    if (retrofitCallBack != null)
-                        retrofitCallBack.onSuccess(resp);
-                } else {
-                    if (retrofitCallBack != null)
-                        retrofitCallBack.onFailure(resp.getMessage());
-                }
-            }
-
-            @Override
-            public void onFailure(Call<Result<D>> call, Throwable t) {
-                if (retrofitCallBack != null) {
-                    retrofitCallBack.onFailure(t.toString());
-                }
-            }
-        });
+    public <T> void enqueueCall(Call<Result<T>> call, final RetrofitCallBack<T> retrofitCallBack) {
+        call.enqueue(new HttpCallBack<>(retrofitCallBack));
     }
 
     @Override
     public void log(String message) {
-        Log.d(TAG, "OkHttp: " + message);
+        Log.d(TAG, "OkHttp--------------------------->: " + message);
     }
 
+    /**
+     * 拦截器
+     *
+     * @param chain chain
+     * @return 响应
+     * @throws IOException
+     */
     @Override
     public okhttp3.Response intercept(Chain chain) throws IOException {
         Request request = chain.request();
         //缓存
         if (NetUtil.checkNetwork(mContext) == NetUtil.NO_NETWORK) {
-            request = request.newBuilder()
-                    .cacheControl(CacheControl.FORCE_CACHE)
-                    .build();
-            Log.d(TAG, "no network");
+            request = request.newBuilder().cacheControl(CacheControl.FORCE_CACHE).build();
+            Log.d(TAG, "没有网络");
         }
 
         okhttp3.Response response = chain.proceed(request);
@@ -179,29 +161,22 @@ public class HttpUtil implements HttpLoggingInterceptor.Logger, Interceptor {
         }
     }
 
-    public interface RetrofitCallBack<D> {
-        void onSuccess(Result<D> result);
-
-        void onFailure(String error);
-    }
-
+    /**
+     * 通过行为创建一个观察者对象
+     */
     private void createSubscriberByAction() {
-        onNextAction = new Action1<String>() {
-            @Override
-            public void call(String s) {
-                Log.d(TAG, "s==========" + s);
-                Toast.makeText(mContext, s, Toast.LENGTH_SHORT).show();
-            }
-        };
+        onNextAction = new Action();
     }
 
+    /**
+     * 创建一个可观察对象
+     *
+     * @param msg 消息
+     */
     private void createObservable(String msg) {
-        Observable.just(msg).map(new Func1<String, String>() {
-            @Override
-            public String call(String s) {
-                return s;
-            }
-        })
+        Observable
+                .just(msg)
+                .map(new Func())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(onNextAction);
     }
@@ -222,5 +197,70 @@ public class HttpUtil implements HttpLoggingInterceptor.Logger, Interceptor {
      */
     public void clearCache() throws IOException {
         cache.delete();
+    }
+
+    public interface RetrofitCallBack<T> {
+        void onSuccess(Result<T> result);
+
+        void onFailure(String error);
+    }
+
+
+    /**
+     * 方法
+     */
+    private class Func implements Func1<String, String> {
+        @Override
+        public String call(String s) {
+            return s;
+        }
+    }
+
+    /**
+     * 行为
+     */
+    private class Action implements Action1<String> {
+        @Override
+        public void call(String s) {
+            Log.d(TAG, "s------------->" + s);
+            Toast.makeText(mContext, s, Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    /**
+     * CallBack的实现
+     *
+     * @param <T>
+     */
+    private class HttpCallBack<T> implements Callback<Result<T>> {
+
+        RetrofitCallBack<T> retrofitCallBack;
+
+        HttpCallBack(RetrofitCallBack<T> retrofitCallBack) {
+            this.retrofitCallBack = retrofitCallBack;
+        }
+
+        @Override
+        public void onResponse(Call<Result<T>> call, Response<Result<T>> response) {
+            Result<T> resp = response.body();
+            if (resp == null) {
+                Toast.makeText(mContext, "暂时没有最新数据!", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            if (resp.getResultCode() == 200) {
+                if (retrofitCallBack != null)
+                    retrofitCallBack.onSuccess(resp);
+            } else {
+                if (retrofitCallBack != null)
+                    retrofitCallBack.onFailure(resp.getMessage());
+            }
+        }
+
+        @Override
+        public void onFailure(Call<Result<T>> call, Throwable t) {
+            if (retrofitCallBack != null) {
+                retrofitCallBack.onFailure(t.toString());
+            }
+        }
     }
 }

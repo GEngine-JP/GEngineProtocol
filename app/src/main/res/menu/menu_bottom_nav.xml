@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/bottom_nav_xiaomo"
+        android:enabled="true"
+        android:icon="@drawable/weixin_pressed"
+        android:title="@string/xiaomo"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/bottom_nav_project"
+        android:enabled="true"
+        android:icon="@drawable/contact_list_pressed"
+        android:title="@string/project"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/bottom_nav_work"
+        android:enabled="true"
+        android:icon="@drawable/find_pressed"
+        android:title="@string/work"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/bottom_nav_me"
+        android:enabled="true"
+        android:icon="@drawable/profile_pressed"
+        android:title="@string/me"
+        app:showAsAction="ifRoom" />
+</menu>
