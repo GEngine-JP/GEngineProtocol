@@ -7,20 +7,24 @@
     android:layout_height="match_parent"
     tools:context=".activity.MainActivity">
 
-    <TextView
-        android:id="@+id/nav_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:textSize="18sp" />
+    <android.support.v4.view.ViewPager
+        android:id="@+id/id_content_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/bottom_nav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        app:itemBackground="@color/gray"
-        app:itemIconTint="#FFFFFF"
-        app:itemTextColor="#FFFFFF"
+        app:itemIconTint="@drawable/bottom_navigation_color_selector"
+        app:itemTextColor="@drawable/bottom_navigation_color_selector"
         app:menu="@menu/menu_bottom_nav" />
+
+    <!--阴影-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:layout_above="@id/bottom_nav"
+        android:background="@drawable/shadow" />
 </RelativeLayout>
