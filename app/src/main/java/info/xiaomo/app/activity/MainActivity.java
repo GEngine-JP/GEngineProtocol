@@ -8,6 +8,7 @@ import android.support.v4.view.ViewPager;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,9 +34,10 @@ public class MainActivity extends BaseActivity implements
     BottomNavigationView bottomNavigationView;
     @BindView(R.id.id_content_view_pager)
     ViewPager contentViewPager;
+    @BindView(R.id.id_tool_bar_title)
+    TextView titleTextView;
 
     List<Fragment> fragmentList;
-    MenuItem prevMenuItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -123,14 +125,20 @@ public class MainActivity extends BaseActivity implements
      */
     @Override
     public void onPageSelected(int position) {
-        if (prevMenuItem != null) {
-            prevMenuItem.setChecked(false);
-        } else {
-            bottomNavigationView.getMenu().getItem(0).setChecked(false);
+        switch (position){
+            case 0:
+                titleTextView.setText(R.string.xiaomo);
+                break;
+            case 1:
+                titleTextView.setText(R.string.project);
+                break;
+            case 2:
+                titleTextView.setText(R.string.work);
+                break;
+            case 3:
+                titleTextView.setText(R.string.me);
+                break;
         }
-        bottomNavigationView.getMenu().getItem(position).setChecked(true);
-        prevMenuItem = bottomNavigationView.getMenu().getItem(position);
-
     }
 
     /**
