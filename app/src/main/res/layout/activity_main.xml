@@ -7,10 +7,15 @@
     android:layout_height="match_parent"
     tools:context=".activity.MainActivity">
 
+    <include
+        android:id="@+id/layout_tool_bar"
+        layout="@layout/tool_bar" />
+
     <android.support.v4.view.ViewPager
         android:id="@+id/id_content_view_pager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_below="@+id/layout_tool_bar" />
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/bottom_nav"
@@ -24,7 +29,7 @@
     <!--阴影-->
     <View
         android:layout_width="match_parent"
-        android:layout_height="8dp"
+        android:layout_height="@dimen/dp_8"
         android:layout_above="@id/bottom_nav"
         android:background="@drawable/shadow" />
 </RelativeLayout>
