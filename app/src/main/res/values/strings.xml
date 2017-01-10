@@ -15,9 +15,9 @@
     <string name="work">工作</string>
     <string name="user_name">小莫</string>
     <string name="me">我的</string>
-    <string name="message">消息</string>
+    <string name="message">这里是标题</string>
     <string name="message_remind">消息提醒</string>
-    <string name="message_content">韩媒：中方报复萨德力度升级 韩企在华受重挫</string>
+    <string name="message_content">韩媒：中方报复萨德力度升级 韩企在华受重挫韩媒：中方报复萨德力度升级 韩企在华受重挫韩媒：中方报复萨德力度升级 韩企在华受重挫韩媒：中方报复萨德力度升级 韩企在华受重挫韩媒：中方报复萨德力度升级 韩企在华受重挫韩媒：中方报复萨德力度升级 韩企在华受重挫韩媒：中方报复萨德力度升级 韩企在华受重挫韩媒：中方报复萨德力度升级 韩企在华受重挫韩媒：中方报复萨德力度升级 韩企在华受重挫韩媒：中方报复萨德力度升级 韩企在华受重挫韩媒：中方报复萨德力度升级 韩企在华受重挫韩媒：中方报复萨德力度升级 韩企在华受重挫韩媒：中方报复萨德力度升级 韩企在华受重挫</string>
     <string name="message_time">15分钟前</string>
     <string name="click_login">点击登录</string>
     <string name="forget_password">忘记密码？</string>
@@ -28,6 +28,8 @@
     <string name="about_us">关于我们</string>
     <string name="update_password">修改密码</string>
     <string name="clear_cache">清除缓存</string>
+    <string name="work_time">2017-01-10 15:35</string>
+    <string name="love_count">2141人收录</string>
 
 
 </resources>

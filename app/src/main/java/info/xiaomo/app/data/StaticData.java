@@ -5,6 +5,7 @@ import java.util.List;
 
 import info.xiaomo.app.R;
 import info.xiaomo.app.model.MessageModel;
+import info.xiaomo.app.model.WorkModel;
 
 /**
  * @author 小莫 (https://xiaomo.info) (https://github.com/syoubaku)
@@ -95,6 +96,21 @@ public class StaticData {
         hhList.add(h8);
         hhList.add(h9);
         hhList.add(h10);
+        return hhList;
+    }
+
+
+    public static List<WorkModel> getWorkList() {
+        List<WorkModel> hhList = new ArrayList<>();
+        for (int i = 0; i < 20; i++) {
+            WorkModel h1 = new WorkModel();
+            h1.setPic(R.drawable.bg_3 + "");
+            h1.setTitle("小莫" + i);
+            h1.setTime(i + "分钟前");
+            h1.setContent("盘点：那些还在拼命探索的语音识别软件们盘点：那些还在拼命探索的语音识别软件们盘点：那些还在拼命探索的语音识别软件们盘点：那些还在拼命探索的语音识别软件们" + i);
+            h1.setFocus(false);
+            hhList.add(h1);
+        }
         return hhList;
     }
 

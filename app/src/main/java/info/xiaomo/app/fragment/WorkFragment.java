@@ -6,12 +6,13 @@ import android.support.design.widget.Snackbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.ListView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 import info.xiaomo.app.R;
+import info.xiaomo.app.adapter.WorkListViewAdapter;
+import info.xiaomo.app.data.StaticData;
 import info.xiaomo.app.fragment.base.BaseFragment;
 
 /**
@@ -21,19 +22,18 @@ import info.xiaomo.app.fragment.base.BaseFragment;
 
 public class WorkFragment extends BaseFragment implements View.OnClickListener {
 
-    @BindView(R.id.tvInfo3)
-    TextView textView;
+    @BindView(R.id.id_work_list_view)
+    ListView workListView;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_work, container, false);
         ButterKnife.bind(this, view);
-        textView.setText(R.string.work);
+        workListView.setAdapter(new WorkListViewAdapter(getContext(), StaticData.getWorkList()));
         return view;
     }
 
-    @OnClick(R.id.tvInfo3)
     @Override
     public void onClick(View v) {
         Snackbar.make(v, "hello", Snackbar.LENGTH_SHORT).show();
