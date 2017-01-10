@@ -16,7 +16,7 @@ import info.xiaomo.app.task.TimeTask;
 
 public class IndexActivity extends BaseActivity {
 
-    private static final long DELAY_TIME = 2 * 1000;
+    private static final long DELAY_TIME = 1 * 1000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

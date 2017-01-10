@@ -24,6 +24,10 @@
     <string name="no_accounts">还没有帐号？</string>
     <string name="index_content">こちらえ　どうぞ</string>
     <string name="other_login_way">用其他方式登录</string>
+    <string name="quit_login">退出登录</string>
+    <string name="about_us">关于我们</string>
+    <string name="update_password">修改密码</string>
+    <string name="clear_cache">清除缓存</string>
 
 
 </resources>

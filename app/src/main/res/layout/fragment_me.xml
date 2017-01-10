@@ -55,7 +55,7 @@
             android:id="@+id/id_not_login_layout"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_100"
-            android:background="@color/lightgray"
+            android:background="@color/littleGray"
             android:orientation="vertical"
             android:visibility="visible">
 
@@ -82,10 +82,14 @@
             android:layout_marginTop="@dimen/dp_20"
             android:orientation="vertical">
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/littleGray" />
             <!-- 消息提醒-->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dp_45"
+                android:layout_height="@dimen/dp_50"
                 android:background="@color/white"
                 android:gravity="center_horizontal"
                 android:padding="5dp">
@@ -96,6 +100,7 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:gravity="center_vertical"
+                    android:padding="@dimen/dp_10"
                     android:text="@string/message_remind"
                     android:textColor="@color/black"
                     android:textSize="@dimen/sp_15" />
@@ -110,10 +115,14 @@
             <include layout="@layout/line" />
         </LinearLayout>
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/littleGray" />
         <!-- 清除缓存 -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_45"
+            android:layout_height="@dimen/dp_50"
             android:background="@color/white"
             android:gravity="center_vertical">
 
@@ -123,7 +132,8 @@
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
-                android:text="@string/app_name"
+                android:padding="@dimen/dp_10"
+                android:text="@string/clear_cache"
                 android:textColor="@color/black"
                 android:textSize="@dimen/sp_15" />
 
@@ -133,6 +143,79 @@
                 android:layout_gravity="center"
                 android:src="@drawable/ic_keyboard_arrow_right_grey_500_36dp" />
         </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/littleGray" />
+        <!-- 修改密码  -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:background="@color/white"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:padding="@dimen/dp_10"
+                android:text="@string/update_password"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_15" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_keyboard_arrow_right_grey_500_36dp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/littleGray" />
+
+        <!-- 关于我们 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@color/white"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:padding="@dimen/dp_10"
+                android:text="@string/about_us"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_15" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_keyboard_arrow_right_grey_500_36dp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/littleGray" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:layout_marginTop="@dimen/dp_20"
+            android:background="@drawable/border"
+            android:text="@string/quit_login"
+            android:visibility="invisible" />
 
         <include layout="@layout/line" />
     </LinearLayout>
