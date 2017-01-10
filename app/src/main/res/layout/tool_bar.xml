@@ -10,7 +10,8 @@
         android:id="@+id/id_tool_bar_notification"
         android:layout_width="@dimen/dp_25"
         android:layout_height="@dimen/dp_25"
-        android:layout_gravity="center"
+        android:layout_gravity="clip_vertical"
+        android:layout_weight="1"
         android:src="@drawable/ic_notifications_none_white_18dp" />
 
 
@@ -18,7 +19,7 @@
         android:id="@+id/id_tool_bar_title"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="1"
+        android:layout_weight="10"
         android:gravity="center"
         android:text="@string/xiaomo"
         android:textColor="@color/white"
@@ -28,7 +29,8 @@
     <ImageView
         android:layout_width="@dimen/dp_25"
         android:layout_height="@dimen/dp_25"
-        android:layout_gravity="center"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
         android:src="@drawable/ic_settings_white_24dp" />
 
 </LinearLayout>
