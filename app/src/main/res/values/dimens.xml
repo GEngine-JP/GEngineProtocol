@@ -23,8 +23,8 @@
 
     <dimen name="sp_2">2sp</dimen>
     <dimen name="sp_5">5sp</dimen>
-    <dimen name="sp_10">1sp</dimen>
-    <dimen name="sp_15">1sp</dimen>
+    <dimen name="sp_10">10sp</dimen>
+    <dimen name="sp_15">15sp</dimen>
     <dimen name="sp_20">20sp</dimen>
     <dimen name="sp_25">25sp</dimen>
     <dimen name="sp_30">30sp</dimen>

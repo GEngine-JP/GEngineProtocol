@@ -4,10 +4,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         android:id="@+id/id_tab_me"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:background="@drawable/border"
         android:orientation="vertical">
 
@@ -25,8 +27,6 @@
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:layout_gravity="center"
-                android:layout_margin="3dp"
-                android:layout_marginStart="@dimen/dp_10"
                 android:contentDescription="@string/message_remind"
                 android:src="@drawable/avatar" />
 
@@ -35,7 +35,6 @@
                 android:id="@+id/id_text_my_name"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginStart="@dimen/dp_10"
                 android:layout_toEndOf="@id/id_friend_circle_image"
                 android:gravity="center_vertical"
                 android:text="@string/user_name"
@@ -56,15 +55,15 @@
             android:id="@+id/id_not_login_layout"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_100"
-            android:orientation="vertical"
             android:background="@color/lightgray"
+            android:orientation="vertical"
             android:visibility="visible">
 
             <info.xiaomo.app.widget.RoundImageView
-                android:layout_marginTop="@dimen/dp_10"
                 android:layout_width="@dimen/dp_50"
                 android:layout_height="@dimen/dp_50"
                 android:layout_gravity="center"
+                android:layout_marginTop="@dimen/dp_10"
                 android:src="@drawable/avatar" />
 
             <TextView
@@ -83,40 +82,59 @@
             android:layout_marginTop="@dimen/dp_20"
             android:orientation="vertical">
 
+            <!-- 消息提醒-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_45"
                 android:background="@color/white"
-                android:gravity="center_vertical"
+                android:gravity="center_horizontal"
                 android:padding="5dp">
 
-                <ImageView
-                    android:id="@+id/id_photo_image"
-                    android:layout_width="@dimen/dp_25"
-                    android:layout_height="@dimen/dp_25"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="@dimen/dp_10"
-                    android:src="@drawable/akc" />
 
                 <TextView
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:layout_marginStart="@dimen/dp_10"
-                    android:layout_weight="1"
                     android:gravity="center_vertical"
-                    android:text="@string/app_name"
+                    android:text="@string/message_remind"
                     android:textColor="@color/black"
-                    android:textSize="12sp" />
+                    android:textSize="@dimen/sp_15" />
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_keyboard_arrow_right_white_24dp" />
+                <Switch
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+
             </LinearLayout>
 
             <include layout="@layout/line" />
         </LinearLayout>
+
+        <!-- 清除缓存 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45"
+            android:background="@color/white"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="@string/app_name"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_15" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_keyboard_arrow_right_grey_500_36dp" />
+        </LinearLayout>
+
+        <include layout="@layout/line" />
     </LinearLayout>
 
 

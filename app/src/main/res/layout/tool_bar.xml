@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/id_tool_bar_notification"
-        android:layout_width="@dimen/dp_35"
-        android:layout_height="@dimen/dp_35"
+        android:layout_width="@dimen/dp_25"
+        android:layout_height="@dimen/dp_25"
         android:layout_gravity="center"
         android:src="@drawable/ic_notifications_none_white_18dp" />
 
@@ -26,8 +26,8 @@
 
 
     <ImageView
-        android:layout_width="@dimen/dp_35"
-        android:layout_height="@dimen/dp_35"
+        android:layout_width="@dimen/dp_25"
+        android:layout_height="@dimen/dp_25"
         android:layout_gravity="center"
         android:src="@drawable/ic_settings_white_24dp" />
 
