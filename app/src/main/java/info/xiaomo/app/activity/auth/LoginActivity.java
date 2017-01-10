@@ -1,4 +1,4 @@
-package info.xiaomo.app.activity;
+package info.xiaomo.app.activity.auth;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import info.xiaomo.app.R;
+import info.xiaomo.app.activity.MainActivity;
 import info.xiaomo.app.activity.base.BaseActivity;
 import info.xiaomo.app.api.LoginService;
 import info.xiaomo.app.model.UserModel;

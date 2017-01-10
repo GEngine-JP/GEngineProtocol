@@ -1,9 +1,8 @@
 package info.xiaomo.app.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +10,7 @@ import android.view.ViewGroup;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import info.xiaomo.app.R;
+import info.xiaomo.app.activity.auth.LoginActivity;
 import info.xiaomo.app.fragment.base.BaseFragment;
 
 /**
@@ -28,9 +28,10 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
         return view;
     }
 
-    @OnClick(R.id.id_personal_center)
+    @OnClick(R.id.id_not_login_layout)
     @Override
     public void onClick(View v) {
-        Snackbar.make(v, "hello", Snackbar.LENGTH_SHORT).show();
+        Intent intent = new Intent(getActivity(), LoginActivity.class);
+        startActivity(intent);
     }
 }

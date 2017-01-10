@@ -9,16 +9,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/border"
-        android:orientation="vertical"
-        android:paddingTop="10dp">
+        android:orientation="vertical">
 
-
+        <!-- 登录状态下的UI布局 -->
         <RelativeLayout
             android:id="@+id/id_personal_center"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="@dimen/dp_50"
             android:background="@color/white"
-            android:padding="5dp">
+            android:padding="@dimen/dp_5"
+            android:visibility="gone">
 
             <ImageView
                 android:id="@+id/id_friend_circle_image"
@@ -50,6 +50,31 @@
                 android:src="@drawable/ic_keyboard_arrow_right_red_700_24dp" />
 
         </RelativeLayout>
+
+        <!-- 未登录状态下的UI布局，默认是未登录状态下的UI布局 -->
+        <LinearLayout
+            android:id="@+id/id_not_login_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_100"
+            android:orientation="vertical"
+            android:background="@color/lightgray"
+            android:visibility="visible">
+
+            <info.xiaomo.app.widget.RoundImageView
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_width="@dimen/dp_50"
+                android:layout_height="@dimen/dp_50"
+                android:layout_gravity="center"
+                android:src="@drawable/avatar" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/dp_10"
+                android:text="@string/click_login" />
+
+        </LinearLayout>
 
 
         <LinearLayout
@@ -93,4 +118,6 @@
             <include layout="@layout/line" />
         </LinearLayout>
     </LinearLayout>
+
+
 </RelativeLayout>

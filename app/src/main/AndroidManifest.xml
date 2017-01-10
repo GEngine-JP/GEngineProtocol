@@ -18,12 +18,14 @@
             android:name="BUG_HD_SDK_GENERAL_KEY"
             android:value="3d9185465a86b72028aedaa8d6201050" />
 
-        <activity android:name=".activity.MainActivity">
+        <activity android:name=".activity.IndexActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity.MainActivity" />
+
 
         <activity android:name=".activity.me.MessageActivity" />
     </application>

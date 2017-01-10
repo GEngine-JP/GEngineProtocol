@@ -1,4 +1,4 @@
-package info.xiaomo.app.activity;
+package info.xiaomo.app.activity.auth;
 
 import android.content.Intent;
 import android.os.Bundle;
