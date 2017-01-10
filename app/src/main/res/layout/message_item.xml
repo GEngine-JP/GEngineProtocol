@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_80"
+    android:background="@drawable/border"
+    android:orientation="vertical">
+
+    <info.xiaomo.app.widget.RoundImageView
+        android:id="@+id/id_chat_item_icon"
+        android:layout_width="@dimen/dp_50"
+        android:layout_height="@dimen/dp_50"
+        android:src="@drawable/avatar" />
+
+    <TextView
+        android:id="@+id/id_chat_item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_5"
+        android:layout_toEndOf="@id/id_chat_item_icon"
+        android:gravity="center_vertical"
+        android:lineSpacingMultiplier="@dimen/line_height"
+        android:text="@string/message"
+        android:textColor="@color/msg_color" />
+
+
+    <TextView
+        android:id="@+id/id_chat_item_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/dp_5"
+        android:layout_toEndOf="@id/id_chat_item_name"
+        android:gravity="end"
+        android:lineSpacingMultiplier="@dimen/line_height"
+        android:text="@string/message_time"
+        android:textColor="@color/msg_color" />
+
+    <TextView
+        android:id="@+id/id_chat_item_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/id_chat_item_name"
+        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_5"
+        android:layout_toEndOf="@id/id_chat_item_icon"
+        android:gravity="center_vertical"
+        android:lineSpacingMultiplier="@dimen/line_height"
+        android:maxLines="1"
+        android:text="@string/message_content"
+        android:textColor="@color/msg_color" />
+
+</RelativeLayout>

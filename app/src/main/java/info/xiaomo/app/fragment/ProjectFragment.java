@@ -13,13 +13,14 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import info.xiaomo.app.R;
+import info.xiaomo.app.fragment.base.BaseFragment;
 
 /**
  * @author 小莫 (https://xiaomo.info) (https://github.com/syoubaku)
  * @version : 2017/1/7 17:56
  */
 
-public class ProjectFragment extends Fragment implements View.OnClickListener{
+public class ProjectFragment extends BaseFragment implements View.OnClickListener{
 
     @BindView(R.id.tvInfo2)
     TextView textView;

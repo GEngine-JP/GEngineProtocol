@@ -1,15 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tvInfo4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:textSize="22sp"
-        tools:text="info"/>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/id_tab_me"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/border"
+        android:orientation="vertical"
+        android:paddingTop="10dp">
+
+
+        <RelativeLayout
+            android:id="@+id/id_personal_center"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/white"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/id_friend_circle_image"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center"
+                android:layout_margin="3dp"
+                android:layout_marginStart="@dimen/dp_10"
+                android:contentDescription="@string/message_remind"
+                android:src="@drawable/avatar" />
+
+
+            <TextView
+                android:id="@+id/id_text_my_name"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/dp_10"
+                android:layout_toEndOf="@id/id_friend_circle_image"
+                android:gravity="center_vertical"
+                android:text="@string/user_name"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_20" />
+
+            <ImageView
+                android:layout_width="@dimen/dp_35"
+                android:layout_height="@dimen/dp_35"
+                android:layout_alignParentEnd="true"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_keyboard_arrow_right_red_700_24dp" />
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_45"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:padding="5dp">
+
+                <ImageView
+                    android:id="@+id/id_photo_image"
+                    android:layout_width="@dimen/dp_25"
+                    android:layout_height="@dimen/dp_25"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/dp_10"
+                    android:src="@drawable/akc" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/dp_10"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="@string/app_name"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_keyboard_arrow_right_white_24dp" />
+            </LinearLayout>
+
+            <include layout="@layout/line" />
+        </LinearLayout>
+    </LinearLayout>
 </RelativeLayout>

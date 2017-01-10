@@ -1,9 +1,8 @@
 package info.xiaomo.app.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,13 +12,15 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import info.xiaomo.app.R;
+import info.xiaomo.app.activity.me.MessageActivity;
+import info.xiaomo.app.fragment.base.BaseFragment;
 
 /**
  * @author 小莫 (https://xiaomo.info) (https://github.com/syoubaku)
  * @version : 2017/1/7 17:56
  */
 
-public class IndexFragment extends Fragment implements View.OnClickListener {
+public class IndexFragment extends BaseFragment implements View.OnClickListener {
 
     @BindView(R.id.tvInfo1)
     TextView textView;
@@ -27,15 +28,16 @@ public class IndexFragment extends Fragment implements View.OnClickListener {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_index, container,false);
-        ButterKnife.bind(this,view);
+        View view = inflater.inflate(R.layout.fragment_index, container, false);
+        ButterKnife.bind(this, view);
         textView.setText(R.string.xiaomo);
         return view;
     }
 
-    @OnClick(R.id.tvInfo1)
+    @OnClick(R.id.id_tool_bar_notification)
     @Override
     public void onClick(View v) {
-        Snackbar.make(v, "hello", Snackbar.LENGTH_SHORT).show();
+        Intent intent = new Intent(getActivity(), MessageActivity.class);
+        startActivity(intent);
     }
 }

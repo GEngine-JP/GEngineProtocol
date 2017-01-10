@@ -3,25 +3,35 @@ package info.xiaomo.app.adapter.base;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.List;
+
 /**
  * @author 小莫 (https://xiaomo.info) (https://github.com/syoubaku)
  * @version : 2017/1/9 9:58
  */
 
-public class BaseAdapter extends android.widget.BaseAdapter{
+public class BaseAdapter<T> extends android.widget.BaseAdapter {
+
+    private List<T> list;
+
+    public BaseAdapter(List<T> list) {
+        this.list = list;
+    }
+
+
     @Override
     public int getCount() {
-        return 0;
+        return list.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return null;
+        return list.get(position);
     }
 
     @Override
     public long getItemId(int position) {
-        return 0;
+        return position;
     }
 
     @Override

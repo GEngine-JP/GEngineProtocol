@@ -15,7 +15,12 @@
     <string name="xiaomo">小莫</string>
     <string name="project">项目</string>
     <string name="work">工作</string>
+    <string name="user_name">小莫</string>
     <string name="me">我的</string>
+    <string name="message">消息</string>
+    <string name="message_remind">消息提醒</string>
+    <string name="message_content">韩媒：中方报复萨德力度升级 韩企在华受重挫</string>
+    <string name="message_time">15分钟前</string>
 
 
 </resources>
