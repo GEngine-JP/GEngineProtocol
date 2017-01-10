@@ -22,15 +22,10 @@ import info.xiaomo.app.fragment.base.BaseFragment;
 
 public class IndexFragment extends BaseFragment implements View.OnClickListener {
 
-    @BindView(R.id.tvInfo1)
-    TextView textView;
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_index, container, false);
-        ButterKnife.bind(this, view);
-        textView.setText(R.string.xiaomo);
         return view;
     }
 

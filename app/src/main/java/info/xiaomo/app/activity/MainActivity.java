@@ -23,6 +23,7 @@ import info.xiaomo.app.fragment.ProjectFragment;
 import info.xiaomo.app.fragment.WorkFragment;
 import info.xiaomo.app.model.base.Result;
 import info.xiaomo.app.util.HttpUtil;
+import info.xiaomo.app.widget.BottomNavigationViewEx;
 
 public class MainActivity extends BaseActivity implements
         HttpUtil.RetrofitCallBack,
@@ -31,7 +32,7 @@ public class MainActivity extends BaseActivity implements
         View.OnTouchListener {
 
     @BindView(R.id.bottom_nav)
-    BottomNavigationView bottomNavigationView;
+    BottomNavigationViewEx bottomNavigationView;
     @BindView(R.id.id_content_view_pager)
     ViewPager contentViewPager;
     @BindView(R.id.id_tool_bar_title)
@@ -55,6 +56,9 @@ public class MainActivity extends BaseActivity implements
     protected void initView(Bundle savedInstanceState) {
         super.initView(savedInstanceState);
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
+        bottomNavigationView.enableAnimation(false);
+        bottomNavigationView.enableItemShiftingMode(false);
+        bottomNavigationView.enableShiftingMode(false);
         setupViewPager();
     }
 
@@ -125,7 +129,7 @@ public class MainActivity extends BaseActivity implements
      */
     @Override
     public void onPageSelected(int position) {
-        switch (position){
+        switch (position) {
             case 0:
                 titleTextView.setText(R.string.xiaomo);
                 break;

@@ -5,11 +5,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-
-    <include
-        android:id="@id/layout_tool_bar"
-        layout="@layout/tool_bar" />
-
     <TextView
         android:id="@+id/tvInfo1"
         android:layout_width="wrap_content"

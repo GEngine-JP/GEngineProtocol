@@ -24,5 +24,6 @@ public class TimeTask extends TimerTask {
     @Override
     public void run() {
         activity.startActivity(intent);
+        activity.finish();
     }
 }
