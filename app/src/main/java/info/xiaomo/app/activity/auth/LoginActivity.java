@@ -73,6 +73,7 @@ public class LoginActivity extends BaseActivity implements
         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
         intent.putExtra("intent_user_id", String.valueOf(result.getData().getId()));
         startActivity(intent);
+        finish();
         Toast.makeText(getBaseContext(), "登录成功", Toast.LENGTH_SHORT).show();
         dialog.dismiss();
     }
