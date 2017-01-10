@@ -1,18 +1,12 @@
 package info.xiaomo.app.fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 import info.xiaomo.app.R;
-import info.xiaomo.app.activity.me.MessageActivity;
 import info.xiaomo.app.fragment.base.BaseFragment;
 
 /**
@@ -20,7 +14,7 @@ import info.xiaomo.app.fragment.base.BaseFragment;
  * @version : 2017/1/7 17:56
  */
 
-public class IndexFragment extends BaseFragment implements View.OnClickListener {
+public class IndexFragment extends BaseFragment {
 
     @Nullable
     @Override
@@ -29,10 +23,5 @@ public class IndexFragment extends BaseFragment implements View.OnClickListener 
         return view;
     }
 
-    @OnClick(R.id.id_tool_bar_notification)
-    @Override
-    public void onClick(View v) {
-        Intent intent = new Intent(getActivity(), MessageActivity.class);
-        startActivity(intent);
-    }
+
 }

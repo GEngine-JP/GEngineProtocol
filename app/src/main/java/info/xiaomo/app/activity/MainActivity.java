@@ -1,5 +1,6 @@
 package info.xiaomo.app.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -16,8 +17,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 import info.xiaomo.app.R;
 import info.xiaomo.app.activity.base.BaseActivity;
+import info.xiaomo.app.activity.me.MessageActivity;
 import info.xiaomo.app.adapter.ViewPagerAdapter;
 import info.xiaomo.app.fragment.IndexFragment;
 import info.xiaomo.app.fragment.MeFragment;
@@ -30,6 +33,7 @@ import info.xiaomo.app.widget.BottomNavigationViewEx;
 public class MainActivity extends BaseActivity implements
         HttpUtil.RetrofitCallBack,
         BottomNavigationView.OnNavigationItemSelectedListener,
+        View.OnClickListener,
         ViewPager.OnPageChangeListener,
         View.OnTouchListener {
 
@@ -192,5 +196,12 @@ public class MainActivity extends BaseActivity implements
             return true;
         }
         return super.onKeyDown(keyCode, event);
+    }
+
+    @OnClick(R.id.id_tool_bar_notification)
+    @Override
+    public void onClick(View v) {
+        Intent intent = new Intent(this, MessageActivity.class);
+        startActivity(intent);
     }
 }
