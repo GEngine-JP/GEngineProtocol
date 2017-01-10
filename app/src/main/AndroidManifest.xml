@@ -28,6 +28,7 @@
 
 
         <activity android:name=".activity.me.MessageActivity" />
+        <activity android:name=".activity.auth.LoginActivity" />
     </application>
 
 </manifest>
