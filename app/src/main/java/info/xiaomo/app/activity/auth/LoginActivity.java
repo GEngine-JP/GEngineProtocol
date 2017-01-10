@@ -6,12 +6,12 @@ import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
-import android.widget.AutoCompleteTextView;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import butterknife.BindView;
+import butterknife.OnClick;
 import info.xiaomo.app.R;
 import info.xiaomo.app.activity.MainActivity;
 import info.xiaomo.app.activity.base.BaseActivity;
@@ -21,20 +21,28 @@ import info.xiaomo.app.model.base.Result;
 import info.xiaomo.app.util.HttpUtil;
 import retrofit2.Call;
 
-public class LoginActivity extends BaseActivity implements HttpUtil.RetrofitCallBack<UserModel>, View.OnClickListener, TextView.OnEditorActionListener {
+public class LoginActivity extends BaseActivity implements
+        HttpUtil.RetrofitCallBack<UserModel>,
+        View.OnClickListener,
+        TextView.OnEditorActionListener {
 
-    private AutoCompleteTextView mEmailView;
-    private EditText mPasswordView;
+    @BindView(R.id.email)
+    EditText mEmailView;
+    @BindView(R.id.password)
+    EditText mPasswordView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
-        mPasswordView = (EditText) findViewById(R.id.password);
+        initView(savedInstanceState);
+
+    }
+
+    @Override
+    protected void initView(Bundle savedInstanceState) {
+        super.initView(savedInstanceState);
         mPasswordView.setOnEditorActionListener(this);
-        Button mSignInButton = (Button) findViewById(R.id.sign_in_button);
-        mSignInButton.setOnClickListener(this);
     }
 
     public void startRegister(View view) {
@@ -42,6 +50,7 @@ public class LoginActivity extends BaseActivity implements HttpUtil.RetrofitCall
         startActivity(intent);
     }
 
+    @OnClick(R.id.sign_in_button)
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
