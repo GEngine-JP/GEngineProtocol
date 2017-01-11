@@ -6,6 +6,7 @@ import android.support.annotation.LayoutRes;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import butterknife.ButterKnife;
 import info.xiaomo.app.R;
@@ -96,5 +97,13 @@ public abstract class BaseActivity extends LifeCycleActivity {
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void longToast(String msg) {
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+    }
+
+    public void shortToast(String msg) {
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
 }
