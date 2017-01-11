@@ -7,11 +7,11 @@ import android.widget.ListView;
 import butterknife.BindView;
 import butterknife.OnClick;
 import info.xiaomo.app.R;
-import info.xiaomo.app.activity.base.BaseActivity;
+import info.xiaomo.app.base.BaseActivity;
 import info.xiaomo.app.adapter.MessageListViewAdapter;
 import info.xiaomo.app.data.StaticData;
 import info.xiaomo.app.model.MessageModel;
-import info.xiaomo.app.model.base.Result;
+import info.xiaomo.app.base.Result;
 import info.xiaomo.app.util.HttpUtil;
 
 /**

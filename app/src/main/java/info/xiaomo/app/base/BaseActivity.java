@@ -1,4 +1,4 @@
-package info.xiaomo.app.activity.base;
+package info.xiaomo.app.base;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;

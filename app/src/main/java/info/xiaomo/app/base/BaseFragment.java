@@ -1,4 +1,4 @@
-package info.xiaomo.app.fragment.base;
+package info.xiaomo.app.base;
 
 
 import android.support.v4.app.Fragment;

@@ -13,7 +13,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-import info.xiaomo.app.model.base.Result;
+import info.xiaomo.app.base.Result;
 import okhttp3.Cache;
 import okhttp3.CacheControl;
 import okhttp3.Interceptor;

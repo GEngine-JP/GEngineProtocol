@@ -3,7 +3,7 @@ package info.xiaomo.app.api;
 import java.util.Map;
 
 import info.xiaomo.app.model.UserModel;
-import info.xiaomo.app.model.base.Result;
+import info.xiaomo.app.base.Result;
 import retrofit2.Call;
 import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;

@@ -12,7 +12,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import info.xiaomo.app.R;
-import info.xiaomo.app.adapter.base.BaseAdapter;
+import info.xiaomo.app.base.BaseAdapter;
 import info.xiaomo.app.model.WorkModel;
 
 /**

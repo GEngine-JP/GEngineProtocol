@@ -1,4 +1,4 @@
-package info.xiaomo.app.fragment;
+package info.xiaomo.app.activity.me;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,8 +10,7 @@ import android.view.ViewGroup;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import info.xiaomo.app.R;
-import info.xiaomo.app.activity.auth.LoginActivity;
-import info.xiaomo.app.fragment.base.BaseFragment;
+import info.xiaomo.app.base.BaseFragment;
 
 /**
  * @author 小莫 (https://xiaomo.info) (https://github.com/syoubaku)

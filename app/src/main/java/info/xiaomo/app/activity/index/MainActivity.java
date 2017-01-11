@@ -1,4 +1,4 @@
-package info.xiaomo.app.activity;
+package info.xiaomo.app.activity.index;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,14 +19,13 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.OnClick;
 import info.xiaomo.app.R;
-import info.xiaomo.app.activity.base.BaseActivity;
+import info.xiaomo.app.base.BaseActivity;
 import info.xiaomo.app.activity.me.MessageActivity;
 import info.xiaomo.app.adapter.ViewPagerAdapter;
-import info.xiaomo.app.fragment.IndexFragment;
-import info.xiaomo.app.fragment.MeFragment;
-import info.xiaomo.app.fragment.ProjectFragment;
-import info.xiaomo.app.fragment.WorkFragment;
-import info.xiaomo.app.model.base.Result;
+import info.xiaomo.app.activity.me.MeFragment;
+import info.xiaomo.app.activity.project.ProjectFragment;
+import info.xiaomo.app.activity.work.WorkFragment;
+import info.xiaomo.app.base.Result;
 import info.xiaomo.app.util.HttpUtil;
 import info.xiaomo.app.widget.BottomNavigationViewEx;
 

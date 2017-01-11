@@ -1,4 +1,4 @@
-package info.xiaomo.app.model.base;
+package info.xiaomo.app.base;
 
 /**
  * 返回数据基类

@@ -1,4 +1,4 @@
-package info.xiaomo.app.model.base;
+package info.xiaomo.app.base;
 
 public abstract class BaseModel {
 

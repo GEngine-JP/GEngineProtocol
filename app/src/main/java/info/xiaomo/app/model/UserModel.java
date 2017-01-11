@@ -1,7 +1,7 @@
 package info.xiaomo.app.model;
 
 
-import info.xiaomo.app.model.base.Result;
+import info.xiaomo.app.base.Result;
 
 public class UserModel extends Result {
 

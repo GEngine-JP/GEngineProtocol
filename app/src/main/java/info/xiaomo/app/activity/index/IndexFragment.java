@@ -1,4 +1,4 @@
-package info.xiaomo.app.fragment;
+package info.xiaomo.app.activity.index;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import info.xiaomo.app.R;
-import info.xiaomo.app.fragment.base.BaseFragment;
+import info.xiaomo.app.base.BaseFragment;
 
 /**
  * @author 小莫 (https://xiaomo.info) (https://github.com/syoubaku)

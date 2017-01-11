@@ -1,4 +1,4 @@
-package info.xiaomo.app.activity.auth;
+package info.xiaomo.app.activity.me;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,10 +12,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 import info.xiaomo.app.R;
-import info.xiaomo.app.activity.base.BaseActivity;
+import info.xiaomo.app.base.BaseActivity;
 import info.xiaomo.app.api.RegisterService;
 import info.xiaomo.app.model.UserModel;
-import info.xiaomo.app.model.base.Result;
+import info.xiaomo.app.base.Result;
 import info.xiaomo.app.util.HttpUtil;
 import retrofit2.Call;
 

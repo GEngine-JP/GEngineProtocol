@@ -1,6 +1,6 @@
 package info.xiaomo.app.model;
 
-import info.xiaomo.app.model.base.BaseModel;
+import info.xiaomo.app.base.BaseModel;
 
 /**
  * @author 小莫 (https://xiaomo.info) (https://github.com/syoubaku)
