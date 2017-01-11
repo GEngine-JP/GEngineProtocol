@@ -106,6 +106,7 @@
                     android:textSize="@dimen/sp_15" />
 
                 <Switch
+                    android:id="@+id/id_remind_switch"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
 
@@ -121,6 +122,7 @@
             android:background="@color/littleGray" />
         <!-- 清除缓存 -->
         <LinearLayout
+            android:id="@+id/id_clear_cache"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_50"
             android:background="@color/white"

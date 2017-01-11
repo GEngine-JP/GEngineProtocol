@@ -8,7 +8,7 @@ import java.util.Timer;
 import info.xiaomo.app.R;
 import info.xiaomo.app.activity.index.MainActivity;
 import info.xiaomo.app.base.BaseActivity;
-import info.xiaomo.app.task.TimeTask;
+import info.xiaomo.app.task.ShowIndexTask;
 
 /**
  * @author 小莫 (https://xiaomo.info) (https://github.com/syoubaku)
@@ -30,7 +30,7 @@ public class IndexActivity extends BaseActivity {
     protected void initView(Bundle savedInstanceState) {
         super.initView(savedInstanceState);
         Intent intent = new Intent(this, MainActivity.class);
-        TimeTask timeTask = new TimeTask(this, intent);
-        new Timer().schedule(timeTask, DELAY_TIME);
+        ShowIndexTask showIndexTask = new ShowIndexTask(this, intent);
+        new Timer().schedule(showIndexTask, DELAY_TIME);
     }
 }

@@ -28,8 +28,11 @@
     <string name="about_us">关于我们</string>
     <string name="update_password">修改密码</string>
     <string name="clear_cache">清除缓存</string>
-    <string name="work_time">2017-01-10 15:35</string>
+    <string name="work_time">2017–01–10 15:35</string>
     <string name="love_count">2141人收录</string>
+    <string name="open_message_info">您己开启消息提醒</string>
+    <string name="close_message_info">您己关闭消息提醒</string>
+    <string name="clear_cache_finish">己清除缓存</string>
 
 
 </resources>

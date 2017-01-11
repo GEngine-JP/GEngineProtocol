@@ -10,13 +10,13 @@ import java.util.TimerTask;
  * @version : 2017/1/10 10:36
  */
 
-public class TimeTask extends TimerTask {
+public class ShowIndexTask extends TimerTask {
 
 
     private Activity activity;
     private Intent intent;
 
-    public TimeTask(Activity activity, Intent intent) {
+    public ShowIndexTask(Activity activity, Intent intent) {
         this.activity = activity;
         this.intent = intent;
     }
