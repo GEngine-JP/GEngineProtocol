@@ -1,4 +1,4 @@
-package info.xiaomo.app.activity.index;
+package info.xiaomo.app.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,6 +19,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.OnClick;
 import info.xiaomo.app.R;
+import info.xiaomo.app.activity.index.IndexFragment;
 import info.xiaomo.app.base.BaseActivity;
 import info.xiaomo.app.activity.me.MessageActivity;
 import info.xiaomo.app.adapter.ViewPagerAdapter;

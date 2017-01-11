@@ -5,11 +5,43 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tvInfo1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:textSize="22sp"
-        tools:text="info" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/dp_20">
+
+        <TextView
+            android:id="@+id/id_date_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/dp_20"
+            tools:text="2017-01-11" />
+
+        <TextView
+            android:id="@+id/id_nongli_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/dp_20"
+            tools:text="农历腊月初三 周五" />
+
+        <TextView
+            android:id="@+id/id_now_tq_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/dp_20"
+            tools:text="晴" />
+
+        <TextView
+            android:id="@+id/id_now_wd_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/dp_20"
+            tools:text="温度：5" />
+    </LinearLayout>
+
 </RelativeLayout>

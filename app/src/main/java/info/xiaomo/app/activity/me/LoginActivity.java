@@ -13,7 +13,7 @@ import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.OnClick;
 import info.xiaomo.app.R;
-import info.xiaomo.app.activity.index.MainActivity;
+import info.xiaomo.app.activity.MainActivity;
 import info.xiaomo.app.base.BaseActivity;
 import info.xiaomo.app.api.LoginService;
 import info.xiaomo.app.model.UserModel;

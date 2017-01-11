@@ -21,21 +21,15 @@ import info.xiaomo.app.base.BaseFragment;
 
 public class ProjectFragment extends BaseFragment implements View.OnClickListener{
 
-    @BindView(R.id.tvInfo2)
-    TextView textView;
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_project, container,false);
         ButterKnife.bind(this,view);
-        textView.setText(R.string.project);
         return view;
     }
 
-    @OnClick(R.id.tvInfo2)
     @Override
     public void onClick(View v) {
-        Snackbar.make(v, "hello", Snackbar.LENGTH_SHORT).show();
     }
 }

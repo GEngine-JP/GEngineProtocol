@@ -6,7 +6,7 @@ import android.os.Bundle;
 import java.util.Timer;
 
 import info.xiaomo.app.R;
-import info.xiaomo.app.activity.index.MainActivity;
+import info.xiaomo.app.activity.MainActivity;
 import info.xiaomo.app.base.BaseActivity;
 import info.xiaomo.app.task.ShowIndexTask;
 

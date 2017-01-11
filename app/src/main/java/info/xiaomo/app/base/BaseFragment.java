@@ -1,9 +1,11 @@
 package info.xiaomo.app.base;
 
 
-import android.app.ProgressDialog;
 import android.support.v4.app.Fragment;
+import android.view.View;
 import android.widget.Toast;
+
+import butterknife.ButterKnife;
 
 /**
  * @author 小莫 (https://xiaomo.info) (https://github.com/syoubaku)
@@ -24,5 +26,9 @@ public class BaseFragment extends Fragment {
 
     public void shortToast(String msg) {
         Toast.makeText(getContext(), msg, Toast.LENGTH_SHORT).show();
+    }
+
+    public void initView(View view) {
+        ButterKnife.bind(this, view);
     }
 }
