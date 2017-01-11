@@ -48,5 +48,7 @@ dependencies {
     compile 'com.jakewharton:butterknife:8.4.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
     testCompile 'junit:junit:4.12'
+    // 本地jar包
     compile files('libs/Bughd_android_sdk_v1.3.7.jar')
+    compile files('libs/thinkpage_sdk_v_1_0_1.jar')
 }
