@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import butterknife.ButterKnife;
+import info.xiaomo.app.util.HttpUtil;
 
 /**
  * @author 小莫 (https://xiaomo.info) (https://github.com/syoubaku)
@@ -14,10 +15,11 @@ import butterknife.ButterKnife;
 
 public class BaseFragment extends Fragment {
 
-//    protected ProgressDialog dialog;
+    public HttpUtil httpUtil;
+
 
     public BaseFragment() {
-//        dialog = new ProgressDialog(getContext());
+        httpUtil = HttpUtil.getInstance(getContext());
     }
 
     public void longToast(String msg) {
