@@ -159,7 +159,7 @@ public class MainActivity extends BaseActivity implements
      */
     @Override
     public void onPageScrollStateChanged(int state) {
-        // 如果想禁止滑动，可以把下面的代码取消注释
+        // 如果不禁止滑动，可以把下面的代码取消注释
         contentViewPager.setOnTouchListener(this);
     }
 
