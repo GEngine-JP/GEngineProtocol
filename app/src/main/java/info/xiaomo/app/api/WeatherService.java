@@ -1,6 +1,5 @@
 package info.xiaomo.app.api;
 
-import info.xiaomo.app.base.Result;
 import info.xiaomo.app.model.WeatherModel;
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -16,6 +15,6 @@ public interface WeatherService {
 
     @GET("https://api.thinkpage.cn/v3/weather/now.json?key=8UJKR2M1RZ&language=zh-Hans&unit=c")
     @Headers("Cache-Control: public, max-age=30")
-    Call<Result<WeatherModel>> getWeather(@Query("location") String location);
+    Call<WeatherModel> getWeather(@Query("location") String location);
 
 }

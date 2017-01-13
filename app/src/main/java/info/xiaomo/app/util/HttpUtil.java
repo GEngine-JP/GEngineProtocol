@@ -14,6 +14,8 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import info.xiaomo.app.base.Result;
+import info.xiaomo.app.constant.CallBackType;
+import info.xiaomo.app.model.WeatherModel;
 import okhttp3.Cache;
 import okhttp3.CacheControl;
 import okhttp3.Interceptor;
@@ -111,6 +113,19 @@ public class HttpUtil implements HttpLoggingInterceptor.Logger, Interceptor {
      */
     public <T> void enqueueCall(Call<Result<T>> call, final RetrofitCallBack<T> retrofitCallBack) {
         call.enqueue(new HttpCallBack<>(retrofitCallBack));
+    }
+
+    public <T> void enqueueCall(Call<T> call, final RetrofitCallBack<T> retrofitCallBack, int type) {
+        Callback callback;
+        switch (type) {
+            case CallBackType.WEATHER:
+                callback = new WeatherCallBack((RetrofitCallBack<WeatherModel>) retrofitCallBack);
+                break;
+            default:
+                callback = new HttpCallBack<>(retrofitCallBack);
+                break;
+        }
+        call.enqueue(callback);
     }
 
     @Override
@@ -258,6 +273,40 @@ public class HttpUtil implements HttpLoggingInterceptor.Logger, Interceptor {
 
         @Override
         public void onFailure(Call<Result<T>> call, Throwable t) {
+            if (retrofitCallBack != null) {
+                retrofitCallBack.onFailure(t.toString());
+            }
+        }
+    }
+
+
+    private class WeatherCallBack implements Callback<WeatherModel> {
+
+        RetrofitCallBack<WeatherModel> retrofitCallBack;
+
+        WeatherCallBack(RetrofitCallBack<WeatherModel> retrofitCallBack) {
+            this.retrofitCallBack = retrofitCallBack;
+        }
+
+        @Override
+        public void onResponse(Call<WeatherModel> call, Response<WeatherModel> response) {
+            Result<WeatherModel> result = new Result<>();
+            WeatherModel resp = response.body();
+            if (resp == null) {
+                Toast.makeText(mContext, "暂时没有最新数据!", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            try {
+                resp.init();
+                result.setData(resp);
+                retrofitCallBack.onSuccess(result);
+            } catch (Exception e) {
+                retrofitCallBack.onFailure(result.getMessage());
+            }
+        }
+
+        @Override
+        public void onFailure(Call<WeatherModel> call, Throwable t) {
             if (retrofitCallBack != null) {
                 retrofitCallBack.onFailure(t.toString());
             }

@@ -8,17 +8,36 @@ public class Result<T> {
     /**
      * 成功失败的返回码
      */
-    private int resultCode;
+    private int resultCode = 200;
 
     /**
      * 成功失败的返回消息
      */
-    private String message;
+    private String message = "SUCCESS";
 
     /**
      * 实体消息
      */
     private T data;
+
+    public Result() {
+
+    }
+
+    public Result(int resultCode) {
+        this.resultCode = resultCode;
+    }
+
+    public Result(int resultCode, String message) {
+        this.resultCode = resultCode;
+        this.message = message;
+    }
+
+    public Result(int resultCode, String message, T data) {
+        this.resultCode = resultCode;
+        this.message = message;
+        this.data = data;
+    }
 
     public int getResultCode() {
         return resultCode;
@@ -41,21 +60,6 @@ public class Result<T> {
     }
 
     public void setData(T data) {
-        this.data = data;
-    }
-
-    public Result(int resultCode) {
-        this.resultCode = resultCode;
-    }
-
-    public Result(int resultCode, String message) {
-        this.resultCode = resultCode;
-        this.message = message;
-    }
-
-    public Result(int resultCode, String message, T data) {
-        this.resultCode = resultCode;
-        this.message = message;
         this.data = data;
     }
 }

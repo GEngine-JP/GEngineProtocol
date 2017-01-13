@@ -12,6 +12,7 @@ import info.xiaomo.app.R;
 import info.xiaomo.app.api.WeatherService;
 import info.xiaomo.app.base.BaseFragment;
 import info.xiaomo.app.base.Result;
+import info.xiaomo.app.constant.CallBackType;
 import info.xiaomo.app.model.WeatherModel;
 import info.xiaomo.app.util.HttpUtil;
 import info.xiaomo.app.util.TimeUtil;
@@ -23,8 +24,7 @@ import retrofit2.Call;
  */
 
 public class IndexFragment extends BaseFragment
-        implements HttpUtil.RetrofitCallBack<WeatherModel>
-{
+        implements HttpUtil.RetrofitCallBack<WeatherModel> {
 
     @BindView(R.id.id_date_text_view)
     TextView dateTextView;
@@ -49,18 +49,16 @@ public class IndexFragment extends BaseFragment
         super.initView(view);
         dateTextView.setText(TimeUtil.getNowTimeWithPattern(TimeUtil.DATE_PATTERN));
         nlDateTextView.setText("农历腊月初三 周五");
-        tqTextView.setText("小雪");
-        wdTextView.setText("温度：5");
         WeatherService apiService = httpUtil.getAPIService(WeatherService.class);
-        Call<Result<WeatherModel>> resp = apiService.getWeather("shiyan");
-        httpUtil.enqueueCall(resp,this);
+        Call<WeatherModel> resp = apiService.getWeather("hangzhou");
+        httpUtil.enqueueCall(resp, this, CallBackType.WEATHER);
     }
 
     @Override
     public void onSuccess(Result<WeatherModel> result) {
         WeatherModel data = result.getData();
-//        tqTextView.setText(data.getWeather());
-//        wdTextView.setText(data.getTemperature());
+        tqTextView.setText(data.getWeather());
+        wdTextView.setText(data.getTemperature());
     }
 
     @Override
