@@ -30,13 +30,13 @@ public class MeFragment extends BaseFragment implements View.OnClickListener, Co
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_me, container, false);
         initView(view);
-        switchView.setOnCheckedChangeListener(this);
         return view;
     }
 
     @Override
     public void initView(View view) {
         super.initView(view);
+        switchView.setOnCheckedChangeListener(this);
     }
 
     @OnClick({R.id.id_not_login_layout, R.id.id_clear_cache})
