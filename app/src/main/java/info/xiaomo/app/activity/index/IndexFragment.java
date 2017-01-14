@@ -27,12 +27,16 @@ import retrofit2.Call;
 public class IndexFragment extends BaseFragment
         implements HttpUtil.RetrofitCallBack<WeatherModel> {
 
+    // 公历日期
     @BindView(R.id.id_date_text_view)
     TextView dateTextView;
+    // 农历日期
     @BindView(R.id.id_nongli_text_view)
     TextView nlDateTextView;
+    // 现在的天气
     @BindView(R.id.id_now_tq_text_view)
     TextView tqTextView;
+    // 现在的温度
     @BindView(R.id.id_now_wd_text_view)
     TextView wdTextView;
 

@@ -22,6 +22,7 @@ import info.xiaomo.app.base.BaseFragment;
 
 public class WorkFragment extends BaseFragment implements View.OnClickListener {
 
+    //项目列表
     @BindView(R.id.id_work_list_view)
     ListView workListView;
 

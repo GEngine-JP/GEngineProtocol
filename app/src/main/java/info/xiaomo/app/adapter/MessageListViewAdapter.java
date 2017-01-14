@@ -10,7 +10,6 @@ import android.widget.TextView;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import info.xiaomo.app.R;
 import info.xiaomo.app.base.BaseAdapter;
 import info.xiaomo.app.model.MessageModel;
@@ -47,7 +46,7 @@ public class MessageListViewAdapter extends BaseAdapter<MessageModel> {
         return convertView;
     }
 
-    public static class ViewHolder {
+    public static class ViewHolder extends Holder {
         @BindView(R.id.id_chat_item_icon)
         ImageView pic;
         @BindView(R.id.id_chat_item_name)
@@ -58,7 +57,7 @@ public class MessageListViewAdapter extends BaseAdapter<MessageModel> {
         TextView sendTime;
 
         ViewHolder(View view) {
-            ButterKnife.bind(this,view);
+            super(view);
         }
     }
 

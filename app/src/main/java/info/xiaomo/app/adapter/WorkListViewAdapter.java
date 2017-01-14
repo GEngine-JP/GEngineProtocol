@@ -10,7 +10,6 @@ import android.widget.TextView;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import info.xiaomo.app.R;
 import info.xiaomo.app.base.BaseAdapter;
 import info.xiaomo.app.model.WorkModel;
@@ -47,7 +46,7 @@ public class WorkListViewAdapter extends BaseAdapter<WorkModel> {
         return convertView;
     }
 
-    public static class ViewHolder {
+    public static class ViewHolder extends Holder {
         @BindView(R.id.id_work_item_icon)
         ImageView pic;
         @BindView(R.id.id_work_item_title)
@@ -58,8 +57,9 @@ public class WorkListViewAdapter extends BaseAdapter<WorkModel> {
         TextView time;
 
         ViewHolder(View view) {
-            ButterKnife.bind(this, view);
+            super(view);
         }
+
     }
 
 }

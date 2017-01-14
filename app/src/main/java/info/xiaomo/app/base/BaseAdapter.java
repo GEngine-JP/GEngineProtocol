@@ -5,6 +5,8 @@ import android.view.ViewGroup;
 
 import java.util.List;
 
+import butterknife.ButterKnife;
+
 /**
  * @author 小莫 (https://xiaomo.info) (https://github.com/syoubaku)
  * @version : 2017/1/9 9:58
@@ -38,4 +40,11 @@ public class BaseAdapter<T> extends android.widget.BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         return null;
     }
+
+    public static class Holder {
+        public Holder(View view) {
+            ButterKnife.bind(this, view);
+        }
+    }
+
 }

@@ -23,8 +23,8 @@ import butterknife.BindView;
 import butterknife.OnClick;
 import info.xiaomo.app.R;
 import info.xiaomo.app.activity.index.IndexFragment;
-import info.xiaomo.app.activity.set.SetFragment;
 import info.xiaomo.app.activity.project.ProjectFragment;
+import info.xiaomo.app.activity.set.SetFragment;
 import info.xiaomo.app.activity.work.WorkFragment;
 import info.xiaomo.app.adapter.ViewPagerAdapter;
 import info.xiaomo.app.base.BaseActivity;
@@ -50,7 +50,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
 
     ActionBarDrawerToggle toggle;//菜单按钮
     List<Fragment> fragmentList; // fragment列表
-    private long exitTime = 0; //
+    private long exitTime = 0; // 退出按钮时间记录
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

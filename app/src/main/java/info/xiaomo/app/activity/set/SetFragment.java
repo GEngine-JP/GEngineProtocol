@@ -28,12 +28,16 @@ import info.xiaomo.app.util.RandomUtil;
 public class SetFragment extends BaseFragment implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
 
     private static final long CLEAR_CACHE_TIME = 5 * 1000;
+    // 消息提醒开关
     @BindView(R.id.id_remind_switch)
     Switch switchView;
+    // 版本号
     @BindView(R.id.id_new_version_number)
     TextView newVersionTextView;
+    // 清缓存进度条
     @BindView(R.id.set_progressbar)
     ProgressBar progressBar;
+    // 缓存数量
     @BindView(R.id.id_trash_count)
     TextView trashTextView;
 
