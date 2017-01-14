@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="@dimen/dp_40"
     android:background="@color/gray"
@@ -8,29 +8,21 @@
 
     <ImageView
         android:id="@+id/id_tool_bar_menu"
-        android:layout_width="@dimen/dp_25"
-        android:layout_height="@dimen/dp_25"
+        android:layout_marginStart="@dimen/dp_5"
+        android:layout_width="@dimen/dp_35"
+        android:layout_height="@dimen/dp_35"
         android:layout_gravity="clip_vertical"
-        android:layout_weight="1"
         android:src="@drawable/ic_menu_white_36dp" />
 
 
     <TextView
         android:id="@+id/id_tool_bar_title"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="10"
         android:gravity="center"
         android:text="@string/xiaomo"
         android:textColor="@color/white"
         android:textSize="@dimen/sp_20" />
 
 
-    <ImageView
-        android:layout_width="@dimen/dp_25"
-        android:layout_height="@dimen/dp_25"
-        android:layout_gravity="center_vertical"
-        android:layout_weight="1"
-        android:src="@drawable/ic_settings_white_24dp" />
-
-</LinearLayout>
+</RelativeLayout>
