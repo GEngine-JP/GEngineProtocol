@@ -31,12 +31,7 @@ import info.xiaomo.app.adapter.ViewPagerAdapter;
 import info.xiaomo.app.base.BaseActivity;
 import info.xiaomo.app.widget.BottomNavigationViewEx;
 
-public class MainActivity extends BaseActivity implements
-        BottomNavigationView.OnNavigationItemSelectedListener,
-        View.OnClickListener,
-        ViewPager.OnPageChangeListener,
-        NavigationView.OnNavigationItemSelectedListener,
-        View.OnTouchListener {
+public class MainActivity extends BaseActivity implements View.OnClickListener, View.OnTouchListener {
 
     // 底部菜单
     @BindView(R.id.bottom_nav)
@@ -54,17 +49,15 @@ public class MainActivity extends BaseActivity implements
     @BindView(R.id.navigation_view)
     NavigationView navigationView;
 
-    ActionBarDrawerToggle toggle;
-    List<Fragment> fragmentList;
-    String currentTitle;
-    private long exitTime = 0;
+    ActionBarDrawerToggle toggle;//菜单按钮
+    List<Fragment> fragmentList; // fragment列表
+    private long exitTime = 0; //
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initView(savedInstanceState);
-        currentTitle = (String) getTitle();
     }
 
     /**
@@ -78,6 +71,34 @@ public class MainActivity extends BaseActivity implements
         initBottomNavigationView();
         initViewPager();
         initDrawerLayout();
+        initNavigationView();
+    }
+
+    /**
+     * 设置侧滑菜单相关内容
+     */
+    private void initNavigationView() {
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.bottom_nav_xiaomo:
+                        contentViewPager.setCurrentItem(0);
+                        break;
+                    case R.id.bottom_nav_project:
+                        contentViewPager.setCurrentItem(1);
+                        break;
+                    case R.id.bottom_nav_work:
+                        contentViewPager.setCurrentItem(2);
+                        break;
+                    case R.id.bottom_nav_me:
+                        contentViewPager.setCurrentItem(3);
+                        break;
+                }
+                toggleNav();
+                return false;
+            }
+        });
     }
 
 
@@ -85,101 +106,107 @@ public class MainActivity extends BaseActivity implements
      * 设置底部底部导航相关内容
      */
     private void initBottomNavigationView() {
-        bottomNavigationView.setOnNavigationItemSelectedListener(this);
         bottomNavigationView.enableAnimation(false);
         bottomNavigationView.enableItemShiftingMode(false);
         bottomNavigationView.enableShiftingMode(false);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            /**
+             * 底部导航被选中时的操作
+             *
+             * @param item item 被选中的item
+             * @return 是否操作完成
+             */
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.bottom_nav_xiaomo:
+                        contentViewPager.setCurrentItem(0);
+                        break;
+                    case R.id.bottom_nav_project:
+                        contentViewPager.setCurrentItem(1);
+                        break;
+                    case R.id.bottom_nav_work:
+                        contentViewPager.setCurrentItem(2);
+                        break;
+                    case R.id.bottom_nav_me:
+                        contentViewPager.setCurrentItem(3);
+                        break;
+                }
+                return true;
+
+            }
+        });
     }
 
     /**
      * 设置viewPager相关内容
      */
     private void initViewPager() {
-        IndexFragment indexFragment = new IndexFragment();
-        ProjectFragment projectFragment = new ProjectFragment();
-        WorkFragment workFragment = new WorkFragment();
-        MeFragment meFragment = new MeFragment();
         fragmentList = new ArrayList<>();
+
+        IndexFragment indexFragment = new IndexFragment();
         fragmentList.add(indexFragment);
+
+        ProjectFragment projectFragment = new ProjectFragment();
         fragmentList.add(projectFragment);
+
+        WorkFragment workFragment = new WorkFragment();
         fragmentList.add(workFragment);
+
+        MeFragment meFragment = new MeFragment();
         fragmentList.add(meFragment);
-        contentViewPager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager(), fragmentList));
-        contentViewPager.addOnPageChangeListener(this);
+
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager(), fragmentList);
+        contentViewPager.setAdapter(adapter);
+        contentViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            /**
+             * viewPager滑动时的操作
+             *
+             * @param position             position
+             * @param positionOffset       positionOffset
+             * @param positionOffsetPixels positionOffsetPixels
+             */
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            /**
+             * viewPager中当前fragment被选中时设置actionBar的标题
+             *
+             * @param position position
+             */
+            @Override
+            public void onPageSelected(int position) {
+                switch (position) {
+                    case 0:
+                        titleTextView.setText(R.string.xiaomo);
+                        break;
+                    case 1:
+                        titleTextView.setText(R.string.project);
+                        break;
+                    case 2:
+                        titleTextView.setText(R.string.work);
+                        break;
+                    case 3:
+                        titleTextView.setText(R.string.me);
+                        break;
+                }
+            }
+
+            /**
+             * viewPager当页面滑动状态改变时
+             *
+             * @param state state
+             */
+            @Override
+            public void onPageScrollStateChanged(int state) {
+                // 如果不禁止滑动，可以把下面的代码取消注释
+                contentViewPager.setOnTouchListener(MainActivity.this);
+            }
+        });
     }
 
-
-    /**
-     * 底部导航被选中时的操作
-     *
-     * @param item item 被选中的item
-     * @return 是否操作完成
-     */
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.bottom_nav_xiaomo:
-                contentViewPager.setCurrentItem(0);
-                break;
-            case R.id.bottom_nav_project:
-                contentViewPager.setCurrentItem(1);
-                break;
-            case R.id.bottom_nav_work:
-                contentViewPager.setCurrentItem(2);
-                break;
-            case R.id.bottom_nav_me:
-                contentViewPager.setCurrentItem(3);
-                break;
-        }
-        return true;
-
-    }
-
-    /**
-     * viewPager滑动时的操作
-     *
-     * @param position             position
-     * @param positionOffset       positionOffset
-     * @param positionOffsetPixels positionOffsetPixels
-     */
-    @Override
-    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-    }
-
-    /**
-     * viewPager中当前fragment被选中时设置actionBar的标题
-     *
-     * @param position position
-     */
-    @Override
-    public void onPageSelected(int position) {
-        switch (position) {
-            case 0:
-                titleTextView.setText(R.string.xiaomo);
-                break;
-            case 1:
-                titleTextView.setText(R.string.project);
-                break;
-            case 2:
-                titleTextView.setText(R.string.work);
-                break;
-            case 3:
-                titleTextView.setText(R.string.me);
-                break;
-        }
-    }
-
-    /**
-     * viewPager当页面滑动状态改变时
-     *
-     * @param state state
-     */
-    @Override
-    public void onPageScrollStateChanged(int state) {
-        // 如果不禁止滑动，可以把下面的代码取消注释
-        contentViewPager.setOnTouchListener(this);
-    }
 
     /**
      * 触摸时(作用是禁止viewPager的滑动)
