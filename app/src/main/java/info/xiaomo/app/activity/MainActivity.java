@@ -188,7 +188,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                         titleTextView.setText(R.string.work);
                         break;
                     case 3:
-                        titleTextView.setText(R.string.me);
+                        titleTextView.setText(R.string.setting);
                         break;
                 }
             }

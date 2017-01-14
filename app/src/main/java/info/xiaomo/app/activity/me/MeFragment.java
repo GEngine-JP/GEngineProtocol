@@ -1,6 +1,5 @@
 package info.xiaomo.app.activity.me;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -28,7 +27,7 @@ public class MeFragment extends BaseFragment implements View.OnClickListener, Co
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_me, container, false);
+        View view = inflater.inflate(R.layout.fragment_set, container, false);
         initView(view);
         return view;
     }
@@ -39,14 +38,14 @@ public class MeFragment extends BaseFragment implements View.OnClickListener, Co
         switchView.setOnCheckedChangeListener(this);
     }
 
-    @OnClick({R.id.id_not_login_layout, R.id.id_clear_cache})
+    @OnClick({ R.id.id_clear_cache})
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.id_not_login_layout:
-                Intent intent = new Intent(getActivity(), LoginActivity.class);
-                startActivity(intent);
-                break;
+//            case R.id.id_not_login_layout:
+//                Intent intent = new Intent(getActivity(), LoginActivity.class);
+//                startActivity(intent);
+//                break;
             case R.id.id_clear_cache:
 //                dialog.show();
 //                ShowClearCacheProgressBarTask task = new ShowClearCacheProgressBarTask(this, dialog);
