@@ -10,7 +10,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.Gravity;
 import android.view.KeyEvent;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
@@ -296,33 +295,5 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
             drawerLayout.openDrawer(Gravity.START);
         }
 
-    }
-
-    /**
-     * 当客户点击MENU按钮的时候，调用该方法(来自于父级activity的方法)
-     *
-     * @param menu menu
-     * @return 是否操作完成
-     */
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_bottom_nav, menu);
-        return true;
-    }
-
-    /**
-     * 当客户点击菜单当中的某一个选项时，会调用该方法(来自于父级activity的方法)
-     *
-     * @param item item
-     * @return 是否操作完成
-     */
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                toggleNav();
-                break;
-        }
-        return true;
     }
 }

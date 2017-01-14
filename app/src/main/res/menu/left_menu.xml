@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/bottom_nav_xiaomo"
+        android:enabled="true"
+        android:icon="@drawable/ic_recent_actors_black_36dp"
+        android:title="@string/acount_info"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/bottom_nav_project"
+        android:enabled="true"
+        android:icon="@drawable/contact_list_pressed"
+        android:title="@string/person_archives"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/bottom_nav_work"
+        android:enabled="true"
+        android:icon="@drawable/ic_people_black_36dp"
+        android:title="@string/friend"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/bottom_nav_me"
+        android:enabled="true"
+        android:icon="@drawable/ic_redeem_black_36dp"
+        android:title="@string/achievement"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/id_account_state"
+        android:enabled="true"
+        android:icon="@drawable/ic_undo_black_36dp"
+        android:title="@string/exit_login"
+        app:showAsAction="ifRoom" />
+
+</menu>

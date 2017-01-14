@@ -34,6 +34,11 @@
     <string name="close_message_info">您己关闭消息提醒</string>
     <string name="clear_cache_finish">己清除缓存</string>
     <string name="temperatureStr">温度：</string>
+    <string name="acount_info">帐号信息</string>
+    <string name="person_archives">个人档案</string>
+    <string name="friend">我的好友</string>
+    <string name="achievement">成  就</string>
+    <string name="exit_login">退出登录</string>
 
 
 </resources>
