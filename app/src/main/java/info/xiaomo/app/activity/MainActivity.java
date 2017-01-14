@@ -23,7 +23,7 @@ import butterknife.BindView;
 import butterknife.OnClick;
 import info.xiaomo.app.R;
 import info.xiaomo.app.activity.index.IndexFragment;
-import info.xiaomo.app.activity.me.SetFragment;
+import info.xiaomo.app.activity.set.SetFragment;
 import info.xiaomo.app.activity.project.ProjectFragment;
 import info.xiaomo.app.activity.work.WorkFragment;
 import info.xiaomo.app.adapter.ViewPagerAdapter;

@@ -15,20 +15,21 @@ import info.xiaomo.app.util.AppUtil;
 
 public class ShowClearCacheProgressBarTask extends TimerTask {
 
-    private View view;
+    private View[] views;
     private Context context;
 
-    public ShowClearCacheProgressBarTask(Context context, View view) {
-        this.view = view;
+    public ShowClearCacheProgressBarTask(Context context, View... views) {
+        this.views = views;
         this.context = context;
     }
 
     @Override
     public void run() {
-        view.post(new Runnable() {
+        views[0].post(new Runnable() {
             @Override
             public void run() {
-                view.setVisibility(View.INVISIBLE);
+                views[0].setVisibility(View.INVISIBLE);
+                views[1].setVisibility(View.INVISIBLE);
                 AppUtil.shortToast(context, context.getResources().getString(R.string.clear_cache_finish));
             }
         });

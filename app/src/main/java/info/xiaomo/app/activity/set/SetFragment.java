@@ -1,4 +1,4 @@
-package info.xiaomo.app.activity.me;
+package info.xiaomo.app.activity.set;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -18,6 +18,7 @@ import info.xiaomo.app.R;
 import info.xiaomo.app.base.BaseFragment;
 import info.xiaomo.app.task.ShowClearCacheProgressBarTask;
 import info.xiaomo.app.util.AppUtil;
+import info.xiaomo.app.util.RandomUtil;
 
 /**
  * @author 小莫 (https://xiaomo.info) (https://github.com/syoubaku)
@@ -33,6 +34,8 @@ public class SetFragment extends BaseFragment implements View.OnClickListener, C
     TextView newVersionTextView;
     @BindView(R.id.set_progressbar)
     ProgressBar progressBar;
+    @BindView(R.id.id_trash_count)
+    TextView trashTextView;
 
     @Nullable
     @Override
@@ -47,6 +50,8 @@ public class SetFragment extends BaseFragment implements View.OnClickListener, C
         super.initView(view);
         switchView.setOnCheckedChangeListener(this);
         newVersionTextView.setText(AppUtil.getAppVersionName(getContext()));
+        String text = RandomUtil.nextDouble(1, 100, 1) + "M";
+        trashTextView.setText(text);
     }
 
     @OnClick({R.id.id_clear_cache})
@@ -55,7 +60,7 @@ public class SetFragment extends BaseFragment implements View.OnClickListener, C
         switch (v.getId()) {
             case R.id.id_clear_cache:
                 progressBar.setVisibility(View.VISIBLE);
-                ShowClearCacheProgressBarTask task = new ShowClearCacheProgressBarTask(getContext(), progressBar);
+                ShowClearCacheProgressBarTask task = new ShowClearCacheProgressBarTask(getContext(), progressBar,trashTextView);
                 new Timer().schedule(task, CLEAR_CACHE_TIME);
         }
     }

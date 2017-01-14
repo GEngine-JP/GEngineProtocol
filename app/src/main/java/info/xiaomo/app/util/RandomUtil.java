@@ -7,9 +7,16 @@
 package info.xiaomo.app.util;
 
 
-import android.util.Log;
+import android.os.Build;
 
-import java.util.*;
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
@@ -20,14 +27,43 @@ import java.util.concurrent.ThreadLocalRandom;
 public class RandomUtil {
 
     private static final String TAG = "RandomUtil";
+
     /**
      * 随机产生min到max之间的一个整数值，包含min和max
      */
     public static int random(int min, int max) {
+        int i = 0;
         if (min > max) {
             throw new IllegalArgumentException("传入的范围不合法!最小值不能大于最大值！");
         }
-        return ThreadLocalRandom.current().nextInt(max - min + 1) + min;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            i = ThreadLocalRandom.current().nextInt(max - min + 1) + min;
+            return i;
+        }
+        return i;
+    }
+
+
+    /**
+     * 随机产生min到max之间的一个整数值，包含min和max，保留几位小数
+     */
+    public static String nextDouble(final double min, final double max, int remain) {
+        if (max < min) {
+            try {
+                throw new Exception("min < max");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        if (min == max) {
+            return "";
+        }
+        String pattern = "#.";
+        for (int i = 0; i < remain; i++) {
+            pattern = pattern + "0";
+        }
+        double v = min + ((max - min) * new Random().nextDouble());
+        return new DecimalFormat(pattern).format(v);
     }
 
     /**
@@ -138,6 +174,6 @@ public class RandomUtil {
     public static void main(String[] args) {
         String salt = createSalt();
         System.out.println(salt);
-        System.out.println(MD5Util.md5("xiaomo",salt));
+        System.out.println(MD5Util.md5("xiaomo", salt));
     }
 }

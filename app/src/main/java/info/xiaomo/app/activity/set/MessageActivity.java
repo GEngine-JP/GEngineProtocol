@@ -1,4 +1,4 @@
-package info.xiaomo.app.activity.me;
+package info.xiaomo.app.activity.set;
 
 import android.os.Bundle;
 import android.view.View;

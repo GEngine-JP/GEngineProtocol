@@ -27,7 +27,7 @@
         <activity android:name=".activity.MainActivity" />
 
 
-        <activity android:name=".activity.me.MessageActivity" />
+        <activity android:name=".activity.set.MessageActivity" />
         <activity android:name=".activity.left.LoginActivity" />
     </application>
 
