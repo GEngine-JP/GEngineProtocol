@@ -33,6 +33,7 @@
     <string name="open_message_info">您己开启消息提醒</string>
     <string name="close_message_info">您己关闭消息提醒</string>
     <string name="clear_cache_finish">己清除缓存</string>
+    <string name="temperatureStr">温度：</string>
 
 
 </resources>

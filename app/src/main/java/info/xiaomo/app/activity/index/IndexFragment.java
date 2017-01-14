@@ -15,6 +15,7 @@ import info.xiaomo.app.base.Result;
 import info.xiaomo.app.constant.CallBackType;
 import info.xiaomo.app.model.WeatherModel;
 import info.xiaomo.app.util.HttpUtil;
+import info.xiaomo.app.util.LunarCalendarUtil;
 import info.xiaomo.app.util.TimeUtil;
 import retrofit2.Call;
 
@@ -48,7 +49,7 @@ public class IndexFragment extends BaseFragment
     public void initView(View view) {
         super.initView(view);
         dateTextView.setText(TimeUtil.getNowTimeWithPattern(TimeUtil.DATE_PATTERN));
-        nlDateTextView.setText("农历腊月初三 周五");
+        nlDateTextView.setText(LunarCalendarUtil.solarToLunar());
         WeatherService apiService = httpUtil.getAPIService(WeatherService.class);
         Call<WeatherModel> resp = apiService.getWeather("hangzhou");
         httpUtil.enqueueCall(resp, this, CallBackType.WEATHER);
@@ -58,7 +59,8 @@ public class IndexFragment extends BaseFragment
     public void onSuccess(Result<WeatherModel> result) {
         WeatherModel data = result.getData();
         tqTextView.setText(data.getWeather());
-        wdTextView.setText(data.getTemperature());
+        String wd = getResources().getString(R.string.temperatureStr) + data.getTemperature();
+        wdTextView.setText(wd);
     }
 
     @Override
