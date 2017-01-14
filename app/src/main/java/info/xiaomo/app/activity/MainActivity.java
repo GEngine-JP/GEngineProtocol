@@ -96,7 +96,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                         break;
                 }
                 toggleNav();
-                return false;
+                return true;
             }
         });
     }
