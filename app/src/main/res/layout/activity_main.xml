@@ -41,9 +41,12 @@
 
 
     <!-- 左侧抽屉 -->
-    <include
-        layout="@layout/activity_login"
-        android:layout_width="match_parent"
+    <android.support.design.widget.NavigationView
+        android:id="@+id/navigation_view"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_gravity="start" />
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/drawlayout_bar"
+        app:menu="@menu/menu_bottom_nav" />
 </android.support.v4.widget.DrawerLayout>

@@ -7,12 +7,12 @@
     android:padding="@dimen/dp_5">
 
     <ImageView
-        android:id="@+id/id_tool_bar_notification"
+        android:id="@+id/id_tool_bar_menu"
         android:layout_width="@dimen/dp_25"
         android:layout_height="@dimen/dp_25"
         android:layout_gravity="clip_vertical"
         android:layout_weight="1"
-        android:src="@drawable/ic_notifications_none_white_18dp" />
+        android:src="@drawable/ic_menu_white_36dp" />
 
 
     <TextView

@@ -1,9 +1,9 @@
 package info.xiaomo.app.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
@@ -25,42 +25,46 @@ import butterknife.OnClick;
 import info.xiaomo.app.R;
 import info.xiaomo.app.activity.index.IndexFragment;
 import info.xiaomo.app.activity.me.MeFragment;
-import info.xiaomo.app.activity.me.MessageActivity;
 import info.xiaomo.app.activity.project.ProjectFragment;
 import info.xiaomo.app.activity.work.WorkFragment;
 import info.xiaomo.app.adapter.ViewPagerAdapter;
 import info.xiaomo.app.base.BaseActivity;
-import info.xiaomo.app.base.Result;
-import info.xiaomo.app.util.HttpUtil;
 import info.xiaomo.app.widget.BottomNavigationViewEx;
 
 public class MainActivity extends BaseActivity implements
-        HttpUtil.RetrofitCallBack,
         BottomNavigationView.OnNavigationItemSelectedListener,
         View.OnClickListener,
         ViewPager.OnPageChangeListener,
+        NavigationView.OnNavigationItemSelectedListener,
         View.OnTouchListener {
 
+    // 底部菜单
     @BindView(R.id.bottom_nav)
     BottomNavigationViewEx bottomNavigationView;
+    // viewPager
     @BindView(R.id.id_content_view_pager)
     ViewPager contentViewPager;
+    // 顶部actionBar的名字
     @BindView(R.id.id_tool_bar_title)
     TextView titleTextView;
+    // 左侧侧滑菜单布局
     @BindView(R.id.drawer_layout)
     DrawerLayout drawerLayout;
+    // 左侧菜单内容
+    @BindView(R.id.navigation_view)
+    NavigationView navigationView;
 
     ActionBarDrawerToggle toggle;
     List<Fragment> fragmentList;
+    String currentTitle;
     private long exitTime = 0;
-    String mTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initView(savedInstanceState);
-        mTitle = (String)getTitle();
+        currentTitle = (String) getTitle();
     }
 
     /**
@@ -71,16 +75,26 @@ public class MainActivity extends BaseActivity implements
     @Override
     protected void initView(Bundle savedInstanceState) {
         super.initView(savedInstanceState);
-        bottomNavigationView.setOnNavigationItemSelectedListener(this);
-        bottomNavigationView.enableAnimation(false);
-        bottomNavigationView.enableItemShiftingMode(false);
-        bottomNavigationView.enableShiftingMode(false);
-        setupViewPager();
+        initBottomNavigationView();
+        initViewPager();
         initDrawerLayout();
     }
 
 
-    private void setupViewPager() {
+    /**
+     * 设置底部底部导航相关内容
+     */
+    private void initBottomNavigationView() {
+        bottomNavigationView.setOnNavigationItemSelectedListener(this);
+        bottomNavigationView.enableAnimation(false);
+        bottomNavigationView.enableItemShiftingMode(false);
+        bottomNavigationView.enableShiftingMode(false);
+    }
+
+    /**
+     * 设置viewPager相关内容
+     */
+    private void initViewPager() {
         IndexFragment indexFragment = new IndexFragment();
         ProjectFragment projectFragment = new ProjectFragment();
         WorkFragment workFragment = new WorkFragment();
@@ -94,26 +108,13 @@ public class MainActivity extends BaseActivity implements
         contentViewPager.addOnPageChangeListener(this);
     }
 
-    /**
-     * 成功时的操作
-     *
-     * @param result 获取到的结果
-     */
-    @Override
-    public void onSuccess(Result result) {
-
-    }
 
     /**
-     * 失败时的操作
+     * 底部导航被选中时的操作
      *
-     * @param error 错误信息
+     * @param item item 被选中的item
+     * @return 是否操作完成
      */
-    @Override
-    public void onFailure(String error) {
-
-    }
-
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
@@ -134,13 +135,20 @@ public class MainActivity extends BaseActivity implements
 
     }
 
+    /**
+     * viewPager滑动时的操作
+     *
+     * @param position             position
+     * @param positionOffset       positionOffset
+     * @param positionOffsetPixels positionOffsetPixels
+     */
     @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
     }
 
     /**
-     * viewPager中当前fragment被选中时
+     * viewPager中当前fragment被选中时设置actionBar的标题
      *
      * @param position position
      */
@@ -163,7 +171,7 @@ public class MainActivity extends BaseActivity implements
     }
 
     /**
-     * 当页面滑动状态改变时
+     * viewPager当页面滑动状态改变时
      *
      * @param state state
      */
@@ -174,7 +182,7 @@ public class MainActivity extends BaseActivity implements
     }
 
     /**
-     * 触摸时
+     * 触摸时(作用是禁止viewPager的滑动)
      *
      * @param v     v
      * @param event event
@@ -196,6 +204,10 @@ public class MainActivity extends BaseActivity implements
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN) {
+            if (drawerLayout.isDrawerOpen(Gravity.START)) {
+                drawerLayout.closeDrawer(Gravity.START);
+                return true;
+            }
             if ((System.currentTimeMillis() - exitTime) > 2000) {
                 Toast.makeText(getApplicationContext(), "再按一次退出程序", Toast.LENGTH_SHORT).show();
                 exitTime = System.currentTimeMillis();
@@ -208,37 +220,48 @@ public class MainActivity extends BaseActivity implements
         return super.onKeyDown(keyCode, event);
     }
 
-    @OnClick(R.id.id_tool_bar_notification)
+    /**
+     * 点击菜单打开和关闭侧滑菜单
+     *
+     * @param v 当前view
+     */
+    @OnClick(R.id.id_tool_bar_menu)
     @Override
     public void onClick(View v) {
-        Intent intent = new Intent(this, MessageActivity.class);
-        startActivity(intent);
+        toggleNav();
     }
 
+    /**
+     * 初始化侧滑菜单相关操作
+     */
     private void initDrawerLayout() {
         toggle = new ActionBarDrawerToggle(this, drawerLayout,
                 R.string.open_message_info, R.string.close_message_info) {
-            /** 当drawer处于完全关闭的状态时调用 */
+            /**
+             * 当drawer处于完全关闭的状态时调用
+             */
             @Override
             public void onDrawerClosed(View drawerView) {
                 super.onDrawerClosed(drawerView);
-//                getActionBar().setTitle(mTitle);
                 invalidateOptionsMenu();
             }
 
-            /** 当drawer处于完全打开的状态时调用 */
+            /**
+             * 当drawer处于完全打开的状态时调用
+             */
             @Override
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
-//                getActionBar().setTitle("请选择");
-//                invalidateOptionsMenu(); // Call onPrepareOptionsMenu()
+                invalidateOptionsMenu();
             }
 
         };
-        // 设置drawer触发器为DrawerListener
         drawerLayout.addDrawerListener(toggle);
     }
 
+    /**
+     * 打开或关闭侧滑菜单
+     */
     private void toggleNav() {
         if (drawerLayout.isDrawerOpen(Gravity.START)) {
             drawerLayout.closeDrawer(Gravity.START);
@@ -248,12 +271,24 @@ public class MainActivity extends BaseActivity implements
 
     }
 
+    /**
+     * 当客户点击MENU按钮的时候，调用该方法(来自于父级activity的方法)
+     *
+     * @param menu menu
+     * @return 是否操作完成
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_bottom_nav, menu);
         return true;
     }
 
+    /**
+     * 当客户点击菜单当中的某一个选项时，会调用该方法(来自于父级activity的方法)
+     *
+     * @param item item
+     * @return 是否操作完成
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
