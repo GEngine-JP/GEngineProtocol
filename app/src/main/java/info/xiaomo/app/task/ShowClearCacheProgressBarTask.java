@@ -1,11 +1,12 @@
 package info.xiaomo.app.task;
 
-import android.app.ProgressDialog;
+import android.content.Context;
+import android.view.View;
 
 import java.util.TimerTask;
 
 import info.xiaomo.app.R;
-import info.xiaomo.app.base.BaseFragment;
+import info.xiaomo.app.util.AppUtil;
 
 /**
  * @author 小莫 (https://xiaomo.info) (https://github.com/syoubaku)
@@ -14,17 +15,22 @@ import info.xiaomo.app.base.BaseFragment;
 
 public class ShowClearCacheProgressBarTask extends TimerTask {
 
-    private ProgressDialog dialog;
-    private BaseFragment fragment;
+    private View view;
+    private Context context;
 
-    public ShowClearCacheProgressBarTask(BaseFragment fragment, ProgressDialog dialog) {
-        this.dialog = dialog;
-        this.fragment = fragment;
+    public ShowClearCacheProgressBarTask(Context context, View view) {
+        this.view = view;
+        this.context = context;
     }
 
     @Override
     public void run() {
-        dialog.dismiss();
-        fragment.shortToast(fragment.getResources().getString(R.string.clear_cache_finish));
+        view.post(new Runnable() {
+            @Override
+            public void run() {
+                view.setVisibility(View.INVISIBLE);
+                AppUtil.shortToast(context, context.getResources().getString(R.string.clear_cache_finish));
+            }
+        });
     }
 }

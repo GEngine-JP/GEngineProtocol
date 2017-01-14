@@ -39,6 +39,9 @@
     <string name="friend">我的好友</string>
     <string name="achievement">成  就</string>
     <string name="exit_login">退出登录</string>
+    <string name="check_update">检查更新</string>
+    <string name="new_version">v1.2.5</string>
+    <string name="new_version_text">new</string>
 
 
 </resources>

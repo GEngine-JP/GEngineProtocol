@@ -17,7 +17,6 @@ public class BaseFragment extends Fragment {
 
     public HttpUtil httpUtil;
 
-
     public BaseFragment() {
         httpUtil = HttpUtil.getInstance(getContext());
     }
