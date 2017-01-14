@@ -1,4 +1,4 @@
-package info.xiaomo.app.activity.me;
+package info.xiaomo.app.activity.left;
 
 import android.content.Intent;
 import android.os.Bundle;

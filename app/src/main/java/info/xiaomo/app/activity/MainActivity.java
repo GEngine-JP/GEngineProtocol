@@ -23,7 +23,7 @@ import butterknife.BindView;
 import butterknife.OnClick;
 import info.xiaomo.app.R;
 import info.xiaomo.app.activity.index.IndexFragment;
-import info.xiaomo.app.activity.me.MeFragment;
+import info.xiaomo.app.activity.me.SetFragment;
 import info.xiaomo.app.activity.project.ProjectFragment;
 import info.xiaomo.app.activity.work.WorkFragment;
 import info.xiaomo.app.adapter.ViewPagerAdapter;
@@ -152,8 +152,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         WorkFragment workFragment = new WorkFragment();
         fragmentList.add(workFragment);
 
-        MeFragment meFragment = new MeFragment();
-        fragmentList.add(meFragment);
+        SetFragment setFragment = new SetFragment();
+        fragmentList.add(setFragment);
 
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager(), fragmentList);
         contentViewPager.setAdapter(adapter);

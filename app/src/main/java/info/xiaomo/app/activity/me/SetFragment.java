@@ -18,7 +18,7 @@ import info.xiaomo.app.base.BaseFragment;
  * @version : 2017/1/7 17:56
  */
 
-public class MeFragment extends BaseFragment implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
+public class SetFragment extends BaseFragment implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
 
     private static final long CLEAR_CACHE_TIME = 2 * 1000;
     @BindView(R.id.id_remind_switch)
@@ -38,7 +38,7 @@ public class MeFragment extends BaseFragment implements View.OnClickListener, Co
         switchView.setOnCheckedChangeListener(this);
     }
 
-    @OnClick({ R.id.id_clear_cache})
+    @OnClick({R.id.id_clear_cache})
     @Override
     public void onClick(View v) {
         switch (v.getId()) {

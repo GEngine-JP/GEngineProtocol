@@ -28,7 +28,7 @@
 
 
         <activity android:name=".activity.me.MessageActivity" />
-        <activity android:name=".activity.me.LoginActivity" />
+        <activity android:name=".activity.left.LoginActivity" />
     </application>
 
 </manifest>
