@@ -1,33 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/activity_bottom_nav"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <include
-        android:id="@+id/layout_tool_bar"
-        layout="@layout/tool_bar" />
-
-    <android.support.v4.view.ViewPager
-        android:id="@+id/id_content_view_pager"
+    <!-- 内容布局 -->
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/activity_bottom_nav"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="5" />
+        android:orientation="vertical">
 
-    <info.xiaomo.app.widget.BottomNavigationViewEx
-        android:id="@+id/bottom_nav"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        app:itemIconTint="@drawable/bottom_navigation_color_selector"
-        app:itemTextColor="@drawable/bottom_navigation_color_selector"
-        app:menu="@menu/menu_bottom_nav" />
+        <include
+            android:id="@+id/layout_tool_bar"
+            layout="@layout/tool_bar" />
 
-    <!--阴影-->
-    <View
+        <android.support.v4.view.ViewPager
+            android:id="@+id/id_content_view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="5" />
+
+        <info.xiaomo.app.widget.BottomNavigationViewEx
+            android:id="@+id/bottom_nav"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:itemIconTint="@drawable/bottom_navigation_color_selector"
+            app:itemTextColor="@drawable/bottom_navigation_color_selector"
+            app:menu="@menu/menu_bottom_nav" />
+
+        <!--阴影-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_8"
+            android:background="@drawable/shadow" />
+    </LinearLayout>
+
+
+    <!-- 左侧抽屉 -->
+    <include
+        layout="@layout/activity_login"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_8"
-        android:background="@drawable/shadow" />
-</LinearLayout>
+        android:layout_height="match_parent"
+        android:layout_gravity="start" />
+</android.support.v4.widget.DrawerLayout>

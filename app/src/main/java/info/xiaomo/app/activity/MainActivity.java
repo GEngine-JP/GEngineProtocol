@@ -6,7 +6,11 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.view.Gravity;
 import android.view.KeyEvent;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
@@ -20,12 +24,12 @@ import butterknife.BindView;
 import butterknife.OnClick;
 import info.xiaomo.app.R;
 import info.xiaomo.app.activity.index.IndexFragment;
-import info.xiaomo.app.base.BaseActivity;
-import info.xiaomo.app.activity.me.MessageActivity;
-import info.xiaomo.app.adapter.ViewPagerAdapter;
 import info.xiaomo.app.activity.me.MeFragment;
+import info.xiaomo.app.activity.me.MessageActivity;
 import info.xiaomo.app.activity.project.ProjectFragment;
 import info.xiaomo.app.activity.work.WorkFragment;
+import info.xiaomo.app.adapter.ViewPagerAdapter;
+import info.xiaomo.app.base.BaseActivity;
 import info.xiaomo.app.base.Result;
 import info.xiaomo.app.util.HttpUtil;
 import info.xiaomo.app.widget.BottomNavigationViewEx;
@@ -43,15 +47,20 @@ public class MainActivity extends BaseActivity implements
     ViewPager contentViewPager;
     @BindView(R.id.id_tool_bar_title)
     TextView titleTextView;
+    @BindView(R.id.drawer_layout)
+    DrawerLayout drawerLayout;
 
+    ActionBarDrawerToggle toggle;
     List<Fragment> fragmentList;
     private long exitTime = 0;
+    String mTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initView(savedInstanceState);
+        mTitle = (String)getTitle();
     }
 
     /**
@@ -67,6 +76,7 @@ public class MainActivity extends BaseActivity implements
         bottomNavigationView.enableItemShiftingMode(false);
         bottomNavigationView.enableShiftingMode(false);
         setupViewPager();
+        initDrawerLayout();
     }
 
 
@@ -203,5 +213,54 @@ public class MainActivity extends BaseActivity implements
     public void onClick(View v) {
         Intent intent = new Intent(this, MessageActivity.class);
         startActivity(intent);
+    }
+
+    private void initDrawerLayout() {
+        toggle = new ActionBarDrawerToggle(this, drawerLayout,
+                R.string.open_message_info, R.string.close_message_info) {
+            /** 当drawer处于完全关闭的状态时调用 */
+            @Override
+            public void onDrawerClosed(View drawerView) {
+                super.onDrawerClosed(drawerView);
+//                getActionBar().setTitle(mTitle);
+                invalidateOptionsMenu();
+            }
+
+            /** 当drawer处于完全打开的状态时调用 */
+            @Override
+            public void onDrawerOpened(View drawerView) {
+                super.onDrawerOpened(drawerView);
+//                getActionBar().setTitle("请选择");
+//                invalidateOptionsMenu(); // Call onPrepareOptionsMenu()
+            }
+
+        };
+        // 设置drawer触发器为DrawerListener
+        drawerLayout.addDrawerListener(toggle);
+    }
+
+    private void toggleNav() {
+        if (drawerLayout.isDrawerOpen(Gravity.START)) {
+            drawerLayout.closeDrawer(Gravity.START);
+        } else {
+            drawerLayout.openDrawer(Gravity.START);
+        }
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_bottom_nav, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                toggleNav();
+                break;
+        }
+        return true;
     }
 }
