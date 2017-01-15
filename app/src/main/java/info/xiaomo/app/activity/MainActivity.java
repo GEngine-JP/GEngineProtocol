@@ -25,7 +25,7 @@ import info.xiaomo.app.R;
 import info.xiaomo.app.activity.index.IndexFragment;
 import info.xiaomo.app.activity.project.ProjectFragment;
 import info.xiaomo.app.activity.set.SetFragment;
-import info.xiaomo.app.activity.work.WorkFragment;
+import info.xiaomo.app.activity.work.BlogFragment;
 import info.xiaomo.app.adapter.ViewPagerAdapter;
 import info.xiaomo.app.base.BaseActivity;
 import info.xiaomo.app.widget.BottomNavigationViewEx;
@@ -149,8 +149,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         ProjectFragment projectFragment = new ProjectFragment();
         fragmentList.add(projectFragment);
 
-        WorkFragment workFragment = new WorkFragment();
-        fragmentList.add(workFragment);
+        BlogFragment blogFragment = new BlogFragment();
+        fragmentList.add(blogFragment);
 
         SetFragment setFragment = new SetFragment();
         fragmentList.add(setFragment);
@@ -185,7 +185,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                         titleTextView.setText(R.string.project);
                         break;
                     case 2:
-                        titleTextView.setText(R.string.work);
+                        titleTextView.setText(R.string.blog);
                         break;
                     case 3:
                         titleTextView.setText(R.string.setting);

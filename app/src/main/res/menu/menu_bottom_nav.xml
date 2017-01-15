@@ -16,8 +16,8 @@
     <item
         android:id="@+id/bottom_nav_work"
         android:enabled="true"
-        android:icon="@drawable/ic_work_white_24dp"
-        android:title="@string/work"
+        android:icon="@drawable/ic_http_black_36dp"
+        android:title="@string/blog"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/bottom_nav_me"
