@@ -43,6 +43,7 @@
     <string name="new_version">v1.2.5</string>
     <string name="new_version_text">new</string>
     <string name="trash_count">5.6M</string>
+    <string name="version_info">己是最新版本</string>
 
 
 </resources>

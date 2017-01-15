@@ -16,6 +16,7 @@ import butterknife.BindView;
 import butterknife.OnClick;
 import info.xiaomo.app.R;
 import info.xiaomo.app.base.BaseFragment;
+import info.xiaomo.app.task.ShowCheckVersionProgressBarTask;
 import info.xiaomo.app.task.ShowClearCacheProgressBarTask;
 import info.xiaomo.app.util.AppUtil;
 import info.xiaomo.app.util.RandomUtil;
@@ -28,6 +29,7 @@ import info.xiaomo.app.util.RandomUtil;
 public class SetFragment extends BaseFragment implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
 
     private static final long CLEAR_CACHE_TIME = 5 * 1000;
+    private static final long CHECK_VERSION = 2 * 1000;
     // 消息提醒开关
     @BindView(R.id.id_remind_switch)
     Switch switchView;
@@ -58,14 +60,20 @@ public class SetFragment extends BaseFragment implements View.OnClickListener, C
         trashTextView.setText(text);
     }
 
-    @OnClick({R.id.id_clear_cache})
+    @OnClick({R.id.id_clear_cache, R.id.check_update})
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.id_clear_cache:
                 progressBar.setVisibility(View.VISIBLE);
-                ShowClearCacheProgressBarTask task = new ShowClearCacheProgressBarTask(getContext(), progressBar,trashTextView);
+                ShowClearCacheProgressBarTask task = new ShowClearCacheProgressBarTask(getContext(), progressBar, trashTextView);
                 new Timer().schedule(task, CLEAR_CACHE_TIME);
+                break;
+            case R.id.check_update:
+                progressBar.setVisibility(View.VISIBLE);
+                ShowCheckVersionProgressBarTask checkVersionTask = new ShowCheckVersionProgressBarTask(getContext(), progressBar);
+                new Timer().schedule(checkVersionTask, CHECK_VERSION);
+                break;
         }
     }
 

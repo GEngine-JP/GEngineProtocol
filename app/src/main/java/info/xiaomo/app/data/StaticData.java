@@ -5,6 +5,7 @@ import java.util.List;
 
 import info.xiaomo.app.R;
 import info.xiaomo.app.model.MessageModel;
+import info.xiaomo.app.model.ProjectModel;
 import info.xiaomo.app.model.WorkModel;
 
 /**
@@ -111,6 +112,95 @@ public class StaticData {
             h1.setFocus(false);
             hhList.add(h1);
         }
+        return hhList;
+    }
+
+    public static List<ProjectModel> getProjectList() {
+        List<ProjectModel> hhList = new ArrayList<>();
+
+        ProjectModel h1 = new ProjectModel();
+        h1.setPic(R.drawable.bg_1 + "");
+        h1.setName("校园App");
+
+        ProjectModel h2 = new ProjectModel();
+        h2.setPic(R.drawable.bg_2 + "");
+        h2.setName("小莫App");
+
+
+        ProjectModel h3 = new ProjectModel();
+        h3.setPic(R.drawable.bg_3 + "");
+        h3.setName("支付宝");
+
+        ProjectModel h4 = new ProjectModel();
+        h4.setPic(R.drawable.bg_4 + "");
+        h4.setName("QQ");
+
+        ProjectModel h5 = new ProjectModel();
+        h5.setPic(R.drawable.bg_5 + "");
+        h5.setName("追书神器");
+
+        ProjectModel h6 = new ProjectModel();
+        h6.setPic(R.drawable.bg_6 + "");
+        h6.setName("钉钉");
+
+        ProjectModel h7 = new ProjectModel();
+        h7.setPic(R.drawable.bg_7 + "");
+        h7.setName("阴阳师");
+
+        ProjectModel h8 = new ProjectModel();
+        h8.setPic(R.drawable.bg_8 + "");
+        h8.setName("OneNote");
+
+        ProjectModel h9 = new ProjectModel();
+        h9.setPic(R.drawable.bg_9 + "");
+        h9.setName("手机管家");
+
+        ProjectModel h10 = new ProjectModel();
+        h10.setPic(R.drawable.avatar + "");
+        h10.setName("小莫app");
+
+
+        ProjectModel h11 = new ProjectModel();
+        h11.setPic(R.drawable.bg_1 + "");
+        h11.setName("校园App");
+
+        ProjectModel h12 = new ProjectModel();
+        h12.setPic(R.drawable.bg_2 + "");
+        h12.setName("小莫App");
+
+
+        ProjectModel h13 = new ProjectModel();
+        h13.setPic(R.drawable.bg_3 + "");
+        h13.setName("支付宝");
+
+        ProjectModel h14 = new ProjectModel();
+        h14.setPic(R.drawable.bg_4 + "");
+        h14.setName("QQ");
+
+        ProjectModel h15 = new ProjectModel();
+        h15.setPic(R.drawable.bg_5 + "");
+        h15.setName("追书神器");
+
+        ProjectModel h16 = new ProjectModel();
+        h16.setPic(R.drawable.bg_6 + "");
+        h16.setName("钉钉");
+
+        hhList.add(h1);
+        hhList.add(h2);
+        hhList.add(h3);
+        hhList.add(h4);
+        hhList.add(h5);
+        hhList.add(h6);
+        hhList.add(h7);
+        hhList.add(h8);
+        hhList.add(h9);
+        hhList.add(h10);
+        hhList.add(h11);
+        hhList.add(h12);
+        hhList.add(h13);
+        hhList.add(h14);
+        hhList.add(h15);
+        hhList.add(h16);
         return hhList;
     }
 
