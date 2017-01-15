@@ -64,4 +64,17 @@ public class AppUtil {
         Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
     }
 
+    /**
+     * 将toast封装起来，连续点击时可以覆盖上一个
+     */
+    public static Toast ShowToast(Toast mToast, Context context, String text) {
+        if (mToast == null) {
+            mToast = Toast.makeText(context, text, Toast.LENGTH_SHORT);
+            mToast.show();
+        } else {
+            mToast.setText(text);
+            mToast.show();
+        }
+        return mToast;
+    }
 }
