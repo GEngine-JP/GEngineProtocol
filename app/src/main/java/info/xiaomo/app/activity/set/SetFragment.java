@@ -68,6 +68,7 @@ public class SetFragment extends BaseFragment implements View.OnClickListener, C
                 progressBar.setVisibility(View.VISIBLE);
                 ShowClearCacheProgressBarTask task = new ShowClearCacheProgressBarTask(getContext(), progressBar, trashTextView);
                 new Timer().schedule(task, CLEAR_CACHE_TIME);
+                clearWebViewCache();
                 break;
             case R.id.check_update:
                 progressBar.setVisibility(View.VISIBLE);
@@ -83,6 +84,20 @@ public class SetFragment extends BaseFragment implements View.OnClickListener, C
             shortToast(getResources().getString(R.string.open_message_info));
         } else {
             shortToast(getResources().getString(R.string.close_message_info));
+        }
+    }
+
+    /**
+     * 清除WebView缓存
+     */
+    public void clearWebViewCache() {
+
+        //清理Webview缓存数据库
+        try {
+            getContext().deleteDatabase("webview.db");
+            getContext().deleteDatabase("webviewCache.db");
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

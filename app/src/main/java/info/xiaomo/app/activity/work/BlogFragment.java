@@ -82,22 +82,4 @@ public class BlogFragment extends BaseFragment implements View.OnClickListener {
         Snackbar.make(v, "hello", Snackbar.LENGTH_SHORT).show();
     }
 
-//    @Override
-//    public boolean onKeyDown(int keyCode, KeyEvent event) {
-//        // TODO Auto-generated method stub
-//        if (keyCode == KeyEvent.KEYCODE_BACK) {
-//            if (blogWebView.canGoBack()) {
-//                blogWebView.goBack();//返回上一页面
-//                return true;
-//            } else {
-//                System.exit(0);//退出程序
-//            }
-//        }
-//        return super.onKeyDown(keyCode, event);
-//    }
-
-    class BlogChromeClient extends WebChromeClient {
-
-
-    }
 }
