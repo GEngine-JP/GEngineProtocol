@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messages id="2" queueId="2" package="info.xiaomo.server.system.gm">
+
+    <message id="1" type="toServer" class="ReqGMMessage" desc="请求gm">
+        <field type="String" name="command" desc="命令"/>
+    </message>
+
+    <message id="2" type="toClient" class="ResGMMessage" desc="返回gm">
+        <field type="String" name="content" desc="执行结果"/>
+    </message>
+
+
+</messages>
