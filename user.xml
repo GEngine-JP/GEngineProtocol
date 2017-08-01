@@ -3,7 +3,6 @@
 
     <message id="1" type="toServer" class="ReqLoginMessage" desc="请求登录">
         <field type="String" name="loginName" desc="登录账户" />
-        <field type="String" name="ip" desc="ip地址" />
     </message>
 
 
