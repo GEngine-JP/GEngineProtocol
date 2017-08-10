@@ -1,8 +1,7 @@
 @echo off
 
 ::协议文件路径, 最后不要跟“\”符号
-set SOURCE_FOLDER=.\proto
-
+set SOURCE_FOLDER=.\message
 
 ::C#编译器路径
 ::set CS_COMPILER_PATH=..\Tools\protobuf-net\ProtoGen\protogen.exe
@@ -10,9 +9,9 @@ set SOURCE_FOLDER=.\proto
 ::set CS_TARGET_PATH=..\Client\Assets\Scripts\Net\Protocol
 
 ::Java编译器路径
-set JAVA_COMPILER_PATH=.\protoc.exe
+set JAVA_COMPILER_PATH=.\proto\protoc.exe
 ::Java文件生成路径, 最后不要跟“\”符号
-set JAVA_TARGET_PATH=D:\qycache\GameServer\generate
+set JAVA_TARGET_PATH=F:\ChessGame\ConfigProtocol\message
 
 ::删除之前创建的文件
 del %JAVA_TARGET_PATH%\*.* /f /s /q
