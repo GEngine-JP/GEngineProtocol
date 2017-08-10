@@ -1,0 +1,19 @@
+syntax = "proto3";
+option java_package = "info.xiaomo.server.message";
+option java_outer_classname = "UserInfoProto";
+
+message UserInfo
+ {
+
+	 int32 sex = 2;
+	 string birthday = 3;
+	 string mobile = 4;
+	 int32 height = 5;
+	 int32 weight = 6;
+	 string workingPlace = 7;
+	 string position = 8;
+	 string medicalHistory = 9;
+	 bool locked = 10;
+	 string realName = 11;
+	 string realName2 = 12;
+}
