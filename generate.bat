@@ -28,8 +28,9 @@ for /f "delims=" %%i in ('dir /b "%SOURCE_FOLDER%\*.proto"') do (
     %CS_COMPILER_PATH% --csharp_out=%CS_TARGET_PATH%  %SOURCE_FOLDER%\%%i
 
     ::生成 Java 代码
-    echo echo generate:%%i
     %JAVA_COMPILER_PATH% --java_out=%JAVA_TARGET_PATH%  %SOURCE_FOLDER%\%%i
+
+    echo echo generate:%%i
     
 )
 
