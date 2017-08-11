@@ -1,0 +1,13 @@
+syntax = "proto3";
+option java_package = "info.xiaomo.server.message";
+option java_outer_classname = "User";
+
+message ReqLoginMessage {
+    int32 sex = 2;
+    string loginName = 3;
+}
+
+message ResLoginMessage {
+    int32 sex = 2;
+    string loginName = 3;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+option java_package = "info.xiaomo.server.message";
+option java_outer_classname = "GM";
+
+message ReqExecuteGMMessage {
+    int32 sex = 2;
+    string content = 3;
+}
+
+message ResExecuteGMMessage {
+    int32 sex = 2;
+    string content = 3;
+}
