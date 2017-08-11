@@ -5,7 +5,7 @@ set SOURCE_FOLDER=proto
 ::Java编译器路径
 set JAVA_COMPILER_PATH=Tools\protoc.exe
 ::C#编译器路径
-set CS_COMPILER_PATH=Tools\ProtoGen\protogen.exe
+set CS_COMPILER_PATH=Tools\protoc.exe
 
 ::如果目录不存在则创建
 if not exist Code md Code
@@ -23,17 +23,16 @@ del %JAVA_TARGET_PATH%\*.* /f /s /q
 
 ::遍历所有文件
 for /f "delims=" %%i in ('dir /b "%SOURCE_FOLDER%\*.proto"') do (
-    
+
     ::生成 C# 代码
-    echo %CS_COMPILER_PATH% -i:%SOURCE_FOLDER%/%%i -o:%CS_TARGET_PATH%\%%~ni.cs
-    %CS_COMPILER_PATH% -i:%SOURCE_FOLDER%\%%i -o:%CS_TARGET_PATH%\%%~ni.cs
+    %CS_COMPILER_PATH% --csharp_out=%CS_TARGET_PATH%  %SOURCE_FOLDER%\%%i
 
     ::生成 Java 代码
-    echo %JAVA_COMPILER_PATH% --java_out=%JAVA_TARGET_PATH% %%i
+    echo echo generate:%%i
     %JAVA_COMPILER_PATH% --java_out=%JAVA_TARGET_PATH%  %SOURCE_FOLDER%\%%i
     
 )
 
-echo Finish
-
+echo Finish!
+::echo %CS_COMPILER_PATH% -i:%SOURCE_FOLDER%/%%i -o:%CS_TARGET_PATH%\%%~ni.cs
 pause
