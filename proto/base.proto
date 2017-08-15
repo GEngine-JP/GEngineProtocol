@@ -4,6 +4,7 @@ option java_outer_classname = "BaseMsg";
 
 message MsgPack{
      int32 _MsgID = 1;
-     bytes _Body = 2;
+     int32 _QueneId = 2;
+     bytes _Body = 3;
 
 }
