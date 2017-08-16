@@ -22,8 +22,8 @@ public static partial class GMReflection {
         string.Concat(
           "Cg5wcm90by9HTS5wcm90byIzChNSZXFFeGVjdXRlR01NZXNzYWdlEgsKA3Nl",
           "eBgCIAEoBRIPCgdjb250ZW50GAMgASgJIjMKE1Jlc0V4ZWN1dGVHTU1lc3Nh",
-          "Z2USCwoDc2V4GAIgASgFEg8KB2NvbnRlbnQYAyABKAlCIAoaaW5mby54aWFv",
-          "bW8uc2VydmVyLm1lc3NhZ2VCAkdNYgZwcm90bzM="));
+          "Z2USCwoDc2V4GAIgASgFEg8KB2NvbnRlbnQYAyABKAlCJQoaaW5mby54aWFv",
+          "bW8uc2VydmVyLm1lc3NhZ2VCB0dNUHJvdG9iBnByb3RvMw=="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { },
         new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {

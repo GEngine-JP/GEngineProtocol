@@ -22,8 +22,8 @@ public static partial class UserReflection {
         string.Concat(
           "ChBwcm90by91c2VyLnByb3RvIjEKD1JlcUxvZ2luTWVzc2FnZRILCgNzZXgY",
           "AiABKAUSEQoJbG9naW5OYW1lGAMgASgJIjEKD1Jlc0xvZ2luTWVzc2FnZRIL",
-          "CgNzZXgYAiABKAUSEQoJbG9naW5OYW1lGAMgASgJQiIKGmluZm8ueGlhb21v",
-          "LnNlcnZlci5tZXNzYWdlQgRVc2VyYgZwcm90bzM="));
+          "CgNzZXgYAiABKAUSEQoJbG9naW5OYW1lGAMgASgJQicKGmluZm8ueGlhb21v",
+          "LnNlcnZlci5tZXNzYWdlQglVc2VyUHJvdG9iBnByb3RvMw=="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { },
         new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
