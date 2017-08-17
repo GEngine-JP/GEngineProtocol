@@ -1,0 +1,11 @@
+syntax = "proto3";
+option java_package = "info.xiaomo.server.message";
+option java_outer_classname = "BackProto";
+
+message ReqCloseServerMessage {
+    string command = 1;
+}
+
+message ResCloseServerMessage {
+    string info = 1;
+}
