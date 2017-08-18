@@ -3,7 +3,7 @@ option java_package = "info.xiaomo.server.protocol.proto";
 option java_outer_classname = "GMProto";
 
 message CloseServerRequest {
-    int32 from = 1;
+
 }
 
 message CloseServerResponse {

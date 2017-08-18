@@ -20,14 +20,13 @@ public static partial class GMReflection {
   static GMReflection() {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
-          "Cg5wcm90by9HTS5wcm90byIiChJDbG9zZVNlcnZlclJlcXVlc3QSDAoEZnJv",
-          "bRgBIAEoBSIlChNDbG9zZVNlcnZlclJlc3BvbnNlEg4KBnJlc01zZxgBIAEo",
-          "CUIsCiFpbmZvLnhpYW9tby5zZXJ2ZXIucHJvdG9jb2wucHJvdG9CB0dNUHJv",
-          "dG9iBnByb3RvMw=="));
+          "Cg5wcm90by9HTS5wcm90byIUChJDbG9zZVNlcnZlclJlcXVlc3QiJQoTQ2xv",
+          "c2VTZXJ2ZXJSZXNwb25zZRIOCgZyZXNNc2cYASABKAlCLAohaW5mby54aWFv",
+          "bW8uc2VydmVyLnByb3RvY29sLnByb3RvQgdHTVByb3RvYgZwcm90bzM="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { },
         new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::CloseServerRequest), global::CloseServerRequest.Parser, new[]{ "From" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::CloseServerRequest), global::CloseServerRequest.Parser, null, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::CloseServerResponse), global::CloseServerResponse.Parser, new[]{ "ResMsg" }, null, null, null)
         }));
   }
@@ -59,23 +58,11 @@ public sealed partial class CloseServerRequest : pb::IMessage<CloseServerRequest
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public CloseServerRequest(CloseServerRequest other) : this() {
-    from_ = other.from_;
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public CloseServerRequest Clone() {
     return new CloseServerRequest(this);
-  }
-
-  /// <summary>Field number for the "from" field.</summary>
-  public const int FromFieldNumber = 1;
-  private int from_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public int From {
-    get { return from_; }
-    set {
-      from_ = value;
-    }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -91,14 +78,12 @@ public sealed partial class CloseServerRequest : pb::IMessage<CloseServerRequest
     if (ReferenceEquals(other, this)) {
       return true;
     }
-    if (From != other.From) return false;
     return true;
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override int GetHashCode() {
     int hash = 1;
-    if (From != 0) hash ^= From.GetHashCode();
     return hash;
   }
 
@@ -109,18 +94,11 @@ public sealed partial class CloseServerRequest : pb::IMessage<CloseServerRequest
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
-    if (From != 0) {
-      output.WriteRawTag(8);
-      output.WriteInt32(From);
-    }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
     int size = 0;
-    if (From != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeInt32Size(From);
-    }
     return size;
   }
 
@@ -128,9 +106,6 @@ public sealed partial class CloseServerRequest : pb::IMessage<CloseServerRequest
   public void MergeFrom(CloseServerRequest other) {
     if (other == null) {
       return;
-    }
-    if (other.From != 0) {
-      From = other.From;
     }
   }
 
@@ -142,10 +117,6 @@ public sealed partial class CloseServerRequest : pb::IMessage<CloseServerRequest
         default:
           input.SkipLastField();
           break;
-        case 8: {
-          From = input.ReadInt32();
-          break;
-        }
       }
     }
   }
