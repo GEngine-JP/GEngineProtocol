@@ -1,13 +1,13 @@
-{package}
+package info.xiaomo.server.protocol.user.message;
 
 import com.google.protobuf.InvalidProtocolBufferException;
 import info.xiaomo.gameCore.protocol.message.AbstractMessage;
 
 
 /**
- * {doc}
+ * 登出请求
  */
-public class {className} extends AbstractMessage {
+public class ReqLogoutMessage extends AbstractMessage {
 
 	@Override
 	public void decode(byte[] bytes) throws InvalidProtocolBufferException {
@@ -20,7 +20,8 @@ public class {className} extends AbstractMessage {
 
 	@Override
 	public int getId() {
-		return {id};
+		return 1114;
 	}
 
 }
+

@@ -1,2 +1,2 @@
 input=G:\ChessGame\ConfigProtocol\xml
-output=G:\ChessGame\ConfigProtocol\message
+output=G:\ChessGame\ConfigProtocol\Code\java

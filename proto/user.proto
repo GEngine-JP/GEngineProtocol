@@ -1,13 +1,130 @@
 syntax = "proto3";
-option java_package = "info.xiaomo.server.message";
+package user;
+
+//import "Bag.proto";
+
+option java_package = "info.xiaomo.server.protocol.proto";
 option java_outer_classname = "UserProto";
 
-message ReqLoginMessage {
-    int32 sex = 2;
-    string loginName = 3;
+
+message RoleInfo {
+     int64 roleId = 1; //角色ID
+     string roleName = 2; //名称
+     int32 level = 3; //等级
+     int32 sex = 4; //性别
+     int32 mapId = 5; //所在地图
+     int32 line = 6; //所在分线
+     int32 curServerType = 7; //当前服务器类型
 }
 
-message ResLoginMessage {
-    int32 sex = 2;
-    string loginName = 3;
+message PlayerAttribute {
+     int32 phyAttMax = 1; //物理攻击上限
+     int32 phyAttMin = 2; //物理攻击下限
+     int32 magicAttMax = 3; //魔法攻击上限
+     int32 magicAttMin = 4; //魔法攻击下限
+     int32 taoAttMax = 5; //道术攻击上限
+     int32 taoAttMin = 6; //道术攻击下限
+     int32 phyDefMax = 7; //物理防御上限
+     int32 phyDefMin = 8; //物理防御下限
+     int32 magicDefMax = 9; //魔法防御上限
+     int32 magicDefMin = 10; //魔法防御下限
+     int32 accurate = 11; //精准
+     int32 dodge = 12; //闪避
+     int32 poisonRecover = 13; //负面恢复
+     int32 heathRecover = 14; //体力恢复
+     int32 attackSpeed = 15; //攻击速度
+     int32 maxHp = 16; //最大HP
+     int32 maxMp = 17; //最大MP
+     int32 magicRecover = 18; //魔法恢复
+     int32 luck = 19; //幸运
+     int32 critical = 20; //暴击率
+     int32 nbValue = 21; //战斗力
+     int32 criticalDamage = 22;//暴击伤害
+     int32 maxInnerPower = 23;//最大内力
+     int32 resistance = 24;//抗性
+     int32 holyAtt = 25;//神圣伤害
+     int32 pkAtk = 26;//PK伤害加成
+     int32 pkDef = 27;//PK防御
+}
+
+
+
+message LoginRequest {
+     string loginName = 1;//用户登录名
+     int32 platformId = 2; //平台
+     int32 serverId = 3; //服务器ID
+     string sign = 4;
+     int64 time = 5;
+}
+
+message LoginResponse {
+    repeated RoleInfo roleList = 1; //角色列表
+     int64 userId = 2;
+}
+
+
+message CreateRoleRequest {
+     string name = 1; //名字
+     int32 sex = 2; //性别
+     int32 career = 3; //职业
+}
+
+message RandomRoleNameResponse {
+     string name = 1; //名字
+}
+
+message RandomRoleNameRequest {
+     int32 sex = 1; //性别
+}
+
+message RoleIdMsg {
+     int64 roleId = 1;
+}
+
+//gm命令请求
+message GMCommand {
+     string command = 1;
+}
+
+message CloseServerResponse {
+     int32 code = 1;
+     string msg = 2;
+}
+
+
+//重新连接请求
+message ReconnectRequest {
+     string loginName = 1;
+     int32 serverId = 2;
+     int32 platformId = 3;
+     int64 roleId = 4;
+     string sign = 5;
+     int64 time = 6;
+     bool changeLine = 7; //是否切换服务器
+}
+
+enum GoingDownReason {
+    Maintain = 0; //维护
+    Block = 1; //封禁
+    AnotherSession = 2; //其他设备登录
+}
+
+message DisconnectResponse {
+     GoingDownReason reason = 1;
+}
+
+//用户反馈请求
+message UserFeedbackRequest {
+     string content = 1;
+     string phoneType = 2;
+     string qq = 3;
+}
+
+//绑定手机号请求
+message BindPhoneNumberRequest {
+     string phoneNumber = 1;
+}
+
+message RechargeingRequest {
+     string rechargeId = 1;
 }

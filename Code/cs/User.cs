@@ -7,325 +7,3336 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from proto/user.proto</summary>
-public static partial class UserReflection {
+namespace User {
 
-  #region Descriptor
-  /// <summary>File descriptor for proto/user.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from proto/user.proto</summary>
+  public static partial class UserReflection {
 
-  static UserReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChBwcm90by91c2VyLnByb3RvIjEKD1JlcUxvZ2luTWVzc2FnZRILCgNzZXgY",
-          "AiABKAUSEQoJbG9naW5OYW1lGAMgASgJIjEKD1Jlc0xvZ2luTWVzc2FnZRIL",
-          "CgNzZXgYAiABKAUSEQoJbG9naW5OYW1lGAMgASgJQicKGmluZm8ueGlhb21v",
-          "LnNlcnZlci5tZXNzYWdlQglVc2VyUHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::ReqLoginMessage), global::ReqLoginMessage.Parser, new[]{ "Sex", "LoginName" }, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::ResLoginMessage), global::ResLoginMessage.Parser, new[]{ "Sex", "LoginName" }, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for proto/user.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static UserReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChBwcm90by91c2VyLnByb3RvEgR1c2VyInwKCFJvbGVJbmZvEg4KBnJvbGVJ",
+            "ZBgBIAEoAxIQCghyb2xlTmFtZRgCIAEoCRINCgVsZXZlbBgDIAEoBRILCgNz",
+            "ZXgYBCABKAUSDQoFbWFwSWQYBSABKAUSDAoEbGluZRgGIAEoBRIVCg1jdXJT",
+            "ZXJ2ZXJUeXBlGAcgASgFIpEECg9QbGF5ZXJBdHRyaWJ1dGUSEQoJcGh5QXR0",
+            "TWF4GAEgASgFEhEKCXBoeUF0dE1pbhgCIAEoBRITCgttYWdpY0F0dE1heBgD",
+            "IAEoBRITCgttYWdpY0F0dE1pbhgEIAEoBRIRCgl0YW9BdHRNYXgYBSABKAUS",
+            "EQoJdGFvQXR0TWluGAYgASgFEhEKCXBoeURlZk1heBgHIAEoBRIRCglwaHlE",
+            "ZWZNaW4YCCABKAUSEwoLbWFnaWNEZWZNYXgYCSABKAUSEwoLbWFnaWNEZWZN",
+            "aW4YCiABKAUSEAoIYWNjdXJhdGUYCyABKAUSDQoFZG9kZ2UYDCABKAUSFQoN",
+            "cG9pc29uUmVjb3ZlchgNIAEoBRIUCgxoZWF0aFJlY292ZXIYDiABKAUSEwoL",
+            "YXR0YWNrU3BlZWQYDyABKAUSDQoFbWF4SHAYECABKAUSDQoFbWF4TXAYESAB",
+            "KAUSFAoMbWFnaWNSZWNvdmVyGBIgASgFEgwKBGx1Y2sYEyABKAUSEAoIY3Jp",
+            "dGljYWwYFCABKAUSDwoHbmJWYWx1ZRgVIAEoBRIWCg5jcml0aWNhbERhbWFn",
+            "ZRgWIAEoBRIVCg1tYXhJbm5lclBvd2VyGBcgASgFEhIKCnJlc2lzdGFuY2UY",
+            "GCABKAUSDwoHaG9seUF0dBgZIAEoBRINCgVwa0F0axgaIAEoBRINCgVwa0Rl",
+            "ZhgbIAEoBSJjCgxMb2dpblJlcXVlc3QSEQoJbG9naW5OYW1lGAEgASgJEhIK",
+            "CnBsYXRmb3JtSWQYAiABKAUSEAoIc2VydmVySWQYAyABKAUSDAoEc2lnbhgE",
+            "IAEoCRIMCgR0aW1lGAUgASgDIkEKDUxvZ2luUmVzcG9uc2USIAoIcm9sZUxp",
+            "c3QYASADKAsyDi51c2VyLlJvbGVJbmZvEg4KBnVzZXJJZBgCIAEoAyI+ChFD",
+            "cmVhdGVSb2xlUmVxdWVzdBIMCgRuYW1lGAEgASgJEgsKA3NleBgCIAEoBRIO",
+            "CgZjYXJlZXIYAyABKAUiJgoWUmFuZG9tUm9sZU5hbWVSZXNwb25zZRIMCgRu",
+            "YW1lGAEgASgJIiQKFVJhbmRvbVJvbGVOYW1lUmVxdWVzdBILCgNzZXgYASAB",
+            "KAUiGwoJUm9sZUlkTXNnEg4KBnJvbGVJZBgBIAEoAyIcCglHTUNvbW1hbmQS",
+            "DwoHY29tbWFuZBgBIAEoCSIwChNDbG9zZVNlcnZlclJlc3BvbnNlEgwKBGNv",
+            "ZGUYASABKAUSCwoDbXNnGAIgASgJIosBChBSZWNvbm5lY3RSZXF1ZXN0EhEK",
+            "CWxvZ2luTmFtZRgBIAEoCRIQCghzZXJ2ZXJJZBgCIAEoBRISCgpwbGF0Zm9y",
+            "bUlkGAMgASgFEg4KBnJvbGVJZBgEIAEoAxIMCgRzaWduGAUgASgJEgwKBHRp",
+            "bWUYBiABKAMSEgoKY2hhbmdlTGluZRgHIAEoCCI7ChJEaXNjb25uZWN0UmVz",
+            "cG9uc2USJQoGcmVhc29uGAEgASgOMhUudXNlci5Hb2luZ0Rvd25SZWFzb24i",
+            "RQoTVXNlckZlZWRiYWNrUmVxdWVzdBIPCgdjb250ZW50GAEgASgJEhEKCXBo",
+            "b25lVHlwZRgCIAEoCRIKCgJxcRgDIAEoCSItChZCaW5kUGhvbmVOdW1iZXJS",
+            "ZXF1ZXN0EhMKC3Bob25lTnVtYmVyGAEgASgJIigKElJlY2hhcmdlaW5nUmVx",
+            "dWVzdBISCgpyZWNoYXJnZUlkGAEgASgJKj4KD0dvaW5nRG93blJlYXNvbhIM",
+            "CghNYWludGFpbhAAEgkKBUJsb2NrEAESEgoOQW5vdGhlclNlc3Npb24QAkIu",
+            "CiFpbmZvLnhpYW9tby5zZXJ2ZXIucHJvdG9jb2wucHJvdG9CCVVzZXJQcm90",
+            "b2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::User.GoingDownReason), }, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::User.RoleInfo), global::User.RoleInfo.Parser, new[]{ "RoleId", "RoleName", "Level", "Sex", "MapId", "Line", "CurServerType" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::User.PlayerAttribute), global::User.PlayerAttribute.Parser, new[]{ "PhyAttMax", "PhyAttMin", "MagicAttMax", "MagicAttMin", "TaoAttMax", "TaoAttMin", "PhyDefMax", "PhyDefMin", "MagicDefMax", "MagicDefMin", "Accurate", "Dodge", "PoisonRecover", "HeathRecover", "AttackSpeed", "MaxHp", "MaxMp", "MagicRecover", "Luck", "Critical", "NbValue", "CriticalDamage", "MaxInnerPower", "Resistance", "HolyAtt", "PkAtk", "PkDef" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::User.LoginRequest), global::User.LoginRequest.Parser, new[]{ "LoginName", "PlatformId", "ServerId", "Sign", "Time" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::User.LoginResponse), global::User.LoginResponse.Parser, new[]{ "RoleList", "UserId" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::User.CreateRoleRequest), global::User.CreateRoleRequest.Parser, new[]{ "Name", "Sex", "Career" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::User.RandomRoleNameResponse), global::User.RandomRoleNameResponse.Parser, new[]{ "Name" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::User.RandomRoleNameRequest), global::User.RandomRoleNameRequest.Parser, new[]{ "Sex" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::User.RoleIdMsg), global::User.RoleIdMsg.Parser, new[]{ "RoleId" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::User.GMCommand), global::User.GMCommand.Parser, new[]{ "Command" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::User.CloseServerResponse), global::User.CloseServerResponse.Parser, new[]{ "Code", "Msg" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::User.ReconnectRequest), global::User.ReconnectRequest.Parser, new[]{ "LoginName", "ServerId", "PlatformId", "RoleId", "Sign", "Time", "ChangeLine" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::User.DisconnectResponse), global::User.DisconnectResponse.Parser, new[]{ "Reason" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::User.UserFeedbackRequest), global::User.UserFeedbackRequest.Parser, new[]{ "Content", "PhoneType", "Qq" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::User.BindPhoneNumberRequest), global::User.BindPhoneNumberRequest.Parser, new[]{ "PhoneNumber" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::User.RechargeingRequest), global::User.RechargeingRequest.Parser, new[]{ "RechargeId" }, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum GoingDownReason {
+    /// <summary>
+    ///维护
+    /// </summary>
+    [pbr::OriginalName("Maintain")] Maintain = 0,
+    /// <summary>
+    ///封禁
+    /// </summary>
+    [pbr::OriginalName("Block")] Block = 1,
+    /// <summary>
+    ///其他设备登录
+    /// </summary>
+    [pbr::OriginalName("AnotherSession")] AnotherSession = 2,
+  }
+
+  #endregion
+
+  #region Messages
+  public sealed partial class RoleInfo : pb::IMessage<RoleInfo> {
+    private static readonly pb::MessageParser<RoleInfo> _parser = new pb::MessageParser<RoleInfo>(() => new RoleInfo());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<RoleInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::User.UserReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RoleInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RoleInfo(RoleInfo other) : this() {
+      roleId_ = other.roleId_;
+      roleName_ = other.roleName_;
+      level_ = other.level_;
+      sex_ = other.sex_;
+      mapId_ = other.mapId_;
+      line_ = other.line_;
+      curServerType_ = other.curServerType_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RoleInfo Clone() {
+      return new RoleInfo(this);
+    }
+
+    /// <summary>Field number for the "roleId" field.</summary>
+    public const int RoleIdFieldNumber = 1;
+    private long roleId_;
+    /// <summary>
+    ///角色ID
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long RoleId {
+      get { return roleId_; }
+      set {
+        roleId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "roleName" field.</summary>
+    public const int RoleNameFieldNumber = 2;
+    private string roleName_ = "";
+    /// <summary>
+    ///名称
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string RoleName {
+      get { return roleName_; }
+      set {
+        roleName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "level" field.</summary>
+    public const int LevelFieldNumber = 3;
+    private int level_;
+    /// <summary>
+    ///等级
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Level {
+      get { return level_; }
+      set {
+        level_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "sex" field.</summary>
+    public const int SexFieldNumber = 4;
+    private int sex_;
+    /// <summary>
+    ///性别
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Sex {
+      get { return sex_; }
+      set {
+        sex_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "mapId" field.</summary>
+    public const int MapIdFieldNumber = 5;
+    private int mapId_;
+    /// <summary>
+    ///所在地图
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int MapId {
+      get { return mapId_; }
+      set {
+        mapId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "line" field.</summary>
+    public const int LineFieldNumber = 6;
+    private int line_;
+    /// <summary>
+    ///所在分线
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Line {
+      get { return line_; }
+      set {
+        line_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "curServerType" field.</summary>
+    public const int CurServerTypeFieldNumber = 7;
+    private int curServerType_;
+    /// <summary>
+    ///当前服务器类型
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CurServerType {
+      get { return curServerType_; }
+      set {
+        curServerType_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as RoleInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(RoleInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (RoleId != other.RoleId) return false;
+      if (RoleName != other.RoleName) return false;
+      if (Level != other.Level) return false;
+      if (Sex != other.Sex) return false;
+      if (MapId != other.MapId) return false;
+      if (Line != other.Line) return false;
+      if (CurServerType != other.CurServerType) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (RoleId != 0L) hash ^= RoleId.GetHashCode();
+      if (RoleName.Length != 0) hash ^= RoleName.GetHashCode();
+      if (Level != 0) hash ^= Level.GetHashCode();
+      if (Sex != 0) hash ^= Sex.GetHashCode();
+      if (MapId != 0) hash ^= MapId.GetHashCode();
+      if (Line != 0) hash ^= Line.GetHashCode();
+      if (CurServerType != 0) hash ^= CurServerType.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (RoleId != 0L) {
+        output.WriteRawTag(8);
+        output.WriteInt64(RoleId);
+      }
+      if (RoleName.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(RoleName);
+      }
+      if (Level != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(Level);
+      }
+      if (Sex != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(Sex);
+      }
+      if (MapId != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(MapId);
+      }
+      if (Line != 0) {
+        output.WriteRawTag(48);
+        output.WriteInt32(Line);
+      }
+      if (CurServerType != 0) {
+        output.WriteRawTag(56);
+        output.WriteInt32(CurServerType);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (RoleId != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(RoleId);
+      }
+      if (RoleName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(RoleName);
+      }
+      if (Level != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Level);
+      }
+      if (Sex != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Sex);
+      }
+      if (MapId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(MapId);
+      }
+      if (Line != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Line);
+      }
+      if (CurServerType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(CurServerType);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(RoleInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.RoleId != 0L) {
+        RoleId = other.RoleId;
+      }
+      if (other.RoleName.Length != 0) {
+        RoleName = other.RoleName;
+      }
+      if (other.Level != 0) {
+        Level = other.Level;
+      }
+      if (other.Sex != 0) {
+        Sex = other.Sex;
+      }
+      if (other.MapId != 0) {
+        MapId = other.MapId;
+      }
+      if (other.Line != 0) {
+        Line = other.Line;
+      }
+      if (other.CurServerType != 0) {
+        CurServerType = other.CurServerType;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            RoleId = input.ReadInt64();
+            break;
+          }
+          case 18: {
+            RoleName = input.ReadString();
+            break;
+          }
+          case 24: {
+            Level = input.ReadInt32();
+            break;
+          }
+          case 32: {
+            Sex = input.ReadInt32();
+            break;
+          }
+          case 40: {
+            MapId = input.ReadInt32();
+            break;
+          }
+          case 48: {
+            Line = input.ReadInt32();
+            break;
+          }
+          case 56: {
+            CurServerType = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class PlayerAttribute : pb::IMessage<PlayerAttribute> {
+    private static readonly pb::MessageParser<PlayerAttribute> _parser = new pb::MessageParser<PlayerAttribute>(() => new PlayerAttribute());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<PlayerAttribute> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::User.UserReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public PlayerAttribute() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public PlayerAttribute(PlayerAttribute other) : this() {
+      phyAttMax_ = other.phyAttMax_;
+      phyAttMin_ = other.phyAttMin_;
+      magicAttMax_ = other.magicAttMax_;
+      magicAttMin_ = other.magicAttMin_;
+      taoAttMax_ = other.taoAttMax_;
+      taoAttMin_ = other.taoAttMin_;
+      phyDefMax_ = other.phyDefMax_;
+      phyDefMin_ = other.phyDefMin_;
+      magicDefMax_ = other.magicDefMax_;
+      magicDefMin_ = other.magicDefMin_;
+      accurate_ = other.accurate_;
+      dodge_ = other.dodge_;
+      poisonRecover_ = other.poisonRecover_;
+      heathRecover_ = other.heathRecover_;
+      attackSpeed_ = other.attackSpeed_;
+      maxHp_ = other.maxHp_;
+      maxMp_ = other.maxMp_;
+      magicRecover_ = other.magicRecover_;
+      luck_ = other.luck_;
+      critical_ = other.critical_;
+      nbValue_ = other.nbValue_;
+      criticalDamage_ = other.criticalDamage_;
+      maxInnerPower_ = other.maxInnerPower_;
+      resistance_ = other.resistance_;
+      holyAtt_ = other.holyAtt_;
+      pkAtk_ = other.pkAtk_;
+      pkDef_ = other.pkDef_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public PlayerAttribute Clone() {
+      return new PlayerAttribute(this);
+    }
+
+    /// <summary>Field number for the "phyAttMax" field.</summary>
+    public const int PhyAttMaxFieldNumber = 1;
+    private int phyAttMax_;
+    /// <summary>
+    ///物理攻击上限
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int PhyAttMax {
+      get { return phyAttMax_; }
+      set {
+        phyAttMax_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "phyAttMin" field.</summary>
+    public const int PhyAttMinFieldNumber = 2;
+    private int phyAttMin_;
+    /// <summary>
+    ///物理攻击下限
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int PhyAttMin {
+      get { return phyAttMin_; }
+      set {
+        phyAttMin_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "magicAttMax" field.</summary>
+    public const int MagicAttMaxFieldNumber = 3;
+    private int magicAttMax_;
+    /// <summary>
+    ///魔法攻击上限
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int MagicAttMax {
+      get { return magicAttMax_; }
+      set {
+        magicAttMax_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "magicAttMin" field.</summary>
+    public const int MagicAttMinFieldNumber = 4;
+    private int magicAttMin_;
+    /// <summary>
+    ///魔法攻击下限
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int MagicAttMin {
+      get { return magicAttMin_; }
+      set {
+        magicAttMin_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "taoAttMax" field.</summary>
+    public const int TaoAttMaxFieldNumber = 5;
+    private int taoAttMax_;
+    /// <summary>
+    ///道术攻击上限
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int TaoAttMax {
+      get { return taoAttMax_; }
+      set {
+        taoAttMax_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "taoAttMin" field.</summary>
+    public const int TaoAttMinFieldNumber = 6;
+    private int taoAttMin_;
+    /// <summary>
+    ///道术攻击下限
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int TaoAttMin {
+      get { return taoAttMin_; }
+      set {
+        taoAttMin_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "phyDefMax" field.</summary>
+    public const int PhyDefMaxFieldNumber = 7;
+    private int phyDefMax_;
+    /// <summary>
+    ///物理防御上限
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int PhyDefMax {
+      get { return phyDefMax_; }
+      set {
+        phyDefMax_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "phyDefMin" field.</summary>
+    public const int PhyDefMinFieldNumber = 8;
+    private int phyDefMin_;
+    /// <summary>
+    ///物理防御下限
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int PhyDefMin {
+      get { return phyDefMin_; }
+      set {
+        phyDefMin_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "magicDefMax" field.</summary>
+    public const int MagicDefMaxFieldNumber = 9;
+    private int magicDefMax_;
+    /// <summary>
+    ///魔法防御上限
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int MagicDefMax {
+      get { return magicDefMax_; }
+      set {
+        magicDefMax_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "magicDefMin" field.</summary>
+    public const int MagicDefMinFieldNumber = 10;
+    private int magicDefMin_;
+    /// <summary>
+    ///魔法防御下限
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int MagicDefMin {
+      get { return magicDefMin_; }
+      set {
+        magicDefMin_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "accurate" field.</summary>
+    public const int AccurateFieldNumber = 11;
+    private int accurate_;
+    /// <summary>
+    ///精准
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Accurate {
+      get { return accurate_; }
+      set {
+        accurate_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "dodge" field.</summary>
+    public const int DodgeFieldNumber = 12;
+    private int dodge_;
+    /// <summary>
+    ///闪避
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Dodge {
+      get { return dodge_; }
+      set {
+        dodge_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "poisonRecover" field.</summary>
+    public const int PoisonRecoverFieldNumber = 13;
+    private int poisonRecover_;
+    /// <summary>
+    ///负面恢复
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int PoisonRecover {
+      get { return poisonRecover_; }
+      set {
+        poisonRecover_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "heathRecover" field.</summary>
+    public const int HeathRecoverFieldNumber = 14;
+    private int heathRecover_;
+    /// <summary>
+    ///体力恢复
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int HeathRecover {
+      get { return heathRecover_; }
+      set {
+        heathRecover_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attackSpeed" field.</summary>
+    public const int AttackSpeedFieldNumber = 15;
+    private int attackSpeed_;
+    /// <summary>
+    ///攻击速度
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AttackSpeed {
+      get { return attackSpeed_; }
+      set {
+        attackSpeed_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "maxHp" field.</summary>
+    public const int MaxHpFieldNumber = 16;
+    private int maxHp_;
+    /// <summary>
+    ///最大HP
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int MaxHp {
+      get { return maxHp_; }
+      set {
+        maxHp_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "maxMp" field.</summary>
+    public const int MaxMpFieldNumber = 17;
+    private int maxMp_;
+    /// <summary>
+    ///最大MP
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int MaxMp {
+      get { return maxMp_; }
+      set {
+        maxMp_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "magicRecover" field.</summary>
+    public const int MagicRecoverFieldNumber = 18;
+    private int magicRecover_;
+    /// <summary>
+    ///魔法恢复
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int MagicRecover {
+      get { return magicRecover_; }
+      set {
+        magicRecover_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "luck" field.</summary>
+    public const int LuckFieldNumber = 19;
+    private int luck_;
+    /// <summary>
+    ///幸运
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Luck {
+      get { return luck_; }
+      set {
+        luck_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "critical" field.</summary>
+    public const int CriticalFieldNumber = 20;
+    private int critical_;
+    /// <summary>
+    ///暴击率
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Critical {
+      get { return critical_; }
+      set {
+        critical_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "nbValue" field.</summary>
+    public const int NbValueFieldNumber = 21;
+    private int nbValue_;
+    /// <summary>
+    ///战斗力
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int NbValue {
+      get { return nbValue_; }
+      set {
+        nbValue_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "criticalDamage" field.</summary>
+    public const int CriticalDamageFieldNumber = 22;
+    private int criticalDamage_;
+    /// <summary>
+    ///暴击伤害
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CriticalDamage {
+      get { return criticalDamage_; }
+      set {
+        criticalDamage_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "maxInnerPower" field.</summary>
+    public const int MaxInnerPowerFieldNumber = 23;
+    private int maxInnerPower_;
+    /// <summary>
+    ///最大内力
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int MaxInnerPower {
+      get { return maxInnerPower_; }
+      set {
+        maxInnerPower_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "resistance" field.</summary>
+    public const int ResistanceFieldNumber = 24;
+    private int resistance_;
+    /// <summary>
+    ///抗性
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Resistance {
+      get { return resistance_; }
+      set {
+        resistance_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "holyAtt" field.</summary>
+    public const int HolyAttFieldNumber = 25;
+    private int holyAtt_;
+    /// <summary>
+    ///神圣伤害
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int HolyAtt {
+      get { return holyAtt_; }
+      set {
+        holyAtt_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "pkAtk" field.</summary>
+    public const int PkAtkFieldNumber = 26;
+    private int pkAtk_;
+    /// <summary>
+    ///PK伤害加成
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int PkAtk {
+      get { return pkAtk_; }
+      set {
+        pkAtk_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "pkDef" field.</summary>
+    public const int PkDefFieldNumber = 27;
+    private int pkDef_;
+    /// <summary>
+    ///PK防御
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int PkDef {
+      get { return pkDef_; }
+      set {
+        pkDef_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as PlayerAttribute);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(PlayerAttribute other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (PhyAttMax != other.PhyAttMax) return false;
+      if (PhyAttMin != other.PhyAttMin) return false;
+      if (MagicAttMax != other.MagicAttMax) return false;
+      if (MagicAttMin != other.MagicAttMin) return false;
+      if (TaoAttMax != other.TaoAttMax) return false;
+      if (TaoAttMin != other.TaoAttMin) return false;
+      if (PhyDefMax != other.PhyDefMax) return false;
+      if (PhyDefMin != other.PhyDefMin) return false;
+      if (MagicDefMax != other.MagicDefMax) return false;
+      if (MagicDefMin != other.MagicDefMin) return false;
+      if (Accurate != other.Accurate) return false;
+      if (Dodge != other.Dodge) return false;
+      if (PoisonRecover != other.PoisonRecover) return false;
+      if (HeathRecover != other.HeathRecover) return false;
+      if (AttackSpeed != other.AttackSpeed) return false;
+      if (MaxHp != other.MaxHp) return false;
+      if (MaxMp != other.MaxMp) return false;
+      if (MagicRecover != other.MagicRecover) return false;
+      if (Luck != other.Luck) return false;
+      if (Critical != other.Critical) return false;
+      if (NbValue != other.NbValue) return false;
+      if (CriticalDamage != other.CriticalDamage) return false;
+      if (MaxInnerPower != other.MaxInnerPower) return false;
+      if (Resistance != other.Resistance) return false;
+      if (HolyAtt != other.HolyAtt) return false;
+      if (PkAtk != other.PkAtk) return false;
+      if (PkDef != other.PkDef) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (PhyAttMax != 0) hash ^= PhyAttMax.GetHashCode();
+      if (PhyAttMin != 0) hash ^= PhyAttMin.GetHashCode();
+      if (MagicAttMax != 0) hash ^= MagicAttMax.GetHashCode();
+      if (MagicAttMin != 0) hash ^= MagicAttMin.GetHashCode();
+      if (TaoAttMax != 0) hash ^= TaoAttMax.GetHashCode();
+      if (TaoAttMin != 0) hash ^= TaoAttMin.GetHashCode();
+      if (PhyDefMax != 0) hash ^= PhyDefMax.GetHashCode();
+      if (PhyDefMin != 0) hash ^= PhyDefMin.GetHashCode();
+      if (MagicDefMax != 0) hash ^= MagicDefMax.GetHashCode();
+      if (MagicDefMin != 0) hash ^= MagicDefMin.GetHashCode();
+      if (Accurate != 0) hash ^= Accurate.GetHashCode();
+      if (Dodge != 0) hash ^= Dodge.GetHashCode();
+      if (PoisonRecover != 0) hash ^= PoisonRecover.GetHashCode();
+      if (HeathRecover != 0) hash ^= HeathRecover.GetHashCode();
+      if (AttackSpeed != 0) hash ^= AttackSpeed.GetHashCode();
+      if (MaxHp != 0) hash ^= MaxHp.GetHashCode();
+      if (MaxMp != 0) hash ^= MaxMp.GetHashCode();
+      if (MagicRecover != 0) hash ^= MagicRecover.GetHashCode();
+      if (Luck != 0) hash ^= Luck.GetHashCode();
+      if (Critical != 0) hash ^= Critical.GetHashCode();
+      if (NbValue != 0) hash ^= NbValue.GetHashCode();
+      if (CriticalDamage != 0) hash ^= CriticalDamage.GetHashCode();
+      if (MaxInnerPower != 0) hash ^= MaxInnerPower.GetHashCode();
+      if (Resistance != 0) hash ^= Resistance.GetHashCode();
+      if (HolyAtt != 0) hash ^= HolyAtt.GetHashCode();
+      if (PkAtk != 0) hash ^= PkAtk.GetHashCode();
+      if (PkDef != 0) hash ^= PkDef.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (PhyAttMax != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(PhyAttMax);
+      }
+      if (PhyAttMin != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(PhyAttMin);
+      }
+      if (MagicAttMax != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(MagicAttMax);
+      }
+      if (MagicAttMin != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(MagicAttMin);
+      }
+      if (TaoAttMax != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(TaoAttMax);
+      }
+      if (TaoAttMin != 0) {
+        output.WriteRawTag(48);
+        output.WriteInt32(TaoAttMin);
+      }
+      if (PhyDefMax != 0) {
+        output.WriteRawTag(56);
+        output.WriteInt32(PhyDefMax);
+      }
+      if (PhyDefMin != 0) {
+        output.WriteRawTag(64);
+        output.WriteInt32(PhyDefMin);
+      }
+      if (MagicDefMax != 0) {
+        output.WriteRawTag(72);
+        output.WriteInt32(MagicDefMax);
+      }
+      if (MagicDefMin != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(MagicDefMin);
+      }
+      if (Accurate != 0) {
+        output.WriteRawTag(88);
+        output.WriteInt32(Accurate);
+      }
+      if (Dodge != 0) {
+        output.WriteRawTag(96);
+        output.WriteInt32(Dodge);
+      }
+      if (PoisonRecover != 0) {
+        output.WriteRawTag(104);
+        output.WriteInt32(PoisonRecover);
+      }
+      if (HeathRecover != 0) {
+        output.WriteRawTag(112);
+        output.WriteInt32(HeathRecover);
+      }
+      if (AttackSpeed != 0) {
+        output.WriteRawTag(120);
+        output.WriteInt32(AttackSpeed);
+      }
+      if (MaxHp != 0) {
+        output.WriteRawTag(128, 1);
+        output.WriteInt32(MaxHp);
+      }
+      if (MaxMp != 0) {
+        output.WriteRawTag(136, 1);
+        output.WriteInt32(MaxMp);
+      }
+      if (MagicRecover != 0) {
+        output.WriteRawTag(144, 1);
+        output.WriteInt32(MagicRecover);
+      }
+      if (Luck != 0) {
+        output.WriteRawTag(152, 1);
+        output.WriteInt32(Luck);
+      }
+      if (Critical != 0) {
+        output.WriteRawTag(160, 1);
+        output.WriteInt32(Critical);
+      }
+      if (NbValue != 0) {
+        output.WriteRawTag(168, 1);
+        output.WriteInt32(NbValue);
+      }
+      if (CriticalDamage != 0) {
+        output.WriteRawTag(176, 1);
+        output.WriteInt32(CriticalDamage);
+      }
+      if (MaxInnerPower != 0) {
+        output.WriteRawTag(184, 1);
+        output.WriteInt32(MaxInnerPower);
+      }
+      if (Resistance != 0) {
+        output.WriteRawTag(192, 1);
+        output.WriteInt32(Resistance);
+      }
+      if (HolyAtt != 0) {
+        output.WriteRawTag(200, 1);
+        output.WriteInt32(HolyAtt);
+      }
+      if (PkAtk != 0) {
+        output.WriteRawTag(208, 1);
+        output.WriteInt32(PkAtk);
+      }
+      if (PkDef != 0) {
+        output.WriteRawTag(216, 1);
+        output.WriteInt32(PkDef);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (PhyAttMax != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(PhyAttMax);
+      }
+      if (PhyAttMin != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(PhyAttMin);
+      }
+      if (MagicAttMax != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(MagicAttMax);
+      }
+      if (MagicAttMin != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(MagicAttMin);
+      }
+      if (TaoAttMax != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(TaoAttMax);
+      }
+      if (TaoAttMin != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(TaoAttMin);
+      }
+      if (PhyDefMax != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(PhyDefMax);
+      }
+      if (PhyDefMin != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(PhyDefMin);
+      }
+      if (MagicDefMax != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(MagicDefMax);
+      }
+      if (MagicDefMin != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(MagicDefMin);
+      }
+      if (Accurate != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Accurate);
+      }
+      if (Dodge != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Dodge);
+      }
+      if (PoisonRecover != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(PoisonRecover);
+      }
+      if (HeathRecover != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(HeathRecover);
+      }
+      if (AttackSpeed != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(AttackSpeed);
+      }
+      if (MaxHp != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(MaxHp);
+      }
+      if (MaxMp != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(MaxMp);
+      }
+      if (MagicRecover != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(MagicRecover);
+      }
+      if (Luck != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(Luck);
+      }
+      if (Critical != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(Critical);
+      }
+      if (NbValue != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(NbValue);
+      }
+      if (CriticalDamage != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(CriticalDamage);
+      }
+      if (MaxInnerPower != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(MaxInnerPower);
+      }
+      if (Resistance != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(Resistance);
+      }
+      if (HolyAtt != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(HolyAtt);
+      }
+      if (PkAtk != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(PkAtk);
+      }
+      if (PkDef != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(PkDef);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(PlayerAttribute other) {
+      if (other == null) {
+        return;
+      }
+      if (other.PhyAttMax != 0) {
+        PhyAttMax = other.PhyAttMax;
+      }
+      if (other.PhyAttMin != 0) {
+        PhyAttMin = other.PhyAttMin;
+      }
+      if (other.MagicAttMax != 0) {
+        MagicAttMax = other.MagicAttMax;
+      }
+      if (other.MagicAttMin != 0) {
+        MagicAttMin = other.MagicAttMin;
+      }
+      if (other.TaoAttMax != 0) {
+        TaoAttMax = other.TaoAttMax;
+      }
+      if (other.TaoAttMin != 0) {
+        TaoAttMin = other.TaoAttMin;
+      }
+      if (other.PhyDefMax != 0) {
+        PhyDefMax = other.PhyDefMax;
+      }
+      if (other.PhyDefMin != 0) {
+        PhyDefMin = other.PhyDefMin;
+      }
+      if (other.MagicDefMax != 0) {
+        MagicDefMax = other.MagicDefMax;
+      }
+      if (other.MagicDefMin != 0) {
+        MagicDefMin = other.MagicDefMin;
+      }
+      if (other.Accurate != 0) {
+        Accurate = other.Accurate;
+      }
+      if (other.Dodge != 0) {
+        Dodge = other.Dodge;
+      }
+      if (other.PoisonRecover != 0) {
+        PoisonRecover = other.PoisonRecover;
+      }
+      if (other.HeathRecover != 0) {
+        HeathRecover = other.HeathRecover;
+      }
+      if (other.AttackSpeed != 0) {
+        AttackSpeed = other.AttackSpeed;
+      }
+      if (other.MaxHp != 0) {
+        MaxHp = other.MaxHp;
+      }
+      if (other.MaxMp != 0) {
+        MaxMp = other.MaxMp;
+      }
+      if (other.MagicRecover != 0) {
+        MagicRecover = other.MagicRecover;
+      }
+      if (other.Luck != 0) {
+        Luck = other.Luck;
+      }
+      if (other.Critical != 0) {
+        Critical = other.Critical;
+      }
+      if (other.NbValue != 0) {
+        NbValue = other.NbValue;
+      }
+      if (other.CriticalDamage != 0) {
+        CriticalDamage = other.CriticalDamage;
+      }
+      if (other.MaxInnerPower != 0) {
+        MaxInnerPower = other.MaxInnerPower;
+      }
+      if (other.Resistance != 0) {
+        Resistance = other.Resistance;
+      }
+      if (other.HolyAtt != 0) {
+        HolyAtt = other.HolyAtt;
+      }
+      if (other.PkAtk != 0) {
+        PkAtk = other.PkAtk;
+      }
+      if (other.PkDef != 0) {
+        PkDef = other.PkDef;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            PhyAttMax = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            PhyAttMin = input.ReadInt32();
+            break;
+          }
+          case 24: {
+            MagicAttMax = input.ReadInt32();
+            break;
+          }
+          case 32: {
+            MagicAttMin = input.ReadInt32();
+            break;
+          }
+          case 40: {
+            TaoAttMax = input.ReadInt32();
+            break;
+          }
+          case 48: {
+            TaoAttMin = input.ReadInt32();
+            break;
+          }
+          case 56: {
+            PhyDefMax = input.ReadInt32();
+            break;
+          }
+          case 64: {
+            PhyDefMin = input.ReadInt32();
+            break;
+          }
+          case 72: {
+            MagicDefMax = input.ReadInt32();
+            break;
+          }
+          case 80: {
+            MagicDefMin = input.ReadInt32();
+            break;
+          }
+          case 88: {
+            Accurate = input.ReadInt32();
+            break;
+          }
+          case 96: {
+            Dodge = input.ReadInt32();
+            break;
+          }
+          case 104: {
+            PoisonRecover = input.ReadInt32();
+            break;
+          }
+          case 112: {
+            HeathRecover = input.ReadInt32();
+            break;
+          }
+          case 120: {
+            AttackSpeed = input.ReadInt32();
+            break;
+          }
+          case 128: {
+            MaxHp = input.ReadInt32();
+            break;
+          }
+          case 136: {
+            MaxMp = input.ReadInt32();
+            break;
+          }
+          case 144: {
+            MagicRecover = input.ReadInt32();
+            break;
+          }
+          case 152: {
+            Luck = input.ReadInt32();
+            break;
+          }
+          case 160: {
+            Critical = input.ReadInt32();
+            break;
+          }
+          case 168: {
+            NbValue = input.ReadInt32();
+            break;
+          }
+          case 176: {
+            CriticalDamage = input.ReadInt32();
+            break;
+          }
+          case 184: {
+            MaxInnerPower = input.ReadInt32();
+            break;
+          }
+          case 192: {
+            Resistance = input.ReadInt32();
+            break;
+          }
+          case 200: {
+            HolyAtt = input.ReadInt32();
+            break;
+          }
+          case 208: {
+            PkAtk = input.ReadInt32();
+            break;
+          }
+          case 216: {
+            PkDef = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class LoginRequest : pb::IMessage<LoginRequest> {
+    private static readonly pb::MessageParser<LoginRequest> _parser = new pb::MessageParser<LoginRequest>(() => new LoginRequest());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<LoginRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::User.UserReflection.Descriptor.MessageTypes[2]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public LoginRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public LoginRequest(LoginRequest other) : this() {
+      loginName_ = other.loginName_;
+      platformId_ = other.platformId_;
+      serverId_ = other.serverId_;
+      sign_ = other.sign_;
+      time_ = other.time_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public LoginRequest Clone() {
+      return new LoginRequest(this);
+    }
+
+    /// <summary>Field number for the "loginName" field.</summary>
+    public const int LoginNameFieldNumber = 1;
+    private string loginName_ = "";
+    /// <summary>
+    ///用户登录名
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string LoginName {
+      get { return loginName_; }
+      set {
+        loginName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "platformId" field.</summary>
+    public const int PlatformIdFieldNumber = 2;
+    private int platformId_;
+    /// <summary>
+    ///平台
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int PlatformId {
+      get { return platformId_; }
+      set {
+        platformId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "serverId" field.</summary>
+    public const int ServerIdFieldNumber = 3;
+    private int serverId_;
+    /// <summary>
+    ///服务器ID
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ServerId {
+      get { return serverId_; }
+      set {
+        serverId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "sign" field.</summary>
+    public const int SignFieldNumber = 4;
+    private string sign_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Sign {
+      get { return sign_; }
+      set {
+        sign_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "time" field.</summary>
+    public const int TimeFieldNumber = 5;
+    private long time_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long Time {
+      get { return time_; }
+      set {
+        time_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as LoginRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(LoginRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (LoginName != other.LoginName) return false;
+      if (PlatformId != other.PlatformId) return false;
+      if (ServerId != other.ServerId) return false;
+      if (Sign != other.Sign) return false;
+      if (Time != other.Time) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (LoginName.Length != 0) hash ^= LoginName.GetHashCode();
+      if (PlatformId != 0) hash ^= PlatformId.GetHashCode();
+      if (ServerId != 0) hash ^= ServerId.GetHashCode();
+      if (Sign.Length != 0) hash ^= Sign.GetHashCode();
+      if (Time != 0L) hash ^= Time.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (LoginName.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(LoginName);
+      }
+      if (PlatformId != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(PlatformId);
+      }
+      if (ServerId != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(ServerId);
+      }
+      if (Sign.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Sign);
+      }
+      if (Time != 0L) {
+        output.WriteRawTag(40);
+        output.WriteInt64(Time);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (LoginName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(LoginName);
+      }
+      if (PlatformId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(PlatformId);
+      }
+      if (ServerId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ServerId);
+      }
+      if (Sign.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Sign);
+      }
+      if (Time != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Time);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(LoginRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.LoginName.Length != 0) {
+        LoginName = other.LoginName;
+      }
+      if (other.PlatformId != 0) {
+        PlatformId = other.PlatformId;
+      }
+      if (other.ServerId != 0) {
+        ServerId = other.ServerId;
+      }
+      if (other.Sign.Length != 0) {
+        Sign = other.Sign;
+      }
+      if (other.Time != 0L) {
+        Time = other.Time;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            LoginName = input.ReadString();
+            break;
+          }
+          case 16: {
+            PlatformId = input.ReadInt32();
+            break;
+          }
+          case 24: {
+            ServerId = input.ReadInt32();
+            break;
+          }
+          case 34: {
+            Sign = input.ReadString();
+            break;
+          }
+          case 40: {
+            Time = input.ReadInt64();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class LoginResponse : pb::IMessage<LoginResponse> {
+    private static readonly pb::MessageParser<LoginResponse> _parser = new pb::MessageParser<LoginResponse>(() => new LoginResponse());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<LoginResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::User.UserReflection.Descriptor.MessageTypes[3]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public LoginResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public LoginResponse(LoginResponse other) : this() {
+      roleList_ = other.roleList_.Clone();
+      userId_ = other.userId_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public LoginResponse Clone() {
+      return new LoginResponse(this);
+    }
+
+    /// <summary>Field number for the "roleList" field.</summary>
+    public const int RoleListFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::User.RoleInfo> _repeated_roleList_codec
+        = pb::FieldCodec.ForMessage(10, global::User.RoleInfo.Parser);
+    private readonly pbc::RepeatedField<global::User.RoleInfo> roleList_ = new pbc::RepeatedField<global::User.RoleInfo>();
+    /// <summary>
+    ///角色列表
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::User.RoleInfo> RoleList {
+      get { return roleList_; }
+    }
+
+    /// <summary>Field number for the "userId" field.</summary>
+    public const int UserIdFieldNumber = 2;
+    private long userId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long UserId {
+      get { return userId_; }
+      set {
+        userId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as LoginResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(LoginResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!roleList_.Equals(other.roleList_)) return false;
+      if (UserId != other.UserId) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= roleList_.GetHashCode();
+      if (UserId != 0L) hash ^= UserId.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      roleList_.WriteTo(output, _repeated_roleList_codec);
+      if (UserId != 0L) {
+        output.WriteRawTag(16);
+        output.WriteInt64(UserId);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      size += roleList_.CalculateSize(_repeated_roleList_codec);
+      if (UserId != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(UserId);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(LoginResponse other) {
+      if (other == null) {
+        return;
+      }
+      roleList_.Add(other.roleList_);
+      if (other.UserId != 0L) {
+        UserId = other.UserId;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            roleList_.AddEntriesFrom(input, _repeated_roleList_codec);
+            break;
+          }
+          case 16: {
+            UserId = input.ReadInt64();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class CreateRoleRequest : pb::IMessage<CreateRoleRequest> {
+    private static readonly pb::MessageParser<CreateRoleRequest> _parser = new pb::MessageParser<CreateRoleRequest>(() => new CreateRoleRequest());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<CreateRoleRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::User.UserReflection.Descriptor.MessageTypes[4]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CreateRoleRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CreateRoleRequest(CreateRoleRequest other) : this() {
+      name_ = other.name_;
+      sex_ = other.sex_;
+      career_ = other.career_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CreateRoleRequest Clone() {
+      return new CreateRoleRequest(this);
+    }
+
+    /// <summary>Field number for the "name" field.</summary>
+    public const int NameFieldNumber = 1;
+    private string name_ = "";
+    /// <summary>
+    ///名字
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "sex" field.</summary>
+    public const int SexFieldNumber = 2;
+    private int sex_;
+    /// <summary>
+    ///性别
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Sex {
+      get { return sex_; }
+      set {
+        sex_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "career" field.</summary>
+    public const int CareerFieldNumber = 3;
+    private int career_;
+    /// <summary>
+    ///职业
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Career {
+      get { return career_; }
+      set {
+        career_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as CreateRoleRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(CreateRoleRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Name != other.Name) return false;
+      if (Sex != other.Sex) return false;
+      if (Career != other.Career) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (Sex != 0) hash ^= Sex.GetHashCode();
+      if (Career != 0) hash ^= Career.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Name.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Name);
+      }
+      if (Sex != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(Sex);
+      }
+      if (Career != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(Career);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (Sex != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Sex);
+      }
+      if (Career != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Career);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(CreateRoleRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
+      }
+      if (other.Sex != 0) {
+        Sex = other.Sex;
+      }
+      if (other.Career != 0) {
+        Career = other.Career;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            Name = input.ReadString();
+            break;
+          }
+          case 16: {
+            Sex = input.ReadInt32();
+            break;
+          }
+          case 24: {
+            Career = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class RandomRoleNameResponse : pb::IMessage<RandomRoleNameResponse> {
+    private static readonly pb::MessageParser<RandomRoleNameResponse> _parser = new pb::MessageParser<RandomRoleNameResponse>(() => new RandomRoleNameResponse());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<RandomRoleNameResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::User.UserReflection.Descriptor.MessageTypes[5]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RandomRoleNameResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RandomRoleNameResponse(RandomRoleNameResponse other) : this() {
+      name_ = other.name_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RandomRoleNameResponse Clone() {
+      return new RandomRoleNameResponse(this);
+    }
+
+    /// <summary>Field number for the "name" field.</summary>
+    public const int NameFieldNumber = 1;
+    private string name_ = "";
+    /// <summary>
+    ///名字
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as RandomRoleNameResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(RandomRoleNameResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Name != other.Name) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Name.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Name);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(RandomRoleNameResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            Name = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class RandomRoleNameRequest : pb::IMessage<RandomRoleNameRequest> {
+    private static readonly pb::MessageParser<RandomRoleNameRequest> _parser = new pb::MessageParser<RandomRoleNameRequest>(() => new RandomRoleNameRequest());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<RandomRoleNameRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::User.UserReflection.Descriptor.MessageTypes[6]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RandomRoleNameRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RandomRoleNameRequest(RandomRoleNameRequest other) : this() {
+      sex_ = other.sex_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RandomRoleNameRequest Clone() {
+      return new RandomRoleNameRequest(this);
+    }
+
+    /// <summary>Field number for the "sex" field.</summary>
+    public const int SexFieldNumber = 1;
+    private int sex_;
+    /// <summary>
+    ///性别
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Sex {
+      get { return sex_; }
+      set {
+        sex_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as RandomRoleNameRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(RandomRoleNameRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Sex != other.Sex) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Sex != 0) hash ^= Sex.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Sex != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Sex);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Sex != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Sex);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(RandomRoleNameRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Sex != 0) {
+        Sex = other.Sex;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Sex = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class RoleIdMsg : pb::IMessage<RoleIdMsg> {
+    private static readonly pb::MessageParser<RoleIdMsg> _parser = new pb::MessageParser<RoleIdMsg>(() => new RoleIdMsg());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<RoleIdMsg> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::User.UserReflection.Descriptor.MessageTypes[7]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RoleIdMsg() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RoleIdMsg(RoleIdMsg other) : this() {
+      roleId_ = other.roleId_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RoleIdMsg Clone() {
+      return new RoleIdMsg(this);
+    }
+
+    /// <summary>Field number for the "roleId" field.</summary>
+    public const int RoleIdFieldNumber = 1;
+    private long roleId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long RoleId {
+      get { return roleId_; }
+      set {
+        roleId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as RoleIdMsg);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(RoleIdMsg other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (RoleId != other.RoleId) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (RoleId != 0L) hash ^= RoleId.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (RoleId != 0L) {
+        output.WriteRawTag(8);
+        output.WriteInt64(RoleId);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (RoleId != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(RoleId);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(RoleIdMsg other) {
+      if (other == null) {
+        return;
+      }
+      if (other.RoleId != 0L) {
+        RoleId = other.RoleId;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            RoleId = input.ReadInt64();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  ///gm命令请求
+  /// </summary>
+  public sealed partial class GMCommand : pb::IMessage<GMCommand> {
+    private static readonly pb::MessageParser<GMCommand> _parser = new pb::MessageParser<GMCommand>(() => new GMCommand());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<GMCommand> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::User.UserReflection.Descriptor.MessageTypes[8]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public GMCommand() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public GMCommand(GMCommand other) : this() {
+      command_ = other.command_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public GMCommand Clone() {
+      return new GMCommand(this);
+    }
+
+    /// <summary>Field number for the "command" field.</summary>
+    public const int CommandFieldNumber = 1;
+    private string command_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Command {
+      get { return command_; }
+      set {
+        command_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as GMCommand);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(GMCommand other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Command != other.Command) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Command.Length != 0) hash ^= Command.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Command.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Command);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Command.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Command);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(GMCommand other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Command.Length != 0) {
+        Command = other.Command;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            Command = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class CloseServerResponse : pb::IMessage<CloseServerResponse> {
+    private static readonly pb::MessageParser<CloseServerResponse> _parser = new pb::MessageParser<CloseServerResponse>(() => new CloseServerResponse());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<CloseServerResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::User.UserReflection.Descriptor.MessageTypes[9]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CloseServerResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CloseServerResponse(CloseServerResponse other) : this() {
+      code_ = other.code_;
+      msg_ = other.msg_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CloseServerResponse Clone() {
+      return new CloseServerResponse(this);
+    }
+
+    /// <summary>Field number for the "code" field.</summary>
+    public const int CodeFieldNumber = 1;
+    private int code_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Code {
+      get { return code_; }
+      set {
+        code_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "msg" field.</summary>
+    public const int MsgFieldNumber = 2;
+    private string msg_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Msg {
+      get { return msg_; }
+      set {
+        msg_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as CloseServerResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(CloseServerResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Code != other.Code) return false;
+      if (Msg != other.Msg) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Code != 0) hash ^= Code.GetHashCode();
+      if (Msg.Length != 0) hash ^= Msg.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Code != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Code);
+      }
+      if (Msg.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Msg);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Code != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Code);
+      }
+      if (Msg.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Msg);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(CloseServerResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Code != 0) {
+        Code = other.Code;
+      }
+      if (other.Msg.Length != 0) {
+        Msg = other.Msg;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Code = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            Msg = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  ///重新连接请求
+  /// </summary>
+  public sealed partial class ReconnectRequest : pb::IMessage<ReconnectRequest> {
+    private static readonly pb::MessageParser<ReconnectRequest> _parser = new pb::MessageParser<ReconnectRequest>(() => new ReconnectRequest());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ReconnectRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::User.UserReflection.Descriptor.MessageTypes[10]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ReconnectRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ReconnectRequest(ReconnectRequest other) : this() {
+      loginName_ = other.loginName_;
+      serverId_ = other.serverId_;
+      platformId_ = other.platformId_;
+      roleId_ = other.roleId_;
+      sign_ = other.sign_;
+      time_ = other.time_;
+      changeLine_ = other.changeLine_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ReconnectRequest Clone() {
+      return new ReconnectRequest(this);
+    }
+
+    /// <summary>Field number for the "loginName" field.</summary>
+    public const int LoginNameFieldNumber = 1;
+    private string loginName_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string LoginName {
+      get { return loginName_; }
+      set {
+        loginName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "serverId" field.</summary>
+    public const int ServerIdFieldNumber = 2;
+    private int serverId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ServerId {
+      get { return serverId_; }
+      set {
+        serverId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "platformId" field.</summary>
+    public const int PlatformIdFieldNumber = 3;
+    private int platformId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int PlatformId {
+      get { return platformId_; }
+      set {
+        platformId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "roleId" field.</summary>
+    public const int RoleIdFieldNumber = 4;
+    private long roleId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long RoleId {
+      get { return roleId_; }
+      set {
+        roleId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "sign" field.</summary>
+    public const int SignFieldNumber = 5;
+    private string sign_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Sign {
+      get { return sign_; }
+      set {
+        sign_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "time" field.</summary>
+    public const int TimeFieldNumber = 6;
+    private long time_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long Time {
+      get { return time_; }
+      set {
+        time_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "changeLine" field.</summary>
+    public const int ChangeLineFieldNumber = 7;
+    private bool changeLine_;
+    /// <summary>
+    ///是否切换服务器
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool ChangeLine {
+      get { return changeLine_; }
+      set {
+        changeLine_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ReconnectRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ReconnectRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (LoginName != other.LoginName) return false;
+      if (ServerId != other.ServerId) return false;
+      if (PlatformId != other.PlatformId) return false;
+      if (RoleId != other.RoleId) return false;
+      if (Sign != other.Sign) return false;
+      if (Time != other.Time) return false;
+      if (ChangeLine != other.ChangeLine) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (LoginName.Length != 0) hash ^= LoginName.GetHashCode();
+      if (ServerId != 0) hash ^= ServerId.GetHashCode();
+      if (PlatformId != 0) hash ^= PlatformId.GetHashCode();
+      if (RoleId != 0L) hash ^= RoleId.GetHashCode();
+      if (Sign.Length != 0) hash ^= Sign.GetHashCode();
+      if (Time != 0L) hash ^= Time.GetHashCode();
+      if (ChangeLine != false) hash ^= ChangeLine.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (LoginName.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(LoginName);
+      }
+      if (ServerId != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(ServerId);
+      }
+      if (PlatformId != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(PlatformId);
+      }
+      if (RoleId != 0L) {
+        output.WriteRawTag(32);
+        output.WriteInt64(RoleId);
+      }
+      if (Sign.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(Sign);
+      }
+      if (Time != 0L) {
+        output.WriteRawTag(48);
+        output.WriteInt64(Time);
+      }
+      if (ChangeLine != false) {
+        output.WriteRawTag(56);
+        output.WriteBool(ChangeLine);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (LoginName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(LoginName);
+      }
+      if (ServerId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ServerId);
+      }
+      if (PlatformId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(PlatformId);
+      }
+      if (RoleId != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(RoleId);
+      }
+      if (Sign.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Sign);
+      }
+      if (Time != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Time);
+      }
+      if (ChangeLine != false) {
+        size += 1 + 1;
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(ReconnectRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.LoginName.Length != 0) {
+        LoginName = other.LoginName;
+      }
+      if (other.ServerId != 0) {
+        ServerId = other.ServerId;
+      }
+      if (other.PlatformId != 0) {
+        PlatformId = other.PlatformId;
+      }
+      if (other.RoleId != 0L) {
+        RoleId = other.RoleId;
+      }
+      if (other.Sign.Length != 0) {
+        Sign = other.Sign;
+      }
+      if (other.Time != 0L) {
+        Time = other.Time;
+      }
+      if (other.ChangeLine != false) {
+        ChangeLine = other.ChangeLine;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            LoginName = input.ReadString();
+            break;
+          }
+          case 16: {
+            ServerId = input.ReadInt32();
+            break;
+          }
+          case 24: {
+            PlatformId = input.ReadInt32();
+            break;
+          }
+          case 32: {
+            RoleId = input.ReadInt64();
+            break;
+          }
+          case 42: {
+            Sign = input.ReadString();
+            break;
+          }
+          case 48: {
+            Time = input.ReadInt64();
+            break;
+          }
+          case 56: {
+            ChangeLine = input.ReadBool();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class DisconnectResponse : pb::IMessage<DisconnectResponse> {
+    private static readonly pb::MessageParser<DisconnectResponse> _parser = new pb::MessageParser<DisconnectResponse>(() => new DisconnectResponse());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<DisconnectResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::User.UserReflection.Descriptor.MessageTypes[11]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DisconnectResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DisconnectResponse(DisconnectResponse other) : this() {
+      reason_ = other.reason_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DisconnectResponse Clone() {
+      return new DisconnectResponse(this);
+    }
+
+    /// <summary>Field number for the "reason" field.</summary>
+    public const int ReasonFieldNumber = 1;
+    private global::User.GoingDownReason reason_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::User.GoingDownReason Reason {
+      get { return reason_; }
+      set {
+        reason_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as DisconnectResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(DisconnectResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Reason != other.Reason) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Reason != 0) hash ^= Reason.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Reason != 0) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) Reason);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Reason != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Reason);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(DisconnectResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Reason != 0) {
+        Reason = other.Reason;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            reason_ = (global::User.GoingDownReason) input.ReadEnum();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  ///用户反馈请求
+  /// </summary>
+  public sealed partial class UserFeedbackRequest : pb::IMessage<UserFeedbackRequest> {
+    private static readonly pb::MessageParser<UserFeedbackRequest> _parser = new pb::MessageParser<UserFeedbackRequest>(() => new UserFeedbackRequest());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<UserFeedbackRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::User.UserReflection.Descriptor.MessageTypes[12]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public UserFeedbackRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public UserFeedbackRequest(UserFeedbackRequest other) : this() {
+      content_ = other.content_;
+      phoneType_ = other.phoneType_;
+      qq_ = other.qq_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public UserFeedbackRequest Clone() {
+      return new UserFeedbackRequest(this);
+    }
+
+    /// <summary>Field number for the "content" field.</summary>
+    public const int ContentFieldNumber = 1;
+    private string content_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Content {
+      get { return content_; }
+      set {
+        content_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "phoneType" field.</summary>
+    public const int PhoneTypeFieldNumber = 2;
+    private string phoneType_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string PhoneType {
+      get { return phoneType_; }
+      set {
+        phoneType_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "qq" field.</summary>
+    public const int QqFieldNumber = 3;
+    private string qq_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Qq {
+      get { return qq_; }
+      set {
+        qq_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as UserFeedbackRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(UserFeedbackRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Content != other.Content) return false;
+      if (PhoneType != other.PhoneType) return false;
+      if (Qq != other.Qq) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Content.Length != 0) hash ^= Content.GetHashCode();
+      if (PhoneType.Length != 0) hash ^= PhoneType.GetHashCode();
+      if (Qq.Length != 0) hash ^= Qq.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Content.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Content);
+      }
+      if (PhoneType.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(PhoneType);
+      }
+      if (Qq.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Qq);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Content.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Content);
+      }
+      if (PhoneType.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PhoneType);
+      }
+      if (Qq.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Qq);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(UserFeedbackRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Content.Length != 0) {
+        Content = other.Content;
+      }
+      if (other.PhoneType.Length != 0) {
+        PhoneType = other.PhoneType;
+      }
+      if (other.Qq.Length != 0) {
+        Qq = other.Qq;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            Content = input.ReadString();
+            break;
+          }
+          case 18: {
+            PhoneType = input.ReadString();
+            break;
+          }
+          case 26: {
+            Qq = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  ///绑定手机号请求
+  /// </summary>
+  public sealed partial class BindPhoneNumberRequest : pb::IMessage<BindPhoneNumberRequest> {
+    private static readonly pb::MessageParser<BindPhoneNumberRequest> _parser = new pb::MessageParser<BindPhoneNumberRequest>(() => new BindPhoneNumberRequest());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<BindPhoneNumberRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::User.UserReflection.Descriptor.MessageTypes[13]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public BindPhoneNumberRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public BindPhoneNumberRequest(BindPhoneNumberRequest other) : this() {
+      phoneNumber_ = other.phoneNumber_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public BindPhoneNumberRequest Clone() {
+      return new BindPhoneNumberRequest(this);
+    }
+
+    /// <summary>Field number for the "phoneNumber" field.</summary>
+    public const int PhoneNumberFieldNumber = 1;
+    private string phoneNumber_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string PhoneNumber {
+      get { return phoneNumber_; }
+      set {
+        phoneNumber_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as BindPhoneNumberRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(BindPhoneNumberRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (PhoneNumber != other.PhoneNumber) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (PhoneNumber.Length != 0) hash ^= PhoneNumber.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (PhoneNumber.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(PhoneNumber);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (PhoneNumber.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PhoneNumber);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(BindPhoneNumberRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.PhoneNumber.Length != 0) {
+        PhoneNumber = other.PhoneNumber;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            PhoneNumber = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class RechargeingRequest : pb::IMessage<RechargeingRequest> {
+    private static readonly pb::MessageParser<RechargeingRequest> _parser = new pb::MessageParser<RechargeingRequest>(() => new RechargeingRequest());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<RechargeingRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::User.UserReflection.Descriptor.MessageTypes[14]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RechargeingRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RechargeingRequest(RechargeingRequest other) : this() {
+      rechargeId_ = other.rechargeId_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RechargeingRequest Clone() {
+      return new RechargeingRequest(this);
+    }
+
+    /// <summary>Field number for the "rechargeId" field.</summary>
+    public const int RechargeIdFieldNumber = 1;
+    private string rechargeId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string RechargeId {
+      get { return rechargeId_; }
+      set {
+        rechargeId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as RechargeingRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(RechargeingRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (RechargeId != other.RechargeId) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (RechargeId.Length != 0) hash ^= RechargeId.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (RechargeId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(RechargeId);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (RechargeId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(RechargeId);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(RechargeingRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.RechargeId.Length != 0) {
+        RechargeId = other.RechargeId;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            RechargeId = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class ReqLoginMessage : pb::IMessage<ReqLoginMessage> {
-  private static readonly pb::MessageParser<ReqLoginMessage> _parser = new pb::MessageParser<ReqLoginMessage>(() => new ReqLoginMessage());
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public static pb::MessageParser<ReqLoginMessage> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::UserReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public ReqLoginMessage() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public ReqLoginMessage(ReqLoginMessage other) : this() {
-    sex_ = other.sex_;
-    loginName_ = other.loginName_;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public ReqLoginMessage Clone() {
-    return new ReqLoginMessage(this);
-  }
-
-  /// <summary>Field number for the "sex" field.</summary>
-  public const int SexFieldNumber = 2;
-  private int sex_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public int Sex {
-    get { return sex_; }
-    set {
-      sex_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "loginName" field.</summary>
-  public const int LoginNameFieldNumber = 3;
-  private string loginName_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public string LoginName {
-    get { return loginName_; }
-    set {
-      loginName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public override bool Equals(object other) {
-    return Equals(other as ReqLoginMessage);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public bool Equals(ReqLoginMessage other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (Sex != other.Sex) return false;
-    if (LoginName != other.LoginName) return false;
-    return true;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (Sex != 0) hash ^= Sex.GetHashCode();
-    if (LoginName.Length != 0) hash ^= LoginName.GetHashCode();
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public void WriteTo(pb::CodedOutputStream output) {
-    if (Sex != 0) {
-      output.WriteRawTag(16);
-      output.WriteInt32(Sex);
-    }
-    if (LoginName.Length != 0) {
-      output.WriteRawTag(26);
-      output.WriteString(LoginName);
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public int CalculateSize() {
-    int size = 0;
-    if (Sex != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Sex);
-    }
-    if (LoginName.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(LoginName);
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public void MergeFrom(ReqLoginMessage other) {
-    if (other == null) {
-      return;
-    }
-    if (other.Sex != 0) {
-      Sex = other.Sex;
-    }
-    if (other.LoginName.Length != 0) {
-      LoginName = other.LoginName;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public void MergeFrom(pb::CodedInputStream input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          input.SkipLastField();
-          break;
-        case 16: {
-          Sex = input.ReadInt32();
-          break;
-        }
-        case 26: {
-          LoginName = input.ReadString();
-          break;
-        }
-      }
-    }
-  }
-
-}
-
-public sealed partial class ResLoginMessage : pb::IMessage<ResLoginMessage> {
-  private static readonly pb::MessageParser<ResLoginMessage> _parser = new pb::MessageParser<ResLoginMessage>(() => new ResLoginMessage());
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public static pb::MessageParser<ResLoginMessage> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::UserReflection.Descriptor.MessageTypes[1]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public ResLoginMessage() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public ResLoginMessage(ResLoginMessage other) : this() {
-    sex_ = other.sex_;
-    loginName_ = other.loginName_;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public ResLoginMessage Clone() {
-    return new ResLoginMessage(this);
-  }
-
-  /// <summary>Field number for the "sex" field.</summary>
-  public const int SexFieldNumber = 2;
-  private int sex_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public int Sex {
-    get { return sex_; }
-    set {
-      sex_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "loginName" field.</summary>
-  public const int LoginNameFieldNumber = 3;
-  private string loginName_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public string LoginName {
-    get { return loginName_; }
-    set {
-      loginName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public override bool Equals(object other) {
-    return Equals(other as ResLoginMessage);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public bool Equals(ResLoginMessage other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (Sex != other.Sex) return false;
-    if (LoginName != other.LoginName) return false;
-    return true;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (Sex != 0) hash ^= Sex.GetHashCode();
-    if (LoginName.Length != 0) hash ^= LoginName.GetHashCode();
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public void WriteTo(pb::CodedOutputStream output) {
-    if (Sex != 0) {
-      output.WriteRawTag(16);
-      output.WriteInt32(Sex);
-    }
-    if (LoginName.Length != 0) {
-      output.WriteRawTag(26);
-      output.WriteString(LoginName);
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public int CalculateSize() {
-    int size = 0;
-    if (Sex != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Sex);
-    }
-    if (LoginName.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(LoginName);
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public void MergeFrom(ResLoginMessage other) {
-    if (other == null) {
-      return;
-    }
-    if (other.Sex != 0) {
-      Sex = other.Sex;
-    }
-    if (other.LoginName.Length != 0) {
-      LoginName = other.LoginName;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public void MergeFrom(pb::CodedInputStream input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          input.SkipLastField();
-          break;
-        case 16: {
-          Sex = input.ReadInt32();
-          break;
-        }
-        case 26: {
-          LoginName = input.ReadString();
-          break;
-        }
-      }
-    }
-  }
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

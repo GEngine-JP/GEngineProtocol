@@ -1,13 +1,13 @@
-{package}
+package info.xiaomo.server.protocol.user.message;
 
 import com.google.protobuf.InvalidProtocolBufferException;
 import info.xiaomo.gameCore.protocol.message.AbstractMessage;
 
 
 /**
- * {doc}
+ * 玩家使用加速器记录
  */
-public class {className} extends AbstractMessage {
+public class ReqUserCheatSpeedMessage extends AbstractMessage {
 
 	@Override
 	public void decode(byte[] bytes) throws InvalidProtocolBufferException {
@@ -20,7 +20,8 @@ public class {className} extends AbstractMessage {
 
 	@Override
 	public int getId() {
-		return {id};
+		return 1120;
 	}
 
 }
+

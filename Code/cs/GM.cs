@@ -20,25 +20,25 @@ public static partial class GMReflection {
   static GMReflection() {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
-          "Cg5wcm90by9HTS5wcm90byIzChNSZXFFeGVjdXRlR01NZXNzYWdlEgsKA3Nl",
-          "eBgCIAEoBRIPCgdjb250ZW50GAMgASgJIjMKE1Jlc0V4ZWN1dGVHTU1lc3Nh",
-          "Z2USCwoDc2V4GAIgASgFEg8KB2NvbnRlbnQYAyABKAlCJQoaaW5mby54aWFv",
-          "bW8uc2VydmVyLm1lc3NhZ2VCB0dNUHJvdG9iBnByb3RvMw=="));
+          "Cg5wcm90by9HTS5wcm90byIiChJDbG9zZVNlcnZlclJlcXVlc3QSDAoEZnJv",
+          "bRgBIAEoBSIlChNDbG9zZVNlcnZlclJlc3BvbnNlEg4KBnJlc01zZxgBIAEo",
+          "CUIsCiFpbmZvLnhpYW9tby5zZXJ2ZXIucHJvdG9jb2wucHJvdG9CB0dNUHJv",
+          "dG9iBnByb3RvMw=="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { },
         new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::ReqExecuteGMMessage), global::ReqExecuteGMMessage.Parser, new[]{ "Sex", "Content" }, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::ResExecuteGMMessage), global::ResExecuteGMMessage.Parser, new[]{ "Sex", "Content" }, null, null, null)
+          new pbr::GeneratedClrTypeInfo(typeof(global::CloseServerRequest), global::CloseServerRequest.Parser, new[]{ "From" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::CloseServerResponse), global::CloseServerResponse.Parser, new[]{ "ResMsg" }, null, null, null)
         }));
   }
   #endregion
 
 }
 #region Messages
-public sealed partial class ReqExecuteGMMessage : pb::IMessage<ReqExecuteGMMessage> {
-  private static readonly pb::MessageParser<ReqExecuteGMMessage> _parser = new pb::MessageParser<ReqExecuteGMMessage>(() => new ReqExecuteGMMessage());
+public sealed partial class CloseServerRequest : pb::IMessage<CloseServerRequest> {
+  private static readonly pb::MessageParser<CloseServerRequest> _parser = new pb::MessageParser<CloseServerRequest>(() => new CloseServerRequest());
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public static pb::MessageParser<ReqExecuteGMMessage> Parser { get { return _parser; } }
+  public static pb::MessageParser<CloseServerRequest> Parser { get { return _parser; } }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
@@ -51,68 +51,54 @@ public sealed partial class ReqExecuteGMMessage : pb::IMessage<ReqExecuteGMMessa
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public ReqExecuteGMMessage() {
+  public CloseServerRequest() {
     OnConstruction();
   }
 
   partial void OnConstruction();
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public ReqExecuteGMMessage(ReqExecuteGMMessage other) : this() {
-    sex_ = other.sex_;
-    content_ = other.content_;
+  public CloseServerRequest(CloseServerRequest other) : this() {
+    from_ = other.from_;
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public ReqExecuteGMMessage Clone() {
-    return new ReqExecuteGMMessage(this);
+  public CloseServerRequest Clone() {
+    return new CloseServerRequest(this);
   }
 
-  /// <summary>Field number for the "sex" field.</summary>
-  public const int SexFieldNumber = 2;
-  private int sex_;
+  /// <summary>Field number for the "from" field.</summary>
+  public const int FromFieldNumber = 1;
+  private int from_;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public int Sex {
-    get { return sex_; }
+  public int From {
+    get { return from_; }
     set {
-      sex_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "content" field.</summary>
-  public const int ContentFieldNumber = 3;
-  private string content_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public string Content {
-    get { return content_; }
-    set {
-      content_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      from_ = value;
     }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override bool Equals(object other) {
-    return Equals(other as ReqExecuteGMMessage);
+    return Equals(other as CloseServerRequest);
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public bool Equals(ReqExecuteGMMessage other) {
+  public bool Equals(CloseServerRequest other) {
     if (ReferenceEquals(other, null)) {
       return false;
     }
     if (ReferenceEquals(other, this)) {
       return true;
     }
-    if (Sex != other.Sex) return false;
-    if (Content != other.Content) return false;
+    if (From != other.From) return false;
     return true;
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override int GetHashCode() {
     int hash = 1;
-    if (Sex != 0) hash ^= Sex.GetHashCode();
-    if (Content.Length != 0) hash ^= Content.GetHashCode();
+    if (From != 0) hash ^= From.GetHashCode();
     return hash;
   }
 
@@ -123,38 +109,28 @@ public sealed partial class ReqExecuteGMMessage : pb::IMessage<ReqExecuteGMMessa
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
-    if (Sex != 0) {
-      output.WriteRawTag(16);
-      output.WriteInt32(Sex);
-    }
-    if (Content.Length != 0) {
-      output.WriteRawTag(26);
-      output.WriteString(Content);
+    if (From != 0) {
+      output.WriteRawTag(8);
+      output.WriteInt32(From);
     }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
     int size = 0;
-    if (Sex != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Sex);
-    }
-    if (Content.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(Content);
+    if (From != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(From);
     }
     return size;
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public void MergeFrom(ReqExecuteGMMessage other) {
+  public void MergeFrom(CloseServerRequest other) {
     if (other == null) {
       return;
     }
-    if (other.Sex != 0) {
-      Sex = other.Sex;
-    }
-    if (other.Content.Length != 0) {
-      Content = other.Content;
+    if (other.From != 0) {
+      From = other.From;
     }
   }
 
@@ -166,12 +142,8 @@ public sealed partial class ReqExecuteGMMessage : pb::IMessage<ReqExecuteGMMessa
         default:
           input.SkipLastField();
           break;
-        case 16: {
-          Sex = input.ReadInt32();
-          break;
-        }
-        case 26: {
-          Content = input.ReadString();
+        case 8: {
+          From = input.ReadInt32();
           break;
         }
       }
@@ -180,10 +152,10 @@ public sealed partial class ReqExecuteGMMessage : pb::IMessage<ReqExecuteGMMessa
 
 }
 
-public sealed partial class ResExecuteGMMessage : pb::IMessage<ResExecuteGMMessage> {
-  private static readonly pb::MessageParser<ResExecuteGMMessage> _parser = new pb::MessageParser<ResExecuteGMMessage>(() => new ResExecuteGMMessage());
+public sealed partial class CloseServerResponse : pb::IMessage<CloseServerResponse> {
+  private static readonly pb::MessageParser<CloseServerResponse> _parser = new pb::MessageParser<CloseServerResponse>(() => new CloseServerResponse());
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public static pb::MessageParser<ResExecuteGMMessage> Parser { get { return _parser; } }
+  public static pb::MessageParser<CloseServerResponse> Parser { get { return _parser; } }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
@@ -196,68 +168,54 @@ public sealed partial class ResExecuteGMMessage : pb::IMessage<ResExecuteGMMessa
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public ResExecuteGMMessage() {
+  public CloseServerResponse() {
     OnConstruction();
   }
 
   partial void OnConstruction();
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public ResExecuteGMMessage(ResExecuteGMMessage other) : this() {
-    sex_ = other.sex_;
-    content_ = other.content_;
+  public CloseServerResponse(CloseServerResponse other) : this() {
+    resMsg_ = other.resMsg_;
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public ResExecuteGMMessage Clone() {
-    return new ResExecuteGMMessage(this);
+  public CloseServerResponse Clone() {
+    return new CloseServerResponse(this);
   }
 
-  /// <summary>Field number for the "sex" field.</summary>
-  public const int SexFieldNumber = 2;
-  private int sex_;
+  /// <summary>Field number for the "resMsg" field.</summary>
+  public const int ResMsgFieldNumber = 1;
+  private string resMsg_ = "";
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public int Sex {
-    get { return sex_; }
+  public string ResMsg {
+    get { return resMsg_; }
     set {
-      sex_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "content" field.</summary>
-  public const int ContentFieldNumber = 3;
-  private string content_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public string Content {
-    get { return content_; }
-    set {
-      content_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      resMsg_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
     }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override bool Equals(object other) {
-    return Equals(other as ResExecuteGMMessage);
+    return Equals(other as CloseServerResponse);
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public bool Equals(ResExecuteGMMessage other) {
+  public bool Equals(CloseServerResponse other) {
     if (ReferenceEquals(other, null)) {
       return false;
     }
     if (ReferenceEquals(other, this)) {
       return true;
     }
-    if (Sex != other.Sex) return false;
-    if (Content != other.Content) return false;
+    if (ResMsg != other.ResMsg) return false;
     return true;
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override int GetHashCode() {
     int hash = 1;
-    if (Sex != 0) hash ^= Sex.GetHashCode();
-    if (Content.Length != 0) hash ^= Content.GetHashCode();
+    if (ResMsg.Length != 0) hash ^= ResMsg.GetHashCode();
     return hash;
   }
 
@@ -268,38 +226,28 @@ public sealed partial class ResExecuteGMMessage : pb::IMessage<ResExecuteGMMessa
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
-    if (Sex != 0) {
-      output.WriteRawTag(16);
-      output.WriteInt32(Sex);
-    }
-    if (Content.Length != 0) {
-      output.WriteRawTag(26);
-      output.WriteString(Content);
+    if (ResMsg.Length != 0) {
+      output.WriteRawTag(10);
+      output.WriteString(ResMsg);
     }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
     int size = 0;
-    if (Sex != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Sex);
-    }
-    if (Content.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(Content);
+    if (ResMsg.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(ResMsg);
     }
     return size;
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public void MergeFrom(ResExecuteGMMessage other) {
+  public void MergeFrom(CloseServerResponse other) {
     if (other == null) {
       return;
     }
-    if (other.Sex != 0) {
-      Sex = other.Sex;
-    }
-    if (other.Content.Length != 0) {
-      Content = other.Content;
+    if (other.ResMsg.Length != 0) {
+      ResMsg = other.ResMsg;
     }
   }
 
@@ -311,12 +259,8 @@ public sealed partial class ResExecuteGMMessage : pb::IMessage<ResExecuteGMMessa
         default:
           input.SkipLastField();
           break;
-        case 16: {
-          Sex = input.ReadInt32();
-          break;
-        }
-        case 26: {
-          Content = input.ReadString();
+        case 10: {
+          ResMsg = input.ReadString();
           break;
         }
       }

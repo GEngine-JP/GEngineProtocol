@@ -1,13 +1,13 @@
-{package}
+package info.xiaomo.server.protocol.user.message;
 
 import com.google.protobuf.InvalidProtocolBufferException;
 import info.xiaomo.gameCore.protocol.message.AbstractMessage;
 
 
 /**
- * {doc}
+ * 告诉客户端需要创建角色
  */
-public class {className} extends AbstractMessage {
+public class ResToCreateRoleMessage extends AbstractMessage {
 
 	@Override
 	public void decode(byte[] bytes) throws InvalidProtocolBufferException {
@@ -20,7 +20,8 @@ public class {className} extends AbstractMessage {
 
 	@Override
 	public int getId() {
-		return {id};
+		return 1103;
 	}
 
 }
+
