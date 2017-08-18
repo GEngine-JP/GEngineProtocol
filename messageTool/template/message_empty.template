@@ -1,0 +1,26 @@
+{package}
+
+import com.google.protobuf.InvalidProtocolBufferException;
+import com.sh.communication.msg.AbstractMessage;
+
+
+/**
+ * {doc}
+ */
+public class {className} extends AbstractMessage {
+
+	@Override
+	public void decode(byte[] bytes) throws InvalidProtocolBufferException {
+	}
+
+	@Override
+	public byte[] getContent() {
+		return new byte[0];
+	}
+
+	@Override
+	public int getId() {
+		return {id};
+	}
+
+}

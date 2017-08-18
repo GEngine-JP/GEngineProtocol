@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messages id="103" package="com.sh.game.system.bag">
+	<message id="101" type="toServer" class="ReqGetBagInfoMessage" desc="获取背包信息" >
+	</message>
+
+	<message id="102" type="toClient" class="ResGetBagInfoMessage" desc="发送背包信息" >
+		<proto class="com.sh.game.proto.BagProtos.BagInfo"/>
+	</message>
+
+	<message id="103" type="toClient" class="ResBagItemChangedMessage" desc="背包物品变动信息" >
+		<proto class="com.sh.game.proto.BagProtos.BagItemChangeList"/>
+	</message>
+
+	<message id="104" type="toClient" class="ResMoneyAmountChangeMessage" desc="金钱变动">
+		<proto class="com.sh.game.proto.BagProtos.MoneyAmountChangeResponse"/>
+	</message>
+
+	<message id="105" type="toServer" class="ReqEquipItemMessage" desc="穿装备请求">
+		<proto class="com.sh.game.proto.BagProtos.EquipItemMsg"/>
+	</message>
+
+	<message id="106" type="toClient" class="ResEquipItemMessage" desc="穿装备请求">
+		<proto class="com.sh.game.proto.BagProtos.EquipItemMsg"/>
+	</message>
+
+	<message id="107" type="toServer" class="ReqSortItemsMessage" desc="整理背包请求">
+	</message>
+
+	<message id="108" type="toClient" class="ResSortItemsMessage" desc="整理背包响应">
+		<proto class="com.sh.game.proto.BagProtos.BagItemChangeList"/>
+	</message>
+
+	<message id="109" type="toServer" class="ReqSwapItemMessage" desc="交换物品格子请求">
+		<proto class="com.sh.game.proto.BagProtos.SwapItemMsg"/>
+	</message>
+
+	<message id="110" type="toClient" class="ResSwapItemMessage" desc="交换物品格子响应">
+		<proto class="com.sh.game.proto.BagProtos.SwapItemMsg"/>
+	</message>
+
+	<message id="111" type="toServer" class="ReqUnEquipItemMessage" desc="脱装备请求">
+		<proto class="com.sh.game.proto.BagProtos.UnEquipItemRequest"/>
+	</message>
+
+	<message id="112" type="toClient" class="ResUnEquipItemMessage" desc="脱装备响应">
+		<proto class="com.sh.game.proto.BagProtos.UnEquipItemResponse"/>
+	</message>
+
+	<message id="113" type="toServer" class="ReqDestroyItemMessage" desc="销毁物品请求">
+		<proto class="com.sh.game.proto.BagProtos.DestroyItemRequest"/>
+	</message>
+
+	<message id="114" type="toServer" class="ReqUseItemMessage" desc="使用物品请求">
+		<proto class="com.sh.game.proto.BagProtos.UseItemRequest"/>
+	</message>
+
+	<message id="115" type="toServer" class="ReqCallBackItemMessage" desc="回收物品请求">
+		<proto class="com.sh.game.proto.BagProtos.CallbackItemRequest"/>
+	</message>
+
+	<message id="116" type="toClient" class="ResCallBackItemMessage" desc="回收物品响应">
+		<proto class="com.sh.game.proto.BagProtos.CallbackItemResponse"/>
+	</message>
+
+	<message id="117" type="toServer" class="ReqShopBuyItemMessage" desc="随身商店购买请求">
+		<proto class="com.sh.game.proto.BagProtos.ShopBuyItemRequest"/>
+	</message>
+
+	<message id="118" type="toServer" class="ReqGodFurnaceUpgradeMessage" desc="神炉升级请求">
+		<proto class="com.sh.game.proto.BagProtos.GodFurnaceUpgradeRequest"/>
+	</message>
+
+	<message id="119" type="toClient" class="ResGodFurnaceUpgradeMessage" desc="神炉升级响应">
+		<proto class="com.sh.game.proto.BagProtos.GodFurnaceUpgradeResponse"/>
+	</message>
+
+	<message id="120" type="toServer" class="ReqIntensifyMessage" desc="强化请求">
+		<proto class="com.sh.game.proto.BagProtos.IntensifyRequest"/>
+	</message>
+
+	<message id="121" type="toClient" class="ResIntensifyMessage" desc="强化响应">
+		<proto class="com.sh.game.proto.BagProtos.IntensifyResponse"/>
+	</message>
+
+	<message id="122" type="toServer" class="ReqIntensifyTransferMessage" desc="强化转移请求">
+		<proto class="com.sh.game.proto.BagProtos.IntensifyTransferRequest"/>
+	</message>
+
+	<message id="123" type="toClient" class="ResIntensifyTransferMessage" desc="强化转移响应">
+		<proto class="com.sh.game.proto.BagProtos.IntensifyTransferResponse"/>
+	</message>
+
+	<message id="124" type="toServer" class="ReqIntensifyStarMessage" desc="升星请求">
+		<proto class="com.sh.game.proto.BagProtos.IntensifyRequest"/>
+	</message>
+
+	<message id="125" type="toClient" class="ResIntensifyStarMessage" desc="升星响应">
+		<proto class="com.sh.game.proto.BagProtos.IntensifyStarResponse"/>
+	</message>
+
+	<message id="126" type="toServer" class="ReqZhulingMessage" desc="注灵请求">
+		<proto class="com.sh.game.proto.BagProtos.IntensifyRequest"/>
+	</message>
+
+	<message id="127" type="toClient" class="ResZhulingMessage" desc="注灵响应">
+		<proto class="com.sh.game.proto.BagProtos.IntensifyStarResponse"/>
+	</message>
+
+	<message id="128" type="toServer" class="ReqLingliRecycleMessage" desc="回灵请求">
+		<proto class="com.sh.game.proto.BagProtos.IntensifyRequest"/>
+	</message>
+
+	<message id="129" type="toClient" class="ResLingliRecycleMessage" desc="回灵响应">
+		<proto class="com.sh.game.proto.BagProtos.IntensifyStarResponse"/>
+	</message>
+
+	<message id="130" type="toServer" class="ReqPickupItemMessage" desc="拾取物品请求">
+		<proto class="com.sh.game.proto.BagProtos.PickupMsg"/>
+	</message>
+
+	<message id="131" type="toClient" class="ResPickupItemMessage" desc="拾取物品响应">
+		<proto class="com.sh.game.proto.BagProtos.PickupMsg"/>
+	</message>
+
+	<message id="132" type="toServer" class="ReqIntensifyResetMessage" desc="还原装备请求">
+		<proto class="com.sh.game.proto.BagProtos.IntensifyRequest"/>
+	</message>
+
+	<message id="133" type="toClient" class="ResIntensifyResetMessage" desc="还原装备响应">
+		<proto class="com.sh.game.proto.BagProtos.IntensifyStarResponse"/>
+	</message>
+
+	<message id="134" type="toClient" class="ResBagIsFullMessage" desc="自动购买,自动使用背包已满响应">
+		<proto class="com.sh.game.proto.BagProtos.BagIsFull"/>
+	</message>
+
+	<message id="135" type="toServer" class="ReqBagToStorehouseMessage" desc="背包到仓库的请求">
+		<proto class="com.sh.game.proto.BagProtos.BagToStorehouseRequest"/>
+	</message>
+
+	<message id="136" type="toClient" class="ResBagToStorehouseMessage" desc="背包到仓库的响应">
+		<proto class="com.sh.game.proto.BagProtos.BagToStorehouseResponse"/>
+	</message>
+
+	<message id="137" type="toServer" class="ReqAddBagCountMessage" desc="扩大背包请求">
+		<proto class="com.sh.game.proto.BagProtos.AddBagCountRequest"/>
+	</message>
+
+	<message id="138" type="toClient" class="ResAddBagCountMessage" desc="扩大背包响应">
+		<proto class="com.sh.game.proto.BagProtos.AddBagCountResponse"/>
+	</message>
+
+	<message id="139" type="toClient" class="ResUseBlessingOilMessage" desc="使用祝福油响应">
+		<proto class="com.sh.game.proto.BagProtos.UseBlessingOilResponse"/>
+	</message>
+
+	<message id="140" type="toServer" class="ReqCombineEquipMessage" desc="装备合成请求">
+		<proto class="com.sh.game.proto.BagProtos.CombineEquipRequest"/>
+	</message>
+
+	<message id="141" type="toServer" class="ReqEquipBingjianMessage" desc="兵鉴装备请求">
+		<proto class="com.sh.game.proto.BagProtos.EquipBingjianRequest"/>
+	</message>
+
+	<message id="142" type="toServer" class="ReqAdvanceBingjianMessage" desc="兵鉴进阶请求">
+		<proto class="com.sh.game.proto.BagProtos.EquipBingjianRequest"/>
+	</message>
+
+	<message id="143" type="toClient" class="ResBingjianInfoMessage" desc="兵鉴装备响应">
+		<proto class="com.sh.game.proto.BagProtos.BingjianEquipInfo"/>
+	</message>
+
+	<message id="144" type="toServer" class="ReqGetCodeGiftMessage" desc="兑换礼包码">
+		<proto class="com.sh.game.proto.BagProtos.GetCodeGiftRequest"/>
+	</message>
+
+	<message id="145" type="toServer" class="ReqItemRefreshMessage" desc="精炼请求">
+		<proto class="com.sh.game.proto.BagProtos.ItemRefreshRequest"/>
+	</message>
+
+	<message id="146" type="toServer" class="ReqItemRefreshCallBackMessage" desc="分解装备请求">
+		<proto class="com.sh.game.proto.BagProtos.CallbackItemRequest"/>
+	</message>
+
+	<message id="147" type="toServer" class="ReqSaveItemRefreshMessage" desc="保存精炼属性请求">
+		<proto class="com.sh.game.proto.BagProtos.SaveItemRefreshRequest"/>
+	</message>
+
+	<message id="148" type="toServer" class="ReqSaveBingjianEquipMessage" desc="保存兵鉴属性请求">
+		<proto class="com.sh.game.proto.BagProtos.EquipBingjianRequest"/>
+	</message>
+
+
+	<message id="149" type="toClient" class="ResSetCallBackMessage" desc="设置回收的强化等级响应">
+		<proto class="com.sh.game.proto.BagProtos.SetCallBackInfo"/>
+	</message>
+
+	<message id="150" type="toServer" class="ReqCallBackLimitMessage" desc="回收的强化等级请求">
+	</message>
+
+	<message id="151" type="toClient" class="ResShopBuyMessage" desc="购买物品响应">
+		<proto class="com.sh.game.proto.BagProtos.ShopBuyResponse"/>
+	</message>
+
+	<message id="152" type="toClient" class="ResExpBoxAddMessage" desc="聚灵珠经验增加响应">
+		<proto class="com.sh.game.proto.BagProtos.ExpBoxExpAdd"/>
+	</message>
+
+	<message id="153" type="toClient" class="ResOpenDebugMsgMessage" desc="开启调试信息">
+	</message>
+
+	<message id="154" type="toServer" class="ReqUseAllExpBoxMessage" desc="一次使用所有聚灵珠">
+		<proto class="com.sh.game.proto.BagProtos.UseAllExpBox"/>
+	</message>
+
+	<message id="155" type="toClient" class="ResUseAllExpBoxMessage" desc="一次使用所有聚灵珠响应">
+		<proto class="com.sh.game.proto.BagProtos.UseAllExpBoxRes"/>
+	</message>
+
+	<message id="156" type="toServer" class="ReqMysteryExchangeMessage" desc="神秘老人兑换请求">
+		<proto class="com.sh.game.proto.BagProtos.MysteryExchangeRequest"/>
+	</message>
+
+	<message id="157" type="toClient" class="ResMysteryExchangeMessage" desc="神秘老人兑换响应">
+		<proto class="com.sh.game.proto.BagProtos.MysteryAddItem"/>
+	</message>
+
+	<message id="158" type="toClient" class="ResInnerPowerStoneAddMessage" desc="内功石内功增加响应">
+		<proto class="com.sh.game.proto.BagProtos.ExpInnerPowerStoneAdd"/>
+	</message>
+
+	<message id="159" type="toServer" class="ReqUseAllInnerPowerStoneMessage" desc="一次使用所有内功石">
+		<proto class="com.sh.game.proto.BagProtos.UseAllInnerPowerStone"/>
+	</message>
+
+	<message id="160" type="toClient" class="ResUseAllInnerPowerStoneMessage" desc="一次使用所有内功石响应">
+		<proto class="com.sh.game.proto.BagProtos.UseAllInnerPowerStoneRes"/>
+	</message>
+
+	<message id="161" type="toServer" class="ReqBingHunIntensifyMessage" desc="升级兵魂装备请求">
+		<proto class="com.sh.game.proto.BagProtos.BingHunIntensifyRequest"/>
+	</message>
+
+	<message id="162" type="toClient" class="ResBingHunEquipInfoMessage" desc="修改兵魂装备响应">
+		<proto class="com.sh.game.proto.BagProtos.BingHunEquipInfo"/>
+	</message>
+
+	<message id="163" type="toServer" class="ReqFourHolybeastsEquipMessage" desc="四圣兽系统装备请求">
+		<proto class="com.sh.game.proto.BagProtos.FourHolybeastsEquipRequest"/>
+	</message>
+
+	<message id="164" type="toClient" class="ResFourHolybeastsMessage" desc="四圣兽系统装备响应">
+		<proto class="com.sh.game.proto.BagProtos.FourHolybeastsInfo"/>
+	</message>
+
+
+	<message id="166" type="toServer" class="ReqNecklaceDetectionMessage" desc="探测项链请求" >
+		<proto class="com.sh.game.proto.BagProtos.RosefinchFindRoleLocationRequest"/>
+	</message>
+
+	<message id="167" type="toClient" class="ResNecklaceDetectionMessage" desc="探测项链响应" >
+		<proto class="com.sh.game.proto.BagProtos.RosefinchFindRoleLocationResponse"/>
+	</message>
+
+	<message id="168" type="toServer" class="ReqUnEquipFourHolybeastsMessage" desc="四圣兽装备" >
+		<proto class="com.sh.game.proto.BagProtos.UnFourHolybeastsEquipRequest"/>
+	</message>
+
+	<message id="169" type="toClient" class="ResUnEquipFourHolybeastsMessage" desc="四圣兽不装备" >
+		<proto class="com.sh.game.proto.BagProtos.UnFourHolybeastsEquipResponse"/>
+	</message>
+
+	<message id="170" type="toClient" class="ResResolveEquipResponseMessage" desc="分解装备成功信息" >
+		<proto class="com.sh.game.proto.BagProtos.ResolveEquipResponse"/>
+	</message>
+
+	<message id="171" type="toServer" class="ReqRefineEquipMessage" desc="洗练装备请求" >
+		<proto class="com.sh.game.proto.BagProtos.RefineEquipRequest"/>
+	</message>
+
+	<message id="172" type="toClient" class="ResRefineEquipMessage" desc="洗练装备响应" >
+		<proto class="com.sh.game.proto.BagProtos.RefineEquipReponse"/>
+	</message>
+
+	<message id="173" type="toServer" class="ReqBuyCangYueItemMessage" desc="购买苍月小贩物品" >
+		<proto class="com.sh.game.proto.BagProtos.BuyCangYueBusinessItem"/>
+	</message>、
+
+	<message id="174" type="toServer" class="ReqRefineEquipHoldMessage" desc="保存洗练属性的请求" >
+		<proto class="com.sh.game.proto.BagProtos.RefineEquipHoldRequest"/>
+	</message>
+
+	<message id="175" type="toServer" class="ReqRefineTransferMessage" desc="转移洗练属性的请求" >
+		<proto class="com.sh.game.proto.BagProtos.RefineTransferRequest"/>
+	</message>
+
+	<message id="176" type="toClient" class="ResRefineTransferMessage" desc="转移洗练属性的响应">
+		<proto class="com.sh.game.proto.BagProtos.RefineTransferReponse"/>
+	</message>
+
+	<message id="177" type="toClient" class="ResChangeBagCountMessage" desc="背包扩容">
+		<proto class="com.sh.game.proto.BagProtos.ChangeBagCount"/>
+	</message>
+
+	<message id="178" type="toServer" class="ReqSplitBagItemMessage" desc="拆分物品请求" >
+		<proto class="com.sh.game.proto.BagProtos.SplitBagItemRequest"/>
+	</message>
+</messages>
