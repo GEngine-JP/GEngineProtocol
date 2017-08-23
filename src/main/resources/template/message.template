@@ -1,0 +1,32 @@
+{package}
+
+import com.google.protobuf.InvalidProtocolBufferException;
+import info.xiaomo.server.server.AbstractMessage;
+import info.xiaomo.server.protocol.proto.{ProtoName};
+
+/**
+ * {doc}
+ */
+public class {className} extends AbstractMessage {
+
+	private {ProtoFiledType} res;
+
+	@Override
+	public void decode(byte[] bytes) throws InvalidProtocolBufferException {
+		this.res = {ProtoFiledType}.parseFrom(bytes);
+	}
+
+	@Override
+	public int getId() {
+		return {id};
+	}
+
+	public {ProtoFiledType} get{ProtoFiledType}() {
+		return res;
+	}
+
+	public void set{ProtoFiledType}({ProtoFiledType} res) {
+		this.res = res;
+	}
+
+}

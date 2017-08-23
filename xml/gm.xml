@@ -2,11 +2,11 @@
 <messages id="2" package="info.xiaomo.server.protocol.gm">
 
     <message id="201" type="toServer" class="ReqCloseServerMessage" desc="关服请求">
-        <proto class="info.xiaomo.server.protocol.proto.GMProto.CloseServerRequest"/>
+        <proto class="GMProto.CloseServerRequest"/>
     </message>
 
     <message id="202" type="toClient" class="ResCloseServerMessage" desc="关服返回">
-        <proto class="info.xiaomo.server.protocol.proto.GMProto.CloseServerResponse"/>
+        <proto class="GMProto.CloseServerResponse"/>
     </message>
 
 </messages>

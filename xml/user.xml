@@ -1,69 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <messages id="1" package="info.xiaomo.server.protocol.user">
 
-	<message id="101" type="toServer" class="ReqLoginMessage" desc="登录请求" >
-		<proto class="info.xiaomo.server.protocol.proto.UserProto.LoginRequest"/>
-	</message>
+    <message id="101" type="toServer" class="ReqLoginMessage" desc="登录请求">
+        <proto class="UserProto.LoginRequest"/>
+    </message>
 
-	<message id="102" type="toClient" class="ResLoginMessage" desc="登录返回" >
-		<proto class="info.xiaomo.server.protocol.proto.UserProto.LoginResponse"/>
-	</message>
-
-	<message id="103" type="toClient" class="ResToCreateRoleMessage" desc="告诉客户端需要创建角色" >
-	</message>
-
-	<message id="104" type="toServer" class="ReqCreateRoleMessage" desc="创建角色" >
-		<proto class="info.xiaomo.server.protocol.proto.UserProto.CreateRoleRequest"/>
-	</message>
-
-	<message id="105" type="toServer" class="ReqRandomRoleNameMessage" desc="请求随机名字" >
-		<proto class="info.xiaomo.server.protocol.proto.UserProto.RandomRoleNameRequest"/>
-	</message>
-
-	<message id="106" type="toClient" class="ResRandomRoleNameMessage" desc="返回随机名字" >
-		<proto class="info.xiaomo.server.protocol.proto.UserProto.RandomRoleNameResponse"/>
-	</message>
-
-	<message id="107" type="toServer" class="ReqChooseRoleMessage" desc="选择角色进入游戏">
-		<proto class="info.xiaomo.server.protocol.proto.UserProto.RoleIdMsg"/>
-	</message>
-
-	<!--<message id="108" type="toClient" class="ResPlayerInfoMessage" desc="角色信息">-->
-		<!--<proto class="info.xiaomo.server.protocol.proto.UserProto.PlayerInfo"/>-->
-	<!--</message>-->
-
-	<message id="109" type="toServer" class="ReqDeleteRoleMessage" desc="删除角色请求">
-		<proto class="info.xiaomo.server.protocol.proto.UserProto.RoleIdMsg"/>
-	</message>
-
-	<message id="110" type="toClient" class="ResDeleteRoleMessage" desc="删除角色响应">
-		<proto class="info.xiaomo.server.protocol.proto.UserProto.RoleIdMsg"/>
-	</message>
-	<message id="113" type="toServer" class="ReqBackToChooseRoleMessage" desc="返回选角色界面">
-	</message>
-
-	<message id="114" type="toServer" class="ReqLogoutMessage" desc="登出请求">
-	</message>
-
-	<message id="115" type="toClient" class="ResLoginAnotherSessionMessage" desc="在其他地方登录">
-	</message>
-
-	<message id="116" type="toServer" class="ReqReconnectMessage" desc="重新连接请求">
-		<proto class="info.xiaomo.server.protocol.proto.UserProto.ReconnectRequest"/>
-	</message>
-
-	<message id="117" type="toClient" class="ResDisconnectMessage" desc="断线响应">
-		<proto class="info.xiaomo.server.protocol.proto.UserProto.DisconnectResponse"/>
-	</message>
-
-	<message id="118" type="toServer" class="ReqUserFeedbackMessage" desc="用户反馈请求">
-		<proto class="info.xiaomo.server.protocol.proto.UserProto.UserFeedbackRequest"/>
-	</message>
-
-	<message id="119" type="toServer" class="ReqBindPhoneNumberMessage" desc="绑定手机号请求">
-		<proto class="info.xiaomo.server.protocol.proto.UserProto.BindPhoneNumberRequest"/>
-	</message>
-
-	<message id="120" type="toServer" class="ReqUserCheatSpeedMessage" desc="玩家使用加速器记录">
-	</message>
+    <message id="102" type="toClient" class="ResLoginMessage" desc="登录返回">
+        <proto class="UserProto.LoginResponse"/>
+    </message>
 </messages>
