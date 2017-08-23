@@ -40,6 +40,7 @@ public class FileGenerator {
             template = template.replaceAll("\\{import}", TemplateUtil.generatorHandlerImport(fileConfig, messageConfig));
             template = template.replaceAll("\\{className}", messageConfig.getClassName().replace("Message", "Message"));
             template = template.replaceAll("\\{messageName}", messageConfig.getClassName());
+            template = template.replaceAll("\\{queueId}", fileConfig.getQueueId() + "");
             template = template.replaceAll("\\{ProtoName}", messageConfig.getProtoClassName());
             template = template.replaceAll("\\{ProtoFiledType}", TemplateUtil.getProtoFiledType(messageConfig));
             template = template.replaceAll("\\{id}", messageConfig.getId() + "");

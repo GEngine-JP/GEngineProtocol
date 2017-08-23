@@ -8,6 +8,11 @@ public class {className} extends AbstractMessage {
 
     private {ProtoFiledType} req;
 
+    public {className}() {
+        this.queueId = {queueId};
+    }
+
+
     @Override
     public void doAction() {
 

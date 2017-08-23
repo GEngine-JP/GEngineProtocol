@@ -8,6 +8,11 @@ public class ReqCloseServerMessage extends AbstractMessage {
 
     private CloseServerRequest req;
 
+    private ReqCloseServerMessage {
+        this.queueId = 2;
+    }
+
+
     @Override
     public void doAction() {
 

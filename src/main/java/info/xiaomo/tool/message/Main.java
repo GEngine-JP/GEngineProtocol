@@ -31,12 +31,7 @@ public class Main {
 
         File file = new File(input);
         if (file.isDirectory()) {
-            String[] fileList = file.list(new FilenameFilter() {
-                @Override
-                public boolean accept(File dir, String name) {
-                    return name.endsWith(GenerateConst.SUFFIX);
-                }
-            });
+            String[] fileList = file.list((dir, name) -> name.endsWith(GenerateConst.SUFFIX));
             if (fileList == null) {
                 System.out.println("fileList为空");
                 return;

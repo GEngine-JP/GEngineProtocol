@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<messages id="1" package="info.xiaomo.server.protocol.user">
+<messages id="1"  queueId ="1" package="info.xiaomo.server.protocol.user">
 
     <message id="101" type="toServer" class="ReqLoginMessage" desc="登录请求">
         <proto class="UserProto.LoginRequest"/>

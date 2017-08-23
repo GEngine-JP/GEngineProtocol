@@ -10,6 +10,8 @@ public class FileConfig {
      */
     private int group;
 
+    private int queueId;
+
     /**
      * 包路径
      */
@@ -39,7 +41,17 @@ public class FileConfig {
         return messageList;
     }
 
+    public int getQueueId() {
+        return queueId;
+    }
+
+    public void setQueueId(int queueId) {
+        this.queueId = queueId;
+    }
+
     public void setMessageList(List<MessageConfig> messageList) {
+
+
         this.messageList = messageList;
     }
 

@@ -8,6 +8,11 @@ public class ReqLoginMessage extends AbstractMessage {
 
     private LoginRequest req;
 
+    public ReqLoginMessage {
+        this.queueId = 1;
+    }
+
+
     @Override
     public void doAction() {
 

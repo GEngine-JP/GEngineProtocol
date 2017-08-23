@@ -1,5 +1,6 @@
 package info.xiaomo.tool.message.config;
 
+import org.dom4j.Attribute;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
@@ -13,6 +14,7 @@ import java.util.Iterator;
 public class ConfigReader {
 
     private static final String MESSAGE = "message";
+    private static final String QUEUEID = "queueId";
     private static final String CLAZZ = "class";
     private static final String TYPE = "type";
     private static final String ID = "id";
@@ -36,9 +38,11 @@ public class ConfigReader {
         Element root = document.getRootElement();
 
         final int group = Integer.parseInt(root.attributeValue(ID));
+        final int queueId = Integer.parseInt(root.attributeValue(QUEUEID));
         final String packagePath = root.attributeValue(PACKAGE);
         FileConfig ret = new FileConfig();
         ret.setGroup(group);
+        ret.setQueueId(queueId);
         ret.setPackagePath(packagePath);
         Iterator<Element> messageIt = root.elementIterator(MESSAGE);
         while (messageIt.hasNext()) {
