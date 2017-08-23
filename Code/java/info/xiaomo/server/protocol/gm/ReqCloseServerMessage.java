@@ -8,7 +8,7 @@ public class ReqCloseServerMessage extends AbstractMessage {
 
     private CloseServerRequest req;
 
-    private ReqCloseServerMessage {
+    public ReqCloseServerMessage() {
         this.queueId = 2;
     }
 

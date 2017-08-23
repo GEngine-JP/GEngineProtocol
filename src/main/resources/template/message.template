@@ -21,12 +21,13 @@ public class {className} extends AbstractMessage {
 		return {id};
 	}
 
-	public {ProtoFiledType} get{ProtoFiledType}() {
-		return res;
-	}
+
+    @Override
+    public byte[] getContent() {
+        return res.toByteArray();
+    }
 
 	public void set{ProtoFiledType}({ProtoFiledType} res) {
 		this.res = res;
 	}
-
 }

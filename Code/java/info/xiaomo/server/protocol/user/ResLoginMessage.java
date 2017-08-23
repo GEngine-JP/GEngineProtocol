@@ -29,5 +29,9 @@ public class ResLoginMessage extends AbstractMessage {
 		this.res = res;
 	}
 
+    @Override
+    public byte[] encode() {
+        return res.toByteArray();
+    }
 }
 

@@ -29,5 +29,9 @@ public class ResCloseServerMessage extends AbstractMessage {
 		this.res = res;
 	}
 
+    @Override
+    public byte[] encode() {
+        return res.toByteArray();
+    }
 }
 

@@ -8,7 +8,7 @@ public class ReqLoginMessage extends AbstractMessage {
 
     private LoginRequest req;
 
-    public ReqLoginMessage {
+    public ReqLoginMessage() {
         this.queueId = 1;
     }
 
