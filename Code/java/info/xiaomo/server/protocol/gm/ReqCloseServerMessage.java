@@ -25,7 +25,7 @@ public class ReqCloseServerMessage extends AbstractMessage {
 
     @Override
     public int getId() {
-        return 201;
+        return 2015;
     }
 
 }

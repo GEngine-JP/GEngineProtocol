@@ -25,7 +25,7 @@ public class ReqLoginMessage extends AbstractMessage {
 
     @Override
     public int getId() {
-        return 101;
+        return 1001;
     }
 
 }

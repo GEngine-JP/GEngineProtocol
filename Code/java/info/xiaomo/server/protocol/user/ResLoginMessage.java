@@ -18,20 +18,17 @@ public class ResLoginMessage extends AbstractMessage {
 
 	@Override
 	public int getId() {
-		return 1102;
+		return 1002;
 	}
 
-	public LoginResponse getLoginResponse() {
-		return res;
-	}
+
+    @Override
+    public byte[] getContent() {
+        return res.toByteArray();
+    }
 
 	public void setLoginResponse(LoginResponse res) {
 		this.res = res;
 	}
-
-    @Override
-    public byte[] encode() {
-        return res.toByteArray();
-    }
 }
 

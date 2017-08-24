@@ -44,7 +44,8 @@ public class FileGenerator {
             template = template.replaceAll("\\{queueId}", fileConfig.getQueueId() + "");
             template = template.replaceAll("\\{ProtoName}", messageConfig.getProtoClassName());
             template = template.replaceAll("\\{ProtoFiledType}", TemplateUtil.getProtoFiledType(messageConfig));
-            template = template.replaceAll("\\{id}", messageConfig.getId() + "");
+            int id = fileConfig.getGroup() * 1000 + messageConfig.getId();
+            template = template.replaceAll("\\{id}", String.valueOf(id));
             TemplateUtil.write(fileConfig.getPackagePath(), messageConfig.getClassName().replace("Message", "Message"), template, output);
         }
 

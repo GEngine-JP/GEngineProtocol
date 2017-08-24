@@ -18,20 +18,17 @@ public class ResCloseServerMessage extends AbstractMessage {
 
 	@Override
 	public int getId() {
-		return 2202;
+		return 2002;
 	}
 
-	public CloseServerResponse getCloseServerResponse() {
-		return res;
-	}
+
+    @Override
+    public byte[] getContent() {
+        return res.toByteArray();
+    }
 
 	public void setCloseServerResponse(CloseServerResponse res) {
 		this.res = res;
 	}
-
-    @Override
-    public byte[] encode() {
-        return res.toByteArray();
-    }
 }
 
