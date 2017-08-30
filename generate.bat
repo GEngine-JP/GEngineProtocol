@@ -36,5 +36,4 @@ for /f "delims=" %%i in ('dir /b "%SOURCE_FOLDER%\*.proto"') do (
 )
 
 echo Finish!
-::echo %CS_COMPILER_PATH% -i:%SOURCE_FOLDER%/%%i -o:%CS_TARGET_PATH%\%%~ni.cs
 pause

@@ -1,5 +1,5 @@
 syntax = "proto3";
-option java_package = "info.xiaomo.server.protocol.proto";
+option java_package = "info.xiaomo.server.protocol";
 option java_outer_classname = "GMProto";
 
 message CloseServerRequest {

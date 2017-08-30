@@ -21,8 +21,8 @@ public static partial class GMReflection {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
           "Cg5wcm90by9HTS5wcm90byIUChJDbG9zZVNlcnZlclJlcXVlc3QiJQoTQ2xv",
-          "c2VTZXJ2ZXJSZXNwb25zZRIOCgZyZXNNc2cYASABKAlCLAohaW5mby54aWFv",
-          "bW8uc2VydmVyLnByb3RvY29sLnByb3RvQgdHTVByb3RvYgZwcm90bzM="));
+          "c2VTZXJ2ZXJSZXNwb25zZRIOCgZyZXNNc2cYASABKAlCJgobaW5mby54aWFv",
+          "bW8uc2VydmVyLnByb3RvY29sQgdHTVByb3RvYgZwcm90bzM="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { },
         new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {

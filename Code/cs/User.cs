@@ -55,9 +55,9 @@ namespace User {
             "b25lVHlwZRgCIAEoCRIKCgJxcRgDIAEoCSItChZCaW5kUGhvbmVOdW1iZXJS",
             "ZXF1ZXN0EhMKC3Bob25lTnVtYmVyGAEgASgJIigKElJlY2hhcmdlaW5nUmVx",
             "dWVzdBISCgpyZWNoYXJnZUlkGAEgASgJKj4KD0dvaW5nRG93blJlYXNvbhIM",
-            "CghNYWludGFpbhAAEgkKBUJsb2NrEAESEgoOQW5vdGhlclNlc3Npb24QAkIu",
-            "CiFpbmZvLnhpYW9tby5zZXJ2ZXIucHJvdG9jb2wucHJvdG9CCVVzZXJQcm90",
-            "b2IGcHJvdG8z"));
+            "CghNYWludGFpbhAAEgkKBUJsb2NrEAESEgoOQW5vdGhlclNlc3Npb24QAkIo",
+            "ChtpbmZvLnhpYW9tby5zZXJ2ZXIucHJvdG9jb2xCCVVzZXJQcm90b2IGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::User.GoingDownReason), }, new pbr::GeneratedClrTypeInfo[] {
