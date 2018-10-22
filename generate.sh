@@ -21,8 +21,6 @@ else
 fi
 
 
-
-
 echo "开始清理老代码"
 rm -rf ${JAVA_TARGET_PATH}/*
 rm -rf ${CS_TARGET_PATH}/*
