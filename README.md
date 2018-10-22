@@ -1,7 +1,7 @@
 # 消息协议配置文件
 
-[protoc.exe 3.6.1版](https://github.com/protocolbuffers/protobuf)
-[文档](https://developers.google.com/protocol-buffers/docs/proto3#simple)
+- [protoc.exe 3.6.1版](https://github.com/protocolbuffers/protobuf)    
+- [文档](https://developers.google.com/protocol-buffers/docs/proto3#simple)
 
 
 #### 目录结构预览
