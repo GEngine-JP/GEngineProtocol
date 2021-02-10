@@ -1,0 +1,4 @@
+option java_package = "info.xiaomo.server.protocol.hall";
+import "Mid.proto";
+
+
