@@ -1,7 +1,7 @@
 # 消息协议配置文件
 
-- [protoc.exe 3.6.1版](https://github.com/protocolbuffers/protobuf)    
-- [文档](https://developers.google.com/protocol-buffers/docs/proto3#simple)
+- [protoc.exe 3.13版](https://github.com/protocolbuffers/protobuf/releases)    
+- [proto写法参考文档](https://developers.google.com/protocol-buffers/docs/proto3#simple)
 
 
 #### 目录结构预览
@@ -15,13 +15,10 @@
 │  └─js          js代码             
 │  └─python      python代码             
 │  └─ts          ts代码             
-├─proto          proto文件              
-└─src       
-    └─Main.java 消息生成工具入口           
+├─proto          proto文件                
        
 #### 使用方式
 运行 generate.bat即可生成java和c#的proto通讯文件
-运行 Main.java 生成消息协议文件
 
 #### 模块
 - 1=user
