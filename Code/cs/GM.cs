@@ -22,21 +22,25 @@ public static partial class GMReflection {
   static GMReflection() {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
-          "CghHTS5wcm90byIUChJDbG9zZVNlcnZlclJlcXVlc3QiJQoTQ2xvc2VTZXJ2",
-          "ZXJSZXNwb25zZRIOCgZyZXNNc2cYASABKAlCJgobaW5mby54aWFvbW8uc2Vy",
-          "dmVyLnByb3RvY29sQgdHTVByb3RvYgZwcm90bzM="));
+          "CghHTS5wcm90byIkChJDbG9zZVNlcnZlclJlcXVlc3QSDgoGcmVzTXNnGAEg",
+          "ASgJIiUKE0Nsb3NlU2VydmVyUmVzcG9uc2USDgoGcmVzTXNnGAEgASgJQiYK",
+          "G2luZm8ueGlhb21vLnNlcnZlci5wcm90b2NvbEIHR01Qcm90b2IGcHJvdG8z"));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::CloseServerRequest), global::CloseServerRequest.Parser, null, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::CloseServerResponse), global::CloseServerResponse.Parser, new[]{ "ResMsg" }, null, null, null)
+        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+          new pbr::GeneratedClrTypeInfo(typeof(global::CloseServerRequest), global::CloseServerRequest.Parser, new[]{ "ResMsg" }, null, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::CloseServerResponse), global::CloseServerResponse.Parser, new[]{ "ResMsg" }, null, null, null, null)
         }));
   }
   #endregion
 
 }
 #region Messages
-public sealed partial class CloseServerRequest : pb::IMessage<CloseServerRequest> {
+public sealed partial class CloseServerRequest : pb::IMessage<CloseServerRequest>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<CloseServerRequest> _parser = new pb::MessageParser<CloseServerRequest>(() => new CloseServerRequest());
   private pb::UnknownFieldSet _unknownFields;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -61,12 +65,24 @@ public sealed partial class CloseServerRequest : pb::IMessage<CloseServerRequest
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public CloseServerRequest(CloseServerRequest other) : this() {
+    resMsg_ = other.resMsg_;
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public CloseServerRequest Clone() {
     return new CloseServerRequest(this);
+  }
+
+  /// <summary>Field number for the "resMsg" field.</summary>
+  public const int ResMsgFieldNumber = 1;
+  private string resMsg_ = "";
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public string ResMsg {
+    get { return resMsg_; }
+    set {
+      resMsg_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -82,12 +98,14 @@ public sealed partial class CloseServerRequest : pb::IMessage<CloseServerRequest
     if (ReferenceEquals(other, this)) {
       return true;
     }
+    if (ResMsg != other.ResMsg) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override int GetHashCode() {
     int hash = 1;
+    if (ResMsg.Length != 0) hash ^= ResMsg.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -101,14 +119,38 @@ public sealed partial class CloseServerRequest : pb::IMessage<CloseServerRequest
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
+    if (ResMsg.Length != 0) {
+      output.WriteRawTag(10);
+      output.WriteString(ResMsg);
+    }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (ResMsg.Length != 0) {
+      output.WriteRawTag(10);
+      output.WriteString(ResMsg);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
     int size = 0;
+    if (ResMsg.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(ResMsg);
+    }
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
     }
@@ -120,24 +162,57 @@ public sealed partial class CloseServerRequest : pb::IMessage<CloseServerRequest
     if (other == null) {
       return;
     }
+    if (other.ResMsg.Length != 0) {
+      ResMsg = other.ResMsg;
+    }
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
         default:
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
           break;
+        case 10: {
+          ResMsg = input.ReadString();
+          break;
+        }
+      }
+    }
+  #endif
+  }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 10: {
+          ResMsg = input.ReadString();
+          break;
+        }
       }
     }
   }
+  #endif
 
 }
 
-public sealed partial class CloseServerResponse : pb::IMessage<CloseServerResponse> {
+public sealed partial class CloseServerResponse : pb::IMessage<CloseServerResponse>
+#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    , pb::IBufferMessage
+#endif
+{
   private static readonly pb::MessageParser<CloseServerResponse> _parser = new pb::MessageParser<CloseServerResponse>(() => new CloseServerResponse());
   private pb::UnknownFieldSet _unknownFields;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -216,6 +291,9 @@ public sealed partial class CloseServerResponse : pb::IMessage<CloseServerRespon
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    output.WriteRawMessage(this);
+  #else
     if (ResMsg.Length != 0) {
       output.WriteRawTag(10);
       output.WriteString(ResMsg);
@@ -223,7 +301,21 @@ public sealed partial class CloseServerResponse : pb::IMessage<CloseServerRespon
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (ResMsg.Length != 0) {
+      output.WriteRawTag(10);
+      output.WriteString(ResMsg);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(ref output);
+    }
+  }
+  #endif
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
@@ -250,6 +342,9 @@ public sealed partial class CloseServerResponse : pb::IMessage<CloseServerRespon
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void MergeFrom(pb::CodedInputStream input) {
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    input.ReadRawMessage(this);
+  #else
     uint tag;
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
@@ -262,7 +357,26 @@ public sealed partial class CloseServerResponse : pb::IMessage<CloseServerRespon
         }
       }
     }
+  #endif
   }
+
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+          break;
+        case 10: {
+          ResMsg = input.ReadString();
+          break;
+        }
+      }
+    }
+  }
+  #endif
 
 }
 

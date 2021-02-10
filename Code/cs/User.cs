@@ -55,28 +55,28 @@ namespace User {
             "JQoGcmVhc29uGAEgASgOMhUudXNlci5Hb2luZ0Rvd25SZWFzb24iRQoTVXNl",
             "ckZlZWRiYWNrUmVxdWVzdBIPCgdjb250ZW50GAEgASgJEhEKCXBob25lVHlw",
             "ZRgCIAEoCRIKCgJxcRgDIAEoCSItChZCaW5kUGhvbmVOdW1iZXJSZXF1ZXN0",
-            "EhMKC3Bob25lTnVtYmVyGAEgASgJIigKElJlY2hhcmdlaW5nUmVxdWVzdBIS",
-            "CgpyZWNoYXJnZUlkGAEgASgJKj4KD0dvaW5nRG93blJlYXNvbhIMCghNYWlu",
-            "dGFpbhAAEgkKBUJsb2NrEAESEgoOQW5vdGhlclNlc3Npb24QAkIoChtpbmZv",
-            "LnhpYW9tby5zZXJ2ZXIucHJvdG9jb2xCCVVzZXJQcm90b2IGcHJvdG8z"));
+            "EhMKC3Bob25lTnVtYmVyGAEgASgJIiUKD1JlY2hhcmdlUmVxdWVzdBISCgpy",
+            "ZWNoYXJnZUlkGAEgASgJKj4KD0dvaW5nRG93blJlYXNvbhIMCghNYWludGFp",
+            "bhAAEgkKBUJsb2NrEAESEgoOQW5vdGhlclNlc3Npb24QAkIoChtpbmZvLnhp",
+            "YW9tby5zZXJ2ZXIucHJvdG9jb2xCCVVzZXJQcm90b2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::User.GoingDownReason), }, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::User.RoleInfo), global::User.RoleInfo.Parser, new[]{ "RoleId", "RoleName", "Level", "Sex", "MapId", "Line", "CurServerType" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::User.PlayerAttribute), global::User.PlayerAttribute.Parser, new[]{ "PhyAttMax", "PhyAttMin", "MagicAttMax", "MagicAttMin", "TaoAttMax", "TaoAttMin", "PhyDefMax", "PhyDefMin", "MagicDefMax", "MagicDefMin", "Accurate", "Dodge", "PoisonRecover", "HeathRecover", "AttackSpeed", "MaxHp", "MaxMp", "MagicRecover", "Luck", "Critical", "NbValue", "CriticalDamage", "MaxInnerPower", "Resistance", "HolyAtt", "PkAtk", "PkDef" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::User.LoginRequest), global::User.LoginRequest.Parser, new[]{ "LoginName", "PlatformId", "ServerId", "Sign", "Time" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::User.LoginResponse), global::User.LoginResponse.Parser, new[]{ "RoleList", "UserId" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::User.CreateRoleRequest), global::User.CreateRoleRequest.Parser, new[]{ "Name", "Sex", "Career" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::User.RandomRoleNameResponse), global::User.RandomRoleNameResponse.Parser, new[]{ "Name" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::User.RandomRoleNameRequest), global::User.RandomRoleNameRequest.Parser, new[]{ "Sex" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::User.RoleIdMsg), global::User.RoleIdMsg.Parser, new[]{ "RoleId" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::User.GMCommand), global::User.GMCommand.Parser, new[]{ "Command" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::User.CloseServerResponse), global::User.CloseServerResponse.Parser, new[]{ "Code", "Msg" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::User.ReconnectRequest), global::User.ReconnectRequest.Parser, new[]{ "LoginName", "ServerId", "PlatformId", "RoleId", "Sign", "Time", "ChangeLine" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::User.DisconnectResponse), global::User.DisconnectResponse.Parser, new[]{ "Reason" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::User.UserFeedbackRequest), global::User.UserFeedbackRequest.Parser, new[]{ "Content", "PhoneType", "Qq" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::User.BindPhoneNumberRequest), global::User.BindPhoneNumberRequest.Parser, new[]{ "PhoneNumber" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::User.RechargeingRequest), global::User.RechargeingRequest.Parser, new[]{ "RechargeId" }, null, null, null)
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::User.GoingDownReason), }, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::User.RoleInfo), global::User.RoleInfo.Parser, new[]{ "RoleId", "RoleName", "Level", "Sex", "MapId", "Line", "CurServerType" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::User.PlayerAttribute), global::User.PlayerAttribute.Parser, new[]{ "PhyAttMax", "PhyAttMin", "MagicAttMax", "MagicAttMin", "TaoAttMax", "TaoAttMin", "PhyDefMax", "PhyDefMin", "MagicDefMax", "MagicDefMin", "Accurate", "Dodge", "PoisonRecover", "HeathRecover", "AttackSpeed", "MaxHp", "MaxMp", "MagicRecover", "Luck", "Critical", "NbValue", "CriticalDamage", "MaxInnerPower", "Resistance", "HolyAtt", "PkAtk", "PkDef" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::User.LoginRequest), global::User.LoginRequest.Parser, new[]{ "LoginName", "PlatformId", "ServerId", "Sign", "Time" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::User.LoginResponse), global::User.LoginResponse.Parser, new[]{ "RoleList", "UserId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::User.CreateRoleRequest), global::User.CreateRoleRequest.Parser, new[]{ "Name", "Sex", "Career" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::User.RandomRoleNameResponse), global::User.RandomRoleNameResponse.Parser, new[]{ "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::User.RandomRoleNameRequest), global::User.RandomRoleNameRequest.Parser, new[]{ "Sex" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::User.RoleIdMsg), global::User.RoleIdMsg.Parser, new[]{ "RoleId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::User.GMCommand), global::User.GMCommand.Parser, new[]{ "Command" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::User.CloseServerResponse), global::User.CloseServerResponse.Parser, new[]{ "Code", "Msg" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::User.ReconnectRequest), global::User.ReconnectRequest.Parser, new[]{ "LoginName", "ServerId", "PlatformId", "RoleId", "Sign", "Time", "ChangeLine" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::User.DisconnectResponse), global::User.DisconnectResponse.Parser, new[]{ "Reason" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::User.UserFeedbackRequest), global::User.UserFeedbackRequest.Parser, new[]{ "Content", "PhoneType", "Qq" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::User.BindPhoneNumberRequest), global::User.BindPhoneNumberRequest.Parser, new[]{ "PhoneNumber" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::User.RechargeRequest), global::User.RechargeRequest.Parser, new[]{ "RechargeId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -101,7 +101,11 @@ namespace User {
   #endregion
 
   #region Messages
-  public sealed partial class RoleInfo : pb::IMessage<RoleInfo> {
+  public sealed partial class RoleInfo : pb::IMessage<RoleInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
     private static readonly pb::MessageParser<RoleInfo> _parser = new pb::MessageParser<RoleInfo>(() => new RoleInfo());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -285,6 +289,9 @@ namespace User {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
       if (RoleId != 0L) {
         output.WriteRawTag(8);
         output.WriteInt64(RoleId);
@@ -316,7 +323,45 @@ namespace User {
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (RoleId != 0L) {
+        output.WriteRawTag(8);
+        output.WriteInt64(RoleId);
+      }
+      if (RoleName.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(RoleName);
+      }
+      if (Level != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(Level);
+      }
+      if (Sex != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(Sex);
+      }
+      if (MapId != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(MapId);
+      }
+      if (Line != 0) {
+        output.WriteRawTag(48);
+        output.WriteInt32(Line);
+      }
+      if (CurServerType != 0) {
+        output.WriteRawTag(56);
+        output.WriteInt32(CurServerType);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
@@ -379,6 +424,9 @@ namespace User {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -415,11 +463,58 @@ namespace User {
           }
         }
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            RoleId = input.ReadInt64();
+            break;
+          }
+          case 18: {
+            RoleName = input.ReadString();
+            break;
+          }
+          case 24: {
+            Level = input.ReadInt32();
+            break;
+          }
+          case 32: {
+            Sex = input.ReadInt32();
+            break;
+          }
+          case 40: {
+            MapId = input.ReadInt32();
+            break;
+          }
+          case 48: {
+            Line = input.ReadInt32();
+            break;
+          }
+          case 56: {
+            CurServerType = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
 
   }
 
-  public sealed partial class PlayerAttribute : pb::IMessage<PlayerAttribute> {
+  public sealed partial class PlayerAttribute : pb::IMessage<PlayerAttribute>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
     private static readonly pb::MessageParser<PlayerAttribute> _parser = new pb::MessageParser<PlayerAttribute>(() => new PlayerAttribute());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -943,6 +1038,9 @@ namespace User {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
       if (PhyAttMax != 0) {
         output.WriteRawTag(8);
         output.WriteInt32(PhyAttMax);
@@ -1054,7 +1152,125 @@ namespace User {
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (PhyAttMax != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(PhyAttMax);
+      }
+      if (PhyAttMin != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(PhyAttMin);
+      }
+      if (MagicAttMax != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(MagicAttMax);
+      }
+      if (MagicAttMin != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(MagicAttMin);
+      }
+      if (TaoAttMax != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(TaoAttMax);
+      }
+      if (TaoAttMin != 0) {
+        output.WriteRawTag(48);
+        output.WriteInt32(TaoAttMin);
+      }
+      if (PhyDefMax != 0) {
+        output.WriteRawTag(56);
+        output.WriteInt32(PhyDefMax);
+      }
+      if (PhyDefMin != 0) {
+        output.WriteRawTag(64);
+        output.WriteInt32(PhyDefMin);
+      }
+      if (MagicDefMax != 0) {
+        output.WriteRawTag(72);
+        output.WriteInt32(MagicDefMax);
+      }
+      if (MagicDefMin != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(MagicDefMin);
+      }
+      if (Accurate != 0) {
+        output.WriteRawTag(88);
+        output.WriteInt32(Accurate);
+      }
+      if (Dodge != 0) {
+        output.WriteRawTag(96);
+        output.WriteInt32(Dodge);
+      }
+      if (PoisonRecover != 0) {
+        output.WriteRawTag(104);
+        output.WriteInt32(PoisonRecover);
+      }
+      if (HeathRecover != 0) {
+        output.WriteRawTag(112);
+        output.WriteInt32(HeathRecover);
+      }
+      if (AttackSpeed != 0) {
+        output.WriteRawTag(120);
+        output.WriteInt32(AttackSpeed);
+      }
+      if (MaxHp != 0) {
+        output.WriteRawTag(128, 1);
+        output.WriteInt32(MaxHp);
+      }
+      if (MaxMp != 0) {
+        output.WriteRawTag(136, 1);
+        output.WriteInt32(MaxMp);
+      }
+      if (MagicRecover != 0) {
+        output.WriteRawTag(144, 1);
+        output.WriteInt32(MagicRecover);
+      }
+      if (Luck != 0) {
+        output.WriteRawTag(152, 1);
+        output.WriteInt32(Luck);
+      }
+      if (Critical != 0) {
+        output.WriteRawTag(160, 1);
+        output.WriteInt32(Critical);
+      }
+      if (NbValue != 0) {
+        output.WriteRawTag(168, 1);
+        output.WriteInt32(NbValue);
+      }
+      if (CriticalDamage != 0) {
+        output.WriteRawTag(176, 1);
+        output.WriteInt32(CriticalDamage);
+      }
+      if (MaxInnerPower != 0) {
+        output.WriteRawTag(184, 1);
+        output.WriteInt32(MaxInnerPower);
+      }
+      if (Resistance != 0) {
+        output.WriteRawTag(192, 1);
+        output.WriteInt32(Resistance);
+      }
+      if (HolyAtt != 0) {
+        output.WriteRawTag(200, 1);
+        output.WriteInt32(HolyAtt);
+      }
+      if (PkAtk != 0) {
+        output.WriteRawTag(208, 1);
+        output.WriteInt32(PkAtk);
+      }
+      if (PkDef != 0) {
+        output.WriteRawTag(216, 1);
+        output.WriteInt32(PkDef);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
@@ -1237,6 +1453,9 @@ namespace User {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -1353,14 +1572,141 @@ namespace User {
           }
         }
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            PhyAttMax = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            PhyAttMin = input.ReadInt32();
+            break;
+          }
+          case 24: {
+            MagicAttMax = input.ReadInt32();
+            break;
+          }
+          case 32: {
+            MagicAttMin = input.ReadInt32();
+            break;
+          }
+          case 40: {
+            TaoAttMax = input.ReadInt32();
+            break;
+          }
+          case 48: {
+            TaoAttMin = input.ReadInt32();
+            break;
+          }
+          case 56: {
+            PhyDefMax = input.ReadInt32();
+            break;
+          }
+          case 64: {
+            PhyDefMin = input.ReadInt32();
+            break;
+          }
+          case 72: {
+            MagicDefMax = input.ReadInt32();
+            break;
+          }
+          case 80: {
+            MagicDefMin = input.ReadInt32();
+            break;
+          }
+          case 88: {
+            Accurate = input.ReadInt32();
+            break;
+          }
+          case 96: {
+            Dodge = input.ReadInt32();
+            break;
+          }
+          case 104: {
+            PoisonRecover = input.ReadInt32();
+            break;
+          }
+          case 112: {
+            HeathRecover = input.ReadInt32();
+            break;
+          }
+          case 120: {
+            AttackSpeed = input.ReadInt32();
+            break;
+          }
+          case 128: {
+            MaxHp = input.ReadInt32();
+            break;
+          }
+          case 136: {
+            MaxMp = input.ReadInt32();
+            break;
+          }
+          case 144: {
+            MagicRecover = input.ReadInt32();
+            break;
+          }
+          case 152: {
+            Luck = input.ReadInt32();
+            break;
+          }
+          case 160: {
+            Critical = input.ReadInt32();
+            break;
+          }
+          case 168: {
+            NbValue = input.ReadInt32();
+            break;
+          }
+          case 176: {
+            CriticalDamage = input.ReadInt32();
+            break;
+          }
+          case 184: {
+            MaxInnerPower = input.ReadInt32();
+            break;
+          }
+          case 192: {
+            Resistance = input.ReadInt32();
+            break;
+          }
+          case 200: {
+            HolyAtt = input.ReadInt32();
+            break;
+          }
+          case 208: {
+            PkAtk = input.ReadInt32();
+            break;
+          }
+          case 216: {
+            PkDef = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
 
   }
 
   /// <summary>
   /// 1001
   /// </summary>
-  public sealed partial class LoginRequest : pb::IMessage<LoginRequest> {
+  public sealed partial class LoginRequest : pb::IMessage<LoginRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
     private static readonly pb::MessageParser<LoginRequest> _parser = new pb::MessageParser<LoginRequest>(() => new LoginRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1504,6 +1850,9 @@ namespace User {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
       if (LoginName.Length != 0) {
         output.WriteRawTag(10);
         output.WriteString(LoginName);
@@ -1527,7 +1876,37 @@ namespace User {
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (LoginName.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(LoginName);
+      }
+      if (PlatformId != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(PlatformId);
+      }
+      if (ServerId != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(ServerId);
+      }
+      if (Sign.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Sign);
+      }
+      if (Time != 0L) {
+        output.WriteRawTag(40);
+        output.WriteInt64(Time);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
@@ -1578,6 +1957,9 @@ namespace User {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -1606,14 +1988,53 @@ namespace User {
           }
         }
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            LoginName = input.ReadString();
+            break;
+          }
+          case 16: {
+            PlatformId = input.ReadInt32();
+            break;
+          }
+          case 24: {
+            ServerId = input.ReadInt32();
+            break;
+          }
+          case 34: {
+            Sign = input.ReadString();
+            break;
+          }
+          case 40: {
+            Time = input.ReadInt64();
+            break;
+          }
+        }
+      }
+    }
+    #endif
 
   }
 
   /// <summary>
   /// 1002
   /// </summary>
-  public sealed partial class LoginResponse : pb::IMessage<LoginResponse> {
+  public sealed partial class LoginResponse : pb::IMessage<LoginResponse>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
     private static readonly pb::MessageParser<LoginResponse> _parser = new pb::MessageParser<LoginResponse>(() => new LoginResponse());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1708,6 +2129,9 @@ namespace User {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
       roleList_.WriteTo(output, _repeated_roleList_codec);
       if (UserId != 0L) {
         output.WriteRawTag(16);
@@ -1716,7 +2140,22 @@ namespace User {
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      roleList_.WriteTo(ref output, _repeated_roleList_codec);
+      if (UserId != 0L) {
+        output.WriteRawTag(16);
+        output.WriteInt64(UserId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
@@ -1745,6 +2184,9 @@ namespace User {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -1761,11 +2203,38 @@ namespace User {
           }
         }
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            roleList_.AddEntriesFrom(ref input, _repeated_roleList_codec);
+            break;
+          }
+          case 16: {
+            UserId = input.ReadInt64();
+            break;
+          }
+        }
+      }
+    }
+    #endif
 
   }
 
-  public sealed partial class CreateRoleRequest : pb::IMessage<CreateRoleRequest> {
+  public sealed partial class CreateRoleRequest : pb::IMessage<CreateRoleRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
     private static readonly pb::MessageParser<CreateRoleRequest> _parser = new pb::MessageParser<CreateRoleRequest>(() => new CreateRoleRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1881,6 +2350,9 @@ namespace User {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
       if (Name.Length != 0) {
         output.WriteRawTag(10);
         output.WriteString(Name);
@@ -1896,7 +2368,29 @@ namespace User {
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Name.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Name);
+      }
+      if (Sex != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(Sex);
+      }
+      if (Career != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(Career);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
@@ -1935,6 +2429,9 @@ namespace User {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -1955,11 +2452,42 @@ namespace User {
           }
         }
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            Name = input.ReadString();
+            break;
+          }
+          case 16: {
+            Sex = input.ReadInt32();
+            break;
+          }
+          case 24: {
+            Career = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
 
   }
 
-  public sealed partial class RandomRoleNameResponse : pb::IMessage<RandomRoleNameResponse> {
+  public sealed partial class RandomRoleNameResponse : pb::IMessage<RandomRoleNameResponse>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
     private static readonly pb::MessageParser<RandomRoleNameResponse> _parser = new pb::MessageParser<RandomRoleNameResponse>(() => new RandomRoleNameResponse());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2041,6 +2569,9 @@ namespace User {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
       if (Name.Length != 0) {
         output.WriteRawTag(10);
         output.WriteString(Name);
@@ -2048,7 +2579,21 @@ namespace User {
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Name.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Name);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
@@ -2075,6 +2620,9 @@ namespace User {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -2087,11 +2635,34 @@ namespace User {
           }
         }
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            Name = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
 
   }
 
-  public sealed partial class RandomRoleNameRequest : pb::IMessage<RandomRoleNameRequest> {
+  public sealed partial class RandomRoleNameRequest : pb::IMessage<RandomRoleNameRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
     private static readonly pb::MessageParser<RandomRoleNameRequest> _parser = new pb::MessageParser<RandomRoleNameRequest>(() => new RandomRoleNameRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2173,6 +2744,9 @@ namespace User {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
       if (Sex != 0) {
         output.WriteRawTag(8);
         output.WriteInt32(Sex);
@@ -2180,7 +2754,21 @@ namespace User {
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Sex != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Sex);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
@@ -2207,6 +2795,9 @@ namespace User {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -2219,11 +2810,34 @@ namespace User {
           }
         }
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            Sex = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
 
   }
 
-  public sealed partial class RoleIdMsg : pb::IMessage<RoleIdMsg> {
+  public sealed partial class RoleIdMsg : pb::IMessage<RoleIdMsg>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
     private static readonly pb::MessageParser<RoleIdMsg> _parser = new pb::MessageParser<RoleIdMsg>(() => new RoleIdMsg());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2302,6 +2916,9 @@ namespace User {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
       if (RoleId != 0L) {
         output.WriteRawTag(8);
         output.WriteInt64(RoleId);
@@ -2309,7 +2926,21 @@ namespace User {
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (RoleId != 0L) {
+        output.WriteRawTag(8);
+        output.WriteInt64(RoleId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
@@ -2336,6 +2967,9 @@ namespace User {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -2348,14 +2982,37 @@ namespace User {
           }
         }
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            RoleId = input.ReadInt64();
+            break;
+          }
+        }
+      }
+    }
+    #endif
 
   }
 
   /// <summary>
   ///gm命令请求
   /// </summary>
-  public sealed partial class GMCommand : pb::IMessage<GMCommand> {
+  public sealed partial class GMCommand : pb::IMessage<GMCommand>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
     private static readonly pb::MessageParser<GMCommand> _parser = new pb::MessageParser<GMCommand>(() => new GMCommand());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2434,6 +3091,9 @@ namespace User {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
       if (Command.Length != 0) {
         output.WriteRawTag(10);
         output.WriteString(Command);
@@ -2441,7 +3101,21 @@ namespace User {
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Command.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Command);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
@@ -2468,6 +3142,9 @@ namespace User {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -2480,11 +3157,34 @@ namespace User {
           }
         }
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            Command = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
 
   }
 
-  public sealed partial class CloseServerResponse : pb::IMessage<CloseServerResponse> {
+  public sealed partial class CloseServerResponse : pb::IMessage<CloseServerResponse>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
     private static readonly pb::MessageParser<CloseServerResponse> _parser = new pb::MessageParser<CloseServerResponse>(() => new CloseServerResponse());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2577,6 +3277,9 @@ namespace User {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
       if (Code != 0) {
         output.WriteRawTag(8);
         output.WriteInt32(Code);
@@ -2588,7 +3291,25 @@ namespace User {
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Code != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Code);
+      }
+      if (Msg.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Msg);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
@@ -2621,6 +3342,9 @@ namespace User {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -2637,14 +3361,41 @@ namespace User {
           }
         }
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            Code = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            Msg = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
 
   }
 
   /// <summary>
   ///重新连接请求
   /// </summary>
-  public sealed partial class ReconnectRequest : pb::IMessage<ReconnectRequest> {
+  public sealed partial class ReconnectRequest : pb::IMessage<ReconnectRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
     private static readonly pb::MessageParser<ReconnectRequest> _parser = new pb::MessageParser<ReconnectRequest>(() => new ReconnectRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2810,6 +3561,9 @@ namespace User {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
       if (LoginName.Length != 0) {
         output.WriteRawTag(10);
         output.WriteString(LoginName);
@@ -2841,7 +3595,45 @@ namespace User {
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (LoginName.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(LoginName);
+      }
+      if (ServerId != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(ServerId);
+      }
+      if (PlatformId != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(PlatformId);
+      }
+      if (RoleId != 0L) {
+        output.WriteRawTag(32);
+        output.WriteInt64(RoleId);
+      }
+      if (Sign.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(Sign);
+      }
+      if (Time != 0L) {
+        output.WriteRawTag(48);
+        output.WriteInt64(Time);
+      }
+      if (ChangeLine != false) {
+        output.WriteRawTag(56);
+        output.WriteBool(ChangeLine);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
@@ -2904,6 +3696,9 @@ namespace User {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -2940,11 +3735,58 @@ namespace User {
           }
         }
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            LoginName = input.ReadString();
+            break;
+          }
+          case 16: {
+            ServerId = input.ReadInt32();
+            break;
+          }
+          case 24: {
+            PlatformId = input.ReadInt32();
+            break;
+          }
+          case 32: {
+            RoleId = input.ReadInt64();
+            break;
+          }
+          case 42: {
+            Sign = input.ReadString();
+            break;
+          }
+          case 48: {
+            Time = input.ReadInt64();
+            break;
+          }
+          case 56: {
+            ChangeLine = input.ReadBool();
+            break;
+          }
+        }
+      }
+    }
+    #endif
 
   }
 
-  public sealed partial class DisconnectResponse : pb::IMessage<DisconnectResponse> {
+  public sealed partial class DisconnectResponse : pb::IMessage<DisconnectResponse>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
     private static readonly pb::MessageParser<DisconnectResponse> _parser = new pb::MessageParser<DisconnectResponse>(() => new DisconnectResponse());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2980,7 +3822,7 @@ namespace User {
 
     /// <summary>Field number for the "reason" field.</summary>
     public const int ReasonFieldNumber = 1;
-    private global::User.GoingDownReason reason_ = 0;
+    private global::User.GoingDownReason reason_ = global::User.GoingDownReason.Maintain;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::User.GoingDownReason Reason {
       get { return reason_; }
@@ -3009,7 +3851,7 @@ namespace User {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Reason != 0) hash ^= Reason.GetHashCode();
+      if (Reason != global::User.GoingDownReason.Maintain) hash ^= Reason.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -3023,19 +3865,36 @@ namespace User {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (Reason != 0) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Reason != global::User.GoingDownReason.Maintain) {
         output.WriteRawTag(8);
         output.WriteEnum((int) Reason);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Reason != global::User.GoingDownReason.Maintain) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) Reason);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Reason != 0) {
+      if (Reason != global::User.GoingDownReason.Maintain) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Reason);
       }
       if (_unknownFields != null) {
@@ -3049,7 +3908,7 @@ namespace User {
       if (other == null) {
         return;
       }
-      if (other.Reason != 0) {
+      if (other.Reason != global::User.GoingDownReason.Maintain) {
         Reason = other.Reason;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -3057,6 +3916,9 @@ namespace User {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -3064,19 +3926,42 @@ namespace User {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            reason_ = (global::User.GoingDownReason) input.ReadEnum();
+            Reason = (global::User.GoingDownReason) input.ReadEnum();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            Reason = (global::User.GoingDownReason) input.ReadEnum();
             break;
           }
         }
       }
     }
+    #endif
 
   }
 
   /// <summary>
   ///用户反馈请求
   /// </summary>
-  public sealed partial class UserFeedbackRequest : pb::IMessage<UserFeedbackRequest> {
+  public sealed partial class UserFeedbackRequest : pb::IMessage<UserFeedbackRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
     private static readonly pb::MessageParser<UserFeedbackRequest> _parser = new pb::MessageParser<UserFeedbackRequest>(() => new UserFeedbackRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3183,6 +4068,9 @@ namespace User {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
       if (Content.Length != 0) {
         output.WriteRawTag(10);
         output.WriteString(Content);
@@ -3198,7 +4086,29 @@ namespace User {
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Content.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Content);
+      }
+      if (PhoneType.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(PhoneType);
+      }
+      if (Qq.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Qq);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
@@ -3237,6 +4147,9 @@ namespace User {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -3257,14 +4170,45 @@ namespace User {
           }
         }
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            Content = input.ReadString();
+            break;
+          }
+          case 18: {
+            PhoneType = input.ReadString();
+            break;
+          }
+          case 26: {
+            Qq = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
 
   }
 
   /// <summary>
   ///绑定手机号请求
   /// </summary>
-  public sealed partial class BindPhoneNumberRequest : pb::IMessage<BindPhoneNumberRequest> {
+  public sealed partial class BindPhoneNumberRequest : pb::IMessage<BindPhoneNumberRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
     private static readonly pb::MessageParser<BindPhoneNumberRequest> _parser = new pb::MessageParser<BindPhoneNumberRequest>(() => new BindPhoneNumberRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3343,6 +4287,9 @@ namespace User {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
       if (PhoneNumber.Length != 0) {
         output.WriteRawTag(10);
         output.WriteString(PhoneNumber);
@@ -3350,7 +4297,21 @@ namespace User {
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (PhoneNumber.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(PhoneNumber);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
@@ -3377,6 +4338,9 @@ namespace User {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -3389,15 +4353,38 @@ namespace User {
           }
         }
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            PhoneNumber = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
 
   }
 
-  public sealed partial class RechargeingRequest : pb::IMessage<RechargeingRequest> {
-    private static readonly pb::MessageParser<RechargeingRequest> _parser = new pb::MessageParser<RechargeingRequest>(() => new RechargeingRequest());
+  public sealed partial class RechargeRequest : pb::IMessage<RechargeRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<RechargeRequest> _parser = new pb::MessageParser<RechargeRequest>(() => new RechargeRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<RechargeingRequest> Parser { get { return _parser; } }
+    public static pb::MessageParser<RechargeRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -3410,21 +4397,21 @@ namespace User {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public RechargeingRequest() {
+    public RechargeRequest() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public RechargeingRequest(RechargeingRequest other) : this() {
+    public RechargeRequest(RechargeRequest other) : this() {
       rechargeId_ = other.rechargeId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public RechargeingRequest Clone() {
-      return new RechargeingRequest(this);
+    public RechargeRequest Clone() {
+      return new RechargeRequest(this);
     }
 
     /// <summary>Field number for the "rechargeId" field.</summary>
@@ -3440,11 +4427,11 @@ namespace User {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as RechargeingRequest);
+      return Equals(other as RechargeRequest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(RechargeingRequest other) {
+    public bool Equals(RechargeRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -3472,6 +4459,9 @@ namespace User {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
       if (RechargeId.Length != 0) {
         output.WriteRawTag(10);
         output.WriteString(RechargeId);
@@ -3479,7 +4469,21 @@ namespace User {
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (RechargeId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(RechargeId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
@@ -3494,7 +4498,7 @@ namespace User {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(RechargeingRequest other) {
+    public void MergeFrom(RechargeRequest other) {
       if (other == null) {
         return;
       }
@@ -3506,6 +4510,9 @@ namespace User {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -3518,7 +4525,26 @@ namespace User {
           }
         }
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            RechargeId = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
 
   }
 

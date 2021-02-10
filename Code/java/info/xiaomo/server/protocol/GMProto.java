@@ -17,11 +17,23 @@ public final class GMProto {
   public interface CloseServerRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:CloseServerRequest)
       com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string resMsg = 1;</code>
+     * @return The resMsg.
+     */
+    java.lang.String getResMsg();
+    /**
+     * <code>string resMsg = 1;</code>
+     * @return The bytes for resMsg.
+     */
+    com.google.protobuf.ByteString
+        getResMsgBytes();
   }
   /**
    * Protobuf type {@code CloseServerRequest}
    */
-  public  static final class CloseServerRequest extends
+  public static final class CloseServerRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:CloseServerRequest)
       CloseServerRequestOrBuilder {
@@ -31,6 +43,14 @@ public final class GMProto {
       super(builder);
     }
     private CloseServerRequest() {
+      resMsg_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new CloseServerRequest();
     }
 
     @java.lang.Override
@@ -56,8 +76,14 @@ public final class GMProto {
             case 0:
               done = true;
               break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              resMsg_ = s;
+              break;
+            }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -88,6 +114,44 @@ public final class GMProto {
               info.xiaomo.server.protocol.GMProto.CloseServerRequest.class, info.xiaomo.server.protocol.GMProto.CloseServerRequest.Builder.class);
     }
 
+    public static final int RESMSG_FIELD_NUMBER = 1;
+    private volatile java.lang.Object resMsg_;
+    /**
+     * <code>string resMsg = 1;</code>
+     * @return The resMsg.
+     */
+    @java.lang.Override
+    public java.lang.String getResMsg() {
+      java.lang.Object ref = resMsg_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        resMsg_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string resMsg = 1;</code>
+     * @return The bytes for resMsg.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getResMsgBytes() {
+      java.lang.Object ref = resMsg_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        resMsg_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -102,6 +166,9 @@ public final class GMProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (!getResMsgBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, resMsg_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -111,6 +178,9 @@ public final class GMProto {
       if (size != -1) return size;
 
       size = 0;
+      if (!getResMsgBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, resMsg_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -126,9 +196,10 @@ public final class GMProto {
       }
       info.xiaomo.server.protocol.GMProto.CloseServerRequest other = (info.xiaomo.server.protocol.GMProto.CloseServerRequest) obj;
 
-      boolean result = true;
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getResMsg()
+          .equals(other.getResMsg())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -138,6 +209,8 @@ public final class GMProto {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + RESMSG_FIELD_NUMBER;
+      hash = (53 * hash) + getResMsg().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -271,6 +344,8 @@ public final class GMProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        resMsg_ = "";
+
         return this;
       }
 
@@ -297,41 +372,42 @@ public final class GMProto {
       @java.lang.Override
       public info.xiaomo.server.protocol.GMProto.CloseServerRequest buildPartial() {
         info.xiaomo.server.protocol.GMProto.CloseServerRequest result = new info.xiaomo.server.protocol.GMProto.CloseServerRequest(this);
+        result.resMsg_ = resMsg_;
         onBuilt();
         return result;
       }
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -345,6 +421,10 @@ public final class GMProto {
 
       public Builder mergeFrom(info.xiaomo.server.protocol.GMProto.CloseServerRequest other) {
         if (other == info.xiaomo.server.protocol.GMProto.CloseServerRequest.getDefaultInstance()) return this;
+        if (!other.getResMsg().isEmpty()) {
+          resMsg_ = other.resMsg_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -373,10 +453,86 @@ public final class GMProto {
         }
         return this;
       }
+
+      private java.lang.Object resMsg_ = "";
+      /**
+       * <code>string resMsg = 1;</code>
+       * @return The resMsg.
+       */
+      public java.lang.String getResMsg() {
+        java.lang.Object ref = resMsg_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          resMsg_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string resMsg = 1;</code>
+       * @return The bytes for resMsg.
+       */
+      public com.google.protobuf.ByteString
+          getResMsgBytes() {
+        java.lang.Object ref = resMsg_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          resMsg_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string resMsg = 1;</code>
+       * @param value The resMsg to set.
+       * @return This builder for chaining.
+       */
+      public Builder setResMsg(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        resMsg_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string resMsg = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearResMsg() {
+        
+        resMsg_ = getDefaultInstance().getResMsg();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string resMsg = 1;</code>
+       * @param value The bytes for resMsg to set.
+       * @return This builder for chaining.
+       */
+      public Builder setResMsgBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        resMsg_ = value;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -432,10 +588,12 @@ public final class GMProto {
 
     /**
      * <code>string resMsg = 1;</code>
+     * @return The resMsg.
      */
     java.lang.String getResMsg();
     /**
      * <code>string resMsg = 1;</code>
+     * @return The bytes for resMsg.
      */
     com.google.protobuf.ByteString
         getResMsgBytes();
@@ -443,7 +601,7 @@ public final class GMProto {
   /**
    * Protobuf type {@code CloseServerResponse}
    */
-  public  static final class CloseServerResponse extends
+  public static final class CloseServerResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:CloseServerResponse)
       CloseServerResponseOrBuilder {
@@ -454,6 +612,13 @@ public final class GMProto {
     }
     private CloseServerResponse() {
       resMsg_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new CloseServerResponse();
     }
 
     @java.lang.Override
@@ -469,7 +634,6 @@ public final class GMProto {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -487,7 +651,7 @@ public final class GMProto {
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -522,7 +686,9 @@ public final class GMProto {
     private volatile java.lang.Object resMsg_;
     /**
      * <code>string resMsg = 1;</code>
+     * @return The resMsg.
      */
+    @java.lang.Override
     public java.lang.String getResMsg() {
       java.lang.Object ref = resMsg_;
       if (ref instanceof java.lang.String) {
@@ -537,7 +703,9 @@ public final class GMProto {
     }
     /**
      * <code>string resMsg = 1;</code>
+     * @return The bytes for resMsg.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getResMsgBytes() {
       java.lang.Object ref = resMsg_;
@@ -596,11 +764,10 @@ public final class GMProto {
       }
       info.xiaomo.server.protocol.GMProto.CloseServerResponse other = (info.xiaomo.server.protocol.GMProto.CloseServerResponse) obj;
 
-      boolean result = true;
-      result = result && getResMsg()
-          .equals(other.getResMsg());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getResMsg()
+          .equals(other.getResMsg())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -780,35 +947,35 @@ public final class GMProto {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -858,6 +1025,7 @@ public final class GMProto {
       private java.lang.Object resMsg_ = "";
       /**
        * <code>string resMsg = 1;</code>
+       * @return The resMsg.
        */
       public java.lang.String getResMsg() {
         java.lang.Object ref = resMsg_;
@@ -873,6 +1041,7 @@ public final class GMProto {
       }
       /**
        * <code>string resMsg = 1;</code>
+       * @return The bytes for resMsg.
        */
       public com.google.protobuf.ByteString
           getResMsgBytes() {
@@ -889,6 +1058,8 @@ public final class GMProto {
       }
       /**
        * <code>string resMsg = 1;</code>
+       * @param value The resMsg to set.
+       * @return This builder for chaining.
        */
       public Builder setResMsg(
           java.lang.String value) {
@@ -902,6 +1073,7 @@ public final class GMProto {
       }
       /**
        * <code>string resMsg = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearResMsg() {
         
@@ -911,6 +1083,8 @@ public final class GMProto {
       }
       /**
        * <code>string resMsg = 1;</code>
+       * @param value The bytes for resMsg to set.
+       * @return This builder for chaining.
        */
       public Builder setResMsgBytes(
           com.google.protobuf.ByteString value) {
@@ -926,7 +1100,7 @@ public final class GMProto {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -995,28 +1169,21 @@ public final class GMProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\010GM.proto\"\024\n\022CloseServerRequest\"%\n\023Clos" +
-      "eServerResponse\022\016\n\006resMsg\030\001 \001(\tB&\n\033info." +
-      "xiaomo.server.protocolB\007GMProtob\006proto3"
+      "\n\010GM.proto\"$\n\022CloseServerRequest\022\016\n\006resM" +
+      "sg\030\001 \001(\t\"%\n\023CloseServerResponse\022\016\n\006resMs" +
+      "g\030\001 \001(\tB&\n\033info.xiaomo.server.protocolB\007" +
+      "GMProtob\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        }, assigner);
+        });
     internal_static_CloseServerRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_CloseServerRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CloseServerRequest_descriptor,
-        new java.lang.String[] { });
+        new java.lang.String[] { "ResMsg", });
     internal_static_CloseServerResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_CloseServerResponse_fieldAccessorTable = new

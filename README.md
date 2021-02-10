@@ -9,10 +9,13 @@
 ├─Code           生成的代码      
 ├─generate.bat   生成代码的执行文件               
 ├─protoc.exe     proto生成工具                 
+│  └─cpp         c++代码             
 │  ├─cs          c#代码         
 │  └─java        java代码             
+│  └─js          js代码             
+│  └─python      python代码             
+│  └─ts          ts代码             
 ├─proto          proto文件              
-├─xml            通讯配置文件              
 └─src       
     └─Main.java 消息生成工具入口           
        

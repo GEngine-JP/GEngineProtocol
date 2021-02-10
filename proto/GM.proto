@@ -3,9 +3,9 @@ option java_package = "info.xiaomo.server.protocol";
 option java_outer_classname = "GMProto";
 
 message CloseServerRequest {
-
+  string resMsg = 1;
 }
 
 message CloseServerResponse {
-    string resMsg = 1;
+  string resMsg = 1;
 }

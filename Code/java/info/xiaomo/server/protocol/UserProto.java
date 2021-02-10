@@ -81,6 +81,8 @@ public final class UserProto {
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -88,6 +90,10 @@ public final class UserProto {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static GoingDownReason forNumber(int value) {
       switch (value) {
         case 0: return Maintain;
@@ -111,6 +117,10 @@ public final class UserProto {
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
     public final com.google.protobuf.Descriptors.EnumDescriptor
@@ -155,6 +165,7 @@ public final class UserProto {
      * </pre>
      *
      * <code>int64 roleId = 1;</code>
+     * @return The roleId.
      */
     long getRoleId();
 
@@ -164,6 +175,7 @@ public final class UserProto {
      * </pre>
      *
      * <code>string roleName = 2;</code>
+     * @return The roleName.
      */
     java.lang.String getRoleName();
     /**
@@ -172,6 +184,7 @@ public final class UserProto {
      * </pre>
      *
      * <code>string roleName = 2;</code>
+     * @return The bytes for roleName.
      */
     com.google.protobuf.ByteString
         getRoleNameBytes();
@@ -182,6 +195,7 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 level = 3;</code>
+     * @return The level.
      */
     int getLevel();
 
@@ -191,6 +205,7 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 sex = 4;</code>
+     * @return The sex.
      */
     int getSex();
 
@@ -200,6 +215,7 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 mapId = 5;</code>
+     * @return The mapId.
      */
     int getMapId();
 
@@ -209,6 +225,7 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 line = 6;</code>
+     * @return The line.
      */
     int getLine();
 
@@ -218,13 +235,14 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 curServerType = 7;</code>
+     * @return The curServerType.
      */
     int getCurServerType();
   }
   /**
    * Protobuf type {@code user.RoleInfo}
    */
-  public  static final class RoleInfo extends
+  public static final class RoleInfo extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:user.RoleInfo)
       RoleInfoOrBuilder {
@@ -234,13 +252,14 @@ public final class UserProto {
       super(builder);
     }
     private RoleInfo() {
-      roleId_ = 0L;
       roleName_ = "";
-      level_ = 0;
-      sex_ = 0;
-      mapId_ = 0;
-      line_ = 0;
-      curServerType_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new RoleInfo();
     }
 
     @java.lang.Override
@@ -256,7 +275,6 @@ public final class UserProto {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -304,7 +322,7 @@ public final class UserProto {
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -343,7 +361,9 @@ public final class UserProto {
      * </pre>
      *
      * <code>int64 roleId = 1;</code>
+     * @return The roleId.
      */
+    @java.lang.Override
     public long getRoleId() {
       return roleId_;
     }
@@ -356,7 +376,9 @@ public final class UserProto {
      * </pre>
      *
      * <code>string roleName = 2;</code>
+     * @return The roleName.
      */
+    @java.lang.Override
     public java.lang.String getRoleName() {
       java.lang.Object ref = roleName_;
       if (ref instanceof java.lang.String) {
@@ -375,7 +397,9 @@ public final class UserProto {
      * </pre>
      *
      * <code>string roleName = 2;</code>
+     * @return The bytes for roleName.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getRoleNameBytes() {
       java.lang.Object ref = roleName_;
@@ -398,7 +422,9 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 level = 3;</code>
+     * @return The level.
      */
+    @java.lang.Override
     public int getLevel() {
       return level_;
     }
@@ -411,7 +437,9 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 sex = 4;</code>
+     * @return The sex.
      */
+    @java.lang.Override
     public int getSex() {
       return sex_;
     }
@@ -424,7 +452,9 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 mapId = 5;</code>
+     * @return The mapId.
      */
+    @java.lang.Override
     public int getMapId() {
       return mapId_;
     }
@@ -437,7 +467,9 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 line = 6;</code>
+     * @return The line.
      */
+    @java.lang.Override
     public int getLine() {
       return line_;
     }
@@ -450,7 +482,9 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 curServerType = 7;</code>
+     * @return The curServerType.
      */
+    @java.lang.Override
     public int getCurServerType() {
       return curServerType_;
     }
@@ -541,23 +575,22 @@ public final class UserProto {
       }
       info.xiaomo.server.protocol.UserProto.RoleInfo other = (info.xiaomo.server.protocol.UserProto.RoleInfo) obj;
 
-      boolean result = true;
-      result = result && (getRoleId()
-          == other.getRoleId());
-      result = result && getRoleName()
-          .equals(other.getRoleName());
-      result = result && (getLevel()
-          == other.getLevel());
-      result = result && (getSex()
-          == other.getSex());
-      result = result && (getMapId()
-          == other.getMapId());
-      result = result && (getLine()
-          == other.getLine());
-      result = result && (getCurServerType()
-          == other.getCurServerType());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (getRoleId()
+          != other.getRoleId()) return false;
+      if (!getRoleName()
+          .equals(other.getRoleName())) return false;
+      if (getLevel()
+          != other.getLevel()) return false;
+      if (getSex()
+          != other.getSex()) return false;
+      if (getMapId()
+          != other.getMapId()) return false;
+      if (getLine()
+          != other.getLine()) return false;
+      if (getCurServerType()
+          != other.getCurServerType()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -768,35 +801,35 @@ public final class UserProto {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -868,7 +901,9 @@ public final class UserProto {
        * </pre>
        *
        * <code>int64 roleId = 1;</code>
+       * @return The roleId.
        */
+      @java.lang.Override
       public long getRoleId() {
         return roleId_;
       }
@@ -878,6 +913,8 @@ public final class UserProto {
        * </pre>
        *
        * <code>int64 roleId = 1;</code>
+       * @param value The roleId to set.
+       * @return This builder for chaining.
        */
       public Builder setRoleId(long value) {
         
@@ -891,6 +928,7 @@ public final class UserProto {
        * </pre>
        *
        * <code>int64 roleId = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearRoleId() {
         
@@ -906,6 +944,7 @@ public final class UserProto {
        * </pre>
        *
        * <code>string roleName = 2;</code>
+       * @return The roleName.
        */
       public java.lang.String getRoleName() {
         java.lang.Object ref = roleName_;
@@ -925,6 +964,7 @@ public final class UserProto {
        * </pre>
        *
        * <code>string roleName = 2;</code>
+       * @return The bytes for roleName.
        */
       public com.google.protobuf.ByteString
           getRoleNameBytes() {
@@ -945,6 +985,8 @@ public final class UserProto {
        * </pre>
        *
        * <code>string roleName = 2;</code>
+       * @param value The roleName to set.
+       * @return This builder for chaining.
        */
       public Builder setRoleName(
           java.lang.String value) {
@@ -962,6 +1004,7 @@ public final class UserProto {
        * </pre>
        *
        * <code>string roleName = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearRoleName() {
         
@@ -975,6 +1018,8 @@ public final class UserProto {
        * </pre>
        *
        * <code>string roleName = 2;</code>
+       * @param value The bytes for roleName to set.
+       * @return This builder for chaining.
        */
       public Builder setRoleNameBytes(
           com.google.protobuf.ByteString value) {
@@ -995,7 +1040,9 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 level = 3;</code>
+       * @return The level.
        */
+      @java.lang.Override
       public int getLevel() {
         return level_;
       }
@@ -1005,6 +1052,8 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 level = 3;</code>
+       * @param value The level to set.
+       * @return This builder for chaining.
        */
       public Builder setLevel(int value) {
         
@@ -1018,6 +1067,7 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 level = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearLevel() {
         
@@ -1033,7 +1083,9 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 sex = 4;</code>
+       * @return The sex.
        */
+      @java.lang.Override
       public int getSex() {
         return sex_;
       }
@@ -1043,6 +1095,8 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 sex = 4;</code>
+       * @param value The sex to set.
+       * @return This builder for chaining.
        */
       public Builder setSex(int value) {
         
@@ -1056,6 +1110,7 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 sex = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearSex() {
         
@@ -1071,7 +1126,9 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 mapId = 5;</code>
+       * @return The mapId.
        */
+      @java.lang.Override
       public int getMapId() {
         return mapId_;
       }
@@ -1081,6 +1138,8 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 mapId = 5;</code>
+       * @param value The mapId to set.
+       * @return This builder for chaining.
        */
       public Builder setMapId(int value) {
         
@@ -1094,6 +1153,7 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 mapId = 5;</code>
+       * @return This builder for chaining.
        */
       public Builder clearMapId() {
         
@@ -1109,7 +1169,9 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 line = 6;</code>
+       * @return The line.
        */
+      @java.lang.Override
       public int getLine() {
         return line_;
       }
@@ -1119,6 +1181,8 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 line = 6;</code>
+       * @param value The line to set.
+       * @return This builder for chaining.
        */
       public Builder setLine(int value) {
         
@@ -1132,6 +1196,7 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 line = 6;</code>
+       * @return This builder for chaining.
        */
       public Builder clearLine() {
         
@@ -1147,7 +1212,9 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 curServerType = 7;</code>
+       * @return The curServerType.
        */
+      @java.lang.Override
       public int getCurServerType() {
         return curServerType_;
       }
@@ -1157,6 +1224,8 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 curServerType = 7;</code>
+       * @param value The curServerType to set.
+       * @return This builder for chaining.
        */
       public Builder setCurServerType(int value) {
         
@@ -1170,6 +1239,7 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 curServerType = 7;</code>
+       * @return This builder for chaining.
        */
       public Builder clearCurServerType() {
         
@@ -1180,7 +1250,7 @@ public final class UserProto {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -1240,6 +1310,7 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 phyAttMax = 1;</code>
+     * @return The phyAttMax.
      */
     int getPhyAttMax();
 
@@ -1249,6 +1320,7 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 phyAttMin = 2;</code>
+     * @return The phyAttMin.
      */
     int getPhyAttMin();
 
@@ -1258,6 +1330,7 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 magicAttMax = 3;</code>
+     * @return The magicAttMax.
      */
     int getMagicAttMax();
 
@@ -1267,6 +1340,7 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 magicAttMin = 4;</code>
+     * @return The magicAttMin.
      */
     int getMagicAttMin();
 
@@ -1276,6 +1350,7 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 taoAttMax = 5;</code>
+     * @return The taoAttMax.
      */
     int getTaoAttMax();
 
@@ -1285,6 +1360,7 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 taoAttMin = 6;</code>
+     * @return The taoAttMin.
      */
     int getTaoAttMin();
 
@@ -1294,6 +1370,7 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 phyDefMax = 7;</code>
+     * @return The phyDefMax.
      */
     int getPhyDefMax();
 
@@ -1303,6 +1380,7 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 phyDefMin = 8;</code>
+     * @return The phyDefMin.
      */
     int getPhyDefMin();
 
@@ -1312,6 +1390,7 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 magicDefMax = 9;</code>
+     * @return The magicDefMax.
      */
     int getMagicDefMax();
 
@@ -1321,6 +1400,7 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 magicDefMin = 10;</code>
+     * @return The magicDefMin.
      */
     int getMagicDefMin();
 
@@ -1330,6 +1410,7 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 accurate = 11;</code>
+     * @return The accurate.
      */
     int getAccurate();
 
@@ -1339,6 +1420,7 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 dodge = 12;</code>
+     * @return The dodge.
      */
     int getDodge();
 
@@ -1348,6 +1430,7 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 poisonRecover = 13;</code>
+     * @return The poisonRecover.
      */
     int getPoisonRecover();
 
@@ -1357,6 +1440,7 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 heathRecover = 14;</code>
+     * @return The heathRecover.
      */
     int getHeathRecover();
 
@@ -1366,6 +1450,7 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 attackSpeed = 15;</code>
+     * @return The attackSpeed.
      */
     int getAttackSpeed();
 
@@ -1375,6 +1460,7 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 maxHp = 16;</code>
+     * @return The maxHp.
      */
     int getMaxHp();
 
@@ -1384,6 +1470,7 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 maxMp = 17;</code>
+     * @return The maxMp.
      */
     int getMaxMp();
 
@@ -1393,6 +1480,7 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 magicRecover = 18;</code>
+     * @return The magicRecover.
      */
     int getMagicRecover();
 
@@ -1402,6 +1490,7 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 luck = 19;</code>
+     * @return The luck.
      */
     int getLuck();
 
@@ -1411,6 +1500,7 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 critical = 20;</code>
+     * @return The critical.
      */
     int getCritical();
 
@@ -1420,6 +1510,7 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 nbValue = 21;</code>
+     * @return The nbValue.
      */
     int getNbValue();
 
@@ -1429,6 +1520,7 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 criticalDamage = 22;</code>
+     * @return The criticalDamage.
      */
     int getCriticalDamage();
 
@@ -1438,6 +1530,7 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 maxInnerPower = 23;</code>
+     * @return The maxInnerPower.
      */
     int getMaxInnerPower();
 
@@ -1447,6 +1540,7 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 resistance = 24;</code>
+     * @return The resistance.
      */
     int getResistance();
 
@@ -1456,6 +1550,7 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 holyAtt = 25;</code>
+     * @return The holyAtt.
      */
     int getHolyAtt();
 
@@ -1465,6 +1560,7 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 pkAtk = 26;</code>
+     * @return The pkAtk.
      */
     int getPkAtk();
 
@@ -1474,13 +1570,14 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 pkDef = 27;</code>
+     * @return The pkDef.
      */
     int getPkDef();
   }
   /**
    * Protobuf type {@code user.PlayerAttribute}
    */
-  public  static final class PlayerAttribute extends
+  public static final class PlayerAttribute extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:user.PlayerAttribute)
       PlayerAttributeOrBuilder {
@@ -1490,33 +1587,13 @@ public final class UserProto {
       super(builder);
     }
     private PlayerAttribute() {
-      phyAttMax_ = 0;
-      phyAttMin_ = 0;
-      magicAttMax_ = 0;
-      magicAttMin_ = 0;
-      taoAttMax_ = 0;
-      taoAttMin_ = 0;
-      phyDefMax_ = 0;
-      phyDefMin_ = 0;
-      magicDefMax_ = 0;
-      magicDefMin_ = 0;
-      accurate_ = 0;
-      dodge_ = 0;
-      poisonRecover_ = 0;
-      heathRecover_ = 0;
-      attackSpeed_ = 0;
-      maxHp_ = 0;
-      maxMp_ = 0;
-      magicRecover_ = 0;
-      luck_ = 0;
-      critical_ = 0;
-      nbValue_ = 0;
-      criticalDamage_ = 0;
-      maxInnerPower_ = 0;
-      resistance_ = 0;
-      holyAtt_ = 0;
-      pkAtk_ = 0;
-      pkDef_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new PlayerAttribute();
     }
 
     @java.lang.Override
@@ -1532,7 +1609,6 @@ public final class UserProto {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1679,7 +1755,7 @@ public final class UserProto {
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -1718,7 +1794,9 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 phyAttMax = 1;</code>
+     * @return The phyAttMax.
      */
+    @java.lang.Override
     public int getPhyAttMax() {
       return phyAttMax_;
     }
@@ -1731,7 +1809,9 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 phyAttMin = 2;</code>
+     * @return The phyAttMin.
      */
+    @java.lang.Override
     public int getPhyAttMin() {
       return phyAttMin_;
     }
@@ -1744,7 +1824,9 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 magicAttMax = 3;</code>
+     * @return The magicAttMax.
      */
+    @java.lang.Override
     public int getMagicAttMax() {
       return magicAttMax_;
     }
@@ -1757,7 +1839,9 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 magicAttMin = 4;</code>
+     * @return The magicAttMin.
      */
+    @java.lang.Override
     public int getMagicAttMin() {
       return magicAttMin_;
     }
@@ -1770,7 +1854,9 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 taoAttMax = 5;</code>
+     * @return The taoAttMax.
      */
+    @java.lang.Override
     public int getTaoAttMax() {
       return taoAttMax_;
     }
@@ -1783,7 +1869,9 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 taoAttMin = 6;</code>
+     * @return The taoAttMin.
      */
+    @java.lang.Override
     public int getTaoAttMin() {
       return taoAttMin_;
     }
@@ -1796,7 +1884,9 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 phyDefMax = 7;</code>
+     * @return The phyDefMax.
      */
+    @java.lang.Override
     public int getPhyDefMax() {
       return phyDefMax_;
     }
@@ -1809,7 +1899,9 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 phyDefMin = 8;</code>
+     * @return The phyDefMin.
      */
+    @java.lang.Override
     public int getPhyDefMin() {
       return phyDefMin_;
     }
@@ -1822,7 +1914,9 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 magicDefMax = 9;</code>
+     * @return The magicDefMax.
      */
+    @java.lang.Override
     public int getMagicDefMax() {
       return magicDefMax_;
     }
@@ -1835,7 +1929,9 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 magicDefMin = 10;</code>
+     * @return The magicDefMin.
      */
+    @java.lang.Override
     public int getMagicDefMin() {
       return magicDefMin_;
     }
@@ -1848,7 +1944,9 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 accurate = 11;</code>
+     * @return The accurate.
      */
+    @java.lang.Override
     public int getAccurate() {
       return accurate_;
     }
@@ -1861,7 +1959,9 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 dodge = 12;</code>
+     * @return The dodge.
      */
+    @java.lang.Override
     public int getDodge() {
       return dodge_;
     }
@@ -1874,7 +1974,9 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 poisonRecover = 13;</code>
+     * @return The poisonRecover.
      */
+    @java.lang.Override
     public int getPoisonRecover() {
       return poisonRecover_;
     }
@@ -1887,7 +1989,9 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 heathRecover = 14;</code>
+     * @return The heathRecover.
      */
+    @java.lang.Override
     public int getHeathRecover() {
       return heathRecover_;
     }
@@ -1900,7 +2004,9 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 attackSpeed = 15;</code>
+     * @return The attackSpeed.
      */
+    @java.lang.Override
     public int getAttackSpeed() {
       return attackSpeed_;
     }
@@ -1913,7 +2019,9 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 maxHp = 16;</code>
+     * @return The maxHp.
      */
+    @java.lang.Override
     public int getMaxHp() {
       return maxHp_;
     }
@@ -1926,7 +2034,9 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 maxMp = 17;</code>
+     * @return The maxMp.
      */
+    @java.lang.Override
     public int getMaxMp() {
       return maxMp_;
     }
@@ -1939,7 +2049,9 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 magicRecover = 18;</code>
+     * @return The magicRecover.
      */
+    @java.lang.Override
     public int getMagicRecover() {
       return magicRecover_;
     }
@@ -1952,7 +2064,9 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 luck = 19;</code>
+     * @return The luck.
      */
+    @java.lang.Override
     public int getLuck() {
       return luck_;
     }
@@ -1965,7 +2079,9 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 critical = 20;</code>
+     * @return The critical.
      */
+    @java.lang.Override
     public int getCritical() {
       return critical_;
     }
@@ -1978,7 +2094,9 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 nbValue = 21;</code>
+     * @return The nbValue.
      */
+    @java.lang.Override
     public int getNbValue() {
       return nbValue_;
     }
@@ -1991,7 +2109,9 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 criticalDamage = 22;</code>
+     * @return The criticalDamage.
      */
+    @java.lang.Override
     public int getCriticalDamage() {
       return criticalDamage_;
     }
@@ -2004,7 +2124,9 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 maxInnerPower = 23;</code>
+     * @return The maxInnerPower.
      */
+    @java.lang.Override
     public int getMaxInnerPower() {
       return maxInnerPower_;
     }
@@ -2017,7 +2139,9 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 resistance = 24;</code>
+     * @return The resistance.
      */
+    @java.lang.Override
     public int getResistance() {
       return resistance_;
     }
@@ -2030,7 +2154,9 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 holyAtt = 25;</code>
+     * @return The holyAtt.
      */
+    @java.lang.Override
     public int getHolyAtt() {
       return holyAtt_;
     }
@@ -2043,7 +2169,9 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 pkAtk = 26;</code>
+     * @return The pkAtk.
      */
+    @java.lang.Override
     public int getPkAtk() {
       return pkAtk_;
     }
@@ -2056,7 +2184,9 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 pkDef = 27;</code>
+     * @return The pkDef.
      */
+    @java.lang.Override
     public int getPkDef() {
       return pkDef_;
     }
@@ -2288,63 +2418,62 @@ public final class UserProto {
       }
       info.xiaomo.server.protocol.UserProto.PlayerAttribute other = (info.xiaomo.server.protocol.UserProto.PlayerAttribute) obj;
 
-      boolean result = true;
-      result = result && (getPhyAttMax()
-          == other.getPhyAttMax());
-      result = result && (getPhyAttMin()
-          == other.getPhyAttMin());
-      result = result && (getMagicAttMax()
-          == other.getMagicAttMax());
-      result = result && (getMagicAttMin()
-          == other.getMagicAttMin());
-      result = result && (getTaoAttMax()
-          == other.getTaoAttMax());
-      result = result && (getTaoAttMin()
-          == other.getTaoAttMin());
-      result = result && (getPhyDefMax()
-          == other.getPhyDefMax());
-      result = result && (getPhyDefMin()
-          == other.getPhyDefMin());
-      result = result && (getMagicDefMax()
-          == other.getMagicDefMax());
-      result = result && (getMagicDefMin()
-          == other.getMagicDefMin());
-      result = result && (getAccurate()
-          == other.getAccurate());
-      result = result && (getDodge()
-          == other.getDodge());
-      result = result && (getPoisonRecover()
-          == other.getPoisonRecover());
-      result = result && (getHeathRecover()
-          == other.getHeathRecover());
-      result = result && (getAttackSpeed()
-          == other.getAttackSpeed());
-      result = result && (getMaxHp()
-          == other.getMaxHp());
-      result = result && (getMaxMp()
-          == other.getMaxMp());
-      result = result && (getMagicRecover()
-          == other.getMagicRecover());
-      result = result && (getLuck()
-          == other.getLuck());
-      result = result && (getCritical()
-          == other.getCritical());
-      result = result && (getNbValue()
-          == other.getNbValue());
-      result = result && (getCriticalDamage()
-          == other.getCriticalDamage());
-      result = result && (getMaxInnerPower()
-          == other.getMaxInnerPower());
-      result = result && (getResistance()
-          == other.getResistance());
-      result = result && (getHolyAtt()
-          == other.getHolyAtt());
-      result = result && (getPkAtk()
-          == other.getPkAtk());
-      result = result && (getPkDef()
-          == other.getPkDef());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (getPhyAttMax()
+          != other.getPhyAttMax()) return false;
+      if (getPhyAttMin()
+          != other.getPhyAttMin()) return false;
+      if (getMagicAttMax()
+          != other.getMagicAttMax()) return false;
+      if (getMagicAttMin()
+          != other.getMagicAttMin()) return false;
+      if (getTaoAttMax()
+          != other.getTaoAttMax()) return false;
+      if (getTaoAttMin()
+          != other.getTaoAttMin()) return false;
+      if (getPhyDefMax()
+          != other.getPhyDefMax()) return false;
+      if (getPhyDefMin()
+          != other.getPhyDefMin()) return false;
+      if (getMagicDefMax()
+          != other.getMagicDefMax()) return false;
+      if (getMagicDefMin()
+          != other.getMagicDefMin()) return false;
+      if (getAccurate()
+          != other.getAccurate()) return false;
+      if (getDodge()
+          != other.getDodge()) return false;
+      if (getPoisonRecover()
+          != other.getPoisonRecover()) return false;
+      if (getHeathRecover()
+          != other.getHeathRecover()) return false;
+      if (getAttackSpeed()
+          != other.getAttackSpeed()) return false;
+      if (getMaxHp()
+          != other.getMaxHp()) return false;
+      if (getMaxMp()
+          != other.getMaxMp()) return false;
+      if (getMagicRecover()
+          != other.getMagicRecover()) return false;
+      if (getLuck()
+          != other.getLuck()) return false;
+      if (getCritical()
+          != other.getCritical()) return false;
+      if (getNbValue()
+          != other.getNbValue()) return false;
+      if (getCriticalDamage()
+          != other.getCriticalDamage()) return false;
+      if (getMaxInnerPower()
+          != other.getMaxInnerPower()) return false;
+      if (getResistance()
+          != other.getResistance()) return false;
+      if (getHolyAtt()
+          != other.getHolyAtt()) return false;
+      if (getPkAtk()
+          != other.getPkAtk()) return false;
+      if (getPkDef()
+          != other.getPkDef()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -2654,35 +2783,35 @@ public final class UserProto {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -2813,7 +2942,9 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 phyAttMax = 1;</code>
+       * @return The phyAttMax.
        */
+      @java.lang.Override
       public int getPhyAttMax() {
         return phyAttMax_;
       }
@@ -2823,6 +2954,8 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 phyAttMax = 1;</code>
+       * @param value The phyAttMax to set.
+       * @return This builder for chaining.
        */
       public Builder setPhyAttMax(int value) {
         
@@ -2836,6 +2969,7 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 phyAttMax = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearPhyAttMax() {
         
@@ -2851,7 +2985,9 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 phyAttMin = 2;</code>
+       * @return The phyAttMin.
        */
+      @java.lang.Override
       public int getPhyAttMin() {
         return phyAttMin_;
       }
@@ -2861,6 +2997,8 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 phyAttMin = 2;</code>
+       * @param value The phyAttMin to set.
+       * @return This builder for chaining.
        */
       public Builder setPhyAttMin(int value) {
         
@@ -2874,6 +3012,7 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 phyAttMin = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearPhyAttMin() {
         
@@ -2889,7 +3028,9 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 magicAttMax = 3;</code>
+       * @return The magicAttMax.
        */
+      @java.lang.Override
       public int getMagicAttMax() {
         return magicAttMax_;
       }
@@ -2899,6 +3040,8 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 magicAttMax = 3;</code>
+       * @param value The magicAttMax to set.
+       * @return This builder for chaining.
        */
       public Builder setMagicAttMax(int value) {
         
@@ -2912,6 +3055,7 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 magicAttMax = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearMagicAttMax() {
         
@@ -2927,7 +3071,9 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 magicAttMin = 4;</code>
+       * @return The magicAttMin.
        */
+      @java.lang.Override
       public int getMagicAttMin() {
         return magicAttMin_;
       }
@@ -2937,6 +3083,8 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 magicAttMin = 4;</code>
+       * @param value The magicAttMin to set.
+       * @return This builder for chaining.
        */
       public Builder setMagicAttMin(int value) {
         
@@ -2950,6 +3098,7 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 magicAttMin = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearMagicAttMin() {
         
@@ -2965,7 +3114,9 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 taoAttMax = 5;</code>
+       * @return The taoAttMax.
        */
+      @java.lang.Override
       public int getTaoAttMax() {
         return taoAttMax_;
       }
@@ -2975,6 +3126,8 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 taoAttMax = 5;</code>
+       * @param value The taoAttMax to set.
+       * @return This builder for chaining.
        */
       public Builder setTaoAttMax(int value) {
         
@@ -2988,6 +3141,7 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 taoAttMax = 5;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTaoAttMax() {
         
@@ -3003,7 +3157,9 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 taoAttMin = 6;</code>
+       * @return The taoAttMin.
        */
+      @java.lang.Override
       public int getTaoAttMin() {
         return taoAttMin_;
       }
@@ -3013,6 +3169,8 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 taoAttMin = 6;</code>
+       * @param value The taoAttMin to set.
+       * @return This builder for chaining.
        */
       public Builder setTaoAttMin(int value) {
         
@@ -3026,6 +3184,7 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 taoAttMin = 6;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTaoAttMin() {
         
@@ -3041,7 +3200,9 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 phyDefMax = 7;</code>
+       * @return The phyDefMax.
        */
+      @java.lang.Override
       public int getPhyDefMax() {
         return phyDefMax_;
       }
@@ -3051,6 +3212,8 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 phyDefMax = 7;</code>
+       * @param value The phyDefMax to set.
+       * @return This builder for chaining.
        */
       public Builder setPhyDefMax(int value) {
         
@@ -3064,6 +3227,7 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 phyDefMax = 7;</code>
+       * @return This builder for chaining.
        */
       public Builder clearPhyDefMax() {
         
@@ -3079,7 +3243,9 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 phyDefMin = 8;</code>
+       * @return The phyDefMin.
        */
+      @java.lang.Override
       public int getPhyDefMin() {
         return phyDefMin_;
       }
@@ -3089,6 +3255,8 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 phyDefMin = 8;</code>
+       * @param value The phyDefMin to set.
+       * @return This builder for chaining.
        */
       public Builder setPhyDefMin(int value) {
         
@@ -3102,6 +3270,7 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 phyDefMin = 8;</code>
+       * @return This builder for chaining.
        */
       public Builder clearPhyDefMin() {
         
@@ -3117,7 +3286,9 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 magicDefMax = 9;</code>
+       * @return The magicDefMax.
        */
+      @java.lang.Override
       public int getMagicDefMax() {
         return magicDefMax_;
       }
@@ -3127,6 +3298,8 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 magicDefMax = 9;</code>
+       * @param value The magicDefMax to set.
+       * @return This builder for chaining.
        */
       public Builder setMagicDefMax(int value) {
         
@@ -3140,6 +3313,7 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 magicDefMax = 9;</code>
+       * @return This builder for chaining.
        */
       public Builder clearMagicDefMax() {
         
@@ -3155,7 +3329,9 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 magicDefMin = 10;</code>
+       * @return The magicDefMin.
        */
+      @java.lang.Override
       public int getMagicDefMin() {
         return magicDefMin_;
       }
@@ -3165,6 +3341,8 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 magicDefMin = 10;</code>
+       * @param value The magicDefMin to set.
+       * @return This builder for chaining.
        */
       public Builder setMagicDefMin(int value) {
         
@@ -3178,6 +3356,7 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 magicDefMin = 10;</code>
+       * @return This builder for chaining.
        */
       public Builder clearMagicDefMin() {
         
@@ -3193,7 +3372,9 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 accurate = 11;</code>
+       * @return The accurate.
        */
+      @java.lang.Override
       public int getAccurate() {
         return accurate_;
       }
@@ -3203,6 +3384,8 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 accurate = 11;</code>
+       * @param value The accurate to set.
+       * @return This builder for chaining.
        */
       public Builder setAccurate(int value) {
         
@@ -3216,6 +3399,7 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 accurate = 11;</code>
+       * @return This builder for chaining.
        */
       public Builder clearAccurate() {
         
@@ -3231,7 +3415,9 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 dodge = 12;</code>
+       * @return The dodge.
        */
+      @java.lang.Override
       public int getDodge() {
         return dodge_;
       }
@@ -3241,6 +3427,8 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 dodge = 12;</code>
+       * @param value The dodge to set.
+       * @return This builder for chaining.
        */
       public Builder setDodge(int value) {
         
@@ -3254,6 +3442,7 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 dodge = 12;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDodge() {
         
@@ -3269,7 +3458,9 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 poisonRecover = 13;</code>
+       * @return The poisonRecover.
        */
+      @java.lang.Override
       public int getPoisonRecover() {
         return poisonRecover_;
       }
@@ -3279,6 +3470,8 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 poisonRecover = 13;</code>
+       * @param value The poisonRecover to set.
+       * @return This builder for chaining.
        */
       public Builder setPoisonRecover(int value) {
         
@@ -3292,6 +3485,7 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 poisonRecover = 13;</code>
+       * @return This builder for chaining.
        */
       public Builder clearPoisonRecover() {
         
@@ -3307,7 +3501,9 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 heathRecover = 14;</code>
+       * @return The heathRecover.
        */
+      @java.lang.Override
       public int getHeathRecover() {
         return heathRecover_;
       }
@@ -3317,6 +3513,8 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 heathRecover = 14;</code>
+       * @param value The heathRecover to set.
+       * @return This builder for chaining.
        */
       public Builder setHeathRecover(int value) {
         
@@ -3330,6 +3528,7 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 heathRecover = 14;</code>
+       * @return This builder for chaining.
        */
       public Builder clearHeathRecover() {
         
@@ -3345,7 +3544,9 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 attackSpeed = 15;</code>
+       * @return The attackSpeed.
        */
+      @java.lang.Override
       public int getAttackSpeed() {
         return attackSpeed_;
       }
@@ -3355,6 +3556,8 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 attackSpeed = 15;</code>
+       * @param value The attackSpeed to set.
+       * @return This builder for chaining.
        */
       public Builder setAttackSpeed(int value) {
         
@@ -3368,6 +3571,7 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 attackSpeed = 15;</code>
+       * @return This builder for chaining.
        */
       public Builder clearAttackSpeed() {
         
@@ -3383,7 +3587,9 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 maxHp = 16;</code>
+       * @return The maxHp.
        */
+      @java.lang.Override
       public int getMaxHp() {
         return maxHp_;
       }
@@ -3393,6 +3599,8 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 maxHp = 16;</code>
+       * @param value The maxHp to set.
+       * @return This builder for chaining.
        */
       public Builder setMaxHp(int value) {
         
@@ -3406,6 +3614,7 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 maxHp = 16;</code>
+       * @return This builder for chaining.
        */
       public Builder clearMaxHp() {
         
@@ -3421,7 +3630,9 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 maxMp = 17;</code>
+       * @return The maxMp.
        */
+      @java.lang.Override
       public int getMaxMp() {
         return maxMp_;
       }
@@ -3431,6 +3642,8 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 maxMp = 17;</code>
+       * @param value The maxMp to set.
+       * @return This builder for chaining.
        */
       public Builder setMaxMp(int value) {
         
@@ -3444,6 +3657,7 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 maxMp = 17;</code>
+       * @return This builder for chaining.
        */
       public Builder clearMaxMp() {
         
@@ -3459,7 +3673,9 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 magicRecover = 18;</code>
+       * @return The magicRecover.
        */
+      @java.lang.Override
       public int getMagicRecover() {
         return magicRecover_;
       }
@@ -3469,6 +3685,8 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 magicRecover = 18;</code>
+       * @param value The magicRecover to set.
+       * @return This builder for chaining.
        */
       public Builder setMagicRecover(int value) {
         
@@ -3482,6 +3700,7 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 magicRecover = 18;</code>
+       * @return This builder for chaining.
        */
       public Builder clearMagicRecover() {
         
@@ -3497,7 +3716,9 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 luck = 19;</code>
+       * @return The luck.
        */
+      @java.lang.Override
       public int getLuck() {
         return luck_;
       }
@@ -3507,6 +3728,8 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 luck = 19;</code>
+       * @param value The luck to set.
+       * @return This builder for chaining.
        */
       public Builder setLuck(int value) {
         
@@ -3520,6 +3743,7 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 luck = 19;</code>
+       * @return This builder for chaining.
        */
       public Builder clearLuck() {
         
@@ -3535,7 +3759,9 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 critical = 20;</code>
+       * @return The critical.
        */
+      @java.lang.Override
       public int getCritical() {
         return critical_;
       }
@@ -3545,6 +3771,8 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 critical = 20;</code>
+       * @param value The critical to set.
+       * @return This builder for chaining.
        */
       public Builder setCritical(int value) {
         
@@ -3558,6 +3786,7 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 critical = 20;</code>
+       * @return This builder for chaining.
        */
       public Builder clearCritical() {
         
@@ -3573,7 +3802,9 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 nbValue = 21;</code>
+       * @return The nbValue.
        */
+      @java.lang.Override
       public int getNbValue() {
         return nbValue_;
       }
@@ -3583,6 +3814,8 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 nbValue = 21;</code>
+       * @param value The nbValue to set.
+       * @return This builder for chaining.
        */
       public Builder setNbValue(int value) {
         
@@ -3596,6 +3829,7 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 nbValue = 21;</code>
+       * @return This builder for chaining.
        */
       public Builder clearNbValue() {
         
@@ -3611,7 +3845,9 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 criticalDamage = 22;</code>
+       * @return The criticalDamage.
        */
+      @java.lang.Override
       public int getCriticalDamage() {
         return criticalDamage_;
       }
@@ -3621,6 +3857,8 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 criticalDamage = 22;</code>
+       * @param value The criticalDamage to set.
+       * @return This builder for chaining.
        */
       public Builder setCriticalDamage(int value) {
         
@@ -3634,6 +3872,7 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 criticalDamage = 22;</code>
+       * @return This builder for chaining.
        */
       public Builder clearCriticalDamage() {
         
@@ -3649,7 +3888,9 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 maxInnerPower = 23;</code>
+       * @return The maxInnerPower.
        */
+      @java.lang.Override
       public int getMaxInnerPower() {
         return maxInnerPower_;
       }
@@ -3659,6 +3900,8 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 maxInnerPower = 23;</code>
+       * @param value The maxInnerPower to set.
+       * @return This builder for chaining.
        */
       public Builder setMaxInnerPower(int value) {
         
@@ -3672,6 +3915,7 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 maxInnerPower = 23;</code>
+       * @return This builder for chaining.
        */
       public Builder clearMaxInnerPower() {
         
@@ -3687,7 +3931,9 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 resistance = 24;</code>
+       * @return The resistance.
        */
+      @java.lang.Override
       public int getResistance() {
         return resistance_;
       }
@@ -3697,6 +3943,8 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 resistance = 24;</code>
+       * @param value The resistance to set.
+       * @return This builder for chaining.
        */
       public Builder setResistance(int value) {
         
@@ -3710,6 +3958,7 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 resistance = 24;</code>
+       * @return This builder for chaining.
        */
       public Builder clearResistance() {
         
@@ -3725,7 +3974,9 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 holyAtt = 25;</code>
+       * @return The holyAtt.
        */
+      @java.lang.Override
       public int getHolyAtt() {
         return holyAtt_;
       }
@@ -3735,6 +3986,8 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 holyAtt = 25;</code>
+       * @param value The holyAtt to set.
+       * @return This builder for chaining.
        */
       public Builder setHolyAtt(int value) {
         
@@ -3748,6 +4001,7 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 holyAtt = 25;</code>
+       * @return This builder for chaining.
        */
       public Builder clearHolyAtt() {
         
@@ -3763,7 +4017,9 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 pkAtk = 26;</code>
+       * @return The pkAtk.
        */
+      @java.lang.Override
       public int getPkAtk() {
         return pkAtk_;
       }
@@ -3773,6 +4029,8 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 pkAtk = 26;</code>
+       * @param value The pkAtk to set.
+       * @return This builder for chaining.
        */
       public Builder setPkAtk(int value) {
         
@@ -3786,6 +4044,7 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 pkAtk = 26;</code>
+       * @return This builder for chaining.
        */
       public Builder clearPkAtk() {
         
@@ -3801,7 +4060,9 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 pkDef = 27;</code>
+       * @return The pkDef.
        */
+      @java.lang.Override
       public int getPkDef() {
         return pkDef_;
       }
@@ -3811,6 +4072,8 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 pkDef = 27;</code>
+       * @param value The pkDef to set.
+       * @return This builder for chaining.
        */
       public Builder setPkDef(int value) {
         
@@ -3824,6 +4087,7 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 pkDef = 27;</code>
+       * @return This builder for chaining.
        */
       public Builder clearPkDef() {
         
@@ -3834,7 +4098,7 @@ public final class UserProto {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -3894,6 +4158,7 @@ public final class UserProto {
      * </pre>
      *
      * <code>string loginName = 1;</code>
+     * @return The loginName.
      */
     java.lang.String getLoginName();
     /**
@@ -3902,6 +4167,7 @@ public final class UserProto {
      * </pre>
      *
      * <code>string loginName = 1;</code>
+     * @return The bytes for loginName.
      */
     com.google.protobuf.ByteString
         getLoginNameBytes();
@@ -3912,6 +4178,7 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 platformId = 2;</code>
+     * @return The platformId.
      */
     int getPlatformId();
 
@@ -3921,21 +4188,25 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 serverId = 3;</code>
+     * @return The serverId.
      */
     int getServerId();
 
     /**
      * <code>string sign = 4;</code>
+     * @return The sign.
      */
     java.lang.String getSign();
     /**
      * <code>string sign = 4;</code>
+     * @return The bytes for sign.
      */
     com.google.protobuf.ByteString
         getSignBytes();
 
     /**
      * <code>int64 time = 5;</code>
+     * @return The time.
      */
     long getTime();
   }
@@ -3946,7 +4217,7 @@ public final class UserProto {
    *
    * Protobuf type {@code user.LoginRequest}
    */
-  public  static final class LoginRequest extends
+  public static final class LoginRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:user.LoginRequest)
       LoginRequestOrBuilder {
@@ -3957,10 +4228,14 @@ public final class UserProto {
     }
     private LoginRequest() {
       loginName_ = "";
-      platformId_ = 0;
-      serverId_ = 0;
       sign_ = "";
-      time_ = 0L;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new LoginRequest();
     }
 
     @java.lang.Override
@@ -3976,7 +4251,6 @@ public final class UserProto {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -4015,7 +4289,7 @@ public final class UserProto {
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -4054,7 +4328,9 @@ public final class UserProto {
      * </pre>
      *
      * <code>string loginName = 1;</code>
+     * @return The loginName.
      */
+    @java.lang.Override
     public java.lang.String getLoginName() {
       java.lang.Object ref = loginName_;
       if (ref instanceof java.lang.String) {
@@ -4073,7 +4349,9 @@ public final class UserProto {
      * </pre>
      *
      * <code>string loginName = 1;</code>
+     * @return The bytes for loginName.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getLoginNameBytes() {
       java.lang.Object ref = loginName_;
@@ -4096,7 +4374,9 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 platformId = 2;</code>
+     * @return The platformId.
      */
+    @java.lang.Override
     public int getPlatformId() {
       return platformId_;
     }
@@ -4109,7 +4389,9 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 serverId = 3;</code>
+     * @return The serverId.
      */
+    @java.lang.Override
     public int getServerId() {
       return serverId_;
     }
@@ -4118,7 +4400,9 @@ public final class UserProto {
     private volatile java.lang.Object sign_;
     /**
      * <code>string sign = 4;</code>
+     * @return The sign.
      */
+    @java.lang.Override
     public java.lang.String getSign() {
       java.lang.Object ref = sign_;
       if (ref instanceof java.lang.String) {
@@ -4133,7 +4417,9 @@ public final class UserProto {
     }
     /**
      * <code>string sign = 4;</code>
+     * @return The bytes for sign.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getSignBytes() {
       java.lang.Object ref = sign_;
@@ -4152,7 +4438,9 @@ public final class UserProto {
     private long time_;
     /**
      * <code>int64 time = 5;</code>
+     * @return The time.
      */
+    @java.lang.Override
     public long getTime() {
       return time_;
     }
@@ -4228,19 +4516,18 @@ public final class UserProto {
       }
       info.xiaomo.server.protocol.UserProto.LoginRequest other = (info.xiaomo.server.protocol.UserProto.LoginRequest) obj;
 
-      boolean result = true;
-      result = result && getLoginName()
-          .equals(other.getLoginName());
-      result = result && (getPlatformId()
-          == other.getPlatformId());
-      result = result && (getServerId()
-          == other.getServerId());
-      result = result && getSign()
-          .equals(other.getSign());
-      result = result && (getTime()
-          == other.getTime());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getLoginName()
+          .equals(other.getLoginName())) return false;
+      if (getPlatformId()
+          != other.getPlatformId()) return false;
+      if (getServerId()
+          != other.getServerId()) return false;
+      if (!getSign()
+          .equals(other.getSign())) return false;
+      if (getTime()
+          != other.getTime()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -4445,35 +4732,35 @@ public final class UserProto {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -4540,6 +4827,7 @@ public final class UserProto {
        * </pre>
        *
        * <code>string loginName = 1;</code>
+       * @return The loginName.
        */
       public java.lang.String getLoginName() {
         java.lang.Object ref = loginName_;
@@ -4559,6 +4847,7 @@ public final class UserProto {
        * </pre>
        *
        * <code>string loginName = 1;</code>
+       * @return The bytes for loginName.
        */
       public com.google.protobuf.ByteString
           getLoginNameBytes() {
@@ -4579,6 +4868,8 @@ public final class UserProto {
        * </pre>
        *
        * <code>string loginName = 1;</code>
+       * @param value The loginName to set.
+       * @return This builder for chaining.
        */
       public Builder setLoginName(
           java.lang.String value) {
@@ -4596,6 +4887,7 @@ public final class UserProto {
        * </pre>
        *
        * <code>string loginName = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearLoginName() {
         
@@ -4609,6 +4901,8 @@ public final class UserProto {
        * </pre>
        *
        * <code>string loginName = 1;</code>
+       * @param value The bytes for loginName to set.
+       * @return This builder for chaining.
        */
       public Builder setLoginNameBytes(
           com.google.protobuf.ByteString value) {
@@ -4629,7 +4923,9 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 platformId = 2;</code>
+       * @return The platformId.
        */
+      @java.lang.Override
       public int getPlatformId() {
         return platformId_;
       }
@@ -4639,6 +4935,8 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 platformId = 2;</code>
+       * @param value The platformId to set.
+       * @return This builder for chaining.
        */
       public Builder setPlatformId(int value) {
         
@@ -4652,6 +4950,7 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 platformId = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearPlatformId() {
         
@@ -4667,7 +4966,9 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 serverId = 3;</code>
+       * @return The serverId.
        */
+      @java.lang.Override
       public int getServerId() {
         return serverId_;
       }
@@ -4677,6 +4978,8 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 serverId = 3;</code>
+       * @param value The serverId to set.
+       * @return This builder for chaining.
        */
       public Builder setServerId(int value) {
         
@@ -4690,6 +4993,7 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 serverId = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearServerId() {
         
@@ -4701,6 +5005,7 @@ public final class UserProto {
       private java.lang.Object sign_ = "";
       /**
        * <code>string sign = 4;</code>
+       * @return The sign.
        */
       public java.lang.String getSign() {
         java.lang.Object ref = sign_;
@@ -4716,6 +5021,7 @@ public final class UserProto {
       }
       /**
        * <code>string sign = 4;</code>
+       * @return The bytes for sign.
        */
       public com.google.protobuf.ByteString
           getSignBytes() {
@@ -4732,6 +5038,8 @@ public final class UserProto {
       }
       /**
        * <code>string sign = 4;</code>
+       * @param value The sign to set.
+       * @return This builder for chaining.
        */
       public Builder setSign(
           java.lang.String value) {
@@ -4745,6 +5053,7 @@ public final class UserProto {
       }
       /**
        * <code>string sign = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearSign() {
         
@@ -4754,6 +5063,8 @@ public final class UserProto {
       }
       /**
        * <code>string sign = 4;</code>
+       * @param value The bytes for sign to set.
+       * @return This builder for chaining.
        */
       public Builder setSignBytes(
           com.google.protobuf.ByteString value) {
@@ -4770,12 +5081,16 @@ public final class UserProto {
       private long time_ ;
       /**
        * <code>int64 time = 5;</code>
+       * @return The time.
        */
+      @java.lang.Override
       public long getTime() {
         return time_;
       }
       /**
        * <code>int64 time = 5;</code>
+       * @param value The time to set.
+       * @return This builder for chaining.
        */
       public Builder setTime(long value) {
         
@@ -4785,6 +5100,7 @@ public final class UserProto {
       }
       /**
        * <code>int64 time = 5;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTime() {
         
@@ -4795,7 +5111,7 @@ public final class UserProto {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -4895,6 +5211,7 @@ public final class UserProto {
 
     /**
      * <code>int64 userId = 2;</code>
+     * @return The userId.
      */
     long getUserId();
   }
@@ -4905,7 +5222,7 @@ public final class UserProto {
    *
    * Protobuf type {@code user.LoginResponse}
    */
-  public  static final class LoginResponse extends
+  public static final class LoginResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:user.LoginResponse)
       LoginResponseOrBuilder {
@@ -4916,7 +5233,13 @@ public final class UserProto {
     }
     private LoginResponse() {
       roleList_ = java.util.Collections.emptyList();
-      userId_ = 0L;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new LoginResponse();
     }
 
     @java.lang.Override
@@ -4944,7 +5267,7 @@ public final class UserProto {
               done = true;
               break;
             case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 roleList_ = new java.util.ArrayList<info.xiaomo.server.protocol.UserProto.RoleInfo>();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -4958,7 +5281,7 @@ public final class UserProto {
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -4972,7 +5295,7 @@ public final class UserProto {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           roleList_ = java.util.Collections.unmodifiableList(roleList_);
         }
         this.unknownFields = unknownFields.build();
@@ -4992,7 +5315,6 @@ public final class UserProto {
               info.xiaomo.server.protocol.UserProto.LoginResponse.class, info.xiaomo.server.protocol.UserProto.LoginResponse.Builder.class);
     }
 
-    private int bitField0_;
     public static final int ROLELIST_FIELD_NUMBER = 1;
     private java.util.List<info.xiaomo.server.protocol.UserProto.RoleInfo> roleList_;
     /**
@@ -5002,6 +5324,7 @@ public final class UserProto {
      *
      * <code>repeated .user.RoleInfo roleList = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<info.xiaomo.server.protocol.UserProto.RoleInfo> getRoleListList() {
       return roleList_;
     }
@@ -5012,6 +5335,7 @@ public final class UserProto {
      *
      * <code>repeated .user.RoleInfo roleList = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends info.xiaomo.server.protocol.UserProto.RoleInfoOrBuilder> 
         getRoleListOrBuilderList() {
       return roleList_;
@@ -5023,6 +5347,7 @@ public final class UserProto {
      *
      * <code>repeated .user.RoleInfo roleList = 1;</code>
      */
+    @java.lang.Override
     public int getRoleListCount() {
       return roleList_.size();
     }
@@ -5033,6 +5358,7 @@ public final class UserProto {
      *
      * <code>repeated .user.RoleInfo roleList = 1;</code>
      */
+    @java.lang.Override
     public info.xiaomo.server.protocol.UserProto.RoleInfo getRoleList(int index) {
       return roleList_.get(index);
     }
@@ -5043,6 +5369,7 @@ public final class UserProto {
      *
      * <code>repeated .user.RoleInfo roleList = 1;</code>
      */
+    @java.lang.Override
     public info.xiaomo.server.protocol.UserProto.RoleInfoOrBuilder getRoleListOrBuilder(
         int index) {
       return roleList_.get(index);
@@ -5052,7 +5379,9 @@ public final class UserProto {
     private long userId_;
     /**
      * <code>int64 userId = 2;</code>
+     * @return The userId.
      */
+    @java.lang.Override
     public long getUserId() {
       return userId_;
     }
@@ -5109,13 +5438,12 @@ public final class UserProto {
       }
       info.xiaomo.server.protocol.UserProto.LoginResponse other = (info.xiaomo.server.protocol.UserProto.LoginResponse) obj;
 
-      boolean result = true;
-      result = result && getRoleListList()
-          .equals(other.getRoleListList());
-      result = result && (getUserId()
-          == other.getUserId());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getRoleListList()
+          .equals(other.getRoleListList())) return false;
+      if (getUserId()
+          != other.getUserId()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -5305,9 +5633,8 @@ public final class UserProto {
       public info.xiaomo.server.protocol.UserProto.LoginResponse buildPartial() {
         info.xiaomo.server.protocol.UserProto.LoginResponse result = new info.xiaomo.server.protocol.UserProto.LoginResponse(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         if (roleListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             roleList_ = java.util.Collections.unmodifiableList(roleList_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
@@ -5316,42 +5643,41 @@ public final class UserProto {
           result.roleList_ = roleListBuilder_.build();
         }
         result.userId_ = userId_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -5427,7 +5753,7 @@ public final class UserProto {
       private java.util.List<info.xiaomo.server.protocol.UserProto.RoleInfo> roleList_ =
         java.util.Collections.emptyList();
       private void ensureRoleListIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           roleList_ = new java.util.ArrayList<info.xiaomo.server.protocol.UserProto.RoleInfo>(roleList_);
           bitField0_ |= 0x00000001;
          }
@@ -5728,7 +6054,7 @@ public final class UserProto {
           roleListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               info.xiaomo.server.protocol.UserProto.RoleInfo, info.xiaomo.server.protocol.UserProto.RoleInfo.Builder, info.xiaomo.server.protocol.UserProto.RoleInfoOrBuilder>(
                   roleList_,
-                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           roleList_ = null;
@@ -5739,12 +6065,16 @@ public final class UserProto {
       private long userId_ ;
       /**
        * <code>int64 userId = 2;</code>
+       * @return The userId.
        */
+      @java.lang.Override
       public long getUserId() {
         return userId_;
       }
       /**
        * <code>int64 userId = 2;</code>
+       * @param value The userId to set.
+       * @return This builder for chaining.
        */
       public Builder setUserId(long value) {
         
@@ -5754,6 +6084,7 @@ public final class UserProto {
       }
       /**
        * <code>int64 userId = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearUserId() {
         
@@ -5764,7 +6095,7 @@ public final class UserProto {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -5824,6 +6155,7 @@ public final class UserProto {
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return The name.
      */
     java.lang.String getName();
     /**
@@ -5832,6 +6164,7 @@ public final class UserProto {
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
     com.google.protobuf.ByteString
         getNameBytes();
@@ -5842,6 +6175,7 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 sex = 2;</code>
+     * @return The sex.
      */
     int getSex();
 
@@ -5851,13 +6185,14 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 career = 3;</code>
+     * @return The career.
      */
     int getCareer();
   }
   /**
    * Protobuf type {@code user.CreateRoleRequest}
    */
-  public  static final class CreateRoleRequest extends
+  public static final class CreateRoleRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:user.CreateRoleRequest)
       CreateRoleRequestOrBuilder {
@@ -5868,8 +6203,13 @@ public final class UserProto {
     }
     private CreateRoleRequest() {
       name_ = "";
-      sex_ = 0;
-      career_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new CreateRoleRequest();
     }
 
     @java.lang.Override
@@ -5885,7 +6225,6 @@ public final class UserProto {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -5913,7 +6252,7 @@ public final class UserProto {
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -5952,7 +6291,9 @@ public final class UserProto {
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return The name.
      */
+    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -5971,7 +6312,9 @@ public final class UserProto {
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getNameBytes() {
       java.lang.Object ref = name_;
@@ -5994,7 +6337,9 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 sex = 2;</code>
+     * @return The sex.
      */
+    @java.lang.Override
     public int getSex() {
       return sex_;
     }
@@ -6007,7 +6352,9 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 career = 3;</code>
+     * @return The career.
      */
+    @java.lang.Override
     public int getCareer() {
       return career_;
     }
@@ -6070,15 +6417,14 @@ public final class UserProto {
       }
       info.xiaomo.server.protocol.UserProto.CreateRoleRequest other = (info.xiaomo.server.protocol.UserProto.CreateRoleRequest) obj;
 
-      boolean result = true;
-      result = result && getName()
-          .equals(other.getName());
-      result = result && (getSex()
-          == other.getSex());
-      result = result && (getCareer()
-          == other.getCareer());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (getSex()
+          != other.getSex()) return false;
+      if (getCareer()
+          != other.getCareer()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -6268,35 +6614,35 @@ public final class UserProto {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -6356,6 +6702,7 @@ public final class UserProto {
        * </pre>
        *
        * <code>string name = 1;</code>
+       * @return The name.
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -6375,6 +6722,7 @@ public final class UserProto {
        * </pre>
        *
        * <code>string name = 1;</code>
+       * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
@@ -6395,6 +6743,8 @@ public final class UserProto {
        * </pre>
        *
        * <code>string name = 1;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
        */
       public Builder setName(
           java.lang.String value) {
@@ -6412,6 +6762,7 @@ public final class UserProto {
        * </pre>
        *
        * <code>string name = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearName() {
         
@@ -6425,6 +6776,8 @@ public final class UserProto {
        * </pre>
        *
        * <code>string name = 1;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
@@ -6445,7 +6798,9 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 sex = 2;</code>
+       * @return The sex.
        */
+      @java.lang.Override
       public int getSex() {
         return sex_;
       }
@@ -6455,6 +6810,8 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 sex = 2;</code>
+       * @param value The sex to set.
+       * @return This builder for chaining.
        */
       public Builder setSex(int value) {
         
@@ -6468,6 +6825,7 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 sex = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearSex() {
         
@@ -6483,7 +6841,9 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 career = 3;</code>
+       * @return The career.
        */
+      @java.lang.Override
       public int getCareer() {
         return career_;
       }
@@ -6493,6 +6853,8 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 career = 3;</code>
+       * @param value The career to set.
+       * @return This builder for chaining.
        */
       public Builder setCareer(int value) {
         
@@ -6506,6 +6868,7 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 career = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearCareer() {
         
@@ -6516,7 +6879,7 @@ public final class UserProto {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -6576,6 +6939,7 @@ public final class UserProto {
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return The name.
      */
     java.lang.String getName();
     /**
@@ -6584,6 +6948,7 @@ public final class UserProto {
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
     com.google.protobuf.ByteString
         getNameBytes();
@@ -6591,7 +6956,7 @@ public final class UserProto {
   /**
    * Protobuf type {@code user.RandomRoleNameResponse}
    */
-  public  static final class RandomRoleNameResponse extends
+  public static final class RandomRoleNameResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:user.RandomRoleNameResponse)
       RandomRoleNameResponseOrBuilder {
@@ -6602,6 +6967,13 @@ public final class UserProto {
     }
     private RandomRoleNameResponse() {
       name_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new RandomRoleNameResponse();
     }
 
     @java.lang.Override
@@ -6617,7 +6989,6 @@ public final class UserProto {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -6635,7 +7006,7 @@ public final class UserProto {
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -6674,7 +7045,9 @@ public final class UserProto {
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return The name.
      */
+    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -6693,7 +7066,9 @@ public final class UserProto {
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getNameBytes() {
       java.lang.Object ref = name_;
@@ -6752,11 +7127,10 @@ public final class UserProto {
       }
       info.xiaomo.server.protocol.UserProto.RandomRoleNameResponse other = (info.xiaomo.server.protocol.UserProto.RandomRoleNameResponse) obj;
 
-      boolean result = true;
-      result = result && getName()
-          .equals(other.getName());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -6936,35 +7310,35 @@ public final class UserProto {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -7018,6 +7392,7 @@ public final class UserProto {
        * </pre>
        *
        * <code>string name = 1;</code>
+       * @return The name.
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -7037,6 +7412,7 @@ public final class UserProto {
        * </pre>
        *
        * <code>string name = 1;</code>
+       * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
@@ -7057,6 +7433,8 @@ public final class UserProto {
        * </pre>
        *
        * <code>string name = 1;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
        */
       public Builder setName(
           java.lang.String value) {
@@ -7074,6 +7452,7 @@ public final class UserProto {
        * </pre>
        *
        * <code>string name = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearName() {
         
@@ -7087,6 +7466,8 @@ public final class UserProto {
        * </pre>
        *
        * <code>string name = 1;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
@@ -7102,7 +7483,7 @@ public final class UserProto {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -7162,13 +7543,14 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 sex = 1;</code>
+     * @return The sex.
      */
     int getSex();
   }
   /**
    * Protobuf type {@code user.RandomRoleNameRequest}
    */
-  public  static final class RandomRoleNameRequest extends
+  public static final class RandomRoleNameRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:user.RandomRoleNameRequest)
       RandomRoleNameRequestOrBuilder {
@@ -7178,7 +7560,13 @@ public final class UserProto {
       super(builder);
     }
     private RandomRoleNameRequest() {
-      sex_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new RandomRoleNameRequest();
     }
 
     @java.lang.Override
@@ -7194,7 +7582,6 @@ public final class UserProto {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -7211,7 +7598,7 @@ public final class UserProto {
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -7250,7 +7637,9 @@ public final class UserProto {
      * </pre>
      *
      * <code>int32 sex = 1;</code>
+     * @return The sex.
      */
+    @java.lang.Override
     public int getSex() {
       return sex_;
     }
@@ -7300,11 +7689,10 @@ public final class UserProto {
       }
       info.xiaomo.server.protocol.UserProto.RandomRoleNameRequest other = (info.xiaomo.server.protocol.UserProto.RandomRoleNameRequest) obj;
 
-      boolean result = true;
-      result = result && (getSex()
-          == other.getSex());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (getSex()
+          != other.getSex()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -7484,35 +7872,35 @@ public final class UserProto {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -7565,7 +7953,9 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 sex = 1;</code>
+       * @return The sex.
        */
+      @java.lang.Override
       public int getSex() {
         return sex_;
       }
@@ -7575,6 +7965,8 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 sex = 1;</code>
+       * @param value The sex to set.
+       * @return This builder for chaining.
        */
       public Builder setSex(int value) {
         
@@ -7588,6 +7980,7 @@ public final class UserProto {
        * </pre>
        *
        * <code>int32 sex = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearSex() {
         
@@ -7598,7 +7991,7 @@ public final class UserProto {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -7654,13 +8047,14 @@ public final class UserProto {
 
     /**
      * <code>int64 roleId = 1;</code>
+     * @return The roleId.
      */
     long getRoleId();
   }
   /**
    * Protobuf type {@code user.RoleIdMsg}
    */
-  public  static final class RoleIdMsg extends
+  public static final class RoleIdMsg extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:user.RoleIdMsg)
       RoleIdMsgOrBuilder {
@@ -7670,7 +8064,13 @@ public final class UserProto {
       super(builder);
     }
     private RoleIdMsg() {
-      roleId_ = 0L;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new RoleIdMsg();
     }
 
     @java.lang.Override
@@ -7686,7 +8086,6 @@ public final class UserProto {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -7703,7 +8102,7 @@ public final class UserProto {
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -7738,7 +8137,9 @@ public final class UserProto {
     private long roleId_;
     /**
      * <code>int64 roleId = 1;</code>
+     * @return The roleId.
      */
+    @java.lang.Override
     public long getRoleId() {
       return roleId_;
     }
@@ -7788,11 +8189,10 @@ public final class UserProto {
       }
       info.xiaomo.server.protocol.UserProto.RoleIdMsg other = (info.xiaomo.server.protocol.UserProto.RoleIdMsg) obj;
 
-      boolean result = true;
-      result = result && (getRoleId()
-          == other.getRoleId());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (getRoleId()
+          != other.getRoleId()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -7973,35 +8373,35 @@ public final class UserProto {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -8050,12 +8450,16 @@ public final class UserProto {
       private long roleId_ ;
       /**
        * <code>int64 roleId = 1;</code>
+       * @return The roleId.
        */
+      @java.lang.Override
       public long getRoleId() {
         return roleId_;
       }
       /**
        * <code>int64 roleId = 1;</code>
+       * @param value The roleId to set.
+       * @return This builder for chaining.
        */
       public Builder setRoleId(long value) {
         
@@ -8065,6 +8469,7 @@ public final class UserProto {
       }
       /**
        * <code>int64 roleId = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearRoleId() {
         
@@ -8075,7 +8480,7 @@ public final class UserProto {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -8131,10 +8536,12 @@ public final class UserProto {
 
     /**
      * <code>string command = 1;</code>
+     * @return The command.
      */
     java.lang.String getCommand();
     /**
      * <code>string command = 1;</code>
+     * @return The bytes for command.
      */
     com.google.protobuf.ByteString
         getCommandBytes();
@@ -8146,7 +8553,7 @@ public final class UserProto {
    *
    * Protobuf type {@code user.GMCommand}
    */
-  public  static final class GMCommand extends
+  public static final class GMCommand extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:user.GMCommand)
       GMCommandOrBuilder {
@@ -8157,6 +8564,13 @@ public final class UserProto {
     }
     private GMCommand() {
       command_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GMCommand();
     }
 
     @java.lang.Override
@@ -8172,7 +8586,6 @@ public final class UserProto {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -8190,7 +8603,7 @@ public final class UserProto {
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -8225,7 +8638,9 @@ public final class UserProto {
     private volatile java.lang.Object command_;
     /**
      * <code>string command = 1;</code>
+     * @return The command.
      */
+    @java.lang.Override
     public java.lang.String getCommand() {
       java.lang.Object ref = command_;
       if (ref instanceof java.lang.String) {
@@ -8240,7 +8655,9 @@ public final class UserProto {
     }
     /**
      * <code>string command = 1;</code>
+     * @return The bytes for command.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getCommandBytes() {
       java.lang.Object ref = command_;
@@ -8299,11 +8716,10 @@ public final class UserProto {
       }
       info.xiaomo.server.protocol.UserProto.GMCommand other = (info.xiaomo.server.protocol.UserProto.GMCommand) obj;
 
-      boolean result = true;
-      result = result && getCommand()
-          .equals(other.getCommand());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getCommand()
+          .equals(other.getCommand())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -8487,35 +8903,35 @@ public final class UserProto {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -8565,6 +8981,7 @@ public final class UserProto {
       private java.lang.Object command_ = "";
       /**
        * <code>string command = 1;</code>
+       * @return The command.
        */
       public java.lang.String getCommand() {
         java.lang.Object ref = command_;
@@ -8580,6 +8997,7 @@ public final class UserProto {
       }
       /**
        * <code>string command = 1;</code>
+       * @return The bytes for command.
        */
       public com.google.protobuf.ByteString
           getCommandBytes() {
@@ -8596,6 +9014,8 @@ public final class UserProto {
       }
       /**
        * <code>string command = 1;</code>
+       * @param value The command to set.
+       * @return This builder for chaining.
        */
       public Builder setCommand(
           java.lang.String value) {
@@ -8609,6 +9029,7 @@ public final class UserProto {
       }
       /**
        * <code>string command = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearCommand() {
         
@@ -8618,6 +9039,8 @@ public final class UserProto {
       }
       /**
        * <code>string command = 1;</code>
+       * @param value The bytes for command to set.
+       * @return This builder for chaining.
        */
       public Builder setCommandBytes(
           com.google.protobuf.ByteString value) {
@@ -8633,7 +9056,7 @@ public final class UserProto {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -8689,15 +9112,18 @@ public final class UserProto {
 
     /**
      * <code>int32 code = 1;</code>
+     * @return The code.
      */
     int getCode();
 
     /**
      * <code>string msg = 2;</code>
+     * @return The msg.
      */
     java.lang.String getMsg();
     /**
      * <code>string msg = 2;</code>
+     * @return The bytes for msg.
      */
     com.google.protobuf.ByteString
         getMsgBytes();
@@ -8705,7 +9131,7 @@ public final class UserProto {
   /**
    * Protobuf type {@code user.CloseServerResponse}
    */
-  public  static final class CloseServerResponse extends
+  public static final class CloseServerResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:user.CloseServerResponse)
       CloseServerResponseOrBuilder {
@@ -8715,8 +9141,14 @@ public final class UserProto {
       super(builder);
     }
     private CloseServerResponse() {
-      code_ = 0;
       msg_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new CloseServerResponse();
     }
 
     @java.lang.Override
@@ -8732,7 +9164,6 @@ public final class UserProto {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -8755,7 +9186,7 @@ public final class UserProto {
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -8790,7 +9221,9 @@ public final class UserProto {
     private int code_;
     /**
      * <code>int32 code = 1;</code>
+     * @return The code.
      */
+    @java.lang.Override
     public int getCode() {
       return code_;
     }
@@ -8799,7 +9232,9 @@ public final class UserProto {
     private volatile java.lang.Object msg_;
     /**
      * <code>string msg = 2;</code>
+     * @return The msg.
      */
+    @java.lang.Override
     public java.lang.String getMsg() {
       java.lang.Object ref = msg_;
       if (ref instanceof java.lang.String) {
@@ -8814,7 +9249,9 @@ public final class UserProto {
     }
     /**
      * <code>string msg = 2;</code>
+     * @return The bytes for msg.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getMsgBytes() {
       java.lang.Object ref = msg_;
@@ -8880,13 +9317,12 @@ public final class UserProto {
       }
       info.xiaomo.server.protocol.UserProto.CloseServerResponse other = (info.xiaomo.server.protocol.UserProto.CloseServerResponse) obj;
 
-      boolean result = true;
-      result = result && (getCode()
-          == other.getCode());
-      result = result && getMsg()
-          .equals(other.getMsg());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (getCode()
+          != other.getCode()) return false;
+      if (!getMsg()
+          .equals(other.getMsg())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -9071,35 +9507,35 @@ public final class UserProto {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -9152,12 +9588,16 @@ public final class UserProto {
       private int code_ ;
       /**
        * <code>int32 code = 1;</code>
+       * @return The code.
        */
+      @java.lang.Override
       public int getCode() {
         return code_;
       }
       /**
        * <code>int32 code = 1;</code>
+       * @param value The code to set.
+       * @return This builder for chaining.
        */
       public Builder setCode(int value) {
         
@@ -9167,6 +9607,7 @@ public final class UserProto {
       }
       /**
        * <code>int32 code = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearCode() {
         
@@ -9178,6 +9619,7 @@ public final class UserProto {
       private java.lang.Object msg_ = "";
       /**
        * <code>string msg = 2;</code>
+       * @return The msg.
        */
       public java.lang.String getMsg() {
         java.lang.Object ref = msg_;
@@ -9193,6 +9635,7 @@ public final class UserProto {
       }
       /**
        * <code>string msg = 2;</code>
+       * @return The bytes for msg.
        */
       public com.google.protobuf.ByteString
           getMsgBytes() {
@@ -9209,6 +9652,8 @@ public final class UserProto {
       }
       /**
        * <code>string msg = 2;</code>
+       * @param value The msg to set.
+       * @return This builder for chaining.
        */
       public Builder setMsg(
           java.lang.String value) {
@@ -9222,6 +9667,7 @@ public final class UserProto {
       }
       /**
        * <code>string msg = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearMsg() {
         
@@ -9231,6 +9677,8 @@ public final class UserProto {
       }
       /**
        * <code>string msg = 2;</code>
+       * @param value The bytes for msg to set.
+       * @return This builder for chaining.
        */
       public Builder setMsgBytes(
           com.google.protobuf.ByteString value) {
@@ -9246,7 +9694,7 @@ public final class UserProto {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -9302,41 +9750,49 @@ public final class UserProto {
 
     /**
      * <code>string loginName = 1;</code>
+     * @return The loginName.
      */
     java.lang.String getLoginName();
     /**
      * <code>string loginName = 1;</code>
+     * @return The bytes for loginName.
      */
     com.google.protobuf.ByteString
         getLoginNameBytes();
 
     /**
      * <code>int32 serverId = 2;</code>
+     * @return The serverId.
      */
     int getServerId();
 
     /**
      * <code>int32 platformId = 3;</code>
+     * @return The platformId.
      */
     int getPlatformId();
 
     /**
      * <code>int64 roleId = 4;</code>
+     * @return The roleId.
      */
     long getRoleId();
 
     /**
      * <code>string sign = 5;</code>
+     * @return The sign.
      */
     java.lang.String getSign();
     /**
      * <code>string sign = 5;</code>
+     * @return The bytes for sign.
      */
     com.google.protobuf.ByteString
         getSignBytes();
 
     /**
      * <code>int64 time = 6;</code>
+     * @return The time.
      */
     long getTime();
 
@@ -9346,6 +9802,7 @@ public final class UserProto {
      * </pre>
      *
      * <code>bool changeLine = 7;</code>
+     * @return The changeLine.
      */
     boolean getChangeLine();
   }
@@ -9356,7 +9813,7 @@ public final class UserProto {
    *
    * Protobuf type {@code user.ReconnectRequest}
    */
-  public  static final class ReconnectRequest extends
+  public static final class ReconnectRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:user.ReconnectRequest)
       ReconnectRequestOrBuilder {
@@ -9367,12 +9824,14 @@ public final class UserProto {
     }
     private ReconnectRequest() {
       loginName_ = "";
-      serverId_ = 0;
-      platformId_ = 0;
-      roleId_ = 0L;
       sign_ = "";
-      time_ = 0L;
-      changeLine_ = false;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ReconnectRequest();
     }
 
     @java.lang.Override
@@ -9388,7 +9847,6 @@ public final class UserProto {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -9437,7 +9895,7 @@ public final class UserProto {
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -9472,7 +9930,9 @@ public final class UserProto {
     private volatile java.lang.Object loginName_;
     /**
      * <code>string loginName = 1;</code>
+     * @return The loginName.
      */
+    @java.lang.Override
     public java.lang.String getLoginName() {
       java.lang.Object ref = loginName_;
       if (ref instanceof java.lang.String) {
@@ -9487,7 +9947,9 @@ public final class UserProto {
     }
     /**
      * <code>string loginName = 1;</code>
+     * @return The bytes for loginName.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getLoginNameBytes() {
       java.lang.Object ref = loginName_;
@@ -9506,7 +9968,9 @@ public final class UserProto {
     private int serverId_;
     /**
      * <code>int32 serverId = 2;</code>
+     * @return The serverId.
      */
+    @java.lang.Override
     public int getServerId() {
       return serverId_;
     }
@@ -9515,7 +9979,9 @@ public final class UserProto {
     private int platformId_;
     /**
      * <code>int32 platformId = 3;</code>
+     * @return The platformId.
      */
+    @java.lang.Override
     public int getPlatformId() {
       return platformId_;
     }
@@ -9524,7 +9990,9 @@ public final class UserProto {
     private long roleId_;
     /**
      * <code>int64 roleId = 4;</code>
+     * @return The roleId.
      */
+    @java.lang.Override
     public long getRoleId() {
       return roleId_;
     }
@@ -9533,7 +10001,9 @@ public final class UserProto {
     private volatile java.lang.Object sign_;
     /**
      * <code>string sign = 5;</code>
+     * @return The sign.
      */
+    @java.lang.Override
     public java.lang.String getSign() {
       java.lang.Object ref = sign_;
       if (ref instanceof java.lang.String) {
@@ -9548,7 +10018,9 @@ public final class UserProto {
     }
     /**
      * <code>string sign = 5;</code>
+     * @return The bytes for sign.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getSignBytes() {
       java.lang.Object ref = sign_;
@@ -9567,7 +10039,9 @@ public final class UserProto {
     private long time_;
     /**
      * <code>int64 time = 6;</code>
+     * @return The time.
      */
+    @java.lang.Override
     public long getTime() {
       return time_;
     }
@@ -9580,7 +10054,9 @@ public final class UserProto {
      * </pre>
      *
      * <code>bool changeLine = 7;</code>
+     * @return The changeLine.
      */
+    @java.lang.Override
     public boolean getChangeLine() {
       return changeLine_;
     }
@@ -9670,23 +10146,22 @@ public final class UserProto {
       }
       info.xiaomo.server.protocol.UserProto.ReconnectRequest other = (info.xiaomo.server.protocol.UserProto.ReconnectRequest) obj;
 
-      boolean result = true;
-      result = result && getLoginName()
-          .equals(other.getLoginName());
-      result = result && (getServerId()
-          == other.getServerId());
-      result = result && (getPlatformId()
-          == other.getPlatformId());
-      result = result && (getRoleId()
-          == other.getRoleId());
-      result = result && getSign()
-          .equals(other.getSign());
-      result = result && (getTime()
-          == other.getTime());
-      result = result && (getChangeLine()
-          == other.getChangeLine());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getLoginName()
+          .equals(other.getLoginName())) return false;
+      if (getServerId()
+          != other.getServerId()) return false;
+      if (getPlatformId()
+          != other.getPlatformId()) return false;
+      if (getRoleId()
+          != other.getRoleId()) return false;
+      if (!getSign()
+          .equals(other.getSign())) return false;
+      if (getTime()
+          != other.getTime()) return false;
+      if (getChangeLine()
+          != other.getChangeLine()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -9903,35 +10378,35 @@ public final class UserProto {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -10000,6 +10475,7 @@ public final class UserProto {
       private java.lang.Object loginName_ = "";
       /**
        * <code>string loginName = 1;</code>
+       * @return The loginName.
        */
       public java.lang.String getLoginName() {
         java.lang.Object ref = loginName_;
@@ -10015,6 +10491,7 @@ public final class UserProto {
       }
       /**
        * <code>string loginName = 1;</code>
+       * @return The bytes for loginName.
        */
       public com.google.protobuf.ByteString
           getLoginNameBytes() {
@@ -10031,6 +10508,8 @@ public final class UserProto {
       }
       /**
        * <code>string loginName = 1;</code>
+       * @param value The loginName to set.
+       * @return This builder for chaining.
        */
       public Builder setLoginName(
           java.lang.String value) {
@@ -10044,6 +10523,7 @@ public final class UserProto {
       }
       /**
        * <code>string loginName = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearLoginName() {
         
@@ -10053,6 +10533,8 @@ public final class UserProto {
       }
       /**
        * <code>string loginName = 1;</code>
+       * @param value The bytes for loginName to set.
+       * @return This builder for chaining.
        */
       public Builder setLoginNameBytes(
           com.google.protobuf.ByteString value) {
@@ -10069,12 +10551,16 @@ public final class UserProto {
       private int serverId_ ;
       /**
        * <code>int32 serverId = 2;</code>
+       * @return The serverId.
        */
+      @java.lang.Override
       public int getServerId() {
         return serverId_;
       }
       /**
        * <code>int32 serverId = 2;</code>
+       * @param value The serverId to set.
+       * @return This builder for chaining.
        */
       public Builder setServerId(int value) {
         
@@ -10084,6 +10570,7 @@ public final class UserProto {
       }
       /**
        * <code>int32 serverId = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearServerId() {
         
@@ -10095,12 +10582,16 @@ public final class UserProto {
       private int platformId_ ;
       /**
        * <code>int32 platformId = 3;</code>
+       * @return The platformId.
        */
+      @java.lang.Override
       public int getPlatformId() {
         return platformId_;
       }
       /**
        * <code>int32 platformId = 3;</code>
+       * @param value The platformId to set.
+       * @return This builder for chaining.
        */
       public Builder setPlatformId(int value) {
         
@@ -10110,6 +10601,7 @@ public final class UserProto {
       }
       /**
        * <code>int32 platformId = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearPlatformId() {
         
@@ -10121,12 +10613,16 @@ public final class UserProto {
       private long roleId_ ;
       /**
        * <code>int64 roleId = 4;</code>
+       * @return The roleId.
        */
+      @java.lang.Override
       public long getRoleId() {
         return roleId_;
       }
       /**
        * <code>int64 roleId = 4;</code>
+       * @param value The roleId to set.
+       * @return This builder for chaining.
        */
       public Builder setRoleId(long value) {
         
@@ -10136,6 +10632,7 @@ public final class UserProto {
       }
       /**
        * <code>int64 roleId = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearRoleId() {
         
@@ -10147,6 +10644,7 @@ public final class UserProto {
       private java.lang.Object sign_ = "";
       /**
        * <code>string sign = 5;</code>
+       * @return The sign.
        */
       public java.lang.String getSign() {
         java.lang.Object ref = sign_;
@@ -10162,6 +10660,7 @@ public final class UserProto {
       }
       /**
        * <code>string sign = 5;</code>
+       * @return The bytes for sign.
        */
       public com.google.protobuf.ByteString
           getSignBytes() {
@@ -10178,6 +10677,8 @@ public final class UserProto {
       }
       /**
        * <code>string sign = 5;</code>
+       * @param value The sign to set.
+       * @return This builder for chaining.
        */
       public Builder setSign(
           java.lang.String value) {
@@ -10191,6 +10692,7 @@ public final class UserProto {
       }
       /**
        * <code>string sign = 5;</code>
+       * @return This builder for chaining.
        */
       public Builder clearSign() {
         
@@ -10200,6 +10702,8 @@ public final class UserProto {
       }
       /**
        * <code>string sign = 5;</code>
+       * @param value The bytes for sign to set.
+       * @return This builder for chaining.
        */
       public Builder setSignBytes(
           com.google.protobuf.ByteString value) {
@@ -10216,12 +10720,16 @@ public final class UserProto {
       private long time_ ;
       /**
        * <code>int64 time = 6;</code>
+       * @return The time.
        */
+      @java.lang.Override
       public long getTime() {
         return time_;
       }
       /**
        * <code>int64 time = 6;</code>
+       * @param value The time to set.
+       * @return This builder for chaining.
        */
       public Builder setTime(long value) {
         
@@ -10231,6 +10739,7 @@ public final class UserProto {
       }
       /**
        * <code>int64 time = 6;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTime() {
         
@@ -10246,7 +10755,9 @@ public final class UserProto {
        * </pre>
        *
        * <code>bool changeLine = 7;</code>
+       * @return The changeLine.
        */
+      @java.lang.Override
       public boolean getChangeLine() {
         return changeLine_;
       }
@@ -10256,6 +10767,8 @@ public final class UserProto {
        * </pre>
        *
        * <code>bool changeLine = 7;</code>
+       * @param value The changeLine to set.
+       * @return This builder for chaining.
        */
       public Builder setChangeLine(boolean value) {
         
@@ -10269,6 +10782,7 @@ public final class UserProto {
        * </pre>
        *
        * <code>bool changeLine = 7;</code>
+       * @return This builder for chaining.
        */
       public Builder clearChangeLine() {
         
@@ -10279,7 +10793,7 @@ public final class UserProto {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -10335,17 +10849,19 @@ public final class UserProto {
 
     /**
      * <code>.user.GoingDownReason reason = 1;</code>
+     * @return The enum numeric value on the wire for reason.
      */
     int getReasonValue();
     /**
      * <code>.user.GoingDownReason reason = 1;</code>
+     * @return The reason.
      */
     info.xiaomo.server.protocol.UserProto.GoingDownReason getReason();
   }
   /**
    * Protobuf type {@code user.DisconnectResponse}
    */
-  public  static final class DisconnectResponse extends
+  public static final class DisconnectResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:user.DisconnectResponse)
       DisconnectResponseOrBuilder {
@@ -10356,6 +10872,13 @@ public final class UserProto {
     }
     private DisconnectResponse() {
       reason_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new DisconnectResponse();
     }
 
     @java.lang.Override
@@ -10371,7 +10894,6 @@ public final class UserProto {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -10389,7 +10911,7 @@ public final class UserProto {
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -10424,14 +10946,16 @@ public final class UserProto {
     private int reason_;
     /**
      * <code>.user.GoingDownReason reason = 1;</code>
+     * @return The enum numeric value on the wire for reason.
      */
-    public int getReasonValue() {
+    @java.lang.Override public int getReasonValue() {
       return reason_;
     }
     /**
      * <code>.user.GoingDownReason reason = 1;</code>
+     * @return The reason.
      */
-    public info.xiaomo.server.protocol.UserProto.GoingDownReason getReason() {
+    @java.lang.Override public info.xiaomo.server.protocol.UserProto.GoingDownReason getReason() {
       @SuppressWarnings("deprecation")
       info.xiaomo.server.protocol.UserProto.GoingDownReason result = info.xiaomo.server.protocol.UserProto.GoingDownReason.valueOf(reason_);
       return result == null ? info.xiaomo.server.protocol.UserProto.GoingDownReason.UNRECOGNIZED : result;
@@ -10482,10 +11006,9 @@ public final class UserProto {
       }
       info.xiaomo.server.protocol.UserProto.DisconnectResponse other = (info.xiaomo.server.protocol.UserProto.DisconnectResponse) obj;
 
-      boolean result = true;
-      result = result && reason_ == other.reason_;
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (reason_ != other.reason_) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -10665,35 +11188,35 @@ public final class UserProto {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -10742,21 +11265,27 @@ public final class UserProto {
       private int reason_ = 0;
       /**
        * <code>.user.GoingDownReason reason = 1;</code>
+       * @return The enum numeric value on the wire for reason.
        */
-      public int getReasonValue() {
+      @java.lang.Override public int getReasonValue() {
         return reason_;
       }
       /**
        * <code>.user.GoingDownReason reason = 1;</code>
+       * @param value The enum numeric value on the wire for reason to set.
+       * @return This builder for chaining.
        */
       public Builder setReasonValue(int value) {
+        
         reason_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>.user.GoingDownReason reason = 1;</code>
+       * @return The reason.
        */
+      @java.lang.Override
       public info.xiaomo.server.protocol.UserProto.GoingDownReason getReason() {
         @SuppressWarnings("deprecation")
         info.xiaomo.server.protocol.UserProto.GoingDownReason result = info.xiaomo.server.protocol.UserProto.GoingDownReason.valueOf(reason_);
@@ -10764,6 +11293,8 @@ public final class UserProto {
       }
       /**
        * <code>.user.GoingDownReason reason = 1;</code>
+       * @param value The reason to set.
+       * @return This builder for chaining.
        */
       public Builder setReason(info.xiaomo.server.protocol.UserProto.GoingDownReason value) {
         if (value == null) {
@@ -10776,6 +11307,7 @@ public final class UserProto {
       }
       /**
        * <code>.user.GoingDownReason reason = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearReason() {
         
@@ -10786,7 +11318,7 @@ public final class UserProto {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -10842,30 +11374,36 @@ public final class UserProto {
 
     /**
      * <code>string content = 1;</code>
+     * @return The content.
      */
     java.lang.String getContent();
     /**
      * <code>string content = 1;</code>
+     * @return The bytes for content.
      */
     com.google.protobuf.ByteString
         getContentBytes();
 
     /**
      * <code>string phoneType = 2;</code>
+     * @return The phoneType.
      */
     java.lang.String getPhoneType();
     /**
      * <code>string phoneType = 2;</code>
+     * @return The bytes for phoneType.
      */
     com.google.protobuf.ByteString
         getPhoneTypeBytes();
 
     /**
      * <code>string qq = 3;</code>
+     * @return The qq.
      */
     java.lang.String getQq();
     /**
      * <code>string qq = 3;</code>
+     * @return The bytes for qq.
      */
     com.google.protobuf.ByteString
         getQqBytes();
@@ -10877,7 +11415,7 @@ public final class UserProto {
    *
    * Protobuf type {@code user.UserFeedbackRequest}
    */
-  public  static final class UserFeedbackRequest extends
+  public static final class UserFeedbackRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:user.UserFeedbackRequest)
       UserFeedbackRequestOrBuilder {
@@ -10893,6 +11431,13 @@ public final class UserProto {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new UserFeedbackRequest();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -10905,7 +11450,6 @@ public final class UserProto {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -10935,7 +11479,7 @@ public final class UserProto {
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -10970,7 +11514,9 @@ public final class UserProto {
     private volatile java.lang.Object content_;
     /**
      * <code>string content = 1;</code>
+     * @return The content.
      */
+    @java.lang.Override
     public java.lang.String getContent() {
       java.lang.Object ref = content_;
       if (ref instanceof java.lang.String) {
@@ -10985,7 +11531,9 @@ public final class UserProto {
     }
     /**
      * <code>string content = 1;</code>
+     * @return The bytes for content.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getContentBytes() {
       java.lang.Object ref = content_;
@@ -11004,7 +11552,9 @@ public final class UserProto {
     private volatile java.lang.Object phoneType_;
     /**
      * <code>string phoneType = 2;</code>
+     * @return The phoneType.
      */
+    @java.lang.Override
     public java.lang.String getPhoneType() {
       java.lang.Object ref = phoneType_;
       if (ref instanceof java.lang.String) {
@@ -11019,7 +11569,9 @@ public final class UserProto {
     }
     /**
      * <code>string phoneType = 2;</code>
+     * @return The bytes for phoneType.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getPhoneTypeBytes() {
       java.lang.Object ref = phoneType_;
@@ -11038,7 +11590,9 @@ public final class UserProto {
     private volatile java.lang.Object qq_;
     /**
      * <code>string qq = 3;</code>
+     * @return The qq.
      */
+    @java.lang.Override
     public java.lang.String getQq() {
       java.lang.Object ref = qq_;
       if (ref instanceof java.lang.String) {
@@ -11053,7 +11607,9 @@ public final class UserProto {
     }
     /**
      * <code>string qq = 3;</code>
+     * @return The bytes for qq.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getQqBytes() {
       java.lang.Object ref = qq_;
@@ -11124,15 +11680,14 @@ public final class UserProto {
       }
       info.xiaomo.server.protocol.UserProto.UserFeedbackRequest other = (info.xiaomo.server.protocol.UserProto.UserFeedbackRequest) obj;
 
-      boolean result = true;
-      result = result && getContent()
-          .equals(other.getContent());
-      result = result && getPhoneType()
-          .equals(other.getPhoneType());
-      result = result && getQq()
-          .equals(other.getQq());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getContent()
+          .equals(other.getContent())) return false;
+      if (!getPhoneType()
+          .equals(other.getPhoneType())) return false;
+      if (!getQq()
+          .equals(other.getQq())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -11326,35 +11881,35 @@ public final class UserProto {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -11412,6 +11967,7 @@ public final class UserProto {
       private java.lang.Object content_ = "";
       /**
        * <code>string content = 1;</code>
+       * @return The content.
        */
       public java.lang.String getContent() {
         java.lang.Object ref = content_;
@@ -11427,6 +11983,7 @@ public final class UserProto {
       }
       /**
        * <code>string content = 1;</code>
+       * @return The bytes for content.
        */
       public com.google.protobuf.ByteString
           getContentBytes() {
@@ -11443,6 +12000,8 @@ public final class UserProto {
       }
       /**
        * <code>string content = 1;</code>
+       * @param value The content to set.
+       * @return This builder for chaining.
        */
       public Builder setContent(
           java.lang.String value) {
@@ -11456,6 +12015,7 @@ public final class UserProto {
       }
       /**
        * <code>string content = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearContent() {
         
@@ -11465,6 +12025,8 @@ public final class UserProto {
       }
       /**
        * <code>string content = 1;</code>
+       * @param value The bytes for content to set.
+       * @return This builder for chaining.
        */
       public Builder setContentBytes(
           com.google.protobuf.ByteString value) {
@@ -11481,6 +12043,7 @@ public final class UserProto {
       private java.lang.Object phoneType_ = "";
       /**
        * <code>string phoneType = 2;</code>
+       * @return The phoneType.
        */
       public java.lang.String getPhoneType() {
         java.lang.Object ref = phoneType_;
@@ -11496,6 +12059,7 @@ public final class UserProto {
       }
       /**
        * <code>string phoneType = 2;</code>
+       * @return The bytes for phoneType.
        */
       public com.google.protobuf.ByteString
           getPhoneTypeBytes() {
@@ -11512,6 +12076,8 @@ public final class UserProto {
       }
       /**
        * <code>string phoneType = 2;</code>
+       * @param value The phoneType to set.
+       * @return This builder for chaining.
        */
       public Builder setPhoneType(
           java.lang.String value) {
@@ -11525,6 +12091,7 @@ public final class UserProto {
       }
       /**
        * <code>string phoneType = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearPhoneType() {
         
@@ -11534,6 +12101,8 @@ public final class UserProto {
       }
       /**
        * <code>string phoneType = 2;</code>
+       * @param value The bytes for phoneType to set.
+       * @return This builder for chaining.
        */
       public Builder setPhoneTypeBytes(
           com.google.protobuf.ByteString value) {
@@ -11550,6 +12119,7 @@ public final class UserProto {
       private java.lang.Object qq_ = "";
       /**
        * <code>string qq = 3;</code>
+       * @return The qq.
        */
       public java.lang.String getQq() {
         java.lang.Object ref = qq_;
@@ -11565,6 +12135,7 @@ public final class UserProto {
       }
       /**
        * <code>string qq = 3;</code>
+       * @return The bytes for qq.
        */
       public com.google.protobuf.ByteString
           getQqBytes() {
@@ -11581,6 +12152,8 @@ public final class UserProto {
       }
       /**
        * <code>string qq = 3;</code>
+       * @param value The qq to set.
+       * @return This builder for chaining.
        */
       public Builder setQq(
           java.lang.String value) {
@@ -11594,6 +12167,7 @@ public final class UserProto {
       }
       /**
        * <code>string qq = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearQq() {
         
@@ -11603,6 +12177,8 @@ public final class UserProto {
       }
       /**
        * <code>string qq = 3;</code>
+       * @param value The bytes for qq to set.
+       * @return This builder for chaining.
        */
       public Builder setQqBytes(
           com.google.protobuf.ByteString value) {
@@ -11618,7 +12194,7 @@ public final class UserProto {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -11674,10 +12250,12 @@ public final class UserProto {
 
     /**
      * <code>string phoneNumber = 1;</code>
+     * @return The phoneNumber.
      */
     java.lang.String getPhoneNumber();
     /**
      * <code>string phoneNumber = 1;</code>
+     * @return The bytes for phoneNumber.
      */
     com.google.protobuf.ByteString
         getPhoneNumberBytes();
@@ -11689,7 +12267,7 @@ public final class UserProto {
    *
    * Protobuf type {@code user.BindPhoneNumberRequest}
    */
-  public  static final class BindPhoneNumberRequest extends
+  public static final class BindPhoneNumberRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:user.BindPhoneNumberRequest)
       BindPhoneNumberRequestOrBuilder {
@@ -11700,6 +12278,13 @@ public final class UserProto {
     }
     private BindPhoneNumberRequest() {
       phoneNumber_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new BindPhoneNumberRequest();
     }
 
     @java.lang.Override
@@ -11715,7 +12300,6 @@ public final class UserProto {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -11733,7 +12317,7 @@ public final class UserProto {
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -11768,7 +12352,9 @@ public final class UserProto {
     private volatile java.lang.Object phoneNumber_;
     /**
      * <code>string phoneNumber = 1;</code>
+     * @return The phoneNumber.
      */
+    @java.lang.Override
     public java.lang.String getPhoneNumber() {
       java.lang.Object ref = phoneNumber_;
       if (ref instanceof java.lang.String) {
@@ -11783,7 +12369,9 @@ public final class UserProto {
     }
     /**
      * <code>string phoneNumber = 1;</code>
+     * @return The bytes for phoneNumber.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getPhoneNumberBytes() {
       java.lang.Object ref = phoneNumber_;
@@ -11842,11 +12430,10 @@ public final class UserProto {
       }
       info.xiaomo.server.protocol.UserProto.BindPhoneNumberRequest other = (info.xiaomo.server.protocol.UserProto.BindPhoneNumberRequest) obj;
 
-      boolean result = true;
-      result = result && getPhoneNumber()
-          .equals(other.getPhoneNumber());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getPhoneNumber()
+          .equals(other.getPhoneNumber())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -12030,35 +12617,35 @@ public final class UserProto {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -12108,6 +12695,7 @@ public final class UserProto {
       private java.lang.Object phoneNumber_ = "";
       /**
        * <code>string phoneNumber = 1;</code>
+       * @return The phoneNumber.
        */
       public java.lang.String getPhoneNumber() {
         java.lang.Object ref = phoneNumber_;
@@ -12123,6 +12711,7 @@ public final class UserProto {
       }
       /**
        * <code>string phoneNumber = 1;</code>
+       * @return The bytes for phoneNumber.
        */
       public com.google.protobuf.ByteString
           getPhoneNumberBytes() {
@@ -12139,6 +12728,8 @@ public final class UserProto {
       }
       /**
        * <code>string phoneNumber = 1;</code>
+       * @param value The phoneNumber to set.
+       * @return This builder for chaining.
        */
       public Builder setPhoneNumber(
           java.lang.String value) {
@@ -12152,6 +12743,7 @@ public final class UserProto {
       }
       /**
        * <code>string phoneNumber = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearPhoneNumber() {
         
@@ -12161,6 +12753,8 @@ public final class UserProto {
       }
       /**
        * <code>string phoneNumber = 1;</code>
+       * @param value The bytes for phoneNumber to set.
+       * @return This builder for chaining.
        */
       public Builder setPhoneNumberBytes(
           com.google.protobuf.ByteString value) {
@@ -12176,7 +12770,7 @@ public final class UserProto {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -12226,34 +12820,43 @@ public final class UserProto {
 
   }
 
-  public interface RechargeingRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:user.RechargeingRequest)
+  public interface RechargeRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:user.RechargeRequest)
       com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>string rechargeId = 1;</code>
+     * @return The rechargeId.
      */
     java.lang.String getRechargeId();
     /**
      * <code>string rechargeId = 1;</code>
+     * @return The bytes for rechargeId.
      */
     com.google.protobuf.ByteString
         getRechargeIdBytes();
   }
   /**
-   * Protobuf type {@code user.RechargeingRequest}
+   * Protobuf type {@code user.RechargeRequest}
    */
-  public  static final class RechargeingRequest extends
+  public static final class RechargeRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:user.RechargeingRequest)
-      RechargeingRequestOrBuilder {
+      // @@protoc_insertion_point(message_implements:user.RechargeRequest)
+      RechargeRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use RechargeingRequest.newBuilder() to construct.
-    private RechargeingRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use RechargeRequest.newBuilder() to construct.
+    private RechargeRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private RechargeingRequest() {
+    private RechargeRequest() {
       rechargeId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new RechargeRequest();
     }
 
     @java.lang.Override
@@ -12261,7 +12864,7 @@ public final class UserProto {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private RechargeingRequest(
+    private RechargeRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -12269,7 +12872,6 @@ public final class UserProto {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -12287,7 +12889,7 @@ public final class UserProto {
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -12307,22 +12909,24 @@ public final class UserProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return info.xiaomo.server.protocol.UserProto.internal_static_user_RechargeingRequest_descriptor;
+      return info.xiaomo.server.protocol.UserProto.internal_static_user_RechargeRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return info.xiaomo.server.protocol.UserProto.internal_static_user_RechargeingRequest_fieldAccessorTable
+      return info.xiaomo.server.protocol.UserProto.internal_static_user_RechargeRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              info.xiaomo.server.protocol.UserProto.RechargeingRequest.class, info.xiaomo.server.protocol.UserProto.RechargeingRequest.Builder.class);
+              info.xiaomo.server.protocol.UserProto.RechargeRequest.class, info.xiaomo.server.protocol.UserProto.RechargeRequest.Builder.class);
     }
 
     public static final int RECHARGEID_FIELD_NUMBER = 1;
     private volatile java.lang.Object rechargeId_;
     /**
      * <code>string rechargeId = 1;</code>
+     * @return The rechargeId.
      */
+    @java.lang.Override
     public java.lang.String getRechargeId() {
       java.lang.Object ref = rechargeId_;
       if (ref instanceof java.lang.String) {
@@ -12337,7 +12941,9 @@ public final class UserProto {
     }
     /**
      * <code>string rechargeId = 1;</code>
+     * @return The bytes for rechargeId.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getRechargeIdBytes() {
       java.lang.Object ref = rechargeId_;
@@ -12391,16 +12997,15 @@ public final class UserProto {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof info.xiaomo.server.protocol.UserProto.RechargeingRequest)) {
+      if (!(obj instanceof info.xiaomo.server.protocol.UserProto.RechargeRequest)) {
         return super.equals(obj);
       }
-      info.xiaomo.server.protocol.UserProto.RechargeingRequest other = (info.xiaomo.server.protocol.UserProto.RechargeingRequest) obj;
+      info.xiaomo.server.protocol.UserProto.RechargeRequest other = (info.xiaomo.server.protocol.UserProto.RechargeRequest) obj;
 
-      boolean result = true;
-      result = result && getRechargeId()
-          .equals(other.getRechargeId());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getRechargeId()
+          .equals(other.getRechargeId())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -12417,69 +13022,69 @@ public final class UserProto {
       return hash;
     }
 
-    public static info.xiaomo.server.protocol.UserProto.RechargeingRequest parseFrom(
+    public static info.xiaomo.server.protocol.UserProto.RechargeRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static info.xiaomo.server.protocol.UserProto.RechargeingRequest parseFrom(
+    public static info.xiaomo.server.protocol.UserProto.RechargeRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static info.xiaomo.server.protocol.UserProto.RechargeingRequest parseFrom(
+    public static info.xiaomo.server.protocol.UserProto.RechargeRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static info.xiaomo.server.protocol.UserProto.RechargeingRequest parseFrom(
+    public static info.xiaomo.server.protocol.UserProto.RechargeRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static info.xiaomo.server.protocol.UserProto.RechargeingRequest parseFrom(byte[] data)
+    public static info.xiaomo.server.protocol.UserProto.RechargeRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static info.xiaomo.server.protocol.UserProto.RechargeingRequest parseFrom(
+    public static info.xiaomo.server.protocol.UserProto.RechargeRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static info.xiaomo.server.protocol.UserProto.RechargeingRequest parseFrom(java.io.InputStream input)
+    public static info.xiaomo.server.protocol.UserProto.RechargeRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static info.xiaomo.server.protocol.UserProto.RechargeingRequest parseFrom(
+    public static info.xiaomo.server.protocol.UserProto.RechargeRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static info.xiaomo.server.protocol.UserProto.RechargeingRequest parseDelimitedFrom(java.io.InputStream input)
+    public static info.xiaomo.server.protocol.UserProto.RechargeRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static info.xiaomo.server.protocol.UserProto.RechargeingRequest parseDelimitedFrom(
+    public static info.xiaomo.server.protocol.UserProto.RechargeRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static info.xiaomo.server.protocol.UserProto.RechargeingRequest parseFrom(
+    public static info.xiaomo.server.protocol.UserProto.RechargeRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static info.xiaomo.server.protocol.UserProto.RechargeingRequest parseFrom(
+    public static info.xiaomo.server.protocol.UserProto.RechargeRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -12492,7 +13097,7 @@ public final class UserProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(info.xiaomo.server.protocol.UserProto.RechargeingRequest prototype) {
+    public static Builder newBuilder(info.xiaomo.server.protocol.UserProto.RechargeRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -12508,26 +13113,26 @@ public final class UserProto {
       return builder;
     }
     /**
-     * Protobuf type {@code user.RechargeingRequest}
+     * Protobuf type {@code user.RechargeRequest}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:user.RechargeingRequest)
-        info.xiaomo.server.protocol.UserProto.RechargeingRequestOrBuilder {
+        // @@protoc_insertion_point(builder_implements:user.RechargeRequest)
+        info.xiaomo.server.protocol.UserProto.RechargeRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return info.xiaomo.server.protocol.UserProto.internal_static_user_RechargeingRequest_descriptor;
+        return info.xiaomo.server.protocol.UserProto.internal_static_user_RechargeRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return info.xiaomo.server.protocol.UserProto.internal_static_user_RechargeingRequest_fieldAccessorTable
+        return info.xiaomo.server.protocol.UserProto.internal_static_user_RechargeRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                info.xiaomo.server.protocol.UserProto.RechargeingRequest.class, info.xiaomo.server.protocol.UserProto.RechargeingRequest.Builder.class);
+                info.xiaomo.server.protocol.UserProto.RechargeRequest.class, info.xiaomo.server.protocol.UserProto.RechargeRequest.Builder.class);
       }
 
-      // Construct using info.xiaomo.server.protocol.UserProto.RechargeingRequest.newBuilder()
+      // Construct using info.xiaomo.server.protocol.UserProto.RechargeRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -12553,17 +13158,17 @@ public final class UserProto {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return info.xiaomo.server.protocol.UserProto.internal_static_user_RechargeingRequest_descriptor;
+        return info.xiaomo.server.protocol.UserProto.internal_static_user_RechargeRequest_descriptor;
       }
 
       @java.lang.Override
-      public info.xiaomo.server.protocol.UserProto.RechargeingRequest getDefaultInstanceForType() {
-        return info.xiaomo.server.protocol.UserProto.RechargeingRequest.getDefaultInstance();
+      public info.xiaomo.server.protocol.UserProto.RechargeRequest getDefaultInstanceForType() {
+        return info.xiaomo.server.protocol.UserProto.RechargeRequest.getDefaultInstance();
       }
 
       @java.lang.Override
-      public info.xiaomo.server.protocol.UserProto.RechargeingRequest build() {
-        info.xiaomo.server.protocol.UserProto.RechargeingRequest result = buildPartial();
+      public info.xiaomo.server.protocol.UserProto.RechargeRequest build() {
+        info.xiaomo.server.protocol.UserProto.RechargeRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -12571,8 +13176,8 @@ public final class UserProto {
       }
 
       @java.lang.Override
-      public info.xiaomo.server.protocol.UserProto.RechargeingRequest buildPartial() {
-        info.xiaomo.server.protocol.UserProto.RechargeingRequest result = new info.xiaomo.server.protocol.UserProto.RechargeingRequest(this);
+      public info.xiaomo.server.protocol.UserProto.RechargeRequest buildPartial() {
+        info.xiaomo.server.protocol.UserProto.RechargeRequest result = new info.xiaomo.server.protocol.UserProto.RechargeRequest(this);
         result.rechargeId_ = rechargeId_;
         onBuilt();
         return result;
@@ -12580,48 +13185,48 @@ public final class UserProto {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof info.xiaomo.server.protocol.UserProto.RechargeingRequest) {
-          return mergeFrom((info.xiaomo.server.protocol.UserProto.RechargeingRequest)other);
+        if (other instanceof info.xiaomo.server.protocol.UserProto.RechargeRequest) {
+          return mergeFrom((info.xiaomo.server.protocol.UserProto.RechargeRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(info.xiaomo.server.protocol.UserProto.RechargeingRequest other) {
-        if (other == info.xiaomo.server.protocol.UserProto.RechargeingRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(info.xiaomo.server.protocol.UserProto.RechargeRequest other) {
+        if (other == info.xiaomo.server.protocol.UserProto.RechargeRequest.getDefaultInstance()) return this;
         if (!other.getRechargeId().isEmpty()) {
           rechargeId_ = other.rechargeId_;
           onChanged();
@@ -12641,11 +13246,11 @@ public final class UserProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        info.xiaomo.server.protocol.UserProto.RechargeingRequest parsedMessage = null;
+        info.xiaomo.server.protocol.UserProto.RechargeRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (info.xiaomo.server.protocol.UserProto.RechargeingRequest) e.getUnfinishedMessage();
+          parsedMessage = (info.xiaomo.server.protocol.UserProto.RechargeRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -12658,6 +13263,7 @@ public final class UserProto {
       private java.lang.Object rechargeId_ = "";
       /**
        * <code>string rechargeId = 1;</code>
+       * @return The rechargeId.
        */
       public java.lang.String getRechargeId() {
         java.lang.Object ref = rechargeId_;
@@ -12673,6 +13279,7 @@ public final class UserProto {
       }
       /**
        * <code>string rechargeId = 1;</code>
+       * @return The bytes for rechargeId.
        */
       public com.google.protobuf.ByteString
           getRechargeIdBytes() {
@@ -12689,6 +13296,8 @@ public final class UserProto {
       }
       /**
        * <code>string rechargeId = 1;</code>
+       * @param value The rechargeId to set.
+       * @return This builder for chaining.
        */
       public Builder setRechargeId(
           java.lang.String value) {
@@ -12702,6 +13311,7 @@ public final class UserProto {
       }
       /**
        * <code>string rechargeId = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearRechargeId() {
         
@@ -12711,6 +13321,8 @@ public final class UserProto {
       }
       /**
        * <code>string rechargeId = 1;</code>
+       * @param value The bytes for rechargeId to set.
+       * @return This builder for chaining.
        */
       public Builder setRechargeIdBytes(
           com.google.protobuf.ByteString value) {
@@ -12726,7 +13338,7 @@ public final class UserProto {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -12736,41 +13348,41 @@ public final class UserProto {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:user.RechargeingRequest)
+      // @@protoc_insertion_point(builder_scope:user.RechargeRequest)
     }
 
-    // @@protoc_insertion_point(class_scope:user.RechargeingRequest)
-    private static final info.xiaomo.server.protocol.UserProto.RechargeingRequest DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:user.RechargeRequest)
+    private static final info.xiaomo.server.protocol.UserProto.RechargeRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new info.xiaomo.server.protocol.UserProto.RechargeingRequest();
+      DEFAULT_INSTANCE = new info.xiaomo.server.protocol.UserProto.RechargeRequest();
     }
 
-    public static info.xiaomo.server.protocol.UserProto.RechargeingRequest getDefaultInstance() {
+    public static info.xiaomo.server.protocol.UserProto.RechargeRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<RechargeingRequest>
-        PARSER = new com.google.protobuf.AbstractParser<RechargeingRequest>() {
+    private static final com.google.protobuf.Parser<RechargeRequest>
+        PARSER = new com.google.protobuf.AbstractParser<RechargeRequest>() {
       @java.lang.Override
-      public RechargeingRequest parsePartialFrom(
+      public RechargeRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new RechargeingRequest(input, extensionRegistry);
+        return new RechargeRequest(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<RechargeingRequest> parser() {
+    public static com.google.protobuf.Parser<RechargeRequest> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<RechargeingRequest> getParserForType() {
+    public com.google.protobuf.Parser<RechargeRequest> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public info.xiaomo.server.protocol.UserProto.RechargeingRequest getDefaultInstanceForType() {
+    public info.xiaomo.server.protocol.UserProto.RechargeRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -12847,10 +13459,10 @@ public final class UserProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_user_BindPhoneNumberRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_user_RechargeingRequest_descriptor;
+    internal_static_user_RechargeRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_user_RechargeingRequest_fieldAccessorTable;
+      internal_static_user_RechargeRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -12895,24 +13507,16 @@ public final class UserProto {
       "er.GoingDownReason\"E\n\023UserFeedbackReques" +
       "t\022\017\n\007content\030\001 \001(\t\022\021\n\tphoneType\030\002 \001(\t\022\n\n" +
       "\002qq\030\003 \001(\t\"-\n\026BindPhoneNumberRequest\022\023\n\013p" +
-      "honeNumber\030\001 \001(\t\"(\n\022RechargeingRequest\022\022" +
-      "\n\nrechargeId\030\001 \001(\t*>\n\017GoingDownReason\022\014\n" +
-      "\010Maintain\020\000\022\t\n\005Block\020\001\022\022\n\016AnotherSession" +
-      "\020\002B(\n\033info.xiaomo.server.protocolB\tUserP" +
-      "rotob\006proto3"
+      "honeNumber\030\001 \001(\t\"%\n\017RechargeRequest\022\022\n\nr" +
+      "echargeId\030\001 \001(\t*>\n\017GoingDownReason\022\014\n\010Ma" +
+      "intain\020\000\022\t\n\005Block\020\001\022\022\n\016AnotherSession\020\002B" +
+      "(\n\033info.xiaomo.server.protocolB\tUserProt" +
+      "ob\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        }, assigner);
+        });
     internal_static_user_RoleInfo_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_user_RoleInfo_fieldAccessorTable = new
@@ -12997,11 +13601,11 @@ public final class UserProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_user_BindPhoneNumberRequest_descriptor,
         new java.lang.String[] { "PhoneNumber", });
-    internal_static_user_RechargeingRequest_descriptor =
+    internal_static_user_RechargeRequest_descriptor =
       getDescriptor().getMessageTypes().get(14);
-    internal_static_user_RechargeingRequest_fieldAccessorTable = new
+    internal_static_user_RechargeRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_user_RechargeingRequest_descriptor,
+        internal_static_user_RechargeRequest_descriptor,
         new java.lang.String[] { "RechargeId", });
   }
 
