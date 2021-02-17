@@ -12,35 +12,26 @@ public interface LoginResponseOrBuilder extends
    *消息id
    * </pre>
    *
-   * <code>optional .MID mid = 1 [default = LoginRes];</code>
-   * @return Whether the mid field is set.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The enum numeric value on the wire for msgId.
    */
-  boolean hasMid();
+  int getMsgIdValue();
   /**
    * <pre>
    *消息id
    * </pre>
    *
-   * <code>optional .MID mid = 1 [default = LoginRes];</code>
-   * @return The mid.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The msgId.
    */
-  info.xiaomo.server.shared.protocol.Mid.MID getMid();
+  info.xiaomo.server.shared.protocol.msg.MsgId getMsgId();
 
   /**
    * <pre>
    *请求是否发送成功
    * </pre>
    *
-   * <code>optional bool isOk = 2;</code>
-   * @return Whether the isOk field is set.
-   */
-  boolean hasIsOk();
-  /**
-   * <pre>
-   *请求是否发送成功
-   * </pre>
-   *
-   * <code>optional bool isOk = 2;</code>
+   * <code>bool isOk = 2;</code>
    * @return The isOk.
    */
   boolean getIsOk();
@@ -50,16 +41,7 @@ public interface LoginResponseOrBuilder extends
    *用户id
    * </pre>
    *
-   * <code>optional int64 uid = 3;</code>
-   * @return Whether the uid field is set.
-   */
-  boolean hasUid();
-  /**
-   * <pre>
-   *用户id
-   * </pre>
-   *
-   * <code>optional int64 uid = 3;</code>
+   * <code>int64 uid = 3;</code>
    * @return The uid.
    */
   long getUid();
@@ -69,16 +51,7 @@ public interface LoginResponseOrBuilder extends
    *角色ID
    * </pre>
    *
-   * <code>optional int64 rid = 4;</code>
-   * @return Whether the rid field is set.
-   */
-  boolean hasRid();
-  /**
-   * <pre>
-   *角色ID
-   * </pre>
-   *
-   * <code>optional int64 rid = 4;</code>
+   * <code>int64 rid = 4;</code>
    * @return The rid.
    */
   long getRid();
@@ -88,16 +61,7 @@ public interface LoginResponseOrBuilder extends
    *会话ID
    * </pre>
    *
-   * <code>optional int64 sessionId = 5;</code>
-   * @return Whether the sessionId field is set.
-   */
-  boolean hasSessionId();
-  /**
-   * <pre>
-   *会话ID
-   * </pre>
-   *
-   * <code>optional int64 sessionId = 5;</code>
+   * <code>int64 sessionId = 5;</code>
    * @return The sessionId.
    */
   long getSessionId();

@@ -23,16 +23,14 @@ public final class HallRankMessage {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\025HallRankMessage.proto\032\tMid.protoB0\n,in" +
-      "fo.xiaomo.server.shared.protocol.hall.ra" +
-      "nkP\001"
+      "\n\025HallRankMessage.protoB0\n,info.xiaomo.s" +
+      "erver.shared.protocol.hall.rankP\001b\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          info.xiaomo.server.shared.protocol.Mid.getDescriptor(),
         });
-    info.xiaomo.server.shared.protocol.Mid.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

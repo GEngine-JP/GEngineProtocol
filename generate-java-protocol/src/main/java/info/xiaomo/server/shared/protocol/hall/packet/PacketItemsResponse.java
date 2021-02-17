@@ -20,7 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private PacketItemsResponse() {
-    mid_ = 10018;
+    msgId_ = 0;
     items_ = java.util.Collections.emptyList();
   }
 
@@ -57,23 +57,17 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
             int rawValue = input.readEnum();
-              @SuppressWarnings("deprecation")
-            info.xiaomo.server.shared.protocol.Mid.MID value = info.xiaomo.server.shared.protocol.Mid.MID.valueOf(rawValue);
-            if (value == null) {
-              unknownFields.mergeVarintField(1, rawValue);
-            } else {
-              bitField0_ |= 0x00000001;
-              mid_ = rawValue;
-            }
+
+            msgId_ = rawValue;
             break;
           }
           case 18: {
-            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               items_ = new java.util.ArrayList<info.xiaomo.server.shared.protocol.hall.packet.PacketItem>();
-              mutable_bitField0_ |= 0x00000002;
+              mutable_bitField0_ |= 0x00000001;
             }
             items_.add(
-                input.readMessage(info.xiaomo.server.shared.protocol.hall.packet.PacketItem.PARSER, extensionRegistry));
+                input.readMessage(info.xiaomo.server.shared.protocol.hall.packet.PacketItem.parser(), extensionRegistry));
             break;
           }
           default: {
@@ -91,7 +85,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         items_ = java.util.Collections.unmodifiableList(items_);
       }
       this.unknownFields = unknownFields.build();
@@ -111,32 +105,31 @@ private static final long serialVersionUID = 0L;
             info.xiaomo.server.shared.protocol.hall.packet.PacketItemsResponse.class, info.xiaomo.server.shared.protocol.hall.packet.PacketItemsResponse.Builder.class);
   }
 
-  private int bitField0_;
-  public static final int MID_FIELD_NUMBER = 1;
-  private int mid_;
+  public static final int MSGID_FIELD_NUMBER = 1;
+  private int msgId_;
   /**
    * <pre>
    *消息id
    * </pre>
    *
-   * <code>optional .MID mid = 1 [default = PacketItemsRes];</code>
-   * @return Whether the mid field is set.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The enum numeric value on the wire for msgId.
    */
-  @java.lang.Override public boolean hasMid() {
-    return ((bitField0_ & 0x00000001) != 0);
+  @java.lang.Override public int getMsgIdValue() {
+    return msgId_;
   }
   /**
    * <pre>
    *消息id
    * </pre>
    *
-   * <code>optional .MID mid = 1 [default = PacketItemsRes];</code>
-   * @return The mid.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The msgId.
    */
-  @java.lang.Override public info.xiaomo.server.shared.protocol.Mid.MID getMid() {
+  @java.lang.Override public info.xiaomo.server.shared.protocol.msg.MsgId getMsgId() {
     @SuppressWarnings("deprecation")
-    info.xiaomo.server.shared.protocol.Mid.MID result = info.xiaomo.server.shared.protocol.Mid.MID.valueOf(mid_);
-    return result == null ? info.xiaomo.server.shared.protocol.Mid.MID.PacketItemsRes : result;
+    info.xiaomo.server.shared.protocol.msg.MsgId result = info.xiaomo.server.shared.protocol.msg.MsgId.valueOf(msgId_);
+    return result == null ? info.xiaomo.server.shared.protocol.msg.MsgId.UNRECOGNIZED : result;
   }
 
   public static final int ITEMS_FIELD_NUMBER = 2;
@@ -206,12 +199,6 @@ private static final long serialVersionUID = 0L;
     if (isInitialized == 1) return true;
     if (isInitialized == 0) return false;
 
-    for (int i = 0; i < getItemsCount(); i++) {
-      if (!getItems(i).isInitialized()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-    }
     memoizedIsInitialized = 1;
     return true;
   }
@@ -219,8 +206,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeEnum(1, mid_);
+    if (msgId_ != info.xiaomo.server.shared.protocol.msg.MsgId.Base.getNumber()) {
+      output.writeEnum(1, msgId_);
     }
     for (int i = 0; i < items_.size(); i++) {
       output.writeMessage(2, items_.get(i));
@@ -234,9 +221,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (msgId_ != info.xiaomo.server.shared.protocol.msg.MsgId.Base.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(1, mid_);
+        .computeEnumSize(1, msgId_);
     }
     for (int i = 0; i < items_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
@@ -257,10 +244,7 @@ private static final long serialVersionUID = 0L;
     }
     info.xiaomo.server.shared.protocol.hall.packet.PacketItemsResponse other = (info.xiaomo.server.shared.protocol.hall.packet.PacketItemsResponse) obj;
 
-    if (hasMid() != other.hasMid()) return false;
-    if (hasMid()) {
-      if (mid_ != other.mid_) return false;
-    }
+    if (msgId_ != other.msgId_) return false;
     if (!getItemsList()
         .equals(other.getItemsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -274,10 +258,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasMid()) {
-      hash = (37 * hash) + MID_FIELD_NUMBER;
-      hash = (53 * hash) + mid_;
-    }
+    hash = (37 * hash) + MSGID_FIELD_NUMBER;
+    hash = (53 * hash) + msgId_;
     if (getItemsCount() > 0) {
       hash = (37 * hash) + ITEMS_FIELD_NUMBER;
       hash = (53 * hash) + getItemsList().hashCode();
@@ -420,11 +402,11 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      mid_ = 10018;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      msgId_ = 0;
+
       if (itemsBuilder_ == null) {
         items_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         itemsBuilder_.clear();
       }
@@ -455,21 +437,16 @@ private static final long serialVersionUID = 0L;
     public info.xiaomo.server.shared.protocol.hall.packet.PacketItemsResponse buildPartial() {
       info.xiaomo.server.shared.protocol.hall.packet.PacketItemsResponse result = new info.xiaomo.server.shared.protocol.hall.packet.PacketItemsResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
-      }
-      result.mid_ = mid_;
+      result.msgId_ = msgId_;
       if (itemsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           items_ = java.util.Collections.unmodifiableList(items_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.items_ = items_;
       } else {
         result.items_ = itemsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -518,14 +495,14 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(info.xiaomo.server.shared.protocol.hall.packet.PacketItemsResponse other) {
       if (other == info.xiaomo.server.shared.protocol.hall.packet.PacketItemsResponse.getDefaultInstance()) return this;
-      if (other.hasMid()) {
-        setMid(other.getMid());
+      if (other.msgId_ != 0) {
+        setMsgIdValue(other.getMsgIdValue());
       }
       if (itemsBuilder_ == null) {
         if (!other.items_.isEmpty()) {
           if (items_.isEmpty()) {
             items_ = other.items_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureItemsIsMutable();
             items_.addAll(other.items_);
@@ -538,7 +515,7 @@ private static final long serialVersionUID = 0L;
             itemsBuilder_.dispose();
             itemsBuilder_ = null;
             items_ = other.items_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             itemsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getItemsFieldBuilder() : null;
@@ -554,11 +531,6 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public final boolean isInitialized() {
-      for (int i = 0; i < getItemsCount(); i++) {
-        if (!getItems(i).isInitialized()) {
-          return false;
-        }
-      }
       return true;
     }
 
@@ -582,47 +554,30 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private int mid_ = 10018;
+    private int msgId_ = 0;
     /**
      * <pre>
      *消息id
      * </pre>
      *
-     * <code>optional .MID mid = 1 [default = PacketItemsRes];</code>
-     * @return Whether the mid field is set.
+     * <code>.MsgId msgId = 1;</code>
+     * @return The enum numeric value on the wire for msgId.
      */
-    @java.lang.Override public boolean hasMid() {
-      return ((bitField0_ & 0x00000001) != 0);
+    @java.lang.Override public int getMsgIdValue() {
+      return msgId_;
     }
     /**
      * <pre>
      *消息id
      * </pre>
      *
-     * <code>optional .MID mid = 1 [default = PacketItemsRes];</code>
-     * @return The mid.
-     */
-    @java.lang.Override
-    public info.xiaomo.server.shared.protocol.Mid.MID getMid() {
-      @SuppressWarnings("deprecation")
-      info.xiaomo.server.shared.protocol.Mid.MID result = info.xiaomo.server.shared.protocol.Mid.MID.valueOf(mid_);
-      return result == null ? info.xiaomo.server.shared.protocol.Mid.MID.PacketItemsRes : result;
-    }
-    /**
-     * <pre>
-     *消息id
-     * </pre>
-     *
-     * <code>optional .MID mid = 1 [default = PacketItemsRes];</code>
-     * @param value The mid to set.
+     * <code>.MsgId msgId = 1;</code>
+     * @param value The enum numeric value on the wire for msgId to set.
      * @return This builder for chaining.
      */
-    public Builder setMid(info.xiaomo.server.shared.protocol.Mid.MID value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000001;
-      mid_ = value.getNumber();
+    public Builder setMsgIdValue(int value) {
+      
+      msgId_ = value;
       onChanged();
       return this;
     }
@@ -631,12 +586,44 @@ private static final long serialVersionUID = 0L;
      *消息id
      * </pre>
      *
-     * <code>optional .MID mid = 1 [default = PacketItemsRes];</code>
+     * <code>.MsgId msgId = 1;</code>
+     * @return The msgId.
+     */
+    @java.lang.Override
+    public info.xiaomo.server.shared.protocol.msg.MsgId getMsgId() {
+      @SuppressWarnings("deprecation")
+      info.xiaomo.server.shared.protocol.msg.MsgId result = info.xiaomo.server.shared.protocol.msg.MsgId.valueOf(msgId_);
+      return result == null ? info.xiaomo.server.shared.protocol.msg.MsgId.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     *消息id
+     * </pre>
+     *
+     * <code>.MsgId msgId = 1;</code>
+     * @param value The msgId to set.
      * @return This builder for chaining.
      */
-    public Builder clearMid() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      mid_ = 10018;
+    public Builder setMsgId(info.xiaomo.server.shared.protocol.msg.MsgId value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      msgId_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *消息id
+     * </pre>
+     *
+     * <code>.MsgId msgId = 1;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearMsgId() {
+      
+      msgId_ = 0;
       onChanged();
       return this;
     }
@@ -644,9 +631,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<info.xiaomo.server.shared.protocol.hall.packet.PacketItem> items_ =
       java.util.Collections.emptyList();
     private void ensureItemsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         items_ = new java.util.ArrayList<info.xiaomo.server.shared.protocol.hall.packet.PacketItem>(items_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
        }
     }
 
@@ -840,7 +827,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearItems() {
       if (itemsBuilder_ == null) {
         items_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         itemsBuilder_.clear();
@@ -945,7 +932,7 @@ private static final long serialVersionUID = 0L;
         itemsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             info.xiaomo.server.shared.protocol.hall.packet.PacketItem, info.xiaomo.server.shared.protocol.hall.packet.PacketItem.Builder, info.xiaomo.server.shared.protocol.hall.packet.PacketItemOrBuilder>(
                 items_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         items_ = null;
@@ -978,7 +965,7 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  @java.lang.Deprecated public static final com.google.protobuf.Parser<PacketItemsResponse>
+  private static final com.google.protobuf.Parser<PacketItemsResponse>
       PARSER = new com.google.protobuf.AbstractParser<PacketItemsResponse>() {
     @java.lang.Override
     public PacketItemsResponse parsePartialFrom(

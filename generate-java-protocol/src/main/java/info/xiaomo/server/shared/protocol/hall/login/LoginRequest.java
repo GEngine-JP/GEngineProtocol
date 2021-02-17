@@ -20,10 +20,10 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private LoginRequest() {
-    mid_ = 10001;
+    msgId_ = 0;
     account_ = "";
     password_ = "";
-    loginType_ = 1;
+    loginType_ = 0;
     ip_ = "";
     version_ = "";
   }
@@ -48,7 +48,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -61,60 +60,48 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
             int rawValue = input.readEnum();
-              @SuppressWarnings("deprecation")
-            info.xiaomo.server.shared.protocol.Mid.MID value = info.xiaomo.server.shared.protocol.Mid.MID.valueOf(rawValue);
-            if (value == null) {
-              unknownFields.mergeVarintField(1, rawValue);
-            } else {
-              bitField0_ |= 0x00000001;
-              mid_ = rawValue;
-            }
+
+            msgId_ = rawValue;
             break;
           }
           case 18: {
-            com.google.protobuf.ByteString bs = input.readBytes();
-            bitField0_ |= 0x00000002;
-            account_ = bs;
+            java.lang.String s = input.readStringRequireUtf8();
+
+            account_ = s;
             break;
           }
           case 26: {
-            com.google.protobuf.ByteString bs = input.readBytes();
-            bitField0_ |= 0x00000004;
-            password_ = bs;
+            java.lang.String s = input.readStringRequireUtf8();
+
+            password_ = s;
             break;
           }
           case 32: {
             int rawValue = input.readEnum();
-              @SuppressWarnings("deprecation")
-            info.xiaomo.server.shared.protocol.hall.login.LoginType value = info.xiaomo.server.shared.protocol.hall.login.LoginType.valueOf(rawValue);
-            if (value == null) {
-              unknownFields.mergeVarintField(4, rawValue);
-            } else {
-              bitField0_ |= 0x00000008;
-              loginType_ = rawValue;
-            }
+
+            loginType_ = rawValue;
             break;
           }
           case 40: {
-            bitField0_ |= 0x00000010;
+
             sessionId_ = input.readInt64();
             break;
           }
           case 48: {
-            bitField0_ |= 0x00000020;
+
             gateId_ = input.readInt32();
             break;
           }
           case 58: {
-            com.google.protobuf.ByteString bs = input.readBytes();
-            bitField0_ |= 0x00000040;
-            ip_ = bs;
+            java.lang.String s = input.readStringRequireUtf8();
+
+            ip_ = s;
             break;
           }
           case 66: {
-            com.google.protobuf.ByteString bs = input.readBytes();
-            bitField0_ |= 0x00000080;
-            version_ = bs;
+            java.lang.String s = input.readStringRequireUtf8();
+
+            version_ = s;
             break;
           }
           default: {
@@ -149,32 +136,31 @@ private static final long serialVersionUID = 0L;
             info.xiaomo.server.shared.protocol.hall.login.LoginRequest.class, info.xiaomo.server.shared.protocol.hall.login.LoginRequest.Builder.class);
   }
 
-  private int bitField0_;
-  public static final int MID_FIELD_NUMBER = 1;
-  private int mid_;
+  public static final int MSGID_FIELD_NUMBER = 1;
+  private int msgId_;
   /**
    * <pre>
    *消息id
    * </pre>
    *
-   * <code>optional .MID mid = 1 [default = LoginReq];</code>
-   * @return Whether the mid field is set.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The enum numeric value on the wire for msgId.
    */
-  @java.lang.Override public boolean hasMid() {
-    return ((bitField0_ & 0x00000001) != 0);
+  @java.lang.Override public int getMsgIdValue() {
+    return msgId_;
   }
   /**
    * <pre>
    *消息id
    * </pre>
    *
-   * <code>optional .MID mid = 1 [default = LoginReq];</code>
-   * @return The mid.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The msgId.
    */
-  @java.lang.Override public info.xiaomo.server.shared.protocol.Mid.MID getMid() {
+  @java.lang.Override public info.xiaomo.server.shared.protocol.msg.MsgId getMsgId() {
     @SuppressWarnings("deprecation")
-    info.xiaomo.server.shared.protocol.Mid.MID result = info.xiaomo.server.shared.protocol.Mid.MID.valueOf(mid_);
-    return result == null ? info.xiaomo.server.shared.protocol.Mid.MID.LoginReq : result;
+    info.xiaomo.server.shared.protocol.msg.MsgId result = info.xiaomo.server.shared.protocol.msg.MsgId.valueOf(msgId_);
+    return result == null ? info.xiaomo.server.shared.protocol.msg.MsgId.UNRECOGNIZED : result;
   }
 
   public static final int ACCOUNT_FIELD_NUMBER = 2;
@@ -184,19 +170,7 @@ private static final long serialVersionUID = 0L;
    *账号
    * </pre>
    *
-   * <code>optional string account = 2;</code>
-   * @return Whether the account field is set.
-   */
-  @java.lang.Override
-  public boolean hasAccount() {
-    return ((bitField0_ & 0x00000002) != 0);
-  }
-  /**
-   * <pre>
-   *账号
-   * </pre>
-   *
-   * <code>optional string account = 2;</code>
+   * <code>string account = 2;</code>
    * @return The account.
    */
   @java.lang.Override
@@ -208,9 +182,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        account_ = s;
-      }
+      account_ = s;
       return s;
     }
   }
@@ -219,7 +191,7 @@ private static final long serialVersionUID = 0L;
    *账号
    * </pre>
    *
-   * <code>optional string account = 2;</code>
+   * <code>string account = 2;</code>
    * @return The bytes for account.
    */
   @java.lang.Override
@@ -244,19 +216,7 @@ private static final long serialVersionUID = 0L;
    *密码
    * </pre>
    *
-   * <code>optional string password = 3;</code>
-   * @return Whether the password field is set.
-   */
-  @java.lang.Override
-  public boolean hasPassword() {
-    return ((bitField0_ & 0x00000004) != 0);
-  }
-  /**
-   * <pre>
-   *密码
-   * </pre>
-   *
-   * <code>optional string password = 3;</code>
+   * <code>string password = 3;</code>
    * @return The password.
    */
   @java.lang.Override
@@ -268,9 +228,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        password_ = s;
-      }
+      password_ = s;
       return s;
     }
   }
@@ -279,7 +237,7 @@ private static final long serialVersionUID = 0L;
    *密码
    * </pre>
    *
-   * <code>optional string password = 3;</code>
+   * <code>string password = 3;</code>
    * @return The bytes for password.
    */
   @java.lang.Override
@@ -301,27 +259,27 @@ private static final long serialVersionUID = 0L;
   private int loginType_;
   /**
    * <pre>
-   *登录类型 
+   *登录类型
    * </pre>
    *
-   * <code>optional .LoginType loginType = 4;</code>
-   * @return Whether the loginType field is set.
+   * <code>.LoginType loginType = 4;</code>
+   * @return The enum numeric value on the wire for loginType.
    */
-  @java.lang.Override public boolean hasLoginType() {
-    return ((bitField0_ & 0x00000008) != 0);
+  @java.lang.Override public int getLoginTypeValue() {
+    return loginType_;
   }
   /**
    * <pre>
-   *登录类型 
+   *登录类型
    * </pre>
    *
-   * <code>optional .LoginType loginType = 4;</code>
+   * <code>.LoginType loginType = 4;</code>
    * @return The loginType.
    */
   @java.lang.Override public info.xiaomo.server.shared.protocol.hall.login.LoginType getLoginType() {
     @SuppressWarnings("deprecation")
     info.xiaomo.server.shared.protocol.hall.login.LoginType result = info.xiaomo.server.shared.protocol.hall.login.LoginType.valueOf(loginType_);
-    return result == null ? info.xiaomo.server.shared.protocol.hall.login.LoginType.ACCOUNT : result;
+    return result == null ? info.xiaomo.server.shared.protocol.hall.login.LoginType.UNRECOGNIZED : result;
   }
 
   public static final int SESSIONID_FIELD_NUMBER = 5;
@@ -331,19 +289,7 @@ private static final long serialVersionUID = 0L;
    *会话ID（服务器内部使用）
    * </pre>
    *
-   * <code>optional int64 sessionId = 5;</code>
-   * @return Whether the sessionId field is set.
-   */
-  @java.lang.Override
-  public boolean hasSessionId() {
-    return ((bitField0_ & 0x00000010) != 0);
-  }
-  /**
-   * <pre>
-   *会话ID（服务器内部使用）
-   * </pre>
-   *
-   * <code>optional int64 sessionId = 5;</code>
+   * <code>int64 sessionId = 5;</code>
    * @return The sessionId.
    */
   @java.lang.Override
@@ -358,19 +304,7 @@ private static final long serialVersionUID = 0L;
    *网关ID（服务器内部使用）
    * </pre>
    *
-   * <code>optional int32 gateId = 6;</code>
-   * @return Whether the gateId field is set.
-   */
-  @java.lang.Override
-  public boolean hasGateId() {
-    return ((bitField0_ & 0x00000020) != 0);
-  }
-  /**
-   * <pre>
-   *网关ID（服务器内部使用）
-   * </pre>
-   *
-   * <code>optional int32 gateId = 6;</code>
+   * <code>int32 gateId = 6;</code>
    * @return The gateId.
    */
   @java.lang.Override
@@ -385,19 +319,7 @@ private static final long serialVersionUID = 0L;
    *IP地址（服务器内部使用）
    * </pre>
    *
-   * <code>optional string ip = 7;</code>
-   * @return Whether the ip field is set.
-   */
-  @java.lang.Override
-  public boolean hasIp() {
-    return ((bitField0_ & 0x00000040) != 0);
-  }
-  /**
-   * <pre>
-   *IP地址（服务器内部使用）
-   * </pre>
-   *
-   * <code>optional string ip = 7;</code>
+   * <code>string ip = 7;</code>
    * @return The ip.
    */
   @java.lang.Override
@@ -409,9 +331,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        ip_ = s;
-      }
+      ip_ = s;
       return s;
     }
   }
@@ -420,7 +340,7 @@ private static final long serialVersionUID = 0L;
    *IP地址（服务器内部使用）
    * </pre>
    *
-   * <code>optional string ip = 7;</code>
+   * <code>string ip = 7;</code>
    * @return The bytes for ip.
    */
   @java.lang.Override
@@ -445,19 +365,7 @@ private static final long serialVersionUID = 0L;
    *版本号
    * </pre>
    *
-   * <code>optional string version = 8;</code>
-   * @return Whether the version field is set.
-   */
-  @java.lang.Override
-  public boolean hasVersion() {
-    return ((bitField0_ & 0x00000080) != 0);
-  }
-  /**
-   * <pre>
-   *版本号
-   * </pre>
-   *
-   * <code>optional string version = 8;</code>
+   * <code>string version = 8;</code>
    * @return The version.
    */
   @java.lang.Override
@@ -469,9 +377,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        version_ = s;
-      }
+      version_ = s;
       return s;
     }
   }
@@ -480,7 +386,7 @@ private static final long serialVersionUID = 0L;
    *版本号
    * </pre>
    *
-   * <code>optional string version = 8;</code>
+   * <code>string version = 8;</code>
    * @return The bytes for version.
    */
   @java.lang.Override
@@ -512,28 +418,28 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeEnum(1, mid_);
+    if (msgId_ != info.xiaomo.server.shared.protocol.msg.MsgId.Base.getNumber()) {
+      output.writeEnum(1, msgId_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (!getAccountBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, account_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (!getPasswordBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, password_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (loginType_ != info.xiaomo.server.shared.protocol.hall.login.LoginType.DefaultType.getNumber()) {
       output.writeEnum(4, loginType_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (sessionId_ != 0L) {
       output.writeInt64(5, sessionId_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (gateId_ != 0) {
       output.writeInt32(6, gateId_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (!getIpBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, ip_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (!getVersionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, version_);
     }
     unknownFields.writeTo(output);
@@ -545,32 +451,32 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (msgId_ != info.xiaomo.server.shared.protocol.msg.MsgId.Base.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(1, mid_);
+        .computeEnumSize(1, msgId_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (!getAccountBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, account_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (!getPasswordBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, password_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (loginType_ != info.xiaomo.server.shared.protocol.hall.login.LoginType.DefaultType.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(4, loginType_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (sessionId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(5, sessionId_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (gateId_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(6, gateId_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (!getIpBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, ip_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (!getVersionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, version_);
     }
     size += unknownFields.getSerializedSize();
@@ -588,44 +494,20 @@ private static final long serialVersionUID = 0L;
     }
     info.xiaomo.server.shared.protocol.hall.login.LoginRequest other = (info.xiaomo.server.shared.protocol.hall.login.LoginRequest) obj;
 
-    if (hasMid() != other.hasMid()) return false;
-    if (hasMid()) {
-      if (mid_ != other.mid_) return false;
-    }
-    if (hasAccount() != other.hasAccount()) return false;
-    if (hasAccount()) {
-      if (!getAccount()
-          .equals(other.getAccount())) return false;
-    }
-    if (hasPassword() != other.hasPassword()) return false;
-    if (hasPassword()) {
-      if (!getPassword()
-          .equals(other.getPassword())) return false;
-    }
-    if (hasLoginType() != other.hasLoginType()) return false;
-    if (hasLoginType()) {
-      if (loginType_ != other.loginType_) return false;
-    }
-    if (hasSessionId() != other.hasSessionId()) return false;
-    if (hasSessionId()) {
-      if (getSessionId()
-          != other.getSessionId()) return false;
-    }
-    if (hasGateId() != other.hasGateId()) return false;
-    if (hasGateId()) {
-      if (getGateId()
-          != other.getGateId()) return false;
-    }
-    if (hasIp() != other.hasIp()) return false;
-    if (hasIp()) {
-      if (!getIp()
-          .equals(other.getIp())) return false;
-    }
-    if (hasVersion() != other.hasVersion()) return false;
-    if (hasVersion()) {
-      if (!getVersion()
-          .equals(other.getVersion())) return false;
-    }
+    if (msgId_ != other.msgId_) return false;
+    if (!getAccount()
+        .equals(other.getAccount())) return false;
+    if (!getPassword()
+        .equals(other.getPassword())) return false;
+    if (loginType_ != other.loginType_) return false;
+    if (getSessionId()
+        != other.getSessionId()) return false;
+    if (getGateId()
+        != other.getGateId()) return false;
+    if (!getIp()
+        .equals(other.getIp())) return false;
+    if (!getVersion()
+        .equals(other.getVersion())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -637,39 +519,23 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasMid()) {
-      hash = (37 * hash) + MID_FIELD_NUMBER;
-      hash = (53 * hash) + mid_;
-    }
-    if (hasAccount()) {
-      hash = (37 * hash) + ACCOUNT_FIELD_NUMBER;
-      hash = (53 * hash) + getAccount().hashCode();
-    }
-    if (hasPassword()) {
-      hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
-      hash = (53 * hash) + getPassword().hashCode();
-    }
-    if (hasLoginType()) {
-      hash = (37 * hash) + LOGINTYPE_FIELD_NUMBER;
-      hash = (53 * hash) + loginType_;
-    }
-    if (hasSessionId()) {
-      hash = (37 * hash) + SESSIONID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getSessionId());
-    }
-    if (hasGateId()) {
-      hash = (37 * hash) + GATEID_FIELD_NUMBER;
-      hash = (53 * hash) + getGateId();
-    }
-    if (hasIp()) {
-      hash = (37 * hash) + IP_FIELD_NUMBER;
-      hash = (53 * hash) + getIp().hashCode();
-    }
-    if (hasVersion()) {
-      hash = (37 * hash) + VERSION_FIELD_NUMBER;
-      hash = (53 * hash) + getVersion().hashCode();
-    }
+    hash = (37 * hash) + MSGID_FIELD_NUMBER;
+    hash = (53 * hash) + msgId_;
+    hash = (37 * hash) + ACCOUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getAccount().hashCode();
+    hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
+    hash = (53 * hash) + getPassword().hashCode();
+    hash = (37 * hash) + LOGINTYPE_FIELD_NUMBER;
+    hash = (53 * hash) + loginType_;
+    hash = (37 * hash) + SESSIONID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getSessionId());
+    hash = (37 * hash) + GATEID_FIELD_NUMBER;
+    hash = (53 * hash) + getGateId();
+    hash = (37 * hash) + IP_FIELD_NUMBER;
+    hash = (53 * hash) + getIp().hashCode();
+    hash = (37 * hash) + VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + getVersion().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -807,22 +673,22 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      mid_ = 10001;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      msgId_ = 0;
+
       account_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
+
       password_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
-      loginType_ = 1;
-      bitField0_ = (bitField0_ & ~0x00000008);
+
+      loginType_ = 0;
+
       sessionId_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000010);
+
       gateId_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000020);
+
       ip_ = "";
-      bitField0_ = (bitField0_ & ~0x00000040);
+
       version_ = "";
-      bitField0_ = (bitField0_ & ~0x00000080);
+
       return this;
     }
 
@@ -849,41 +715,14 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public info.xiaomo.server.shared.protocol.hall.login.LoginRequest buildPartial() {
       info.xiaomo.server.shared.protocol.hall.login.LoginRequest result = new info.xiaomo.server.shared.protocol.hall.login.LoginRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
-      }
-      result.mid_ = mid_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        to_bitField0_ |= 0x00000002;
-      }
+      result.msgId_ = msgId_;
       result.account_ = account_;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        to_bitField0_ |= 0x00000004;
-      }
       result.password_ = password_;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        to_bitField0_ |= 0x00000008;
-      }
       result.loginType_ = loginType_;
-      if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.sessionId_ = sessionId_;
-        to_bitField0_ |= 0x00000010;
-      }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.gateId_ = gateId_;
-        to_bitField0_ |= 0x00000020;
-      }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
-        to_bitField0_ |= 0x00000040;
-      }
+      result.sessionId_ = sessionId_;
+      result.gateId_ = gateId_;
       result.ip_ = ip_;
-      if (((from_bitField0_ & 0x00000080) != 0)) {
-        to_bitField0_ |= 0x00000080;
-      }
       result.version_ = version_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -932,35 +771,31 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(info.xiaomo.server.shared.protocol.hall.login.LoginRequest other) {
       if (other == info.xiaomo.server.shared.protocol.hall.login.LoginRequest.getDefaultInstance()) return this;
-      if (other.hasMid()) {
-        setMid(other.getMid());
+      if (other.msgId_ != 0) {
+        setMsgIdValue(other.getMsgIdValue());
       }
-      if (other.hasAccount()) {
-        bitField0_ |= 0x00000002;
+      if (!other.getAccount().isEmpty()) {
         account_ = other.account_;
         onChanged();
       }
-      if (other.hasPassword()) {
-        bitField0_ |= 0x00000004;
+      if (!other.getPassword().isEmpty()) {
         password_ = other.password_;
         onChanged();
       }
-      if (other.hasLoginType()) {
-        setLoginType(other.getLoginType());
+      if (other.loginType_ != 0) {
+        setLoginTypeValue(other.getLoginTypeValue());
       }
-      if (other.hasSessionId()) {
+      if (other.getSessionId() != 0L) {
         setSessionId(other.getSessionId());
       }
-      if (other.hasGateId()) {
+      if (other.getGateId() != 0) {
         setGateId(other.getGateId());
       }
-      if (other.hasIp()) {
-        bitField0_ |= 0x00000040;
+      if (!other.getIp().isEmpty()) {
         ip_ = other.ip_;
         onChanged();
       }
-      if (other.hasVersion()) {
-        bitField0_ |= 0x00000080;
+      if (!other.getVersion().isEmpty()) {
         version_ = other.version_;
         onChanged();
       }
@@ -992,49 +827,31 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    private int bitField0_;
 
-    private int mid_ = 10001;
+    private int msgId_ = 0;
     /**
      * <pre>
      *消息id
      * </pre>
      *
-     * <code>optional .MID mid = 1 [default = LoginReq];</code>
-     * @return Whether the mid field is set.
+     * <code>.MsgId msgId = 1;</code>
+     * @return The enum numeric value on the wire for msgId.
      */
-    @java.lang.Override public boolean hasMid() {
-      return ((bitField0_ & 0x00000001) != 0);
+    @java.lang.Override public int getMsgIdValue() {
+      return msgId_;
     }
     /**
      * <pre>
      *消息id
      * </pre>
      *
-     * <code>optional .MID mid = 1 [default = LoginReq];</code>
-     * @return The mid.
-     */
-    @java.lang.Override
-    public info.xiaomo.server.shared.protocol.Mid.MID getMid() {
-      @SuppressWarnings("deprecation")
-      info.xiaomo.server.shared.protocol.Mid.MID result = info.xiaomo.server.shared.protocol.Mid.MID.valueOf(mid_);
-      return result == null ? info.xiaomo.server.shared.protocol.Mid.MID.LoginReq : result;
-    }
-    /**
-     * <pre>
-     *消息id
-     * </pre>
-     *
-     * <code>optional .MID mid = 1 [default = LoginReq];</code>
-     * @param value The mid to set.
+     * <code>.MsgId msgId = 1;</code>
+     * @param value The enum numeric value on the wire for msgId to set.
      * @return This builder for chaining.
      */
-    public Builder setMid(info.xiaomo.server.shared.protocol.Mid.MID value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000001;
-      mid_ = value.getNumber();
+    public Builder setMsgIdValue(int value) {
+      
+      msgId_ = value;
       onChanged();
       return this;
     }
@@ -1043,12 +860,44 @@ private static final long serialVersionUID = 0L;
      *消息id
      * </pre>
      *
-     * <code>optional .MID mid = 1 [default = LoginReq];</code>
+     * <code>.MsgId msgId = 1;</code>
+     * @return The msgId.
+     */
+    @java.lang.Override
+    public info.xiaomo.server.shared.protocol.msg.MsgId getMsgId() {
+      @SuppressWarnings("deprecation")
+      info.xiaomo.server.shared.protocol.msg.MsgId result = info.xiaomo.server.shared.protocol.msg.MsgId.valueOf(msgId_);
+      return result == null ? info.xiaomo.server.shared.protocol.msg.MsgId.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     *消息id
+     * </pre>
+     *
+     * <code>.MsgId msgId = 1;</code>
+     * @param value The msgId to set.
      * @return This builder for chaining.
      */
-    public Builder clearMid() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      mid_ = 10001;
+    public Builder setMsgId(info.xiaomo.server.shared.protocol.msg.MsgId value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      msgId_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *消息id
+     * </pre>
+     *
+     * <code>.MsgId msgId = 1;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearMsgId() {
+      
+      msgId_ = 0;
       onChanged();
       return this;
     }
@@ -1059,18 +908,7 @@ private static final long serialVersionUID = 0L;
      *账号
      * </pre>
      *
-     * <code>optional string account = 2;</code>
-     * @return Whether the account field is set.
-     */
-    public boolean hasAccount() {
-      return ((bitField0_ & 0x00000002) != 0);
-    }
-    /**
-     * <pre>
-     *账号
-     * </pre>
-     *
-     * <code>optional string account = 2;</code>
+     * <code>string account = 2;</code>
      * @return The account.
      */
     public java.lang.String getAccount() {
@@ -1079,9 +917,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          account_ = s;
-        }
+        account_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1092,7 +928,7 @@ private static final long serialVersionUID = 0L;
      *账号
      * </pre>
      *
-     * <code>optional string account = 2;</code>
+     * <code>string account = 2;</code>
      * @return The bytes for account.
      */
     public com.google.protobuf.ByteString
@@ -1113,7 +949,7 @@ private static final long serialVersionUID = 0L;
      *账号
      * </pre>
      *
-     * <code>optional string account = 2;</code>
+     * <code>string account = 2;</code>
      * @param value The account to set.
      * @return This builder for chaining.
      */
@@ -1122,7 +958,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  
       account_ = value;
       onChanged();
       return this;
@@ -1132,11 +968,11 @@ private static final long serialVersionUID = 0L;
      *账号
      * </pre>
      *
-     * <code>optional string account = 2;</code>
+     * <code>string account = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearAccount() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      
       account_ = getDefaultInstance().getAccount();
       onChanged();
       return this;
@@ -1146,7 +982,7 @@ private static final long serialVersionUID = 0L;
      *账号
      * </pre>
      *
-     * <code>optional string account = 2;</code>
+     * <code>string account = 2;</code>
      * @param value The bytes for account to set.
      * @return This builder for chaining.
      */
@@ -1155,7 +991,8 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  checkByteStringIsUtf8(value);
+      
       account_ = value;
       onChanged();
       return this;
@@ -1167,18 +1004,7 @@ private static final long serialVersionUID = 0L;
      *密码
      * </pre>
      *
-     * <code>optional string password = 3;</code>
-     * @return Whether the password field is set.
-     */
-    public boolean hasPassword() {
-      return ((bitField0_ & 0x00000004) != 0);
-    }
-    /**
-     * <pre>
-     *密码
-     * </pre>
-     *
-     * <code>optional string password = 3;</code>
+     * <code>string password = 3;</code>
      * @return The password.
      */
     public java.lang.String getPassword() {
@@ -1187,9 +1013,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          password_ = s;
-        }
+        password_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1200,7 +1024,7 @@ private static final long serialVersionUID = 0L;
      *密码
      * </pre>
      *
-     * <code>optional string password = 3;</code>
+     * <code>string password = 3;</code>
      * @return The bytes for password.
      */
     public com.google.protobuf.ByteString
@@ -1221,7 +1045,7 @@ private static final long serialVersionUID = 0L;
      *密码
      * </pre>
      *
-     * <code>optional string password = 3;</code>
+     * <code>string password = 3;</code>
      * @param value The password to set.
      * @return This builder for chaining.
      */
@@ -1230,7 +1054,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  
       password_ = value;
       onChanged();
       return this;
@@ -1240,11 +1064,11 @@ private static final long serialVersionUID = 0L;
      *密码
      * </pre>
      *
-     * <code>optional string password = 3;</code>
+     * <code>string password = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearPassword() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      
       password_ = getDefaultInstance().getPassword();
       onChanged();
       return this;
@@ -1254,7 +1078,7 @@ private static final long serialVersionUID = 0L;
      *密码
      * </pre>
      *
-     * <code>optional string password = 3;</code>
+     * <code>string password = 3;</code>
      * @param value The bytes for password to set.
      * @return This builder for chaining.
      */
@@ -1263,44 +1087,60 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  checkByteStringIsUtf8(value);
+      
       password_ = value;
       onChanged();
       return this;
     }
 
-    private int loginType_ = 1;
+    private int loginType_ = 0;
     /**
      * <pre>
-     *登录类型 
+     *登录类型
      * </pre>
      *
-     * <code>optional .LoginType loginType = 4;</code>
-     * @return Whether the loginType field is set.
+     * <code>.LoginType loginType = 4;</code>
+     * @return The enum numeric value on the wire for loginType.
      */
-    @java.lang.Override public boolean hasLoginType() {
-      return ((bitField0_ & 0x00000008) != 0);
+    @java.lang.Override public int getLoginTypeValue() {
+      return loginType_;
     }
     /**
      * <pre>
-     *登录类型 
+     *登录类型
      * </pre>
      *
-     * <code>optional .LoginType loginType = 4;</code>
+     * <code>.LoginType loginType = 4;</code>
+     * @param value The enum numeric value on the wire for loginType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLoginTypeValue(int value) {
+      
+      loginType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *登录类型
+     * </pre>
+     *
+     * <code>.LoginType loginType = 4;</code>
      * @return The loginType.
      */
     @java.lang.Override
     public info.xiaomo.server.shared.protocol.hall.login.LoginType getLoginType() {
       @SuppressWarnings("deprecation")
       info.xiaomo.server.shared.protocol.hall.login.LoginType result = info.xiaomo.server.shared.protocol.hall.login.LoginType.valueOf(loginType_);
-      return result == null ? info.xiaomo.server.shared.protocol.hall.login.LoginType.ACCOUNT : result;
+      return result == null ? info.xiaomo.server.shared.protocol.hall.login.LoginType.UNRECOGNIZED : result;
     }
     /**
      * <pre>
-     *登录类型 
+     *登录类型
      * </pre>
      *
-     * <code>optional .LoginType loginType = 4;</code>
+     * <code>.LoginType loginType = 4;</code>
      * @param value The loginType to set.
      * @return This builder for chaining.
      */
@@ -1308,22 +1148,22 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
+      
       loginType_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
      * <pre>
-     *登录类型 
+     *登录类型
      * </pre>
      *
-     * <code>optional .LoginType loginType = 4;</code>
+     * <code>.LoginType loginType = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearLoginType() {
-      bitField0_ = (bitField0_ & ~0x00000008);
-      loginType_ = 1;
+      
+      loginType_ = 0;
       onChanged();
       return this;
     }
@@ -1334,19 +1174,7 @@ private static final long serialVersionUID = 0L;
      *会话ID（服务器内部使用）
      * </pre>
      *
-     * <code>optional int64 sessionId = 5;</code>
-     * @return Whether the sessionId field is set.
-     */
-    @java.lang.Override
-    public boolean hasSessionId() {
-      return ((bitField0_ & 0x00000010) != 0);
-    }
-    /**
-     * <pre>
-     *会话ID（服务器内部使用）
-     * </pre>
-     *
-     * <code>optional int64 sessionId = 5;</code>
+     * <code>int64 sessionId = 5;</code>
      * @return The sessionId.
      */
     @java.lang.Override
@@ -1358,12 +1186,12 @@ private static final long serialVersionUID = 0L;
      *会话ID（服务器内部使用）
      * </pre>
      *
-     * <code>optional int64 sessionId = 5;</code>
+     * <code>int64 sessionId = 5;</code>
      * @param value The sessionId to set.
      * @return This builder for chaining.
      */
     public Builder setSessionId(long value) {
-      bitField0_ |= 0x00000010;
+      
       sessionId_ = value;
       onChanged();
       return this;
@@ -1373,11 +1201,11 @@ private static final long serialVersionUID = 0L;
      *会话ID（服务器内部使用）
      * </pre>
      *
-     * <code>optional int64 sessionId = 5;</code>
+     * <code>int64 sessionId = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearSessionId() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      
       sessionId_ = 0L;
       onChanged();
       return this;
@@ -1389,19 +1217,7 @@ private static final long serialVersionUID = 0L;
      *网关ID（服务器内部使用）
      * </pre>
      *
-     * <code>optional int32 gateId = 6;</code>
-     * @return Whether the gateId field is set.
-     */
-    @java.lang.Override
-    public boolean hasGateId() {
-      return ((bitField0_ & 0x00000020) != 0);
-    }
-    /**
-     * <pre>
-     *网关ID（服务器内部使用）
-     * </pre>
-     *
-     * <code>optional int32 gateId = 6;</code>
+     * <code>int32 gateId = 6;</code>
      * @return The gateId.
      */
     @java.lang.Override
@@ -1413,12 +1229,12 @@ private static final long serialVersionUID = 0L;
      *网关ID（服务器内部使用）
      * </pre>
      *
-     * <code>optional int32 gateId = 6;</code>
+     * <code>int32 gateId = 6;</code>
      * @param value The gateId to set.
      * @return This builder for chaining.
      */
     public Builder setGateId(int value) {
-      bitField0_ |= 0x00000020;
+      
       gateId_ = value;
       onChanged();
       return this;
@@ -1428,11 +1244,11 @@ private static final long serialVersionUID = 0L;
      *网关ID（服务器内部使用）
      * </pre>
      *
-     * <code>optional int32 gateId = 6;</code>
+     * <code>int32 gateId = 6;</code>
      * @return This builder for chaining.
      */
     public Builder clearGateId() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      
       gateId_ = 0;
       onChanged();
       return this;
@@ -1444,18 +1260,7 @@ private static final long serialVersionUID = 0L;
      *IP地址（服务器内部使用）
      * </pre>
      *
-     * <code>optional string ip = 7;</code>
-     * @return Whether the ip field is set.
-     */
-    public boolean hasIp() {
-      return ((bitField0_ & 0x00000040) != 0);
-    }
-    /**
-     * <pre>
-     *IP地址（服务器内部使用）
-     * </pre>
-     *
-     * <code>optional string ip = 7;</code>
+     * <code>string ip = 7;</code>
      * @return The ip.
      */
     public java.lang.String getIp() {
@@ -1464,9 +1269,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          ip_ = s;
-        }
+        ip_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1477,7 +1280,7 @@ private static final long serialVersionUID = 0L;
      *IP地址（服务器内部使用）
      * </pre>
      *
-     * <code>optional string ip = 7;</code>
+     * <code>string ip = 7;</code>
      * @return The bytes for ip.
      */
     public com.google.protobuf.ByteString
@@ -1498,7 +1301,7 @@ private static final long serialVersionUID = 0L;
      *IP地址（服务器内部使用）
      * </pre>
      *
-     * <code>optional string ip = 7;</code>
+     * <code>string ip = 7;</code>
      * @param value The ip to set.
      * @return This builder for chaining.
      */
@@ -1507,7 +1310,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000040;
+  
       ip_ = value;
       onChanged();
       return this;
@@ -1517,11 +1320,11 @@ private static final long serialVersionUID = 0L;
      *IP地址（服务器内部使用）
      * </pre>
      *
-     * <code>optional string ip = 7;</code>
+     * <code>string ip = 7;</code>
      * @return This builder for chaining.
      */
     public Builder clearIp() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      
       ip_ = getDefaultInstance().getIp();
       onChanged();
       return this;
@@ -1531,7 +1334,7 @@ private static final long serialVersionUID = 0L;
      *IP地址（服务器内部使用）
      * </pre>
      *
-     * <code>optional string ip = 7;</code>
+     * <code>string ip = 7;</code>
      * @param value The bytes for ip to set.
      * @return This builder for chaining.
      */
@@ -1540,7 +1343,8 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000040;
+  checkByteStringIsUtf8(value);
+      
       ip_ = value;
       onChanged();
       return this;
@@ -1552,18 +1356,7 @@ private static final long serialVersionUID = 0L;
      *版本号
      * </pre>
      *
-     * <code>optional string version = 8;</code>
-     * @return Whether the version field is set.
-     */
-    public boolean hasVersion() {
-      return ((bitField0_ & 0x00000080) != 0);
-    }
-    /**
-     * <pre>
-     *版本号
-     * </pre>
-     *
-     * <code>optional string version = 8;</code>
+     * <code>string version = 8;</code>
      * @return The version.
      */
     public java.lang.String getVersion() {
@@ -1572,9 +1365,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          version_ = s;
-        }
+        version_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1585,7 +1376,7 @@ private static final long serialVersionUID = 0L;
      *版本号
      * </pre>
      *
-     * <code>optional string version = 8;</code>
+     * <code>string version = 8;</code>
      * @return The bytes for version.
      */
     public com.google.protobuf.ByteString
@@ -1606,7 +1397,7 @@ private static final long serialVersionUID = 0L;
      *版本号
      * </pre>
      *
-     * <code>optional string version = 8;</code>
+     * <code>string version = 8;</code>
      * @param value The version to set.
      * @return This builder for chaining.
      */
@@ -1615,7 +1406,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000080;
+  
       version_ = value;
       onChanged();
       return this;
@@ -1625,11 +1416,11 @@ private static final long serialVersionUID = 0L;
      *版本号
      * </pre>
      *
-     * <code>optional string version = 8;</code>
+     * <code>string version = 8;</code>
      * @return This builder for chaining.
      */
     public Builder clearVersion() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      
       version_ = getDefaultInstance().getVersion();
       onChanged();
       return this;
@@ -1639,7 +1430,7 @@ private static final long serialVersionUID = 0L;
      *版本号
      * </pre>
      *
-     * <code>optional string version = 8;</code>
+     * <code>string version = 8;</code>
      * @param value The bytes for version to set.
      * @return This builder for chaining.
      */
@@ -1648,7 +1439,8 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000080;
+  checkByteStringIsUtf8(value);
+      
       version_ = value;
       onChanged();
       return this;
@@ -1679,7 +1471,7 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  @java.lang.Deprecated public static final com.google.protobuf.Parser<LoginRequest>
+  private static final com.google.protobuf.Parser<LoginRequest>
       PARSER = new com.google.protobuf.AbstractParser<LoginRequest>() {
     @java.lang.Override
     public LoginRequest parsePartialFrom(

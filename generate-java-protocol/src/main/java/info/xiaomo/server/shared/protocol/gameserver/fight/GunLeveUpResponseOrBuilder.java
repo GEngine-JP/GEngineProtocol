@@ -12,27 +12,22 @@ public interface GunLeveUpResponseOrBuilder extends
    *消息id
    * </pre>
    *
-   * <code>optional .MID mid = 1 [default = GunLeveUpRes];</code>
-   * @return Whether the mid field is set.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The enum numeric value on the wire for msgId.
    */
-  boolean hasMid();
+  int getMsgIdValue();
   /**
    * <pre>
    *消息id
    * </pre>
    *
-   * <code>optional .MID mid = 1 [default = GunLeveUpRes];</code>
-   * @return The mid.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The msgId.
    */
-  info.xiaomo.server.shared.protocol.Mid.MID getMid();
+  info.xiaomo.server.shared.protocol.msg.MsgId getMsgId();
 
   /**
-   * <code>optional int32 result = 2;</code>
-   * @return Whether the result field is set.
-   */
-  boolean hasResult();
-  /**
-   * <code>optional int32 result = 2;</code>
+   * <code>int32 result = 2;</code>
    * @return The result.
    */
   int getResult();

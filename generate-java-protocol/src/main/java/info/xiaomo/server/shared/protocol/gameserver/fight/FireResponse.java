@@ -20,7 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private FireResponse() {
-    mid_ = 20016;
+    msgId_ = 0;
   }
 
   @java.lang.Override
@@ -43,7 +43,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -56,39 +55,33 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
             int rawValue = input.readEnum();
-              @SuppressWarnings("deprecation")
-            info.xiaomo.server.shared.protocol.Mid.MID value = info.xiaomo.server.shared.protocol.Mid.MID.valueOf(rawValue);
-            if (value == null) {
-              unknownFields.mergeVarintField(1, rawValue);
-            } else {
-              bitField0_ |= 0x00000001;
-              mid_ = rawValue;
-            }
+
+            msgId_ = rawValue;
+            break;
+          }
+          case 16: {
+
+            targetFishId_ = input.readInt64();
             break;
           }
           case 24: {
-            bitField0_ |= 0x00000002;
+
             rid_ = input.readInt64();
             break;
           }
           case 32: {
-            bitField0_ |= 0x00000004;
+
             gold_ = input.readInt32();
             break;
           }
           case 45: {
-            bitField0_ |= 0x00000008;
+
             angleX_ = input.readFloat();
             break;
           }
           case 53: {
-            bitField0_ |= 0x00000010;
+
             angleY_ = input.readFloat();
-            break;
-          }
-          case 56: {
-            bitField0_ |= 0x00000020;
-            targetFishId_ = input.readInt64();
             break;
           }
           default: {
@@ -123,32 +116,46 @@ private static final long serialVersionUID = 0L;
             info.xiaomo.server.shared.protocol.gameserver.fight.FireResponse.class, info.xiaomo.server.shared.protocol.gameserver.fight.FireResponse.Builder.class);
   }
 
-  private int bitField0_;
-  public static final int MID_FIELD_NUMBER = 1;
-  private int mid_;
+  public static final int MSGID_FIELD_NUMBER = 1;
+  private int msgId_;
   /**
    * <pre>
    *消息id
    * </pre>
    *
-   * <code>optional .MID mid = 1 [default = FireRes];</code>
-   * @return Whether the mid field is set.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The enum numeric value on the wire for msgId.
    */
-  @java.lang.Override public boolean hasMid() {
-    return ((bitField0_ & 0x00000001) != 0);
+  @java.lang.Override public int getMsgIdValue() {
+    return msgId_;
   }
   /**
    * <pre>
    *消息id
    * </pre>
    *
-   * <code>optional .MID mid = 1 [default = FireRes];</code>
-   * @return The mid.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The msgId.
    */
-  @java.lang.Override public info.xiaomo.server.shared.protocol.Mid.MID getMid() {
+  @java.lang.Override public info.xiaomo.server.shared.protocol.msg.MsgId getMsgId() {
     @SuppressWarnings("deprecation")
-    info.xiaomo.server.shared.protocol.Mid.MID result = info.xiaomo.server.shared.protocol.Mid.MID.valueOf(mid_);
-    return result == null ? info.xiaomo.server.shared.protocol.Mid.MID.FireRes : result;
+    info.xiaomo.server.shared.protocol.msg.MsgId result = info.xiaomo.server.shared.protocol.msg.MsgId.valueOf(msgId_);
+    return result == null ? info.xiaomo.server.shared.protocol.msg.MsgId.UNRECOGNIZED : result;
+  }
+
+  public static final int TARGETFISHID_FIELD_NUMBER = 2;
+  private long targetFishId_;
+  /**
+   * <pre>
+   *目标鱼
+   * </pre>
+   *
+   * <code>int64 targetFishId = 2;</code>
+   * @return The targetFishId.
+   */
+  @java.lang.Override
+  public long getTargetFishId() {
+    return targetFishId_;
   }
 
   public static final int RID_FIELD_NUMBER = 3;
@@ -158,19 +165,7 @@ private static final long serialVersionUID = 0L;
    *开炮的玩家ID
    * </pre>
    *
-   * <code>optional int64 rid = 3;</code>
-   * @return Whether the rid field is set.
-   */
-  @java.lang.Override
-  public boolean hasRid() {
-    return ((bitField0_ & 0x00000002) != 0);
-  }
-  /**
-   * <pre>
-   *开炮的玩家ID
-   * </pre>
-   *
-   * <code>optional int64 rid = 3;</code>
+   * <code>int64 rid = 3;</code>
    * @return The rid.
    */
   @java.lang.Override
@@ -185,19 +180,7 @@ private static final long serialVersionUID = 0L;
    *开炮金币
    * </pre>
    *
-   * <code>optional int32 gold = 4;</code>
-   * @return Whether the gold field is set.
-   */
-  @java.lang.Override
-  public boolean hasGold() {
-    return ((bitField0_ & 0x00000004) != 0);
-  }
-  /**
-   * <pre>
-   *开炮金币
-   * </pre>
-   *
-   * <code>optional int32 gold = 4;</code>
+   * <code>int32 gold = 4;</code>
    * @return The gold.
    */
   @java.lang.Override
@@ -212,19 +195,7 @@ private static final long serialVersionUID = 0L;
    *角度
    * </pre>
    *
-   * <code>optional float angleX = 5;</code>
-   * @return Whether the angleX field is set.
-   */
-  @java.lang.Override
-  public boolean hasAngleX() {
-    return ((bitField0_ & 0x00000008) != 0);
-  }
-  /**
-   * <pre>
-   *角度
-   * </pre>
-   *
-   * <code>optional float angleX = 5;</code>
+   * <code>float angleX = 5;</code>
    * @return The angleX.
    */
   @java.lang.Override
@@ -239,51 +210,12 @@ private static final long serialVersionUID = 0L;
    *角度
    * </pre>
    *
-   * <code>optional float angleY = 6;</code>
-   * @return Whether the angleY field is set.
-   */
-  @java.lang.Override
-  public boolean hasAngleY() {
-    return ((bitField0_ & 0x00000010) != 0);
-  }
-  /**
-   * <pre>
-   *角度
-   * </pre>
-   *
-   * <code>optional float angleY = 6;</code>
+   * <code>float angleY = 6;</code>
    * @return The angleY.
    */
   @java.lang.Override
   public float getAngleY() {
     return angleY_;
-  }
-
-  public static final int TARGETFISHID_FIELD_NUMBER = 7;
-  private long targetFishId_;
-  /**
-   * <pre>
-   *目标鱼
-   * </pre>
-   *
-   * <code>optional int64 targetFishId = 7;</code>
-   * @return Whether the targetFishId field is set.
-   */
-  @java.lang.Override
-  public boolean hasTargetFishId() {
-    return ((bitField0_ & 0x00000020) != 0);
-  }
-  /**
-   * <pre>
-   *目标鱼
-   * </pre>
-   *
-   * <code>optional int64 targetFishId = 7;</code>
-   * @return The targetFishId.
-   */
-  @java.lang.Override
-  public long getTargetFishId() {
-    return targetFishId_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -300,23 +232,23 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeEnum(1, mid_);
+    if (msgId_ != info.xiaomo.server.shared.protocol.msg.MsgId.Base.getNumber()) {
+      output.writeEnum(1, msgId_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (targetFishId_ != 0L) {
+      output.writeInt64(2, targetFishId_);
+    }
+    if (rid_ != 0L) {
       output.writeInt64(3, rid_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (gold_ != 0) {
       output.writeInt32(4, gold_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (angleX_ != 0F) {
       output.writeFloat(5, angleX_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (angleY_ != 0F) {
       output.writeFloat(6, angleY_);
-    }
-    if (((bitField0_ & 0x00000020) != 0)) {
-      output.writeInt64(7, targetFishId_);
     }
     unknownFields.writeTo(output);
   }
@@ -327,29 +259,29 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (msgId_ != info.xiaomo.server.shared.protocol.msg.MsgId.Base.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(1, mid_);
+        .computeEnumSize(1, msgId_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (targetFishId_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(2, targetFishId_);
+    }
+    if (rid_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(3, rid_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (gold_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(4, gold_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (angleX_ != 0F) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(5, angleX_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (angleY_ != 0F) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(6, angleY_);
-    }
-    if (((bitField0_ & 0x00000020) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(7, targetFishId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -366,37 +298,19 @@ private static final long serialVersionUID = 0L;
     }
     info.xiaomo.server.shared.protocol.gameserver.fight.FireResponse other = (info.xiaomo.server.shared.protocol.gameserver.fight.FireResponse) obj;
 
-    if (hasMid() != other.hasMid()) return false;
-    if (hasMid()) {
-      if (mid_ != other.mid_) return false;
-    }
-    if (hasRid() != other.hasRid()) return false;
-    if (hasRid()) {
-      if (getRid()
-          != other.getRid()) return false;
-    }
-    if (hasGold() != other.hasGold()) return false;
-    if (hasGold()) {
-      if (getGold()
-          != other.getGold()) return false;
-    }
-    if (hasAngleX() != other.hasAngleX()) return false;
-    if (hasAngleX()) {
-      if (java.lang.Float.floatToIntBits(getAngleX())
-          != java.lang.Float.floatToIntBits(
-              other.getAngleX())) return false;
-    }
-    if (hasAngleY() != other.hasAngleY()) return false;
-    if (hasAngleY()) {
-      if (java.lang.Float.floatToIntBits(getAngleY())
-          != java.lang.Float.floatToIntBits(
-              other.getAngleY())) return false;
-    }
-    if (hasTargetFishId() != other.hasTargetFishId()) return false;
-    if (hasTargetFishId()) {
-      if (getTargetFishId()
-          != other.getTargetFishId()) return false;
-    }
+    if (msgId_ != other.msgId_) return false;
+    if (getTargetFishId()
+        != other.getTargetFishId()) return false;
+    if (getRid()
+        != other.getRid()) return false;
+    if (getGold()
+        != other.getGold()) return false;
+    if (java.lang.Float.floatToIntBits(getAngleX())
+        != java.lang.Float.floatToIntBits(
+            other.getAngleX())) return false;
+    if (java.lang.Float.floatToIntBits(getAngleY())
+        != java.lang.Float.floatToIntBits(
+            other.getAngleY())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -408,34 +322,22 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasMid()) {
-      hash = (37 * hash) + MID_FIELD_NUMBER;
-      hash = (53 * hash) + mid_;
-    }
-    if (hasRid()) {
-      hash = (37 * hash) + RID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getRid());
-    }
-    if (hasGold()) {
-      hash = (37 * hash) + GOLD_FIELD_NUMBER;
-      hash = (53 * hash) + getGold();
-    }
-    if (hasAngleX()) {
-      hash = (37 * hash) + ANGLEX_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getAngleX());
-    }
-    if (hasAngleY()) {
-      hash = (37 * hash) + ANGLEY_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getAngleY());
-    }
-    if (hasTargetFishId()) {
-      hash = (37 * hash) + TARGETFISHID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getTargetFishId());
-    }
+    hash = (37 * hash) + MSGID_FIELD_NUMBER;
+    hash = (53 * hash) + msgId_;
+    hash = (37 * hash) + TARGETFISHID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getTargetFishId());
+    hash = (37 * hash) + RID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getRid());
+    hash = (37 * hash) + GOLD_FIELD_NUMBER;
+    hash = (53 * hash) + getGold();
+    hash = (37 * hash) + ANGLEX_FIELD_NUMBER;
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(
+        getAngleX());
+    hash = (37 * hash) + ANGLEY_FIELD_NUMBER;
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(
+        getAngleY());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -573,18 +475,18 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      mid_ = 20016;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      rid_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000002);
-      gold_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000004);
-      angleX_ = 0F;
-      bitField0_ = (bitField0_ & ~0x00000008);
-      angleY_ = 0F;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      msgId_ = 0;
+
       targetFishId_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000020);
+
+      rid_ = 0L;
+
+      gold_ = 0;
+
+      angleX_ = 0F;
+
+      angleY_ = 0F;
+
       return this;
     }
 
@@ -611,33 +513,12 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public info.xiaomo.server.shared.protocol.gameserver.fight.FireResponse buildPartial() {
       info.xiaomo.server.shared.protocol.gameserver.fight.FireResponse result = new info.xiaomo.server.shared.protocol.gameserver.fight.FireResponse(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
-      }
-      result.mid_ = mid_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.rid_ = rid_;
-        to_bitField0_ |= 0x00000002;
-      }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.gold_ = gold_;
-        to_bitField0_ |= 0x00000004;
-      }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.angleX_ = angleX_;
-        to_bitField0_ |= 0x00000008;
-      }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.angleY_ = angleY_;
-        to_bitField0_ |= 0x00000010;
-      }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.targetFishId_ = targetFishId_;
-        to_bitField0_ |= 0x00000020;
-      }
-      result.bitField0_ = to_bitField0_;
+      result.msgId_ = msgId_;
+      result.targetFishId_ = targetFishId_;
+      result.rid_ = rid_;
+      result.gold_ = gold_;
+      result.angleX_ = angleX_;
+      result.angleY_ = angleY_;
       onBuilt();
       return result;
     }
@@ -686,23 +567,23 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(info.xiaomo.server.shared.protocol.gameserver.fight.FireResponse other) {
       if (other == info.xiaomo.server.shared.protocol.gameserver.fight.FireResponse.getDefaultInstance()) return this;
-      if (other.hasMid()) {
-        setMid(other.getMid());
+      if (other.msgId_ != 0) {
+        setMsgIdValue(other.getMsgIdValue());
       }
-      if (other.hasRid()) {
+      if (other.getTargetFishId() != 0L) {
+        setTargetFishId(other.getTargetFishId());
+      }
+      if (other.getRid() != 0L) {
         setRid(other.getRid());
       }
-      if (other.hasGold()) {
+      if (other.getGold() != 0) {
         setGold(other.getGold());
       }
-      if (other.hasAngleX()) {
+      if (other.getAngleX() != 0F) {
         setAngleX(other.getAngleX());
       }
-      if (other.hasAngleY()) {
+      if (other.getAngleY() != 0F) {
         setAngleY(other.getAngleY());
-      }
-      if (other.hasTargetFishId()) {
-        setTargetFishId(other.getTargetFishId());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -732,49 +613,63 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    private int bitField0_;
 
-    private int mid_ = 20016;
+    private int msgId_ = 0;
     /**
      * <pre>
      *消息id
      * </pre>
      *
-     * <code>optional .MID mid = 1 [default = FireRes];</code>
-     * @return Whether the mid field is set.
+     * <code>.MsgId msgId = 1;</code>
+     * @return The enum numeric value on the wire for msgId.
      */
-    @java.lang.Override public boolean hasMid() {
-      return ((bitField0_ & 0x00000001) != 0);
+    @java.lang.Override public int getMsgIdValue() {
+      return msgId_;
     }
     /**
      * <pre>
      *消息id
      * </pre>
      *
-     * <code>optional .MID mid = 1 [default = FireRes];</code>
-     * @return The mid.
-     */
-    @java.lang.Override
-    public info.xiaomo.server.shared.protocol.Mid.MID getMid() {
-      @SuppressWarnings("deprecation")
-      info.xiaomo.server.shared.protocol.Mid.MID result = info.xiaomo.server.shared.protocol.Mid.MID.valueOf(mid_);
-      return result == null ? info.xiaomo.server.shared.protocol.Mid.MID.FireRes : result;
-    }
-    /**
-     * <pre>
-     *消息id
-     * </pre>
-     *
-     * <code>optional .MID mid = 1 [default = FireRes];</code>
-     * @param value The mid to set.
+     * <code>.MsgId msgId = 1;</code>
+     * @param value The enum numeric value on the wire for msgId to set.
      * @return This builder for chaining.
      */
-    public Builder setMid(info.xiaomo.server.shared.protocol.Mid.MID value) {
+    public Builder setMsgIdValue(int value) {
+      
+      msgId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *消息id
+     * </pre>
+     *
+     * <code>.MsgId msgId = 1;</code>
+     * @return The msgId.
+     */
+    @java.lang.Override
+    public info.xiaomo.server.shared.protocol.msg.MsgId getMsgId() {
+      @SuppressWarnings("deprecation")
+      info.xiaomo.server.shared.protocol.msg.MsgId result = info.xiaomo.server.shared.protocol.msg.MsgId.valueOf(msgId_);
+      return result == null ? info.xiaomo.server.shared.protocol.msg.MsgId.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     *消息id
+     * </pre>
+     *
+     * <code>.MsgId msgId = 1;</code>
+     * @param value The msgId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMsgId(info.xiaomo.server.shared.protocol.msg.MsgId value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
-      mid_ = value.getNumber();
+      
+      msgId_ = value.getNumber();
       onChanged();
       return this;
     }
@@ -783,232 +678,12 @@ private static final long serialVersionUID = 0L;
      *消息id
      * </pre>
      *
-     * <code>optional .MID mid = 1 [default = FireRes];</code>
+     * <code>.MsgId msgId = 1;</code>
      * @return This builder for chaining.
      */
-    public Builder clearMid() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      mid_ = 20016;
-      onChanged();
-      return this;
-    }
-
-    private long rid_ ;
-    /**
-     * <pre>
-     *开炮的玩家ID
-     * </pre>
-     *
-     * <code>optional int64 rid = 3;</code>
-     * @return Whether the rid field is set.
-     */
-    @java.lang.Override
-    public boolean hasRid() {
-      return ((bitField0_ & 0x00000002) != 0);
-    }
-    /**
-     * <pre>
-     *开炮的玩家ID
-     * </pre>
-     *
-     * <code>optional int64 rid = 3;</code>
-     * @return The rid.
-     */
-    @java.lang.Override
-    public long getRid() {
-      return rid_;
-    }
-    /**
-     * <pre>
-     *开炮的玩家ID
-     * </pre>
-     *
-     * <code>optional int64 rid = 3;</code>
-     * @param value The rid to set.
-     * @return This builder for chaining.
-     */
-    public Builder setRid(long value) {
-      bitField0_ |= 0x00000002;
-      rid_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     *开炮的玩家ID
-     * </pre>
-     *
-     * <code>optional int64 rid = 3;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearRid() {
-      bitField0_ = (bitField0_ & ~0x00000002);
-      rid_ = 0L;
-      onChanged();
-      return this;
-    }
-
-    private int gold_ ;
-    /**
-     * <pre>
-     *开炮金币
-     * </pre>
-     *
-     * <code>optional int32 gold = 4;</code>
-     * @return Whether the gold field is set.
-     */
-    @java.lang.Override
-    public boolean hasGold() {
-      return ((bitField0_ & 0x00000004) != 0);
-    }
-    /**
-     * <pre>
-     *开炮金币
-     * </pre>
-     *
-     * <code>optional int32 gold = 4;</code>
-     * @return The gold.
-     */
-    @java.lang.Override
-    public int getGold() {
-      return gold_;
-    }
-    /**
-     * <pre>
-     *开炮金币
-     * </pre>
-     *
-     * <code>optional int32 gold = 4;</code>
-     * @param value The gold to set.
-     * @return This builder for chaining.
-     */
-    public Builder setGold(int value) {
-      bitField0_ |= 0x00000004;
-      gold_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     *开炮金币
-     * </pre>
-     *
-     * <code>optional int32 gold = 4;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearGold() {
-      bitField0_ = (bitField0_ & ~0x00000004);
-      gold_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private float angleX_ ;
-    /**
-     * <pre>
-     *角度
-     * </pre>
-     *
-     * <code>optional float angleX = 5;</code>
-     * @return Whether the angleX field is set.
-     */
-    @java.lang.Override
-    public boolean hasAngleX() {
-      return ((bitField0_ & 0x00000008) != 0);
-    }
-    /**
-     * <pre>
-     *角度
-     * </pre>
-     *
-     * <code>optional float angleX = 5;</code>
-     * @return The angleX.
-     */
-    @java.lang.Override
-    public float getAngleX() {
-      return angleX_;
-    }
-    /**
-     * <pre>
-     *角度
-     * </pre>
-     *
-     * <code>optional float angleX = 5;</code>
-     * @param value The angleX to set.
-     * @return This builder for chaining.
-     */
-    public Builder setAngleX(float value) {
-      bitField0_ |= 0x00000008;
-      angleX_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     *角度
-     * </pre>
-     *
-     * <code>optional float angleX = 5;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearAngleX() {
-      bitField0_ = (bitField0_ & ~0x00000008);
-      angleX_ = 0F;
-      onChanged();
-      return this;
-    }
-
-    private float angleY_ ;
-    /**
-     * <pre>
-     *角度
-     * </pre>
-     *
-     * <code>optional float angleY = 6;</code>
-     * @return Whether the angleY field is set.
-     */
-    @java.lang.Override
-    public boolean hasAngleY() {
-      return ((bitField0_ & 0x00000010) != 0);
-    }
-    /**
-     * <pre>
-     *角度
-     * </pre>
-     *
-     * <code>optional float angleY = 6;</code>
-     * @return The angleY.
-     */
-    @java.lang.Override
-    public float getAngleY() {
-      return angleY_;
-    }
-    /**
-     * <pre>
-     *角度
-     * </pre>
-     *
-     * <code>optional float angleY = 6;</code>
-     * @param value The angleY to set.
-     * @return This builder for chaining.
-     */
-    public Builder setAngleY(float value) {
-      bitField0_ |= 0x00000010;
-      angleY_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     *角度
-     * </pre>
-     *
-     * <code>optional float angleY = 6;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearAngleY() {
-      bitField0_ = (bitField0_ & ~0x00000010);
-      angleY_ = 0F;
+    public Builder clearMsgId() {
+      
+      msgId_ = 0;
       onChanged();
       return this;
     }
@@ -1019,19 +694,7 @@ private static final long serialVersionUID = 0L;
      *目标鱼
      * </pre>
      *
-     * <code>optional int64 targetFishId = 7;</code>
-     * @return Whether the targetFishId field is set.
-     */
-    @java.lang.Override
-    public boolean hasTargetFishId() {
-      return ((bitField0_ & 0x00000020) != 0);
-    }
-    /**
-     * <pre>
-     *目标鱼
-     * </pre>
-     *
-     * <code>optional int64 targetFishId = 7;</code>
+     * <code>int64 targetFishId = 2;</code>
      * @return The targetFishId.
      */
     @java.lang.Override
@@ -1043,12 +706,12 @@ private static final long serialVersionUID = 0L;
      *目标鱼
      * </pre>
      *
-     * <code>optional int64 targetFishId = 7;</code>
+     * <code>int64 targetFishId = 2;</code>
      * @param value The targetFishId to set.
      * @return This builder for chaining.
      */
     public Builder setTargetFishId(long value) {
-      bitField0_ |= 0x00000020;
+      
       targetFishId_ = value;
       onChanged();
       return this;
@@ -1058,12 +721,184 @@ private static final long serialVersionUID = 0L;
      *目标鱼
      * </pre>
      *
-     * <code>optional int64 targetFishId = 7;</code>
+     * <code>int64 targetFishId = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearTargetFishId() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      
       targetFishId_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long rid_ ;
+    /**
+     * <pre>
+     *开炮的玩家ID
+     * </pre>
+     *
+     * <code>int64 rid = 3;</code>
+     * @return The rid.
+     */
+    @java.lang.Override
+    public long getRid() {
+      return rid_;
+    }
+    /**
+     * <pre>
+     *开炮的玩家ID
+     * </pre>
+     *
+     * <code>int64 rid = 3;</code>
+     * @param value The rid to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRid(long value) {
+      
+      rid_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *开炮的玩家ID
+     * </pre>
+     *
+     * <code>int64 rid = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRid() {
+      
+      rid_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private int gold_ ;
+    /**
+     * <pre>
+     *开炮金币
+     * </pre>
+     *
+     * <code>int32 gold = 4;</code>
+     * @return The gold.
+     */
+    @java.lang.Override
+    public int getGold() {
+      return gold_;
+    }
+    /**
+     * <pre>
+     *开炮金币
+     * </pre>
+     *
+     * <code>int32 gold = 4;</code>
+     * @param value The gold to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGold(int value) {
+      
+      gold_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *开炮金币
+     * </pre>
+     *
+     * <code>int32 gold = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearGold() {
+      
+      gold_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private float angleX_ ;
+    /**
+     * <pre>
+     *角度
+     * </pre>
+     *
+     * <code>float angleX = 5;</code>
+     * @return The angleX.
+     */
+    @java.lang.Override
+    public float getAngleX() {
+      return angleX_;
+    }
+    /**
+     * <pre>
+     *角度
+     * </pre>
+     *
+     * <code>float angleX = 5;</code>
+     * @param value The angleX to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAngleX(float value) {
+      
+      angleX_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *角度
+     * </pre>
+     *
+     * <code>float angleX = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAngleX() {
+      
+      angleX_ = 0F;
+      onChanged();
+      return this;
+    }
+
+    private float angleY_ ;
+    /**
+     * <pre>
+     *角度
+     * </pre>
+     *
+     * <code>float angleY = 6;</code>
+     * @return The angleY.
+     */
+    @java.lang.Override
+    public float getAngleY() {
+      return angleY_;
+    }
+    /**
+     * <pre>
+     *角度
+     * </pre>
+     *
+     * <code>float angleY = 6;</code>
+     * @param value The angleY to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAngleY(float value) {
+      
+      angleY_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *角度
+     * </pre>
+     *
+     * <code>float angleY = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAngleY() {
+      
+      angleY_ = 0F;
       onChanged();
       return this;
     }
@@ -1093,7 +928,7 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  @java.lang.Deprecated public static final com.google.protobuf.Parser<FireResponse>
+  private static final com.google.protobuf.Parser<FireResponse>
       PARSER = new com.google.protobuf.AbstractParser<FireResponse>() {
     @java.lang.Override
     public FireResponse parsePartialFrom(

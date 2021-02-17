@@ -46,7 +46,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -58,72 +57,72 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            com.google.protobuf.ByteString bs = input.readBytes();
-            bitField0_ |= 0x00000001;
-            nick_ = bs;
+            java.lang.String s = input.readStringRequireUtf8();
+
+            nick_ = s;
             break;
           }
           case 18: {
-            com.google.protobuf.ByteString bs = input.readBytes();
-            bitField0_ |= 0x00000002;
-            icon_ = bs;
+            java.lang.String s = input.readStringRequireUtf8();
+
+            icon_ = s;
             break;
           }
           case 24: {
-            bitField0_ |= 0x00000004;
+
             level_ = input.readInt32();
             break;
           }
           case 32: {
-            bitField0_ |= 0x00000008;
+
             gold_ = input.readInt64();
             break;
           }
           case 42: {
-            com.google.protobuf.ByteString bs = input.readBytes();
-            bitField0_ |= 0x00000010;
-            sign_ = bs;
+            java.lang.String s = input.readStringRequireUtf8();
+
+            sign_ = s;
             break;
           }
           case 48: {
-            bitField0_ |= 0x00000020;
+
             popularity_ = input.readInt32();
             break;
           }
           case 56: {
-            bitField0_ |= 0x00000040;
+
             seatNo_ = input.readInt32();
             break;
           }
           case 64: {
-            bitField0_ |= 0x00000080;
+
             vip_ = input.readBool();
             break;
           }
           case 72: {
-            bitField0_ |= 0x00000100;
+
             diamond_ = input.readInt64();
             break;
           }
           case 80: {
-            bitField0_ |= 0x00000200;
+
             rid_ = input.readInt64();
             break;
           }
           case 88: {
-            bitField0_ |= 0x00000400;
+
             robotNo_ = input.readInt32();
             break;
           }
           case 96: {
-            bitField0_ |= 0x00000800;
+
             ownerId_ = input.readInt32();
             break;
           }
           case 106: {
-            com.google.protobuf.ByteString bs = input.readBytes();
-            bitField0_ |= 0x00001000;
-            sid_ = bs;
+            java.lang.String s = input.readStringRequireUtf8();
+
+            sid_ = s;
             break;
           }
           default: {
@@ -158,7 +157,6 @@ private static final long serialVersionUID = 0L;
             info.xiaomo.server.shared.protocol.gameserver.room.RoomRoleInfo.class, info.xiaomo.server.shared.protocol.gameserver.room.RoomRoleInfo.Builder.class);
   }
 
-  private int bitField0_;
   public static final int NICK_FIELD_NUMBER = 1;
   private volatile java.lang.Object nick_;
   /**
@@ -166,19 +164,7 @@ private static final long serialVersionUID = 0L;
    *昵称
    * </pre>
    *
-   * <code>required string nick = 1;</code>
-   * @return Whether the nick field is set.
-   */
-  @java.lang.Override
-  public boolean hasNick() {
-    return ((bitField0_ & 0x00000001) != 0);
-  }
-  /**
-   * <pre>
-   *昵称
-   * </pre>
-   *
-   * <code>required string nick = 1;</code>
+   * <code>string nick = 1;</code>
    * @return The nick.
    */
   @java.lang.Override
@@ -190,9 +176,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        nick_ = s;
-      }
+      nick_ = s;
       return s;
     }
   }
@@ -201,7 +185,7 @@ private static final long serialVersionUID = 0L;
    *昵称
    * </pre>
    *
-   * <code>required string nick = 1;</code>
+   * <code>string nick = 1;</code>
    * @return The bytes for nick.
    */
   @java.lang.Override
@@ -226,19 +210,7 @@ private static final long serialVersionUID = 0L;
    *头像
    * </pre>
    *
-   * <code>required string icon = 2;</code>
-   * @return Whether the icon field is set.
-   */
-  @java.lang.Override
-  public boolean hasIcon() {
-    return ((bitField0_ & 0x00000002) != 0);
-  }
-  /**
-   * <pre>
-   *头像
-   * </pre>
-   *
-   * <code>required string icon = 2;</code>
+   * <code>string icon = 2;</code>
    * @return The icon.
    */
   @java.lang.Override
@@ -250,9 +222,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        icon_ = s;
-      }
+      icon_ = s;
       return s;
     }
   }
@@ -261,7 +231,7 @@ private static final long serialVersionUID = 0L;
    *头像
    * </pre>
    *
-   * <code>required string icon = 2;</code>
+   * <code>string icon = 2;</code>
    * @return The bytes for icon.
    */
   @java.lang.Override
@@ -286,19 +256,7 @@ private static final long serialVersionUID = 0L;
    *等级
    * </pre>
    *
-   * <code>required int32 level = 3;</code>
-   * @return Whether the level field is set.
-   */
-  @java.lang.Override
-  public boolean hasLevel() {
-    return ((bitField0_ & 0x00000004) != 0);
-  }
-  /**
-   * <pre>
-   *等级
-   * </pre>
-   *
-   * <code>required int32 level = 3;</code>
+   * <code>int32 level = 3;</code>
    * @return The level.
    */
   @java.lang.Override
@@ -313,19 +271,7 @@ private static final long serialVersionUID = 0L;
    *金币
    * </pre>
    *
-   * <code>required int64 gold = 4;</code>
-   * @return Whether the gold field is set.
-   */
-  @java.lang.Override
-  public boolean hasGold() {
-    return ((bitField0_ & 0x00000008) != 0);
-  }
-  /**
-   * <pre>
-   *金币
-   * </pre>
-   *
-   * <code>required int64 gold = 4;</code>
+   * <code>int64 gold = 4;</code>
    * @return The gold.
    */
   @java.lang.Override
@@ -340,19 +286,7 @@ private static final long serialVersionUID = 0L;
    *签名、心情
    * </pre>
    *
-   * <code>optional string sign = 5;</code>
-   * @return Whether the sign field is set.
-   */
-  @java.lang.Override
-  public boolean hasSign() {
-    return ((bitField0_ & 0x00000010) != 0);
-  }
-  /**
-   * <pre>
-   *签名、心情
-   * </pre>
-   *
-   * <code>optional string sign = 5;</code>
+   * <code>string sign = 5;</code>
    * @return The sign.
    */
   @java.lang.Override
@@ -364,9 +298,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        sign_ = s;
-      }
+      sign_ = s;
       return s;
     }
   }
@@ -375,7 +307,7 @@ private static final long serialVersionUID = 0L;
    *签名、心情
    * </pre>
    *
-   * <code>optional string sign = 5;</code>
+   * <code>string sign = 5;</code>
    * @return The bytes for sign.
    */
   @java.lang.Override
@@ -400,19 +332,7 @@ private static final long serialVersionUID = 0L;
    *人气
    * </pre>
    *
-   * <code>optional int32 popularity = 6;</code>
-   * @return Whether the popularity field is set.
-   */
-  @java.lang.Override
-  public boolean hasPopularity() {
-    return ((bitField0_ & 0x00000020) != 0);
-  }
-  /**
-   * <pre>
-   *人气
-   * </pre>
-   *
-   * <code>optional int32 popularity = 6;</code>
+   * <code>int32 popularity = 6;</code>
    * @return The popularity.
    */
   @java.lang.Override
@@ -427,19 +347,7 @@ private static final long serialVersionUID = 0L;
    *座位编号
    * </pre>
    *
-   * <code>optional int32 seatNo = 7;</code>
-   * @return Whether the seatNo field is set.
-   */
-  @java.lang.Override
-  public boolean hasSeatNo() {
-    return ((bitField0_ & 0x00000040) != 0);
-  }
-  /**
-   * <pre>
-   *座位编号
-   * </pre>
-   *
-   * <code>optional int32 seatNo = 7;</code>
+   * <code>int32 seatNo = 7;</code>
    * @return The seatNo.
    */
   @java.lang.Override
@@ -454,19 +362,7 @@ private static final long serialVersionUID = 0L;
    *是否为VIP
    * </pre>
    *
-   * <code>optional bool vip = 8;</code>
-   * @return Whether the vip field is set.
-   */
-  @java.lang.Override
-  public boolean hasVip() {
-    return ((bitField0_ & 0x00000080) != 0);
-  }
-  /**
-   * <pre>
-   *是否为VIP
-   * </pre>
-   *
-   * <code>optional bool vip = 8;</code>
+   * <code>bool vip = 8;</code>
    * @return The vip.
    */
   @java.lang.Override
@@ -481,19 +377,7 @@ private static final long serialVersionUID = 0L;
    *钻石
    * </pre>
    *
-   * <code>optional int64 diamond = 9;</code>
-   * @return Whether the diamond field is set.
-   */
-  @java.lang.Override
-  public boolean hasDiamond() {
-    return ((bitField0_ & 0x00000100) != 0);
-  }
-  /**
-   * <pre>
-   *钻石
-   * </pre>
-   *
-   * <code>optional int64 diamond = 9;</code>
+   * <code>int64 diamond = 9;</code>
    * @return The diamond.
    */
   @java.lang.Override
@@ -508,19 +392,7 @@ private static final long serialVersionUID = 0L;
    *角色ID
    * </pre>
    *
-   * <code>required int64 rid = 10;</code>
-   * @return Whether the rid field is set.
-   */
-  @java.lang.Override
-  public boolean hasRid() {
-    return ((bitField0_ & 0x00000200) != 0);
-  }
-  /**
-   * <pre>
-   *角色ID
-   * </pre>
-   *
-   * <code>required int64 rid = 10;</code>
+   * <code>int64 rid = 10;</code>
    * @return The rid.
    */
   @java.lang.Override
@@ -535,19 +407,7 @@ private static final long serialVersionUID = 0L;
    *机器人编号 0玩家
    * </pre>
    *
-   * <code>optional int32 robotNo = 11;</code>
-   * @return Whether the robotNo field is set.
-   */
-  @java.lang.Override
-  public boolean hasRobotNo() {
-    return ((bitField0_ & 0x00000400) != 0);
-  }
-  /**
-   * <pre>
-   *机器人编号 0玩家
-   * </pre>
-   *
-   * <code>optional int32 robotNo = 11;</code>
+   * <code>int32 robotNo = 11;</code>
    * @return The robotNo.
    */
   @java.lang.Override
@@ -562,19 +422,7 @@ private static final long serialVersionUID = 0L;
    *机器人所属玩家ID
    * </pre>
    *
-   * <code>optional int32 ownerId = 12;</code>
-   * @return Whether the ownerId field is set.
-   */
-  @java.lang.Override
-  public boolean hasOwnerId() {
-    return ((bitField0_ & 0x00000800) != 0);
-  }
-  /**
-   * <pre>
-   *机器人所属玩家ID
-   * </pre>
-   *
-   * <code>optional int32 ownerId = 12;</code>
+   * <code>int32 ownerId = 12;</code>
    * @return The ownerId.
    */
   @java.lang.Override
@@ -589,19 +437,7 @@ private static final long serialVersionUID = 0L;
    *机器人请求用的sid
    * </pre>
    *
-   * <code>optional string sid = 13;</code>
-   * @return Whether the sid field is set.
-   */
-  @java.lang.Override
-  public boolean hasSid() {
-    return ((bitField0_ & 0x00001000) != 0);
-  }
-  /**
-   * <pre>
-   *机器人请求用的sid
-   * </pre>
-   *
-   * <code>optional string sid = 13;</code>
+   * <code>string sid = 13;</code>
    * @return The sid.
    */
   @java.lang.Override
@@ -613,9 +449,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        sid_ = s;
-      }
+      sid_ = s;
       return s;
     }
   }
@@ -624,7 +458,7 @@ private static final long serialVersionUID = 0L;
    *机器人请求用的sid
    * </pre>
    *
-   * <code>optional string sid = 13;</code>
+   * <code>string sid = 13;</code>
    * @return The bytes for sid.
    */
   @java.lang.Override
@@ -649,26 +483,6 @@ private static final long serialVersionUID = 0L;
     if (isInitialized == 1) return true;
     if (isInitialized == 0) return false;
 
-    if (!hasNick()) {
-      memoizedIsInitialized = 0;
-      return false;
-    }
-    if (!hasIcon()) {
-      memoizedIsInitialized = 0;
-      return false;
-    }
-    if (!hasLevel()) {
-      memoizedIsInitialized = 0;
-      return false;
-    }
-    if (!hasGold()) {
-      memoizedIsInitialized = 0;
-      return false;
-    }
-    if (!hasRid()) {
-      memoizedIsInitialized = 0;
-      return false;
-    }
     memoizedIsInitialized = 1;
     return true;
   }
@@ -676,43 +490,43 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (!getNickBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nick_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (!getIconBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, icon_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (level_ != 0) {
       output.writeInt32(3, level_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (gold_ != 0L) {
       output.writeInt64(4, gold_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (!getSignBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, sign_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (popularity_ != 0) {
       output.writeInt32(6, popularity_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (seatNo_ != 0) {
       output.writeInt32(7, seatNo_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (vip_ != false) {
       output.writeBool(8, vip_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (diamond_ != 0L) {
       output.writeInt64(9, diamond_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (rid_ != 0L) {
       output.writeInt64(10, rid_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (robotNo_ != 0) {
       output.writeInt32(11, robotNo_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (ownerId_ != 0) {
       output.writeInt32(12, ownerId_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (!getSidBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, sid_);
     }
     unknownFields.writeTo(output);
@@ -724,52 +538,52 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (!getNickBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nick_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (!getIconBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, icon_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (level_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(3, level_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (gold_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(4, gold_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (!getSignBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, sign_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (popularity_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(6, popularity_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (seatNo_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(7, seatNo_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (vip_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(8, vip_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (diamond_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(9, diamond_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (rid_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(10, rid_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (robotNo_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(11, robotNo_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (ownerId_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(12, ownerId_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (!getSidBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, sid_);
     }
     size += unknownFields.getSerializedSize();
@@ -787,71 +601,32 @@ private static final long serialVersionUID = 0L;
     }
     info.xiaomo.server.shared.protocol.gameserver.room.RoomRoleInfo other = (info.xiaomo.server.shared.protocol.gameserver.room.RoomRoleInfo) obj;
 
-    if (hasNick() != other.hasNick()) return false;
-    if (hasNick()) {
-      if (!getNick()
-          .equals(other.getNick())) return false;
-    }
-    if (hasIcon() != other.hasIcon()) return false;
-    if (hasIcon()) {
-      if (!getIcon()
-          .equals(other.getIcon())) return false;
-    }
-    if (hasLevel() != other.hasLevel()) return false;
-    if (hasLevel()) {
-      if (getLevel()
-          != other.getLevel()) return false;
-    }
-    if (hasGold() != other.hasGold()) return false;
-    if (hasGold()) {
-      if (getGold()
-          != other.getGold()) return false;
-    }
-    if (hasSign() != other.hasSign()) return false;
-    if (hasSign()) {
-      if (!getSign()
-          .equals(other.getSign())) return false;
-    }
-    if (hasPopularity() != other.hasPopularity()) return false;
-    if (hasPopularity()) {
-      if (getPopularity()
-          != other.getPopularity()) return false;
-    }
-    if (hasSeatNo() != other.hasSeatNo()) return false;
-    if (hasSeatNo()) {
-      if (getSeatNo()
-          != other.getSeatNo()) return false;
-    }
-    if (hasVip() != other.hasVip()) return false;
-    if (hasVip()) {
-      if (getVip()
-          != other.getVip()) return false;
-    }
-    if (hasDiamond() != other.hasDiamond()) return false;
-    if (hasDiamond()) {
-      if (getDiamond()
-          != other.getDiamond()) return false;
-    }
-    if (hasRid() != other.hasRid()) return false;
-    if (hasRid()) {
-      if (getRid()
-          != other.getRid()) return false;
-    }
-    if (hasRobotNo() != other.hasRobotNo()) return false;
-    if (hasRobotNo()) {
-      if (getRobotNo()
-          != other.getRobotNo()) return false;
-    }
-    if (hasOwnerId() != other.hasOwnerId()) return false;
-    if (hasOwnerId()) {
-      if (getOwnerId()
-          != other.getOwnerId()) return false;
-    }
-    if (hasSid() != other.hasSid()) return false;
-    if (hasSid()) {
-      if (!getSid()
-          .equals(other.getSid())) return false;
-    }
+    if (!getNick()
+        .equals(other.getNick())) return false;
+    if (!getIcon()
+        .equals(other.getIcon())) return false;
+    if (getLevel()
+        != other.getLevel()) return false;
+    if (getGold()
+        != other.getGold()) return false;
+    if (!getSign()
+        .equals(other.getSign())) return false;
+    if (getPopularity()
+        != other.getPopularity()) return false;
+    if (getSeatNo()
+        != other.getSeatNo()) return false;
+    if (getVip()
+        != other.getVip()) return false;
+    if (getDiamond()
+        != other.getDiamond()) return false;
+    if (getRid()
+        != other.getRid()) return false;
+    if (getRobotNo()
+        != other.getRobotNo()) return false;
+    if (getOwnerId()
+        != other.getOwnerId()) return false;
+    if (!getSid()
+        .equals(other.getSid())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -863,62 +638,36 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasNick()) {
-      hash = (37 * hash) + NICK_FIELD_NUMBER;
-      hash = (53 * hash) + getNick().hashCode();
-    }
-    if (hasIcon()) {
-      hash = (37 * hash) + ICON_FIELD_NUMBER;
-      hash = (53 * hash) + getIcon().hashCode();
-    }
-    if (hasLevel()) {
-      hash = (37 * hash) + LEVEL_FIELD_NUMBER;
-      hash = (53 * hash) + getLevel();
-    }
-    if (hasGold()) {
-      hash = (37 * hash) + GOLD_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getGold());
-    }
-    if (hasSign()) {
-      hash = (37 * hash) + SIGN_FIELD_NUMBER;
-      hash = (53 * hash) + getSign().hashCode();
-    }
-    if (hasPopularity()) {
-      hash = (37 * hash) + POPULARITY_FIELD_NUMBER;
-      hash = (53 * hash) + getPopularity();
-    }
-    if (hasSeatNo()) {
-      hash = (37 * hash) + SEATNO_FIELD_NUMBER;
-      hash = (53 * hash) + getSeatNo();
-    }
-    if (hasVip()) {
-      hash = (37 * hash) + VIP_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getVip());
-    }
-    if (hasDiamond()) {
-      hash = (37 * hash) + DIAMOND_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getDiamond());
-    }
-    if (hasRid()) {
-      hash = (37 * hash) + RID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getRid());
-    }
-    if (hasRobotNo()) {
-      hash = (37 * hash) + ROBOTNO_FIELD_NUMBER;
-      hash = (53 * hash) + getRobotNo();
-    }
-    if (hasOwnerId()) {
-      hash = (37 * hash) + OWNERID_FIELD_NUMBER;
-      hash = (53 * hash) + getOwnerId();
-    }
-    if (hasSid()) {
-      hash = (37 * hash) + SID_FIELD_NUMBER;
-      hash = (53 * hash) + getSid().hashCode();
-    }
+    hash = (37 * hash) + NICK_FIELD_NUMBER;
+    hash = (53 * hash) + getNick().hashCode();
+    hash = (37 * hash) + ICON_FIELD_NUMBER;
+    hash = (53 * hash) + getIcon().hashCode();
+    hash = (37 * hash) + LEVEL_FIELD_NUMBER;
+    hash = (53 * hash) + getLevel();
+    hash = (37 * hash) + GOLD_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getGold());
+    hash = (37 * hash) + SIGN_FIELD_NUMBER;
+    hash = (53 * hash) + getSign().hashCode();
+    hash = (37 * hash) + POPULARITY_FIELD_NUMBER;
+    hash = (53 * hash) + getPopularity();
+    hash = (37 * hash) + SEATNO_FIELD_NUMBER;
+    hash = (53 * hash) + getSeatNo();
+    hash = (37 * hash) + VIP_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getVip());
+    hash = (37 * hash) + DIAMOND_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getDiamond());
+    hash = (37 * hash) + RID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getRid());
+    hash = (37 * hash) + ROBOTNO_FIELD_NUMBER;
+    hash = (53 * hash) + getRobotNo();
+    hash = (37 * hash) + OWNERID_FIELD_NUMBER;
+    hash = (53 * hash) + getOwnerId();
+    hash = (37 * hash) + SID_FIELD_NUMBER;
+    hash = (53 * hash) + getSid().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1057,31 +806,31 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       nick_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
+
       icon_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
+
       level_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000004);
+
       gold_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000008);
+
       sign_ = "";
-      bitField0_ = (bitField0_ & ~0x00000010);
+
       popularity_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000020);
+
       seatNo_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000040);
+
       vip_ = false;
-      bitField0_ = (bitField0_ & ~0x00000080);
+
       diamond_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000100);
+
       rid_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000200);
+
       robotNo_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000400);
+
       ownerId_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000800);
+
       sid_ = "";
-      bitField0_ = (bitField0_ & ~0x00001000);
+
       return this;
     }
 
@@ -1108,61 +857,19 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public info.xiaomo.server.shared.protocol.gameserver.room.RoomRoleInfo buildPartial() {
       info.xiaomo.server.shared.protocol.gameserver.room.RoomRoleInfo result = new info.xiaomo.server.shared.protocol.gameserver.room.RoomRoleInfo(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
-      }
       result.nick_ = nick_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        to_bitField0_ |= 0x00000002;
-      }
       result.icon_ = icon_;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.level_ = level_;
-        to_bitField0_ |= 0x00000004;
-      }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.gold_ = gold_;
-        to_bitField0_ |= 0x00000008;
-      }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
-        to_bitField0_ |= 0x00000010;
-      }
+      result.level_ = level_;
+      result.gold_ = gold_;
       result.sign_ = sign_;
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.popularity_ = popularity_;
-        to_bitField0_ |= 0x00000020;
-      }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.seatNo_ = seatNo_;
-        to_bitField0_ |= 0x00000040;
-      }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.vip_ = vip_;
-        to_bitField0_ |= 0x00000080;
-      }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.diamond_ = diamond_;
-        to_bitField0_ |= 0x00000100;
-      }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.rid_ = rid_;
-        to_bitField0_ |= 0x00000200;
-      }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.robotNo_ = robotNo_;
-        to_bitField0_ |= 0x00000400;
-      }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.ownerId_ = ownerId_;
-        to_bitField0_ |= 0x00000800;
-      }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
-        to_bitField0_ |= 0x00001000;
-      }
+      result.popularity_ = popularity_;
+      result.seatNo_ = seatNo_;
+      result.vip_ = vip_;
+      result.diamond_ = diamond_;
+      result.rid_ = rid_;
+      result.robotNo_ = robotNo_;
+      result.ownerId_ = ownerId_;
       result.sid_ = sid_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1211,50 +918,46 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(info.xiaomo.server.shared.protocol.gameserver.room.RoomRoleInfo other) {
       if (other == info.xiaomo.server.shared.protocol.gameserver.room.RoomRoleInfo.getDefaultInstance()) return this;
-      if (other.hasNick()) {
-        bitField0_ |= 0x00000001;
+      if (!other.getNick().isEmpty()) {
         nick_ = other.nick_;
         onChanged();
       }
-      if (other.hasIcon()) {
-        bitField0_ |= 0x00000002;
+      if (!other.getIcon().isEmpty()) {
         icon_ = other.icon_;
         onChanged();
       }
-      if (other.hasLevel()) {
+      if (other.getLevel() != 0) {
         setLevel(other.getLevel());
       }
-      if (other.hasGold()) {
+      if (other.getGold() != 0L) {
         setGold(other.getGold());
       }
-      if (other.hasSign()) {
-        bitField0_ |= 0x00000010;
+      if (!other.getSign().isEmpty()) {
         sign_ = other.sign_;
         onChanged();
       }
-      if (other.hasPopularity()) {
+      if (other.getPopularity() != 0) {
         setPopularity(other.getPopularity());
       }
-      if (other.hasSeatNo()) {
+      if (other.getSeatNo() != 0) {
         setSeatNo(other.getSeatNo());
       }
-      if (other.hasVip()) {
+      if (other.getVip() != false) {
         setVip(other.getVip());
       }
-      if (other.hasDiamond()) {
+      if (other.getDiamond() != 0L) {
         setDiamond(other.getDiamond());
       }
-      if (other.hasRid()) {
+      if (other.getRid() != 0L) {
         setRid(other.getRid());
       }
-      if (other.hasRobotNo()) {
+      if (other.getRobotNo() != 0) {
         setRobotNo(other.getRobotNo());
       }
-      if (other.hasOwnerId()) {
+      if (other.getOwnerId() != 0) {
         setOwnerId(other.getOwnerId());
       }
-      if (other.hasSid()) {
-        bitField0_ |= 0x00001000;
+      if (!other.getSid().isEmpty()) {
         sid_ = other.sid_;
         onChanged();
       }
@@ -1265,21 +968,6 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public final boolean isInitialized() {
-      if (!hasNick()) {
-        return false;
-      }
-      if (!hasIcon()) {
-        return false;
-      }
-      if (!hasLevel()) {
-        return false;
-      }
-      if (!hasGold()) {
-        return false;
-      }
-      if (!hasRid()) {
-        return false;
-      }
       return true;
     }
 
@@ -1301,7 +989,6 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    private int bitField0_;
 
     private java.lang.Object nick_ = "";
     /**
@@ -1309,18 +996,7 @@ private static final long serialVersionUID = 0L;
      *昵称
      * </pre>
      *
-     * <code>required string nick = 1;</code>
-     * @return Whether the nick field is set.
-     */
-    public boolean hasNick() {
-      return ((bitField0_ & 0x00000001) != 0);
-    }
-    /**
-     * <pre>
-     *昵称
-     * </pre>
-     *
-     * <code>required string nick = 1;</code>
+     * <code>string nick = 1;</code>
      * @return The nick.
      */
     public java.lang.String getNick() {
@@ -1329,9 +1005,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          nick_ = s;
-        }
+        nick_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1342,7 +1016,7 @@ private static final long serialVersionUID = 0L;
      *昵称
      * </pre>
      *
-     * <code>required string nick = 1;</code>
+     * <code>string nick = 1;</code>
      * @return The bytes for nick.
      */
     public com.google.protobuf.ByteString
@@ -1363,7 +1037,7 @@ private static final long serialVersionUID = 0L;
      *昵称
      * </pre>
      *
-     * <code>required string nick = 1;</code>
+     * <code>string nick = 1;</code>
      * @param value The nick to set.
      * @return This builder for chaining.
      */
@@ -1372,7 +1046,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000001;
+  
       nick_ = value;
       onChanged();
       return this;
@@ -1382,11 +1056,11 @@ private static final long serialVersionUID = 0L;
      *昵称
      * </pre>
      *
-     * <code>required string nick = 1;</code>
+     * <code>string nick = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearNick() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      
       nick_ = getDefaultInstance().getNick();
       onChanged();
       return this;
@@ -1396,7 +1070,7 @@ private static final long serialVersionUID = 0L;
      *昵称
      * </pre>
      *
-     * <code>required string nick = 1;</code>
+     * <code>string nick = 1;</code>
      * @param value The bytes for nick to set.
      * @return This builder for chaining.
      */
@@ -1405,7 +1079,8 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000001;
+  checkByteStringIsUtf8(value);
+      
       nick_ = value;
       onChanged();
       return this;
@@ -1417,18 +1092,7 @@ private static final long serialVersionUID = 0L;
      *头像
      * </pre>
      *
-     * <code>required string icon = 2;</code>
-     * @return Whether the icon field is set.
-     */
-    public boolean hasIcon() {
-      return ((bitField0_ & 0x00000002) != 0);
-    }
-    /**
-     * <pre>
-     *头像
-     * </pre>
-     *
-     * <code>required string icon = 2;</code>
+     * <code>string icon = 2;</code>
      * @return The icon.
      */
     public java.lang.String getIcon() {
@@ -1437,9 +1101,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          icon_ = s;
-        }
+        icon_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1450,7 +1112,7 @@ private static final long serialVersionUID = 0L;
      *头像
      * </pre>
      *
-     * <code>required string icon = 2;</code>
+     * <code>string icon = 2;</code>
      * @return The bytes for icon.
      */
     public com.google.protobuf.ByteString
@@ -1471,7 +1133,7 @@ private static final long serialVersionUID = 0L;
      *头像
      * </pre>
      *
-     * <code>required string icon = 2;</code>
+     * <code>string icon = 2;</code>
      * @param value The icon to set.
      * @return This builder for chaining.
      */
@@ -1480,7 +1142,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  
       icon_ = value;
       onChanged();
       return this;
@@ -1490,11 +1152,11 @@ private static final long serialVersionUID = 0L;
      *头像
      * </pre>
      *
-     * <code>required string icon = 2;</code>
+     * <code>string icon = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearIcon() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      
       icon_ = getDefaultInstance().getIcon();
       onChanged();
       return this;
@@ -1504,7 +1166,7 @@ private static final long serialVersionUID = 0L;
      *头像
      * </pre>
      *
-     * <code>required string icon = 2;</code>
+     * <code>string icon = 2;</code>
      * @param value The bytes for icon to set.
      * @return This builder for chaining.
      */
@@ -1513,7 +1175,8 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  checkByteStringIsUtf8(value);
+      
       icon_ = value;
       onChanged();
       return this;
@@ -1525,19 +1188,7 @@ private static final long serialVersionUID = 0L;
      *等级
      * </pre>
      *
-     * <code>required int32 level = 3;</code>
-     * @return Whether the level field is set.
-     */
-    @java.lang.Override
-    public boolean hasLevel() {
-      return ((bitField0_ & 0x00000004) != 0);
-    }
-    /**
-     * <pre>
-     *等级
-     * </pre>
-     *
-     * <code>required int32 level = 3;</code>
+     * <code>int32 level = 3;</code>
      * @return The level.
      */
     @java.lang.Override
@@ -1549,12 +1200,12 @@ private static final long serialVersionUID = 0L;
      *等级
      * </pre>
      *
-     * <code>required int32 level = 3;</code>
+     * <code>int32 level = 3;</code>
      * @param value The level to set.
      * @return This builder for chaining.
      */
     public Builder setLevel(int value) {
-      bitField0_ |= 0x00000004;
+      
       level_ = value;
       onChanged();
       return this;
@@ -1564,11 +1215,11 @@ private static final long serialVersionUID = 0L;
      *等级
      * </pre>
      *
-     * <code>required int32 level = 3;</code>
+     * <code>int32 level = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearLevel() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      
       level_ = 0;
       onChanged();
       return this;
@@ -1580,19 +1231,7 @@ private static final long serialVersionUID = 0L;
      *金币
      * </pre>
      *
-     * <code>required int64 gold = 4;</code>
-     * @return Whether the gold field is set.
-     */
-    @java.lang.Override
-    public boolean hasGold() {
-      return ((bitField0_ & 0x00000008) != 0);
-    }
-    /**
-     * <pre>
-     *金币
-     * </pre>
-     *
-     * <code>required int64 gold = 4;</code>
+     * <code>int64 gold = 4;</code>
      * @return The gold.
      */
     @java.lang.Override
@@ -1604,12 +1243,12 @@ private static final long serialVersionUID = 0L;
      *金币
      * </pre>
      *
-     * <code>required int64 gold = 4;</code>
+     * <code>int64 gold = 4;</code>
      * @param value The gold to set.
      * @return This builder for chaining.
      */
     public Builder setGold(long value) {
-      bitField0_ |= 0x00000008;
+      
       gold_ = value;
       onChanged();
       return this;
@@ -1619,11 +1258,11 @@ private static final long serialVersionUID = 0L;
      *金币
      * </pre>
      *
-     * <code>required int64 gold = 4;</code>
+     * <code>int64 gold = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearGold() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      
       gold_ = 0L;
       onChanged();
       return this;
@@ -1635,18 +1274,7 @@ private static final long serialVersionUID = 0L;
      *签名、心情
      * </pre>
      *
-     * <code>optional string sign = 5;</code>
-     * @return Whether the sign field is set.
-     */
-    public boolean hasSign() {
-      return ((bitField0_ & 0x00000010) != 0);
-    }
-    /**
-     * <pre>
-     *签名、心情
-     * </pre>
-     *
-     * <code>optional string sign = 5;</code>
+     * <code>string sign = 5;</code>
      * @return The sign.
      */
     public java.lang.String getSign() {
@@ -1655,9 +1283,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          sign_ = s;
-        }
+        sign_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1668,7 +1294,7 @@ private static final long serialVersionUID = 0L;
      *签名、心情
      * </pre>
      *
-     * <code>optional string sign = 5;</code>
+     * <code>string sign = 5;</code>
      * @return The bytes for sign.
      */
     public com.google.protobuf.ByteString
@@ -1689,7 +1315,7 @@ private static final long serialVersionUID = 0L;
      *签名、心情
      * </pre>
      *
-     * <code>optional string sign = 5;</code>
+     * <code>string sign = 5;</code>
      * @param value The sign to set.
      * @return This builder for chaining.
      */
@@ -1698,7 +1324,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000010;
+  
       sign_ = value;
       onChanged();
       return this;
@@ -1708,11 +1334,11 @@ private static final long serialVersionUID = 0L;
      *签名、心情
      * </pre>
      *
-     * <code>optional string sign = 5;</code>
+     * <code>string sign = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearSign() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      
       sign_ = getDefaultInstance().getSign();
       onChanged();
       return this;
@@ -1722,7 +1348,7 @@ private static final long serialVersionUID = 0L;
      *签名、心情
      * </pre>
      *
-     * <code>optional string sign = 5;</code>
+     * <code>string sign = 5;</code>
      * @param value The bytes for sign to set.
      * @return This builder for chaining.
      */
@@ -1731,7 +1357,8 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000010;
+  checkByteStringIsUtf8(value);
+      
       sign_ = value;
       onChanged();
       return this;
@@ -1743,19 +1370,7 @@ private static final long serialVersionUID = 0L;
      *人气
      * </pre>
      *
-     * <code>optional int32 popularity = 6;</code>
-     * @return Whether the popularity field is set.
-     */
-    @java.lang.Override
-    public boolean hasPopularity() {
-      return ((bitField0_ & 0x00000020) != 0);
-    }
-    /**
-     * <pre>
-     *人气
-     * </pre>
-     *
-     * <code>optional int32 popularity = 6;</code>
+     * <code>int32 popularity = 6;</code>
      * @return The popularity.
      */
     @java.lang.Override
@@ -1767,12 +1382,12 @@ private static final long serialVersionUID = 0L;
      *人气
      * </pre>
      *
-     * <code>optional int32 popularity = 6;</code>
+     * <code>int32 popularity = 6;</code>
      * @param value The popularity to set.
      * @return This builder for chaining.
      */
     public Builder setPopularity(int value) {
-      bitField0_ |= 0x00000020;
+      
       popularity_ = value;
       onChanged();
       return this;
@@ -1782,11 +1397,11 @@ private static final long serialVersionUID = 0L;
      *人气
      * </pre>
      *
-     * <code>optional int32 popularity = 6;</code>
+     * <code>int32 popularity = 6;</code>
      * @return This builder for chaining.
      */
     public Builder clearPopularity() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      
       popularity_ = 0;
       onChanged();
       return this;
@@ -1798,19 +1413,7 @@ private static final long serialVersionUID = 0L;
      *座位编号
      * </pre>
      *
-     * <code>optional int32 seatNo = 7;</code>
-     * @return Whether the seatNo field is set.
-     */
-    @java.lang.Override
-    public boolean hasSeatNo() {
-      return ((bitField0_ & 0x00000040) != 0);
-    }
-    /**
-     * <pre>
-     *座位编号
-     * </pre>
-     *
-     * <code>optional int32 seatNo = 7;</code>
+     * <code>int32 seatNo = 7;</code>
      * @return The seatNo.
      */
     @java.lang.Override
@@ -1822,12 +1425,12 @@ private static final long serialVersionUID = 0L;
      *座位编号
      * </pre>
      *
-     * <code>optional int32 seatNo = 7;</code>
+     * <code>int32 seatNo = 7;</code>
      * @param value The seatNo to set.
      * @return This builder for chaining.
      */
     public Builder setSeatNo(int value) {
-      bitField0_ |= 0x00000040;
+      
       seatNo_ = value;
       onChanged();
       return this;
@@ -1837,11 +1440,11 @@ private static final long serialVersionUID = 0L;
      *座位编号
      * </pre>
      *
-     * <code>optional int32 seatNo = 7;</code>
+     * <code>int32 seatNo = 7;</code>
      * @return This builder for chaining.
      */
     public Builder clearSeatNo() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      
       seatNo_ = 0;
       onChanged();
       return this;
@@ -1853,19 +1456,7 @@ private static final long serialVersionUID = 0L;
      *是否为VIP
      * </pre>
      *
-     * <code>optional bool vip = 8;</code>
-     * @return Whether the vip field is set.
-     */
-    @java.lang.Override
-    public boolean hasVip() {
-      return ((bitField0_ & 0x00000080) != 0);
-    }
-    /**
-     * <pre>
-     *是否为VIP
-     * </pre>
-     *
-     * <code>optional bool vip = 8;</code>
+     * <code>bool vip = 8;</code>
      * @return The vip.
      */
     @java.lang.Override
@@ -1877,12 +1468,12 @@ private static final long serialVersionUID = 0L;
      *是否为VIP
      * </pre>
      *
-     * <code>optional bool vip = 8;</code>
+     * <code>bool vip = 8;</code>
      * @param value The vip to set.
      * @return This builder for chaining.
      */
     public Builder setVip(boolean value) {
-      bitField0_ |= 0x00000080;
+      
       vip_ = value;
       onChanged();
       return this;
@@ -1892,11 +1483,11 @@ private static final long serialVersionUID = 0L;
      *是否为VIP
      * </pre>
      *
-     * <code>optional bool vip = 8;</code>
+     * <code>bool vip = 8;</code>
      * @return This builder for chaining.
      */
     public Builder clearVip() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      
       vip_ = false;
       onChanged();
       return this;
@@ -1908,19 +1499,7 @@ private static final long serialVersionUID = 0L;
      *钻石
      * </pre>
      *
-     * <code>optional int64 diamond = 9;</code>
-     * @return Whether the diamond field is set.
-     */
-    @java.lang.Override
-    public boolean hasDiamond() {
-      return ((bitField0_ & 0x00000100) != 0);
-    }
-    /**
-     * <pre>
-     *钻石
-     * </pre>
-     *
-     * <code>optional int64 diamond = 9;</code>
+     * <code>int64 diamond = 9;</code>
      * @return The diamond.
      */
     @java.lang.Override
@@ -1932,12 +1511,12 @@ private static final long serialVersionUID = 0L;
      *钻石
      * </pre>
      *
-     * <code>optional int64 diamond = 9;</code>
+     * <code>int64 diamond = 9;</code>
      * @param value The diamond to set.
      * @return This builder for chaining.
      */
     public Builder setDiamond(long value) {
-      bitField0_ |= 0x00000100;
+      
       diamond_ = value;
       onChanged();
       return this;
@@ -1947,11 +1526,11 @@ private static final long serialVersionUID = 0L;
      *钻石
      * </pre>
      *
-     * <code>optional int64 diamond = 9;</code>
+     * <code>int64 diamond = 9;</code>
      * @return This builder for chaining.
      */
     public Builder clearDiamond() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      
       diamond_ = 0L;
       onChanged();
       return this;
@@ -1963,19 +1542,7 @@ private static final long serialVersionUID = 0L;
      *角色ID
      * </pre>
      *
-     * <code>required int64 rid = 10;</code>
-     * @return Whether the rid field is set.
-     */
-    @java.lang.Override
-    public boolean hasRid() {
-      return ((bitField0_ & 0x00000200) != 0);
-    }
-    /**
-     * <pre>
-     *角色ID
-     * </pre>
-     *
-     * <code>required int64 rid = 10;</code>
+     * <code>int64 rid = 10;</code>
      * @return The rid.
      */
     @java.lang.Override
@@ -1987,12 +1554,12 @@ private static final long serialVersionUID = 0L;
      *角色ID
      * </pre>
      *
-     * <code>required int64 rid = 10;</code>
+     * <code>int64 rid = 10;</code>
      * @param value The rid to set.
      * @return This builder for chaining.
      */
     public Builder setRid(long value) {
-      bitField0_ |= 0x00000200;
+      
       rid_ = value;
       onChanged();
       return this;
@@ -2002,11 +1569,11 @@ private static final long serialVersionUID = 0L;
      *角色ID
      * </pre>
      *
-     * <code>required int64 rid = 10;</code>
+     * <code>int64 rid = 10;</code>
      * @return This builder for chaining.
      */
     public Builder clearRid() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      
       rid_ = 0L;
       onChanged();
       return this;
@@ -2018,19 +1585,7 @@ private static final long serialVersionUID = 0L;
      *机器人编号 0玩家
      * </pre>
      *
-     * <code>optional int32 robotNo = 11;</code>
-     * @return Whether the robotNo field is set.
-     */
-    @java.lang.Override
-    public boolean hasRobotNo() {
-      return ((bitField0_ & 0x00000400) != 0);
-    }
-    /**
-     * <pre>
-     *机器人编号 0玩家
-     * </pre>
-     *
-     * <code>optional int32 robotNo = 11;</code>
+     * <code>int32 robotNo = 11;</code>
      * @return The robotNo.
      */
     @java.lang.Override
@@ -2042,12 +1597,12 @@ private static final long serialVersionUID = 0L;
      *机器人编号 0玩家
      * </pre>
      *
-     * <code>optional int32 robotNo = 11;</code>
+     * <code>int32 robotNo = 11;</code>
      * @param value The robotNo to set.
      * @return This builder for chaining.
      */
     public Builder setRobotNo(int value) {
-      bitField0_ |= 0x00000400;
+      
       robotNo_ = value;
       onChanged();
       return this;
@@ -2057,11 +1612,11 @@ private static final long serialVersionUID = 0L;
      *机器人编号 0玩家
      * </pre>
      *
-     * <code>optional int32 robotNo = 11;</code>
+     * <code>int32 robotNo = 11;</code>
      * @return This builder for chaining.
      */
     public Builder clearRobotNo() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      
       robotNo_ = 0;
       onChanged();
       return this;
@@ -2073,19 +1628,7 @@ private static final long serialVersionUID = 0L;
      *机器人所属玩家ID
      * </pre>
      *
-     * <code>optional int32 ownerId = 12;</code>
-     * @return Whether the ownerId field is set.
-     */
-    @java.lang.Override
-    public boolean hasOwnerId() {
-      return ((bitField0_ & 0x00000800) != 0);
-    }
-    /**
-     * <pre>
-     *机器人所属玩家ID
-     * </pre>
-     *
-     * <code>optional int32 ownerId = 12;</code>
+     * <code>int32 ownerId = 12;</code>
      * @return The ownerId.
      */
     @java.lang.Override
@@ -2097,12 +1640,12 @@ private static final long serialVersionUID = 0L;
      *机器人所属玩家ID
      * </pre>
      *
-     * <code>optional int32 ownerId = 12;</code>
+     * <code>int32 ownerId = 12;</code>
      * @param value The ownerId to set.
      * @return This builder for chaining.
      */
     public Builder setOwnerId(int value) {
-      bitField0_ |= 0x00000800;
+      
       ownerId_ = value;
       onChanged();
       return this;
@@ -2112,11 +1655,11 @@ private static final long serialVersionUID = 0L;
      *机器人所属玩家ID
      * </pre>
      *
-     * <code>optional int32 ownerId = 12;</code>
+     * <code>int32 ownerId = 12;</code>
      * @return This builder for chaining.
      */
     public Builder clearOwnerId() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      
       ownerId_ = 0;
       onChanged();
       return this;
@@ -2128,18 +1671,7 @@ private static final long serialVersionUID = 0L;
      *机器人请求用的sid
      * </pre>
      *
-     * <code>optional string sid = 13;</code>
-     * @return Whether the sid field is set.
-     */
-    public boolean hasSid() {
-      return ((bitField0_ & 0x00001000) != 0);
-    }
-    /**
-     * <pre>
-     *机器人请求用的sid
-     * </pre>
-     *
-     * <code>optional string sid = 13;</code>
+     * <code>string sid = 13;</code>
      * @return The sid.
      */
     public java.lang.String getSid() {
@@ -2148,9 +1680,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          sid_ = s;
-        }
+        sid_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -2161,7 +1691,7 @@ private static final long serialVersionUID = 0L;
      *机器人请求用的sid
      * </pre>
      *
-     * <code>optional string sid = 13;</code>
+     * <code>string sid = 13;</code>
      * @return The bytes for sid.
      */
     public com.google.protobuf.ByteString
@@ -2182,7 +1712,7 @@ private static final long serialVersionUID = 0L;
      *机器人请求用的sid
      * </pre>
      *
-     * <code>optional string sid = 13;</code>
+     * <code>string sid = 13;</code>
      * @param value The sid to set.
      * @return This builder for chaining.
      */
@@ -2191,7 +1721,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00001000;
+  
       sid_ = value;
       onChanged();
       return this;
@@ -2201,11 +1731,11 @@ private static final long serialVersionUID = 0L;
      *机器人请求用的sid
      * </pre>
      *
-     * <code>optional string sid = 13;</code>
+     * <code>string sid = 13;</code>
      * @return This builder for chaining.
      */
     public Builder clearSid() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      
       sid_ = getDefaultInstance().getSid();
       onChanged();
       return this;
@@ -2215,7 +1745,7 @@ private static final long serialVersionUID = 0L;
      *机器人请求用的sid
      * </pre>
      *
-     * <code>optional string sid = 13;</code>
+     * <code>string sid = 13;</code>
      * @param value The bytes for sid to set.
      * @return This builder for chaining.
      */
@@ -2224,7 +1754,8 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00001000;
+  checkByteStringIsUtf8(value);
+      
       sid_ = value;
       onChanged();
       return this;
@@ -2255,7 +1786,7 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  @java.lang.Deprecated public static final com.google.protobuf.Parser<RoomRoleInfo>
+  private static final com.google.protobuf.Parser<RoomRoleInfo>
       PARSER = new com.google.protobuf.AbstractParser<RoomRoleInfo>() {
     @java.lang.Override
     public RoomRoleInfo parsePartialFrom(

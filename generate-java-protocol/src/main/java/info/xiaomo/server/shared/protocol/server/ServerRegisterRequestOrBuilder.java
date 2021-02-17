@@ -8,22 +8,22 @@ public interface ServerRegisterRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>optional .MID mid = 1 [default = ServerRegisterReq];</code>
-   * @return Whether the mid field is set.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The enum numeric value on the wire for msgId.
    */
-  boolean hasMid();
+  int getMsgIdValue();
   /**
-   * <code>optional .MID mid = 1 [default = ServerRegisterReq];</code>
-   * @return The mid.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The msgId.
    */
-  info.xiaomo.server.shared.protocol.Mid.MID getMid();
+  info.xiaomo.server.shared.protocol.msg.MsgId getMsgId();
 
   /**
    * <pre>
    *服务器信息
    * </pre>
    *
-   * <code>required .ServerInfo serverInfo = 2;</code>
+   * <code>.GameServerInfo serverInfo = 2;</code>
    * @return Whether the serverInfo field is set.
    */
   boolean hasServerInfo();
@@ -32,16 +32,16 @@ public interface ServerRegisterRequestOrBuilder extends
    *服务器信息
    * </pre>
    *
-   * <code>required .ServerInfo serverInfo = 2;</code>
+   * <code>.GameServerInfo serverInfo = 2;</code>
    * @return The serverInfo.
    */
-  info.xiaomo.server.shared.protocol.server.ServerInfo getServerInfo();
+  info.xiaomo.server.shared.protocol.server.GameServerInfo getServerInfo();
   /**
    * <pre>
    *服务器信息
    * </pre>
    *
-   * <code>required .ServerInfo serverInfo = 2;</code>
+   * <code>.GameServerInfo serverInfo = 2;</code>
    */
-  info.xiaomo.server.shared.protocol.server.ServerInfoOrBuilder getServerInfoOrBuilder();
+  info.xiaomo.server.shared.protocol.server.GameServerInfoOrBuilder getServerInfoOrBuilder();
 }

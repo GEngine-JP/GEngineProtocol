@@ -12,35 +12,35 @@ public interface EnterRoomRequestOrBuilder extends
    *消息id
    * </pre>
    *
-   * <code>optional .MID mid = 1 [default = EnterRoomReq];</code>
-   * @return Whether the mid field is set.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The enum numeric value on the wire for msgId.
    */
-  boolean hasMid();
+  int getMsgIdValue();
   /**
    * <pre>
    *消息id
    * </pre>
    *
-   * <code>optional .MID mid = 1 [default = EnterRoomReq];</code>
-   * @return The mid.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The msgId.
    */
-  info.xiaomo.server.shared.protocol.Mid.MID getMid();
+  info.xiaomo.server.shared.protocol.msg.MsgId getMsgId();
 
   /**
    * <pre>
-   *房间类型 
+   *房间类型
    * </pre>
    *
-   * <code>required .RoomType type = 2 [default = CLASSICS];</code>
-   * @return Whether the type field is set.
+   * <code>.RoomType type = 2;</code>
+   * @return The enum numeric value on the wire for type.
    */
-  boolean hasType();
+  int getTypeValue();
   /**
    * <pre>
-   *房间类型 
+   *房间类型
    * </pre>
    *
-   * <code>required .RoomType type = 2 [default = CLASSICS];</code>
+   * <code>.RoomType type = 2;</code>
    * @return The type.
    */
   info.xiaomo.server.shared.protocol.gameserver.room.RoomType getType();
@@ -50,16 +50,7 @@ public interface EnterRoomRequestOrBuilder extends
    *房间级别
    * </pre>
    *
-   * <code>required int32 rank = 3;</code>
-   * @return Whether the rank field is set.
-   */
-  boolean hasRank();
-  /**
-   * <pre>
-   *房间级别
-   * </pre>
-   *
-   * <code>required int32 rank = 3;</code>
+   * <code>int32 rank = 3;</code>
    * @return The rank.
    */
   int getRank();

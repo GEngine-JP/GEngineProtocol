@@ -13,6 +13,14 @@ public enum RoomType
    *经典场
    * </pre>
    *
+   * <code>DEFAULT = 0;</code>
+   */
+  DEFAULT(0),
+  /**
+   * <pre>
+   *经典场
+   * </pre>
+   *
    * <code>CLASSICS = 1;</code>
    */
   CLASSICS(1),
@@ -24,8 +32,17 @@ public enum RoomType
    * <code>ARENA = 2;</code>
    */
   ARENA(2),
+  UNRECOGNIZED(-1),
   ;
 
+  /**
+   * <pre>
+   *经典场
+   * </pre>
+   *
+   * <code>DEFAULT = 0;</code>
+   */
+  public static final int DEFAULT_VALUE = 0;
   /**
    * <pre>
    *经典场
@@ -45,6 +62,10 @@ public enum RoomType
 
 
   public final int getNumber() {
+    if (this == UNRECOGNIZED) {
+      throw new java.lang.IllegalArgumentException(
+          "Can't get the number of an unknown enum value.");
+    }
     return value;
   }
 
@@ -64,6 +85,7 @@ public enum RoomType
    */
   public static RoomType forNumber(int value) {
     switch (value) {
+      case 0: return DEFAULT;
       case 1: return CLASSICS;
       case 2: return ARENA;
       default: return null;
@@ -84,6 +106,10 @@ public enum RoomType
 
   public final com.google.protobuf.Descriptors.EnumValueDescriptor
       getValueDescriptor() {
+    if (this == UNRECOGNIZED) {
+      throw new java.lang.IllegalStateException(
+          "Can't get the descriptor of an unrecognized enum value.");
+    }
     return getDescriptor().getValues().get(ordinal());
   }
   public final com.google.protobuf.Descriptors.EnumDescriptor
@@ -102,6 +128,9 @@ public enum RoomType
     if (desc.getType() != getDescriptor()) {
       throw new java.lang.IllegalArgumentException(
         "EnumValueDescriptor is not for this type.");
+    }
+    if (desc.getIndex() == -1) {
+      return UNRECOGNIZED;
     }
     return VALUES[desc.getIndex()];
   }

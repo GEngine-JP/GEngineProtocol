@@ -12,35 +12,26 @@ public interface GuildApprovalRequestOrBuilder extends
    *消息id
    * </pre>
    *
-   * <code>optional .MID mid = 1 [default = GuildApprovalReq];</code>
-   * @return Whether the mid field is set.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The enum numeric value on the wire for msgId.
    */
-  boolean hasMid();
+  int getMsgIdValue();
   /**
    * <pre>
    *消息id
    * </pre>
    *
-   * <code>optional .MID mid = 1 [default = GuildApprovalReq];</code>
-   * @return The mid.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The msgId.
    */
-  info.xiaomo.server.shared.protocol.Mid.MID getMid();
+  info.xiaomo.server.shared.protocol.msg.MsgId getMsgId();
 
   /**
    * <pre>
    *被操作的角色
    * </pre>
    *
-   * <code>optional int64 roleId = 2;</code>
-   * @return Whether the roleId field is set.
-   */
-  boolean hasRoleId();
-  /**
-   * <pre>
-   *被操作的角色
-   * </pre>
-   *
-   * <code>optional int64 roleId = 2;</code>
+   * <code>int64 roleId = 2;</code>
    * @return The roleId.
    */
   long getRoleId();
@@ -50,16 +41,7 @@ public interface GuildApprovalRequestOrBuilder extends
    *操作类型 0批准加入、1踢人、2解散
    * </pre>
    *
-   * <code>required int32 type = 3;</code>
-   * @return Whether the type field is set.
-   */
-  boolean hasType();
-  /**
-   * <pre>
-   *操作类型 0批准加入、1踢人、2解散
-   * </pre>
-   *
-   * <code>required int32 type = 3;</code>
+   * <code>int32 type = 3;</code>
    * @return The type.
    */
   int getType();

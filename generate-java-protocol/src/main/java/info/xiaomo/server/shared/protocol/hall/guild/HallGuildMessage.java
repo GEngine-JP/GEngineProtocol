@@ -83,98 +83,96 @@ public final class HallGuildMessage {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\026HallGuildMessage.proto\032\tMid.proto\"D\n\020G" +
-      "uildInfoRequest\022\037\n\003mid\030\001 \001(\0162\004.MID:\014Guil" +
-      "dInfoReq\022\017\n\007guildId\030\002 \001(\003\"S\n\021GuildInfoRe" +
-      "sponse\022\037\n\003mid\030\001 \001(\0162\004.MID:\014GuildInfoRes\022" +
-      "\035\n\tguildInfo\030\002 \001(\0132\n.GuildInfo\"3\n\020GuildL" +
-      "istRequest\022\037\n\003mid\030\001 \001(\0162\004.MID:\014GuildList" +
-      "Req\"P\n\021GuildListResponse\022\037\n\003mid\030\001 \001(\0162\004." +
-      "MID:\014GuildListRes\022\032\n\006guilds\030\002 \003(\0132\n.Guil" +
-      "dInfo\"F\n\021ApplyGuildRequest\022 \n\003mid\030\001 \001(\0162" +
-      "\004.MID:\rApplyGuildReq\022\017\n\007guildId\030\002 \001(\003\"F\n" +
-      "\022ApplyGuildResponse\022 \n\003mid\030\001 \001(\0162\004.MID:\r" +
-      "ApplyGuildRes\022\016\n\006result\030\002 \001(\005\"Y\n\024GuildAp" +
-      "provalRequest\022#\n\003mid\030\001 \001(\0162\004.MID:\020GuildA" +
-      "pprovalReq\022\016\n\006roleId\030\002 \001(\003\022\014\n\004type\030\003 \002(\005" +
-      "\"L\n\025GuildApprovalResponse\022#\n\003mid\030\001 \001(\0162\004" +
-      ".MID:\020GuildApprovalRes\022\016\n\006result\030\002 \002(\005\"E" +
-      "\n\022CreateGuildRequest\022!\n\003mid\030\001 \001(\0162\004.MID:" +
-      "\016CreateGuildReq\022\014\n\004name\030\002 \002(\t\"g\n\023CreateG" +
-      "uildResponse\022!\n\003mid\030\001 \001(\0162\004.MID:\016CreateG" +
-      "uildRes\022\016\n\006result\030\002 \002(\005\022\035\n\tguildInfo\030\003 \001" +
-      "(\0132\n.GuildInfo\"i\n\tGuildInfo\022\n\n\002id\030\001 \002(\003\022" +
-      "\014\n\004name\030\002 \002(\t\022\020\n\010masterId\030\003 \002(\003\022\r\n\005level" +
-      "\030\004 \002(\005\022!\n\007members\030\005 \003(\0132\020.GuildMemberInf" +
-      "o\">\n\017GuildMemberInfo\022\016\n\006roleId\030\001 \002(\003\022\014\n\004" +
-      "name\030\002 \002(\t\022\r\n\005level\030\003 \002(\005B1\n-info.xiaomo" +
-      ".server.shared.protocol.hall.guildP\001"
+      "\n\026HallGuildMessage.proto\032\017MessageId.prot" +
+      "o\":\n\020GuildInfoRequest\022\025\n\005msgId\030\001 \001(\0162\006.M" +
+      "sgId\022\017\n\007guildId\030\002 \001(\003\"I\n\021GuildInfoRespon" +
+      "se\022\025\n\005msgId\030\001 \001(\0162\006.MsgId\022\035\n\tguildInfo\030\002" +
+      " \001(\0132\n.GuildInfo\")\n\020GuildListRequest\022\025\n\005" +
+      "msgId\030\001 \001(\0162\006.MsgId\"F\n\021GuildListResponse" +
+      "\022\025\n\005msgId\030\001 \001(\0162\006.MsgId\022\032\n\006guilds\030\002 \003(\0132" +
+      "\n.GuildInfo\";\n\021ApplyGuildRequest\022\025\n\005msgI" +
+      "d\030\001 \001(\0162\006.MsgId\022\017\n\007guildId\030\002 \001(\003\";\n\022Appl" +
+      "yGuildResponse\022\025\n\005msgId\030\001 \001(\0162\006.MsgId\022\016\n" +
+      "\006result\030\002 \001(\005\"K\n\024GuildApprovalRequest\022\025\n" +
+      "\005msgId\030\001 \001(\0162\006.MsgId\022\016\n\006roleId\030\002 \001(\003\022\014\n\004" +
+      "type\030\003 \001(\005\">\n\025GuildApprovalResponse\022\025\n\005m" +
+      "sgId\030\001 \001(\0162\006.MsgId\022\016\n\006result\030\002 \001(\005\"9\n\022Cr" +
+      "eateGuildRequest\022\025\n\005msgId\030\001 \001(\0162\006.MsgId\022" +
+      "\014\n\004name\030\002 \001(\t\"[\n\023CreateGuildResponse\022\025\n\005" +
+      "msgId\030\001 \001(\0162\006.MsgId\022\016\n\006result\030\002 \001(\005\022\035\n\tg" +
+      "uildInfo\030\003 \001(\0132\n.GuildInfo\"i\n\tGuildInfo\022" +
+      "\n\n\002id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\022\020\n\010masterId\030\003 " +
+      "\001(\003\022\r\n\005level\030\004 \001(\005\022!\n\007members\030\005 \003(\0132\020.Gu" +
+      "ildMemberInfo\">\n\017GuildMemberInfo\022\016\n\006role" +
+      "Id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\022\r\n\005level\030\003 \001(\005B1\n" +
+      "-info.xiaomo.server.shared.protocol.hall" +
+      ".guildP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          info.xiaomo.server.shared.protocol.Mid.getDescriptor(),
+          info.xiaomo.server.shared.protocol.msg.MessageId.getDescriptor(),
         });
     internal_static_GuildInfoRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_GuildInfoRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GuildInfoRequest_descriptor,
-        new java.lang.String[] { "Mid", "GuildId", });
+        new java.lang.String[] { "MsgId", "GuildId", });
     internal_static_GuildInfoResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_GuildInfoResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GuildInfoResponse_descriptor,
-        new java.lang.String[] { "Mid", "GuildInfo", });
+        new java.lang.String[] { "MsgId", "GuildInfo", });
     internal_static_GuildListRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_GuildListRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GuildListRequest_descriptor,
-        new java.lang.String[] { "Mid", });
+        new java.lang.String[] { "MsgId", });
     internal_static_GuildListResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_GuildListResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GuildListResponse_descriptor,
-        new java.lang.String[] { "Mid", "Guilds", });
+        new java.lang.String[] { "MsgId", "Guilds", });
     internal_static_ApplyGuildRequest_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_ApplyGuildRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ApplyGuildRequest_descriptor,
-        new java.lang.String[] { "Mid", "GuildId", });
+        new java.lang.String[] { "MsgId", "GuildId", });
     internal_static_ApplyGuildResponse_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_ApplyGuildResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ApplyGuildResponse_descriptor,
-        new java.lang.String[] { "Mid", "Result", });
+        new java.lang.String[] { "MsgId", "Result", });
     internal_static_GuildApprovalRequest_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_GuildApprovalRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GuildApprovalRequest_descriptor,
-        new java.lang.String[] { "Mid", "RoleId", "Type", });
+        new java.lang.String[] { "MsgId", "RoleId", "Type", });
     internal_static_GuildApprovalResponse_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_GuildApprovalResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GuildApprovalResponse_descriptor,
-        new java.lang.String[] { "Mid", "Result", });
+        new java.lang.String[] { "MsgId", "Result", });
     internal_static_CreateGuildRequest_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_CreateGuildRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CreateGuildRequest_descriptor,
-        new java.lang.String[] { "Mid", "Name", });
+        new java.lang.String[] { "MsgId", "Name", });
     internal_static_CreateGuildResponse_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_CreateGuildResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CreateGuildResponse_descriptor,
-        new java.lang.String[] { "Mid", "Result", "GuildInfo", });
+        new java.lang.String[] { "MsgId", "Result", "GuildInfo", });
     internal_static_GuildInfo_descriptor =
       getDescriptor().getMessageTypes().get(10);
     internal_static_GuildInfo_fieldAccessorTable = new
@@ -187,7 +185,7 @@ public final class HallGuildMessage {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GuildMemberInfo_descriptor,
         new java.lang.String[] { "RoleId", "Name", "Level", });
-    info.xiaomo.server.shared.protocol.Mid.getDescriptor();
+    info.xiaomo.server.shared.protocol.msg.MessageId.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

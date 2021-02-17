@@ -12,35 +12,26 @@ public interface LoginRequestOrBuilder extends
    *消息id
    * </pre>
    *
-   * <code>optional .MID mid = 1 [default = LoginReq];</code>
-   * @return Whether the mid field is set.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The enum numeric value on the wire for msgId.
    */
-  boolean hasMid();
+  int getMsgIdValue();
   /**
    * <pre>
    *消息id
    * </pre>
    *
-   * <code>optional .MID mid = 1 [default = LoginReq];</code>
-   * @return The mid.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The msgId.
    */
-  info.xiaomo.server.shared.protocol.Mid.MID getMid();
+  info.xiaomo.server.shared.protocol.msg.MsgId getMsgId();
 
   /**
    * <pre>
    *账号
    * </pre>
    *
-   * <code>optional string account = 2;</code>
-   * @return Whether the account field is set.
-   */
-  boolean hasAccount();
-  /**
-   * <pre>
-   *账号
-   * </pre>
-   *
-   * <code>optional string account = 2;</code>
+   * <code>string account = 2;</code>
    * @return The account.
    */
   java.lang.String getAccount();
@@ -49,7 +40,7 @@ public interface LoginRequestOrBuilder extends
    *账号
    * </pre>
    *
-   * <code>optional string account = 2;</code>
+   * <code>string account = 2;</code>
    * @return The bytes for account.
    */
   com.google.protobuf.ByteString
@@ -60,16 +51,7 @@ public interface LoginRequestOrBuilder extends
    *密码
    * </pre>
    *
-   * <code>optional string password = 3;</code>
-   * @return Whether the password field is set.
-   */
-  boolean hasPassword();
-  /**
-   * <pre>
-   *密码
-   * </pre>
-   *
-   * <code>optional string password = 3;</code>
+   * <code>string password = 3;</code>
    * @return The password.
    */
   java.lang.String getPassword();
@@ -78,7 +60,7 @@ public interface LoginRequestOrBuilder extends
    *密码
    * </pre>
    *
-   * <code>optional string password = 3;</code>
+   * <code>string password = 3;</code>
    * @return The bytes for password.
    */
   com.google.protobuf.ByteString
@@ -86,19 +68,19 @@ public interface LoginRequestOrBuilder extends
 
   /**
    * <pre>
-   *登录类型 
+   *登录类型
    * </pre>
    *
-   * <code>optional .LoginType loginType = 4;</code>
-   * @return Whether the loginType field is set.
+   * <code>.LoginType loginType = 4;</code>
+   * @return The enum numeric value on the wire for loginType.
    */
-  boolean hasLoginType();
+  int getLoginTypeValue();
   /**
    * <pre>
-   *登录类型 
+   *登录类型
    * </pre>
    *
-   * <code>optional .LoginType loginType = 4;</code>
+   * <code>.LoginType loginType = 4;</code>
    * @return The loginType.
    */
   info.xiaomo.server.shared.protocol.hall.login.LoginType getLoginType();
@@ -108,16 +90,7 @@ public interface LoginRequestOrBuilder extends
    *会话ID（服务器内部使用）
    * </pre>
    *
-   * <code>optional int64 sessionId = 5;</code>
-   * @return Whether the sessionId field is set.
-   */
-  boolean hasSessionId();
-  /**
-   * <pre>
-   *会话ID（服务器内部使用）
-   * </pre>
-   *
-   * <code>optional int64 sessionId = 5;</code>
+   * <code>int64 sessionId = 5;</code>
    * @return The sessionId.
    */
   long getSessionId();
@@ -127,16 +100,7 @@ public interface LoginRequestOrBuilder extends
    *网关ID（服务器内部使用）
    * </pre>
    *
-   * <code>optional int32 gateId = 6;</code>
-   * @return Whether the gateId field is set.
-   */
-  boolean hasGateId();
-  /**
-   * <pre>
-   *网关ID（服务器内部使用）
-   * </pre>
-   *
-   * <code>optional int32 gateId = 6;</code>
+   * <code>int32 gateId = 6;</code>
    * @return The gateId.
    */
   int getGateId();
@@ -146,16 +110,7 @@ public interface LoginRequestOrBuilder extends
    *IP地址（服务器内部使用）
    * </pre>
    *
-   * <code>optional string ip = 7;</code>
-   * @return Whether the ip field is set.
-   */
-  boolean hasIp();
-  /**
-   * <pre>
-   *IP地址（服务器内部使用）
-   * </pre>
-   *
-   * <code>optional string ip = 7;</code>
+   * <code>string ip = 7;</code>
    * @return The ip.
    */
   java.lang.String getIp();
@@ -164,7 +119,7 @@ public interface LoginRequestOrBuilder extends
    *IP地址（服务器内部使用）
    * </pre>
    *
-   * <code>optional string ip = 7;</code>
+   * <code>string ip = 7;</code>
    * @return The bytes for ip.
    */
   com.google.protobuf.ByteString
@@ -175,16 +130,7 @@ public interface LoginRequestOrBuilder extends
    *版本号
    * </pre>
    *
-   * <code>optional string version = 8;</code>
-   * @return Whether the version field is set.
-   */
-  boolean hasVersion();
-  /**
-   * <pre>
-   *版本号
-   * </pre>
-   *
-   * <code>optional string version = 8;</code>
+   * <code>string version = 8;</code>
    * @return The version.
    */
   java.lang.String getVersion();
@@ -193,7 +139,7 @@ public interface LoginRequestOrBuilder extends
    *版本号
    * </pre>
    *
-   * <code>optional string version = 8;</code>
+   * <code>string version = 8;</code>
    * @return The bytes for version.
    */
   com.google.protobuf.ByteString

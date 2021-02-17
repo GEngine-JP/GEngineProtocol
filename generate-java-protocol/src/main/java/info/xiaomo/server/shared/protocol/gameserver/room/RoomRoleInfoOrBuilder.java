@@ -12,16 +12,7 @@ public interface RoomRoleInfoOrBuilder extends
    *昵称
    * </pre>
    *
-   * <code>required string nick = 1;</code>
-   * @return Whether the nick field is set.
-   */
-  boolean hasNick();
-  /**
-   * <pre>
-   *昵称
-   * </pre>
-   *
-   * <code>required string nick = 1;</code>
+   * <code>string nick = 1;</code>
    * @return The nick.
    */
   java.lang.String getNick();
@@ -30,7 +21,7 @@ public interface RoomRoleInfoOrBuilder extends
    *昵称
    * </pre>
    *
-   * <code>required string nick = 1;</code>
+   * <code>string nick = 1;</code>
    * @return The bytes for nick.
    */
   com.google.protobuf.ByteString
@@ -41,16 +32,7 @@ public interface RoomRoleInfoOrBuilder extends
    *头像
    * </pre>
    *
-   * <code>required string icon = 2;</code>
-   * @return Whether the icon field is set.
-   */
-  boolean hasIcon();
-  /**
-   * <pre>
-   *头像
-   * </pre>
-   *
-   * <code>required string icon = 2;</code>
+   * <code>string icon = 2;</code>
    * @return The icon.
    */
   java.lang.String getIcon();
@@ -59,7 +41,7 @@ public interface RoomRoleInfoOrBuilder extends
    *头像
    * </pre>
    *
-   * <code>required string icon = 2;</code>
+   * <code>string icon = 2;</code>
    * @return The bytes for icon.
    */
   com.google.protobuf.ByteString
@@ -70,16 +52,7 @@ public interface RoomRoleInfoOrBuilder extends
    *等级
    * </pre>
    *
-   * <code>required int32 level = 3;</code>
-   * @return Whether the level field is set.
-   */
-  boolean hasLevel();
-  /**
-   * <pre>
-   *等级
-   * </pre>
-   *
-   * <code>required int32 level = 3;</code>
+   * <code>int32 level = 3;</code>
    * @return The level.
    */
   int getLevel();
@@ -89,16 +62,7 @@ public interface RoomRoleInfoOrBuilder extends
    *金币
    * </pre>
    *
-   * <code>required int64 gold = 4;</code>
-   * @return Whether the gold field is set.
-   */
-  boolean hasGold();
-  /**
-   * <pre>
-   *金币
-   * </pre>
-   *
-   * <code>required int64 gold = 4;</code>
+   * <code>int64 gold = 4;</code>
    * @return The gold.
    */
   long getGold();
@@ -108,16 +72,7 @@ public interface RoomRoleInfoOrBuilder extends
    *签名、心情
    * </pre>
    *
-   * <code>optional string sign = 5;</code>
-   * @return Whether the sign field is set.
-   */
-  boolean hasSign();
-  /**
-   * <pre>
-   *签名、心情
-   * </pre>
-   *
-   * <code>optional string sign = 5;</code>
+   * <code>string sign = 5;</code>
    * @return The sign.
    */
   java.lang.String getSign();
@@ -126,7 +81,7 @@ public interface RoomRoleInfoOrBuilder extends
    *签名、心情
    * </pre>
    *
-   * <code>optional string sign = 5;</code>
+   * <code>string sign = 5;</code>
    * @return The bytes for sign.
    */
   com.google.protobuf.ByteString
@@ -137,16 +92,7 @@ public interface RoomRoleInfoOrBuilder extends
    *人气
    * </pre>
    *
-   * <code>optional int32 popularity = 6;</code>
-   * @return Whether the popularity field is set.
-   */
-  boolean hasPopularity();
-  /**
-   * <pre>
-   *人气
-   * </pre>
-   *
-   * <code>optional int32 popularity = 6;</code>
+   * <code>int32 popularity = 6;</code>
    * @return The popularity.
    */
   int getPopularity();
@@ -156,16 +102,7 @@ public interface RoomRoleInfoOrBuilder extends
    *座位编号
    * </pre>
    *
-   * <code>optional int32 seatNo = 7;</code>
-   * @return Whether the seatNo field is set.
-   */
-  boolean hasSeatNo();
-  /**
-   * <pre>
-   *座位编号
-   * </pre>
-   *
-   * <code>optional int32 seatNo = 7;</code>
+   * <code>int32 seatNo = 7;</code>
    * @return The seatNo.
    */
   int getSeatNo();
@@ -175,16 +112,7 @@ public interface RoomRoleInfoOrBuilder extends
    *是否为VIP
    * </pre>
    *
-   * <code>optional bool vip = 8;</code>
-   * @return Whether the vip field is set.
-   */
-  boolean hasVip();
-  /**
-   * <pre>
-   *是否为VIP
-   * </pre>
-   *
-   * <code>optional bool vip = 8;</code>
+   * <code>bool vip = 8;</code>
    * @return The vip.
    */
   boolean getVip();
@@ -194,16 +122,7 @@ public interface RoomRoleInfoOrBuilder extends
    *钻石
    * </pre>
    *
-   * <code>optional int64 diamond = 9;</code>
-   * @return Whether the diamond field is set.
-   */
-  boolean hasDiamond();
-  /**
-   * <pre>
-   *钻石
-   * </pre>
-   *
-   * <code>optional int64 diamond = 9;</code>
+   * <code>int64 diamond = 9;</code>
    * @return The diamond.
    */
   long getDiamond();
@@ -213,16 +132,7 @@ public interface RoomRoleInfoOrBuilder extends
    *角色ID
    * </pre>
    *
-   * <code>required int64 rid = 10;</code>
-   * @return Whether the rid field is set.
-   */
-  boolean hasRid();
-  /**
-   * <pre>
-   *角色ID
-   * </pre>
-   *
-   * <code>required int64 rid = 10;</code>
+   * <code>int64 rid = 10;</code>
    * @return The rid.
    */
   long getRid();
@@ -232,16 +142,7 @@ public interface RoomRoleInfoOrBuilder extends
    *机器人编号 0玩家
    * </pre>
    *
-   * <code>optional int32 robotNo = 11;</code>
-   * @return Whether the robotNo field is set.
-   */
-  boolean hasRobotNo();
-  /**
-   * <pre>
-   *机器人编号 0玩家
-   * </pre>
-   *
-   * <code>optional int32 robotNo = 11;</code>
+   * <code>int32 robotNo = 11;</code>
    * @return The robotNo.
    */
   int getRobotNo();
@@ -251,16 +152,7 @@ public interface RoomRoleInfoOrBuilder extends
    *机器人所属玩家ID
    * </pre>
    *
-   * <code>optional int32 ownerId = 12;</code>
-   * @return Whether the ownerId field is set.
-   */
-  boolean hasOwnerId();
-  /**
-   * <pre>
-   *机器人所属玩家ID
-   * </pre>
-   *
-   * <code>optional int32 ownerId = 12;</code>
+   * <code>int32 ownerId = 12;</code>
    * @return The ownerId.
    */
   int getOwnerId();
@@ -270,16 +162,7 @@ public interface RoomRoleInfoOrBuilder extends
    *机器人请求用的sid
    * </pre>
    *
-   * <code>optional string sid = 13;</code>
-   * @return Whether the sid field is set.
-   */
-  boolean hasSid();
-  /**
-   * <pre>
-   *机器人请求用的sid
-   * </pre>
-   *
-   * <code>optional string sid = 13;</code>
+   * <code>string sid = 13;</code>
    * @return The sid.
    */
   java.lang.String getSid();
@@ -288,7 +171,7 @@ public interface RoomRoleInfoOrBuilder extends
    *机器人请求用的sid
    * </pre>
    *
-   * <code>optional string sid = 13;</code>
+   * <code>string sid = 13;</code>
    * @return The bytes for sid.
    */
   com.google.protobuf.ByteString

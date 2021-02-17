@@ -12,54 +12,45 @@ public interface SystemErrorResponseOrBuilder extends
    *消息id
    * </pre>
    *
-   * <code>optional .MID mid = 1 [default = SystemErrorRes];</code>
-   * @return Whether the mid field is set.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The enum numeric value on the wire for msgId.
    */
-  boolean hasMid();
+  int getMsgIdValue();
   /**
    * <pre>
    *消息id
    * </pre>
    *
-   * <code>optional .MID mid = 1 [default = SystemErrorRes];</code>
-   * @return The mid.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The msgId.
    */
-  info.xiaomo.server.shared.protocol.Mid.MID getMid();
+  info.xiaomo.server.shared.protocol.msg.MsgId getMsgId();
 
   /**
    * <pre>
    *错误码
    * </pre>
    *
-   * <code>optional .SystemErroCode errorCode = 2;</code>
-   * @return Whether the errorCode field is set.
+   * <code>.SystemErrorCode errorCode = 2;</code>
+   * @return The enum numeric value on the wire for errorCode.
    */
-  boolean hasErrorCode();
+  int getErrorCodeValue();
   /**
    * <pre>
    *错误码
    * </pre>
    *
-   * <code>optional .SystemErroCode errorCode = 2;</code>
+   * <code>.SystemErrorCode errorCode = 2;</code>
    * @return The errorCode.
    */
-  info.xiaomo.server.shared.protocol.system.SystemErroCode getErrorCode();
+  info.xiaomo.server.shared.protocol.system.SystemErrorCode getErrorCode();
 
   /**
    * <pre>
    *错误信息
    * </pre>
    *
-   * <code>optional string msg = 3;</code>
-   * @return Whether the msg field is set.
-   */
-  boolean hasMsg();
-  /**
-   * <pre>
-   *错误信息
-   * </pre>
-   *
-   * <code>optional string msg = 3;</code>
+   * <code>string msg = 3;</code>
    * @return The msg.
    */
   java.lang.String getMsg();
@@ -68,7 +59,7 @@ public interface SystemErrorResponseOrBuilder extends
    *错误信息
    * </pre>
    *
-   * <code>optional string msg = 3;</code>
+   * <code>string msg = 3;</code>
    * @return The bytes for msg.
    */
   com.google.protobuf.ByteString

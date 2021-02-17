@@ -12,35 +12,35 @@ public interface ApplyAthleticsRequestOrBuilder extends
    *消息id
    * </pre>
    *
-   * <code>optional .MID mid = 1 [default = ApplyAthleticsReq];</code>
-   * @return Whether the mid field is set.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The enum numeric value on the wire for msgId.
    */
-  boolean hasMid();
+  int getMsgIdValue();
   /**
    * <pre>
    *消息id
    * </pre>
    *
-   * <code>optional .MID mid = 1 [default = ApplyAthleticsReq];</code>
-   * @return The mid.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The msgId.
    */
-  info.xiaomo.server.shared.protocol.Mid.MID getMid();
+  info.xiaomo.server.shared.protocol.msg.MsgId getMsgId();
 
   /**
    * <pre>
    *类型 0竞技赛
    * </pre>
    *
-   * <code>optional .RoomType type = 2;</code>
-   * @return Whether the type field is set.
+   * <code>.RoomType type = 2;</code>
+   * @return The enum numeric value on the wire for type.
    */
-  boolean hasType();
+  int getTypeValue();
   /**
    * <pre>
    *类型 0竞技赛
    * </pre>
    *
-   * <code>optional .RoomType type = 2;</code>
+   * <code>.RoomType type = 2;</code>
    * @return The type.
    */
   info.xiaomo.server.shared.protocol.gameserver.room.RoomType getType();
@@ -50,16 +50,7 @@ public interface ApplyAthleticsRequestOrBuilder extends
    *级别
    * </pre>
    *
-   * <code>optional int32 rank = 3;</code>
-   * @return Whether the rank field is set.
-   */
-  boolean hasRank();
-  /**
-   * <pre>
-   *级别
-   * </pre>
-   *
-   * <code>optional int32 rank = 3;</code>
+   * <code>int32 rank = 3;</code>
    * @return The rank.
    */
   int getRank();

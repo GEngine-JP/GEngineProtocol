@@ -12,35 +12,35 @@ public interface ChatRequestOrBuilder extends
    *消息id
    * </pre>
    *
-   * <code>optional .MID mid = 1 [default = ChatReq];</code>
-   * @return Whether the mid field is set.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The enum numeric value on the wire for msgId.
    */
-  boolean hasMid();
+  int getMsgIdValue();
   /**
    * <pre>
    *消息id
    * </pre>
    *
-   * <code>optional .MID mid = 1 [default = ChatReq];</code>
-   * @return The mid.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The msgId.
    */
-  info.xiaomo.server.shared.protocol.Mid.MID getMid();
+  info.xiaomo.server.shared.protocol.msg.MsgId getMsgId();
 
   /**
    * <pre>
    *聊天类型
    * </pre>
    *
-   * <code>required .ChatType chatType = 2 [default = PRIVATE];</code>
-   * @return Whether the chatType field is set.
+   * <code>.ChatType chatType = 2;</code>
+   * @return The enum numeric value on the wire for chatType.
    */
-  boolean hasChatType();
+  int getChatTypeValue();
   /**
    * <pre>
    *聊天类型
    * </pre>
    *
-   * <code>required .ChatType chatType = 2 [default = PRIVATE];</code>
+   * <code>.ChatType chatType = 2;</code>
    * @return The chatType.
    */
   info.xiaomo.server.shared.protocol.hall.chat.ChatType getChatType();
@@ -50,16 +50,7 @@ public interface ChatRequestOrBuilder extends
    *接收者ID
    * </pre>
    *
-   * <code>optional int64 receiverId = 3;</code>
-   * @return Whether the receiverId field is set.
-   */
-  boolean hasReceiverId();
-  /**
-   * <pre>
-   *接收者ID
-   * </pre>
-   *
-   * <code>optional int64 receiverId = 3;</code>
+   * <code>int64 receiverId = 3;</code>
    * @return The receiverId.
    */
   long getReceiverId();
@@ -69,16 +60,7 @@ public interface ChatRequestOrBuilder extends
    *聊天消息
    * </pre>
    *
-   * <code>optional string msg = 4;</code>
-   * @return Whether the msg field is set.
-   */
-  boolean hasMsg();
-  /**
-   * <pre>
-   *聊天消息
-   * </pre>
-   *
-   * <code>optional string msg = 4;</code>
+   * <code>string msg = 4;</code>
    * @return The msg.
    */
   java.lang.String getMsg();
@@ -87,7 +69,7 @@ public interface ChatRequestOrBuilder extends
    *聊天消息
    * </pre>
    *
-   * <code>optional string msg = 4;</code>
+   * <code>string msg = 4;</code>
    * @return The bytes for msg.
    */
   com.google.protobuf.ByteString

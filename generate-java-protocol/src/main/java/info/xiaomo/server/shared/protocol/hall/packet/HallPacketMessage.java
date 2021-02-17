@@ -48,54 +48,53 @@ public final class HallPacketMessage {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\027HallPacketMessage.proto\032\tMid.proto\"7\n\022" +
-      "PacketItemsRequest\022!\n\003mid\030\001 \001(\0162\004.MID:\016P" +
-      "acketItemsReq\"T\n\023PacketItemsResponse\022!\n\003" +
-      "mid\030\001 \001(\0162\004.MID:\016PacketItemsRes\022\032\n\005items" +
-      "\030\002 \003(\0132\013.PacketItem\"?\n\016UseItemRequest\022\035\n" +
-      "\003mid\030\001 \001(\0162\004.MID:\nUseItemReq\022\016\n\006itemId\030\002" +
-      " \002(\003\"@\n\017UseItemResponse\022\035\n\003mid\030\001 \001(\0162\004.M" +
-      "ID:\nUseItemRes\022\016\n\006result\030\002 \001(\005\"7\n\nPacket" +
-      "Item\022\n\n\002id\030\001 \002(\003\022\020\n\010configId\030\002 \002(\005\022\013\n\003nu" +
-      "m\030\003 \002(\005B2\n.info.xiaomo.server.shared.pro" +
-      "tocol.hall.packetP\001"
+      "\n\027HallPacketMessage.proto\032\017MessageId.pro" +
+      "to\"+\n\022PacketItemsRequest\022\025\n\005msgId\030\001 \001(\0162" +
+      "\006.MsgId\"H\n\023PacketItemsResponse\022\025\n\005msgId\030" +
+      "\001 \001(\0162\006.MsgId\022\032\n\005items\030\002 \003(\0132\013.PacketIte" +
+      "m\"7\n\016UseItemRequest\022\025\n\005msgId\030\001 \001(\0162\006.Msg" +
+      "Id\022\016\n\006itemId\030\002 \001(\003\"8\n\017UseItemResponse\022\025\n" +
+      "\005msgId\030\001 \001(\0162\006.MsgId\022\016\n\006result\030\002 \001(\005\"7\n\n" +
+      "PacketItem\022\n\n\002id\030\001 \001(\003\022\020\n\010configId\030\002 \001(\005" +
+      "\022\013\n\003num\030\003 \001(\005B2\n.info.xiaomo.server.shar" +
+      "ed.protocol.hall.packetP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          info.xiaomo.server.shared.protocol.Mid.getDescriptor(),
+          info.xiaomo.server.shared.protocol.msg.MessageId.getDescriptor(),
         });
     internal_static_PacketItemsRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_PacketItemsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PacketItemsRequest_descriptor,
-        new java.lang.String[] { "Mid", });
+        new java.lang.String[] { "MsgId", });
     internal_static_PacketItemsResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_PacketItemsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PacketItemsResponse_descriptor,
-        new java.lang.String[] { "Mid", "Items", });
+        new java.lang.String[] { "MsgId", "Items", });
     internal_static_UseItemRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_UseItemRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_UseItemRequest_descriptor,
-        new java.lang.String[] { "Mid", "ItemId", });
+        new java.lang.String[] { "MsgId", "ItemId", });
     internal_static_UseItemResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_UseItemResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_UseItemResponse_descriptor,
-        new java.lang.String[] { "Mid", "Result", });
+        new java.lang.String[] { "MsgId", "Result", });
     internal_static_PacketItem_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_PacketItem_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PacketItem_descriptor,
         new java.lang.String[] { "Id", "ConfigId", "Num", });
-    info.xiaomo.server.shared.protocol.Mid.getDescriptor();
+    info.xiaomo.server.shared.protocol.msg.MessageId.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

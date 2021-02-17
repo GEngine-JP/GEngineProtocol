@@ -8,39 +8,39 @@ public interface ServerListResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>optional .MID mid = 1 [default = ServerListRes];</code>
-   * @return Whether the mid field is set.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The enum numeric value on the wire for msgId.
    */
-  boolean hasMid();
+  int getMsgIdValue();
   /**
-   * <code>optional .MID mid = 1 [default = ServerListRes];</code>
-   * @return The mid.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The msgId.
    */
-  info.xiaomo.server.shared.protocol.Mid.MID getMid();
+  info.xiaomo.server.shared.protocol.msg.MsgId getMsgId();
 
   /**
    * <pre>
    *服务器信息
    * </pre>
    *
-   * <code>repeated .ServerInfo serverInfo = 2;</code>
+   * <code>repeated .GameServerInfo serverInfo = 2;</code>
    */
-  java.util.List<info.xiaomo.server.shared.protocol.server.ServerInfo> 
+  java.util.List<info.xiaomo.server.shared.protocol.server.GameServerInfo> 
       getServerInfoList();
   /**
    * <pre>
    *服务器信息
    * </pre>
    *
-   * <code>repeated .ServerInfo serverInfo = 2;</code>
+   * <code>repeated .GameServerInfo serverInfo = 2;</code>
    */
-  info.xiaomo.server.shared.protocol.server.ServerInfo getServerInfo(int index);
+  info.xiaomo.server.shared.protocol.server.GameServerInfo getServerInfo(int index);
   /**
    * <pre>
    *服务器信息
    * </pre>
    *
-   * <code>repeated .ServerInfo serverInfo = 2;</code>
+   * <code>repeated .GameServerInfo serverInfo = 2;</code>
    */
   int getServerInfoCount();
   /**
@@ -48,17 +48,17 @@ public interface ServerListResponseOrBuilder extends
    *服务器信息
    * </pre>
    *
-   * <code>repeated .ServerInfo serverInfo = 2;</code>
+   * <code>repeated .GameServerInfo serverInfo = 2;</code>
    */
-  java.util.List<? extends info.xiaomo.server.shared.protocol.server.ServerInfoOrBuilder> 
+  java.util.List<? extends info.xiaomo.server.shared.protocol.server.GameServerInfoOrBuilder> 
       getServerInfoOrBuilderList();
   /**
    * <pre>
    *服务器信息
    * </pre>
    *
-   * <code>repeated .ServerInfo serverInfo = 2;</code>
+   * <code>repeated .GameServerInfo serverInfo = 2;</code>
    */
-  info.xiaomo.server.shared.protocol.server.ServerInfoOrBuilder getServerInfoOrBuilder(
+  info.xiaomo.server.shared.protocol.server.GameServerInfoOrBuilder getServerInfoOrBuilder(
       int index);
 }

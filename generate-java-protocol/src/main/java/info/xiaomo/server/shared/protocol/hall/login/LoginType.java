@@ -14,14 +14,31 @@ public enum LoginType
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
    * <pre>
+   *默认
+   * </pre>
+   *
+   * <code>DefaultType = 0;</code>
+   */
+  DefaultType(0),
+  /**
+   * <pre>
    *账号登录
    * </pre>
    *
    * <code>ACCOUNT = 1;</code>
    */
   ACCOUNT(1),
+  UNRECOGNIZED(-1),
   ;
 
+  /**
+   * <pre>
+   *默认
+   * </pre>
+   *
+   * <code>DefaultType = 0;</code>
+   */
+  public static final int DefaultType_VALUE = 0;
   /**
    * <pre>
    *账号登录
@@ -33,6 +50,10 @@ public enum LoginType
 
 
   public final int getNumber() {
+    if (this == UNRECOGNIZED) {
+      throw new java.lang.IllegalArgumentException(
+          "Can't get the number of an unknown enum value.");
+    }
     return value;
   }
 
@@ -52,6 +73,7 @@ public enum LoginType
    */
   public static LoginType forNumber(int value) {
     switch (value) {
+      case 0: return DefaultType;
       case 1: return ACCOUNT;
       default: return null;
     }
@@ -71,6 +93,10 @@ public enum LoginType
 
   public final com.google.protobuf.Descriptors.EnumValueDescriptor
       getValueDescriptor() {
+    if (this == UNRECOGNIZED) {
+      throw new java.lang.IllegalStateException(
+          "Can't get the descriptor of an unrecognized enum value.");
+    }
     return getDescriptor().getValues().get(ordinal());
   }
   public final com.google.protobuf.Descriptors.EnumDescriptor
@@ -89,6 +115,9 @@ public enum LoginType
     if (desc.getType() != getDescriptor()) {
       throw new java.lang.IllegalArgumentException(
         "EnumValueDescriptor is not for this type.");
+    }
+    if (desc.getIndex() == -1) {
+      return UNRECOGNIZED;
     }
     return VALUES[desc.getIndex()];
   }

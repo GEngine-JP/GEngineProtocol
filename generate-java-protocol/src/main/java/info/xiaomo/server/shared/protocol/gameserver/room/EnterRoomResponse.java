@@ -20,7 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private EnterRoomResponse() {
-    mid_ = 20002;
+    msgId_ = 0;
     fishInfo_ = java.util.Collections.emptyList();
     roleInfo_ = java.util.Collections.emptyList();
   }
@@ -58,50 +58,44 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
             int rawValue = input.readEnum();
-              @SuppressWarnings("deprecation")
-            info.xiaomo.server.shared.protocol.Mid.MID value = info.xiaomo.server.shared.protocol.Mid.MID.valueOf(rawValue);
-            if (value == null) {
-              unknownFields.mergeVarintField(1, rawValue);
-            } else {
-              bitField0_ |= 0x00000001;
-              mid_ = rawValue;
-            }
+
+            msgId_ = rawValue;
             break;
           }
           case 16: {
-            bitField0_ |= 0x00000002;
+
             result_ = input.readInt32();
             break;
           }
           case 26: {
             info.xiaomo.server.shared.protocol.gameserver.room.RoomInfo.Builder subBuilder = null;
-            if (((bitField0_ & 0x00000004) != 0)) {
+            if (roomInfo_ != null) {
               subBuilder = roomInfo_.toBuilder();
             }
-            roomInfo_ = input.readMessage(info.xiaomo.server.shared.protocol.gameserver.room.RoomInfo.PARSER, extensionRegistry);
+            roomInfo_ = input.readMessage(info.xiaomo.server.shared.protocol.gameserver.room.RoomInfo.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(roomInfo_);
               roomInfo_ = subBuilder.buildPartial();
             }
-            bitField0_ |= 0x00000004;
+
             break;
           }
           case 34: {
-            if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               fishInfo_ = new java.util.ArrayList<info.xiaomo.server.shared.protocol.gameserver.room.FishInfo>();
-              mutable_bitField0_ |= 0x00000008;
+              mutable_bitField0_ |= 0x00000001;
             }
             fishInfo_.add(
-                input.readMessage(info.xiaomo.server.shared.protocol.gameserver.room.FishInfo.PARSER, extensionRegistry));
+                input.readMessage(info.xiaomo.server.shared.protocol.gameserver.room.FishInfo.parser(), extensionRegistry));
             break;
           }
           case 42: {
-            if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
               roleInfo_ = new java.util.ArrayList<info.xiaomo.server.shared.protocol.gameserver.room.RoomRoleInfo>();
-              mutable_bitField0_ |= 0x00000010;
+              mutable_bitField0_ |= 0x00000002;
             }
             roleInfo_.add(
-                input.readMessage(info.xiaomo.server.shared.protocol.gameserver.room.RoomRoleInfo.PARSER, extensionRegistry));
+                input.readMessage(info.xiaomo.server.shared.protocol.gameserver.room.RoomRoleInfo.parser(), extensionRegistry));
             break;
           }
           default: {
@@ -119,10 +113,10 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         fishInfo_ = java.util.Collections.unmodifiableList(fishInfo_);
       }
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         roleInfo_ = java.util.Collections.unmodifiableList(roleInfo_);
       }
       this.unknownFields = unknownFields.build();
@@ -142,32 +136,31 @@ private static final long serialVersionUID = 0L;
             info.xiaomo.server.shared.protocol.gameserver.room.EnterRoomResponse.class, info.xiaomo.server.shared.protocol.gameserver.room.EnterRoomResponse.Builder.class);
   }
 
-  private int bitField0_;
-  public static final int MID_FIELD_NUMBER = 1;
-  private int mid_;
+  public static final int MSGID_FIELD_NUMBER = 1;
+  private int msgId_;
   /**
    * <pre>
    *消息id
    * </pre>
    *
-   * <code>optional .MID mid = 1 [default = EnterRoomRes];</code>
-   * @return Whether the mid field is set.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The enum numeric value on the wire for msgId.
    */
-  @java.lang.Override public boolean hasMid() {
-    return ((bitField0_ & 0x00000001) != 0);
+  @java.lang.Override public int getMsgIdValue() {
+    return msgId_;
   }
   /**
    * <pre>
    *消息id
    * </pre>
    *
-   * <code>optional .MID mid = 1 [default = EnterRoomRes];</code>
-   * @return The mid.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The msgId.
    */
-  @java.lang.Override public info.xiaomo.server.shared.protocol.Mid.MID getMid() {
+  @java.lang.Override public info.xiaomo.server.shared.protocol.msg.MsgId getMsgId() {
     @SuppressWarnings("deprecation")
-    info.xiaomo.server.shared.protocol.Mid.MID result = info.xiaomo.server.shared.protocol.Mid.MID.valueOf(mid_);
-    return result == null ? info.xiaomo.server.shared.protocol.Mid.MID.EnterRoomRes : result;
+    info.xiaomo.server.shared.protocol.msg.MsgId result = info.xiaomo.server.shared.protocol.msg.MsgId.valueOf(msgId_);
+    return result == null ? info.xiaomo.server.shared.protocol.msg.MsgId.UNRECOGNIZED : result;
   }
 
   public static final int RESULT_FIELD_NUMBER = 2;
@@ -177,19 +170,7 @@ private static final long serialVersionUID = 0L;
    *结果
    * </pre>
    *
-   * <code>optional int32 result = 2;</code>
-   * @return Whether the result field is set.
-   */
-  @java.lang.Override
-  public boolean hasResult() {
-    return ((bitField0_ & 0x00000002) != 0);
-  }
-  /**
-   * <pre>
-   *结果
-   * </pre>
-   *
-   * <code>optional int32 result = 2;</code>
+   * <code>int32 result = 2;</code>
    * @return The result.
    */
   @java.lang.Override
@@ -204,19 +185,19 @@ private static final long serialVersionUID = 0L;
    *房间信息
    * </pre>
    *
-   * <code>optional .RoomInfo roomInfo = 3;</code>
+   * <code>.RoomInfo roomInfo = 3;</code>
    * @return Whether the roomInfo field is set.
    */
   @java.lang.Override
   public boolean hasRoomInfo() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return roomInfo_ != null;
   }
   /**
    * <pre>
    *房间信息
    * </pre>
    *
-   * <code>optional .RoomInfo roomInfo = 3;</code>
+   * <code>.RoomInfo roomInfo = 3;</code>
    * @return The roomInfo.
    */
   @java.lang.Override
@@ -228,11 +209,11 @@ private static final long serialVersionUID = 0L;
    *房间信息
    * </pre>
    *
-   * <code>optional .RoomInfo roomInfo = 3;</code>
+   * <code>.RoomInfo roomInfo = 3;</code>
    */
   @java.lang.Override
   public info.xiaomo.server.shared.protocol.gameserver.room.RoomInfoOrBuilder getRoomInfoOrBuilder() {
-    return roomInfo_ == null ? info.xiaomo.server.shared.protocol.gameserver.room.RoomInfo.getDefaultInstance() : roomInfo_;
+    return getRoomInfo();
   }
 
   public static final int FISHINFO_FIELD_NUMBER = 4;
@@ -362,24 +343,6 @@ private static final long serialVersionUID = 0L;
     if (isInitialized == 1) return true;
     if (isInitialized == 0) return false;
 
-    if (hasRoomInfo()) {
-      if (!getRoomInfo().isInitialized()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-    }
-    for (int i = 0; i < getFishInfoCount(); i++) {
-      if (!getFishInfo(i).isInitialized()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-    }
-    for (int i = 0; i < getRoleInfoCount(); i++) {
-      if (!getRoleInfo(i).isInitialized()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-    }
     memoizedIsInitialized = 1;
     return true;
   }
@@ -387,13 +350,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeEnum(1, mid_);
+    if (msgId_ != info.xiaomo.server.shared.protocol.msg.MsgId.Base.getNumber()) {
+      output.writeEnum(1, msgId_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (result_ != 0) {
       output.writeInt32(2, result_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (roomInfo_ != null) {
       output.writeMessage(3, getRoomInfo());
     }
     for (int i = 0; i < fishInfo_.size(); i++) {
@@ -411,15 +374,15 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (msgId_ != info.xiaomo.server.shared.protocol.msg.MsgId.Base.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(1, mid_);
+        .computeEnumSize(1, msgId_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (result_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(2, result_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (roomInfo_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, getRoomInfo());
     }
@@ -446,15 +409,9 @@ private static final long serialVersionUID = 0L;
     }
     info.xiaomo.server.shared.protocol.gameserver.room.EnterRoomResponse other = (info.xiaomo.server.shared.protocol.gameserver.room.EnterRoomResponse) obj;
 
-    if (hasMid() != other.hasMid()) return false;
-    if (hasMid()) {
-      if (mid_ != other.mid_) return false;
-    }
-    if (hasResult() != other.hasResult()) return false;
-    if (hasResult()) {
-      if (getResult()
-          != other.getResult()) return false;
-    }
+    if (msgId_ != other.msgId_) return false;
+    if (getResult()
+        != other.getResult()) return false;
     if (hasRoomInfo() != other.hasRoomInfo()) return false;
     if (hasRoomInfo()) {
       if (!getRoomInfo()
@@ -475,14 +432,10 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasMid()) {
-      hash = (37 * hash) + MID_FIELD_NUMBER;
-      hash = (53 * hash) + mid_;
-    }
-    if (hasResult()) {
-      hash = (37 * hash) + RESULT_FIELD_NUMBER;
-      hash = (53 * hash) + getResult();
-    }
+    hash = (37 * hash) + MSGID_FIELD_NUMBER;
+    hash = (53 * hash) + msgId_;
+    hash = (37 * hash) + RESULT_FIELD_NUMBER;
+    hash = (53 * hash) + getResult();
     if (hasRoomInfo()) {
       hash = (37 * hash) + ROOMINFO_FIELD_NUMBER;
       hash = (53 * hash) + getRoomInfo().hashCode();
@@ -627,7 +580,6 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
-        getRoomInfoFieldBuilder();
         getFishInfoFieldBuilder();
         getRoleInfoFieldBuilder();
       }
@@ -635,25 +587,25 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      mid_ = 20002;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      msgId_ = 0;
+
       result_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000002);
+
       if (roomInfoBuilder_ == null) {
         roomInfo_ = null;
       } else {
-        roomInfoBuilder_.clear();
+        roomInfo_ = null;
+        roomInfoBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
       if (fishInfoBuilder_ == null) {
         fishInfo_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         fishInfoBuilder_.clear();
       }
       if (roleInfoBuilder_ == null) {
         roleInfo_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         roleInfoBuilder_.clear();
       }
@@ -684,42 +636,31 @@ private static final long serialVersionUID = 0L;
     public info.xiaomo.server.shared.protocol.gameserver.room.EnterRoomResponse buildPartial() {
       info.xiaomo.server.shared.protocol.gameserver.room.EnterRoomResponse result = new info.xiaomo.server.shared.protocol.gameserver.room.EnterRoomResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
-      }
-      result.mid_ = mid_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.result_ = result_;
-        to_bitField0_ |= 0x00000002;
-      }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        if (roomInfoBuilder_ == null) {
-          result.roomInfo_ = roomInfo_;
-        } else {
-          result.roomInfo_ = roomInfoBuilder_.build();
-        }
-        to_bitField0_ |= 0x00000004;
+      result.msgId_ = msgId_;
+      result.result_ = result_;
+      if (roomInfoBuilder_ == null) {
+        result.roomInfo_ = roomInfo_;
+      } else {
+        result.roomInfo_ = roomInfoBuilder_.build();
       }
       if (fishInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           fishInfo_ = java.util.Collections.unmodifiableList(fishInfo_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.fishInfo_ = fishInfo_;
       } else {
         result.fishInfo_ = fishInfoBuilder_.build();
       }
       if (roleInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           roleInfo_ = java.util.Collections.unmodifiableList(roleInfo_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.roleInfo_ = roleInfo_;
       } else {
         result.roleInfo_ = roleInfoBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -768,10 +709,10 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(info.xiaomo.server.shared.protocol.gameserver.room.EnterRoomResponse other) {
       if (other == info.xiaomo.server.shared.protocol.gameserver.room.EnterRoomResponse.getDefaultInstance()) return this;
-      if (other.hasMid()) {
-        setMid(other.getMid());
+      if (other.msgId_ != 0) {
+        setMsgIdValue(other.getMsgIdValue());
       }
-      if (other.hasResult()) {
+      if (other.getResult() != 0) {
         setResult(other.getResult());
       }
       if (other.hasRoomInfo()) {
@@ -781,7 +722,7 @@ private static final long serialVersionUID = 0L;
         if (!other.fishInfo_.isEmpty()) {
           if (fishInfo_.isEmpty()) {
             fishInfo_ = other.fishInfo_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureFishInfoIsMutable();
             fishInfo_.addAll(other.fishInfo_);
@@ -794,7 +735,7 @@ private static final long serialVersionUID = 0L;
             fishInfoBuilder_.dispose();
             fishInfoBuilder_ = null;
             fishInfo_ = other.fishInfo_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
             fishInfoBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getFishInfoFieldBuilder() : null;
@@ -807,7 +748,7 @@ private static final long serialVersionUID = 0L;
         if (!other.roleInfo_.isEmpty()) {
           if (roleInfo_.isEmpty()) {
             roleInfo_ = other.roleInfo_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureRoleInfoIsMutable();
             roleInfo_.addAll(other.roleInfo_);
@@ -820,7 +761,7 @@ private static final long serialVersionUID = 0L;
             roleInfoBuilder_.dispose();
             roleInfoBuilder_ = null;
             roleInfo_ = other.roleInfo_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000002);
             roleInfoBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getRoleInfoFieldBuilder() : null;
@@ -836,21 +777,6 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public final boolean isInitialized() {
-      if (hasRoomInfo()) {
-        if (!getRoomInfo().isInitialized()) {
-          return false;
-        }
-      }
-      for (int i = 0; i < getFishInfoCount(); i++) {
-        if (!getFishInfo(i).isInitialized()) {
-          return false;
-        }
-      }
-      for (int i = 0; i < getRoleInfoCount(); i++) {
-        if (!getRoleInfo(i).isInitialized()) {
-          return false;
-        }
-      }
       return true;
     }
 
@@ -874,47 +800,30 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private int mid_ = 20002;
+    private int msgId_ = 0;
     /**
      * <pre>
      *消息id
      * </pre>
      *
-     * <code>optional .MID mid = 1 [default = EnterRoomRes];</code>
-     * @return Whether the mid field is set.
+     * <code>.MsgId msgId = 1;</code>
+     * @return The enum numeric value on the wire for msgId.
      */
-    @java.lang.Override public boolean hasMid() {
-      return ((bitField0_ & 0x00000001) != 0);
+    @java.lang.Override public int getMsgIdValue() {
+      return msgId_;
     }
     /**
      * <pre>
      *消息id
      * </pre>
      *
-     * <code>optional .MID mid = 1 [default = EnterRoomRes];</code>
-     * @return The mid.
-     */
-    @java.lang.Override
-    public info.xiaomo.server.shared.protocol.Mid.MID getMid() {
-      @SuppressWarnings("deprecation")
-      info.xiaomo.server.shared.protocol.Mid.MID result = info.xiaomo.server.shared.protocol.Mid.MID.valueOf(mid_);
-      return result == null ? info.xiaomo.server.shared.protocol.Mid.MID.EnterRoomRes : result;
-    }
-    /**
-     * <pre>
-     *消息id
-     * </pre>
-     *
-     * <code>optional .MID mid = 1 [default = EnterRoomRes];</code>
-     * @param value The mid to set.
+     * <code>.MsgId msgId = 1;</code>
+     * @param value The enum numeric value on the wire for msgId to set.
      * @return This builder for chaining.
      */
-    public Builder setMid(info.xiaomo.server.shared.protocol.Mid.MID value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000001;
-      mid_ = value.getNumber();
+    public Builder setMsgIdValue(int value) {
+      
+      msgId_ = value;
       onChanged();
       return this;
     }
@@ -923,12 +832,44 @@ private static final long serialVersionUID = 0L;
      *消息id
      * </pre>
      *
-     * <code>optional .MID mid = 1 [default = EnterRoomRes];</code>
+     * <code>.MsgId msgId = 1;</code>
+     * @return The msgId.
+     */
+    @java.lang.Override
+    public info.xiaomo.server.shared.protocol.msg.MsgId getMsgId() {
+      @SuppressWarnings("deprecation")
+      info.xiaomo.server.shared.protocol.msg.MsgId result = info.xiaomo.server.shared.protocol.msg.MsgId.valueOf(msgId_);
+      return result == null ? info.xiaomo.server.shared.protocol.msg.MsgId.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     *消息id
+     * </pre>
+     *
+     * <code>.MsgId msgId = 1;</code>
+     * @param value The msgId to set.
      * @return This builder for chaining.
      */
-    public Builder clearMid() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      mid_ = 20002;
+    public Builder setMsgId(info.xiaomo.server.shared.protocol.msg.MsgId value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      msgId_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *消息id
+     * </pre>
+     *
+     * <code>.MsgId msgId = 1;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearMsgId() {
+      
+      msgId_ = 0;
       onChanged();
       return this;
     }
@@ -939,19 +880,7 @@ private static final long serialVersionUID = 0L;
      *结果
      * </pre>
      *
-     * <code>optional int32 result = 2;</code>
-     * @return Whether the result field is set.
-     */
-    @java.lang.Override
-    public boolean hasResult() {
-      return ((bitField0_ & 0x00000002) != 0);
-    }
-    /**
-     * <pre>
-     *结果
-     * </pre>
-     *
-     * <code>optional int32 result = 2;</code>
+     * <code>int32 result = 2;</code>
      * @return The result.
      */
     @java.lang.Override
@@ -963,12 +892,12 @@ private static final long serialVersionUID = 0L;
      *结果
      * </pre>
      *
-     * <code>optional int32 result = 2;</code>
+     * <code>int32 result = 2;</code>
      * @param value The result to set.
      * @return This builder for chaining.
      */
     public Builder setResult(int value) {
-      bitField0_ |= 0x00000002;
+      
       result_ = value;
       onChanged();
       return this;
@@ -978,11 +907,11 @@ private static final long serialVersionUID = 0L;
      *结果
      * </pre>
      *
-     * <code>optional int32 result = 2;</code>
+     * <code>int32 result = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearResult() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      
       result_ = 0;
       onChanged();
       return this;
@@ -996,18 +925,18 @@ private static final long serialVersionUID = 0L;
      *房间信息
      * </pre>
      *
-     * <code>optional .RoomInfo roomInfo = 3;</code>
+     * <code>.RoomInfo roomInfo = 3;</code>
      * @return Whether the roomInfo field is set.
      */
     public boolean hasRoomInfo() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return roomInfoBuilder_ != null || roomInfo_ != null;
     }
     /**
      * <pre>
      *房间信息
      * </pre>
      *
-     * <code>optional .RoomInfo roomInfo = 3;</code>
+     * <code>.RoomInfo roomInfo = 3;</code>
      * @return The roomInfo.
      */
     public info.xiaomo.server.shared.protocol.gameserver.room.RoomInfo getRoomInfo() {
@@ -1022,7 +951,7 @@ private static final long serialVersionUID = 0L;
      *房间信息
      * </pre>
      *
-     * <code>optional .RoomInfo roomInfo = 3;</code>
+     * <code>.RoomInfo roomInfo = 3;</code>
      */
     public Builder setRoomInfo(info.xiaomo.server.shared.protocol.gameserver.room.RoomInfo value) {
       if (roomInfoBuilder_ == null) {
@@ -1034,7 +963,7 @@ private static final long serialVersionUID = 0L;
       } else {
         roomInfoBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+
       return this;
     }
     /**
@@ -1042,7 +971,7 @@ private static final long serialVersionUID = 0L;
      *房间信息
      * </pre>
      *
-     * <code>optional .RoomInfo roomInfo = 3;</code>
+     * <code>.RoomInfo roomInfo = 3;</code>
      */
     public Builder setRoomInfo(
         info.xiaomo.server.shared.protocol.gameserver.room.RoomInfo.Builder builderForValue) {
@@ -1052,7 +981,7 @@ private static final long serialVersionUID = 0L;
       } else {
         roomInfoBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+
       return this;
     }
     /**
@@ -1060,13 +989,11 @@ private static final long serialVersionUID = 0L;
      *房间信息
      * </pre>
      *
-     * <code>optional .RoomInfo roomInfo = 3;</code>
+     * <code>.RoomInfo roomInfo = 3;</code>
      */
     public Builder mergeRoomInfo(info.xiaomo.server.shared.protocol.gameserver.room.RoomInfo value) {
       if (roomInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0) &&
-            roomInfo_ != null &&
-            roomInfo_ != info.xiaomo.server.shared.protocol.gameserver.room.RoomInfo.getDefaultInstance()) {
+        if (roomInfo_ != null) {
           roomInfo_ =
             info.xiaomo.server.shared.protocol.gameserver.room.RoomInfo.newBuilder(roomInfo_).mergeFrom(value).buildPartial();
         } else {
@@ -1076,7 +1003,7 @@ private static final long serialVersionUID = 0L;
       } else {
         roomInfoBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000004;
+
       return this;
     }
     /**
@@ -1084,16 +1011,17 @@ private static final long serialVersionUID = 0L;
      *房间信息
      * </pre>
      *
-     * <code>optional .RoomInfo roomInfo = 3;</code>
+     * <code>.RoomInfo roomInfo = 3;</code>
      */
     public Builder clearRoomInfo() {
       if (roomInfoBuilder_ == null) {
         roomInfo_ = null;
         onChanged();
       } else {
-        roomInfoBuilder_.clear();
+        roomInfo_ = null;
+        roomInfoBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
+
       return this;
     }
     /**
@@ -1101,10 +1029,10 @@ private static final long serialVersionUID = 0L;
      *房间信息
      * </pre>
      *
-     * <code>optional .RoomInfo roomInfo = 3;</code>
+     * <code>.RoomInfo roomInfo = 3;</code>
      */
     public info.xiaomo.server.shared.protocol.gameserver.room.RoomInfo.Builder getRoomInfoBuilder() {
-      bitField0_ |= 0x00000004;
+      
       onChanged();
       return getRoomInfoFieldBuilder().getBuilder();
     }
@@ -1113,7 +1041,7 @@ private static final long serialVersionUID = 0L;
      *房间信息
      * </pre>
      *
-     * <code>optional .RoomInfo roomInfo = 3;</code>
+     * <code>.RoomInfo roomInfo = 3;</code>
      */
     public info.xiaomo.server.shared.protocol.gameserver.room.RoomInfoOrBuilder getRoomInfoOrBuilder() {
       if (roomInfoBuilder_ != null) {
@@ -1128,7 +1056,7 @@ private static final long serialVersionUID = 0L;
      *房间信息
      * </pre>
      *
-     * <code>optional .RoomInfo roomInfo = 3;</code>
+     * <code>.RoomInfo roomInfo = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         info.xiaomo.server.shared.protocol.gameserver.room.RoomInfo, info.xiaomo.server.shared.protocol.gameserver.room.RoomInfo.Builder, info.xiaomo.server.shared.protocol.gameserver.room.RoomInfoOrBuilder> 
@@ -1147,9 +1075,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<info.xiaomo.server.shared.protocol.gameserver.room.FishInfo> fishInfo_ =
       java.util.Collections.emptyList();
     private void ensureFishInfoIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         fishInfo_ = new java.util.ArrayList<info.xiaomo.server.shared.protocol.gameserver.room.FishInfo>(fishInfo_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000001;
        }
     }
 
@@ -1343,7 +1271,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearFishInfo() {
       if (fishInfoBuilder_ == null) {
         fishInfo_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         fishInfoBuilder_.clear();
@@ -1448,7 +1376,7 @@ private static final long serialVersionUID = 0L;
         fishInfoBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             info.xiaomo.server.shared.protocol.gameserver.room.FishInfo, info.xiaomo.server.shared.protocol.gameserver.room.FishInfo.Builder, info.xiaomo.server.shared.protocol.gameserver.room.FishInfoOrBuilder>(
                 fishInfo_,
-                ((bitField0_ & 0x00000008) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         fishInfo_ = null;
@@ -1459,9 +1387,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<info.xiaomo.server.shared.protocol.gameserver.room.RoomRoleInfo> roleInfo_ =
       java.util.Collections.emptyList();
     private void ensureRoleInfoIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         roleInfo_ = new java.util.ArrayList<info.xiaomo.server.shared.protocol.gameserver.room.RoomRoleInfo>(roleInfo_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000002;
        }
     }
 
@@ -1655,7 +1583,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearRoleInfo() {
       if (roleInfoBuilder_ == null) {
         roleInfo_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         roleInfoBuilder_.clear();
@@ -1760,7 +1688,7 @@ private static final long serialVersionUID = 0L;
         roleInfoBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             info.xiaomo.server.shared.protocol.gameserver.room.RoomRoleInfo, info.xiaomo.server.shared.protocol.gameserver.room.RoomRoleInfo.Builder, info.xiaomo.server.shared.protocol.gameserver.room.RoomRoleInfoOrBuilder>(
                 roleInfo_,
-                ((bitField0_ & 0x00000010) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         roleInfo_ = null;
@@ -1793,7 +1721,7 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  @java.lang.Deprecated public static final com.google.protobuf.Parser<EnterRoomResponse>
+  private static final com.google.protobuf.Parser<EnterRoomResponse>
       PARSER = new com.google.protobuf.AbstractParser<EnterRoomResponse>() {
     @java.lang.Override
     public EnterRoomResponse parsePartialFrom(

@@ -12,35 +12,26 @@ public interface ChatResponseOrBuilder extends
    *消息id
    * </pre>
    *
-   * <code>optional .MID mid = 1 [default = ChatRes];</code>
-   * @return Whether the mid field is set.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The enum numeric value on the wire for msgId.
    */
-  boolean hasMid();
+  int getMsgIdValue();
   /**
    * <pre>
    *消息id
    * </pre>
    *
-   * <code>optional .MID mid = 1 [default = ChatRes];</code>
-   * @return The mid.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The msgId.
    */
-  info.xiaomo.server.shared.protocol.Mid.MID getMid();
+  info.xiaomo.server.shared.protocol.msg.MsgId getMsgId();
 
   /**
    * <pre>
    *发送者ID
    * </pre>
    *
-   * <code>optional int64 senderId = 2;</code>
-   * @return Whether the senderId field is set.
-   */
-  boolean hasSenderId();
-  /**
-   * <pre>
-   *发送者ID
-   * </pre>
-   *
-   * <code>optional int64 senderId = 2;</code>
+   * <code>int64 senderId = 2;</code>
    * @return The senderId.
    */
   long getSenderId();
@@ -50,16 +41,7 @@ public interface ChatResponseOrBuilder extends
    *发送者头像
    * </pre>
    *
-   * <code>optional string senderHead = 3;</code>
-   * @return Whether the senderHead field is set.
-   */
-  boolean hasSenderHead();
-  /**
-   * <pre>
-   *发送者头像
-   * </pre>
-   *
-   * <code>optional string senderHead = 3;</code>
+   * <code>string senderHead = 3;</code>
    * @return The senderHead.
    */
   java.lang.String getSenderHead();
@@ -68,7 +50,7 @@ public interface ChatResponseOrBuilder extends
    *发送者头像
    * </pre>
    *
-   * <code>optional string senderHead = 3;</code>
+   * <code>string senderHead = 3;</code>
    * @return The bytes for senderHead.
    */
   com.google.protobuf.ByteString
@@ -79,16 +61,7 @@ public interface ChatResponseOrBuilder extends
    *发送者昵称
    * </pre>
    *
-   * <code>optional string senderNick = 4;</code>
-   * @return Whether the senderNick field is set.
-   */
-  boolean hasSenderNick();
-  /**
-   * <pre>
-   *发送者昵称
-   * </pre>
-   *
-   * <code>optional string senderNick = 4;</code>
+   * <code>string senderNick = 4;</code>
    * @return The senderNick.
    */
   java.lang.String getSenderNick();
@@ -97,7 +70,7 @@ public interface ChatResponseOrBuilder extends
    *发送者昵称
    * </pre>
    *
-   * <code>optional string senderNick = 4;</code>
+   * <code>string senderNick = 4;</code>
    * @return The bytes for senderNick.
    */
   com.google.protobuf.ByteString
@@ -108,16 +81,16 @@ public interface ChatResponseOrBuilder extends
    *聊天类型
    * </pre>
    *
-   * <code>required .ChatType chatType = 5;</code>
-   * @return Whether the chatType field is set.
+   * <code>.ChatType chatType = 5;</code>
+   * @return The enum numeric value on the wire for chatType.
    */
-  boolean hasChatType();
+  int getChatTypeValue();
   /**
    * <pre>
    *聊天类型
    * </pre>
    *
-   * <code>required .ChatType chatType = 5;</code>
+   * <code>.ChatType chatType = 5;</code>
    * @return The chatType.
    */
   info.xiaomo.server.shared.protocol.hall.chat.ChatType getChatType();
@@ -127,16 +100,7 @@ public interface ChatResponseOrBuilder extends
    *聊天消息
    * </pre>
    *
-   * <code>optional string msg = 6;</code>
-   * @return Whether the msg field is set.
-   */
-  boolean hasMsg();
-  /**
-   * <pre>
-   *聊天消息
-   * </pre>
-   *
-   * <code>optional string msg = 6;</code>
+   * <code>string msg = 6;</code>
    * @return The msg.
    */
   java.lang.String getMsg();
@@ -145,7 +109,7 @@ public interface ChatResponseOrBuilder extends
    *聊天消息
    * </pre>
    *
-   * <code>optional string msg = 6;</code>
+   * <code>string msg = 6;</code>
    * @return The bytes for msg.
    */
   com.google.protobuf.ByteString

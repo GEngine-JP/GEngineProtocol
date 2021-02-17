@@ -20,8 +20,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ApplyAthleticsRequest() {
-    mid_ = 20003;
-    type_ = 1;
+    msgId_ = 0;
+    type_ = 0;
   }
 
   @java.lang.Override
@@ -44,7 +44,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -57,30 +56,18 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
             int rawValue = input.readEnum();
-              @SuppressWarnings("deprecation")
-            info.xiaomo.server.shared.protocol.Mid.MID value = info.xiaomo.server.shared.protocol.Mid.MID.valueOf(rawValue);
-            if (value == null) {
-              unknownFields.mergeVarintField(1, rawValue);
-            } else {
-              bitField0_ |= 0x00000001;
-              mid_ = rawValue;
-            }
+
+            msgId_ = rawValue;
             break;
           }
           case 16: {
             int rawValue = input.readEnum();
-              @SuppressWarnings("deprecation")
-            info.xiaomo.server.shared.protocol.gameserver.room.RoomType value = info.xiaomo.server.shared.protocol.gameserver.room.RoomType.valueOf(rawValue);
-            if (value == null) {
-              unknownFields.mergeVarintField(2, rawValue);
-            } else {
-              bitField0_ |= 0x00000002;
-              type_ = rawValue;
-            }
+
+            type_ = rawValue;
             break;
           }
           case 24: {
-            bitField0_ |= 0x00000004;
+
             rank_ = input.readInt32();
             break;
           }
@@ -116,32 +103,31 @@ private static final long serialVersionUID = 0L;
             info.xiaomo.server.shared.protocol.gameserver.room.ApplyAthleticsRequest.class, info.xiaomo.server.shared.protocol.gameserver.room.ApplyAthleticsRequest.Builder.class);
   }
 
-  private int bitField0_;
-  public static final int MID_FIELD_NUMBER = 1;
-  private int mid_;
+  public static final int MSGID_FIELD_NUMBER = 1;
+  private int msgId_;
   /**
    * <pre>
    *消息id
    * </pre>
    *
-   * <code>optional .MID mid = 1 [default = ApplyAthleticsReq];</code>
-   * @return Whether the mid field is set.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The enum numeric value on the wire for msgId.
    */
-  @java.lang.Override public boolean hasMid() {
-    return ((bitField0_ & 0x00000001) != 0);
+  @java.lang.Override public int getMsgIdValue() {
+    return msgId_;
   }
   /**
    * <pre>
    *消息id
    * </pre>
    *
-   * <code>optional .MID mid = 1 [default = ApplyAthleticsReq];</code>
-   * @return The mid.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The msgId.
    */
-  @java.lang.Override public info.xiaomo.server.shared.protocol.Mid.MID getMid() {
+  @java.lang.Override public info.xiaomo.server.shared.protocol.msg.MsgId getMsgId() {
     @SuppressWarnings("deprecation")
-    info.xiaomo.server.shared.protocol.Mid.MID result = info.xiaomo.server.shared.protocol.Mid.MID.valueOf(mid_);
-    return result == null ? info.xiaomo.server.shared.protocol.Mid.MID.ApplyAthleticsReq : result;
+    info.xiaomo.server.shared.protocol.msg.MsgId result = info.xiaomo.server.shared.protocol.msg.MsgId.valueOf(msgId_);
+    return result == null ? info.xiaomo.server.shared.protocol.msg.MsgId.UNRECOGNIZED : result;
   }
 
   public static final int TYPE_FIELD_NUMBER = 2;
@@ -151,24 +137,24 @@ private static final long serialVersionUID = 0L;
    *类型 0竞技赛
    * </pre>
    *
-   * <code>optional .RoomType type = 2;</code>
-   * @return Whether the type field is set.
+   * <code>.RoomType type = 2;</code>
+   * @return The enum numeric value on the wire for type.
    */
-  @java.lang.Override public boolean hasType() {
-    return ((bitField0_ & 0x00000002) != 0);
+  @java.lang.Override public int getTypeValue() {
+    return type_;
   }
   /**
    * <pre>
    *类型 0竞技赛
    * </pre>
    *
-   * <code>optional .RoomType type = 2;</code>
+   * <code>.RoomType type = 2;</code>
    * @return The type.
    */
   @java.lang.Override public info.xiaomo.server.shared.protocol.gameserver.room.RoomType getType() {
     @SuppressWarnings("deprecation")
     info.xiaomo.server.shared.protocol.gameserver.room.RoomType result = info.xiaomo.server.shared.protocol.gameserver.room.RoomType.valueOf(type_);
-    return result == null ? info.xiaomo.server.shared.protocol.gameserver.room.RoomType.CLASSICS : result;
+    return result == null ? info.xiaomo.server.shared.protocol.gameserver.room.RoomType.UNRECOGNIZED : result;
   }
 
   public static final int RANK_FIELD_NUMBER = 3;
@@ -178,19 +164,7 @@ private static final long serialVersionUID = 0L;
    *级别
    * </pre>
    *
-   * <code>optional int32 rank = 3;</code>
-   * @return Whether the rank field is set.
-   */
-  @java.lang.Override
-  public boolean hasRank() {
-    return ((bitField0_ & 0x00000004) != 0);
-  }
-  /**
-   * <pre>
-   *级别
-   * </pre>
-   *
-   * <code>optional int32 rank = 3;</code>
+   * <code>int32 rank = 3;</code>
    * @return The rank.
    */
   @java.lang.Override
@@ -212,13 +186,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeEnum(1, mid_);
+    if (msgId_ != info.xiaomo.server.shared.protocol.msg.MsgId.Base.getNumber()) {
+      output.writeEnum(1, msgId_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (type_ != info.xiaomo.server.shared.protocol.gameserver.room.RoomType.DEFAULT.getNumber()) {
       output.writeEnum(2, type_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (rank_ != 0) {
       output.writeInt32(3, rank_);
     }
     unknownFields.writeTo(output);
@@ -230,15 +204,15 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (msgId_ != info.xiaomo.server.shared.protocol.msg.MsgId.Base.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(1, mid_);
+        .computeEnumSize(1, msgId_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (type_ != info.xiaomo.server.shared.protocol.gameserver.room.RoomType.DEFAULT.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(2, type_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (rank_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(3, rank_);
     }
@@ -257,19 +231,10 @@ private static final long serialVersionUID = 0L;
     }
     info.xiaomo.server.shared.protocol.gameserver.room.ApplyAthleticsRequest other = (info.xiaomo.server.shared.protocol.gameserver.room.ApplyAthleticsRequest) obj;
 
-    if (hasMid() != other.hasMid()) return false;
-    if (hasMid()) {
-      if (mid_ != other.mid_) return false;
-    }
-    if (hasType() != other.hasType()) return false;
-    if (hasType()) {
-      if (type_ != other.type_) return false;
-    }
-    if (hasRank() != other.hasRank()) return false;
-    if (hasRank()) {
-      if (getRank()
-          != other.getRank()) return false;
-    }
+    if (msgId_ != other.msgId_) return false;
+    if (type_ != other.type_) return false;
+    if (getRank()
+        != other.getRank()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -281,18 +246,12 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasMid()) {
-      hash = (37 * hash) + MID_FIELD_NUMBER;
-      hash = (53 * hash) + mid_;
-    }
-    if (hasType()) {
-      hash = (37 * hash) + TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + type_;
-    }
-    if (hasRank()) {
-      hash = (37 * hash) + RANK_FIELD_NUMBER;
-      hash = (53 * hash) + getRank();
-    }
+    hash = (37 * hash) + MSGID_FIELD_NUMBER;
+    hash = (53 * hash) + msgId_;
+    hash = (37 * hash) + TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + type_;
+    hash = (37 * hash) + RANK_FIELD_NUMBER;
+    hash = (53 * hash) + getRank();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -430,12 +389,12 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      mid_ = 20003;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      type_ = 1;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      msgId_ = 0;
+
+      type_ = 0;
+
       rank_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000004);
+
       return this;
     }
 
@@ -462,21 +421,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public info.xiaomo.server.shared.protocol.gameserver.room.ApplyAthleticsRequest buildPartial() {
       info.xiaomo.server.shared.protocol.gameserver.room.ApplyAthleticsRequest result = new info.xiaomo.server.shared.protocol.gameserver.room.ApplyAthleticsRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
-      }
-      result.mid_ = mid_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        to_bitField0_ |= 0x00000002;
-      }
+      result.msgId_ = msgId_;
       result.type_ = type_;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.rank_ = rank_;
-        to_bitField0_ |= 0x00000004;
-      }
-      result.bitField0_ = to_bitField0_;
+      result.rank_ = rank_;
       onBuilt();
       return result;
     }
@@ -525,13 +472,13 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(info.xiaomo.server.shared.protocol.gameserver.room.ApplyAthleticsRequest other) {
       if (other == info.xiaomo.server.shared.protocol.gameserver.room.ApplyAthleticsRequest.getDefaultInstance()) return this;
-      if (other.hasMid()) {
-        setMid(other.getMid());
+      if (other.msgId_ != 0) {
+        setMsgIdValue(other.getMsgIdValue());
       }
-      if (other.hasType()) {
-        setType(other.getType());
+      if (other.type_ != 0) {
+        setTypeValue(other.getTypeValue());
       }
-      if (other.hasRank()) {
+      if (other.getRank() != 0) {
         setRank(other.getRank());
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -562,49 +509,63 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    private int bitField0_;
 
-    private int mid_ = 20003;
+    private int msgId_ = 0;
     /**
      * <pre>
      *消息id
      * </pre>
      *
-     * <code>optional .MID mid = 1 [default = ApplyAthleticsReq];</code>
-     * @return Whether the mid field is set.
+     * <code>.MsgId msgId = 1;</code>
+     * @return The enum numeric value on the wire for msgId.
      */
-    @java.lang.Override public boolean hasMid() {
-      return ((bitField0_ & 0x00000001) != 0);
+    @java.lang.Override public int getMsgIdValue() {
+      return msgId_;
     }
     /**
      * <pre>
      *消息id
      * </pre>
      *
-     * <code>optional .MID mid = 1 [default = ApplyAthleticsReq];</code>
-     * @return The mid.
-     */
-    @java.lang.Override
-    public info.xiaomo.server.shared.protocol.Mid.MID getMid() {
-      @SuppressWarnings("deprecation")
-      info.xiaomo.server.shared.protocol.Mid.MID result = info.xiaomo.server.shared.protocol.Mid.MID.valueOf(mid_);
-      return result == null ? info.xiaomo.server.shared.protocol.Mid.MID.ApplyAthleticsReq : result;
-    }
-    /**
-     * <pre>
-     *消息id
-     * </pre>
-     *
-     * <code>optional .MID mid = 1 [default = ApplyAthleticsReq];</code>
-     * @param value The mid to set.
+     * <code>.MsgId msgId = 1;</code>
+     * @param value The enum numeric value on the wire for msgId to set.
      * @return This builder for chaining.
      */
-    public Builder setMid(info.xiaomo.server.shared.protocol.Mid.MID value) {
+    public Builder setMsgIdValue(int value) {
+      
+      msgId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *消息id
+     * </pre>
+     *
+     * <code>.MsgId msgId = 1;</code>
+     * @return The msgId.
+     */
+    @java.lang.Override
+    public info.xiaomo.server.shared.protocol.msg.MsgId getMsgId() {
+      @SuppressWarnings("deprecation")
+      info.xiaomo.server.shared.protocol.msg.MsgId result = info.xiaomo.server.shared.protocol.msg.MsgId.valueOf(msgId_);
+      return result == null ? info.xiaomo.server.shared.protocol.msg.MsgId.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     *消息id
+     * </pre>
+     *
+     * <code>.MsgId msgId = 1;</code>
+     * @param value The msgId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMsgId(info.xiaomo.server.shared.protocol.msg.MsgId value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
-      mid_ = value.getNumber();
+      
+      msgId_ = value.getNumber();
       onChanged();
       return this;
     }
@@ -613,48 +574,63 @@ private static final long serialVersionUID = 0L;
      *消息id
      * </pre>
      *
-     * <code>optional .MID mid = 1 [default = ApplyAthleticsReq];</code>
+     * <code>.MsgId msgId = 1;</code>
      * @return This builder for chaining.
      */
-    public Builder clearMid() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      mid_ = 20003;
+    public Builder clearMsgId() {
+      
+      msgId_ = 0;
       onChanged();
       return this;
     }
 
-    private int type_ = 1;
+    private int type_ = 0;
     /**
      * <pre>
      *类型 0竞技赛
      * </pre>
      *
-     * <code>optional .RoomType type = 2;</code>
-     * @return Whether the type field is set.
+     * <code>.RoomType type = 2;</code>
+     * @return The enum numeric value on the wire for type.
      */
-    @java.lang.Override public boolean hasType() {
-      return ((bitField0_ & 0x00000002) != 0);
+    @java.lang.Override public int getTypeValue() {
+      return type_;
     }
     /**
      * <pre>
      *类型 0竞技赛
      * </pre>
      *
-     * <code>optional .RoomType type = 2;</code>
+     * <code>.RoomType type = 2;</code>
+     * @param value The enum numeric value on the wire for type to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTypeValue(int value) {
+      
+      type_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *类型 0竞技赛
+     * </pre>
+     *
+     * <code>.RoomType type = 2;</code>
      * @return The type.
      */
     @java.lang.Override
     public info.xiaomo.server.shared.protocol.gameserver.room.RoomType getType() {
       @SuppressWarnings("deprecation")
       info.xiaomo.server.shared.protocol.gameserver.room.RoomType result = info.xiaomo.server.shared.protocol.gameserver.room.RoomType.valueOf(type_);
-      return result == null ? info.xiaomo.server.shared.protocol.gameserver.room.RoomType.CLASSICS : result;
+      return result == null ? info.xiaomo.server.shared.protocol.gameserver.room.RoomType.UNRECOGNIZED : result;
     }
     /**
      * <pre>
      *类型 0竞技赛
      * </pre>
      *
-     * <code>optional .RoomType type = 2;</code>
+     * <code>.RoomType type = 2;</code>
      * @param value The type to set.
      * @return This builder for chaining.
      */
@@ -662,7 +638,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
+      
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -672,12 +648,12 @@ private static final long serialVersionUID = 0L;
      *类型 0竞技赛
      * </pre>
      *
-     * <code>optional .RoomType type = 2;</code>
+     * <code>.RoomType type = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearType() {
-      bitField0_ = (bitField0_ & ~0x00000002);
-      type_ = 1;
+      
+      type_ = 0;
       onChanged();
       return this;
     }
@@ -688,19 +664,7 @@ private static final long serialVersionUID = 0L;
      *级别
      * </pre>
      *
-     * <code>optional int32 rank = 3;</code>
-     * @return Whether the rank field is set.
-     */
-    @java.lang.Override
-    public boolean hasRank() {
-      return ((bitField0_ & 0x00000004) != 0);
-    }
-    /**
-     * <pre>
-     *级别
-     * </pre>
-     *
-     * <code>optional int32 rank = 3;</code>
+     * <code>int32 rank = 3;</code>
      * @return The rank.
      */
     @java.lang.Override
@@ -712,12 +676,12 @@ private static final long serialVersionUID = 0L;
      *级别
      * </pre>
      *
-     * <code>optional int32 rank = 3;</code>
+     * <code>int32 rank = 3;</code>
      * @param value The rank to set.
      * @return This builder for chaining.
      */
     public Builder setRank(int value) {
-      bitField0_ |= 0x00000004;
+      
       rank_ = value;
       onChanged();
       return this;
@@ -727,11 +691,11 @@ private static final long serialVersionUID = 0L;
      *级别
      * </pre>
      *
-     * <code>optional int32 rank = 3;</code>
+     * <code>int32 rank = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearRank() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      
       rank_ = 0;
       onChanged();
       return this;
@@ -762,7 +726,7 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  @java.lang.Deprecated public static final com.google.protobuf.Parser<ApplyAthleticsRequest>
+  private static final com.google.protobuf.Parser<ApplyAthleticsRequest>
       PARSER = new com.google.protobuf.AbstractParser<ApplyAthleticsRequest>() {
     @java.lang.Override
     public ApplyAthleticsRequest parsePartialFrom(

@@ -8,10 +8,18 @@ package info.xiaomo.server.shared.protocol.system;
  *系统错误码
  * </pre>
  *
- * Protobuf enum {@code SystemErroCode}
+ * Protobuf enum {@code SystemErrorCode}
  */
-public enum SystemErroCode
+public enum SystemErrorCode
     implements com.google.protobuf.ProtocolMessageEnum {
+  /**
+   * <pre>
+   *没有可用大厅服
+   * </pre>
+   *
+   * <code>Default = 0;</code>
+   */
+  Default(0),
   /**
    * <pre>
    *没有可用大厅服
@@ -36,8 +44,17 @@ public enum SystemErroCode
    * <code>ConectReset = 3;</code>
    */
   ConectReset(3),
+  UNRECOGNIZED(-1),
   ;
 
+  /**
+   * <pre>
+   *没有可用大厅服
+   * </pre>
+   *
+   * <code>Default = 0;</code>
+   */
+  public static final int Default_VALUE = 0;
   /**
    * <pre>
    *没有可用大厅服
@@ -65,6 +82,10 @@ public enum SystemErroCode
 
 
   public final int getNumber() {
+    if (this == UNRECOGNIZED) {
+      throw new java.lang.IllegalArgumentException(
+          "Can't get the number of an unknown enum value.");
+    }
     return value;
   }
 
@@ -74,7 +95,7 @@ public enum SystemErroCode
    * @deprecated Use {@link #forNumber(int)} instead.
    */
   @java.lang.Deprecated
-  public static SystemErroCode valueOf(int value) {
+  public static SystemErrorCode valueOf(int value) {
     return forNumber(value);
   }
 
@@ -82,8 +103,9 @@ public enum SystemErroCode
    * @param value The numeric wire value of the corresponding enum entry.
    * @return The enum associated with the given numeric wire value.
    */
-  public static SystemErroCode forNumber(int value) {
+  public static SystemErrorCode forNumber(int value) {
     switch (value) {
+      case 0: return Default;
       case 1: return HallNotFind;
       case 2: return GameNotFind;
       case 3: return ConectReset;
@@ -91,20 +113,24 @@ public enum SystemErroCode
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<SystemErroCode>
+  public static com.google.protobuf.Internal.EnumLiteMap<SystemErrorCode>
       internalGetValueMap() {
     return internalValueMap;
   }
   private static final com.google.protobuf.Internal.EnumLiteMap<
-      SystemErroCode> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<SystemErroCode>() {
-          public SystemErroCode findValueByNumber(int number) {
-            return SystemErroCode.forNumber(number);
+      SystemErrorCode> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<SystemErrorCode>() {
+          public SystemErrorCode findValueByNumber(int number) {
+            return SystemErrorCode.forNumber(number);
           }
         };
 
   public final com.google.protobuf.Descriptors.EnumValueDescriptor
       getValueDescriptor() {
+    if (this == UNRECOGNIZED) {
+      throw new java.lang.IllegalStateException(
+          "Can't get the descriptor of an unrecognized enum value.");
+    }
     return getDescriptor().getValues().get(ordinal());
   }
   public final com.google.protobuf.Descriptors.EnumDescriptor
@@ -116,23 +142,26 @@ public enum SystemErroCode
     return info.xiaomo.server.shared.protocol.system.SystemMessage.getDescriptor().getEnumTypes().get(0);
   }
 
-  private static final SystemErroCode[] VALUES = values();
+  private static final SystemErrorCode[] VALUES = values();
 
-  public static SystemErroCode valueOf(
+  public static SystemErrorCode valueOf(
       com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
       throw new java.lang.IllegalArgumentException(
         "EnumValueDescriptor is not for this type.");
+    }
+    if (desc.getIndex() == -1) {
+      return UNRECOGNIZED;
     }
     return VALUES[desc.getIndex()];
   }
 
   private final int value;
 
-  private SystemErroCode(int value) {
+  private SystemErrorCode(int value) {
     this.value = value;
   }
 
-  // @@protoc_insertion_point(enum_scope:SystemErroCode)
+  // @@protoc_insertion_point(enum_scope:SystemErrorCode)
 }
 

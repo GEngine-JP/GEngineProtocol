@@ -44,7 +44,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -56,34 +55,34 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 8: {
-            bitField0_ |= 0x00000001;
+
             id_ = input.readInt64();
             break;
           }
           case 16: {
-            bitField0_ |= 0x00000002;
+
             senderId_ = input.readInt64();
             break;
           }
           case 26: {
-            com.google.protobuf.ByteString bs = input.readBytes();
-            bitField0_ |= 0x00000004;
-            title_ = bs;
+            java.lang.String s = input.readStringRequireUtf8();
+
+            title_ = s;
             break;
           }
           case 34: {
-            com.google.protobuf.ByteString bs = input.readBytes();
-            bitField0_ |= 0x00000008;
-            content_ = bs;
+            java.lang.String s = input.readStringRequireUtf8();
+
+            content_ = s;
             break;
           }
           case 40: {
-            bitField0_ |= 0x00000010;
+
             state_ = input.readInt32();
             break;
           }
           case 48: {
-            bitField0_ |= 0x00000020;
+
             createTime_ = input.readInt64();
             break;
           }
@@ -119,7 +118,6 @@ private static final long serialVersionUID = 0L;
             info.xiaomo.server.shared.protocol.hall.chat.MailInfo.class, info.xiaomo.server.shared.protocol.hall.chat.MailInfo.Builder.class);
   }
 
-  private int bitField0_;
   public static final int ID_FIELD_NUMBER = 1;
   private long id_;
   /**
@@ -127,19 +125,7 @@ private static final long serialVersionUID = 0L;
    *ID
    * </pre>
    *
-   * <code>required int64 id = 1;</code>
-   * @return Whether the id field is set.
-   */
-  @java.lang.Override
-  public boolean hasId() {
-    return ((bitField0_ & 0x00000001) != 0);
-  }
-  /**
-   * <pre>
-   *ID
-   * </pre>
-   *
-   * <code>required int64 id = 1;</code>
+   * <code>int64 id = 1;</code>
    * @return The id.
    */
   @java.lang.Override
@@ -154,19 +140,7 @@ private static final long serialVersionUID = 0L;
    *发送者ID
    * </pre>
    *
-   * <code>optional int64 senderId = 2;</code>
-   * @return Whether the senderId field is set.
-   */
-  @java.lang.Override
-  public boolean hasSenderId() {
-    return ((bitField0_ & 0x00000002) != 0);
-  }
-  /**
-   * <pre>
-   *发送者ID
-   * </pre>
-   *
-   * <code>optional int64 senderId = 2;</code>
+   * <code>int64 senderId = 2;</code>
    * @return The senderId.
    */
   @java.lang.Override
@@ -181,19 +155,7 @@ private static final long serialVersionUID = 0L;
    *标题
    * </pre>
    *
-   * <code>required string title = 3;</code>
-   * @return Whether the title field is set.
-   */
-  @java.lang.Override
-  public boolean hasTitle() {
-    return ((bitField0_ & 0x00000004) != 0);
-  }
-  /**
-   * <pre>
-   *标题
-   * </pre>
-   *
-   * <code>required string title = 3;</code>
+   * <code>string title = 3;</code>
    * @return The title.
    */
   @java.lang.Override
@@ -205,9 +167,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        title_ = s;
-      }
+      title_ = s;
       return s;
     }
   }
@@ -216,7 +176,7 @@ private static final long serialVersionUID = 0L;
    *标题
    * </pre>
    *
-   * <code>required string title = 3;</code>
+   * <code>string title = 3;</code>
    * @return The bytes for title.
    */
   @java.lang.Override
@@ -241,19 +201,7 @@ private static final long serialVersionUID = 0L;
    *内容
    * </pre>
    *
-   * <code>required string content = 4;</code>
-   * @return Whether the content field is set.
-   */
-  @java.lang.Override
-  public boolean hasContent() {
-    return ((bitField0_ & 0x00000008) != 0);
-  }
-  /**
-   * <pre>
-   *内容
-   * </pre>
-   *
-   * <code>required string content = 4;</code>
+   * <code>string content = 4;</code>
    * @return The content.
    */
   @java.lang.Override
@@ -265,9 +213,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        content_ = s;
-      }
+      content_ = s;
       return s;
     }
   }
@@ -276,7 +222,7 @@ private static final long serialVersionUID = 0L;
    *内容
    * </pre>
    *
-   * <code>required string content = 4;</code>
+   * <code>string content = 4;</code>
    * @return The bytes for content.
    */
   @java.lang.Override
@@ -301,19 +247,7 @@ private static final long serialVersionUID = 0L;
    *状态 0新邮件、1已读、2已领取道具、3删除
    * </pre>
    *
-   * <code>required int32 state = 5;</code>
-   * @return Whether the state field is set.
-   */
-  @java.lang.Override
-  public boolean hasState() {
-    return ((bitField0_ & 0x00000010) != 0);
-  }
-  /**
-   * <pre>
-   *状态 0新邮件、1已读、2已领取道具、3删除
-   * </pre>
-   *
-   * <code>required int32 state = 5;</code>
+   * <code>int32 state = 5;</code>
    * @return The state.
    */
   @java.lang.Override
@@ -328,19 +262,7 @@ private static final long serialVersionUID = 0L;
    *创建时间
    * </pre>
    *
-   * <code>required int64 createTime = 6;</code>
-   * @return Whether the createTime field is set.
-   */
-  @java.lang.Override
-  public boolean hasCreateTime() {
-    return ((bitField0_ & 0x00000020) != 0);
-  }
-  /**
-   * <pre>
-   *创建时间
-   * </pre>
-   *
-   * <code>required int64 createTime = 6;</code>
+   * <code>int64 createTime = 6;</code>
    * @return The createTime.
    */
   @java.lang.Override
@@ -355,26 +277,6 @@ private static final long serialVersionUID = 0L;
     if (isInitialized == 1) return true;
     if (isInitialized == 0) return false;
 
-    if (!hasId()) {
-      memoizedIsInitialized = 0;
-      return false;
-    }
-    if (!hasTitle()) {
-      memoizedIsInitialized = 0;
-      return false;
-    }
-    if (!hasContent()) {
-      memoizedIsInitialized = 0;
-      return false;
-    }
-    if (!hasState()) {
-      memoizedIsInitialized = 0;
-      return false;
-    }
-    if (!hasCreateTime()) {
-      memoizedIsInitialized = 0;
-      return false;
-    }
     memoizedIsInitialized = 1;
     return true;
   }
@@ -382,22 +284,22 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (id_ != 0L) {
       output.writeInt64(1, id_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (senderId_ != 0L) {
       output.writeInt64(2, senderId_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (!getTitleBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, title_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (!getContentBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, content_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (state_ != 0) {
       output.writeInt32(5, state_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (createTime_ != 0L) {
       output.writeInt64(6, createTime_);
     }
     unknownFields.writeTo(output);
@@ -409,25 +311,25 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (id_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, id_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (senderId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, senderId_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (!getTitleBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, title_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (!getContentBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, content_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (state_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(5, state_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (createTime_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(6, createTime_);
     }
@@ -446,36 +348,18 @@ private static final long serialVersionUID = 0L;
     }
     info.xiaomo.server.shared.protocol.hall.chat.MailInfo other = (info.xiaomo.server.shared.protocol.hall.chat.MailInfo) obj;
 
-    if (hasId() != other.hasId()) return false;
-    if (hasId()) {
-      if (getId()
-          != other.getId()) return false;
-    }
-    if (hasSenderId() != other.hasSenderId()) return false;
-    if (hasSenderId()) {
-      if (getSenderId()
-          != other.getSenderId()) return false;
-    }
-    if (hasTitle() != other.hasTitle()) return false;
-    if (hasTitle()) {
-      if (!getTitle()
-          .equals(other.getTitle())) return false;
-    }
-    if (hasContent() != other.hasContent()) return false;
-    if (hasContent()) {
-      if (!getContent()
-          .equals(other.getContent())) return false;
-    }
-    if (hasState() != other.hasState()) return false;
-    if (hasState()) {
-      if (getState()
-          != other.getState()) return false;
-    }
-    if (hasCreateTime() != other.hasCreateTime()) return false;
-    if (hasCreateTime()) {
-      if (getCreateTime()
-          != other.getCreateTime()) return false;
-    }
+    if (getId()
+        != other.getId()) return false;
+    if (getSenderId()
+        != other.getSenderId()) return false;
+    if (!getTitle()
+        .equals(other.getTitle())) return false;
+    if (!getContent()
+        .equals(other.getContent())) return false;
+    if (getState()
+        != other.getState()) return false;
+    if (getCreateTime()
+        != other.getCreateTime()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -487,33 +371,21 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasId()) {
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getId());
-    }
-    if (hasSenderId()) {
-      hash = (37 * hash) + SENDERID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getSenderId());
-    }
-    if (hasTitle()) {
-      hash = (37 * hash) + TITLE_FIELD_NUMBER;
-      hash = (53 * hash) + getTitle().hashCode();
-    }
-    if (hasContent()) {
-      hash = (37 * hash) + CONTENT_FIELD_NUMBER;
-      hash = (53 * hash) + getContent().hashCode();
-    }
-    if (hasState()) {
-      hash = (37 * hash) + STATE_FIELD_NUMBER;
-      hash = (53 * hash) + getState();
-    }
-    if (hasCreateTime()) {
-      hash = (37 * hash) + CREATETIME_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getCreateTime());
-    }
+    hash = (37 * hash) + ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getId());
+    hash = (37 * hash) + SENDERID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getSenderId());
+    hash = (37 * hash) + TITLE_FIELD_NUMBER;
+    hash = (53 * hash) + getTitle().hashCode();
+    hash = (37 * hash) + CONTENT_FIELD_NUMBER;
+    hash = (53 * hash) + getContent().hashCode();
+    hash = (37 * hash) + STATE_FIELD_NUMBER;
+    hash = (53 * hash) + getState();
+    hash = (37 * hash) + CREATETIME_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getCreateTime());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -652,17 +524,17 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       id_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000001);
+
       senderId_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000002);
+
       title_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
+
       content_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
+
       state_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000010);
+
       createTime_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000020);
+
       return this;
     }
 
@@ -689,33 +561,12 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public info.xiaomo.server.shared.protocol.hall.chat.MailInfo buildPartial() {
       info.xiaomo.server.shared.protocol.hall.chat.MailInfo result = new info.xiaomo.server.shared.protocol.hall.chat.MailInfo(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.id_ = id_;
-        to_bitField0_ |= 0x00000001;
-      }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.senderId_ = senderId_;
-        to_bitField0_ |= 0x00000002;
-      }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        to_bitField0_ |= 0x00000004;
-      }
+      result.id_ = id_;
+      result.senderId_ = senderId_;
       result.title_ = title_;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        to_bitField0_ |= 0x00000008;
-      }
       result.content_ = content_;
-      if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.state_ = state_;
-        to_bitField0_ |= 0x00000010;
-      }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.createTime_ = createTime_;
-        to_bitField0_ |= 0x00000020;
-      }
-      result.bitField0_ = to_bitField0_;
+      result.state_ = state_;
+      result.createTime_ = createTime_;
       onBuilt();
       return result;
     }
@@ -764,26 +615,24 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(info.xiaomo.server.shared.protocol.hall.chat.MailInfo other) {
       if (other == info.xiaomo.server.shared.protocol.hall.chat.MailInfo.getDefaultInstance()) return this;
-      if (other.hasId()) {
+      if (other.getId() != 0L) {
         setId(other.getId());
       }
-      if (other.hasSenderId()) {
+      if (other.getSenderId() != 0L) {
         setSenderId(other.getSenderId());
       }
-      if (other.hasTitle()) {
-        bitField0_ |= 0x00000004;
+      if (!other.getTitle().isEmpty()) {
         title_ = other.title_;
         onChanged();
       }
-      if (other.hasContent()) {
-        bitField0_ |= 0x00000008;
+      if (!other.getContent().isEmpty()) {
         content_ = other.content_;
         onChanged();
       }
-      if (other.hasState()) {
+      if (other.getState() != 0) {
         setState(other.getState());
       }
-      if (other.hasCreateTime()) {
+      if (other.getCreateTime() != 0L) {
         setCreateTime(other.getCreateTime());
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -793,21 +642,6 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public final boolean isInitialized() {
-      if (!hasId()) {
-        return false;
-      }
-      if (!hasTitle()) {
-        return false;
-      }
-      if (!hasContent()) {
-        return false;
-      }
-      if (!hasState()) {
-        return false;
-      }
-      if (!hasCreateTime()) {
-        return false;
-      }
       return true;
     }
 
@@ -829,7 +663,6 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    private int bitField0_;
 
     private long id_ ;
     /**
@@ -837,19 +670,7 @@ private static final long serialVersionUID = 0L;
      *ID
      * </pre>
      *
-     * <code>required int64 id = 1;</code>
-     * @return Whether the id field is set.
-     */
-    @java.lang.Override
-    public boolean hasId() {
-      return ((bitField0_ & 0x00000001) != 0);
-    }
-    /**
-     * <pre>
-     *ID
-     * </pre>
-     *
-     * <code>required int64 id = 1;</code>
+     * <code>int64 id = 1;</code>
      * @return The id.
      */
     @java.lang.Override
@@ -861,12 +682,12 @@ private static final long serialVersionUID = 0L;
      *ID
      * </pre>
      *
-     * <code>required int64 id = 1;</code>
+     * <code>int64 id = 1;</code>
      * @param value The id to set.
      * @return This builder for chaining.
      */
     public Builder setId(long value) {
-      bitField0_ |= 0x00000001;
+      
       id_ = value;
       onChanged();
       return this;
@@ -876,11 +697,11 @@ private static final long serialVersionUID = 0L;
      *ID
      * </pre>
      *
-     * <code>required int64 id = 1;</code>
+     * <code>int64 id = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      
       id_ = 0L;
       onChanged();
       return this;
@@ -892,19 +713,7 @@ private static final long serialVersionUID = 0L;
      *发送者ID
      * </pre>
      *
-     * <code>optional int64 senderId = 2;</code>
-     * @return Whether the senderId field is set.
-     */
-    @java.lang.Override
-    public boolean hasSenderId() {
-      return ((bitField0_ & 0x00000002) != 0);
-    }
-    /**
-     * <pre>
-     *发送者ID
-     * </pre>
-     *
-     * <code>optional int64 senderId = 2;</code>
+     * <code>int64 senderId = 2;</code>
      * @return The senderId.
      */
     @java.lang.Override
@@ -916,12 +725,12 @@ private static final long serialVersionUID = 0L;
      *发送者ID
      * </pre>
      *
-     * <code>optional int64 senderId = 2;</code>
+     * <code>int64 senderId = 2;</code>
      * @param value The senderId to set.
      * @return This builder for chaining.
      */
     public Builder setSenderId(long value) {
-      bitField0_ |= 0x00000002;
+      
       senderId_ = value;
       onChanged();
       return this;
@@ -931,11 +740,11 @@ private static final long serialVersionUID = 0L;
      *发送者ID
      * </pre>
      *
-     * <code>optional int64 senderId = 2;</code>
+     * <code>int64 senderId = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearSenderId() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      
       senderId_ = 0L;
       onChanged();
       return this;
@@ -947,18 +756,7 @@ private static final long serialVersionUID = 0L;
      *标题
      * </pre>
      *
-     * <code>required string title = 3;</code>
-     * @return Whether the title field is set.
-     */
-    public boolean hasTitle() {
-      return ((bitField0_ & 0x00000004) != 0);
-    }
-    /**
-     * <pre>
-     *标题
-     * </pre>
-     *
-     * <code>required string title = 3;</code>
+     * <code>string title = 3;</code>
      * @return The title.
      */
     public java.lang.String getTitle() {
@@ -967,9 +765,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          title_ = s;
-        }
+        title_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -980,7 +776,7 @@ private static final long serialVersionUID = 0L;
      *标题
      * </pre>
      *
-     * <code>required string title = 3;</code>
+     * <code>string title = 3;</code>
      * @return The bytes for title.
      */
     public com.google.protobuf.ByteString
@@ -1001,7 +797,7 @@ private static final long serialVersionUID = 0L;
      *标题
      * </pre>
      *
-     * <code>required string title = 3;</code>
+     * <code>string title = 3;</code>
      * @param value The title to set.
      * @return This builder for chaining.
      */
@@ -1010,7 +806,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  
       title_ = value;
       onChanged();
       return this;
@@ -1020,11 +816,11 @@ private static final long serialVersionUID = 0L;
      *标题
      * </pre>
      *
-     * <code>required string title = 3;</code>
+     * <code>string title = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearTitle() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      
       title_ = getDefaultInstance().getTitle();
       onChanged();
       return this;
@@ -1034,7 +830,7 @@ private static final long serialVersionUID = 0L;
      *标题
      * </pre>
      *
-     * <code>required string title = 3;</code>
+     * <code>string title = 3;</code>
      * @param value The bytes for title to set.
      * @return This builder for chaining.
      */
@@ -1043,7 +839,8 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  checkByteStringIsUtf8(value);
+      
       title_ = value;
       onChanged();
       return this;
@@ -1055,18 +852,7 @@ private static final long serialVersionUID = 0L;
      *内容
      * </pre>
      *
-     * <code>required string content = 4;</code>
-     * @return Whether the content field is set.
-     */
-    public boolean hasContent() {
-      return ((bitField0_ & 0x00000008) != 0);
-    }
-    /**
-     * <pre>
-     *内容
-     * </pre>
-     *
-     * <code>required string content = 4;</code>
+     * <code>string content = 4;</code>
      * @return The content.
      */
     public java.lang.String getContent() {
@@ -1075,9 +861,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          content_ = s;
-        }
+        content_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1088,7 +872,7 @@ private static final long serialVersionUID = 0L;
      *内容
      * </pre>
      *
-     * <code>required string content = 4;</code>
+     * <code>string content = 4;</code>
      * @return The bytes for content.
      */
     public com.google.protobuf.ByteString
@@ -1109,7 +893,7 @@ private static final long serialVersionUID = 0L;
      *内容
      * </pre>
      *
-     * <code>required string content = 4;</code>
+     * <code>string content = 4;</code>
      * @param value The content to set.
      * @return This builder for chaining.
      */
@@ -1118,7 +902,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000008;
+  
       content_ = value;
       onChanged();
       return this;
@@ -1128,11 +912,11 @@ private static final long serialVersionUID = 0L;
      *内容
      * </pre>
      *
-     * <code>required string content = 4;</code>
+     * <code>string content = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearContent() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      
       content_ = getDefaultInstance().getContent();
       onChanged();
       return this;
@@ -1142,7 +926,7 @@ private static final long serialVersionUID = 0L;
      *内容
      * </pre>
      *
-     * <code>required string content = 4;</code>
+     * <code>string content = 4;</code>
      * @param value The bytes for content to set.
      * @return This builder for chaining.
      */
@@ -1151,7 +935,8 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000008;
+  checkByteStringIsUtf8(value);
+      
       content_ = value;
       onChanged();
       return this;
@@ -1163,19 +948,7 @@ private static final long serialVersionUID = 0L;
      *状态 0新邮件、1已读、2已领取道具、3删除
      * </pre>
      *
-     * <code>required int32 state = 5;</code>
-     * @return Whether the state field is set.
-     */
-    @java.lang.Override
-    public boolean hasState() {
-      return ((bitField0_ & 0x00000010) != 0);
-    }
-    /**
-     * <pre>
-     *状态 0新邮件、1已读、2已领取道具、3删除
-     * </pre>
-     *
-     * <code>required int32 state = 5;</code>
+     * <code>int32 state = 5;</code>
      * @return The state.
      */
     @java.lang.Override
@@ -1187,12 +960,12 @@ private static final long serialVersionUID = 0L;
      *状态 0新邮件、1已读、2已领取道具、3删除
      * </pre>
      *
-     * <code>required int32 state = 5;</code>
+     * <code>int32 state = 5;</code>
      * @param value The state to set.
      * @return This builder for chaining.
      */
     public Builder setState(int value) {
-      bitField0_ |= 0x00000010;
+      
       state_ = value;
       onChanged();
       return this;
@@ -1202,11 +975,11 @@ private static final long serialVersionUID = 0L;
      *状态 0新邮件、1已读、2已领取道具、3删除
      * </pre>
      *
-     * <code>required int32 state = 5;</code>
+     * <code>int32 state = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      
       state_ = 0;
       onChanged();
       return this;
@@ -1218,19 +991,7 @@ private static final long serialVersionUID = 0L;
      *创建时间
      * </pre>
      *
-     * <code>required int64 createTime = 6;</code>
-     * @return Whether the createTime field is set.
-     */
-    @java.lang.Override
-    public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000020) != 0);
-    }
-    /**
-     * <pre>
-     *创建时间
-     * </pre>
-     *
-     * <code>required int64 createTime = 6;</code>
+     * <code>int64 createTime = 6;</code>
      * @return The createTime.
      */
     @java.lang.Override
@@ -1242,12 +1003,12 @@ private static final long serialVersionUID = 0L;
      *创建时间
      * </pre>
      *
-     * <code>required int64 createTime = 6;</code>
+     * <code>int64 createTime = 6;</code>
      * @param value The createTime to set.
      * @return This builder for chaining.
      */
     public Builder setCreateTime(long value) {
-      bitField0_ |= 0x00000020;
+      
       createTime_ = value;
       onChanged();
       return this;
@@ -1257,11 +1018,11 @@ private static final long serialVersionUID = 0L;
      *创建时间
      * </pre>
      *
-     * <code>required int64 createTime = 6;</code>
+     * <code>int64 createTime = 6;</code>
      * @return This builder for chaining.
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      
       createTime_ = 0L;
       onChanged();
       return this;
@@ -1292,7 +1053,7 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  @java.lang.Deprecated public static final com.google.protobuf.Parser<MailInfo>
+  private static final com.google.protobuf.Parser<MailInfo>
       PARSER = new com.google.protobuf.AbstractParser<MailInfo>() {
     @java.lang.Override
     public MailInfo parsePartialFrom(

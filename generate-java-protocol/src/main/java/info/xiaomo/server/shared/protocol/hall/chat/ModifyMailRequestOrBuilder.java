@@ -12,35 +12,26 @@ public interface ModifyMailRequestOrBuilder extends
    *消息id
    * </pre>
    *
-   * <code>optional .MID mid = 1 [default = ModifyMailReq];</code>
-   * @return Whether the mid field is set.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The enum numeric value on the wire for msgId.
    */
-  boolean hasMid();
+  int getMsgIdValue();
   /**
    * <pre>
    *消息id
    * </pre>
    *
-   * <code>optional .MID mid = 1 [default = ModifyMailReq];</code>
-   * @return The mid.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The msgId.
    */
-  info.xiaomo.server.shared.protocol.Mid.MID getMid();
+  info.xiaomo.server.shared.protocol.msg.MsgId getMsgId();
 
   /**
    * <pre>
    *邮件ID
    * </pre>
    *
-   * <code>required int64 mailId = 2;</code>
-   * @return Whether the mailId field is set.
-   */
-  boolean hasMailId();
-  /**
-   * <pre>
-   *邮件ID
-   * </pre>
-   *
-   * <code>required int64 mailId = 2;</code>
+   * <code>int64 mailId = 2;</code>
    * @return The mailId.
    */
   long getMailId();
@@ -50,16 +41,7 @@ public interface ModifyMailRequestOrBuilder extends
    *状态 0新邮件、1已读、2已领取道具、3删除
    * </pre>
    *
-   * <code>required int32 state = 3;</code>
-   * @return Whether the state field is set.
-   */
-  boolean hasState();
-  /**
-   * <pre>
-   *状态 0新邮件、1已读、2已领取道具、3删除
-   * </pre>
-   *
-   * <code>required int32 state = 3;</code>
+   * <code>int32 state = 3;</code>
    * @return The state.
    */
   int getState();

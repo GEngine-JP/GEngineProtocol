@@ -12,35 +12,26 @@ public interface GuildInfoRequestOrBuilder extends
    *消息id
    * </pre>
    *
-   * <code>optional .MID mid = 1 [default = GuildInfoReq];</code>
-   * @return Whether the mid field is set.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The enum numeric value on the wire for msgId.
    */
-  boolean hasMid();
+  int getMsgIdValue();
   /**
    * <pre>
    *消息id
    * </pre>
    *
-   * <code>optional .MID mid = 1 [default = GuildInfoReq];</code>
-   * @return The mid.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The msgId.
    */
-  info.xiaomo.server.shared.protocol.Mid.MID getMid();
+  info.xiaomo.server.shared.protocol.msg.MsgId getMsgId();
 
   /**
    * <pre>
-   *帮会ID 
+   *帮会ID
    * </pre>
    *
-   * <code>optional int64 guildId = 2;</code>
-   * @return Whether the guildId field is set.
-   */
-  boolean hasGuildId();
-  /**
-   * <pre>
-   *帮会ID 
-   * </pre>
-   *
-   * <code>optional int64 guildId = 2;</code>
+   * <code>int64 guildId = 2;</code>
    * @return The guildId.
    */
   long getGuildId();

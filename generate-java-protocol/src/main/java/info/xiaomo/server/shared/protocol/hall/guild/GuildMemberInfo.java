@@ -43,7 +43,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -55,18 +54,18 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 8: {
-            bitField0_ |= 0x00000001;
+
             roleId_ = input.readInt64();
             break;
           }
           case 18: {
-            com.google.protobuf.ByteString bs = input.readBytes();
-            bitField0_ |= 0x00000002;
-            name_ = bs;
+            java.lang.String s = input.readStringRequireUtf8();
+
+            name_ = s;
             break;
           }
           case 24: {
-            bitField0_ |= 0x00000004;
+
             level_ = input.readInt32();
             break;
           }
@@ -102,7 +101,6 @@ private static final long serialVersionUID = 0L;
             info.xiaomo.server.shared.protocol.hall.guild.GuildMemberInfo.class, info.xiaomo.server.shared.protocol.hall.guild.GuildMemberInfo.Builder.class);
   }
 
-  private int bitField0_;
   public static final int ROLEID_FIELD_NUMBER = 1;
   private long roleId_;
   /**
@@ -110,19 +108,7 @@ private static final long serialVersionUID = 0L;
    *角色Id
    * </pre>
    *
-   * <code>required int64 roleId = 1;</code>
-   * @return Whether the roleId field is set.
-   */
-  @java.lang.Override
-  public boolean hasRoleId() {
-    return ((bitField0_ & 0x00000001) != 0);
-  }
-  /**
-   * <pre>
-   *角色Id
-   * </pre>
-   *
-   * <code>required int64 roleId = 1;</code>
+   * <code>int64 roleId = 1;</code>
    * @return The roleId.
    */
   @java.lang.Override
@@ -137,19 +123,7 @@ private static final long serialVersionUID = 0L;
    *昵称
    * </pre>
    *
-   * <code>required string name = 2;</code>
-   * @return Whether the name field is set.
-   */
-  @java.lang.Override
-  public boolean hasName() {
-    return ((bitField0_ & 0x00000002) != 0);
-  }
-  /**
-   * <pre>
-   *昵称
-   * </pre>
-   *
-   * <code>required string name = 2;</code>
+   * <code>string name = 2;</code>
    * @return The name.
    */
   @java.lang.Override
@@ -161,9 +135,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        name_ = s;
-      }
+      name_ = s;
       return s;
     }
   }
@@ -172,7 +144,7 @@ private static final long serialVersionUID = 0L;
    *昵称
    * </pre>
    *
-   * <code>required string name = 2;</code>
+   * <code>string name = 2;</code>
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -197,19 +169,7 @@ private static final long serialVersionUID = 0L;
    *等级
    * </pre>
    *
-   * <code>required int32 level = 3;</code>
-   * @return Whether the level field is set.
-   */
-  @java.lang.Override
-  public boolean hasLevel() {
-    return ((bitField0_ & 0x00000004) != 0);
-  }
-  /**
-   * <pre>
-   *等级
-   * </pre>
-   *
-   * <code>required int32 level = 3;</code>
+   * <code>int32 level = 3;</code>
    * @return The level.
    */
   @java.lang.Override
@@ -224,18 +184,6 @@ private static final long serialVersionUID = 0L;
     if (isInitialized == 1) return true;
     if (isInitialized == 0) return false;
 
-    if (!hasRoleId()) {
-      memoizedIsInitialized = 0;
-      return false;
-    }
-    if (!hasName()) {
-      memoizedIsInitialized = 0;
-      return false;
-    }
-    if (!hasLevel()) {
-      memoizedIsInitialized = 0;
-      return false;
-    }
     memoizedIsInitialized = 1;
     return true;
   }
@@ -243,13 +191,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (roleId_ != 0L) {
       output.writeInt64(1, roleId_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (level_ != 0) {
       output.writeInt32(3, level_);
     }
     unknownFields.writeTo(output);
@@ -261,14 +209,14 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (roleId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, roleId_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (level_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(3, level_);
     }
@@ -287,21 +235,12 @@ private static final long serialVersionUID = 0L;
     }
     info.xiaomo.server.shared.protocol.hall.guild.GuildMemberInfo other = (info.xiaomo.server.shared.protocol.hall.guild.GuildMemberInfo) obj;
 
-    if (hasRoleId() != other.hasRoleId()) return false;
-    if (hasRoleId()) {
-      if (getRoleId()
-          != other.getRoleId()) return false;
-    }
-    if (hasName() != other.hasName()) return false;
-    if (hasName()) {
-      if (!getName()
-          .equals(other.getName())) return false;
-    }
-    if (hasLevel() != other.hasLevel()) return false;
-    if (hasLevel()) {
-      if (getLevel()
-          != other.getLevel()) return false;
-    }
+    if (getRoleId()
+        != other.getRoleId()) return false;
+    if (!getName()
+        .equals(other.getName())) return false;
+    if (getLevel()
+        != other.getLevel()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -313,19 +252,13 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasRoleId()) {
-      hash = (37 * hash) + ROLEID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getRoleId());
-    }
-    if (hasName()) {
-      hash = (37 * hash) + NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getName().hashCode();
-    }
-    if (hasLevel()) {
-      hash = (37 * hash) + LEVEL_FIELD_NUMBER;
-      hash = (53 * hash) + getLevel();
-    }
+    hash = (37 * hash) + ROLEID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getRoleId());
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + LEVEL_FIELD_NUMBER;
+    hash = (53 * hash) + getLevel();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -464,11 +397,11 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       roleId_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000001);
+
       name_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
+
       level_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000004);
+
       return this;
     }
 
@@ -495,21 +428,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public info.xiaomo.server.shared.protocol.hall.guild.GuildMemberInfo buildPartial() {
       info.xiaomo.server.shared.protocol.hall.guild.GuildMemberInfo result = new info.xiaomo.server.shared.protocol.hall.guild.GuildMemberInfo(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.roleId_ = roleId_;
-        to_bitField0_ |= 0x00000001;
-      }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        to_bitField0_ |= 0x00000002;
-      }
+      result.roleId_ = roleId_;
       result.name_ = name_;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.level_ = level_;
-        to_bitField0_ |= 0x00000004;
-      }
-      result.bitField0_ = to_bitField0_;
+      result.level_ = level_;
       onBuilt();
       return result;
     }
@@ -558,15 +479,14 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(info.xiaomo.server.shared.protocol.hall.guild.GuildMemberInfo other) {
       if (other == info.xiaomo.server.shared.protocol.hall.guild.GuildMemberInfo.getDefaultInstance()) return this;
-      if (other.hasRoleId()) {
+      if (other.getRoleId() != 0L) {
         setRoleId(other.getRoleId());
       }
-      if (other.hasName()) {
-        bitField0_ |= 0x00000002;
+      if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
       }
-      if (other.hasLevel()) {
+      if (other.getLevel() != 0) {
         setLevel(other.getLevel());
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -576,15 +496,6 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public final boolean isInitialized() {
-      if (!hasRoleId()) {
-        return false;
-      }
-      if (!hasName()) {
-        return false;
-      }
-      if (!hasLevel()) {
-        return false;
-      }
       return true;
     }
 
@@ -606,7 +517,6 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    private int bitField0_;
 
     private long roleId_ ;
     /**
@@ -614,19 +524,7 @@ private static final long serialVersionUID = 0L;
      *角色Id
      * </pre>
      *
-     * <code>required int64 roleId = 1;</code>
-     * @return Whether the roleId field is set.
-     */
-    @java.lang.Override
-    public boolean hasRoleId() {
-      return ((bitField0_ & 0x00000001) != 0);
-    }
-    /**
-     * <pre>
-     *角色Id
-     * </pre>
-     *
-     * <code>required int64 roleId = 1;</code>
+     * <code>int64 roleId = 1;</code>
      * @return The roleId.
      */
     @java.lang.Override
@@ -638,12 +536,12 @@ private static final long serialVersionUID = 0L;
      *角色Id
      * </pre>
      *
-     * <code>required int64 roleId = 1;</code>
+     * <code>int64 roleId = 1;</code>
      * @param value The roleId to set.
      * @return This builder for chaining.
      */
     public Builder setRoleId(long value) {
-      bitField0_ |= 0x00000001;
+      
       roleId_ = value;
       onChanged();
       return this;
@@ -653,11 +551,11 @@ private static final long serialVersionUID = 0L;
      *角色Id
      * </pre>
      *
-     * <code>required int64 roleId = 1;</code>
+     * <code>int64 roleId = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearRoleId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      
       roleId_ = 0L;
       onChanged();
       return this;
@@ -669,18 +567,7 @@ private static final long serialVersionUID = 0L;
      *昵称
      * </pre>
      *
-     * <code>required string name = 2;</code>
-     * @return Whether the name field is set.
-     */
-    public boolean hasName() {
-      return ((bitField0_ & 0x00000002) != 0);
-    }
-    /**
-     * <pre>
-     *昵称
-     * </pre>
-     *
-     * <code>required string name = 2;</code>
+     * <code>string name = 2;</code>
      * @return The name.
      */
     public java.lang.String getName() {
@@ -689,9 +576,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          name_ = s;
-        }
+        name_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -702,7 +587,7 @@ private static final long serialVersionUID = 0L;
      *昵称
      * </pre>
      *
-     * <code>required string name = 2;</code>
+     * <code>string name = 2;</code>
      * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
@@ -723,7 +608,7 @@ private static final long serialVersionUID = 0L;
      *昵称
      * </pre>
      *
-     * <code>required string name = 2;</code>
+     * <code>string name = 2;</code>
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -732,7 +617,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  
       name_ = value;
       onChanged();
       return this;
@@ -742,11 +627,11 @@ private static final long serialVersionUID = 0L;
      *昵称
      * </pre>
      *
-     * <code>required string name = 2;</code>
+     * <code>string name = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
@@ -756,7 +641,7 @@ private static final long serialVersionUID = 0L;
      *昵称
      * </pre>
      *
-     * <code>required string name = 2;</code>
+     * <code>string name = 2;</code>
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
@@ -765,7 +650,8 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  checkByteStringIsUtf8(value);
+      
       name_ = value;
       onChanged();
       return this;
@@ -777,19 +663,7 @@ private static final long serialVersionUID = 0L;
      *等级
      * </pre>
      *
-     * <code>required int32 level = 3;</code>
-     * @return Whether the level field is set.
-     */
-    @java.lang.Override
-    public boolean hasLevel() {
-      return ((bitField0_ & 0x00000004) != 0);
-    }
-    /**
-     * <pre>
-     *等级
-     * </pre>
-     *
-     * <code>required int32 level = 3;</code>
+     * <code>int32 level = 3;</code>
      * @return The level.
      */
     @java.lang.Override
@@ -801,12 +675,12 @@ private static final long serialVersionUID = 0L;
      *等级
      * </pre>
      *
-     * <code>required int32 level = 3;</code>
+     * <code>int32 level = 3;</code>
      * @param value The level to set.
      * @return This builder for chaining.
      */
     public Builder setLevel(int value) {
-      bitField0_ |= 0x00000004;
+      
       level_ = value;
       onChanged();
       return this;
@@ -816,11 +690,11 @@ private static final long serialVersionUID = 0L;
      *等级
      * </pre>
      *
-     * <code>required int32 level = 3;</code>
+     * <code>int32 level = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearLevel() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      
       level_ = 0;
       onChanged();
       return this;
@@ -851,7 +725,7 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  @java.lang.Deprecated public static final com.google.protobuf.Parser<GuildMemberInfo>
+  private static final com.google.protobuf.Parser<GuildMemberInfo>
       PARSER = new com.google.protobuf.AbstractParser<GuildMemberInfo>() {
     @java.lang.Override
     public GuildMemberInfo parsePartialFrom(

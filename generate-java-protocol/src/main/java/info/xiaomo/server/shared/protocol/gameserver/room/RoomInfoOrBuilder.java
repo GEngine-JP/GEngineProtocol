@@ -12,16 +12,7 @@ public interface RoomInfoOrBuilder extends
    *房间编号
    * </pre>
    *
-   * <code>required int64 id = 1;</code>
-   * @return Whether the id field is set.
-   */
-  boolean hasId();
-  /**
-   * <pre>
-   *房间编号
-   * </pre>
-   *
-   * <code>required int64 id = 1;</code>
+   * <code>int64 id = 1;</code>
    * @return The id.
    */
   long getId();
@@ -31,16 +22,7 @@ public interface RoomInfoOrBuilder extends
    *级别
    * </pre>
    *
-   * <code>optional int32 rank = 2;</code>
-   * @return Whether the rank field is set.
-   */
-  boolean hasRank();
-  /**
-   * <pre>
-   *级别
-   * </pre>
-   *
-   * <code>optional int32 rank = 2;</code>
+   * <code>int32 rank = 2;</code>
    * @return The rank.
    */
   int getRank();
@@ -50,16 +32,7 @@ public interface RoomInfoOrBuilder extends
    *房间类型
    * </pre>
    *
-   * <code>optional int32 type = 3;</code>
-   * @return Whether the type field is set.
-   */
-  boolean hasType();
-  /**
-   * <pre>
-   *房间类型
-   * </pre>
-   *
-   * <code>optional int32 type = 3;</code>
+   * <code>int32 type = 3;</code>
    * @return The type.
    */
   int getType();
@@ -69,16 +42,7 @@ public interface RoomInfoOrBuilder extends
    *累积奖
    * </pre>
    *
-   * <code>optional int64 cumulativeGold = 4;</code>
-   * @return Whether the cumulativeGold field is set.
-   */
-  boolean hasCumulativeGold();
-  /**
-   * <pre>
-   *累积奖
-   * </pre>
-   *
-   * <code>optional int64 cumulativeGold = 4;</code>
+   * <code>int64 cumulativeGold = 4;</code>
    * @return The cumulativeGold.
    */
   long getCumulativeGold();
@@ -88,16 +52,7 @@ public interface RoomInfoOrBuilder extends
    *房间状态（二进制位标识）4096冰冻，8192鱼潮，16384 BOSS
    * </pre>
    *
-   * <code>optional int64 state = 5;</code>
-   * @return Whether the state field is set.
-   */
-  boolean hasState();
-  /**
-   * <pre>
-   *房间状态（二进制位标识）4096冰冻，8192鱼潮，16384 BOSS
-   * </pre>
-   *
-   * <code>optional int64 state = 5;</code>
+   * <code>int64 state = 5;</code>
    * @return The state.
    */
   long getState();

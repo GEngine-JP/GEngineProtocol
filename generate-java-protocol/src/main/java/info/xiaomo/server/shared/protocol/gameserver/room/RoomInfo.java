@@ -42,7 +42,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -54,27 +53,27 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 8: {
-            bitField0_ |= 0x00000001;
+
             id_ = input.readInt64();
             break;
           }
           case 16: {
-            bitField0_ |= 0x00000002;
+
             rank_ = input.readInt32();
             break;
           }
           case 24: {
-            bitField0_ |= 0x00000004;
+
             type_ = input.readInt32();
             break;
           }
           case 32: {
-            bitField0_ |= 0x00000008;
+
             cumulativeGold_ = input.readInt64();
             break;
           }
           case 40: {
-            bitField0_ |= 0x00000010;
+
             state_ = input.readInt64();
             break;
           }
@@ -110,7 +109,6 @@ private static final long serialVersionUID = 0L;
             info.xiaomo.server.shared.protocol.gameserver.room.RoomInfo.class, info.xiaomo.server.shared.protocol.gameserver.room.RoomInfo.Builder.class);
   }
 
-  private int bitField0_;
   public static final int ID_FIELD_NUMBER = 1;
   private long id_;
   /**
@@ -118,19 +116,7 @@ private static final long serialVersionUID = 0L;
    *房间编号
    * </pre>
    *
-   * <code>required int64 id = 1;</code>
-   * @return Whether the id field is set.
-   */
-  @java.lang.Override
-  public boolean hasId() {
-    return ((bitField0_ & 0x00000001) != 0);
-  }
-  /**
-   * <pre>
-   *房间编号
-   * </pre>
-   *
-   * <code>required int64 id = 1;</code>
+   * <code>int64 id = 1;</code>
    * @return The id.
    */
   @java.lang.Override
@@ -145,19 +131,7 @@ private static final long serialVersionUID = 0L;
    *级别
    * </pre>
    *
-   * <code>optional int32 rank = 2;</code>
-   * @return Whether the rank field is set.
-   */
-  @java.lang.Override
-  public boolean hasRank() {
-    return ((bitField0_ & 0x00000002) != 0);
-  }
-  /**
-   * <pre>
-   *级别
-   * </pre>
-   *
-   * <code>optional int32 rank = 2;</code>
+   * <code>int32 rank = 2;</code>
    * @return The rank.
    */
   @java.lang.Override
@@ -172,19 +146,7 @@ private static final long serialVersionUID = 0L;
    *房间类型
    * </pre>
    *
-   * <code>optional int32 type = 3;</code>
-   * @return Whether the type field is set.
-   */
-  @java.lang.Override
-  public boolean hasType() {
-    return ((bitField0_ & 0x00000004) != 0);
-  }
-  /**
-   * <pre>
-   *房间类型
-   * </pre>
-   *
-   * <code>optional int32 type = 3;</code>
+   * <code>int32 type = 3;</code>
    * @return The type.
    */
   @java.lang.Override
@@ -199,19 +161,7 @@ private static final long serialVersionUID = 0L;
    *累积奖
    * </pre>
    *
-   * <code>optional int64 cumulativeGold = 4;</code>
-   * @return Whether the cumulativeGold field is set.
-   */
-  @java.lang.Override
-  public boolean hasCumulativeGold() {
-    return ((bitField0_ & 0x00000008) != 0);
-  }
-  /**
-   * <pre>
-   *累积奖
-   * </pre>
-   *
-   * <code>optional int64 cumulativeGold = 4;</code>
+   * <code>int64 cumulativeGold = 4;</code>
    * @return The cumulativeGold.
    */
   @java.lang.Override
@@ -226,19 +176,7 @@ private static final long serialVersionUID = 0L;
    *房间状态（二进制位标识）4096冰冻，8192鱼潮，16384 BOSS
    * </pre>
    *
-   * <code>optional int64 state = 5;</code>
-   * @return Whether the state field is set.
-   */
-  @java.lang.Override
-  public boolean hasState() {
-    return ((bitField0_ & 0x00000010) != 0);
-  }
-  /**
-   * <pre>
-   *房间状态（二进制位标识）4096冰冻，8192鱼潮，16384 BOSS
-   * </pre>
-   *
-   * <code>optional int64 state = 5;</code>
+   * <code>int64 state = 5;</code>
    * @return The state.
    */
   @java.lang.Override
@@ -253,10 +191,6 @@ private static final long serialVersionUID = 0L;
     if (isInitialized == 1) return true;
     if (isInitialized == 0) return false;
 
-    if (!hasId()) {
-      memoizedIsInitialized = 0;
-      return false;
-    }
     memoizedIsInitialized = 1;
     return true;
   }
@@ -264,19 +198,19 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (id_ != 0L) {
       output.writeInt64(1, id_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (rank_ != 0) {
       output.writeInt32(2, rank_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (type_ != 0) {
       output.writeInt32(3, type_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (cumulativeGold_ != 0L) {
       output.writeInt64(4, cumulativeGold_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (state_ != 0L) {
       output.writeInt64(5, state_);
     }
     unknownFields.writeTo(output);
@@ -288,23 +222,23 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (id_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, id_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (rank_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(2, rank_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (type_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(3, type_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (cumulativeGold_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(4, cumulativeGold_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (state_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(5, state_);
     }
@@ -323,31 +257,16 @@ private static final long serialVersionUID = 0L;
     }
     info.xiaomo.server.shared.protocol.gameserver.room.RoomInfo other = (info.xiaomo.server.shared.protocol.gameserver.room.RoomInfo) obj;
 
-    if (hasId() != other.hasId()) return false;
-    if (hasId()) {
-      if (getId()
-          != other.getId()) return false;
-    }
-    if (hasRank() != other.hasRank()) return false;
-    if (hasRank()) {
-      if (getRank()
-          != other.getRank()) return false;
-    }
-    if (hasType() != other.hasType()) return false;
-    if (hasType()) {
-      if (getType()
-          != other.getType()) return false;
-    }
-    if (hasCumulativeGold() != other.hasCumulativeGold()) return false;
-    if (hasCumulativeGold()) {
-      if (getCumulativeGold()
-          != other.getCumulativeGold()) return false;
-    }
-    if (hasState() != other.hasState()) return false;
-    if (hasState()) {
-      if (getState()
-          != other.getState()) return false;
-    }
+    if (getId()
+        != other.getId()) return false;
+    if (getRank()
+        != other.getRank()) return false;
+    if (getType()
+        != other.getType()) return false;
+    if (getCumulativeGold()
+        != other.getCumulativeGold()) return false;
+    if (getState()
+        != other.getState()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -359,29 +278,19 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasId()) {
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getId());
-    }
-    if (hasRank()) {
-      hash = (37 * hash) + RANK_FIELD_NUMBER;
-      hash = (53 * hash) + getRank();
-    }
-    if (hasType()) {
-      hash = (37 * hash) + TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getType();
-    }
-    if (hasCumulativeGold()) {
-      hash = (37 * hash) + CUMULATIVEGOLD_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getCumulativeGold());
-    }
-    if (hasState()) {
-      hash = (37 * hash) + STATE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getState());
-    }
+    hash = (37 * hash) + ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getId());
+    hash = (37 * hash) + RANK_FIELD_NUMBER;
+    hash = (53 * hash) + getRank();
+    hash = (37 * hash) + TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getType();
+    hash = (37 * hash) + CUMULATIVEGOLD_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getCumulativeGold());
+    hash = (37 * hash) + STATE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getState());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -520,15 +429,15 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       id_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000001);
+
       rank_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000002);
+
       type_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000004);
+
       cumulativeGold_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000008);
+
       state_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000010);
+
       return this;
     }
 
@@ -555,29 +464,11 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public info.xiaomo.server.shared.protocol.gameserver.room.RoomInfo buildPartial() {
       info.xiaomo.server.shared.protocol.gameserver.room.RoomInfo result = new info.xiaomo.server.shared.protocol.gameserver.room.RoomInfo(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.id_ = id_;
-        to_bitField0_ |= 0x00000001;
-      }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.rank_ = rank_;
-        to_bitField0_ |= 0x00000002;
-      }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.type_ = type_;
-        to_bitField0_ |= 0x00000004;
-      }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.cumulativeGold_ = cumulativeGold_;
-        to_bitField0_ |= 0x00000008;
-      }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.state_ = state_;
-        to_bitField0_ |= 0x00000010;
-      }
-      result.bitField0_ = to_bitField0_;
+      result.id_ = id_;
+      result.rank_ = rank_;
+      result.type_ = type_;
+      result.cumulativeGold_ = cumulativeGold_;
+      result.state_ = state_;
       onBuilt();
       return result;
     }
@@ -626,19 +517,19 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(info.xiaomo.server.shared.protocol.gameserver.room.RoomInfo other) {
       if (other == info.xiaomo.server.shared.protocol.gameserver.room.RoomInfo.getDefaultInstance()) return this;
-      if (other.hasId()) {
+      if (other.getId() != 0L) {
         setId(other.getId());
       }
-      if (other.hasRank()) {
+      if (other.getRank() != 0) {
         setRank(other.getRank());
       }
-      if (other.hasType()) {
+      if (other.getType() != 0) {
         setType(other.getType());
       }
-      if (other.hasCumulativeGold()) {
+      if (other.getCumulativeGold() != 0L) {
         setCumulativeGold(other.getCumulativeGold());
       }
-      if (other.hasState()) {
+      if (other.getState() != 0L) {
         setState(other.getState());
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -648,9 +539,6 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public final boolean isInitialized() {
-      if (!hasId()) {
-        return false;
-      }
       return true;
     }
 
@@ -672,7 +560,6 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    private int bitField0_;
 
     private long id_ ;
     /**
@@ -680,19 +567,7 @@ private static final long serialVersionUID = 0L;
      *房间编号
      * </pre>
      *
-     * <code>required int64 id = 1;</code>
-     * @return Whether the id field is set.
-     */
-    @java.lang.Override
-    public boolean hasId() {
-      return ((bitField0_ & 0x00000001) != 0);
-    }
-    /**
-     * <pre>
-     *房间编号
-     * </pre>
-     *
-     * <code>required int64 id = 1;</code>
+     * <code>int64 id = 1;</code>
      * @return The id.
      */
     @java.lang.Override
@@ -704,12 +579,12 @@ private static final long serialVersionUID = 0L;
      *房间编号
      * </pre>
      *
-     * <code>required int64 id = 1;</code>
+     * <code>int64 id = 1;</code>
      * @param value The id to set.
      * @return This builder for chaining.
      */
     public Builder setId(long value) {
-      bitField0_ |= 0x00000001;
+      
       id_ = value;
       onChanged();
       return this;
@@ -719,11 +594,11 @@ private static final long serialVersionUID = 0L;
      *房间编号
      * </pre>
      *
-     * <code>required int64 id = 1;</code>
+     * <code>int64 id = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      
       id_ = 0L;
       onChanged();
       return this;
@@ -735,19 +610,7 @@ private static final long serialVersionUID = 0L;
      *级别
      * </pre>
      *
-     * <code>optional int32 rank = 2;</code>
-     * @return Whether the rank field is set.
-     */
-    @java.lang.Override
-    public boolean hasRank() {
-      return ((bitField0_ & 0x00000002) != 0);
-    }
-    /**
-     * <pre>
-     *级别
-     * </pre>
-     *
-     * <code>optional int32 rank = 2;</code>
+     * <code>int32 rank = 2;</code>
      * @return The rank.
      */
     @java.lang.Override
@@ -759,12 +622,12 @@ private static final long serialVersionUID = 0L;
      *级别
      * </pre>
      *
-     * <code>optional int32 rank = 2;</code>
+     * <code>int32 rank = 2;</code>
      * @param value The rank to set.
      * @return This builder for chaining.
      */
     public Builder setRank(int value) {
-      bitField0_ |= 0x00000002;
+      
       rank_ = value;
       onChanged();
       return this;
@@ -774,11 +637,11 @@ private static final long serialVersionUID = 0L;
      *级别
      * </pre>
      *
-     * <code>optional int32 rank = 2;</code>
+     * <code>int32 rank = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearRank() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      
       rank_ = 0;
       onChanged();
       return this;
@@ -790,19 +653,7 @@ private static final long serialVersionUID = 0L;
      *房间类型
      * </pre>
      *
-     * <code>optional int32 type = 3;</code>
-     * @return Whether the type field is set.
-     */
-    @java.lang.Override
-    public boolean hasType() {
-      return ((bitField0_ & 0x00000004) != 0);
-    }
-    /**
-     * <pre>
-     *房间类型
-     * </pre>
-     *
-     * <code>optional int32 type = 3;</code>
+     * <code>int32 type = 3;</code>
      * @return The type.
      */
     @java.lang.Override
@@ -814,12 +665,12 @@ private static final long serialVersionUID = 0L;
      *房间类型
      * </pre>
      *
-     * <code>optional int32 type = 3;</code>
+     * <code>int32 type = 3;</code>
      * @param value The type to set.
      * @return This builder for chaining.
      */
     public Builder setType(int value) {
-      bitField0_ |= 0x00000004;
+      
       type_ = value;
       onChanged();
       return this;
@@ -829,11 +680,11 @@ private static final long serialVersionUID = 0L;
      *房间类型
      * </pre>
      *
-     * <code>optional int32 type = 3;</code>
+     * <code>int32 type = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearType() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      
       type_ = 0;
       onChanged();
       return this;
@@ -845,19 +696,7 @@ private static final long serialVersionUID = 0L;
      *累积奖
      * </pre>
      *
-     * <code>optional int64 cumulativeGold = 4;</code>
-     * @return Whether the cumulativeGold field is set.
-     */
-    @java.lang.Override
-    public boolean hasCumulativeGold() {
-      return ((bitField0_ & 0x00000008) != 0);
-    }
-    /**
-     * <pre>
-     *累积奖
-     * </pre>
-     *
-     * <code>optional int64 cumulativeGold = 4;</code>
+     * <code>int64 cumulativeGold = 4;</code>
      * @return The cumulativeGold.
      */
     @java.lang.Override
@@ -869,12 +708,12 @@ private static final long serialVersionUID = 0L;
      *累积奖
      * </pre>
      *
-     * <code>optional int64 cumulativeGold = 4;</code>
+     * <code>int64 cumulativeGold = 4;</code>
      * @param value The cumulativeGold to set.
      * @return This builder for chaining.
      */
     public Builder setCumulativeGold(long value) {
-      bitField0_ |= 0x00000008;
+      
       cumulativeGold_ = value;
       onChanged();
       return this;
@@ -884,11 +723,11 @@ private static final long serialVersionUID = 0L;
      *累积奖
      * </pre>
      *
-     * <code>optional int64 cumulativeGold = 4;</code>
+     * <code>int64 cumulativeGold = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearCumulativeGold() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      
       cumulativeGold_ = 0L;
       onChanged();
       return this;
@@ -900,19 +739,7 @@ private static final long serialVersionUID = 0L;
      *房间状态（二进制位标识）4096冰冻，8192鱼潮，16384 BOSS
      * </pre>
      *
-     * <code>optional int64 state = 5;</code>
-     * @return Whether the state field is set.
-     */
-    @java.lang.Override
-    public boolean hasState() {
-      return ((bitField0_ & 0x00000010) != 0);
-    }
-    /**
-     * <pre>
-     *房间状态（二进制位标识）4096冰冻，8192鱼潮，16384 BOSS
-     * </pre>
-     *
-     * <code>optional int64 state = 5;</code>
+     * <code>int64 state = 5;</code>
      * @return The state.
      */
     @java.lang.Override
@@ -924,12 +751,12 @@ private static final long serialVersionUID = 0L;
      *房间状态（二进制位标识）4096冰冻，8192鱼潮，16384 BOSS
      * </pre>
      *
-     * <code>optional int64 state = 5;</code>
+     * <code>int64 state = 5;</code>
      * @param value The state to set.
      * @return This builder for chaining.
      */
     public Builder setState(long value) {
-      bitField0_ |= 0x00000010;
+      
       state_ = value;
       onChanged();
       return this;
@@ -939,11 +766,11 @@ private static final long serialVersionUID = 0L;
      *房间状态（二进制位标识）4096冰冻，8192鱼潮，16384 BOSS
      * </pre>
      *
-     * <code>optional int64 state = 5;</code>
+     * <code>int64 state = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      
       state_ = 0L;
       onChanged();
       return this;
@@ -974,7 +801,7 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  @java.lang.Deprecated public static final com.google.protobuf.Parser<RoomInfo>
+  private static final com.google.protobuf.Parser<RoomInfo>
       PARSER = new com.google.protobuf.AbstractParser<RoomInfo>() {
     @java.lang.Override
     public RoomInfo parsePartialFrom(

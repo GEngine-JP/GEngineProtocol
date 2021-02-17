@@ -8,31 +8,22 @@ public interface ServerEventRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>optional .MID mid = 1 [default = ServerEventReq];</code>
-   * @return Whether the mid field is set.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The enum numeric value on the wire for msgId.
    */
-  boolean hasMid();
+  int getMsgIdValue();
   /**
-   * <code>optional .MID mid = 1 [default = ServerEventReq];</code>
-   * @return The mid.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The msgId.
    */
-  info.xiaomo.server.shared.protocol.Mid.MID getMid();
+  info.xiaomo.server.shared.protocol.msg.MsgId getMsgId();
 
   /**
    * <pre>
    *事件类型  1踢玩家
    * </pre>
    *
-   * <code>required int32 type = 2;</code>
-   * @return Whether the type field is set.
-   */
-  boolean hasType();
-  /**
-   * <pre>
-   *事件类型  1踢玩家
-   * </pre>
-   *
-   * <code>required int32 type = 2;</code>
+   * <code>int32 type = 2;</code>
    * @return The type.
    */
   int getType();
@@ -42,16 +33,7 @@ public interface ServerEventRequestOrBuilder extends
    *int参数
    * </pre>
    *
-   * <code>optional int32 serverId = 3;</code>
-   * @return Whether the serverId field is set.
-   */
-  boolean hasServerId();
-  /**
-   * <pre>
-   *int参数
-   * </pre>
-   *
-   * <code>optional int32 serverId = 3;</code>
+   * <code>int32 serverId = 3;</code>
    * @return The serverId.
    */
   int getServerId();
@@ -61,16 +43,7 @@ public interface ServerEventRequestOrBuilder extends
    *long参数
    * </pre>
    *
-   * <code>optional int64 id = 4;</code>
-   * @return Whether the id field is set.
-   */
-  boolean hasId();
-  /**
-   * <pre>
-   *long参数
-   * </pre>
-   *
-   * <code>optional int64 id = 4;</code>
+   * <code>int64 id = 4;</code>
    * @return The id.
    */
   long getId();
@@ -109,16 +82,7 @@ public interface ServerEventRequestOrBuilder extends
    *其他额外信息
    * </pre>
    *
-   * <code>optional string info = 6;</code>
-   * @return Whether the info field is set.
-   */
-  boolean hasInfo();
-  /**
-   * <pre>
-   *其他额外信息
-   * </pre>
-   *
-   * <code>optional string info = 6;</code>
+   * <code>string info = 6;</code>
    * @return The info.
    */
   java.lang.String getInfo();
@@ -127,7 +91,7 @@ public interface ServerEventRequestOrBuilder extends
    *其他额外信息
    * </pre>
    *
-   * <code>optional string info = 6;</code>
+   * <code>string info = 6;</code>
    * @return The bytes for info.
    */
   com.google.protobuf.ByteString

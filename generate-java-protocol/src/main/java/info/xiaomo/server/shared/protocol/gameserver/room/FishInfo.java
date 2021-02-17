@@ -120,32 +120,32 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 32: {
-            bitField0_ |= 0x00000001;
+
             formation_ = input.readInt32();
             break;
           }
           case 40: {
-            bitField0_ |= 0x00000002;
+
             bornTime_ = input.readInt64();
             break;
           }
           case 48: {
-            bitField0_ |= 0x00000004;
+
             serverTime_ = input.readInt64();
             break;
           }
           case 56: {
-            bitField0_ |= 0x00000008;
+
             speed_ = input.readInt32();
             break;
           }
           case 72: {
-            bitField0_ |= 0x00000010;
+
             topSpeed_ = input.readInt32();
             break;
           }
           case 80: {
-            bitField0_ |= 0x00000020;
+
             topSpeedStartTime_ = input.readInt64();
             break;
           }
@@ -190,7 +190,6 @@ private static final long serialVersionUID = 0L;
             info.xiaomo.server.shared.protocol.gameserver.room.FishInfo.class, info.xiaomo.server.shared.protocol.gameserver.room.FishInfo.Builder.class);
   }
 
-  private int bitField0_;
   public static final int ID_FIELD_NUMBER = 1;
   private com.google.protobuf.Internal.LongList id_;
   /**
@@ -229,6 +228,7 @@ private static final long serialVersionUID = 0L;
   public long getId(int index) {
     return id_.getLong(index);
   }
+  private int idMemoizedSerializedSize = -1;
 
   public static final int CONFIGID_FIELD_NUMBER = 2;
   private com.google.protobuf.Internal.IntList configId_;
@@ -268,6 +268,7 @@ private static final long serialVersionUID = 0L;
   public int getConfigId(int index) {
     return configId_.getInt(index);
   }
+  private int configIdMemoizedSerializedSize = -1;
 
   public static final int TRACKID_FIELD_NUMBER = 3;
   private com.google.protobuf.Internal.IntList trackId_;
@@ -307,6 +308,7 @@ private static final long serialVersionUID = 0L;
   public int getTrackId(int index) {
     return trackId_.getInt(index);
   }
+  private int trackIdMemoizedSerializedSize = -1;
 
   public static final int FORMATION_FIELD_NUMBER = 4;
   private int formation_;
@@ -315,19 +317,7 @@ private static final long serialVersionUID = 0L;
    *鱼群阵型 0普通情况 1boss 100阵型id
    * </pre>
    *
-   * <code>optional int32 formation = 4;</code>
-   * @return Whether the formation field is set.
-   */
-  @java.lang.Override
-  public boolean hasFormation() {
-    return ((bitField0_ & 0x00000001) != 0);
-  }
-  /**
-   * <pre>
-   *鱼群阵型 0普通情况 1boss 100阵型id
-   * </pre>
-   *
-   * <code>optional int32 formation = 4;</code>
+   * <code>int32 formation = 4;</code>
    * @return The formation.
    */
   @java.lang.Override
@@ -342,19 +332,7 @@ private static final long serialVersionUID = 0L;
    *出生时间戳
    * </pre>
    *
-   * <code>required int64 bornTime = 5;</code>
-   * @return Whether the bornTime field is set.
-   */
-  @java.lang.Override
-  public boolean hasBornTime() {
-    return ((bitField0_ & 0x00000002) != 0);
-  }
-  /**
-   * <pre>
-   *出生时间戳
-   * </pre>
-   *
-   * <code>required int64 bornTime = 5;</code>
+   * <code>int64 bornTime = 5;</code>
    * @return The bornTime.
    */
   @java.lang.Override
@@ -369,19 +347,7 @@ private static final long serialVersionUID = 0L;
    *系统时间戳
    * </pre>
    *
-   * <code>required int64 serverTime = 6;</code>
-   * @return Whether the serverTime field is set.
-   */
-  @java.lang.Override
-  public boolean hasServerTime() {
-    return ((bitField0_ & 0x00000004) != 0);
-  }
-  /**
-   * <pre>
-   *系统时间戳
-   * </pre>
-   *
-   * <code>required int64 serverTime = 6;</code>
+   * <code>int64 serverTime = 6;</code>
    * @return The serverTime.
    */
   @java.lang.Override
@@ -396,19 +362,7 @@ private static final long serialVersionUID = 0L;
    *速度
    * </pre>
    *
-   * <code>optional int32 speed = 7;</code>
-   * @return Whether the speed field is set.
-   */
-  @java.lang.Override
-  public boolean hasSpeed() {
-    return ((bitField0_ & 0x00000008) != 0);
-  }
-  /**
-   * <pre>
-   *速度
-   * </pre>
-   *
-   * <code>optional int32 speed = 7;</code>
+   * <code>int32 speed = 7;</code>
    * @return The speed.
    */
   @java.lang.Override
@@ -423,19 +377,7 @@ private static final long serialVersionUID = 0L;
    *极速
    * </pre>
    *
-   * <code>optional int32 topSpeed = 9;</code>
-   * @return Whether the topSpeed field is set.
-   */
-  @java.lang.Override
-  public boolean hasTopSpeed() {
-    return ((bitField0_ & 0x00000010) != 0);
-  }
-  /**
-   * <pre>
-   *极速
-   * </pre>
-   *
-   * <code>optional int32 topSpeed = 9;</code>
+   * <code>int32 topSpeed = 9;</code>
    * @return The topSpeed.
    */
   @java.lang.Override
@@ -450,19 +392,7 @@ private static final long serialVersionUID = 0L;
    *极速开始时间
    * </pre>
    *
-   * <code>optional int64 topSpeedStartTime = 10;</code>
-   * @return Whether the topSpeedStartTime field is set.
-   */
-  @java.lang.Override
-  public boolean hasTopSpeedStartTime() {
-    return ((bitField0_ & 0x00000020) != 0);
-  }
-  /**
-   * <pre>
-   *极速开始时间
-   * </pre>
-   *
-   * <code>optional int64 topSpeedStartTime = 10;</code>
+   * <code>int64 topSpeedStartTime = 10;</code>
    * @return The topSpeedStartTime.
    */
   @java.lang.Override
@@ -477,14 +407,6 @@ private static final long serialVersionUID = 0L;
     if (isInitialized == 1) return true;
     if (isInitialized == 0) return false;
 
-    if (!hasBornTime()) {
-      memoizedIsInitialized = 0;
-      return false;
-    }
-    if (!hasServerTime()) {
-      memoizedIsInitialized = 0;
-      return false;
-    }
     memoizedIsInitialized = 1;
     return true;
   }
@@ -492,31 +414,44 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    getSerializedSize();
+    if (getIdList().size() > 0) {
+      output.writeUInt32NoTag(10);
+      output.writeUInt32NoTag(idMemoizedSerializedSize);
+    }
     for (int i = 0; i < id_.size(); i++) {
-      output.writeInt64(1, id_.getLong(i));
+      output.writeInt64NoTag(id_.getLong(i));
+    }
+    if (getConfigIdList().size() > 0) {
+      output.writeUInt32NoTag(18);
+      output.writeUInt32NoTag(configIdMemoizedSerializedSize);
     }
     for (int i = 0; i < configId_.size(); i++) {
-      output.writeInt32(2, configId_.getInt(i));
+      output.writeInt32NoTag(configId_.getInt(i));
+    }
+    if (getTrackIdList().size() > 0) {
+      output.writeUInt32NoTag(26);
+      output.writeUInt32NoTag(trackIdMemoizedSerializedSize);
     }
     for (int i = 0; i < trackId_.size(); i++) {
-      output.writeInt32(3, trackId_.getInt(i));
+      output.writeInt32NoTag(trackId_.getInt(i));
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (formation_ != 0) {
       output.writeInt32(4, formation_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (bornTime_ != 0L) {
       output.writeInt64(5, bornTime_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (serverTime_ != 0L) {
       output.writeInt64(6, serverTime_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (speed_ != 0) {
       output.writeInt32(7, speed_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (topSpeed_ != 0) {
       output.writeInt32(9, topSpeed_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (topSpeedStartTime_ != 0L) {
       output.writeInt64(10, topSpeedStartTime_);
     }
     unknownFields.writeTo(output);
@@ -535,7 +470,12 @@ private static final long serialVersionUID = 0L;
           .computeInt64SizeNoTag(id_.getLong(i));
       }
       size += dataSize;
-      size += 1 * getIdList().size();
+      if (!getIdList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream
+            .computeInt32SizeNoTag(dataSize);
+      }
+      idMemoizedSerializedSize = dataSize;
     }
     {
       int dataSize = 0;
@@ -544,7 +484,12 @@ private static final long serialVersionUID = 0L;
           .computeInt32SizeNoTag(configId_.getInt(i));
       }
       size += dataSize;
-      size += 1 * getConfigIdList().size();
+      if (!getConfigIdList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream
+            .computeInt32SizeNoTag(dataSize);
+      }
+      configIdMemoizedSerializedSize = dataSize;
     }
     {
       int dataSize = 0;
@@ -553,29 +498,34 @@ private static final long serialVersionUID = 0L;
           .computeInt32SizeNoTag(trackId_.getInt(i));
       }
       size += dataSize;
-      size += 1 * getTrackIdList().size();
+      if (!getTrackIdList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream
+            .computeInt32SizeNoTag(dataSize);
+      }
+      trackIdMemoizedSerializedSize = dataSize;
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (formation_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(4, formation_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (bornTime_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(5, bornTime_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (serverTime_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(6, serverTime_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (speed_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(7, speed_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (topSpeed_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(9, topSpeed_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (topSpeedStartTime_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(10, topSpeedStartTime_);
     }
@@ -600,36 +550,18 @@ private static final long serialVersionUID = 0L;
         .equals(other.getConfigIdList())) return false;
     if (!getTrackIdList()
         .equals(other.getTrackIdList())) return false;
-    if (hasFormation() != other.hasFormation()) return false;
-    if (hasFormation()) {
-      if (getFormation()
-          != other.getFormation()) return false;
-    }
-    if (hasBornTime() != other.hasBornTime()) return false;
-    if (hasBornTime()) {
-      if (getBornTime()
-          != other.getBornTime()) return false;
-    }
-    if (hasServerTime() != other.hasServerTime()) return false;
-    if (hasServerTime()) {
-      if (getServerTime()
-          != other.getServerTime()) return false;
-    }
-    if (hasSpeed() != other.hasSpeed()) return false;
-    if (hasSpeed()) {
-      if (getSpeed()
-          != other.getSpeed()) return false;
-    }
-    if (hasTopSpeed() != other.hasTopSpeed()) return false;
-    if (hasTopSpeed()) {
-      if (getTopSpeed()
-          != other.getTopSpeed()) return false;
-    }
-    if (hasTopSpeedStartTime() != other.hasTopSpeedStartTime()) return false;
-    if (hasTopSpeedStartTime()) {
-      if (getTopSpeedStartTime()
-          != other.getTopSpeedStartTime()) return false;
-    }
+    if (getFormation()
+        != other.getFormation()) return false;
+    if (getBornTime()
+        != other.getBornTime()) return false;
+    if (getServerTime()
+        != other.getServerTime()) return false;
+    if (getSpeed()
+        != other.getSpeed()) return false;
+    if (getTopSpeed()
+        != other.getTopSpeed()) return false;
+    if (getTopSpeedStartTime()
+        != other.getTopSpeedStartTime()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -653,33 +585,21 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + TRACKID_FIELD_NUMBER;
       hash = (53 * hash) + getTrackIdList().hashCode();
     }
-    if (hasFormation()) {
-      hash = (37 * hash) + FORMATION_FIELD_NUMBER;
-      hash = (53 * hash) + getFormation();
-    }
-    if (hasBornTime()) {
-      hash = (37 * hash) + BORNTIME_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getBornTime());
-    }
-    if (hasServerTime()) {
-      hash = (37 * hash) + SERVERTIME_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getServerTime());
-    }
-    if (hasSpeed()) {
-      hash = (37 * hash) + SPEED_FIELD_NUMBER;
-      hash = (53 * hash) + getSpeed();
-    }
-    if (hasTopSpeed()) {
-      hash = (37 * hash) + TOPSPEED_FIELD_NUMBER;
-      hash = (53 * hash) + getTopSpeed();
-    }
-    if (hasTopSpeedStartTime()) {
-      hash = (37 * hash) + TOPSPEEDSTARTTIME_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getTopSpeedStartTime());
-    }
+    hash = (37 * hash) + FORMATION_FIELD_NUMBER;
+    hash = (53 * hash) + getFormation();
+    hash = (37 * hash) + BORNTIME_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getBornTime());
+    hash = (37 * hash) + SERVERTIME_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getServerTime());
+    hash = (37 * hash) + SPEED_FIELD_NUMBER;
+    hash = (53 * hash) + getSpeed();
+    hash = (37 * hash) + TOPSPEED_FIELD_NUMBER;
+    hash = (53 * hash) + getTopSpeed();
+    hash = (37 * hash) + TOPSPEEDSTARTTIME_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getTopSpeedStartTime());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -824,17 +744,17 @@ private static final long serialVersionUID = 0L;
       trackId_ = emptyIntList();
       bitField0_ = (bitField0_ & ~0x00000004);
       formation_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000008);
+
       bornTime_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000010);
+
       serverTime_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000020);
+
       speed_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000040);
+
       topSpeed_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000080);
+
       topSpeedStartTime_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000100);
+
       return this;
     }
 
@@ -862,7 +782,6 @@ private static final long serialVersionUID = 0L;
     public info.xiaomo.server.shared.protocol.gameserver.room.FishInfo buildPartial() {
       info.xiaomo.server.shared.protocol.gameserver.room.FishInfo result = new info.xiaomo.server.shared.protocol.gameserver.room.FishInfo(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         id_.makeImmutable();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -878,31 +797,12 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.trackId_ = trackId_;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.formation_ = formation_;
-        to_bitField0_ |= 0x00000001;
-      }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.bornTime_ = bornTime_;
-        to_bitField0_ |= 0x00000002;
-      }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.serverTime_ = serverTime_;
-        to_bitField0_ |= 0x00000004;
-      }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.speed_ = speed_;
-        to_bitField0_ |= 0x00000008;
-      }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.topSpeed_ = topSpeed_;
-        to_bitField0_ |= 0x00000010;
-      }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.topSpeedStartTime_ = topSpeedStartTime_;
-        to_bitField0_ |= 0x00000020;
-      }
-      result.bitField0_ = to_bitField0_;
+      result.formation_ = formation_;
+      result.bornTime_ = bornTime_;
+      result.serverTime_ = serverTime_;
+      result.speed_ = speed_;
+      result.topSpeed_ = topSpeed_;
+      result.topSpeedStartTime_ = topSpeedStartTime_;
       onBuilt();
       return result;
     }
@@ -981,22 +881,22 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       }
-      if (other.hasFormation()) {
+      if (other.getFormation() != 0) {
         setFormation(other.getFormation());
       }
-      if (other.hasBornTime()) {
+      if (other.getBornTime() != 0L) {
         setBornTime(other.getBornTime());
       }
-      if (other.hasServerTime()) {
+      if (other.getServerTime() != 0L) {
         setServerTime(other.getServerTime());
       }
-      if (other.hasSpeed()) {
+      if (other.getSpeed() != 0) {
         setSpeed(other.getSpeed());
       }
-      if (other.hasTopSpeed()) {
+      if (other.getTopSpeed() != 0) {
         setTopSpeed(other.getTopSpeed());
       }
-      if (other.hasTopSpeedStartTime()) {
+      if (other.getTopSpeedStartTime() != 0L) {
         setTopSpeedStartTime(other.getTopSpeedStartTime());
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -1006,12 +906,6 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public final boolean isInitialized() {
-      if (!hasBornTime()) {
-        return false;
-      }
-      if (!hasServerTime()) {
-        return false;
-      }
       return true;
     }
 
@@ -1362,19 +1256,7 @@ private static final long serialVersionUID = 0L;
      *鱼群阵型 0普通情况 1boss 100阵型id
      * </pre>
      *
-     * <code>optional int32 formation = 4;</code>
-     * @return Whether the formation field is set.
-     */
-    @java.lang.Override
-    public boolean hasFormation() {
-      return ((bitField0_ & 0x00000008) != 0);
-    }
-    /**
-     * <pre>
-     *鱼群阵型 0普通情况 1boss 100阵型id
-     * </pre>
-     *
-     * <code>optional int32 formation = 4;</code>
+     * <code>int32 formation = 4;</code>
      * @return The formation.
      */
     @java.lang.Override
@@ -1386,12 +1268,12 @@ private static final long serialVersionUID = 0L;
      *鱼群阵型 0普通情况 1boss 100阵型id
      * </pre>
      *
-     * <code>optional int32 formation = 4;</code>
+     * <code>int32 formation = 4;</code>
      * @param value The formation to set.
      * @return This builder for chaining.
      */
     public Builder setFormation(int value) {
-      bitField0_ |= 0x00000008;
+      
       formation_ = value;
       onChanged();
       return this;
@@ -1401,11 +1283,11 @@ private static final long serialVersionUID = 0L;
      *鱼群阵型 0普通情况 1boss 100阵型id
      * </pre>
      *
-     * <code>optional int32 formation = 4;</code>
+     * <code>int32 formation = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearFormation() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      
       formation_ = 0;
       onChanged();
       return this;
@@ -1417,19 +1299,7 @@ private static final long serialVersionUID = 0L;
      *出生时间戳
      * </pre>
      *
-     * <code>required int64 bornTime = 5;</code>
-     * @return Whether the bornTime field is set.
-     */
-    @java.lang.Override
-    public boolean hasBornTime() {
-      return ((bitField0_ & 0x00000010) != 0);
-    }
-    /**
-     * <pre>
-     *出生时间戳
-     * </pre>
-     *
-     * <code>required int64 bornTime = 5;</code>
+     * <code>int64 bornTime = 5;</code>
      * @return The bornTime.
      */
     @java.lang.Override
@@ -1441,12 +1311,12 @@ private static final long serialVersionUID = 0L;
      *出生时间戳
      * </pre>
      *
-     * <code>required int64 bornTime = 5;</code>
+     * <code>int64 bornTime = 5;</code>
      * @param value The bornTime to set.
      * @return This builder for chaining.
      */
     public Builder setBornTime(long value) {
-      bitField0_ |= 0x00000010;
+      
       bornTime_ = value;
       onChanged();
       return this;
@@ -1456,11 +1326,11 @@ private static final long serialVersionUID = 0L;
      *出生时间戳
      * </pre>
      *
-     * <code>required int64 bornTime = 5;</code>
+     * <code>int64 bornTime = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearBornTime() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      
       bornTime_ = 0L;
       onChanged();
       return this;
@@ -1472,19 +1342,7 @@ private static final long serialVersionUID = 0L;
      *系统时间戳
      * </pre>
      *
-     * <code>required int64 serverTime = 6;</code>
-     * @return Whether the serverTime field is set.
-     */
-    @java.lang.Override
-    public boolean hasServerTime() {
-      return ((bitField0_ & 0x00000020) != 0);
-    }
-    /**
-     * <pre>
-     *系统时间戳
-     * </pre>
-     *
-     * <code>required int64 serverTime = 6;</code>
+     * <code>int64 serverTime = 6;</code>
      * @return The serverTime.
      */
     @java.lang.Override
@@ -1496,12 +1354,12 @@ private static final long serialVersionUID = 0L;
      *系统时间戳
      * </pre>
      *
-     * <code>required int64 serverTime = 6;</code>
+     * <code>int64 serverTime = 6;</code>
      * @param value The serverTime to set.
      * @return This builder for chaining.
      */
     public Builder setServerTime(long value) {
-      bitField0_ |= 0x00000020;
+      
       serverTime_ = value;
       onChanged();
       return this;
@@ -1511,11 +1369,11 @@ private static final long serialVersionUID = 0L;
      *系统时间戳
      * </pre>
      *
-     * <code>required int64 serverTime = 6;</code>
+     * <code>int64 serverTime = 6;</code>
      * @return This builder for chaining.
      */
     public Builder clearServerTime() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      
       serverTime_ = 0L;
       onChanged();
       return this;
@@ -1527,19 +1385,7 @@ private static final long serialVersionUID = 0L;
      *速度
      * </pre>
      *
-     * <code>optional int32 speed = 7;</code>
-     * @return Whether the speed field is set.
-     */
-    @java.lang.Override
-    public boolean hasSpeed() {
-      return ((bitField0_ & 0x00000040) != 0);
-    }
-    /**
-     * <pre>
-     *速度
-     * </pre>
-     *
-     * <code>optional int32 speed = 7;</code>
+     * <code>int32 speed = 7;</code>
      * @return The speed.
      */
     @java.lang.Override
@@ -1551,12 +1397,12 @@ private static final long serialVersionUID = 0L;
      *速度
      * </pre>
      *
-     * <code>optional int32 speed = 7;</code>
+     * <code>int32 speed = 7;</code>
      * @param value The speed to set.
      * @return This builder for chaining.
      */
     public Builder setSpeed(int value) {
-      bitField0_ |= 0x00000040;
+      
       speed_ = value;
       onChanged();
       return this;
@@ -1566,11 +1412,11 @@ private static final long serialVersionUID = 0L;
      *速度
      * </pre>
      *
-     * <code>optional int32 speed = 7;</code>
+     * <code>int32 speed = 7;</code>
      * @return This builder for chaining.
      */
     public Builder clearSpeed() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      
       speed_ = 0;
       onChanged();
       return this;
@@ -1582,19 +1428,7 @@ private static final long serialVersionUID = 0L;
      *极速
      * </pre>
      *
-     * <code>optional int32 topSpeed = 9;</code>
-     * @return Whether the topSpeed field is set.
-     */
-    @java.lang.Override
-    public boolean hasTopSpeed() {
-      return ((bitField0_ & 0x00000080) != 0);
-    }
-    /**
-     * <pre>
-     *极速
-     * </pre>
-     *
-     * <code>optional int32 topSpeed = 9;</code>
+     * <code>int32 topSpeed = 9;</code>
      * @return The topSpeed.
      */
     @java.lang.Override
@@ -1606,12 +1440,12 @@ private static final long serialVersionUID = 0L;
      *极速
      * </pre>
      *
-     * <code>optional int32 topSpeed = 9;</code>
+     * <code>int32 topSpeed = 9;</code>
      * @param value The topSpeed to set.
      * @return This builder for chaining.
      */
     public Builder setTopSpeed(int value) {
-      bitField0_ |= 0x00000080;
+      
       topSpeed_ = value;
       onChanged();
       return this;
@@ -1621,11 +1455,11 @@ private static final long serialVersionUID = 0L;
      *极速
      * </pre>
      *
-     * <code>optional int32 topSpeed = 9;</code>
+     * <code>int32 topSpeed = 9;</code>
      * @return This builder for chaining.
      */
     public Builder clearTopSpeed() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      
       topSpeed_ = 0;
       onChanged();
       return this;
@@ -1637,19 +1471,7 @@ private static final long serialVersionUID = 0L;
      *极速开始时间
      * </pre>
      *
-     * <code>optional int64 topSpeedStartTime = 10;</code>
-     * @return Whether the topSpeedStartTime field is set.
-     */
-    @java.lang.Override
-    public boolean hasTopSpeedStartTime() {
-      return ((bitField0_ & 0x00000100) != 0);
-    }
-    /**
-     * <pre>
-     *极速开始时间
-     * </pre>
-     *
-     * <code>optional int64 topSpeedStartTime = 10;</code>
+     * <code>int64 topSpeedStartTime = 10;</code>
      * @return The topSpeedStartTime.
      */
     @java.lang.Override
@@ -1661,12 +1483,12 @@ private static final long serialVersionUID = 0L;
      *极速开始时间
      * </pre>
      *
-     * <code>optional int64 topSpeedStartTime = 10;</code>
+     * <code>int64 topSpeedStartTime = 10;</code>
      * @param value The topSpeedStartTime to set.
      * @return This builder for chaining.
      */
     public Builder setTopSpeedStartTime(long value) {
-      bitField0_ |= 0x00000100;
+      
       topSpeedStartTime_ = value;
       onChanged();
       return this;
@@ -1676,11 +1498,11 @@ private static final long serialVersionUID = 0L;
      *极速开始时间
      * </pre>
      *
-     * <code>optional int64 topSpeedStartTime = 10;</code>
+     * <code>int64 topSpeedStartTime = 10;</code>
      * @return This builder for chaining.
      */
     public Builder clearTopSpeedStartTime() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      
       topSpeedStartTime_ = 0L;
       onChanged();
       return this;
@@ -1711,7 +1533,7 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  @java.lang.Deprecated public static final com.google.protobuf.Parser<FishInfo>
+  private static final com.google.protobuf.Parser<FishInfo>
       PARSER = new com.google.protobuf.AbstractParser<FishInfo>() {
     @java.lang.Override
     public FishInfo parsePartialFrom(

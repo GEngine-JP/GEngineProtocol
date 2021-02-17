@@ -20,7 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ChangeRoleServerRequest() {
-    mid_ = 1005;
+    msgId_ = 0;
   }
 
   @java.lang.Override
@@ -43,7 +43,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -56,28 +55,22 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
             int rawValue = input.readEnum();
-              @SuppressWarnings("deprecation")
-            info.xiaomo.server.shared.protocol.Mid.MID value = info.xiaomo.server.shared.protocol.Mid.MID.valueOf(rawValue);
-            if (value == null) {
-              unknownFields.mergeVarintField(1, rawValue);
-            } else {
-              bitField0_ |= 0x00000001;
-              mid_ = rawValue;
-            }
+
+            msgId_ = rawValue;
             break;
           }
           case 16: {
-            bitField0_ |= 0x00000002;
+
             serverId_ = input.readInt32();
             break;
           }
           case 24: {
-            bitField0_ |= 0x00000004;
+
             serverType_ = input.readInt32();
             break;
           }
           case 32: {
-            bitField0_ |= 0x00000008;
+
             roleId_ = input.readInt64();
             break;
           }
@@ -113,24 +106,23 @@ private static final long serialVersionUID = 0L;
             info.xiaomo.server.shared.protocol.server.ChangeRoleServerRequest.class, info.xiaomo.server.shared.protocol.server.ChangeRoleServerRequest.Builder.class);
   }
 
-  private int bitField0_;
-  public static final int MID_FIELD_NUMBER = 1;
-  private int mid_;
+  public static final int MSGID_FIELD_NUMBER = 1;
+  private int msgId_;
   /**
-   * <code>optional .MID mid = 1 [default = ChangeRoleServerReq];</code>
-   * @return Whether the mid field is set.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The enum numeric value on the wire for msgId.
    */
-  @java.lang.Override public boolean hasMid() {
-    return ((bitField0_ & 0x00000001) != 0);
+  @java.lang.Override public int getMsgIdValue() {
+    return msgId_;
   }
   /**
-   * <code>optional .MID mid = 1 [default = ChangeRoleServerReq];</code>
-   * @return The mid.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The msgId.
    */
-  @java.lang.Override public info.xiaomo.server.shared.protocol.Mid.MID getMid() {
+  @java.lang.Override public info.xiaomo.server.shared.protocol.msg.MsgId getMsgId() {
     @SuppressWarnings("deprecation")
-    info.xiaomo.server.shared.protocol.Mid.MID result = info.xiaomo.server.shared.protocol.Mid.MID.valueOf(mid_);
-    return result == null ? info.xiaomo.server.shared.protocol.Mid.MID.ChangeRoleServerReq : result;
+    info.xiaomo.server.shared.protocol.msg.MsgId result = info.xiaomo.server.shared.protocol.msg.MsgId.valueOf(msgId_);
+    return result == null ? info.xiaomo.server.shared.protocol.msg.MsgId.UNRECOGNIZED : result;
   }
 
   public static final int SERVERID_FIELD_NUMBER = 2;
@@ -140,19 +132,7 @@ private static final long serialVersionUID = 0L;
    *目标服务器ID
    * </pre>
    *
-   * <code>optional int32 serverId = 2;</code>
-   * @return Whether the serverId field is set.
-   */
-  @java.lang.Override
-  public boolean hasServerId() {
-    return ((bitField0_ & 0x00000002) != 0);
-  }
-  /**
-   * <pre>
-   *目标服务器ID
-   * </pre>
-   *
-   * <code>optional int32 serverId = 2;</code>
+   * <code>int32 serverId = 2;</code>
    * @return The serverId.
    */
   @java.lang.Override
@@ -167,19 +147,7 @@ private static final long serialVersionUID = 0L;
    *目标服务器类型
    * </pre>
    *
-   * <code>required int32 serverType = 3;</code>
-   * @return Whether the serverType field is set.
-   */
-  @java.lang.Override
-  public boolean hasServerType() {
-    return ((bitField0_ & 0x00000004) != 0);
-  }
-  /**
-   * <pre>
-   *目标服务器类型
-   * </pre>
-   *
-   * <code>required int32 serverType = 3;</code>
+   * <code>int32 serverType = 3;</code>
    * @return The serverType.
    */
   @java.lang.Override
@@ -194,19 +162,7 @@ private static final long serialVersionUID = 0L;
    *角色ID
    * </pre>
    *
-   * <code>required int64 roleId = 4;</code>
-   * @return Whether the roleId field is set.
-   */
-  @java.lang.Override
-  public boolean hasRoleId() {
-    return ((bitField0_ & 0x00000008) != 0);
-  }
-  /**
-   * <pre>
-   *角色ID
-   * </pre>
-   *
-   * <code>required int64 roleId = 4;</code>
+   * <code>int64 roleId = 4;</code>
    * @return The roleId.
    */
   @java.lang.Override
@@ -221,14 +177,6 @@ private static final long serialVersionUID = 0L;
     if (isInitialized == 1) return true;
     if (isInitialized == 0) return false;
 
-    if (!hasServerType()) {
-      memoizedIsInitialized = 0;
-      return false;
-    }
-    if (!hasRoleId()) {
-      memoizedIsInitialized = 0;
-      return false;
-    }
     memoizedIsInitialized = 1;
     return true;
   }
@@ -236,16 +184,16 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeEnum(1, mid_);
+    if (msgId_ != info.xiaomo.server.shared.protocol.msg.MsgId.Base.getNumber()) {
+      output.writeEnum(1, msgId_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (serverId_ != 0) {
       output.writeInt32(2, serverId_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (serverType_ != 0) {
       output.writeInt32(3, serverType_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (roleId_ != 0L) {
       output.writeInt64(4, roleId_);
     }
     unknownFields.writeTo(output);
@@ -257,19 +205,19 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (msgId_ != info.xiaomo.server.shared.protocol.msg.MsgId.Base.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(1, mid_);
+        .computeEnumSize(1, msgId_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (serverId_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(2, serverId_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (serverType_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(3, serverType_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (roleId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(4, roleId_);
     }
@@ -288,25 +236,13 @@ private static final long serialVersionUID = 0L;
     }
     info.xiaomo.server.shared.protocol.server.ChangeRoleServerRequest other = (info.xiaomo.server.shared.protocol.server.ChangeRoleServerRequest) obj;
 
-    if (hasMid() != other.hasMid()) return false;
-    if (hasMid()) {
-      if (mid_ != other.mid_) return false;
-    }
-    if (hasServerId() != other.hasServerId()) return false;
-    if (hasServerId()) {
-      if (getServerId()
-          != other.getServerId()) return false;
-    }
-    if (hasServerType() != other.hasServerType()) return false;
-    if (hasServerType()) {
-      if (getServerType()
-          != other.getServerType()) return false;
-    }
-    if (hasRoleId() != other.hasRoleId()) return false;
-    if (hasRoleId()) {
-      if (getRoleId()
-          != other.getRoleId()) return false;
-    }
+    if (msgId_ != other.msgId_) return false;
+    if (getServerId()
+        != other.getServerId()) return false;
+    if (getServerType()
+        != other.getServerType()) return false;
+    if (getRoleId()
+        != other.getRoleId()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -318,23 +254,15 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasMid()) {
-      hash = (37 * hash) + MID_FIELD_NUMBER;
-      hash = (53 * hash) + mid_;
-    }
-    if (hasServerId()) {
-      hash = (37 * hash) + SERVERID_FIELD_NUMBER;
-      hash = (53 * hash) + getServerId();
-    }
-    if (hasServerType()) {
-      hash = (37 * hash) + SERVERTYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getServerType();
-    }
-    if (hasRoleId()) {
-      hash = (37 * hash) + ROLEID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getRoleId());
-    }
+    hash = (37 * hash) + MSGID_FIELD_NUMBER;
+    hash = (53 * hash) + msgId_;
+    hash = (37 * hash) + SERVERID_FIELD_NUMBER;
+    hash = (53 * hash) + getServerId();
+    hash = (37 * hash) + SERVERTYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getServerType();
+    hash = (37 * hash) + ROLEID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getRoleId());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -472,14 +400,14 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      mid_ = 1005;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      msgId_ = 0;
+
       serverId_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000002);
+
       serverType_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000004);
+
       roleId_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000008);
+
       return this;
     }
 
@@ -506,25 +434,10 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public info.xiaomo.server.shared.protocol.server.ChangeRoleServerRequest buildPartial() {
       info.xiaomo.server.shared.protocol.server.ChangeRoleServerRequest result = new info.xiaomo.server.shared.protocol.server.ChangeRoleServerRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
-      }
-      result.mid_ = mid_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.serverId_ = serverId_;
-        to_bitField0_ |= 0x00000002;
-      }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.serverType_ = serverType_;
-        to_bitField0_ |= 0x00000004;
-      }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.roleId_ = roleId_;
-        to_bitField0_ |= 0x00000008;
-      }
-      result.bitField0_ = to_bitField0_;
+      result.msgId_ = msgId_;
+      result.serverId_ = serverId_;
+      result.serverType_ = serverType_;
+      result.roleId_ = roleId_;
       onBuilt();
       return result;
     }
@@ -573,16 +486,16 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(info.xiaomo.server.shared.protocol.server.ChangeRoleServerRequest other) {
       if (other == info.xiaomo.server.shared.protocol.server.ChangeRoleServerRequest.getDefaultInstance()) return this;
-      if (other.hasMid()) {
-        setMid(other.getMid());
+      if (other.msgId_ != 0) {
+        setMsgIdValue(other.getMsgIdValue());
       }
-      if (other.hasServerId()) {
+      if (other.getServerId() != 0) {
         setServerId(other.getServerId());
       }
-      if (other.hasServerType()) {
+      if (other.getServerType() != 0) {
         setServerType(other.getServerType());
       }
-      if (other.hasRoleId()) {
+      if (other.getRoleId() != 0L) {
         setRoleId(other.getRoleId());
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -592,12 +505,6 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public final boolean isInitialized() {
-      if (!hasServerType()) {
-        return false;
-      }
-      if (!hasRoleId()) {
-        return false;
-      }
       return true;
     }
 
@@ -619,47 +526,57 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    private int bitField0_;
 
-    private int mid_ = 1005;
+    private int msgId_ = 0;
     /**
-     * <code>optional .MID mid = 1 [default = ChangeRoleServerReq];</code>
-     * @return Whether the mid field is set.
+     * <code>.MsgId msgId = 1;</code>
+     * @return The enum numeric value on the wire for msgId.
      */
-    @java.lang.Override public boolean hasMid() {
-      return ((bitField0_ & 0x00000001) != 0);
+    @java.lang.Override public int getMsgIdValue() {
+      return msgId_;
     }
     /**
-     * <code>optional .MID mid = 1 [default = ChangeRoleServerReq];</code>
-     * @return The mid.
-     */
-    @java.lang.Override
-    public info.xiaomo.server.shared.protocol.Mid.MID getMid() {
-      @SuppressWarnings("deprecation")
-      info.xiaomo.server.shared.protocol.Mid.MID result = info.xiaomo.server.shared.protocol.Mid.MID.valueOf(mid_);
-      return result == null ? info.xiaomo.server.shared.protocol.Mid.MID.ChangeRoleServerReq : result;
-    }
-    /**
-     * <code>optional .MID mid = 1 [default = ChangeRoleServerReq];</code>
-     * @param value The mid to set.
+     * <code>.MsgId msgId = 1;</code>
+     * @param value The enum numeric value on the wire for msgId to set.
      * @return This builder for chaining.
      */
-    public Builder setMid(info.xiaomo.server.shared.protocol.Mid.MID value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000001;
-      mid_ = value.getNumber();
+    public Builder setMsgIdValue(int value) {
+      
+      msgId_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>optional .MID mid = 1 [default = ChangeRoleServerReq];</code>
+     * <code>.MsgId msgId = 1;</code>
+     * @return The msgId.
+     */
+    @java.lang.Override
+    public info.xiaomo.server.shared.protocol.msg.MsgId getMsgId() {
+      @SuppressWarnings("deprecation")
+      info.xiaomo.server.shared.protocol.msg.MsgId result = info.xiaomo.server.shared.protocol.msg.MsgId.valueOf(msgId_);
+      return result == null ? info.xiaomo.server.shared.protocol.msg.MsgId.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.MsgId msgId = 1;</code>
+     * @param value The msgId to set.
      * @return This builder for chaining.
      */
-    public Builder clearMid() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      mid_ = 1005;
+    public Builder setMsgId(info.xiaomo.server.shared.protocol.msg.MsgId value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      msgId_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.MsgId msgId = 1;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearMsgId() {
+      
+      msgId_ = 0;
       onChanged();
       return this;
     }
@@ -670,19 +587,7 @@ private static final long serialVersionUID = 0L;
      *目标服务器ID
      * </pre>
      *
-     * <code>optional int32 serverId = 2;</code>
-     * @return Whether the serverId field is set.
-     */
-    @java.lang.Override
-    public boolean hasServerId() {
-      return ((bitField0_ & 0x00000002) != 0);
-    }
-    /**
-     * <pre>
-     *目标服务器ID
-     * </pre>
-     *
-     * <code>optional int32 serverId = 2;</code>
+     * <code>int32 serverId = 2;</code>
      * @return The serverId.
      */
     @java.lang.Override
@@ -694,12 +599,12 @@ private static final long serialVersionUID = 0L;
      *目标服务器ID
      * </pre>
      *
-     * <code>optional int32 serverId = 2;</code>
+     * <code>int32 serverId = 2;</code>
      * @param value The serverId to set.
      * @return This builder for chaining.
      */
     public Builder setServerId(int value) {
-      bitField0_ |= 0x00000002;
+      
       serverId_ = value;
       onChanged();
       return this;
@@ -709,11 +614,11 @@ private static final long serialVersionUID = 0L;
      *目标服务器ID
      * </pre>
      *
-     * <code>optional int32 serverId = 2;</code>
+     * <code>int32 serverId = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearServerId() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      
       serverId_ = 0;
       onChanged();
       return this;
@@ -725,19 +630,7 @@ private static final long serialVersionUID = 0L;
      *目标服务器类型
      * </pre>
      *
-     * <code>required int32 serverType = 3;</code>
-     * @return Whether the serverType field is set.
-     */
-    @java.lang.Override
-    public boolean hasServerType() {
-      return ((bitField0_ & 0x00000004) != 0);
-    }
-    /**
-     * <pre>
-     *目标服务器类型
-     * </pre>
-     *
-     * <code>required int32 serverType = 3;</code>
+     * <code>int32 serverType = 3;</code>
      * @return The serverType.
      */
     @java.lang.Override
@@ -749,12 +642,12 @@ private static final long serialVersionUID = 0L;
      *目标服务器类型
      * </pre>
      *
-     * <code>required int32 serverType = 3;</code>
+     * <code>int32 serverType = 3;</code>
      * @param value The serverType to set.
      * @return This builder for chaining.
      */
     public Builder setServerType(int value) {
-      bitField0_ |= 0x00000004;
+      
       serverType_ = value;
       onChanged();
       return this;
@@ -764,11 +657,11 @@ private static final long serialVersionUID = 0L;
      *目标服务器类型
      * </pre>
      *
-     * <code>required int32 serverType = 3;</code>
+     * <code>int32 serverType = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearServerType() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      
       serverType_ = 0;
       onChanged();
       return this;
@@ -780,19 +673,7 @@ private static final long serialVersionUID = 0L;
      *角色ID
      * </pre>
      *
-     * <code>required int64 roleId = 4;</code>
-     * @return Whether the roleId field is set.
-     */
-    @java.lang.Override
-    public boolean hasRoleId() {
-      return ((bitField0_ & 0x00000008) != 0);
-    }
-    /**
-     * <pre>
-     *角色ID
-     * </pre>
-     *
-     * <code>required int64 roleId = 4;</code>
+     * <code>int64 roleId = 4;</code>
      * @return The roleId.
      */
     @java.lang.Override
@@ -804,12 +685,12 @@ private static final long serialVersionUID = 0L;
      *角色ID
      * </pre>
      *
-     * <code>required int64 roleId = 4;</code>
+     * <code>int64 roleId = 4;</code>
      * @param value The roleId to set.
      * @return This builder for chaining.
      */
     public Builder setRoleId(long value) {
-      bitField0_ |= 0x00000008;
+      
       roleId_ = value;
       onChanged();
       return this;
@@ -819,11 +700,11 @@ private static final long serialVersionUID = 0L;
      *角色ID
      * </pre>
      *
-     * <code>required int64 roleId = 4;</code>
+     * <code>int64 roleId = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearRoleId() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      
       roleId_ = 0L;
       onChanged();
       return this;
@@ -854,7 +735,7 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  @java.lang.Deprecated public static final com.google.protobuf.Parser<ChangeRoleServerRequest>
+  private static final com.google.protobuf.Parser<ChangeRoleServerRequest>
       PARSER = new com.google.protobuf.AbstractParser<ChangeRoleServerRequest>() {
     @java.lang.Override
     public ChangeRoleServerRequest parsePartialFrom(

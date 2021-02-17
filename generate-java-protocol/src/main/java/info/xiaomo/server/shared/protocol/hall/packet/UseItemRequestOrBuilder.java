@@ -12,35 +12,26 @@ public interface UseItemRequestOrBuilder extends
    *消息id
    * </pre>
    *
-   * <code>optional .MID mid = 1 [default = UseItemReq];</code>
-   * @return Whether the mid field is set.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The enum numeric value on the wire for msgId.
    */
-  boolean hasMid();
+  int getMsgIdValue();
   /**
    * <pre>
    *消息id
    * </pre>
    *
-   * <code>optional .MID mid = 1 [default = UseItemReq];</code>
-   * @return The mid.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The msgId.
    */
-  info.xiaomo.server.shared.protocol.Mid.MID getMid();
+  info.xiaomo.server.shared.protocol.msg.MsgId getMsgId();
 
   /**
    * <pre>
    *物品ID
    * </pre>
    *
-   * <code>required int64 itemId = 2;</code>
-   * @return Whether the itemId field is set.
-   */
-  boolean hasItemId();
-  /**
-   * <pre>
-   *物品ID
-   * </pre>
-   *
-   * <code>required int64 itemId = 2;</code>
+   * <code>int64 itemId = 2;</code>
    * @return The itemId.
    */
   long getItemId();

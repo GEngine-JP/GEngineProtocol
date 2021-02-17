@@ -99,16 +99,7 @@ public interface FishInfoOrBuilder extends
    *鱼群阵型 0普通情况 1boss 100阵型id
    * </pre>
    *
-   * <code>optional int32 formation = 4;</code>
-   * @return Whether the formation field is set.
-   */
-  boolean hasFormation();
-  /**
-   * <pre>
-   *鱼群阵型 0普通情况 1boss 100阵型id
-   * </pre>
-   *
-   * <code>optional int32 formation = 4;</code>
+   * <code>int32 formation = 4;</code>
    * @return The formation.
    */
   int getFormation();
@@ -118,16 +109,7 @@ public interface FishInfoOrBuilder extends
    *出生时间戳
    * </pre>
    *
-   * <code>required int64 bornTime = 5;</code>
-   * @return Whether the bornTime field is set.
-   */
-  boolean hasBornTime();
-  /**
-   * <pre>
-   *出生时间戳
-   * </pre>
-   *
-   * <code>required int64 bornTime = 5;</code>
+   * <code>int64 bornTime = 5;</code>
    * @return The bornTime.
    */
   long getBornTime();
@@ -137,16 +119,7 @@ public interface FishInfoOrBuilder extends
    *系统时间戳
    * </pre>
    *
-   * <code>required int64 serverTime = 6;</code>
-   * @return Whether the serverTime field is set.
-   */
-  boolean hasServerTime();
-  /**
-   * <pre>
-   *系统时间戳
-   * </pre>
-   *
-   * <code>required int64 serverTime = 6;</code>
+   * <code>int64 serverTime = 6;</code>
    * @return The serverTime.
    */
   long getServerTime();
@@ -156,16 +129,7 @@ public interface FishInfoOrBuilder extends
    *速度
    * </pre>
    *
-   * <code>optional int32 speed = 7;</code>
-   * @return Whether the speed field is set.
-   */
-  boolean hasSpeed();
-  /**
-   * <pre>
-   *速度
-   * </pre>
-   *
-   * <code>optional int32 speed = 7;</code>
+   * <code>int32 speed = 7;</code>
    * @return The speed.
    */
   int getSpeed();
@@ -175,16 +139,7 @@ public interface FishInfoOrBuilder extends
    *极速
    * </pre>
    *
-   * <code>optional int32 topSpeed = 9;</code>
-   * @return Whether the topSpeed field is set.
-   */
-  boolean hasTopSpeed();
-  /**
-   * <pre>
-   *极速
-   * </pre>
-   *
-   * <code>optional int32 topSpeed = 9;</code>
+   * <code>int32 topSpeed = 9;</code>
    * @return The topSpeed.
    */
   int getTopSpeed();
@@ -194,16 +149,7 @@ public interface FishInfoOrBuilder extends
    *极速开始时间
    * </pre>
    *
-   * <code>optional int64 topSpeedStartTime = 10;</code>
-   * @return Whether the topSpeedStartTime field is set.
-   */
-  boolean hasTopSpeedStartTime();
-  /**
-   * <pre>
-   *极速开始时间
-   * </pre>
-   *
-   * <code>optional int64 topSpeedStartTime = 10;</code>
+   * <code>int64 topSpeedStartTime = 10;</code>
    * @return The topSpeedStartTime.
    */
   long getTopSpeedStartTime();

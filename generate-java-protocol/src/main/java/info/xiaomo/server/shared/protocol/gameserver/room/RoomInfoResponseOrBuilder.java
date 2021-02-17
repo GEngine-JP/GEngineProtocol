@@ -12,26 +12,26 @@ public interface RoomInfoResponseOrBuilder extends
    *消息id
    * </pre>
    *
-   * <code>optional .MID mid = 1 [default = RoomInfoRes];</code>
-   * @return Whether the mid field is set.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The enum numeric value on the wire for msgId.
    */
-  boolean hasMid();
+  int getMsgIdValue();
   /**
    * <pre>
    *消息id
    * </pre>
    *
-   * <code>optional .MID mid = 1 [default = RoomInfoRes];</code>
-   * @return The mid.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The msgId.
    */
-  info.xiaomo.server.shared.protocol.Mid.MID getMid();
+  info.xiaomo.server.shared.protocol.msg.MsgId getMsgId();
 
   /**
    * <pre>
    *房间信息
    * </pre>
    *
-   * <code>optional .RoomInfo roomInfo = 2;</code>
+   * <code>.RoomInfo roomInfo = 2;</code>
    * @return Whether the roomInfo field is set.
    */
   boolean hasRoomInfo();
@@ -40,7 +40,7 @@ public interface RoomInfoResponseOrBuilder extends
    *房间信息
    * </pre>
    *
-   * <code>optional .RoomInfo roomInfo = 2;</code>
+   * <code>.RoomInfo roomInfo = 2;</code>
    * @return The roomInfo.
    */
   info.xiaomo.server.shared.protocol.gameserver.room.RoomInfo getRoomInfo();
@@ -49,7 +49,7 @@ public interface RoomInfoResponseOrBuilder extends
    *房间信息
    * </pre>
    *
-   * <code>optional .RoomInfo roomInfo = 2;</code>
+   * <code>.RoomInfo roomInfo = 2;</code>
    */
   info.xiaomo.server.shared.protocol.gameserver.room.RoomInfoOrBuilder getRoomInfoOrBuilder();
 

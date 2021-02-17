@@ -55,10 +55,10 @@ public final class ServerMessage {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_ServerEventResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_ServerInfo_descriptor;
+    internal_static_GameServerInfo_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_ServerInfo_fieldAccessorTable;
+      internal_static_GameServerInfo_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -68,95 +68,93 @@ public final class ServerMessage {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\023ServerMessage.proto\032\tMid.proto\"^\n\025Serv" +
-      "erRegisterRequest\022$\n\003mid\030\001 \001(\0162\004.MID:\021Se" +
-      "rverRegisterReq\022\037\n\nserverInfo\030\002 \002(\0132\013.Se" +
-      "rverInfo\"_\n\026ServerRegisterResponse\022$\n\003mi" +
-      "d\030\001 \001(\0162\004.MID:\021ServerRegisterRes\022\037\n\nserv" +
-      "erInfo\030\002 \001(\0132\013.ServerInfo\"I\n\021ServerListR" +
-      "equest\022 \n\003mid\030\001 \001(\0162\004.MID:\rServerListReq" +
-      "\022\022\n\nserverType\030\002 \002(\005\"W\n\022ServerListRespon" +
-      "se\022 \n\003mid\030\001 \001(\0162\004.MID:\rServerListRes\022\037\n\n" +
-      "serverInfo\030\002 \003(\0132\013.ServerInfo\"w\n\027ChangeR" +
-      "oleServerRequest\022&\n\003mid\030\001 \001(\0162\004.MID:\023Cha" +
-      "ngeRoleServerReq\022\020\n\010serverId\030\002 \001(\005\022\022\n\nse" +
-      "rverType\030\003 \002(\005\022\016\n\006roleId\030\004 \002(\003\"R\n\030Change" +
-      "RoleServerResponse\022&\n\003mid\030\001 \001(\0162\004.MID:\023C" +
-      "hangeRoleServerRes\022\016\n\006result\030\002 \001(\005\"~\n\022Se" +
-      "rverEventRequest\022!\n\003mid\030\001 \001(\0162\004.MID:\016Ser" +
-      "verEventReq\022\014\n\004type\030\002 \002(\005\022\020\n\010serverId\030\003 " +
+      "\n\023ServerMessage.proto\032\017MessageId.proto\"S" +
+      "\n\025ServerRegisterRequest\022\025\n\005msgId\030\001 \001(\0162\006" +
+      ".MsgId\022#\n\nserverInfo\030\002 \001(\0132\017.GameServerI" +
+      "nfo\"T\n\026ServerRegisterResponse\022\025\n\005msgId\030\001" +
+      " \001(\0162\006.MsgId\022#\n\nserverInfo\030\002 \001(\0132\017.GameS" +
+      "erverInfo\">\n\021ServerListRequest\022\025\n\005msgId\030" +
+      "\001 \001(\0162\006.MsgId\022\022\n\nserverType\030\002 \001(\005\"P\n\022Ser" +
+      "verListResponse\022\025\n\005msgId\030\001 \001(\0162\006.MsgId\022#" +
+      "\n\nserverInfo\030\002 \003(\0132\017.GameServerInfo\"f\n\027C" +
+      "hangeRoleServerRequest\022\025\n\005msgId\030\001 \001(\0162\006." +
+      "MsgId\022\020\n\010serverId\030\002 \001(\005\022\022\n\nserverType\030\003 " +
+      "\001(\005\022\016\n\006roleId\030\004 \001(\003\"A\n\030ChangeRoleServerR" +
+      "esponse\022\025\n\005msgId\030\001 \001(\0162\006.MsgId\022\016\n\006result" +
+      "\030\002 \001(\005\"r\n\022ServerEventRequest\022\025\n\005msgId\030\001 " +
+      "\001(\0162\006.MsgId\022\014\n\004type\030\002 \001(\005\022\020\n\010serverId\030\003 " +
       "\001(\005\022\n\n\002id\030\004 \001(\003\022\013\n\003ids\030\005 \003(\003\022\014\n\004info\030\006 \001" +
-      "(\t\"V\n\023ServerEventResponse\022!\n\003mid\030\001 \001(\0162\004" +
-      ".MID:\016ServerEventRes\022\014\n\004type\030\002 \002(\005\022\016\n\006re" +
-      "sult\030\003 \001(\005\"\336\001\n\nServerInfo\022\n\n\002id\030\001 \002(\005\022\n\n" +
-      "\002ip\030\002 \001(\t\022\014\n\004type\030\003 \001(\005\022\014\n\004port\030\004 \001(\005\022\r\n" +
-      "\005state\030\005 \001(\005\022\016\n\006online\030\006 \001(\005\022\024\n\014maxUserC" +
-      "ount\030\007 \001(\005\022\020\n\010httpport\030\010 \001(\005\022\014\n\004name\030\t \001" +
-      "(\t\022\r\n\005wwwip\030\n \001(\t\022\022\n\nfreeMemory\030\013 \001(\005\022\023\n" +
-      "\013totalMemory\030\014 \001(\005\022\017\n\007version\030\r \001(\tB-\n)i" +
-      "nfo.xiaomo.server.shared.protocol.server" +
-      "P\001"
+      "(\t\"J\n\023ServerEventResponse\022\025\n\005msgId\030\001 \001(\016" +
+      "2\006.MsgId\022\014\n\004type\030\002 \001(\005\022\016\n\006result\030\003 \001(\005\"\342" +
+      "\001\n\016GameServerInfo\022\n\n\002id\030\001 \001(\005\022\n\n\002ip\030\002 \001(" +
+      "\t\022\014\n\004type\030\003 \001(\005\022\014\n\004port\030\004 \001(\005\022\r\n\005state\030\005" +
+      " \001(\005\022\016\n\006online\030\006 \001(\005\022\024\n\014maxUserCount\030\007 \001" +
+      "(\005\022\020\n\010httpPort\030\010 \001(\005\022\014\n\004name\030\t \001(\t\022\r\n\005ww" +
+      "wIp\030\n \001(\t\022\022\n\nfreeMemory\030\013 \001(\005\022\023\n\013totalMe" +
+      "mory\030\014 \001(\005\022\017\n\007version\030\r \001(\tB-\n)info.xiao" +
+      "mo.server.shared.protocol.serverP\001b\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          info.xiaomo.server.shared.protocol.Mid.getDescriptor(),
+          info.xiaomo.server.shared.protocol.msg.MessageId.getDescriptor(),
         });
     internal_static_ServerRegisterRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ServerRegisterRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ServerRegisterRequest_descriptor,
-        new java.lang.String[] { "Mid", "ServerInfo", });
+        new java.lang.String[] { "MsgId", "ServerInfo", });
     internal_static_ServerRegisterResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_ServerRegisterResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ServerRegisterResponse_descriptor,
-        new java.lang.String[] { "Mid", "ServerInfo", });
+        new java.lang.String[] { "MsgId", "ServerInfo", });
     internal_static_ServerListRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_ServerListRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ServerListRequest_descriptor,
-        new java.lang.String[] { "Mid", "ServerType", });
+        new java.lang.String[] { "MsgId", "ServerType", });
     internal_static_ServerListResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_ServerListResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ServerListResponse_descriptor,
-        new java.lang.String[] { "Mid", "ServerInfo", });
+        new java.lang.String[] { "MsgId", "ServerInfo", });
     internal_static_ChangeRoleServerRequest_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_ChangeRoleServerRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ChangeRoleServerRequest_descriptor,
-        new java.lang.String[] { "Mid", "ServerId", "ServerType", "RoleId", });
+        new java.lang.String[] { "MsgId", "ServerId", "ServerType", "RoleId", });
     internal_static_ChangeRoleServerResponse_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_ChangeRoleServerResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ChangeRoleServerResponse_descriptor,
-        new java.lang.String[] { "Mid", "Result", });
+        new java.lang.String[] { "MsgId", "Result", });
     internal_static_ServerEventRequest_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_ServerEventRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ServerEventRequest_descriptor,
-        new java.lang.String[] { "Mid", "Type", "ServerId", "Id", "Ids", "Info", });
+        new java.lang.String[] { "MsgId", "Type", "ServerId", "Id", "Ids", "Info", });
     internal_static_ServerEventResponse_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_ServerEventResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ServerEventResponse_descriptor,
-        new java.lang.String[] { "Mid", "Type", "Result", });
-    internal_static_ServerInfo_descriptor =
+        new java.lang.String[] { "MsgId", "Type", "Result", });
+    internal_static_GameServerInfo_descriptor =
       getDescriptor().getMessageTypes().get(8);
-    internal_static_ServerInfo_fieldAccessorTable = new
+    internal_static_GameServerInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_ServerInfo_descriptor,
-        new java.lang.String[] { "Id", "Ip", "Type", "Port", "State", "Online", "MaxUserCount", "Httpport", "Name", "Wwwip", "FreeMemory", "TotalMemory", "Version", });
-    info.xiaomo.server.shared.protocol.Mid.getDescriptor();
+        internal_static_GameServerInfo_descriptor,
+        new java.lang.String[] { "Id", "Ip", "Type", "Port", "State", "Online", "MaxUserCount", "HttpPort", "Name", "WwwIp", "FreeMemory", "TotalMemory", "Version", });
+    info.xiaomo.server.shared.protocol.msg.MessageId.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

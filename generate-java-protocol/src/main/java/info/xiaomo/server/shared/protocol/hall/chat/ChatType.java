@@ -14,6 +14,14 @@ public enum ChatType
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
    * <pre>
+   *错误
+   * </pre>
+   *
+   * <code>Error = 0;</code>
+   */
+  Error(0),
+  /**
+   * <pre>
    *私聊
    * </pre>
    *
@@ -44,8 +52,17 @@ public enum ChatType
    * <code>PMD = 4;</code>
    */
   PMD(4),
+  UNRECOGNIZED(-1),
   ;
 
+  /**
+   * <pre>
+   *错误
+   * </pre>
+   *
+   * <code>Error = 0;</code>
+   */
+  public static final int Error_VALUE = 0;
   /**
    * <pre>
    *私聊
@@ -81,6 +98,10 @@ public enum ChatType
 
 
   public final int getNumber() {
+    if (this == UNRECOGNIZED) {
+      throw new java.lang.IllegalArgumentException(
+          "Can't get the number of an unknown enum value.");
+    }
     return value;
   }
 
@@ -100,6 +121,7 @@ public enum ChatType
    */
   public static ChatType forNumber(int value) {
     switch (value) {
+      case 0: return Error;
       case 1: return PRIVATE;
       case 2: return GUILD;
       case 3: return WORLD;
@@ -122,6 +144,10 @@ public enum ChatType
 
   public final com.google.protobuf.Descriptors.EnumValueDescriptor
       getValueDescriptor() {
+    if (this == UNRECOGNIZED) {
+      throw new java.lang.IllegalStateException(
+          "Can't get the descriptor of an unrecognized enum value.");
+    }
     return getDescriptor().getValues().get(ordinal());
   }
   public final com.google.protobuf.Descriptors.EnumDescriptor
@@ -140,6 +166,9 @@ public enum ChatType
     if (desc.getType() != getDescriptor()) {
       throw new java.lang.IllegalArgumentException(
         "EnumValueDescriptor is not for this type.");
+    }
+    if (desc.getIndex() == -1) {
+      return UNRECOGNIZED;
     }
     return VALUES[desc.getIndex()];
   }

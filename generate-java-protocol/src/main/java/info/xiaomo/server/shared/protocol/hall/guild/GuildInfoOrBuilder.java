@@ -12,16 +12,7 @@ public interface GuildInfoOrBuilder extends
    *ID
    * </pre>
    *
-   * <code>required int64 id = 1;</code>
-   * @return Whether the id field is set.
-   */
-  boolean hasId();
-  /**
-   * <pre>
-   *ID
-   * </pre>
-   *
-   * <code>required int64 id = 1;</code>
+   * <code>int64 id = 1;</code>
    * @return The id.
    */
   long getId();
@@ -31,16 +22,7 @@ public interface GuildInfoOrBuilder extends
    *帮会名称
    * </pre>
    *
-   * <code>required string name = 2;</code>
-   * @return Whether the name field is set.
-   */
-  boolean hasName();
-  /**
-   * <pre>
-   *帮会名称
-   * </pre>
-   *
-   * <code>required string name = 2;</code>
+   * <code>string name = 2;</code>
    * @return The name.
    */
   java.lang.String getName();
@@ -49,7 +31,7 @@ public interface GuildInfoOrBuilder extends
    *帮会名称
    * </pre>
    *
-   * <code>required string name = 2;</code>
+   * <code>string name = 2;</code>
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString
@@ -60,16 +42,7 @@ public interface GuildInfoOrBuilder extends
    *帮主ID
    * </pre>
    *
-   * <code>required int64 masterId = 3;</code>
-   * @return Whether the masterId field is set.
-   */
-  boolean hasMasterId();
-  /**
-   * <pre>
-   *帮主ID
-   * </pre>
-   *
-   * <code>required int64 masterId = 3;</code>
+   * <code>int64 masterId = 3;</code>
    * @return The masterId.
    */
   long getMasterId();
@@ -79,16 +52,7 @@ public interface GuildInfoOrBuilder extends
    *等级
    * </pre>
    *
-   * <code>required int32 level = 4;</code>
-   * @return Whether the level field is set.
-   */
-  boolean hasLevel();
-  /**
-   * <pre>
-   *等级
-   * </pre>
-   *
-   * <code>required int32 level = 4;</code>
+   * <code>int32 level = 4;</code>
    * @return The level.
    */
   int getLevel();

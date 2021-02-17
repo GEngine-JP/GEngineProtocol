@@ -56,33 +56,33 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 8: {
-            bitField0_ |= 0x00000001;
+
             id_ = input.readInt64();
             break;
           }
           case 18: {
-            com.google.protobuf.ByteString bs = input.readBytes();
-            bitField0_ |= 0x00000002;
-            name_ = bs;
+            java.lang.String s = input.readStringRequireUtf8();
+
+            name_ = s;
             break;
           }
           case 24: {
-            bitField0_ |= 0x00000004;
+
             masterId_ = input.readInt64();
             break;
           }
           case 32: {
-            bitField0_ |= 0x00000008;
+
             level_ = input.readInt32();
             break;
           }
           case 42: {
-            if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               members_ = new java.util.ArrayList<info.xiaomo.server.shared.protocol.hall.guild.GuildMemberInfo>();
-              mutable_bitField0_ |= 0x00000010;
+              mutable_bitField0_ |= 0x00000001;
             }
             members_.add(
-                input.readMessage(info.xiaomo.server.shared.protocol.hall.guild.GuildMemberInfo.PARSER, extensionRegistry));
+                input.readMessage(info.xiaomo.server.shared.protocol.hall.guild.GuildMemberInfo.parser(), extensionRegistry));
             break;
           }
           default: {
@@ -100,7 +100,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         members_ = java.util.Collections.unmodifiableList(members_);
       }
       this.unknownFields = unknownFields.build();
@@ -120,7 +120,6 @@ private static final long serialVersionUID = 0L;
             info.xiaomo.server.shared.protocol.hall.guild.GuildInfo.class, info.xiaomo.server.shared.protocol.hall.guild.GuildInfo.Builder.class);
   }
 
-  private int bitField0_;
   public static final int ID_FIELD_NUMBER = 1;
   private long id_;
   /**
@@ -128,19 +127,7 @@ private static final long serialVersionUID = 0L;
    *ID
    * </pre>
    *
-   * <code>required int64 id = 1;</code>
-   * @return Whether the id field is set.
-   */
-  @java.lang.Override
-  public boolean hasId() {
-    return ((bitField0_ & 0x00000001) != 0);
-  }
-  /**
-   * <pre>
-   *ID
-   * </pre>
-   *
-   * <code>required int64 id = 1;</code>
+   * <code>int64 id = 1;</code>
    * @return The id.
    */
   @java.lang.Override
@@ -155,19 +142,7 @@ private static final long serialVersionUID = 0L;
    *帮会名称
    * </pre>
    *
-   * <code>required string name = 2;</code>
-   * @return Whether the name field is set.
-   */
-  @java.lang.Override
-  public boolean hasName() {
-    return ((bitField0_ & 0x00000002) != 0);
-  }
-  /**
-   * <pre>
-   *帮会名称
-   * </pre>
-   *
-   * <code>required string name = 2;</code>
+   * <code>string name = 2;</code>
    * @return The name.
    */
   @java.lang.Override
@@ -179,9 +154,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        name_ = s;
-      }
+      name_ = s;
       return s;
     }
   }
@@ -190,7 +163,7 @@ private static final long serialVersionUID = 0L;
    *帮会名称
    * </pre>
    *
-   * <code>required string name = 2;</code>
+   * <code>string name = 2;</code>
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -215,19 +188,7 @@ private static final long serialVersionUID = 0L;
    *帮主ID
    * </pre>
    *
-   * <code>required int64 masterId = 3;</code>
-   * @return Whether the masterId field is set.
-   */
-  @java.lang.Override
-  public boolean hasMasterId() {
-    return ((bitField0_ & 0x00000004) != 0);
-  }
-  /**
-   * <pre>
-   *帮主ID
-   * </pre>
-   *
-   * <code>required int64 masterId = 3;</code>
+   * <code>int64 masterId = 3;</code>
    * @return The masterId.
    */
   @java.lang.Override
@@ -242,19 +203,7 @@ private static final long serialVersionUID = 0L;
    *等级
    * </pre>
    *
-   * <code>required int32 level = 4;</code>
-   * @return Whether the level field is set.
-   */
-  @java.lang.Override
-  public boolean hasLevel() {
-    return ((bitField0_ & 0x00000008) != 0);
-  }
-  /**
-   * <pre>
-   *等级
-   * </pre>
-   *
-   * <code>required int32 level = 4;</code>
+   * <code>int32 level = 4;</code>
    * @return The level.
    */
   @java.lang.Override
@@ -329,28 +278,6 @@ private static final long serialVersionUID = 0L;
     if (isInitialized == 1) return true;
     if (isInitialized == 0) return false;
 
-    if (!hasId()) {
-      memoizedIsInitialized = 0;
-      return false;
-    }
-    if (!hasName()) {
-      memoizedIsInitialized = 0;
-      return false;
-    }
-    if (!hasMasterId()) {
-      memoizedIsInitialized = 0;
-      return false;
-    }
-    if (!hasLevel()) {
-      memoizedIsInitialized = 0;
-      return false;
-    }
-    for (int i = 0; i < getMembersCount(); i++) {
-      if (!getMembers(i).isInitialized()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-    }
     memoizedIsInitialized = 1;
     return true;
   }
@@ -358,16 +285,16 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (id_ != 0L) {
       output.writeInt64(1, id_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (masterId_ != 0L) {
       output.writeInt64(3, masterId_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (level_ != 0) {
       output.writeInt32(4, level_);
     }
     for (int i = 0; i < members_.size(); i++) {
@@ -382,18 +309,18 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (id_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, id_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (masterId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(3, masterId_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (level_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(4, level_);
     }
@@ -416,26 +343,14 @@ private static final long serialVersionUID = 0L;
     }
     info.xiaomo.server.shared.protocol.hall.guild.GuildInfo other = (info.xiaomo.server.shared.protocol.hall.guild.GuildInfo) obj;
 
-    if (hasId() != other.hasId()) return false;
-    if (hasId()) {
-      if (getId()
-          != other.getId()) return false;
-    }
-    if (hasName() != other.hasName()) return false;
-    if (hasName()) {
-      if (!getName()
-          .equals(other.getName())) return false;
-    }
-    if (hasMasterId() != other.hasMasterId()) return false;
-    if (hasMasterId()) {
-      if (getMasterId()
-          != other.getMasterId()) return false;
-    }
-    if (hasLevel() != other.hasLevel()) return false;
-    if (hasLevel()) {
-      if (getLevel()
-          != other.getLevel()) return false;
-    }
+    if (getId()
+        != other.getId()) return false;
+    if (!getName()
+        .equals(other.getName())) return false;
+    if (getMasterId()
+        != other.getMasterId()) return false;
+    if (getLevel()
+        != other.getLevel()) return false;
     if (!getMembersList()
         .equals(other.getMembersList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -449,24 +364,16 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasId()) {
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getId());
-    }
-    if (hasName()) {
-      hash = (37 * hash) + NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getName().hashCode();
-    }
-    if (hasMasterId()) {
-      hash = (37 * hash) + MASTERID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getMasterId());
-    }
-    if (hasLevel()) {
-      hash = (37 * hash) + LEVEL_FIELD_NUMBER;
-      hash = (53 * hash) + getLevel();
-    }
+    hash = (37 * hash) + ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getId());
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + MASTERID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getMasterId());
+    hash = (37 * hash) + LEVEL_FIELD_NUMBER;
+    hash = (53 * hash) + getLevel();
     if (getMembersCount() > 0) {
       hash = (37 * hash) + MEMBERS_FIELD_NUMBER;
       hash = (53 * hash) + getMembersList().hashCode();
@@ -610,16 +517,16 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       id_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000001);
+
       name_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
+
       masterId_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000004);
+
       level_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000008);
+
       if (membersBuilder_ == null) {
         members_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         membersBuilder_.clear();
       }
@@ -650,33 +557,19 @@ private static final long serialVersionUID = 0L;
     public info.xiaomo.server.shared.protocol.hall.guild.GuildInfo buildPartial() {
       info.xiaomo.server.shared.protocol.hall.guild.GuildInfo result = new info.xiaomo.server.shared.protocol.hall.guild.GuildInfo(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.id_ = id_;
-        to_bitField0_ |= 0x00000001;
-      }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        to_bitField0_ |= 0x00000002;
-      }
+      result.id_ = id_;
       result.name_ = name_;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.masterId_ = masterId_;
-        to_bitField0_ |= 0x00000004;
-      }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.level_ = level_;
-        to_bitField0_ |= 0x00000008;
-      }
+      result.masterId_ = masterId_;
+      result.level_ = level_;
       if (membersBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           members_ = java.util.Collections.unmodifiableList(members_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.members_ = members_;
       } else {
         result.members_ = membersBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -725,25 +618,24 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(info.xiaomo.server.shared.protocol.hall.guild.GuildInfo other) {
       if (other == info.xiaomo.server.shared.protocol.hall.guild.GuildInfo.getDefaultInstance()) return this;
-      if (other.hasId()) {
+      if (other.getId() != 0L) {
         setId(other.getId());
       }
-      if (other.hasName()) {
-        bitField0_ |= 0x00000002;
+      if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
       }
-      if (other.hasMasterId()) {
+      if (other.getMasterId() != 0L) {
         setMasterId(other.getMasterId());
       }
-      if (other.hasLevel()) {
+      if (other.getLevel() != 0) {
         setLevel(other.getLevel());
       }
       if (membersBuilder_ == null) {
         if (!other.members_.isEmpty()) {
           if (members_.isEmpty()) {
             members_ = other.members_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureMembersIsMutable();
             members_.addAll(other.members_);
@@ -756,7 +648,7 @@ private static final long serialVersionUID = 0L;
             membersBuilder_.dispose();
             membersBuilder_ = null;
             members_ = other.members_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000001);
             membersBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getMembersFieldBuilder() : null;
@@ -772,23 +664,6 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public final boolean isInitialized() {
-      if (!hasId()) {
-        return false;
-      }
-      if (!hasName()) {
-        return false;
-      }
-      if (!hasMasterId()) {
-        return false;
-      }
-      if (!hasLevel()) {
-        return false;
-      }
-      for (int i = 0; i < getMembersCount(); i++) {
-        if (!getMembers(i).isInitialized()) {
-          return false;
-        }
-      }
       return true;
     }
 
@@ -818,19 +693,7 @@ private static final long serialVersionUID = 0L;
      *ID
      * </pre>
      *
-     * <code>required int64 id = 1;</code>
-     * @return Whether the id field is set.
-     */
-    @java.lang.Override
-    public boolean hasId() {
-      return ((bitField0_ & 0x00000001) != 0);
-    }
-    /**
-     * <pre>
-     *ID
-     * </pre>
-     *
-     * <code>required int64 id = 1;</code>
+     * <code>int64 id = 1;</code>
      * @return The id.
      */
     @java.lang.Override
@@ -842,12 +705,12 @@ private static final long serialVersionUID = 0L;
      *ID
      * </pre>
      *
-     * <code>required int64 id = 1;</code>
+     * <code>int64 id = 1;</code>
      * @param value The id to set.
      * @return This builder for chaining.
      */
     public Builder setId(long value) {
-      bitField0_ |= 0x00000001;
+      
       id_ = value;
       onChanged();
       return this;
@@ -857,11 +720,11 @@ private static final long serialVersionUID = 0L;
      *ID
      * </pre>
      *
-     * <code>required int64 id = 1;</code>
+     * <code>int64 id = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      
       id_ = 0L;
       onChanged();
       return this;
@@ -873,18 +736,7 @@ private static final long serialVersionUID = 0L;
      *帮会名称
      * </pre>
      *
-     * <code>required string name = 2;</code>
-     * @return Whether the name field is set.
-     */
-    public boolean hasName() {
-      return ((bitField0_ & 0x00000002) != 0);
-    }
-    /**
-     * <pre>
-     *帮会名称
-     * </pre>
-     *
-     * <code>required string name = 2;</code>
+     * <code>string name = 2;</code>
      * @return The name.
      */
     public java.lang.String getName() {
@@ -893,9 +745,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          name_ = s;
-        }
+        name_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -906,7 +756,7 @@ private static final long serialVersionUID = 0L;
      *帮会名称
      * </pre>
      *
-     * <code>required string name = 2;</code>
+     * <code>string name = 2;</code>
      * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
@@ -927,7 +777,7 @@ private static final long serialVersionUID = 0L;
      *帮会名称
      * </pre>
      *
-     * <code>required string name = 2;</code>
+     * <code>string name = 2;</code>
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -936,7 +786,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  
       name_ = value;
       onChanged();
       return this;
@@ -946,11 +796,11 @@ private static final long serialVersionUID = 0L;
      *帮会名称
      * </pre>
      *
-     * <code>required string name = 2;</code>
+     * <code>string name = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
@@ -960,7 +810,7 @@ private static final long serialVersionUID = 0L;
      *帮会名称
      * </pre>
      *
-     * <code>required string name = 2;</code>
+     * <code>string name = 2;</code>
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
@@ -969,7 +819,8 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  checkByteStringIsUtf8(value);
+      
       name_ = value;
       onChanged();
       return this;
@@ -981,19 +832,7 @@ private static final long serialVersionUID = 0L;
      *帮主ID
      * </pre>
      *
-     * <code>required int64 masterId = 3;</code>
-     * @return Whether the masterId field is set.
-     */
-    @java.lang.Override
-    public boolean hasMasterId() {
-      return ((bitField0_ & 0x00000004) != 0);
-    }
-    /**
-     * <pre>
-     *帮主ID
-     * </pre>
-     *
-     * <code>required int64 masterId = 3;</code>
+     * <code>int64 masterId = 3;</code>
      * @return The masterId.
      */
     @java.lang.Override
@@ -1005,12 +844,12 @@ private static final long serialVersionUID = 0L;
      *帮主ID
      * </pre>
      *
-     * <code>required int64 masterId = 3;</code>
+     * <code>int64 masterId = 3;</code>
      * @param value The masterId to set.
      * @return This builder for chaining.
      */
     public Builder setMasterId(long value) {
-      bitField0_ |= 0x00000004;
+      
       masterId_ = value;
       onChanged();
       return this;
@@ -1020,11 +859,11 @@ private static final long serialVersionUID = 0L;
      *帮主ID
      * </pre>
      *
-     * <code>required int64 masterId = 3;</code>
+     * <code>int64 masterId = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearMasterId() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      
       masterId_ = 0L;
       onChanged();
       return this;
@@ -1036,19 +875,7 @@ private static final long serialVersionUID = 0L;
      *等级
      * </pre>
      *
-     * <code>required int32 level = 4;</code>
-     * @return Whether the level field is set.
-     */
-    @java.lang.Override
-    public boolean hasLevel() {
-      return ((bitField0_ & 0x00000008) != 0);
-    }
-    /**
-     * <pre>
-     *等级
-     * </pre>
-     *
-     * <code>required int32 level = 4;</code>
+     * <code>int32 level = 4;</code>
      * @return The level.
      */
     @java.lang.Override
@@ -1060,12 +887,12 @@ private static final long serialVersionUID = 0L;
      *等级
      * </pre>
      *
-     * <code>required int32 level = 4;</code>
+     * <code>int32 level = 4;</code>
      * @param value The level to set.
      * @return This builder for chaining.
      */
     public Builder setLevel(int value) {
-      bitField0_ |= 0x00000008;
+      
       level_ = value;
       onChanged();
       return this;
@@ -1075,11 +902,11 @@ private static final long serialVersionUID = 0L;
      *等级
      * </pre>
      *
-     * <code>required int32 level = 4;</code>
+     * <code>int32 level = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearLevel() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      
       level_ = 0;
       onChanged();
       return this;
@@ -1088,9 +915,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<info.xiaomo.server.shared.protocol.hall.guild.GuildMemberInfo> members_ =
       java.util.Collections.emptyList();
     private void ensureMembersIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         members_ = new java.util.ArrayList<info.xiaomo.server.shared.protocol.hall.guild.GuildMemberInfo>(members_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000001;
        }
     }
 
@@ -1284,7 +1111,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearMembers() {
       if (membersBuilder_ == null) {
         members_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         membersBuilder_.clear();
@@ -1389,7 +1216,7 @@ private static final long serialVersionUID = 0L;
         membersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             info.xiaomo.server.shared.protocol.hall.guild.GuildMemberInfo, info.xiaomo.server.shared.protocol.hall.guild.GuildMemberInfo.Builder, info.xiaomo.server.shared.protocol.hall.guild.GuildMemberInfoOrBuilder>(
                 members_,
-                ((bitField0_ & 0x00000010) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         members_ = null;
@@ -1422,7 +1249,7 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  @java.lang.Deprecated public static final com.google.protobuf.Parser<GuildInfo>
+  private static final com.google.protobuf.Parser<GuildInfo>
       PARSER = new com.google.protobuf.AbstractParser<GuildInfo>() {
     @java.lang.Override
     public GuildInfo parsePartialFrom(

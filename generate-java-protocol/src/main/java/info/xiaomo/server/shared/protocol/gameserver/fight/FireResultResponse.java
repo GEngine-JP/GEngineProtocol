@@ -20,7 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private FireResultResponse() {
-    mid_ = 20018;
+    msgId_ = 0;
     dieFishId_ = emptyLongList();
   }
 
@@ -57,25 +57,19 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
             int rawValue = input.readEnum();
-              @SuppressWarnings("deprecation")
-            info.xiaomo.server.shared.protocol.Mid.MID value = info.xiaomo.server.shared.protocol.Mid.MID.valueOf(rawValue);
-            if (value == null) {
-              unknownFields.mergeVarintField(1, rawValue);
-            } else {
-              bitField0_ |= 0x00000001;
-              mid_ = rawValue;
-            }
+
+            msgId_ = rawValue;
             break;
           }
           case 16: {
-            bitField0_ |= 0x00000002;
+
             rid_ = input.readInt64();
             break;
           }
           case 24: {
-            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               dieFishId_ = newLongList();
-              mutable_bitField0_ |= 0x00000004;
+              mutable_bitField0_ |= 0x00000001;
             }
             dieFishId_.addLong(input.readInt64());
             break;
@@ -83,9 +77,9 @@ private static final long serialVersionUID = 0L;
           case 26: {
             int length = input.readRawVarint32();
             int limit = input.pushLimit(length);
-            if (!((mutable_bitField0_ & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
               dieFishId_ = newLongList();
-              mutable_bitField0_ |= 0x00000004;
+              mutable_bitField0_ |= 0x00000001;
             }
             while (input.getBytesUntilLimit() > 0) {
               dieFishId_.addLong(input.readInt64());
@@ -94,22 +88,22 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 32: {
-            bitField0_ |= 0x00000004;
+
             gold_ = input.readInt64();
             break;
           }
           case 40: {
-            bitField0_ |= 0x00000008;
+
             multiple_ = input.readInt32();
             break;
           }
           case 48: {
-            bitField0_ |= 0x00000010;
+
             specialFishId_ = input.readInt64();
             break;
           }
           case 56: {
-            bitField0_ |= 0x00000020;
+
             accumulateGold_ = input.readInt64();
             break;
           }
@@ -128,7 +122,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         dieFishId_.makeImmutable(); // C
       }
       this.unknownFields = unknownFields.build();
@@ -148,32 +142,31 @@ private static final long serialVersionUID = 0L;
             info.xiaomo.server.shared.protocol.gameserver.fight.FireResultResponse.class, info.xiaomo.server.shared.protocol.gameserver.fight.FireResultResponse.Builder.class);
   }
 
-  private int bitField0_;
-  public static final int MID_FIELD_NUMBER = 1;
-  private int mid_;
+  public static final int MSGID_FIELD_NUMBER = 1;
+  private int msgId_;
   /**
    * <pre>
    *消息id
    * </pre>
    *
-   * <code>optional .MID mid = 1 [default = FireResultRes];</code>
-   * @return Whether the mid field is set.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The enum numeric value on the wire for msgId.
    */
-  @java.lang.Override public boolean hasMid() {
-    return ((bitField0_ & 0x00000001) != 0);
+  @java.lang.Override public int getMsgIdValue() {
+    return msgId_;
   }
   /**
    * <pre>
    *消息id
    * </pre>
    *
-   * <code>optional .MID mid = 1 [default = FireResultRes];</code>
-   * @return The mid.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The msgId.
    */
-  @java.lang.Override public info.xiaomo.server.shared.protocol.Mid.MID getMid() {
+  @java.lang.Override public info.xiaomo.server.shared.protocol.msg.MsgId getMsgId() {
     @SuppressWarnings("deprecation")
-    info.xiaomo.server.shared.protocol.Mid.MID result = info.xiaomo.server.shared.protocol.Mid.MID.valueOf(mid_);
-    return result == null ? info.xiaomo.server.shared.protocol.Mid.MID.FireResultRes : result;
+    info.xiaomo.server.shared.protocol.msg.MsgId result = info.xiaomo.server.shared.protocol.msg.MsgId.valueOf(msgId_);
+    return result == null ? info.xiaomo.server.shared.protocol.msg.MsgId.UNRECOGNIZED : result;
   }
 
   public static final int RID_FIELD_NUMBER = 2;
@@ -183,19 +176,7 @@ private static final long serialVersionUID = 0L;
    *开炮的玩家ID
    * </pre>
    *
-   * <code>optional int64 rid = 2;</code>
-   * @return Whether the rid field is set.
-   */
-  @java.lang.Override
-  public boolean hasRid() {
-    return ((bitField0_ & 0x00000002) != 0);
-  }
-  /**
-   * <pre>
-   *开炮的玩家ID
-   * </pre>
-   *
-   * <code>optional int64 rid = 2;</code>
+   * <code>int64 rid = 2;</code>
    * @return The rid.
    */
   @java.lang.Override
@@ -241,6 +222,7 @@ private static final long serialVersionUID = 0L;
   public long getDieFishId(int index) {
     return dieFishId_.getLong(index);
   }
+  private int dieFishIdMemoizedSerializedSize = -1;
 
   public static final int GOLD_FIELD_NUMBER = 4;
   private long gold_;
@@ -249,19 +231,7 @@ private static final long serialVersionUID = 0L;
    *玩家当前金币
    * </pre>
    *
-   * <code>optional int64 gold = 4;</code>
-   * @return Whether the gold field is set.
-   */
-  @java.lang.Override
-  public boolean hasGold() {
-    return ((bitField0_ & 0x00000004) != 0);
-  }
-  /**
-   * <pre>
-   *玩家当前金币
-   * </pre>
-   *
-   * <code>optional int64 gold = 4;</code>
+   * <code>int64 gold = 4;</code>
    * @return The gold.
    */
   @java.lang.Override
@@ -276,19 +246,7 @@ private static final long serialVersionUID = 0L;
    *特殊鱼计算的倍数 0普通鱼 -1获得累积奖
    * </pre>
    *
-   * <code>optional int32 multiple = 5;</code>
-   * @return Whether the multiple field is set.
-   */
-  @java.lang.Override
-  public boolean hasMultiple() {
-    return ((bitField0_ & 0x00000008) != 0);
-  }
-  /**
-   * <pre>
-   *特殊鱼计算的倍数 0普通鱼 -1获得累积奖
-   * </pre>
-   *
-   * <code>optional int32 multiple = 5;</code>
+   * <code>int32 multiple = 5;</code>
    * @return The multiple.
    */
   @java.lang.Override
@@ -303,19 +261,7 @@ private static final long serialVersionUID = 0L;
    *特殊鱼ID
    * </pre>
    *
-   * <code>optional int64 specialFishId = 6;</code>
-   * @return Whether the specialFishId field is set.
-   */
-  @java.lang.Override
-  public boolean hasSpecialFishId() {
-    return ((bitField0_ & 0x00000010) != 0);
-  }
-  /**
-   * <pre>
-   *特殊鱼ID
-   * </pre>
-   *
-   * <code>optional int64 specialFishId = 6;</code>
+   * <code>int64 specialFishId = 6;</code>
    * @return The specialFishId.
    */
   @java.lang.Override
@@ -330,19 +276,7 @@ private static final long serialVersionUID = 0L;
    *累积池金币
    * </pre>
    *
-   * <code>optional int64 accumulateGold = 7;</code>
-   * @return Whether the accumulateGold field is set.
-   */
-  @java.lang.Override
-  public boolean hasAccumulateGold() {
-    return ((bitField0_ & 0x00000020) != 0);
-  }
-  /**
-   * <pre>
-   *累积池金币
-   * </pre>
-   *
-   * <code>optional int64 accumulateGold = 7;</code>
+   * <code>int64 accumulateGold = 7;</code>
    * @return The accumulateGold.
    */
   @java.lang.Override
@@ -364,25 +298,30 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeEnum(1, mid_);
+    getSerializedSize();
+    if (msgId_ != info.xiaomo.server.shared.protocol.msg.MsgId.Base.getNumber()) {
+      output.writeEnum(1, msgId_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (rid_ != 0L) {
       output.writeInt64(2, rid_);
     }
-    for (int i = 0; i < dieFishId_.size(); i++) {
-      output.writeInt64(3, dieFishId_.getLong(i));
+    if (getDieFishIdList().size() > 0) {
+      output.writeUInt32NoTag(26);
+      output.writeUInt32NoTag(dieFishIdMemoizedSerializedSize);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    for (int i = 0; i < dieFishId_.size(); i++) {
+      output.writeInt64NoTag(dieFishId_.getLong(i));
+    }
+    if (gold_ != 0L) {
       output.writeInt64(4, gold_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (multiple_ != 0) {
       output.writeInt32(5, multiple_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (specialFishId_ != 0L) {
       output.writeInt64(6, specialFishId_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (accumulateGold_ != 0L) {
       output.writeInt64(7, accumulateGold_);
     }
     unknownFields.writeTo(output);
@@ -394,11 +333,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (msgId_ != info.xiaomo.server.shared.protocol.msg.MsgId.Base.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(1, mid_);
+        .computeEnumSize(1, msgId_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (rid_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, rid_);
     }
@@ -409,21 +348,26 @@ private static final long serialVersionUID = 0L;
           .computeInt64SizeNoTag(dieFishId_.getLong(i));
       }
       size += dataSize;
-      size += 1 * getDieFishIdList().size();
+      if (!getDieFishIdList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream
+            .computeInt32SizeNoTag(dataSize);
+      }
+      dieFishIdMemoizedSerializedSize = dataSize;
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (gold_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(4, gold_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (multiple_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(5, multiple_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (specialFishId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(6, specialFishId_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (accumulateGold_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(7, accumulateGold_);
     }
@@ -442,37 +386,19 @@ private static final long serialVersionUID = 0L;
     }
     info.xiaomo.server.shared.protocol.gameserver.fight.FireResultResponse other = (info.xiaomo.server.shared.protocol.gameserver.fight.FireResultResponse) obj;
 
-    if (hasMid() != other.hasMid()) return false;
-    if (hasMid()) {
-      if (mid_ != other.mid_) return false;
-    }
-    if (hasRid() != other.hasRid()) return false;
-    if (hasRid()) {
-      if (getRid()
-          != other.getRid()) return false;
-    }
+    if (msgId_ != other.msgId_) return false;
+    if (getRid()
+        != other.getRid()) return false;
     if (!getDieFishIdList()
         .equals(other.getDieFishIdList())) return false;
-    if (hasGold() != other.hasGold()) return false;
-    if (hasGold()) {
-      if (getGold()
-          != other.getGold()) return false;
-    }
-    if (hasMultiple() != other.hasMultiple()) return false;
-    if (hasMultiple()) {
-      if (getMultiple()
-          != other.getMultiple()) return false;
-    }
-    if (hasSpecialFishId() != other.hasSpecialFishId()) return false;
-    if (hasSpecialFishId()) {
-      if (getSpecialFishId()
-          != other.getSpecialFishId()) return false;
-    }
-    if (hasAccumulateGold() != other.hasAccumulateGold()) return false;
-    if (hasAccumulateGold()) {
-      if (getAccumulateGold()
-          != other.getAccumulateGold()) return false;
-    }
+    if (getGold()
+        != other.getGold()) return false;
+    if (getMultiple()
+        != other.getMultiple()) return false;
+    if (getSpecialFishId()
+        != other.getSpecialFishId()) return false;
+    if (getAccumulateGold()
+        != other.getAccumulateGold()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -484,38 +410,26 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasMid()) {
-      hash = (37 * hash) + MID_FIELD_NUMBER;
-      hash = (53 * hash) + mid_;
-    }
-    if (hasRid()) {
-      hash = (37 * hash) + RID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getRid());
-    }
+    hash = (37 * hash) + MSGID_FIELD_NUMBER;
+    hash = (53 * hash) + msgId_;
+    hash = (37 * hash) + RID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getRid());
     if (getDieFishIdCount() > 0) {
       hash = (37 * hash) + DIEFISHID_FIELD_NUMBER;
       hash = (53 * hash) + getDieFishIdList().hashCode();
     }
-    if (hasGold()) {
-      hash = (37 * hash) + GOLD_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getGold());
-    }
-    if (hasMultiple()) {
-      hash = (37 * hash) + MULTIPLE_FIELD_NUMBER;
-      hash = (53 * hash) + getMultiple();
-    }
-    if (hasSpecialFishId()) {
-      hash = (37 * hash) + SPECIALFISHID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getSpecialFishId());
-    }
-    if (hasAccumulateGold()) {
-      hash = (37 * hash) + ACCUMULATEGOLD_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getAccumulateGold());
-    }
+    hash = (37 * hash) + GOLD_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getGold());
+    hash = (37 * hash) + MULTIPLE_FIELD_NUMBER;
+    hash = (53 * hash) + getMultiple();
+    hash = (37 * hash) + SPECIALFISHID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getSpecialFishId());
+    hash = (37 * hash) + ACCUMULATEGOLD_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getAccumulateGold());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -653,20 +567,20 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      mid_ = 20018;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      msgId_ = 0;
+
       rid_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000002);
+
       dieFishId_ = emptyLongList();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       gold_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000008);
+
       multiple_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000010);
+
       specialFishId_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000020);
+
       accumulateGold_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000040);
+
       return this;
     }
 
@@ -694,37 +608,17 @@ private static final long serialVersionUID = 0L;
     public info.xiaomo.server.shared.protocol.gameserver.fight.FireResultResponse buildPartial() {
       info.xiaomo.server.shared.protocol.gameserver.fight.FireResultResponse result = new info.xiaomo.server.shared.protocol.gameserver.fight.FireResultResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
-      }
-      result.mid_ = mid_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.rid_ = rid_;
-        to_bitField0_ |= 0x00000002;
-      }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      result.msgId_ = msgId_;
+      result.rid_ = rid_;
+      if (((bitField0_ & 0x00000001) != 0)) {
         dieFishId_.makeImmutable();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.dieFishId_ = dieFishId_;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.gold_ = gold_;
-        to_bitField0_ |= 0x00000004;
-      }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.multiple_ = multiple_;
-        to_bitField0_ |= 0x00000008;
-      }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.specialFishId_ = specialFishId_;
-        to_bitField0_ |= 0x00000010;
-      }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.accumulateGold_ = accumulateGold_;
-        to_bitField0_ |= 0x00000020;
-      }
-      result.bitField0_ = to_bitField0_;
+      result.gold_ = gold_;
+      result.multiple_ = multiple_;
+      result.specialFishId_ = specialFishId_;
+      result.accumulateGold_ = accumulateGold_;
       onBuilt();
       return result;
     }
@@ -773,32 +667,32 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(info.xiaomo.server.shared.protocol.gameserver.fight.FireResultResponse other) {
       if (other == info.xiaomo.server.shared.protocol.gameserver.fight.FireResultResponse.getDefaultInstance()) return this;
-      if (other.hasMid()) {
-        setMid(other.getMid());
+      if (other.msgId_ != 0) {
+        setMsgIdValue(other.getMsgIdValue());
       }
-      if (other.hasRid()) {
+      if (other.getRid() != 0L) {
         setRid(other.getRid());
       }
       if (!other.dieFishId_.isEmpty()) {
         if (dieFishId_.isEmpty()) {
           dieFishId_ = other.dieFishId_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureDieFishIdIsMutable();
           dieFishId_.addAll(other.dieFishId_);
         }
         onChanged();
       }
-      if (other.hasGold()) {
+      if (other.getGold() != 0L) {
         setGold(other.getGold());
       }
-      if (other.hasMultiple()) {
+      if (other.getMultiple() != 0) {
         setMultiple(other.getMultiple());
       }
-      if (other.hasSpecialFishId()) {
+      if (other.getSpecialFishId() != 0L) {
         setSpecialFishId(other.getSpecialFishId());
       }
-      if (other.hasAccumulateGold()) {
+      if (other.getAccumulateGold() != 0L) {
         setAccumulateGold(other.getAccumulateGold());
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -831,47 +725,30 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private int mid_ = 20018;
+    private int msgId_ = 0;
     /**
      * <pre>
      *消息id
      * </pre>
      *
-     * <code>optional .MID mid = 1 [default = FireResultRes];</code>
-     * @return Whether the mid field is set.
+     * <code>.MsgId msgId = 1;</code>
+     * @return The enum numeric value on the wire for msgId.
      */
-    @java.lang.Override public boolean hasMid() {
-      return ((bitField0_ & 0x00000001) != 0);
+    @java.lang.Override public int getMsgIdValue() {
+      return msgId_;
     }
     /**
      * <pre>
      *消息id
      * </pre>
      *
-     * <code>optional .MID mid = 1 [default = FireResultRes];</code>
-     * @return The mid.
-     */
-    @java.lang.Override
-    public info.xiaomo.server.shared.protocol.Mid.MID getMid() {
-      @SuppressWarnings("deprecation")
-      info.xiaomo.server.shared.protocol.Mid.MID result = info.xiaomo.server.shared.protocol.Mid.MID.valueOf(mid_);
-      return result == null ? info.xiaomo.server.shared.protocol.Mid.MID.FireResultRes : result;
-    }
-    /**
-     * <pre>
-     *消息id
-     * </pre>
-     *
-     * <code>optional .MID mid = 1 [default = FireResultRes];</code>
-     * @param value The mid to set.
+     * <code>.MsgId msgId = 1;</code>
+     * @param value The enum numeric value on the wire for msgId to set.
      * @return This builder for chaining.
      */
-    public Builder setMid(info.xiaomo.server.shared.protocol.Mid.MID value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000001;
-      mid_ = value.getNumber();
+    public Builder setMsgIdValue(int value) {
+      
+      msgId_ = value;
       onChanged();
       return this;
     }
@@ -880,12 +757,44 @@ private static final long serialVersionUID = 0L;
      *消息id
      * </pre>
      *
-     * <code>optional .MID mid = 1 [default = FireResultRes];</code>
+     * <code>.MsgId msgId = 1;</code>
+     * @return The msgId.
+     */
+    @java.lang.Override
+    public info.xiaomo.server.shared.protocol.msg.MsgId getMsgId() {
+      @SuppressWarnings("deprecation")
+      info.xiaomo.server.shared.protocol.msg.MsgId result = info.xiaomo.server.shared.protocol.msg.MsgId.valueOf(msgId_);
+      return result == null ? info.xiaomo.server.shared.protocol.msg.MsgId.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     *消息id
+     * </pre>
+     *
+     * <code>.MsgId msgId = 1;</code>
+     * @param value The msgId to set.
      * @return This builder for chaining.
      */
-    public Builder clearMid() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      mid_ = 20018;
+    public Builder setMsgId(info.xiaomo.server.shared.protocol.msg.MsgId value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      msgId_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *消息id
+     * </pre>
+     *
+     * <code>.MsgId msgId = 1;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearMsgId() {
+      
+      msgId_ = 0;
       onChanged();
       return this;
     }
@@ -896,19 +805,7 @@ private static final long serialVersionUID = 0L;
      *开炮的玩家ID
      * </pre>
      *
-     * <code>optional int64 rid = 2;</code>
-     * @return Whether the rid field is set.
-     */
-    @java.lang.Override
-    public boolean hasRid() {
-      return ((bitField0_ & 0x00000002) != 0);
-    }
-    /**
-     * <pre>
-     *开炮的玩家ID
-     * </pre>
-     *
-     * <code>optional int64 rid = 2;</code>
+     * <code>int64 rid = 2;</code>
      * @return The rid.
      */
     @java.lang.Override
@@ -920,12 +817,12 @@ private static final long serialVersionUID = 0L;
      *开炮的玩家ID
      * </pre>
      *
-     * <code>optional int64 rid = 2;</code>
+     * <code>int64 rid = 2;</code>
      * @param value The rid to set.
      * @return This builder for chaining.
      */
     public Builder setRid(long value) {
-      bitField0_ |= 0x00000002;
+      
       rid_ = value;
       onChanged();
       return this;
@@ -935,11 +832,11 @@ private static final long serialVersionUID = 0L;
      *开炮的玩家ID
      * </pre>
      *
-     * <code>optional int64 rid = 2;</code>
+     * <code>int64 rid = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearRid() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      
       rid_ = 0L;
       onChanged();
       return this;
@@ -947,9 +844,9 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Internal.LongList dieFishId_ = emptyLongList();
     private void ensureDieFishIdIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         dieFishId_ = mutableCopy(dieFishId_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
        }
     }
     /**
@@ -962,7 +859,7 @@ private static final long serialVersionUID = 0L;
      */
     public java.util.List<java.lang.Long>
         getDieFishIdList() {
-      return ((bitField0_ & 0x00000004) != 0) ?
+      return ((bitField0_ & 0x00000001) != 0) ?
                java.util.Collections.unmodifiableList(dieFishId_) : dieFishId_;
     }
     /**
@@ -1047,7 +944,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearDieFishId() {
       dieFishId_ = emptyLongList();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1058,19 +955,7 @@ private static final long serialVersionUID = 0L;
      *玩家当前金币
      * </pre>
      *
-     * <code>optional int64 gold = 4;</code>
-     * @return Whether the gold field is set.
-     */
-    @java.lang.Override
-    public boolean hasGold() {
-      return ((bitField0_ & 0x00000008) != 0);
-    }
-    /**
-     * <pre>
-     *玩家当前金币
-     * </pre>
-     *
-     * <code>optional int64 gold = 4;</code>
+     * <code>int64 gold = 4;</code>
      * @return The gold.
      */
     @java.lang.Override
@@ -1082,12 +967,12 @@ private static final long serialVersionUID = 0L;
      *玩家当前金币
      * </pre>
      *
-     * <code>optional int64 gold = 4;</code>
+     * <code>int64 gold = 4;</code>
      * @param value The gold to set.
      * @return This builder for chaining.
      */
     public Builder setGold(long value) {
-      bitField0_ |= 0x00000008;
+      
       gold_ = value;
       onChanged();
       return this;
@@ -1097,11 +982,11 @@ private static final long serialVersionUID = 0L;
      *玩家当前金币
      * </pre>
      *
-     * <code>optional int64 gold = 4;</code>
+     * <code>int64 gold = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearGold() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      
       gold_ = 0L;
       onChanged();
       return this;
@@ -1113,19 +998,7 @@ private static final long serialVersionUID = 0L;
      *特殊鱼计算的倍数 0普通鱼 -1获得累积奖
      * </pre>
      *
-     * <code>optional int32 multiple = 5;</code>
-     * @return Whether the multiple field is set.
-     */
-    @java.lang.Override
-    public boolean hasMultiple() {
-      return ((bitField0_ & 0x00000010) != 0);
-    }
-    /**
-     * <pre>
-     *特殊鱼计算的倍数 0普通鱼 -1获得累积奖
-     * </pre>
-     *
-     * <code>optional int32 multiple = 5;</code>
+     * <code>int32 multiple = 5;</code>
      * @return The multiple.
      */
     @java.lang.Override
@@ -1137,12 +1010,12 @@ private static final long serialVersionUID = 0L;
      *特殊鱼计算的倍数 0普通鱼 -1获得累积奖
      * </pre>
      *
-     * <code>optional int32 multiple = 5;</code>
+     * <code>int32 multiple = 5;</code>
      * @param value The multiple to set.
      * @return This builder for chaining.
      */
     public Builder setMultiple(int value) {
-      bitField0_ |= 0x00000010;
+      
       multiple_ = value;
       onChanged();
       return this;
@@ -1152,11 +1025,11 @@ private static final long serialVersionUID = 0L;
      *特殊鱼计算的倍数 0普通鱼 -1获得累积奖
      * </pre>
      *
-     * <code>optional int32 multiple = 5;</code>
+     * <code>int32 multiple = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearMultiple() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      
       multiple_ = 0;
       onChanged();
       return this;
@@ -1168,19 +1041,7 @@ private static final long serialVersionUID = 0L;
      *特殊鱼ID
      * </pre>
      *
-     * <code>optional int64 specialFishId = 6;</code>
-     * @return Whether the specialFishId field is set.
-     */
-    @java.lang.Override
-    public boolean hasSpecialFishId() {
-      return ((bitField0_ & 0x00000020) != 0);
-    }
-    /**
-     * <pre>
-     *特殊鱼ID
-     * </pre>
-     *
-     * <code>optional int64 specialFishId = 6;</code>
+     * <code>int64 specialFishId = 6;</code>
      * @return The specialFishId.
      */
     @java.lang.Override
@@ -1192,12 +1053,12 @@ private static final long serialVersionUID = 0L;
      *特殊鱼ID
      * </pre>
      *
-     * <code>optional int64 specialFishId = 6;</code>
+     * <code>int64 specialFishId = 6;</code>
      * @param value The specialFishId to set.
      * @return This builder for chaining.
      */
     public Builder setSpecialFishId(long value) {
-      bitField0_ |= 0x00000020;
+      
       specialFishId_ = value;
       onChanged();
       return this;
@@ -1207,11 +1068,11 @@ private static final long serialVersionUID = 0L;
      *特殊鱼ID
      * </pre>
      *
-     * <code>optional int64 specialFishId = 6;</code>
+     * <code>int64 specialFishId = 6;</code>
      * @return This builder for chaining.
      */
     public Builder clearSpecialFishId() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      
       specialFishId_ = 0L;
       onChanged();
       return this;
@@ -1223,19 +1084,7 @@ private static final long serialVersionUID = 0L;
      *累积池金币
      * </pre>
      *
-     * <code>optional int64 accumulateGold = 7;</code>
-     * @return Whether the accumulateGold field is set.
-     */
-    @java.lang.Override
-    public boolean hasAccumulateGold() {
-      return ((bitField0_ & 0x00000040) != 0);
-    }
-    /**
-     * <pre>
-     *累积池金币
-     * </pre>
-     *
-     * <code>optional int64 accumulateGold = 7;</code>
+     * <code>int64 accumulateGold = 7;</code>
      * @return The accumulateGold.
      */
     @java.lang.Override
@@ -1247,12 +1096,12 @@ private static final long serialVersionUID = 0L;
      *累积池金币
      * </pre>
      *
-     * <code>optional int64 accumulateGold = 7;</code>
+     * <code>int64 accumulateGold = 7;</code>
      * @param value The accumulateGold to set.
      * @return This builder for chaining.
      */
     public Builder setAccumulateGold(long value) {
-      bitField0_ |= 0x00000040;
+      
       accumulateGold_ = value;
       onChanged();
       return this;
@@ -1262,11 +1111,11 @@ private static final long serialVersionUID = 0L;
      *累积池金币
      * </pre>
      *
-     * <code>optional int64 accumulateGold = 7;</code>
+     * <code>int64 accumulateGold = 7;</code>
      * @return This builder for chaining.
      */
     public Builder clearAccumulateGold() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      
       accumulateGold_ = 0L;
       onChanged();
       return this;
@@ -1297,7 +1146,7 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  @java.lang.Deprecated public static final com.google.protobuf.Parser<FireResultResponse>
+  private static final com.google.protobuf.Parser<FireResultResponse>
       PARSER = new com.google.protobuf.AbstractParser<FireResultResponse>() {
     @java.lang.Override
     public FireResultResponse parsePartialFrom(

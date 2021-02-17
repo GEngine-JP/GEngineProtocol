@@ -20,7 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private GuildInfoResponse() {
-    mid_ = 10026;
+    msgId_ = 0;
   }
 
   @java.lang.Override
@@ -43,7 +43,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -56,27 +55,21 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
             int rawValue = input.readEnum();
-              @SuppressWarnings("deprecation")
-            info.xiaomo.server.shared.protocol.Mid.MID value = info.xiaomo.server.shared.protocol.Mid.MID.valueOf(rawValue);
-            if (value == null) {
-              unknownFields.mergeVarintField(1, rawValue);
-            } else {
-              bitField0_ |= 0x00000001;
-              mid_ = rawValue;
-            }
+
+            msgId_ = rawValue;
             break;
           }
           case 18: {
             info.xiaomo.server.shared.protocol.hall.guild.GuildInfo.Builder subBuilder = null;
-            if (((bitField0_ & 0x00000002) != 0)) {
+            if (guildInfo_ != null) {
               subBuilder = guildInfo_.toBuilder();
             }
-            guildInfo_ = input.readMessage(info.xiaomo.server.shared.protocol.hall.guild.GuildInfo.PARSER, extensionRegistry);
+            guildInfo_ = input.readMessage(info.xiaomo.server.shared.protocol.hall.guild.GuildInfo.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(guildInfo_);
               guildInfo_ = subBuilder.buildPartial();
             }
-            bitField0_ |= 0x00000002;
+
             break;
           }
           default: {
@@ -111,54 +104,53 @@ private static final long serialVersionUID = 0L;
             info.xiaomo.server.shared.protocol.hall.guild.GuildInfoResponse.class, info.xiaomo.server.shared.protocol.hall.guild.GuildInfoResponse.Builder.class);
   }
 
-  private int bitField0_;
-  public static final int MID_FIELD_NUMBER = 1;
-  private int mid_;
+  public static final int MSGID_FIELD_NUMBER = 1;
+  private int msgId_;
   /**
    * <pre>
    *消息id
    * </pre>
    *
-   * <code>optional .MID mid = 1 [default = GuildInfoRes];</code>
-   * @return Whether the mid field is set.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The enum numeric value on the wire for msgId.
    */
-  @java.lang.Override public boolean hasMid() {
-    return ((bitField0_ & 0x00000001) != 0);
+  @java.lang.Override public int getMsgIdValue() {
+    return msgId_;
   }
   /**
    * <pre>
    *消息id
    * </pre>
    *
-   * <code>optional .MID mid = 1 [default = GuildInfoRes];</code>
-   * @return The mid.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The msgId.
    */
-  @java.lang.Override public info.xiaomo.server.shared.protocol.Mid.MID getMid() {
+  @java.lang.Override public info.xiaomo.server.shared.protocol.msg.MsgId getMsgId() {
     @SuppressWarnings("deprecation")
-    info.xiaomo.server.shared.protocol.Mid.MID result = info.xiaomo.server.shared.protocol.Mid.MID.valueOf(mid_);
-    return result == null ? info.xiaomo.server.shared.protocol.Mid.MID.GuildInfoRes : result;
+    info.xiaomo.server.shared.protocol.msg.MsgId result = info.xiaomo.server.shared.protocol.msg.MsgId.valueOf(msgId_);
+    return result == null ? info.xiaomo.server.shared.protocol.msg.MsgId.UNRECOGNIZED : result;
   }
 
   public static final int GUILDINFO_FIELD_NUMBER = 2;
   private info.xiaomo.server.shared.protocol.hall.guild.GuildInfo guildInfo_;
   /**
    * <pre>
-   *帮会信息 
+   *帮会信息
    * </pre>
    *
-   * <code>optional .GuildInfo guildInfo = 2;</code>
+   * <code>.GuildInfo guildInfo = 2;</code>
    * @return Whether the guildInfo field is set.
    */
   @java.lang.Override
   public boolean hasGuildInfo() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return guildInfo_ != null;
   }
   /**
    * <pre>
-   *帮会信息 
+   *帮会信息
    * </pre>
    *
-   * <code>optional .GuildInfo guildInfo = 2;</code>
+   * <code>.GuildInfo guildInfo = 2;</code>
    * @return The guildInfo.
    */
   @java.lang.Override
@@ -167,14 +159,14 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *帮会信息 
+   *帮会信息
    * </pre>
    *
-   * <code>optional .GuildInfo guildInfo = 2;</code>
+   * <code>.GuildInfo guildInfo = 2;</code>
    */
   @java.lang.Override
   public info.xiaomo.server.shared.protocol.hall.guild.GuildInfoOrBuilder getGuildInfoOrBuilder() {
-    return guildInfo_ == null ? info.xiaomo.server.shared.protocol.hall.guild.GuildInfo.getDefaultInstance() : guildInfo_;
+    return getGuildInfo();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -184,12 +176,6 @@ private static final long serialVersionUID = 0L;
     if (isInitialized == 1) return true;
     if (isInitialized == 0) return false;
 
-    if (hasGuildInfo()) {
-      if (!getGuildInfo().isInitialized()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-    }
     memoizedIsInitialized = 1;
     return true;
   }
@@ -197,10 +183,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeEnum(1, mid_);
+    if (msgId_ != info.xiaomo.server.shared.protocol.msg.MsgId.Base.getNumber()) {
+      output.writeEnum(1, msgId_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (guildInfo_ != null) {
       output.writeMessage(2, getGuildInfo());
     }
     unknownFields.writeTo(output);
@@ -212,11 +198,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (msgId_ != info.xiaomo.server.shared.protocol.msg.MsgId.Base.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(1, mid_);
+        .computeEnumSize(1, msgId_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (guildInfo_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getGuildInfo());
     }
@@ -235,10 +221,7 @@ private static final long serialVersionUID = 0L;
     }
     info.xiaomo.server.shared.protocol.hall.guild.GuildInfoResponse other = (info.xiaomo.server.shared.protocol.hall.guild.GuildInfoResponse) obj;
 
-    if (hasMid() != other.hasMid()) return false;
-    if (hasMid()) {
-      if (mid_ != other.mid_) return false;
-    }
+    if (msgId_ != other.msgId_) return false;
     if (hasGuildInfo() != other.hasGuildInfo()) return false;
     if (hasGuildInfo()) {
       if (!getGuildInfo()
@@ -255,10 +238,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasMid()) {
-      hash = (37 * hash) + MID_FIELD_NUMBER;
-      hash = (53 * hash) + mid_;
-    }
+    hash = (37 * hash) + MSGID_FIELD_NUMBER;
+    hash = (53 * hash) + msgId_;
     if (hasGuildInfo()) {
       hash = (37 * hash) + GUILDINFO_FIELD_NUMBER;
       hash = (53 * hash) + getGuildInfo().hashCode();
@@ -395,20 +376,19 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
-        getGuildInfoFieldBuilder();
       }
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      mid_ = 10026;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      msgId_ = 0;
+
       if (guildInfoBuilder_ == null) {
         guildInfo_ = null;
       } else {
-        guildInfoBuilder_.clear();
+        guildInfo_ = null;
+        guildInfoBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -435,21 +415,12 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public info.xiaomo.server.shared.protocol.hall.guild.GuildInfoResponse buildPartial() {
       info.xiaomo.server.shared.protocol.hall.guild.GuildInfoResponse result = new info.xiaomo.server.shared.protocol.hall.guild.GuildInfoResponse(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      result.msgId_ = msgId_;
+      if (guildInfoBuilder_ == null) {
+        result.guildInfo_ = guildInfo_;
+      } else {
+        result.guildInfo_ = guildInfoBuilder_.build();
       }
-      result.mid_ = mid_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        if (guildInfoBuilder_ == null) {
-          result.guildInfo_ = guildInfo_;
-        } else {
-          result.guildInfo_ = guildInfoBuilder_.build();
-        }
-        to_bitField0_ |= 0x00000002;
-      }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -498,8 +469,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(info.xiaomo.server.shared.protocol.hall.guild.GuildInfoResponse other) {
       if (other == info.xiaomo.server.shared.protocol.hall.guild.GuildInfoResponse.getDefaultInstance()) return this;
-      if (other.hasMid()) {
-        setMid(other.getMid());
+      if (other.msgId_ != 0) {
+        setMsgIdValue(other.getMsgIdValue());
       }
       if (other.hasGuildInfo()) {
         mergeGuildInfo(other.getGuildInfo());
@@ -511,11 +482,6 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public final boolean isInitialized() {
-      if (hasGuildInfo()) {
-        if (!getGuildInfo().isInitialized()) {
-          return false;
-        }
-      }
       return true;
     }
 
@@ -537,49 +503,31 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    private int bitField0_;
 
-    private int mid_ = 10026;
+    private int msgId_ = 0;
     /**
      * <pre>
      *消息id
      * </pre>
      *
-     * <code>optional .MID mid = 1 [default = GuildInfoRes];</code>
-     * @return Whether the mid field is set.
+     * <code>.MsgId msgId = 1;</code>
+     * @return The enum numeric value on the wire for msgId.
      */
-    @java.lang.Override public boolean hasMid() {
-      return ((bitField0_ & 0x00000001) != 0);
+    @java.lang.Override public int getMsgIdValue() {
+      return msgId_;
     }
     /**
      * <pre>
      *消息id
      * </pre>
      *
-     * <code>optional .MID mid = 1 [default = GuildInfoRes];</code>
-     * @return The mid.
-     */
-    @java.lang.Override
-    public info.xiaomo.server.shared.protocol.Mid.MID getMid() {
-      @SuppressWarnings("deprecation")
-      info.xiaomo.server.shared.protocol.Mid.MID result = info.xiaomo.server.shared.protocol.Mid.MID.valueOf(mid_);
-      return result == null ? info.xiaomo.server.shared.protocol.Mid.MID.GuildInfoRes : result;
-    }
-    /**
-     * <pre>
-     *消息id
-     * </pre>
-     *
-     * <code>optional .MID mid = 1 [default = GuildInfoRes];</code>
-     * @param value The mid to set.
+     * <code>.MsgId msgId = 1;</code>
+     * @param value The enum numeric value on the wire for msgId to set.
      * @return This builder for chaining.
      */
-    public Builder setMid(info.xiaomo.server.shared.protocol.Mid.MID value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000001;
-      mid_ = value.getNumber();
+    public Builder setMsgIdValue(int value) {
+      
+      msgId_ = value;
       onChanged();
       return this;
     }
@@ -588,12 +536,44 @@ private static final long serialVersionUID = 0L;
      *消息id
      * </pre>
      *
-     * <code>optional .MID mid = 1 [default = GuildInfoRes];</code>
+     * <code>.MsgId msgId = 1;</code>
+     * @return The msgId.
+     */
+    @java.lang.Override
+    public info.xiaomo.server.shared.protocol.msg.MsgId getMsgId() {
+      @SuppressWarnings("deprecation")
+      info.xiaomo.server.shared.protocol.msg.MsgId result = info.xiaomo.server.shared.protocol.msg.MsgId.valueOf(msgId_);
+      return result == null ? info.xiaomo.server.shared.protocol.msg.MsgId.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     *消息id
+     * </pre>
+     *
+     * <code>.MsgId msgId = 1;</code>
+     * @param value The msgId to set.
      * @return This builder for chaining.
      */
-    public Builder clearMid() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      mid_ = 10026;
+    public Builder setMsgId(info.xiaomo.server.shared.protocol.msg.MsgId value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      msgId_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *消息id
+     * </pre>
+     *
+     * <code>.MsgId msgId = 1;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearMsgId() {
+      
+      msgId_ = 0;
       onChanged();
       return this;
     }
@@ -603,21 +583,21 @@ private static final long serialVersionUID = 0L;
         info.xiaomo.server.shared.protocol.hall.guild.GuildInfo, info.xiaomo.server.shared.protocol.hall.guild.GuildInfo.Builder, info.xiaomo.server.shared.protocol.hall.guild.GuildInfoOrBuilder> guildInfoBuilder_;
     /**
      * <pre>
-     *帮会信息 
+     *帮会信息
      * </pre>
      *
-     * <code>optional .GuildInfo guildInfo = 2;</code>
+     * <code>.GuildInfo guildInfo = 2;</code>
      * @return Whether the guildInfo field is set.
      */
     public boolean hasGuildInfo() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return guildInfoBuilder_ != null || guildInfo_ != null;
     }
     /**
      * <pre>
-     *帮会信息 
+     *帮会信息
      * </pre>
      *
-     * <code>optional .GuildInfo guildInfo = 2;</code>
+     * <code>.GuildInfo guildInfo = 2;</code>
      * @return The guildInfo.
      */
     public info.xiaomo.server.shared.protocol.hall.guild.GuildInfo getGuildInfo() {
@@ -629,10 +609,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *帮会信息 
+     *帮会信息
      * </pre>
      *
-     * <code>optional .GuildInfo guildInfo = 2;</code>
+     * <code>.GuildInfo guildInfo = 2;</code>
      */
     public Builder setGuildInfo(info.xiaomo.server.shared.protocol.hall.guild.GuildInfo value) {
       if (guildInfoBuilder_ == null) {
@@ -644,15 +624,15 @@ private static final long serialVersionUID = 0L;
       } else {
         guildInfoBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000002;
+
       return this;
     }
     /**
      * <pre>
-     *帮会信息 
+     *帮会信息
      * </pre>
      *
-     * <code>optional .GuildInfo guildInfo = 2;</code>
+     * <code>.GuildInfo guildInfo = 2;</code>
      */
     public Builder setGuildInfo(
         info.xiaomo.server.shared.protocol.hall.guild.GuildInfo.Builder builderForValue) {
@@ -662,21 +642,19 @@ private static final long serialVersionUID = 0L;
       } else {
         guildInfoBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000002;
+
       return this;
     }
     /**
      * <pre>
-     *帮会信息 
+     *帮会信息
      * </pre>
      *
-     * <code>optional .GuildInfo guildInfo = 2;</code>
+     * <code>.GuildInfo guildInfo = 2;</code>
      */
     public Builder mergeGuildInfo(info.xiaomo.server.shared.protocol.hall.guild.GuildInfo value) {
       if (guildInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0) &&
-            guildInfo_ != null &&
-            guildInfo_ != info.xiaomo.server.shared.protocol.hall.guild.GuildInfo.getDefaultInstance()) {
+        if (guildInfo_ != null) {
           guildInfo_ =
             info.xiaomo.server.shared.protocol.hall.guild.GuildInfo.newBuilder(guildInfo_).mergeFrom(value).buildPartial();
         } else {
@@ -686,44 +664,45 @@ private static final long serialVersionUID = 0L;
       } else {
         guildInfoBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000002;
+
       return this;
     }
     /**
      * <pre>
-     *帮会信息 
+     *帮会信息
      * </pre>
      *
-     * <code>optional .GuildInfo guildInfo = 2;</code>
+     * <code>.GuildInfo guildInfo = 2;</code>
      */
     public Builder clearGuildInfo() {
       if (guildInfoBuilder_ == null) {
         guildInfo_ = null;
         onChanged();
       } else {
-        guildInfoBuilder_.clear();
+        guildInfo_ = null;
+        guildInfoBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+
       return this;
     }
     /**
      * <pre>
-     *帮会信息 
+     *帮会信息
      * </pre>
      *
-     * <code>optional .GuildInfo guildInfo = 2;</code>
+     * <code>.GuildInfo guildInfo = 2;</code>
      */
     public info.xiaomo.server.shared.protocol.hall.guild.GuildInfo.Builder getGuildInfoBuilder() {
-      bitField0_ |= 0x00000002;
+      
       onChanged();
       return getGuildInfoFieldBuilder().getBuilder();
     }
     /**
      * <pre>
-     *帮会信息 
+     *帮会信息
      * </pre>
      *
-     * <code>optional .GuildInfo guildInfo = 2;</code>
+     * <code>.GuildInfo guildInfo = 2;</code>
      */
     public info.xiaomo.server.shared.protocol.hall.guild.GuildInfoOrBuilder getGuildInfoOrBuilder() {
       if (guildInfoBuilder_ != null) {
@@ -735,10 +714,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *帮会信息 
+     *帮会信息
      * </pre>
      *
-     * <code>optional .GuildInfo guildInfo = 2;</code>
+     * <code>.GuildInfo guildInfo = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         info.xiaomo.server.shared.protocol.hall.guild.GuildInfo, info.xiaomo.server.shared.protocol.hall.guild.GuildInfo.Builder, info.xiaomo.server.shared.protocol.hall.guild.GuildInfoOrBuilder> 
@@ -779,7 +758,7 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  @java.lang.Deprecated public static final com.google.protobuf.Parser<GuildInfoResponse>
+  private static final com.google.protobuf.Parser<GuildInfoResponse>
       PARSER = new com.google.protobuf.AbstractParser<GuildInfoResponse>() {
     @java.lang.Override
     public GuildInfoResponse parsePartialFrom(

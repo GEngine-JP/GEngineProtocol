@@ -8,21 +8,21 @@ package info.xiaomo.server.shared.protocol.server;
  *服务器信息
  * </pre>
  *
- * Protobuf type {@code ServerInfo}
+ * Protobuf type {@code GameServerInfo}
  */
-public final class ServerInfo extends
+public final class GameServerInfo extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:ServerInfo)
-    ServerInfoOrBuilder {
+    // @@protoc_insertion_point(message_implements:GameServerInfo)
+    GameServerInfoOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use ServerInfo.newBuilder() to construct.
-  private ServerInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use GameServerInfo.newBuilder() to construct.
+  private GameServerInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private ServerInfo() {
+  private GameServerInfo() {
     ip_ = "";
     name_ = "";
-    wwwip_ = "";
+    wwwIp_ = "";
     version_ = "";
   }
 
@@ -30,7 +30,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new ServerInfo();
+    return new GameServerInfo();
   }
 
   @java.lang.Override
@@ -38,7 +38,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private ServerInfo(
+  private GameServerInfo(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -46,7 +46,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -58,72 +57,72 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 8: {
-            bitField0_ |= 0x00000001;
+
             id_ = input.readInt32();
             break;
           }
           case 18: {
-            com.google.protobuf.ByteString bs = input.readBytes();
-            bitField0_ |= 0x00000002;
-            ip_ = bs;
+            java.lang.String s = input.readStringRequireUtf8();
+
+            ip_ = s;
             break;
           }
           case 24: {
-            bitField0_ |= 0x00000004;
+
             type_ = input.readInt32();
             break;
           }
           case 32: {
-            bitField0_ |= 0x00000008;
+
             port_ = input.readInt32();
             break;
           }
           case 40: {
-            bitField0_ |= 0x00000010;
+
             state_ = input.readInt32();
             break;
           }
           case 48: {
-            bitField0_ |= 0x00000020;
+
             online_ = input.readInt32();
             break;
           }
           case 56: {
-            bitField0_ |= 0x00000040;
+
             maxUserCount_ = input.readInt32();
             break;
           }
           case 64: {
-            bitField0_ |= 0x00000080;
-            httpport_ = input.readInt32();
+
+            httpPort_ = input.readInt32();
             break;
           }
           case 74: {
-            com.google.protobuf.ByteString bs = input.readBytes();
-            bitField0_ |= 0x00000100;
-            name_ = bs;
+            java.lang.String s = input.readStringRequireUtf8();
+
+            name_ = s;
             break;
           }
           case 82: {
-            com.google.protobuf.ByteString bs = input.readBytes();
-            bitField0_ |= 0x00000200;
-            wwwip_ = bs;
+            java.lang.String s = input.readStringRequireUtf8();
+
+            wwwIp_ = s;
             break;
           }
           case 88: {
-            bitField0_ |= 0x00000400;
+
             freeMemory_ = input.readInt32();
             break;
           }
           case 96: {
-            bitField0_ |= 0x00000800;
+
             totalMemory_ = input.readInt32();
             break;
           }
           case 106: {
-            com.google.protobuf.ByteString bs = input.readBytes();
-            bitField0_ |= 0x00001000;
-            version_ = bs;
+            java.lang.String s = input.readStringRequireUtf8();
+
+            version_ = s;
             break;
           }
           default: {
@@ -147,18 +146,17 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return info.xiaomo.server.shared.protocol.server.ServerMessage.internal_static_ServerInfo_descriptor;
+    return info.xiaomo.server.shared.protocol.server.ServerMessage.internal_static_GameServerInfo_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return info.xiaomo.server.shared.protocol.server.ServerMessage.internal_static_ServerInfo_fieldAccessorTable
+    return info.xiaomo.server.shared.protocol.server.ServerMessage.internal_static_GameServerInfo_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            info.xiaomo.server.shared.protocol.server.ServerInfo.class, info.xiaomo.server.shared.protocol.server.ServerInfo.Builder.class);
+            info.xiaomo.server.shared.protocol.server.GameServerInfo.class, info.xiaomo.server.shared.protocol.server.GameServerInfo.Builder.class);
   }
 
-  private int bitField0_;
   public static final int ID_FIELD_NUMBER = 1;
   private int id_;
   /**
@@ -166,19 +164,7 @@ private static final long serialVersionUID = 0L;
    * 服务器ID
    * </pre>
    *
-   * <code>required int32 id = 1;</code>
-   * @return Whether the id field is set.
-   */
-  @java.lang.Override
-  public boolean hasId() {
-    return ((bitField0_ & 0x00000001) != 0);
-  }
-  /**
-   * <pre>
-   * 服务器ID
-   * </pre>
-   *
-   * <code>required int32 id = 1;</code>
+   * <code>int32 id = 1;</code>
    * @return The id.
    */
   @java.lang.Override
@@ -193,19 +179,7 @@ private static final long serialVersionUID = 0L;
    * 内网地址
    * </pre>
    *
-   * <code>optional string ip = 2;</code>
-   * @return Whether the ip field is set.
-   */
-  @java.lang.Override
-  public boolean hasIp() {
-    return ((bitField0_ & 0x00000002) != 0);
-  }
-  /**
-   * <pre>
-   * 内网地址
-   * </pre>
-   *
-   * <code>optional string ip = 2;</code>
+   * <code>string ip = 2;</code>
    * @return The ip.
    */
   @java.lang.Override
@@ -217,9 +191,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        ip_ = s;
-      }
+      ip_ = s;
       return s;
     }
   }
@@ -228,7 +200,7 @@ private static final long serialVersionUID = 0L;
    * 内网地址
    * </pre>
    *
-   * <code>optional string ip = 2;</code>
+   * <code>string ip = 2;</code>
    * @return The bytes for ip.
    */
   @java.lang.Override
@@ -250,22 +222,10 @@ private static final long serialVersionUID = 0L;
   private int type_;
   /**
    * <pre>
-   * 类型   
+   * 类型
    * </pre>
    *
-   * <code>optional int32 type = 3;</code>
-   * @return Whether the type field is set.
-   */
-  @java.lang.Override
-  public boolean hasType() {
-    return ((bitField0_ & 0x00000004) != 0);
-  }
-  /**
-   * <pre>
-   * 类型   
-   * </pre>
-   *
-   * <code>optional int32 type = 3;</code>
+   * <code>int32 type = 3;</code>
    * @return The type.
    */
   @java.lang.Override
@@ -280,19 +240,7 @@ private static final long serialVersionUID = 0L;
    * 端口
    * </pre>
    *
-   * <code>optional int32 port = 4;</code>
-   * @return Whether the port field is set.
-   */
-  @java.lang.Override
-  public boolean hasPort() {
-    return ((bitField0_ & 0x00000008) != 0);
-  }
-  /**
-   * <pre>
-   * 端口
-   * </pre>
-   *
-   * <code>optional int32 port = 4;</code>
+   * <code>int32 port = 4;</code>
    * @return The port.
    */
   @java.lang.Override
@@ -307,19 +255,7 @@ private static final long serialVersionUID = 0L;
    *状态 -1表示维护；0表示准备开启；1表示正常，2表示不显示，3表示内部开启
    * </pre>
    *
-   * <code>optional int32 state = 5;</code>
-   * @return Whether the state field is set.
-   */
-  @java.lang.Override
-  public boolean hasState() {
-    return ((bitField0_ & 0x00000010) != 0);
-  }
-  /**
-   * <pre>
-   *状态 -1表示维护；0表示准备开启；1表示正常，2表示不显示，3表示内部开启
-   * </pre>
-   *
-   * <code>optional int32 state = 5;</code>
+   * <code>int32 state = 5;</code>
    * @return The state.
    */
   @java.lang.Override
@@ -334,19 +270,7 @@ private static final long serialVersionUID = 0L;
    * 在线人数
    * </pre>
    *
-   * <code>optional int32 online = 6;</code>
-   * @return Whether the online field is set.
-   */
-  @java.lang.Override
-  public boolean hasOnline() {
-    return ((bitField0_ & 0x00000020) != 0);
-  }
-  /**
-   * <pre>
-   * 在线人数
-   * </pre>
-   *
-   * <code>optional int32 online = 6;</code>
+   * <code>int32 online = 6;</code>
    * @return The online.
    */
   @java.lang.Override
@@ -361,19 +285,7 @@ private static final long serialVersionUID = 0L;
    * 在线人数
    * </pre>
    *
-   * <code>optional int32 maxUserCount = 7;</code>
-   * @return Whether the maxUserCount field is set.
-   */
-  @java.lang.Override
-  public boolean hasMaxUserCount() {
-    return ((bitField0_ & 0x00000040) != 0);
-  }
-  /**
-   * <pre>
-   * 在线人数
-   * </pre>
-   *
-   * <code>optional int32 maxUserCount = 7;</code>
+   * <code>int32 maxUserCount = 7;</code>
    * @return The maxUserCount.
    */
   @java.lang.Override
@@ -382,52 +294,28 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int HTTPPORT_FIELD_NUMBER = 8;
-  private int httpport_;
+  private int httpPort_;
   /**
    * <pre>
    * http端口
    * </pre>
    *
-   * <code>optional int32 httpport = 8;</code>
-   * @return Whether the httpport field is set.
+   * <code>int32 httpPort = 8;</code>
+   * @return The httpPort.
    */
   @java.lang.Override
-  public boolean hasHttpport() {
-    return ((bitField0_ & 0x00000080) != 0);
-  }
-  /**
-   * <pre>
-   * http端口
-   * </pre>
-   *
-   * <code>optional int32 httpport = 8;</code>
-   * @return The httpport.
-   */
-  @java.lang.Override
-  public int getHttpport() {
-    return httpport_;
+  public int getHttpPort() {
+    return httpPort_;
   }
 
   public static final int NAME_FIELD_NUMBER = 9;
   private volatile java.lang.Object name_;
   /**
    * <pre>
-   *名字 
+   *名字
    * </pre>
    *
-   * <code>optional string name = 9;</code>
-   * @return Whether the name field is set.
-   */
-  @java.lang.Override
-  public boolean hasName() {
-    return ((bitField0_ & 0x00000100) != 0);
-  }
-  /**
-   * <pre>
-   *名字 
-   * </pre>
-   *
-   * <code>optional string name = 9;</code>
+   * <code>string name = 9;</code>
    * @return The name.
    */
   @java.lang.Override
@@ -439,18 +327,16 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        name_ = s;
-      }
+      name_ = s;
       return s;
     }
   }
   /**
    * <pre>
-   *名字 
+   *名字
    * </pre>
    *
-   * <code>optional string name = 9;</code>
+   * <code>string name = 9;</code>
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -469,39 +355,25 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int WWWIP_FIELD_NUMBER = 10;
-  private volatile java.lang.Object wwwip_;
+  private volatile java.lang.Object wwwIp_;
   /**
    * <pre>
    * 外网地址
    * </pre>
    *
-   * <code>optional string wwwip = 10;</code>
-   * @return Whether the wwwip field is set.
+   * <code>string wwwIp = 10;</code>
+   * @return The wwwIp.
    */
   @java.lang.Override
-  public boolean hasWwwip() {
-    return ((bitField0_ & 0x00000200) != 0);
-  }
-  /**
-   * <pre>
-   * 外网地址
-   * </pre>
-   *
-   * <code>optional string wwwip = 10;</code>
-   * @return The wwwip.
-   */
-  @java.lang.Override
-  public java.lang.String getWwwip() {
-    java.lang.Object ref = wwwip_;
+  public java.lang.String getWwwIp() {
+    java.lang.Object ref = wwwIp_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        wwwip_ = s;
-      }
+      wwwIp_ = s;
       return s;
     }
   }
@@ -510,18 +382,18 @@ private static final long serialVersionUID = 0L;
    * 外网地址
    * </pre>
    *
-   * <code>optional string wwwip = 10;</code>
-   * @return The bytes for wwwip.
+   * <code>string wwwIp = 10;</code>
+   * @return The bytes for wwwIp.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getWwwipBytes() {
-    java.lang.Object ref = wwwip_;
+      getWwwIpBytes() {
+    java.lang.Object ref = wwwIp_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      wwwip_ = b;
+      wwwIp_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -535,19 +407,7 @@ private static final long serialVersionUID = 0L;
    *空闲内存
    * </pre>
    *
-   * <code>optional int32 freeMemory = 11;</code>
-   * @return Whether the freeMemory field is set.
-   */
-  @java.lang.Override
-  public boolean hasFreeMemory() {
-    return ((bitField0_ & 0x00000400) != 0);
-  }
-  /**
-   * <pre>
-   *空闲内存
-   * </pre>
-   *
-   * <code>optional int32 freeMemory = 11;</code>
+   * <code>int32 freeMemory = 11;</code>
    * @return The freeMemory.
    */
   @java.lang.Override
@@ -562,19 +422,7 @@ private static final long serialVersionUID = 0L;
    *可用内存
    * </pre>
    *
-   * <code>optional int32 totalMemory = 12;</code>
-   * @return Whether the totalMemory field is set.
-   */
-  @java.lang.Override
-  public boolean hasTotalMemory() {
-    return ((bitField0_ & 0x00000800) != 0);
-  }
-  /**
-   * <pre>
-   *可用内存
-   * </pre>
-   *
-   * <code>optional int32 totalMemory = 12;</code>
+   * <code>int32 totalMemory = 12;</code>
    * @return The totalMemory.
    */
   @java.lang.Override
@@ -589,19 +437,7 @@ private static final long serialVersionUID = 0L;
    *版本号
    * </pre>
    *
-   * <code>optional string version = 13;</code>
-   * @return Whether the version field is set.
-   */
-  @java.lang.Override
-  public boolean hasVersion() {
-    return ((bitField0_ & 0x00001000) != 0);
-  }
-  /**
-   * <pre>
-   *版本号
-   * </pre>
-   *
-   * <code>optional string version = 13;</code>
+   * <code>string version = 13;</code>
    * @return The version.
    */
   @java.lang.Override
@@ -613,9 +449,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        version_ = s;
-      }
+      version_ = s;
       return s;
     }
   }
@@ -624,7 +458,7 @@ private static final long serialVersionUID = 0L;
    *版本号
    * </pre>
    *
-   * <code>optional string version = 13;</code>
+   * <code>string version = 13;</code>
    * @return The bytes for version.
    */
   @java.lang.Override
@@ -649,10 +483,6 @@ private static final long serialVersionUID = 0L;
     if (isInitialized == 1) return true;
     if (isInitialized == 0) return false;
 
-    if (!hasId()) {
-      memoizedIsInitialized = 0;
-      return false;
-    }
     memoizedIsInitialized = 1;
     return true;
   }
@@ -660,43 +490,43 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (id_ != 0) {
       output.writeInt32(1, id_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (!getIpBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, ip_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (type_ != 0) {
       output.writeInt32(3, type_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (port_ != 0) {
       output.writeInt32(4, port_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (state_ != 0) {
       output.writeInt32(5, state_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (online_ != 0) {
       output.writeInt32(6, online_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (maxUserCount_ != 0) {
       output.writeInt32(7, maxUserCount_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
-      output.writeInt32(8, httpport_);
+    if (httpPort_ != 0) {
+      output.writeInt32(8, httpPort_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, name_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, wwwip_);
+    if (!getWwwIpBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, wwwIp_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (freeMemory_ != 0) {
       output.writeInt32(11, freeMemory_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (totalMemory_ != 0) {
       output.writeInt32(12, totalMemory_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (!getVersionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, version_);
     }
     unknownFields.writeTo(output);
@@ -708,52 +538,52 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (id_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(1, id_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (!getIpBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, ip_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (type_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(3, type_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (port_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(4, port_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (state_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(5, state_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (online_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(6, online_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (maxUserCount_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(7, maxUserCount_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (httpPort_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(8, httpport_);
+        .computeInt32Size(8, httpPort_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, name_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, wwwip_);
+    if (!getWwwIpBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, wwwIp_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (freeMemory_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(11, freeMemory_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (totalMemory_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(12, totalMemory_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (!getVersionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, version_);
     }
     size += unknownFields.getSerializedSize();
@@ -766,76 +596,37 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof info.xiaomo.server.shared.protocol.server.ServerInfo)) {
+    if (!(obj instanceof info.xiaomo.server.shared.protocol.server.GameServerInfo)) {
       return super.equals(obj);
     }
-    info.xiaomo.server.shared.protocol.server.ServerInfo other = (info.xiaomo.server.shared.protocol.server.ServerInfo) obj;
+    info.xiaomo.server.shared.protocol.server.GameServerInfo other = (info.xiaomo.server.shared.protocol.server.GameServerInfo) obj;
 
-    if (hasId() != other.hasId()) return false;
-    if (hasId()) {
-      if (getId()
-          != other.getId()) return false;
-    }
-    if (hasIp() != other.hasIp()) return false;
-    if (hasIp()) {
-      if (!getIp()
-          .equals(other.getIp())) return false;
-    }
-    if (hasType() != other.hasType()) return false;
-    if (hasType()) {
-      if (getType()
-          != other.getType()) return false;
-    }
-    if (hasPort() != other.hasPort()) return false;
-    if (hasPort()) {
-      if (getPort()
-          != other.getPort()) return false;
-    }
-    if (hasState() != other.hasState()) return false;
-    if (hasState()) {
-      if (getState()
-          != other.getState()) return false;
-    }
-    if (hasOnline() != other.hasOnline()) return false;
-    if (hasOnline()) {
-      if (getOnline()
-          != other.getOnline()) return false;
-    }
-    if (hasMaxUserCount() != other.hasMaxUserCount()) return false;
-    if (hasMaxUserCount()) {
-      if (getMaxUserCount()
-          != other.getMaxUserCount()) return false;
-    }
-    if (hasHttpport() != other.hasHttpport()) return false;
-    if (hasHttpport()) {
-      if (getHttpport()
-          != other.getHttpport()) return false;
-    }
-    if (hasName() != other.hasName()) return false;
-    if (hasName()) {
-      if (!getName()
-          .equals(other.getName())) return false;
-    }
-    if (hasWwwip() != other.hasWwwip()) return false;
-    if (hasWwwip()) {
-      if (!getWwwip()
-          .equals(other.getWwwip())) return false;
-    }
-    if (hasFreeMemory() != other.hasFreeMemory()) return false;
-    if (hasFreeMemory()) {
-      if (getFreeMemory()
-          != other.getFreeMemory()) return false;
-    }
-    if (hasTotalMemory() != other.hasTotalMemory()) return false;
-    if (hasTotalMemory()) {
-      if (getTotalMemory()
-          != other.getTotalMemory()) return false;
-    }
-    if (hasVersion() != other.hasVersion()) return false;
-    if (hasVersion()) {
-      if (!getVersion()
-          .equals(other.getVersion())) return false;
-    }
+    if (getId()
+        != other.getId()) return false;
+    if (!getIp()
+        .equals(other.getIp())) return false;
+    if (getType()
+        != other.getType()) return false;
+    if (getPort()
+        != other.getPort()) return false;
+    if (getState()
+        != other.getState()) return false;
+    if (getOnline()
+        != other.getOnline()) return false;
+    if (getMaxUserCount()
+        != other.getMaxUserCount()) return false;
+    if (getHttpPort()
+        != other.getHttpPort()) return false;
+    if (!getName()
+        .equals(other.getName())) return false;
+    if (!getWwwIp()
+        .equals(other.getWwwIp())) return false;
+    if (getFreeMemory()
+        != other.getFreeMemory()) return false;
+    if (getTotalMemory()
+        != other.getTotalMemory()) return false;
+    if (!getVersion()
+        .equals(other.getVersion())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -847,126 +638,100 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasId()) {
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId();
-    }
-    if (hasIp()) {
-      hash = (37 * hash) + IP_FIELD_NUMBER;
-      hash = (53 * hash) + getIp().hashCode();
-    }
-    if (hasType()) {
-      hash = (37 * hash) + TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getType();
-    }
-    if (hasPort()) {
-      hash = (37 * hash) + PORT_FIELD_NUMBER;
-      hash = (53 * hash) + getPort();
-    }
-    if (hasState()) {
-      hash = (37 * hash) + STATE_FIELD_NUMBER;
-      hash = (53 * hash) + getState();
-    }
-    if (hasOnline()) {
-      hash = (37 * hash) + ONLINE_FIELD_NUMBER;
-      hash = (53 * hash) + getOnline();
-    }
-    if (hasMaxUserCount()) {
-      hash = (37 * hash) + MAXUSERCOUNT_FIELD_NUMBER;
-      hash = (53 * hash) + getMaxUserCount();
-    }
-    if (hasHttpport()) {
-      hash = (37 * hash) + HTTPPORT_FIELD_NUMBER;
-      hash = (53 * hash) + getHttpport();
-    }
-    if (hasName()) {
-      hash = (37 * hash) + NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getName().hashCode();
-    }
-    if (hasWwwip()) {
-      hash = (37 * hash) + WWWIP_FIELD_NUMBER;
-      hash = (53 * hash) + getWwwip().hashCode();
-    }
-    if (hasFreeMemory()) {
-      hash = (37 * hash) + FREEMEMORY_FIELD_NUMBER;
-      hash = (53 * hash) + getFreeMemory();
-    }
-    if (hasTotalMemory()) {
-      hash = (37 * hash) + TOTALMEMORY_FIELD_NUMBER;
-      hash = (53 * hash) + getTotalMemory();
-    }
-    if (hasVersion()) {
-      hash = (37 * hash) + VERSION_FIELD_NUMBER;
-      hash = (53 * hash) + getVersion().hashCode();
-    }
+    hash = (37 * hash) + ID_FIELD_NUMBER;
+    hash = (53 * hash) + getId();
+    hash = (37 * hash) + IP_FIELD_NUMBER;
+    hash = (53 * hash) + getIp().hashCode();
+    hash = (37 * hash) + TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getType();
+    hash = (37 * hash) + PORT_FIELD_NUMBER;
+    hash = (53 * hash) + getPort();
+    hash = (37 * hash) + STATE_FIELD_NUMBER;
+    hash = (53 * hash) + getState();
+    hash = (37 * hash) + ONLINE_FIELD_NUMBER;
+    hash = (53 * hash) + getOnline();
+    hash = (37 * hash) + MAXUSERCOUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getMaxUserCount();
+    hash = (37 * hash) + HTTPPORT_FIELD_NUMBER;
+    hash = (53 * hash) + getHttpPort();
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + WWWIP_FIELD_NUMBER;
+    hash = (53 * hash) + getWwwIp().hashCode();
+    hash = (37 * hash) + FREEMEMORY_FIELD_NUMBER;
+    hash = (53 * hash) + getFreeMemory();
+    hash = (37 * hash) + TOTALMEMORY_FIELD_NUMBER;
+    hash = (53 * hash) + getTotalMemory();
+    hash = (37 * hash) + VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + getVersion().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static info.xiaomo.server.shared.protocol.server.ServerInfo parseFrom(
+  public static info.xiaomo.server.shared.protocol.server.GameServerInfo parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static info.xiaomo.server.shared.protocol.server.ServerInfo parseFrom(
+  public static info.xiaomo.server.shared.protocol.server.GameServerInfo parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static info.xiaomo.server.shared.protocol.server.ServerInfo parseFrom(
+  public static info.xiaomo.server.shared.protocol.server.GameServerInfo parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static info.xiaomo.server.shared.protocol.server.ServerInfo parseFrom(
+  public static info.xiaomo.server.shared.protocol.server.GameServerInfo parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static info.xiaomo.server.shared.protocol.server.ServerInfo parseFrom(byte[] data)
+  public static info.xiaomo.server.shared.protocol.server.GameServerInfo parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static info.xiaomo.server.shared.protocol.server.ServerInfo parseFrom(
+  public static info.xiaomo.server.shared.protocol.server.GameServerInfo parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static info.xiaomo.server.shared.protocol.server.ServerInfo parseFrom(java.io.InputStream input)
+  public static info.xiaomo.server.shared.protocol.server.GameServerInfo parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static info.xiaomo.server.shared.protocol.server.ServerInfo parseFrom(
+  public static info.xiaomo.server.shared.protocol.server.GameServerInfo parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static info.xiaomo.server.shared.protocol.server.ServerInfo parseDelimitedFrom(java.io.InputStream input)
+  public static info.xiaomo.server.shared.protocol.server.GameServerInfo parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static info.xiaomo.server.shared.protocol.server.ServerInfo parseDelimitedFrom(
+  public static info.xiaomo.server.shared.protocol.server.GameServerInfo parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static info.xiaomo.server.shared.protocol.server.ServerInfo parseFrom(
+  public static info.xiaomo.server.shared.protocol.server.GameServerInfo parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static info.xiaomo.server.shared.protocol.server.ServerInfo parseFrom(
+  public static info.xiaomo.server.shared.protocol.server.GameServerInfo parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -979,7 +744,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(info.xiaomo.server.shared.protocol.server.ServerInfo prototype) {
+  public static Builder newBuilder(info.xiaomo.server.shared.protocol.server.GameServerInfo prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -999,26 +764,26 @@ private static final long serialVersionUID = 0L;
    *服务器信息
    * </pre>
    *
-   * Protobuf type {@code ServerInfo}
+   * Protobuf type {@code GameServerInfo}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:ServerInfo)
-      info.xiaomo.server.shared.protocol.server.ServerInfoOrBuilder {
+      // @@protoc_insertion_point(builder_implements:GameServerInfo)
+      info.xiaomo.server.shared.protocol.server.GameServerInfoOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return info.xiaomo.server.shared.protocol.server.ServerMessage.internal_static_ServerInfo_descriptor;
+      return info.xiaomo.server.shared.protocol.server.ServerMessage.internal_static_GameServerInfo_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return info.xiaomo.server.shared.protocol.server.ServerMessage.internal_static_ServerInfo_fieldAccessorTable
+      return info.xiaomo.server.shared.protocol.server.ServerMessage.internal_static_GameServerInfo_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              info.xiaomo.server.shared.protocol.server.ServerInfo.class, info.xiaomo.server.shared.protocol.server.ServerInfo.Builder.class);
+              info.xiaomo.server.shared.protocol.server.GameServerInfo.class, info.xiaomo.server.shared.protocol.server.GameServerInfo.Builder.class);
     }
 
-    // Construct using info.xiaomo.server.shared.protocol.server.ServerInfo.newBuilder()
+    // Construct using info.xiaomo.server.shared.protocol.server.GameServerInfo.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -1037,48 +802,48 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       id_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000001);
+
       ip_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
+
       type_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000004);
+
       port_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000008);
+
       state_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000010);
+
       online_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000020);
+
       maxUserCount_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000040);
-      httpport_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000080);
+
+      httpPort_ = 0;
+
       name_ = "";
-      bitField0_ = (bitField0_ & ~0x00000100);
-      wwwip_ = "";
-      bitField0_ = (bitField0_ & ~0x00000200);
+
+      wwwIp_ = "";
+
       freeMemory_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000400);
+
       totalMemory_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000800);
+
       version_ = "";
-      bitField0_ = (bitField0_ & ~0x00001000);
+
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return info.xiaomo.server.shared.protocol.server.ServerMessage.internal_static_ServerInfo_descriptor;
+      return info.xiaomo.server.shared.protocol.server.ServerMessage.internal_static_GameServerInfo_descriptor;
     }
 
     @java.lang.Override
-    public info.xiaomo.server.shared.protocol.server.ServerInfo getDefaultInstanceForType() {
-      return info.xiaomo.server.shared.protocol.server.ServerInfo.getDefaultInstance();
+    public info.xiaomo.server.shared.protocol.server.GameServerInfo getDefaultInstanceForType() {
+      return info.xiaomo.server.shared.protocol.server.GameServerInfo.getDefaultInstance();
     }
 
     @java.lang.Override
-    public info.xiaomo.server.shared.protocol.server.ServerInfo build() {
-      info.xiaomo.server.shared.protocol.server.ServerInfo result = buildPartial();
+    public info.xiaomo.server.shared.protocol.server.GameServerInfo build() {
+      info.xiaomo.server.shared.protocol.server.GameServerInfo result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -1086,63 +851,21 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public info.xiaomo.server.shared.protocol.server.ServerInfo buildPartial() {
-      info.xiaomo.server.shared.protocol.server.ServerInfo result = new info.xiaomo.server.shared.protocol.server.ServerInfo(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.id_ = id_;
-        to_bitField0_ |= 0x00000001;
-      }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        to_bitField0_ |= 0x00000002;
-      }
+    public info.xiaomo.server.shared.protocol.server.GameServerInfo buildPartial() {
+      info.xiaomo.server.shared.protocol.server.GameServerInfo result = new info.xiaomo.server.shared.protocol.server.GameServerInfo(this);
+      result.id_ = id_;
       result.ip_ = ip_;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.type_ = type_;
-        to_bitField0_ |= 0x00000004;
-      }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.port_ = port_;
-        to_bitField0_ |= 0x00000008;
-      }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.state_ = state_;
-        to_bitField0_ |= 0x00000010;
-      }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.online_ = online_;
-        to_bitField0_ |= 0x00000020;
-      }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.maxUserCount_ = maxUserCount_;
-        to_bitField0_ |= 0x00000040;
-      }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.httpport_ = httpport_;
-        to_bitField0_ |= 0x00000080;
-      }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
-        to_bitField0_ |= 0x00000100;
-      }
+      result.type_ = type_;
+      result.port_ = port_;
+      result.state_ = state_;
+      result.online_ = online_;
+      result.maxUserCount_ = maxUserCount_;
+      result.httpPort_ = httpPort_;
       result.name_ = name_;
-      if (((from_bitField0_ & 0x00000200) != 0)) {
-        to_bitField0_ |= 0x00000200;
-      }
-      result.wwwip_ = wwwip_;
-      if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.freeMemory_ = freeMemory_;
-        to_bitField0_ |= 0x00000400;
-      }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.totalMemory_ = totalMemory_;
-        to_bitField0_ |= 0x00000800;
-      }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
-        to_bitField0_ |= 0x00001000;
-      }
+      result.wwwIp_ = wwwIp_;
+      result.freeMemory_ = freeMemory_;
+      result.totalMemory_ = totalMemory_;
       result.version_ = version_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1181,60 +904,56 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof info.xiaomo.server.shared.protocol.server.ServerInfo) {
-        return mergeFrom((info.xiaomo.server.shared.protocol.server.ServerInfo)other);
+      if (other instanceof info.xiaomo.server.shared.protocol.server.GameServerInfo) {
+        return mergeFrom((info.xiaomo.server.shared.protocol.server.GameServerInfo)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(info.xiaomo.server.shared.protocol.server.ServerInfo other) {
-      if (other == info.xiaomo.server.shared.protocol.server.ServerInfo.getDefaultInstance()) return this;
-      if (other.hasId()) {
+    public Builder mergeFrom(info.xiaomo.server.shared.protocol.server.GameServerInfo other) {
+      if (other == info.xiaomo.server.shared.protocol.server.GameServerInfo.getDefaultInstance()) return this;
+      if (other.getId() != 0) {
         setId(other.getId());
       }
-      if (other.hasIp()) {
-        bitField0_ |= 0x00000002;
+      if (!other.getIp().isEmpty()) {
         ip_ = other.ip_;
         onChanged();
       }
-      if (other.hasType()) {
+      if (other.getType() != 0) {
         setType(other.getType());
       }
-      if (other.hasPort()) {
+      if (other.getPort() != 0) {
         setPort(other.getPort());
       }
-      if (other.hasState()) {
+      if (other.getState() != 0) {
         setState(other.getState());
       }
-      if (other.hasOnline()) {
+      if (other.getOnline() != 0) {
         setOnline(other.getOnline());
       }
-      if (other.hasMaxUserCount()) {
+      if (other.getMaxUserCount() != 0) {
         setMaxUserCount(other.getMaxUserCount());
       }
-      if (other.hasHttpport()) {
-        setHttpport(other.getHttpport());
+      if (other.getHttpPort() != 0) {
+        setHttpPort(other.getHttpPort());
       }
-      if (other.hasName()) {
-        bitField0_ |= 0x00000100;
+      if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
       }
-      if (other.hasWwwip()) {
-        bitField0_ |= 0x00000200;
-        wwwip_ = other.wwwip_;
+      if (!other.getWwwIp().isEmpty()) {
+        wwwIp_ = other.wwwIp_;
         onChanged();
       }
-      if (other.hasFreeMemory()) {
+      if (other.getFreeMemory() != 0) {
         setFreeMemory(other.getFreeMemory());
       }
-      if (other.hasTotalMemory()) {
+      if (other.getTotalMemory() != 0) {
         setTotalMemory(other.getTotalMemory());
       }
-      if (other.hasVersion()) {
-        bitField0_ |= 0x00001000;
+      if (!other.getVersion().isEmpty()) {
         version_ = other.version_;
         onChanged();
       }
@@ -1245,9 +964,6 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public final boolean isInitialized() {
-      if (!hasId()) {
-        return false;
-      }
       return true;
     }
 
@@ -1256,11 +972,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      info.xiaomo.server.shared.protocol.server.ServerInfo parsedMessage = null;
+      info.xiaomo.server.shared.protocol.server.GameServerInfo parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (info.xiaomo.server.shared.protocol.server.ServerInfo) e.getUnfinishedMessage();
+        parsedMessage = (info.xiaomo.server.shared.protocol.server.GameServerInfo) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -1269,7 +985,6 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    private int bitField0_;
 
     private int id_ ;
     /**
@@ -1277,19 +992,7 @@ private static final long serialVersionUID = 0L;
      * 服务器ID
      * </pre>
      *
-     * <code>required int32 id = 1;</code>
-     * @return Whether the id field is set.
-     */
-    @java.lang.Override
-    public boolean hasId() {
-      return ((bitField0_ & 0x00000001) != 0);
-    }
-    /**
-     * <pre>
-     * 服务器ID
-     * </pre>
-     *
-     * <code>required int32 id = 1;</code>
+     * <code>int32 id = 1;</code>
      * @return The id.
      */
     @java.lang.Override
@@ -1301,12 +1004,12 @@ private static final long serialVersionUID = 0L;
      * 服务器ID
      * </pre>
      *
-     * <code>required int32 id = 1;</code>
+     * <code>int32 id = 1;</code>
      * @param value The id to set.
      * @return This builder for chaining.
      */
     public Builder setId(int value) {
-      bitField0_ |= 0x00000001;
+      
       id_ = value;
       onChanged();
       return this;
@@ -1316,11 +1019,11 @@ private static final long serialVersionUID = 0L;
      * 服务器ID
      * </pre>
      *
-     * <code>required int32 id = 1;</code>
+     * <code>int32 id = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      
       id_ = 0;
       onChanged();
       return this;
@@ -1332,18 +1035,7 @@ private static final long serialVersionUID = 0L;
      * 内网地址
      * </pre>
      *
-     * <code>optional string ip = 2;</code>
-     * @return Whether the ip field is set.
-     */
-    public boolean hasIp() {
-      return ((bitField0_ & 0x00000002) != 0);
-    }
-    /**
-     * <pre>
-     * 内网地址
-     * </pre>
-     *
-     * <code>optional string ip = 2;</code>
+     * <code>string ip = 2;</code>
      * @return The ip.
      */
     public java.lang.String getIp() {
@@ -1352,9 +1044,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          ip_ = s;
-        }
+        ip_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1365,7 +1055,7 @@ private static final long serialVersionUID = 0L;
      * 内网地址
      * </pre>
      *
-     * <code>optional string ip = 2;</code>
+     * <code>string ip = 2;</code>
      * @return The bytes for ip.
      */
     public com.google.protobuf.ByteString
@@ -1386,7 +1076,7 @@ private static final long serialVersionUID = 0L;
      * 内网地址
      * </pre>
      *
-     * <code>optional string ip = 2;</code>
+     * <code>string ip = 2;</code>
      * @param value The ip to set.
      * @return This builder for chaining.
      */
@@ -1395,7 +1085,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  
       ip_ = value;
       onChanged();
       return this;
@@ -1405,11 +1095,11 @@ private static final long serialVersionUID = 0L;
      * 内网地址
      * </pre>
      *
-     * <code>optional string ip = 2;</code>
+     * <code>string ip = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearIp() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      
       ip_ = getDefaultInstance().getIp();
       onChanged();
       return this;
@@ -1419,7 +1109,7 @@ private static final long serialVersionUID = 0L;
      * 内网地址
      * </pre>
      *
-     * <code>optional string ip = 2;</code>
+     * <code>string ip = 2;</code>
      * @param value The bytes for ip to set.
      * @return This builder for chaining.
      */
@@ -1428,7 +1118,8 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  checkByteStringIsUtf8(value);
+      
       ip_ = value;
       onChanged();
       return this;
@@ -1437,22 +1128,10 @@ private static final long serialVersionUID = 0L;
     private int type_ ;
     /**
      * <pre>
-     * 类型   
+     * 类型
      * </pre>
      *
-     * <code>optional int32 type = 3;</code>
-     * @return Whether the type field is set.
-     */
-    @java.lang.Override
-    public boolean hasType() {
-      return ((bitField0_ & 0x00000004) != 0);
-    }
-    /**
-     * <pre>
-     * 类型   
-     * </pre>
-     *
-     * <code>optional int32 type = 3;</code>
+     * <code>int32 type = 3;</code>
      * @return The type.
      */
     @java.lang.Override
@@ -1461,29 +1140,29 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 类型   
+     * 类型
      * </pre>
      *
-     * <code>optional int32 type = 3;</code>
+     * <code>int32 type = 3;</code>
      * @param value The type to set.
      * @return This builder for chaining.
      */
     public Builder setType(int value) {
-      bitField0_ |= 0x00000004;
+      
       type_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * 类型   
+     * 类型
      * </pre>
      *
-     * <code>optional int32 type = 3;</code>
+     * <code>int32 type = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearType() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      
       type_ = 0;
       onChanged();
       return this;
@@ -1495,19 +1174,7 @@ private static final long serialVersionUID = 0L;
      * 端口
      * </pre>
      *
-     * <code>optional int32 port = 4;</code>
-     * @return Whether the port field is set.
-     */
-    @java.lang.Override
-    public boolean hasPort() {
-      return ((bitField0_ & 0x00000008) != 0);
-    }
-    /**
-     * <pre>
-     * 端口
-     * </pre>
-     *
-     * <code>optional int32 port = 4;</code>
+     * <code>int32 port = 4;</code>
      * @return The port.
      */
     @java.lang.Override
@@ -1519,12 +1186,12 @@ private static final long serialVersionUID = 0L;
      * 端口
      * </pre>
      *
-     * <code>optional int32 port = 4;</code>
+     * <code>int32 port = 4;</code>
      * @param value The port to set.
      * @return This builder for chaining.
      */
     public Builder setPort(int value) {
-      bitField0_ |= 0x00000008;
+      
       port_ = value;
       onChanged();
       return this;
@@ -1534,11 +1201,11 @@ private static final long serialVersionUID = 0L;
      * 端口
      * </pre>
      *
-     * <code>optional int32 port = 4;</code>
+     * <code>int32 port = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearPort() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      
       port_ = 0;
       onChanged();
       return this;
@@ -1550,19 +1217,7 @@ private static final long serialVersionUID = 0L;
      *状态 -1表示维护；0表示准备开启；1表示正常，2表示不显示，3表示内部开启
      * </pre>
      *
-     * <code>optional int32 state = 5;</code>
-     * @return Whether the state field is set.
-     */
-    @java.lang.Override
-    public boolean hasState() {
-      return ((bitField0_ & 0x00000010) != 0);
-    }
-    /**
-     * <pre>
-     *状态 -1表示维护；0表示准备开启；1表示正常，2表示不显示，3表示内部开启
-     * </pre>
-     *
-     * <code>optional int32 state = 5;</code>
+     * <code>int32 state = 5;</code>
      * @return The state.
      */
     @java.lang.Override
@@ -1574,12 +1229,12 @@ private static final long serialVersionUID = 0L;
      *状态 -1表示维护；0表示准备开启；1表示正常，2表示不显示，3表示内部开启
      * </pre>
      *
-     * <code>optional int32 state = 5;</code>
+     * <code>int32 state = 5;</code>
      * @param value The state to set.
      * @return This builder for chaining.
      */
     public Builder setState(int value) {
-      bitField0_ |= 0x00000010;
+      
       state_ = value;
       onChanged();
       return this;
@@ -1589,11 +1244,11 @@ private static final long serialVersionUID = 0L;
      *状态 -1表示维护；0表示准备开启；1表示正常，2表示不显示，3表示内部开启
      * </pre>
      *
-     * <code>optional int32 state = 5;</code>
+     * <code>int32 state = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      
       state_ = 0;
       onChanged();
       return this;
@@ -1605,19 +1260,7 @@ private static final long serialVersionUID = 0L;
      * 在线人数
      * </pre>
      *
-     * <code>optional int32 online = 6;</code>
-     * @return Whether the online field is set.
-     */
-    @java.lang.Override
-    public boolean hasOnline() {
-      return ((bitField0_ & 0x00000020) != 0);
-    }
-    /**
-     * <pre>
-     * 在线人数
-     * </pre>
-     *
-     * <code>optional int32 online = 6;</code>
+     * <code>int32 online = 6;</code>
      * @return The online.
      */
     @java.lang.Override
@@ -1629,12 +1272,12 @@ private static final long serialVersionUID = 0L;
      * 在线人数
      * </pre>
      *
-     * <code>optional int32 online = 6;</code>
+     * <code>int32 online = 6;</code>
      * @param value The online to set.
      * @return This builder for chaining.
      */
     public Builder setOnline(int value) {
-      bitField0_ |= 0x00000020;
+      
       online_ = value;
       onChanged();
       return this;
@@ -1644,11 +1287,11 @@ private static final long serialVersionUID = 0L;
      * 在线人数
      * </pre>
      *
-     * <code>optional int32 online = 6;</code>
+     * <code>int32 online = 6;</code>
      * @return This builder for chaining.
      */
     public Builder clearOnline() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      
       online_ = 0;
       onChanged();
       return this;
@@ -1660,19 +1303,7 @@ private static final long serialVersionUID = 0L;
      * 在线人数
      * </pre>
      *
-     * <code>optional int32 maxUserCount = 7;</code>
-     * @return Whether the maxUserCount field is set.
-     */
-    @java.lang.Override
-    public boolean hasMaxUserCount() {
-      return ((bitField0_ & 0x00000040) != 0);
-    }
-    /**
-     * <pre>
-     * 在线人数
-     * </pre>
-     *
-     * <code>optional int32 maxUserCount = 7;</code>
+     * <code>int32 maxUserCount = 7;</code>
      * @return The maxUserCount.
      */
     @java.lang.Override
@@ -1684,12 +1315,12 @@ private static final long serialVersionUID = 0L;
      * 在线人数
      * </pre>
      *
-     * <code>optional int32 maxUserCount = 7;</code>
+     * <code>int32 maxUserCount = 7;</code>
      * @param value The maxUserCount to set.
      * @return This builder for chaining.
      */
     public Builder setMaxUserCount(int value) {
-      bitField0_ |= 0x00000040;
+      
       maxUserCount_ = value;
       onChanged();
       return this;
@@ -1699,53 +1330,41 @@ private static final long serialVersionUID = 0L;
      * 在线人数
      * </pre>
      *
-     * <code>optional int32 maxUserCount = 7;</code>
+     * <code>int32 maxUserCount = 7;</code>
      * @return This builder for chaining.
      */
     public Builder clearMaxUserCount() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      
       maxUserCount_ = 0;
       onChanged();
       return this;
     }
 
-    private int httpport_ ;
+    private int httpPort_ ;
     /**
      * <pre>
      * http端口
      * </pre>
      *
-     * <code>optional int32 httpport = 8;</code>
-     * @return Whether the httpport field is set.
+     * <code>int32 httpPort = 8;</code>
+     * @return The httpPort.
      */
     @java.lang.Override
-    public boolean hasHttpport() {
-      return ((bitField0_ & 0x00000080) != 0);
+    public int getHttpPort() {
+      return httpPort_;
     }
     /**
      * <pre>
      * http端口
      * </pre>
      *
-     * <code>optional int32 httpport = 8;</code>
-     * @return The httpport.
-     */
-    @java.lang.Override
-    public int getHttpport() {
-      return httpport_;
-    }
-    /**
-     * <pre>
-     * http端口
-     * </pre>
-     *
-     * <code>optional int32 httpport = 8;</code>
-     * @param value The httpport to set.
+     * <code>int32 httpPort = 8;</code>
+     * @param value The httpPort to set.
      * @return This builder for chaining.
      */
-    public Builder setHttpport(int value) {
-      bitField0_ |= 0x00000080;
-      httpport_ = value;
+    public Builder setHttpPort(int value) {
+      
+      httpPort_ = value;
       onChanged();
       return this;
     }
@@ -1754,12 +1373,12 @@ private static final long serialVersionUID = 0L;
      * http端口
      * </pre>
      *
-     * <code>optional int32 httpport = 8;</code>
+     * <code>int32 httpPort = 8;</code>
      * @return This builder for chaining.
      */
-    public Builder clearHttpport() {
-      bitField0_ = (bitField0_ & ~0x00000080);
-      httpport_ = 0;
+    public Builder clearHttpPort() {
+      
+      httpPort_ = 0;
       onChanged();
       return this;
     }
@@ -1767,21 +1386,10 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object name_ = "";
     /**
      * <pre>
-     *名字 
+     *名字
      * </pre>
      *
-     * <code>optional string name = 9;</code>
-     * @return Whether the name field is set.
-     */
-    public boolean hasName() {
-      return ((bitField0_ & 0x00000100) != 0);
-    }
-    /**
-     * <pre>
-     *名字 
-     * </pre>
-     *
-     * <code>optional string name = 9;</code>
+     * <code>string name = 9;</code>
      * @return The name.
      */
     public java.lang.String getName() {
@@ -1790,9 +1398,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          name_ = s;
-        }
+        name_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1800,10 +1406,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *名字 
+     *名字
      * </pre>
      *
-     * <code>optional string name = 9;</code>
+     * <code>string name = 9;</code>
      * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
@@ -1821,10 +1427,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *名字 
+     *名字
      * </pre>
      *
-     * <code>optional string name = 9;</code>
+     * <code>string name = 9;</code>
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -1833,31 +1439,31 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000100;
+  
       name_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     *名字 
+     *名字
      * </pre>
      *
-     * <code>optional string name = 9;</code>
+     * <code>string name = 9;</code>
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
     /**
      * <pre>
-     *名字 
+     *名字
      * </pre>
      *
-     * <code>optional string name = 9;</code>
+     * <code>string name = 9;</code>
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
@@ -1866,41 +1472,29 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000100;
+  checkByteStringIsUtf8(value);
+      
       name_ = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object wwwip_ = "";
+    private java.lang.Object wwwIp_ = "";
     /**
      * <pre>
      * 外网地址
      * </pre>
      *
-     * <code>optional string wwwip = 10;</code>
-     * @return Whether the wwwip field is set.
+     * <code>string wwwIp = 10;</code>
+     * @return The wwwIp.
      */
-    public boolean hasWwwip() {
-      return ((bitField0_ & 0x00000200) != 0);
-    }
-    /**
-     * <pre>
-     * 外网地址
-     * </pre>
-     *
-     * <code>optional string wwwip = 10;</code>
-     * @return The wwwip.
-     */
-    public java.lang.String getWwwip() {
-      java.lang.Object ref = wwwip_;
+    public java.lang.String getWwwIp() {
+      java.lang.Object ref = wwwIp_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          wwwip_ = s;
-        }
+        wwwIp_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1911,17 +1505,17 @@ private static final long serialVersionUID = 0L;
      * 外网地址
      * </pre>
      *
-     * <code>optional string wwwip = 10;</code>
-     * @return The bytes for wwwip.
+     * <code>string wwwIp = 10;</code>
+     * @return The bytes for wwwIp.
      */
     public com.google.protobuf.ByteString
-        getWwwipBytes() {
-      java.lang.Object ref = wwwip_;
+        getWwwIpBytes() {
+      java.lang.Object ref = wwwIp_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        wwwip_ = b;
+        wwwIp_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1932,17 +1526,17 @@ private static final long serialVersionUID = 0L;
      * 外网地址
      * </pre>
      *
-     * <code>optional string wwwip = 10;</code>
-     * @param value The wwwip to set.
+     * <code>string wwwIp = 10;</code>
+     * @param value The wwwIp to set.
      * @return This builder for chaining.
      */
-    public Builder setWwwip(
+    public Builder setWwwIp(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000200;
-      wwwip_ = value;
+  
+      wwwIp_ = value;
       onChanged();
       return this;
     }
@@ -1951,12 +1545,12 @@ private static final long serialVersionUID = 0L;
      * 外网地址
      * </pre>
      *
-     * <code>optional string wwwip = 10;</code>
+     * <code>string wwwIp = 10;</code>
      * @return This builder for chaining.
      */
-    public Builder clearWwwip() {
-      bitField0_ = (bitField0_ & ~0x00000200);
-      wwwip_ = getDefaultInstance().getWwwip();
+    public Builder clearWwwIp() {
+      
+      wwwIp_ = getDefaultInstance().getWwwIp();
       onChanged();
       return this;
     }
@@ -1965,17 +1559,18 @@ private static final long serialVersionUID = 0L;
      * 外网地址
      * </pre>
      *
-     * <code>optional string wwwip = 10;</code>
-     * @param value The bytes for wwwip to set.
+     * <code>string wwwIp = 10;</code>
+     * @param value The bytes for wwwIp to set.
      * @return This builder for chaining.
      */
-    public Builder setWwwipBytes(
+    public Builder setWwwIpBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000200;
-      wwwip_ = value;
+  checkByteStringIsUtf8(value);
+      
+      wwwIp_ = value;
       onChanged();
       return this;
     }
@@ -1986,19 +1581,7 @@ private static final long serialVersionUID = 0L;
      *空闲内存
      * </pre>
      *
-     * <code>optional int32 freeMemory = 11;</code>
-     * @return Whether the freeMemory field is set.
-     */
-    @java.lang.Override
-    public boolean hasFreeMemory() {
-      return ((bitField0_ & 0x00000400) != 0);
-    }
-    /**
-     * <pre>
-     *空闲内存
-     * </pre>
-     *
-     * <code>optional int32 freeMemory = 11;</code>
+     * <code>int32 freeMemory = 11;</code>
      * @return The freeMemory.
      */
     @java.lang.Override
@@ -2010,12 +1593,12 @@ private static final long serialVersionUID = 0L;
      *空闲内存
      * </pre>
      *
-     * <code>optional int32 freeMemory = 11;</code>
+     * <code>int32 freeMemory = 11;</code>
      * @param value The freeMemory to set.
      * @return This builder for chaining.
      */
     public Builder setFreeMemory(int value) {
-      bitField0_ |= 0x00000400;
+      
       freeMemory_ = value;
       onChanged();
       return this;
@@ -2025,11 +1608,11 @@ private static final long serialVersionUID = 0L;
      *空闲内存
      * </pre>
      *
-     * <code>optional int32 freeMemory = 11;</code>
+     * <code>int32 freeMemory = 11;</code>
      * @return This builder for chaining.
      */
     public Builder clearFreeMemory() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      
       freeMemory_ = 0;
       onChanged();
       return this;
@@ -2041,19 +1624,7 @@ private static final long serialVersionUID = 0L;
      *可用内存
      * </pre>
      *
-     * <code>optional int32 totalMemory = 12;</code>
-     * @return Whether the totalMemory field is set.
-     */
-    @java.lang.Override
-    public boolean hasTotalMemory() {
-      return ((bitField0_ & 0x00000800) != 0);
-    }
-    /**
-     * <pre>
-     *可用内存
-     * </pre>
-     *
-     * <code>optional int32 totalMemory = 12;</code>
+     * <code>int32 totalMemory = 12;</code>
      * @return The totalMemory.
      */
     @java.lang.Override
@@ -2065,12 +1636,12 @@ private static final long serialVersionUID = 0L;
      *可用内存
      * </pre>
      *
-     * <code>optional int32 totalMemory = 12;</code>
+     * <code>int32 totalMemory = 12;</code>
      * @param value The totalMemory to set.
      * @return This builder for chaining.
      */
     public Builder setTotalMemory(int value) {
-      bitField0_ |= 0x00000800;
+      
       totalMemory_ = value;
       onChanged();
       return this;
@@ -2080,11 +1651,11 @@ private static final long serialVersionUID = 0L;
      *可用内存
      * </pre>
      *
-     * <code>optional int32 totalMemory = 12;</code>
+     * <code>int32 totalMemory = 12;</code>
      * @return This builder for chaining.
      */
     public Builder clearTotalMemory() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      
       totalMemory_ = 0;
       onChanged();
       return this;
@@ -2096,18 +1667,7 @@ private static final long serialVersionUID = 0L;
      *版本号
      * </pre>
      *
-     * <code>optional string version = 13;</code>
-     * @return Whether the version field is set.
-     */
-    public boolean hasVersion() {
-      return ((bitField0_ & 0x00001000) != 0);
-    }
-    /**
-     * <pre>
-     *版本号
-     * </pre>
-     *
-     * <code>optional string version = 13;</code>
+     * <code>string version = 13;</code>
      * @return The version.
      */
     public java.lang.String getVersion() {
@@ -2116,9 +1676,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          version_ = s;
-        }
+        version_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -2129,7 +1687,7 @@ private static final long serialVersionUID = 0L;
      *版本号
      * </pre>
      *
-     * <code>optional string version = 13;</code>
+     * <code>string version = 13;</code>
      * @return The bytes for version.
      */
     public com.google.protobuf.ByteString
@@ -2150,7 +1708,7 @@ private static final long serialVersionUID = 0L;
      *版本号
      * </pre>
      *
-     * <code>optional string version = 13;</code>
+     * <code>string version = 13;</code>
      * @param value The version to set.
      * @return This builder for chaining.
      */
@@ -2159,7 +1717,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00001000;
+  
       version_ = value;
       onChanged();
       return this;
@@ -2169,11 +1727,11 @@ private static final long serialVersionUID = 0L;
      *版本号
      * </pre>
      *
-     * <code>optional string version = 13;</code>
+     * <code>string version = 13;</code>
      * @return This builder for chaining.
      */
     public Builder clearVersion() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      
       version_ = getDefaultInstance().getVersion();
       onChanged();
       return this;
@@ -2183,7 +1741,7 @@ private static final long serialVersionUID = 0L;
      *版本号
      * </pre>
      *
-     * <code>optional string version = 13;</code>
+     * <code>string version = 13;</code>
      * @param value The bytes for version to set.
      * @return This builder for chaining.
      */
@@ -2192,7 +1750,8 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00001000;
+  checkByteStringIsUtf8(value);
+      
       version_ = value;
       onChanged();
       return this;
@@ -2210,41 +1769,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:ServerInfo)
+    // @@protoc_insertion_point(builder_scope:GameServerInfo)
   }
 
-  // @@protoc_insertion_point(class_scope:ServerInfo)
-  private static final info.xiaomo.server.shared.protocol.server.ServerInfo DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:GameServerInfo)
+  private static final info.xiaomo.server.shared.protocol.server.GameServerInfo DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new info.xiaomo.server.shared.protocol.server.ServerInfo();
+    DEFAULT_INSTANCE = new info.xiaomo.server.shared.protocol.server.GameServerInfo();
   }
 
-  public static info.xiaomo.server.shared.protocol.server.ServerInfo getDefaultInstance() {
+  public static info.xiaomo.server.shared.protocol.server.GameServerInfo getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  @java.lang.Deprecated public static final com.google.protobuf.Parser<ServerInfo>
-      PARSER = new com.google.protobuf.AbstractParser<ServerInfo>() {
+  private static final com.google.protobuf.Parser<GameServerInfo>
+      PARSER = new com.google.protobuf.AbstractParser<GameServerInfo>() {
     @java.lang.Override
-    public ServerInfo parsePartialFrom(
+    public GameServerInfo parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ServerInfo(input, extensionRegistry);
+      return new GameServerInfo(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<ServerInfo> parser() {
+  public static com.google.protobuf.Parser<GameServerInfo> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<ServerInfo> getParserForType() {
+  public com.google.protobuf.Parser<GameServerInfo> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public info.xiaomo.server.shared.protocol.server.ServerInfo getDefaultInstanceForType() {
+  public info.xiaomo.server.shared.protocol.server.GameServerInfo getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

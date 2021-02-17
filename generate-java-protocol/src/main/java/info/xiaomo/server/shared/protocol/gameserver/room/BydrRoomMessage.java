@@ -83,105 +83,102 @@ public final class BydrRoomMessage {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\025BydrRoomMessage.proto\032\tMid.proto\"d\n\020En" +
-      "terRoomRequest\022\037\n\003mid\030\001 \001(\0162\004.MID:\014Enter" +
-      "RoomReq\022!\n\004type\030\002 \002(\0162\t.RoomType:\010CLASSI" +
-      "CS\022\014\n\004rank\030\003 \002(\005\"\237\001\n\021EnterRoomResponse\022\037" +
-      "\n\003mid\030\001 \001(\0162\004.MID:\014EnterRoomRes\022\016\n\006resul" +
-      "t\030\002 \001(\005\022\033\n\010roomInfo\030\003 \001(\0132\t.RoomInfo\022\033\n\010" +
-      "fishInfo\030\004 \003(\0132\t.FishInfo\022\037\n\010roleInfo\030\005 " +
-      "\003(\0132\r.RoomRoleInfo\"d\n\025ApplyAthleticsRequ" +
-      "est\022$\n\003mid\030\001 \001(\0162\004.MID:\021ApplyAthleticsRe" +
-      "q\022\027\n\004type\030\002 \001(\0162\t.RoomType\022\014\n\004rank\030\003 \001(\005" +
-      "\"^\n\026ApplyAthleticsResponse\022$\n\003mid\030\001 \001(\0162" +
-      "\004.MID:\021ApplyAthleticsRes\022\016\n\006result\030\002 \001(\005" +
-      "\022\016\n\006roleId\030\003 \003(\003\"1\n\017QuitRoomRequest\022\036\n\003m" +
-      "id\030\001 \001(\0162\004.MID:\013QuitRoomReq\"O\n\020QuitRoomR" +
-      "esponse\022\036\n\003mid\030\001 \001(\0162\004.MID:\013QuitRoomRes\022" +
-      "\016\n\006result\030\002 \001(\005\022\013\n\003rid\030\003 \001(\005\"Y\n\025FishEnte" +
-      "rRoomResponse\022#\n\003mid\030\001 \001(\0162\004.MID:\020FishEn" +
-      "terRoomRes\022\033\n\010fishInfo\030\002 \003(\0132\t.FishInfo\"" +
-      "\215\001\n\020RoomInfoResponse\022\036\n\003mid\030\001 \001(\0162\004.MID:" +
-      "\013RoomInfoRes\022\033\n\010roomInfo\030\002 \001(\0132\t.RoomInf" +
-      "o\022\033\n\010fishInfo\030\003 \003(\0132\t.FishInfo\022\037\n\010roleIn" +
-      "fo\030\004 \003(\0132\r.RoomRoleInfo\"S\n\022RoomChangeRes" +
-      "ponse\022 \n\003mid\030\001 \001(\0162\004.MID:\rRoomChangeRes\022" +
-      "\033\n\010roomInfo\030\002 \001(\0132\t.RoomInfo\"\256\001\n\010FishInf" +
-      "o\022\n\n\002id\030\001 \003(\003\022\020\n\010configId\030\002 \003(\005\022\017\n\007track" +
-      "Id\030\003 \003(\005\022\021\n\tformation\030\004 \001(\005\022\020\n\010bornTime\030" +
-      "\005 \002(\003\022\022\n\nserverTime\030\006 \002(\003\022\r\n\005speed\030\007 \001(\005" +
-      "\022\020\n\010topSpeed\030\t \001(\005\022\031\n\021topSpeedStartTime\030" +
-      "\n \001(\003\"Y\n\010RoomInfo\022\n\n\002id\030\001 \002(\003\022\014\n\004rank\030\002 " +
-      "\001(\005\022\014\n\004type\030\003 \001(\005\022\026\n\016cumulativeGold\030\004 \001(" +
-      "\003\022\r\n\005state\030\005 \001(\003\"\323\001\n\014RoomRoleInfo\022\014\n\004nic" +
-      "k\030\001 \002(\t\022\014\n\004icon\030\002 \002(\t\022\r\n\005level\030\003 \002(\005\022\014\n\004" +
-      "gold\030\004 \002(\003\022\014\n\004sign\030\005 \001(\t\022\022\n\npopularity\030\006" +
-      " \001(\005\022\016\n\006seatNo\030\007 \001(\005\022\013\n\003vip\030\010 \001(\010\022\017\n\007dia" +
-      "mond\030\t \001(\003\022\013\n\003rid\030\n \002(\003\022\017\n\007robotNo\030\013 \001(\005" +
-      "\022\017\n\007ownerId\030\014 \001(\005\022\013\n\003sid\030\r \001(\t*#\n\010RoomTy" +
-      "pe\022\014\n\010CLASSICS\020\001\022\t\n\005ARENA\020\002B6\n2info.xiao" +
-      "mo.server.shared.protocol.gameserver.roo" +
-      "mP\001"
+      "\n\025BydrRoomMessage.proto\032\017MessageId.proto" +
+      "\"P\n\020EnterRoomRequest\022\025\n\005msgId\030\001 \001(\0162\006.Ms" +
+      "gId\022\027\n\004type\030\002 \001(\0162\t.RoomType\022\014\n\004rank\030\003 \001" +
+      "(\005\"\225\001\n\021EnterRoomResponse\022\025\n\005msgId\030\001 \001(\0162" +
+      "\006.MsgId\022\016\n\006result\030\002 \001(\005\022\033\n\010roomInfo\030\003 \001(" +
+      "\0132\t.RoomInfo\022\033\n\010fishInfo\030\004 \003(\0132\t.FishInf" +
+      "o\022\037\n\010roleInfo\030\005 \003(\0132\r.RoomRoleInfo\"U\n\025Ap" +
+      "plyAthleticsRequest\022\025\n\005msgId\030\001 \001(\0162\006.Msg" +
+      "Id\022\027\n\004type\030\002 \001(\0162\t.RoomType\022\014\n\004rank\030\003 \001(" +
+      "\005\"O\n\026ApplyAthleticsResponse\022\025\n\005msgId\030\001 \001" +
+      "(\0162\006.MsgId\022\016\n\006result\030\002 \001(\005\022\016\n\006roleId\030\003 \003" +
+      "(\003\"(\n\017QuitRoomRequest\022\025\n\005msgId\030\001 \001(\0162\006.M" +
+      "sgId\"F\n\020QuitRoomResponse\022\025\n\005msgId\030\001 \001(\0162" +
+      "\006.MsgId\022\016\n\006result\030\002 \001(\005\022\013\n\003rid\030\003 \001(\005\"K\n\025" +
+      "FishEnterRoomResponse\022\025\n\005msgId\030\001 \001(\0162\006.M" +
+      "sgId\022\033\n\010fishInfo\030\002 \003(\0132\t.FishInfo\"\204\001\n\020Ro" +
+      "omInfoResponse\022\025\n\005msgId\030\001 \001(\0162\006.MsgId\022\033\n" +
+      "\010roomInfo\030\002 \001(\0132\t.RoomInfo\022\033\n\010fishInfo\030\003" +
+      " \003(\0132\t.FishInfo\022\037\n\010roleInfo\030\004 \003(\0132\r.Room" +
+      "RoleInfo\"H\n\022RoomChangeResponse\022\025\n\005msgId\030" +
+      "\001 \001(\0162\006.MsgId\022\033\n\010roomInfo\030\002 \001(\0132\t.RoomIn" +
+      "fo\"\256\001\n\010FishInfo\022\n\n\002id\030\001 \003(\003\022\020\n\010configId\030" +
+      "\002 \003(\005\022\017\n\007trackId\030\003 \003(\005\022\021\n\tformation\030\004 \001(" +
+      "\005\022\020\n\010bornTime\030\005 \001(\003\022\022\n\nserverTime\030\006 \001(\003\022" +
+      "\r\n\005speed\030\007 \001(\005\022\020\n\010topSpeed\030\t \001(\005\022\031\n\021topS" +
+      "peedStartTime\030\n \001(\003\"Y\n\010RoomInfo\022\n\n\002id\030\001 " +
+      "\001(\003\022\014\n\004rank\030\002 \001(\005\022\014\n\004type\030\003 \001(\005\022\026\n\016cumul" +
+      "ativeGold\030\004 \001(\003\022\r\n\005state\030\005 \001(\003\"\323\001\n\014RoomR" +
+      "oleInfo\022\014\n\004nick\030\001 \001(\t\022\014\n\004icon\030\002 \001(\t\022\r\n\005l" +
+      "evel\030\003 \001(\005\022\014\n\004gold\030\004 \001(\003\022\014\n\004sign\030\005 \001(\t\022\022" +
+      "\n\npopularity\030\006 \001(\005\022\016\n\006seatNo\030\007 \001(\005\022\013\n\003vi" +
+      "p\030\010 \001(\010\022\017\n\007diamond\030\t \001(\003\022\013\n\003rid\030\n \001(\003\022\017\n" +
+      "\007robotNo\030\013 \001(\005\022\017\n\007ownerId\030\014 \001(\005\022\013\n\003sid\030\r" +
+      " \001(\t*0\n\010RoomType\022\013\n\007DEFAULT\020\000\022\014\n\010CLASSIC" +
+      "S\020\001\022\t\n\005ARENA\020\002B6\n2info.xiaomo.server.sha" +
+      "red.protocol.gameserver.roomP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          info.xiaomo.server.shared.protocol.Mid.getDescriptor(),
+          info.xiaomo.server.shared.protocol.msg.MessageId.getDescriptor(),
         });
     internal_static_EnterRoomRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_EnterRoomRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_EnterRoomRequest_descriptor,
-        new java.lang.String[] { "Mid", "Type", "Rank", });
+        new java.lang.String[] { "MsgId", "Type", "Rank", });
     internal_static_EnterRoomResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_EnterRoomResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_EnterRoomResponse_descriptor,
-        new java.lang.String[] { "Mid", "Result", "RoomInfo", "FishInfo", "RoleInfo", });
+        new java.lang.String[] { "MsgId", "Result", "RoomInfo", "FishInfo", "RoleInfo", });
     internal_static_ApplyAthleticsRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_ApplyAthleticsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ApplyAthleticsRequest_descriptor,
-        new java.lang.String[] { "Mid", "Type", "Rank", });
+        new java.lang.String[] { "MsgId", "Type", "Rank", });
     internal_static_ApplyAthleticsResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_ApplyAthleticsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ApplyAthleticsResponse_descriptor,
-        new java.lang.String[] { "Mid", "Result", "RoleId", });
+        new java.lang.String[] { "MsgId", "Result", "RoleId", });
     internal_static_QuitRoomRequest_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_QuitRoomRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_QuitRoomRequest_descriptor,
-        new java.lang.String[] { "Mid", });
+        new java.lang.String[] { "MsgId", });
     internal_static_QuitRoomResponse_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_QuitRoomResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_QuitRoomResponse_descriptor,
-        new java.lang.String[] { "Mid", "Result", "Rid", });
+        new java.lang.String[] { "MsgId", "Result", "Rid", });
     internal_static_FishEnterRoomResponse_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_FishEnterRoomResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_FishEnterRoomResponse_descriptor,
-        new java.lang.String[] { "Mid", "FishInfo", });
+        new java.lang.String[] { "MsgId", "FishInfo", });
     internal_static_RoomInfoResponse_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_RoomInfoResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_RoomInfoResponse_descriptor,
-        new java.lang.String[] { "Mid", "RoomInfo", "FishInfo", "RoleInfo", });
+        new java.lang.String[] { "MsgId", "RoomInfo", "FishInfo", "RoleInfo", });
     internal_static_RoomChangeResponse_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_RoomChangeResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_RoomChangeResponse_descriptor,
-        new java.lang.String[] { "Mid", "RoomInfo", });
+        new java.lang.String[] { "MsgId", "RoomInfo", });
     internal_static_FishInfo_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_FishInfo_fieldAccessorTable = new
@@ -200,7 +197,7 @@ public final class BydrRoomMessage {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_RoomRoleInfo_descriptor,
         new java.lang.String[] { "Nick", "Icon", "Level", "Gold", "Sign", "Popularity", "SeatNo", "Vip", "Diamond", "Rid", "RobotNo", "OwnerId", "Sid", });
-    info.xiaomo.server.shared.protocol.Mid.getDescriptor();
+    info.xiaomo.server.shared.protocol.msg.MessageId.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

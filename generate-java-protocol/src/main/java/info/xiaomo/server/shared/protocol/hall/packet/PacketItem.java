@@ -42,7 +42,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -54,17 +53,17 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 8: {
-            bitField0_ |= 0x00000001;
+
             id_ = input.readInt64();
             break;
           }
           case 16: {
-            bitField0_ |= 0x00000002;
+
             configId_ = input.readInt32();
             break;
           }
           case 24: {
-            bitField0_ |= 0x00000004;
+
             num_ = input.readInt32();
             break;
           }
@@ -100,7 +99,6 @@ private static final long serialVersionUID = 0L;
             info.xiaomo.server.shared.protocol.hall.packet.PacketItem.class, info.xiaomo.server.shared.protocol.hall.packet.PacketItem.Builder.class);
   }
 
-  private int bitField0_;
   public static final int ID_FIELD_NUMBER = 1;
   private long id_;
   /**
@@ -108,19 +106,7 @@ private static final long serialVersionUID = 0L;
    *唯一Id
    * </pre>
    *
-   * <code>required int64 id = 1;</code>
-   * @return Whether the id field is set.
-   */
-  @java.lang.Override
-  public boolean hasId() {
-    return ((bitField0_ & 0x00000001) != 0);
-  }
-  /**
-   * <pre>
-   *唯一Id
-   * </pre>
-   *
-   * <code>required int64 id = 1;</code>
+   * <code>int64 id = 1;</code>
    * @return The id.
    */
   @java.lang.Override
@@ -135,19 +121,7 @@ private static final long serialVersionUID = 0L;
    *配置Id
    * </pre>
    *
-   * <code>required int32 configId = 2;</code>
-   * @return Whether the configId field is set.
-   */
-  @java.lang.Override
-  public boolean hasConfigId() {
-    return ((bitField0_ & 0x00000002) != 0);
-  }
-  /**
-   * <pre>
-   *配置Id
-   * </pre>
-   *
-   * <code>required int32 configId = 2;</code>
+   * <code>int32 configId = 2;</code>
    * @return The configId.
    */
   @java.lang.Override
@@ -162,19 +136,7 @@ private static final long serialVersionUID = 0L;
    *数量
    * </pre>
    *
-   * <code>required int32 num = 3;</code>
-   * @return Whether the num field is set.
-   */
-  @java.lang.Override
-  public boolean hasNum() {
-    return ((bitField0_ & 0x00000004) != 0);
-  }
-  /**
-   * <pre>
-   *数量
-   * </pre>
-   *
-   * <code>required int32 num = 3;</code>
+   * <code>int32 num = 3;</code>
    * @return The num.
    */
   @java.lang.Override
@@ -189,18 +151,6 @@ private static final long serialVersionUID = 0L;
     if (isInitialized == 1) return true;
     if (isInitialized == 0) return false;
 
-    if (!hasId()) {
-      memoizedIsInitialized = 0;
-      return false;
-    }
-    if (!hasConfigId()) {
-      memoizedIsInitialized = 0;
-      return false;
-    }
-    if (!hasNum()) {
-      memoizedIsInitialized = 0;
-      return false;
-    }
     memoizedIsInitialized = 1;
     return true;
   }
@@ -208,13 +158,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (id_ != 0L) {
       output.writeInt64(1, id_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (configId_ != 0) {
       output.writeInt32(2, configId_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (num_ != 0) {
       output.writeInt32(3, num_);
     }
     unknownFields.writeTo(output);
@@ -226,15 +176,15 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (id_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, id_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (configId_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(2, configId_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (num_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(3, num_);
     }
@@ -253,21 +203,12 @@ private static final long serialVersionUID = 0L;
     }
     info.xiaomo.server.shared.protocol.hall.packet.PacketItem other = (info.xiaomo.server.shared.protocol.hall.packet.PacketItem) obj;
 
-    if (hasId() != other.hasId()) return false;
-    if (hasId()) {
-      if (getId()
-          != other.getId()) return false;
-    }
-    if (hasConfigId() != other.hasConfigId()) return false;
-    if (hasConfigId()) {
-      if (getConfigId()
-          != other.getConfigId()) return false;
-    }
-    if (hasNum() != other.hasNum()) return false;
-    if (hasNum()) {
-      if (getNum()
-          != other.getNum()) return false;
-    }
+    if (getId()
+        != other.getId()) return false;
+    if (getConfigId()
+        != other.getConfigId()) return false;
+    if (getNum()
+        != other.getNum()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -279,19 +220,13 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasId()) {
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getId());
-    }
-    if (hasConfigId()) {
-      hash = (37 * hash) + CONFIGID_FIELD_NUMBER;
-      hash = (53 * hash) + getConfigId();
-    }
-    if (hasNum()) {
-      hash = (37 * hash) + NUM_FIELD_NUMBER;
-      hash = (53 * hash) + getNum();
-    }
+    hash = (37 * hash) + ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getId());
+    hash = (37 * hash) + CONFIGID_FIELD_NUMBER;
+    hash = (53 * hash) + getConfigId();
+    hash = (37 * hash) + NUM_FIELD_NUMBER;
+    hash = (53 * hash) + getNum();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -430,11 +365,11 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       id_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000001);
+
       configId_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000002);
+
       num_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000004);
+
       return this;
     }
 
@@ -461,21 +396,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public info.xiaomo.server.shared.protocol.hall.packet.PacketItem buildPartial() {
       info.xiaomo.server.shared.protocol.hall.packet.PacketItem result = new info.xiaomo.server.shared.protocol.hall.packet.PacketItem(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.id_ = id_;
-        to_bitField0_ |= 0x00000001;
-      }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.configId_ = configId_;
-        to_bitField0_ |= 0x00000002;
-      }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.num_ = num_;
-        to_bitField0_ |= 0x00000004;
-      }
-      result.bitField0_ = to_bitField0_;
+      result.id_ = id_;
+      result.configId_ = configId_;
+      result.num_ = num_;
       onBuilt();
       return result;
     }
@@ -524,13 +447,13 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(info.xiaomo.server.shared.protocol.hall.packet.PacketItem other) {
       if (other == info.xiaomo.server.shared.protocol.hall.packet.PacketItem.getDefaultInstance()) return this;
-      if (other.hasId()) {
+      if (other.getId() != 0L) {
         setId(other.getId());
       }
-      if (other.hasConfigId()) {
+      if (other.getConfigId() != 0) {
         setConfigId(other.getConfigId());
       }
-      if (other.hasNum()) {
+      if (other.getNum() != 0) {
         setNum(other.getNum());
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -540,15 +463,6 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public final boolean isInitialized() {
-      if (!hasId()) {
-        return false;
-      }
-      if (!hasConfigId()) {
-        return false;
-      }
-      if (!hasNum()) {
-        return false;
-      }
       return true;
     }
 
@@ -570,7 +484,6 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    private int bitField0_;
 
     private long id_ ;
     /**
@@ -578,19 +491,7 @@ private static final long serialVersionUID = 0L;
      *唯一Id
      * </pre>
      *
-     * <code>required int64 id = 1;</code>
-     * @return Whether the id field is set.
-     */
-    @java.lang.Override
-    public boolean hasId() {
-      return ((bitField0_ & 0x00000001) != 0);
-    }
-    /**
-     * <pre>
-     *唯一Id
-     * </pre>
-     *
-     * <code>required int64 id = 1;</code>
+     * <code>int64 id = 1;</code>
      * @return The id.
      */
     @java.lang.Override
@@ -602,12 +503,12 @@ private static final long serialVersionUID = 0L;
      *唯一Id
      * </pre>
      *
-     * <code>required int64 id = 1;</code>
+     * <code>int64 id = 1;</code>
      * @param value The id to set.
      * @return This builder for chaining.
      */
     public Builder setId(long value) {
-      bitField0_ |= 0x00000001;
+      
       id_ = value;
       onChanged();
       return this;
@@ -617,11 +518,11 @@ private static final long serialVersionUID = 0L;
      *唯一Id
      * </pre>
      *
-     * <code>required int64 id = 1;</code>
+     * <code>int64 id = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      
       id_ = 0L;
       onChanged();
       return this;
@@ -633,19 +534,7 @@ private static final long serialVersionUID = 0L;
      *配置Id
      * </pre>
      *
-     * <code>required int32 configId = 2;</code>
-     * @return Whether the configId field is set.
-     */
-    @java.lang.Override
-    public boolean hasConfigId() {
-      return ((bitField0_ & 0x00000002) != 0);
-    }
-    /**
-     * <pre>
-     *配置Id
-     * </pre>
-     *
-     * <code>required int32 configId = 2;</code>
+     * <code>int32 configId = 2;</code>
      * @return The configId.
      */
     @java.lang.Override
@@ -657,12 +546,12 @@ private static final long serialVersionUID = 0L;
      *配置Id
      * </pre>
      *
-     * <code>required int32 configId = 2;</code>
+     * <code>int32 configId = 2;</code>
      * @param value The configId to set.
      * @return This builder for chaining.
      */
     public Builder setConfigId(int value) {
-      bitField0_ |= 0x00000002;
+      
       configId_ = value;
       onChanged();
       return this;
@@ -672,11 +561,11 @@ private static final long serialVersionUID = 0L;
      *配置Id
      * </pre>
      *
-     * <code>required int32 configId = 2;</code>
+     * <code>int32 configId = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearConfigId() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      
       configId_ = 0;
       onChanged();
       return this;
@@ -688,19 +577,7 @@ private static final long serialVersionUID = 0L;
      *数量
      * </pre>
      *
-     * <code>required int32 num = 3;</code>
-     * @return Whether the num field is set.
-     */
-    @java.lang.Override
-    public boolean hasNum() {
-      return ((bitField0_ & 0x00000004) != 0);
-    }
-    /**
-     * <pre>
-     *数量
-     * </pre>
-     *
-     * <code>required int32 num = 3;</code>
+     * <code>int32 num = 3;</code>
      * @return The num.
      */
     @java.lang.Override
@@ -712,12 +589,12 @@ private static final long serialVersionUID = 0L;
      *数量
      * </pre>
      *
-     * <code>required int32 num = 3;</code>
+     * <code>int32 num = 3;</code>
      * @param value The num to set.
      * @return This builder for chaining.
      */
     public Builder setNum(int value) {
-      bitField0_ |= 0x00000004;
+      
       num_ = value;
       onChanged();
       return this;
@@ -727,11 +604,11 @@ private static final long serialVersionUID = 0L;
      *数量
      * </pre>
      *
-     * <code>required int32 num = 3;</code>
+     * <code>int32 num = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearNum() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      
       num_ = 0;
       onChanged();
       return this;
@@ -762,7 +639,7 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  @java.lang.Deprecated public static final com.google.protobuf.Parser<PacketItem>
+  private static final com.google.protobuf.Parser<PacketItem>
       PARSER = new com.google.protobuf.AbstractParser<PacketItem>() {
     @java.lang.Override
     public PacketItem parsePartialFrom(

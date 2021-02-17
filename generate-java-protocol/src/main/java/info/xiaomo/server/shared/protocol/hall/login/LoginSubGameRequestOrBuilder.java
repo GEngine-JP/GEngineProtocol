@@ -12,35 +12,26 @@ public interface LoginSubGameRequestOrBuilder extends
    *消息id
    * </pre>
    *
-   * <code>optional .MID mid = 1 [default = LoginSubGameReq];</code>
-   * @return Whether the mid field is set.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The enum numeric value on the wire for msgId.
    */
-  boolean hasMid();
+  int getMsgIdValue();
   /**
    * <pre>
    *消息id
    * </pre>
    *
-   * <code>optional .MID mid = 1 [default = LoginSubGameReq];</code>
-   * @return The mid.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The msgId.
    */
-  info.xiaomo.server.shared.protocol.Mid.MID getMid();
+  info.xiaomo.server.shared.protocol.msg.MsgId getMsgId();
 
   /**
    * <pre>
    *角色id
    * </pre>
    *
-   * <code>required int64 rid = 2;</code>
-   * @return Whether the rid field is set.
-   */
-  boolean hasRid();
-  /**
-   * <pre>
-   *角色id
-   * </pre>
-   *
-   * <code>required int64 rid = 2;</code>
+   * <code>int64 rid = 2;</code>
    * @return The rid.
    */
   long getRid();
@@ -50,16 +41,7 @@ public interface LoginSubGameRequestOrBuilder extends
    *类型 0登录，1重连 2跨服登录
    * </pre>
    *
-   * <code>optional int32 type = 3;</code>
-   * @return Whether the type field is set.
-   */
-  boolean hasType();
-  /**
-   * <pre>
-   *类型 0登录，1重连 2跨服登录
-   * </pre>
-   *
-   * <code>optional int32 type = 3;</code>
+   * <code>int32 type = 3;</code>
    * @return The type.
    */
   int getType();
@@ -69,16 +51,7 @@ public interface LoginSubGameRequestOrBuilder extends
    *游戏类型 101捕鱼达人
    * </pre>
    *
-   * <code>optional int32 gameType = 4;</code>
-   * @return Whether the gameType field is set.
-   */
-  boolean hasGameType();
-  /**
-   * <pre>
-   *游戏类型 101捕鱼达人
-   * </pre>
-   *
-   * <code>optional int32 gameType = 4;</code>
+   * <code>int32 gameType = 4;</code>
    * @return The gameType.
    */
   int getGameType();

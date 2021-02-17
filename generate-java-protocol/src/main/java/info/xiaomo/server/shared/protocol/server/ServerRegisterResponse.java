@@ -20,7 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ServerRegisterResponse() {
-    mid_ = 1002;
+    msgId_ = 0;
   }
 
   @java.lang.Override
@@ -43,7 +43,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -56,27 +55,21 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
             int rawValue = input.readEnum();
-              @SuppressWarnings("deprecation")
-            info.xiaomo.server.shared.protocol.Mid.MID value = info.xiaomo.server.shared.protocol.Mid.MID.valueOf(rawValue);
-            if (value == null) {
-              unknownFields.mergeVarintField(1, rawValue);
-            } else {
-              bitField0_ |= 0x00000001;
-              mid_ = rawValue;
-            }
+
+            msgId_ = rawValue;
             break;
           }
           case 18: {
-            info.xiaomo.server.shared.protocol.server.ServerInfo.Builder subBuilder = null;
-            if (((bitField0_ & 0x00000002) != 0)) {
+            info.xiaomo.server.shared.protocol.server.GameServerInfo.Builder subBuilder = null;
+            if (serverInfo_ != null) {
               subBuilder = serverInfo_.toBuilder();
             }
-            serverInfo_ = input.readMessage(info.xiaomo.server.shared.protocol.server.ServerInfo.PARSER, extensionRegistry);
+            serverInfo_ = input.readMessage(info.xiaomo.server.shared.protocol.server.GameServerInfo.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(serverInfo_);
               serverInfo_ = subBuilder.buildPartial();
             }
-            bitField0_ |= 0x00000002;
+
             break;
           }
           default: {
@@ -111,62 +104,61 @@ private static final long serialVersionUID = 0L;
             info.xiaomo.server.shared.protocol.server.ServerRegisterResponse.class, info.xiaomo.server.shared.protocol.server.ServerRegisterResponse.Builder.class);
   }
 
-  private int bitField0_;
-  public static final int MID_FIELD_NUMBER = 1;
-  private int mid_;
+  public static final int MSGID_FIELD_NUMBER = 1;
+  private int msgId_;
   /**
-   * <code>optional .MID mid = 1 [default = ServerRegisterRes];</code>
-   * @return Whether the mid field is set.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The enum numeric value on the wire for msgId.
    */
-  @java.lang.Override public boolean hasMid() {
-    return ((bitField0_ & 0x00000001) != 0);
+  @java.lang.Override public int getMsgIdValue() {
+    return msgId_;
   }
   /**
-   * <code>optional .MID mid = 1 [default = ServerRegisterRes];</code>
-   * @return The mid.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The msgId.
    */
-  @java.lang.Override public info.xiaomo.server.shared.protocol.Mid.MID getMid() {
+  @java.lang.Override public info.xiaomo.server.shared.protocol.msg.MsgId getMsgId() {
     @SuppressWarnings("deprecation")
-    info.xiaomo.server.shared.protocol.Mid.MID result = info.xiaomo.server.shared.protocol.Mid.MID.valueOf(mid_);
-    return result == null ? info.xiaomo.server.shared.protocol.Mid.MID.ServerRegisterRes : result;
+    info.xiaomo.server.shared.protocol.msg.MsgId result = info.xiaomo.server.shared.protocol.msg.MsgId.valueOf(msgId_);
+    return result == null ? info.xiaomo.server.shared.protocol.msg.MsgId.UNRECOGNIZED : result;
   }
 
   public static final int SERVERINFO_FIELD_NUMBER = 2;
-  private info.xiaomo.server.shared.protocol.server.ServerInfo serverInfo_;
+  private info.xiaomo.server.shared.protocol.server.GameServerInfo serverInfo_;
   /**
    * <pre>
    *返回服务器信息，状态，在线人数在集群服设置
    * </pre>
    *
-   * <code>optional .ServerInfo serverInfo = 2;</code>
+   * <code>.GameServerInfo serverInfo = 2;</code>
    * @return Whether the serverInfo field is set.
    */
   @java.lang.Override
   public boolean hasServerInfo() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return serverInfo_ != null;
   }
   /**
    * <pre>
    *返回服务器信息，状态，在线人数在集群服设置
    * </pre>
    *
-   * <code>optional .ServerInfo serverInfo = 2;</code>
+   * <code>.GameServerInfo serverInfo = 2;</code>
    * @return The serverInfo.
    */
   @java.lang.Override
-  public info.xiaomo.server.shared.protocol.server.ServerInfo getServerInfo() {
-    return serverInfo_ == null ? info.xiaomo.server.shared.protocol.server.ServerInfo.getDefaultInstance() : serverInfo_;
+  public info.xiaomo.server.shared.protocol.server.GameServerInfo getServerInfo() {
+    return serverInfo_ == null ? info.xiaomo.server.shared.protocol.server.GameServerInfo.getDefaultInstance() : serverInfo_;
   }
   /**
    * <pre>
    *返回服务器信息，状态，在线人数在集群服设置
    * </pre>
    *
-   * <code>optional .ServerInfo serverInfo = 2;</code>
+   * <code>.GameServerInfo serverInfo = 2;</code>
    */
   @java.lang.Override
-  public info.xiaomo.server.shared.protocol.server.ServerInfoOrBuilder getServerInfoOrBuilder() {
-    return serverInfo_ == null ? info.xiaomo.server.shared.protocol.server.ServerInfo.getDefaultInstance() : serverInfo_;
+  public info.xiaomo.server.shared.protocol.server.GameServerInfoOrBuilder getServerInfoOrBuilder() {
+    return getServerInfo();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -176,12 +168,6 @@ private static final long serialVersionUID = 0L;
     if (isInitialized == 1) return true;
     if (isInitialized == 0) return false;
 
-    if (hasServerInfo()) {
-      if (!getServerInfo().isInitialized()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-    }
     memoizedIsInitialized = 1;
     return true;
   }
@@ -189,10 +175,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeEnum(1, mid_);
+    if (msgId_ != info.xiaomo.server.shared.protocol.msg.MsgId.Base.getNumber()) {
+      output.writeEnum(1, msgId_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (serverInfo_ != null) {
       output.writeMessage(2, getServerInfo());
     }
     unknownFields.writeTo(output);
@@ -204,11 +190,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (msgId_ != info.xiaomo.server.shared.protocol.msg.MsgId.Base.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(1, mid_);
+        .computeEnumSize(1, msgId_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (serverInfo_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getServerInfo());
     }
@@ -227,10 +213,7 @@ private static final long serialVersionUID = 0L;
     }
     info.xiaomo.server.shared.protocol.server.ServerRegisterResponse other = (info.xiaomo.server.shared.protocol.server.ServerRegisterResponse) obj;
 
-    if (hasMid() != other.hasMid()) return false;
-    if (hasMid()) {
-      if (mid_ != other.mid_) return false;
-    }
+    if (msgId_ != other.msgId_) return false;
     if (hasServerInfo() != other.hasServerInfo()) return false;
     if (hasServerInfo()) {
       if (!getServerInfo()
@@ -247,10 +230,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasMid()) {
-      hash = (37 * hash) + MID_FIELD_NUMBER;
-      hash = (53 * hash) + mid_;
-    }
+    hash = (37 * hash) + MSGID_FIELD_NUMBER;
+    hash = (53 * hash) + msgId_;
     if (hasServerInfo()) {
       hash = (37 * hash) + SERVERINFO_FIELD_NUMBER;
       hash = (53 * hash) + getServerInfo().hashCode();
@@ -387,20 +368,19 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
-        getServerInfoFieldBuilder();
       }
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      mid_ = 1002;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      msgId_ = 0;
+
       if (serverInfoBuilder_ == null) {
         serverInfo_ = null;
       } else {
-        serverInfoBuilder_.clear();
+        serverInfo_ = null;
+        serverInfoBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -427,21 +407,12 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public info.xiaomo.server.shared.protocol.server.ServerRegisterResponse buildPartial() {
       info.xiaomo.server.shared.protocol.server.ServerRegisterResponse result = new info.xiaomo.server.shared.protocol.server.ServerRegisterResponse(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      result.msgId_ = msgId_;
+      if (serverInfoBuilder_ == null) {
+        result.serverInfo_ = serverInfo_;
+      } else {
+        result.serverInfo_ = serverInfoBuilder_.build();
       }
-      result.mid_ = mid_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        if (serverInfoBuilder_ == null) {
-          result.serverInfo_ = serverInfo_;
-        } else {
-          result.serverInfo_ = serverInfoBuilder_.build();
-        }
-        to_bitField0_ |= 0x00000002;
-      }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -490,8 +461,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(info.xiaomo.server.shared.protocol.server.ServerRegisterResponse other) {
       if (other == info.xiaomo.server.shared.protocol.server.ServerRegisterResponse.getDefaultInstance()) return this;
-      if (other.hasMid()) {
-        setMid(other.getMid());
+      if (other.msgId_ != 0) {
+        setMsgIdValue(other.getMsgIdValue());
       }
       if (other.hasServerInfo()) {
         mergeServerInfo(other.getServerInfo());
@@ -503,11 +474,6 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public final boolean isInitialized() {
-      if (hasServerInfo()) {
-        if (!getServerInfo().isInitialized()) {
-          return false;
-        }
-      }
       return true;
     }
 
@@ -529,76 +495,86 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    private int bitField0_;
 
-    private int mid_ = 1002;
+    private int msgId_ = 0;
     /**
-     * <code>optional .MID mid = 1 [default = ServerRegisterRes];</code>
-     * @return Whether the mid field is set.
+     * <code>.MsgId msgId = 1;</code>
+     * @return The enum numeric value on the wire for msgId.
      */
-    @java.lang.Override public boolean hasMid() {
-      return ((bitField0_ & 0x00000001) != 0);
+    @java.lang.Override public int getMsgIdValue() {
+      return msgId_;
     }
     /**
-     * <code>optional .MID mid = 1 [default = ServerRegisterRes];</code>
-     * @return The mid.
-     */
-    @java.lang.Override
-    public info.xiaomo.server.shared.protocol.Mid.MID getMid() {
-      @SuppressWarnings("deprecation")
-      info.xiaomo.server.shared.protocol.Mid.MID result = info.xiaomo.server.shared.protocol.Mid.MID.valueOf(mid_);
-      return result == null ? info.xiaomo.server.shared.protocol.Mid.MID.ServerRegisterRes : result;
-    }
-    /**
-     * <code>optional .MID mid = 1 [default = ServerRegisterRes];</code>
-     * @param value The mid to set.
+     * <code>.MsgId msgId = 1;</code>
+     * @param value The enum numeric value on the wire for msgId to set.
      * @return This builder for chaining.
      */
-    public Builder setMid(info.xiaomo.server.shared.protocol.Mid.MID value) {
+    public Builder setMsgIdValue(int value) {
+      
+      msgId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.MsgId msgId = 1;</code>
+     * @return The msgId.
+     */
+    @java.lang.Override
+    public info.xiaomo.server.shared.protocol.msg.MsgId getMsgId() {
+      @SuppressWarnings("deprecation")
+      info.xiaomo.server.shared.protocol.msg.MsgId result = info.xiaomo.server.shared.protocol.msg.MsgId.valueOf(msgId_);
+      return result == null ? info.xiaomo.server.shared.protocol.msg.MsgId.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.MsgId msgId = 1;</code>
+     * @param value The msgId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMsgId(info.xiaomo.server.shared.protocol.msg.MsgId value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
-      mid_ = value.getNumber();
+      
+      msgId_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
-     * <code>optional .MID mid = 1 [default = ServerRegisterRes];</code>
+     * <code>.MsgId msgId = 1;</code>
      * @return This builder for chaining.
      */
-    public Builder clearMid() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      mid_ = 1002;
+    public Builder clearMsgId() {
+      
+      msgId_ = 0;
       onChanged();
       return this;
     }
 
-    private info.xiaomo.server.shared.protocol.server.ServerInfo serverInfo_;
+    private info.xiaomo.server.shared.protocol.server.GameServerInfo serverInfo_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        info.xiaomo.server.shared.protocol.server.ServerInfo, info.xiaomo.server.shared.protocol.server.ServerInfo.Builder, info.xiaomo.server.shared.protocol.server.ServerInfoOrBuilder> serverInfoBuilder_;
+        info.xiaomo.server.shared.protocol.server.GameServerInfo, info.xiaomo.server.shared.protocol.server.GameServerInfo.Builder, info.xiaomo.server.shared.protocol.server.GameServerInfoOrBuilder> serverInfoBuilder_;
     /**
      * <pre>
      *返回服务器信息，状态，在线人数在集群服设置
      * </pre>
      *
-     * <code>optional .ServerInfo serverInfo = 2;</code>
+     * <code>.GameServerInfo serverInfo = 2;</code>
      * @return Whether the serverInfo field is set.
      */
     public boolean hasServerInfo() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return serverInfoBuilder_ != null || serverInfo_ != null;
     }
     /**
      * <pre>
      *返回服务器信息，状态，在线人数在集群服设置
      * </pre>
      *
-     * <code>optional .ServerInfo serverInfo = 2;</code>
+     * <code>.GameServerInfo serverInfo = 2;</code>
      * @return The serverInfo.
      */
-    public info.xiaomo.server.shared.protocol.server.ServerInfo getServerInfo() {
+    public info.xiaomo.server.shared.protocol.server.GameServerInfo getServerInfo() {
       if (serverInfoBuilder_ == null) {
-        return serverInfo_ == null ? info.xiaomo.server.shared.protocol.server.ServerInfo.getDefaultInstance() : serverInfo_;
+        return serverInfo_ == null ? info.xiaomo.server.shared.protocol.server.GameServerInfo.getDefaultInstance() : serverInfo_;
       } else {
         return serverInfoBuilder_.getMessage();
       }
@@ -608,9 +584,9 @@ private static final long serialVersionUID = 0L;
      *返回服务器信息，状态，在线人数在集群服设置
      * </pre>
      *
-     * <code>optional .ServerInfo serverInfo = 2;</code>
+     * <code>.GameServerInfo serverInfo = 2;</code>
      */
-    public Builder setServerInfo(info.xiaomo.server.shared.protocol.server.ServerInfo value) {
+    public Builder setServerInfo(info.xiaomo.server.shared.protocol.server.GameServerInfo value) {
       if (serverInfoBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -620,7 +596,7 @@ private static final long serialVersionUID = 0L;
       } else {
         serverInfoBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000002;
+
       return this;
     }
     /**
@@ -628,17 +604,17 @@ private static final long serialVersionUID = 0L;
      *返回服务器信息，状态，在线人数在集群服设置
      * </pre>
      *
-     * <code>optional .ServerInfo serverInfo = 2;</code>
+     * <code>.GameServerInfo serverInfo = 2;</code>
      */
     public Builder setServerInfo(
-        info.xiaomo.server.shared.protocol.server.ServerInfo.Builder builderForValue) {
+        info.xiaomo.server.shared.protocol.server.GameServerInfo.Builder builderForValue) {
       if (serverInfoBuilder_ == null) {
         serverInfo_ = builderForValue.build();
         onChanged();
       } else {
         serverInfoBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000002;
+
       return this;
     }
     /**
@@ -646,15 +622,13 @@ private static final long serialVersionUID = 0L;
      *返回服务器信息，状态，在线人数在集群服设置
      * </pre>
      *
-     * <code>optional .ServerInfo serverInfo = 2;</code>
+     * <code>.GameServerInfo serverInfo = 2;</code>
      */
-    public Builder mergeServerInfo(info.xiaomo.server.shared.protocol.server.ServerInfo value) {
+    public Builder mergeServerInfo(info.xiaomo.server.shared.protocol.server.GameServerInfo value) {
       if (serverInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0) &&
-            serverInfo_ != null &&
-            serverInfo_ != info.xiaomo.server.shared.protocol.server.ServerInfo.getDefaultInstance()) {
+        if (serverInfo_ != null) {
           serverInfo_ =
-            info.xiaomo.server.shared.protocol.server.ServerInfo.newBuilder(serverInfo_).mergeFrom(value).buildPartial();
+            info.xiaomo.server.shared.protocol.server.GameServerInfo.newBuilder(serverInfo_).mergeFrom(value).buildPartial();
         } else {
           serverInfo_ = value;
         }
@@ -662,7 +636,7 @@ private static final long serialVersionUID = 0L;
       } else {
         serverInfoBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000002;
+
       return this;
     }
     /**
@@ -670,16 +644,17 @@ private static final long serialVersionUID = 0L;
      *返回服务器信息，状态，在线人数在集群服设置
      * </pre>
      *
-     * <code>optional .ServerInfo serverInfo = 2;</code>
+     * <code>.GameServerInfo serverInfo = 2;</code>
      */
     public Builder clearServerInfo() {
       if (serverInfoBuilder_ == null) {
         serverInfo_ = null;
         onChanged();
       } else {
-        serverInfoBuilder_.clear();
+        serverInfo_ = null;
+        serverInfoBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+
       return this;
     }
     /**
@@ -687,10 +662,10 @@ private static final long serialVersionUID = 0L;
      *返回服务器信息，状态，在线人数在集群服设置
      * </pre>
      *
-     * <code>optional .ServerInfo serverInfo = 2;</code>
+     * <code>.GameServerInfo serverInfo = 2;</code>
      */
-    public info.xiaomo.server.shared.protocol.server.ServerInfo.Builder getServerInfoBuilder() {
-      bitField0_ |= 0x00000002;
+    public info.xiaomo.server.shared.protocol.server.GameServerInfo.Builder getServerInfoBuilder() {
+      
       onChanged();
       return getServerInfoFieldBuilder().getBuilder();
     }
@@ -699,14 +674,14 @@ private static final long serialVersionUID = 0L;
      *返回服务器信息，状态，在线人数在集群服设置
      * </pre>
      *
-     * <code>optional .ServerInfo serverInfo = 2;</code>
+     * <code>.GameServerInfo serverInfo = 2;</code>
      */
-    public info.xiaomo.server.shared.protocol.server.ServerInfoOrBuilder getServerInfoOrBuilder() {
+    public info.xiaomo.server.shared.protocol.server.GameServerInfoOrBuilder getServerInfoOrBuilder() {
       if (serverInfoBuilder_ != null) {
         return serverInfoBuilder_.getMessageOrBuilder();
       } else {
         return serverInfo_ == null ?
-            info.xiaomo.server.shared.protocol.server.ServerInfo.getDefaultInstance() : serverInfo_;
+            info.xiaomo.server.shared.protocol.server.GameServerInfo.getDefaultInstance() : serverInfo_;
       }
     }
     /**
@@ -714,14 +689,14 @@ private static final long serialVersionUID = 0L;
      *返回服务器信息，状态，在线人数在集群服设置
      * </pre>
      *
-     * <code>optional .ServerInfo serverInfo = 2;</code>
+     * <code>.GameServerInfo serverInfo = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        info.xiaomo.server.shared.protocol.server.ServerInfo, info.xiaomo.server.shared.protocol.server.ServerInfo.Builder, info.xiaomo.server.shared.protocol.server.ServerInfoOrBuilder> 
+        info.xiaomo.server.shared.protocol.server.GameServerInfo, info.xiaomo.server.shared.protocol.server.GameServerInfo.Builder, info.xiaomo.server.shared.protocol.server.GameServerInfoOrBuilder> 
         getServerInfoFieldBuilder() {
       if (serverInfoBuilder_ == null) {
         serverInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            info.xiaomo.server.shared.protocol.server.ServerInfo, info.xiaomo.server.shared.protocol.server.ServerInfo.Builder, info.xiaomo.server.shared.protocol.server.ServerInfoOrBuilder>(
+            info.xiaomo.server.shared.protocol.server.GameServerInfo, info.xiaomo.server.shared.protocol.server.GameServerInfo.Builder, info.xiaomo.server.shared.protocol.server.GameServerInfoOrBuilder>(
                 getServerInfo(),
                 getParentForChildren(),
                 isClean());
@@ -755,7 +730,7 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  @java.lang.Deprecated public static final com.google.protobuf.Parser<ServerRegisterResponse>
+  private static final com.google.protobuf.Parser<ServerRegisterResponse>
       PARSER = new com.google.protobuf.AbstractParser<ServerRegisterResponse>() {
     @java.lang.Override
     public ServerRegisterResponse parsePartialFrom(

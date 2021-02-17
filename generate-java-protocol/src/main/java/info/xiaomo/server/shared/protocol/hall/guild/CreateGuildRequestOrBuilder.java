@@ -12,35 +12,26 @@ public interface CreateGuildRequestOrBuilder extends
    *消息id
    * </pre>
    *
-   * <code>optional .MID mid = 1 [default = CreateGuildReq];</code>
-   * @return Whether the mid field is set.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The enum numeric value on the wire for msgId.
    */
-  boolean hasMid();
+  int getMsgIdValue();
   /**
    * <pre>
    *消息id
    * </pre>
    *
-   * <code>optional .MID mid = 1 [default = CreateGuildReq];</code>
-   * @return The mid.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The msgId.
    */
-  info.xiaomo.server.shared.protocol.Mid.MID getMid();
+  info.xiaomo.server.shared.protocol.msg.MsgId getMsgId();
 
   /**
    * <pre>
    *公会名称
    * </pre>
    *
-   * <code>required string name = 2;</code>
-   * @return Whether the name field is set.
-   */
-  boolean hasName();
-  /**
-   * <pre>
-   *公会名称
-   * </pre>
-   *
-   * <code>required string name = 2;</code>
+   * <code>string name = 2;</code>
    * @return The name.
    */
   java.lang.String getName();
@@ -49,7 +40,7 @@ public interface CreateGuildRequestOrBuilder extends
    *公会名称
    * </pre>
    *
-   * <code>required string name = 2;</code>
+   * <code>string name = 2;</code>
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString

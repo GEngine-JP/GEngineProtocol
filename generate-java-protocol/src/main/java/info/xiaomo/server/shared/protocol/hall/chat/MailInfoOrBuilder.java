@@ -12,16 +12,7 @@ public interface MailInfoOrBuilder extends
    *ID
    * </pre>
    *
-   * <code>required int64 id = 1;</code>
-   * @return Whether the id field is set.
-   */
-  boolean hasId();
-  /**
-   * <pre>
-   *ID
-   * </pre>
-   *
-   * <code>required int64 id = 1;</code>
+   * <code>int64 id = 1;</code>
    * @return The id.
    */
   long getId();
@@ -31,16 +22,7 @@ public interface MailInfoOrBuilder extends
    *发送者ID
    * </pre>
    *
-   * <code>optional int64 senderId = 2;</code>
-   * @return Whether the senderId field is set.
-   */
-  boolean hasSenderId();
-  /**
-   * <pre>
-   *发送者ID
-   * </pre>
-   *
-   * <code>optional int64 senderId = 2;</code>
+   * <code>int64 senderId = 2;</code>
    * @return The senderId.
    */
   long getSenderId();
@@ -50,16 +32,7 @@ public interface MailInfoOrBuilder extends
    *标题
    * </pre>
    *
-   * <code>required string title = 3;</code>
-   * @return Whether the title field is set.
-   */
-  boolean hasTitle();
-  /**
-   * <pre>
-   *标题
-   * </pre>
-   *
-   * <code>required string title = 3;</code>
+   * <code>string title = 3;</code>
    * @return The title.
    */
   java.lang.String getTitle();
@@ -68,7 +41,7 @@ public interface MailInfoOrBuilder extends
    *标题
    * </pre>
    *
-   * <code>required string title = 3;</code>
+   * <code>string title = 3;</code>
    * @return The bytes for title.
    */
   com.google.protobuf.ByteString
@@ -79,16 +52,7 @@ public interface MailInfoOrBuilder extends
    *内容
    * </pre>
    *
-   * <code>required string content = 4;</code>
-   * @return Whether the content field is set.
-   */
-  boolean hasContent();
-  /**
-   * <pre>
-   *内容
-   * </pre>
-   *
-   * <code>required string content = 4;</code>
+   * <code>string content = 4;</code>
    * @return The content.
    */
   java.lang.String getContent();
@@ -97,7 +61,7 @@ public interface MailInfoOrBuilder extends
    *内容
    * </pre>
    *
-   * <code>required string content = 4;</code>
+   * <code>string content = 4;</code>
    * @return The bytes for content.
    */
   com.google.protobuf.ByteString
@@ -108,16 +72,7 @@ public interface MailInfoOrBuilder extends
    *状态 0新邮件、1已读、2已领取道具、3删除
    * </pre>
    *
-   * <code>required int32 state = 5;</code>
-   * @return Whether the state field is set.
-   */
-  boolean hasState();
-  /**
-   * <pre>
-   *状态 0新邮件、1已读、2已领取道具、3删除
-   * </pre>
-   *
-   * <code>required int32 state = 5;</code>
+   * <code>int32 state = 5;</code>
    * @return The state.
    */
   int getState();
@@ -127,16 +82,7 @@ public interface MailInfoOrBuilder extends
    *创建时间
    * </pre>
    *
-   * <code>required int64 createTime = 6;</code>
-   * @return Whether the createTime field is set.
-   */
-  boolean hasCreateTime();
-  /**
-   * <pre>
-   *创建时间
-   * </pre>
-   *
-   * <code>required int64 createTime = 6;</code>
+   * <code>int64 createTime = 6;</code>
    * @return The createTime.
    */
   long getCreateTime();

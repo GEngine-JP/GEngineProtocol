@@ -8,31 +8,22 @@ public interface ServerListRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>optional .MID mid = 1 [default = ServerListReq];</code>
-   * @return Whether the mid field is set.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The enum numeric value on the wire for msgId.
    */
-  boolean hasMid();
+  int getMsgIdValue();
   /**
-   * <code>optional .MID mid = 1 [default = ServerListReq];</code>
-   * @return The mid.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The msgId.
    */
-  info.xiaomo.server.shared.protocol.Mid.MID getMid();
+  info.xiaomo.server.shared.protocol.msg.MsgId getMsgId();
 
   /**
    * <pre>
    *服务器类型
    * </pre>
    *
-   * <code>required int32 serverType = 2;</code>
-   * @return Whether the serverType field is set.
-   */
-  boolean hasServerType();
-  /**
-   * <pre>
-   *服务器类型
-   * </pre>
-   *
-   * <code>required int32 serverType = 2;</code>
+   * <code>int32 serverType = 2;</code>
    * @return The serverType.
    */
   int getServerType();

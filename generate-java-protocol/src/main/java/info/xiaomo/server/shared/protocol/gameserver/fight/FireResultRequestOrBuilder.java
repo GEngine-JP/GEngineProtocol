@@ -12,19 +12,29 @@ public interface FireResultRequestOrBuilder extends
    *消息id
    * </pre>
    *
-   * <code>optional .MID mid = 1 [default = FireResultReq];</code>
-   * @return Whether the mid field is set.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The enum numeric value on the wire for msgId.
    */
-  boolean hasMid();
+  int getMsgIdValue();
   /**
    * <pre>
    *消息id
    * </pre>
    *
-   * <code>optional .MID mid = 1 [default = FireResultReq];</code>
-   * @return The mid.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The msgId.
    */
-  info.xiaomo.server.shared.protocol.Mid.MID getMid();
+  info.xiaomo.server.shared.protocol.msg.MsgId getMsgId();
+
+  /**
+   * <pre>
+   *开炮金币
+   * </pre>
+   *
+   * <code>int32 fireGold = 2;</code>
+   * @return The fireGold.
+   */
+  int getFireGold();
 
   /**
    * <pre>
@@ -60,16 +70,7 @@ public interface FireResultRequestOrBuilder extends
    *特殊鱼计算的倍数 0普通鱼
    * </pre>
    *
-   * <code>optional int32 multiple = 4;</code>
-   * @return Whether the multiple field is set.
-   */
-  boolean hasMultiple();
-  /**
-   * <pre>
-   *特殊鱼计算的倍数 0普通鱼
-   * </pre>
-   *
-   * <code>optional int32 multiple = 4;</code>
+   * <code>int32 multiple = 4;</code>
    * @return The multiple.
    */
   int getMultiple();
@@ -79,36 +80,8 @@ public interface FireResultRequestOrBuilder extends
    *特殊鱼ID
    * </pre>
    *
-   * <code>optional int64 specialFishId = 5;</code>
-   * @return Whether the specialFishId field is set.
-   */
-  boolean hasSpecialFishId();
-  /**
-   * <pre>
-   *特殊鱼ID
-   * </pre>
-   *
-   * <code>optional int64 specialFishId = 5;</code>
+   * <code>int64 specialFishId = 5;</code>
    * @return The specialFishId.
    */
   long getSpecialFishId();
-
-  /**
-   * <pre>
-   *开炮金币
-   * </pre>
-   *
-   * <code>optional int32 fireGold = 6;</code>
-   * @return Whether the fireGold field is set.
-   */
-  boolean hasFireGold();
-  /**
-   * <pre>
-   *开炮金币
-   * </pre>
-   *
-   * <code>optional int32 fireGold = 6;</code>
-   * @return The fireGold.
-   */
-  int getFireGold();
 }

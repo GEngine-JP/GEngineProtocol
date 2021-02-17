@@ -8,31 +8,22 @@ public interface ChangeRoleServerRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>optional .MID mid = 1 [default = ChangeRoleServerReq];</code>
-   * @return Whether the mid field is set.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The enum numeric value on the wire for msgId.
    */
-  boolean hasMid();
+  int getMsgIdValue();
   /**
-   * <code>optional .MID mid = 1 [default = ChangeRoleServerReq];</code>
-   * @return The mid.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The msgId.
    */
-  info.xiaomo.server.shared.protocol.Mid.MID getMid();
+  info.xiaomo.server.shared.protocol.msg.MsgId getMsgId();
 
   /**
    * <pre>
    *目标服务器ID
    * </pre>
    *
-   * <code>optional int32 serverId = 2;</code>
-   * @return Whether the serverId field is set.
-   */
-  boolean hasServerId();
-  /**
-   * <pre>
-   *目标服务器ID
-   * </pre>
-   *
-   * <code>optional int32 serverId = 2;</code>
+   * <code>int32 serverId = 2;</code>
    * @return The serverId.
    */
   int getServerId();
@@ -42,16 +33,7 @@ public interface ChangeRoleServerRequestOrBuilder extends
    *目标服务器类型
    * </pre>
    *
-   * <code>required int32 serverType = 3;</code>
-   * @return Whether the serverType field is set.
-   */
-  boolean hasServerType();
-  /**
-   * <pre>
-   *目标服务器类型
-   * </pre>
-   *
-   * <code>required int32 serverType = 3;</code>
+   * <code>int32 serverType = 3;</code>
    * @return The serverType.
    */
   int getServerType();
@@ -61,16 +43,7 @@ public interface ChangeRoleServerRequestOrBuilder extends
    *角色ID
    * </pre>
    *
-   * <code>required int64 roleId = 4;</code>
-   * @return Whether the roleId field is set.
-   */
-  boolean hasRoleId();
-  /**
-   * <pre>
-   *角色ID
-   * </pre>
-   *
-   * <code>required int64 roleId = 4;</code>
+   * <code>int64 roleId = 4;</code>
    * @return The roleId.
    */
   long getRoleId();

@@ -12,35 +12,26 @@ public interface FireResultResponseOrBuilder extends
    *消息id
    * </pre>
    *
-   * <code>optional .MID mid = 1 [default = FireResultRes];</code>
-   * @return Whether the mid field is set.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The enum numeric value on the wire for msgId.
    */
-  boolean hasMid();
+  int getMsgIdValue();
   /**
    * <pre>
    *消息id
    * </pre>
    *
-   * <code>optional .MID mid = 1 [default = FireResultRes];</code>
-   * @return The mid.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The msgId.
    */
-  info.xiaomo.server.shared.protocol.Mid.MID getMid();
+  info.xiaomo.server.shared.protocol.msg.MsgId getMsgId();
 
   /**
    * <pre>
    *开炮的玩家ID
    * </pre>
    *
-   * <code>optional int64 rid = 2;</code>
-   * @return Whether the rid field is set.
-   */
-  boolean hasRid();
-  /**
-   * <pre>
-   *开炮的玩家ID
-   * </pre>
-   *
-   * <code>optional int64 rid = 2;</code>
+   * <code>int64 rid = 2;</code>
    * @return The rid.
    */
   long getRid();
@@ -79,16 +70,7 @@ public interface FireResultResponseOrBuilder extends
    *玩家当前金币
    * </pre>
    *
-   * <code>optional int64 gold = 4;</code>
-   * @return Whether the gold field is set.
-   */
-  boolean hasGold();
-  /**
-   * <pre>
-   *玩家当前金币
-   * </pre>
-   *
-   * <code>optional int64 gold = 4;</code>
+   * <code>int64 gold = 4;</code>
    * @return The gold.
    */
   long getGold();
@@ -98,16 +80,7 @@ public interface FireResultResponseOrBuilder extends
    *特殊鱼计算的倍数 0普通鱼 -1获得累积奖
    * </pre>
    *
-   * <code>optional int32 multiple = 5;</code>
-   * @return Whether the multiple field is set.
-   */
-  boolean hasMultiple();
-  /**
-   * <pre>
-   *特殊鱼计算的倍数 0普通鱼 -1获得累积奖
-   * </pre>
-   *
-   * <code>optional int32 multiple = 5;</code>
+   * <code>int32 multiple = 5;</code>
    * @return The multiple.
    */
   int getMultiple();
@@ -117,16 +90,7 @@ public interface FireResultResponseOrBuilder extends
    *特殊鱼ID
    * </pre>
    *
-   * <code>optional int64 specialFishId = 6;</code>
-   * @return Whether the specialFishId field is set.
-   */
-  boolean hasSpecialFishId();
-  /**
-   * <pre>
-   *特殊鱼ID
-   * </pre>
-   *
-   * <code>optional int64 specialFishId = 6;</code>
+   * <code>int64 specialFishId = 6;</code>
    * @return The specialFishId.
    */
   long getSpecialFishId();
@@ -136,16 +100,7 @@ public interface FireResultResponseOrBuilder extends
    *累积池金币
    * </pre>
    *
-   * <code>optional int64 accumulateGold = 7;</code>
-   * @return Whether the accumulateGold field is set.
-   */
-  boolean hasAccumulateGold();
-  /**
-   * <pre>
-   *累积池金币
-   * </pre>
-   *
-   * <code>optional int64 accumulateGold = 7;</code>
+   * <code>int64 accumulateGold = 7;</code>
    * @return The accumulateGold.
    */
   long getAccumulateGold();

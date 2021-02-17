@@ -20,7 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ModifyMailRequest() {
-    mid_ = 10023;
+    msgId_ = 0;
   }
 
   @java.lang.Override
@@ -43,7 +43,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -56,23 +55,17 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
             int rawValue = input.readEnum();
-              @SuppressWarnings("deprecation")
-            info.xiaomo.server.shared.protocol.Mid.MID value = info.xiaomo.server.shared.protocol.Mid.MID.valueOf(rawValue);
-            if (value == null) {
-              unknownFields.mergeVarintField(1, rawValue);
-            } else {
-              bitField0_ |= 0x00000001;
-              mid_ = rawValue;
-            }
+
+            msgId_ = rawValue;
             break;
           }
           case 16: {
-            bitField0_ |= 0x00000002;
+
             mailId_ = input.readInt64();
             break;
           }
           case 24: {
-            bitField0_ |= 0x00000004;
+
             state_ = input.readInt32();
             break;
           }
@@ -108,32 +101,31 @@ private static final long serialVersionUID = 0L;
             info.xiaomo.server.shared.protocol.hall.chat.ModifyMailRequest.class, info.xiaomo.server.shared.protocol.hall.chat.ModifyMailRequest.Builder.class);
   }
 
-  private int bitField0_;
-  public static final int MID_FIELD_NUMBER = 1;
-  private int mid_;
+  public static final int MSGID_FIELD_NUMBER = 1;
+  private int msgId_;
   /**
    * <pre>
    *消息id
    * </pre>
    *
-   * <code>optional .MID mid = 1 [default = ModifyMailReq];</code>
-   * @return Whether the mid field is set.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The enum numeric value on the wire for msgId.
    */
-  @java.lang.Override public boolean hasMid() {
-    return ((bitField0_ & 0x00000001) != 0);
+  @java.lang.Override public int getMsgIdValue() {
+    return msgId_;
   }
   /**
    * <pre>
    *消息id
    * </pre>
    *
-   * <code>optional .MID mid = 1 [default = ModifyMailReq];</code>
-   * @return The mid.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The msgId.
    */
-  @java.lang.Override public info.xiaomo.server.shared.protocol.Mid.MID getMid() {
+  @java.lang.Override public info.xiaomo.server.shared.protocol.msg.MsgId getMsgId() {
     @SuppressWarnings("deprecation")
-    info.xiaomo.server.shared.protocol.Mid.MID result = info.xiaomo.server.shared.protocol.Mid.MID.valueOf(mid_);
-    return result == null ? info.xiaomo.server.shared.protocol.Mid.MID.ModifyMailReq : result;
+    info.xiaomo.server.shared.protocol.msg.MsgId result = info.xiaomo.server.shared.protocol.msg.MsgId.valueOf(msgId_);
+    return result == null ? info.xiaomo.server.shared.protocol.msg.MsgId.UNRECOGNIZED : result;
   }
 
   public static final int MAILID_FIELD_NUMBER = 2;
@@ -143,19 +135,7 @@ private static final long serialVersionUID = 0L;
    *邮件ID
    * </pre>
    *
-   * <code>required int64 mailId = 2;</code>
-   * @return Whether the mailId field is set.
-   */
-  @java.lang.Override
-  public boolean hasMailId() {
-    return ((bitField0_ & 0x00000002) != 0);
-  }
-  /**
-   * <pre>
-   *邮件ID
-   * </pre>
-   *
-   * <code>required int64 mailId = 2;</code>
+   * <code>int64 mailId = 2;</code>
    * @return The mailId.
    */
   @java.lang.Override
@@ -170,19 +150,7 @@ private static final long serialVersionUID = 0L;
    *状态 0新邮件、1已读、2已领取道具、3删除
    * </pre>
    *
-   * <code>required int32 state = 3;</code>
-   * @return Whether the state field is set.
-   */
-  @java.lang.Override
-  public boolean hasState() {
-    return ((bitField0_ & 0x00000004) != 0);
-  }
-  /**
-   * <pre>
-   *状态 0新邮件、1已读、2已领取道具、3删除
-   * </pre>
-   *
-   * <code>required int32 state = 3;</code>
+   * <code>int32 state = 3;</code>
    * @return The state.
    */
   @java.lang.Override
@@ -197,14 +165,6 @@ private static final long serialVersionUID = 0L;
     if (isInitialized == 1) return true;
     if (isInitialized == 0) return false;
 
-    if (!hasMailId()) {
-      memoizedIsInitialized = 0;
-      return false;
-    }
-    if (!hasState()) {
-      memoizedIsInitialized = 0;
-      return false;
-    }
     memoizedIsInitialized = 1;
     return true;
   }
@@ -212,13 +172,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeEnum(1, mid_);
+    if (msgId_ != info.xiaomo.server.shared.protocol.msg.MsgId.Base.getNumber()) {
+      output.writeEnum(1, msgId_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (mailId_ != 0L) {
       output.writeInt64(2, mailId_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (state_ != 0) {
       output.writeInt32(3, state_);
     }
     unknownFields.writeTo(output);
@@ -230,15 +190,15 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (msgId_ != info.xiaomo.server.shared.protocol.msg.MsgId.Base.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(1, mid_);
+        .computeEnumSize(1, msgId_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (mailId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, mailId_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (state_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(3, state_);
     }
@@ -257,20 +217,11 @@ private static final long serialVersionUID = 0L;
     }
     info.xiaomo.server.shared.protocol.hall.chat.ModifyMailRequest other = (info.xiaomo.server.shared.protocol.hall.chat.ModifyMailRequest) obj;
 
-    if (hasMid() != other.hasMid()) return false;
-    if (hasMid()) {
-      if (mid_ != other.mid_) return false;
-    }
-    if (hasMailId() != other.hasMailId()) return false;
-    if (hasMailId()) {
-      if (getMailId()
-          != other.getMailId()) return false;
-    }
-    if (hasState() != other.hasState()) return false;
-    if (hasState()) {
-      if (getState()
-          != other.getState()) return false;
-    }
+    if (msgId_ != other.msgId_) return false;
+    if (getMailId()
+        != other.getMailId()) return false;
+    if (getState()
+        != other.getState()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -282,19 +233,13 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasMid()) {
-      hash = (37 * hash) + MID_FIELD_NUMBER;
-      hash = (53 * hash) + mid_;
-    }
-    if (hasMailId()) {
-      hash = (37 * hash) + MAILID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getMailId());
-    }
-    if (hasState()) {
-      hash = (37 * hash) + STATE_FIELD_NUMBER;
-      hash = (53 * hash) + getState();
-    }
+    hash = (37 * hash) + MSGID_FIELD_NUMBER;
+    hash = (53 * hash) + msgId_;
+    hash = (37 * hash) + MAILID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getMailId());
+    hash = (37 * hash) + STATE_FIELD_NUMBER;
+    hash = (53 * hash) + getState();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -432,12 +377,12 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      mid_ = 10023;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      msgId_ = 0;
+
       mailId_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000002);
+
       state_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000004);
+
       return this;
     }
 
@@ -464,21 +409,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public info.xiaomo.server.shared.protocol.hall.chat.ModifyMailRequest buildPartial() {
       info.xiaomo.server.shared.protocol.hall.chat.ModifyMailRequest result = new info.xiaomo.server.shared.protocol.hall.chat.ModifyMailRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
-      }
-      result.mid_ = mid_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.mailId_ = mailId_;
-        to_bitField0_ |= 0x00000002;
-      }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.state_ = state_;
-        to_bitField0_ |= 0x00000004;
-      }
-      result.bitField0_ = to_bitField0_;
+      result.msgId_ = msgId_;
+      result.mailId_ = mailId_;
+      result.state_ = state_;
       onBuilt();
       return result;
     }
@@ -527,13 +460,13 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(info.xiaomo.server.shared.protocol.hall.chat.ModifyMailRequest other) {
       if (other == info.xiaomo.server.shared.protocol.hall.chat.ModifyMailRequest.getDefaultInstance()) return this;
-      if (other.hasMid()) {
-        setMid(other.getMid());
+      if (other.msgId_ != 0) {
+        setMsgIdValue(other.getMsgIdValue());
       }
-      if (other.hasMailId()) {
+      if (other.getMailId() != 0L) {
         setMailId(other.getMailId());
       }
-      if (other.hasState()) {
+      if (other.getState() != 0) {
         setState(other.getState());
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -543,12 +476,6 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public final boolean isInitialized() {
-      if (!hasMailId()) {
-        return false;
-      }
-      if (!hasState()) {
-        return false;
-      }
       return true;
     }
 
@@ -570,49 +497,31 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    private int bitField0_;
 
-    private int mid_ = 10023;
+    private int msgId_ = 0;
     /**
      * <pre>
      *消息id
      * </pre>
      *
-     * <code>optional .MID mid = 1 [default = ModifyMailReq];</code>
-     * @return Whether the mid field is set.
+     * <code>.MsgId msgId = 1;</code>
+     * @return The enum numeric value on the wire for msgId.
      */
-    @java.lang.Override public boolean hasMid() {
-      return ((bitField0_ & 0x00000001) != 0);
+    @java.lang.Override public int getMsgIdValue() {
+      return msgId_;
     }
     /**
      * <pre>
      *消息id
      * </pre>
      *
-     * <code>optional .MID mid = 1 [default = ModifyMailReq];</code>
-     * @return The mid.
-     */
-    @java.lang.Override
-    public info.xiaomo.server.shared.protocol.Mid.MID getMid() {
-      @SuppressWarnings("deprecation")
-      info.xiaomo.server.shared.protocol.Mid.MID result = info.xiaomo.server.shared.protocol.Mid.MID.valueOf(mid_);
-      return result == null ? info.xiaomo.server.shared.protocol.Mid.MID.ModifyMailReq : result;
-    }
-    /**
-     * <pre>
-     *消息id
-     * </pre>
-     *
-     * <code>optional .MID mid = 1 [default = ModifyMailReq];</code>
-     * @param value The mid to set.
+     * <code>.MsgId msgId = 1;</code>
+     * @param value The enum numeric value on the wire for msgId to set.
      * @return This builder for chaining.
      */
-    public Builder setMid(info.xiaomo.server.shared.protocol.Mid.MID value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000001;
-      mid_ = value.getNumber();
+    public Builder setMsgIdValue(int value) {
+      
+      msgId_ = value;
       onChanged();
       return this;
     }
@@ -621,12 +530,44 @@ private static final long serialVersionUID = 0L;
      *消息id
      * </pre>
      *
-     * <code>optional .MID mid = 1 [default = ModifyMailReq];</code>
+     * <code>.MsgId msgId = 1;</code>
+     * @return The msgId.
+     */
+    @java.lang.Override
+    public info.xiaomo.server.shared.protocol.msg.MsgId getMsgId() {
+      @SuppressWarnings("deprecation")
+      info.xiaomo.server.shared.protocol.msg.MsgId result = info.xiaomo.server.shared.protocol.msg.MsgId.valueOf(msgId_);
+      return result == null ? info.xiaomo.server.shared.protocol.msg.MsgId.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     *消息id
+     * </pre>
+     *
+     * <code>.MsgId msgId = 1;</code>
+     * @param value The msgId to set.
      * @return This builder for chaining.
      */
-    public Builder clearMid() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      mid_ = 10023;
+    public Builder setMsgId(info.xiaomo.server.shared.protocol.msg.MsgId value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      msgId_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *消息id
+     * </pre>
+     *
+     * <code>.MsgId msgId = 1;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearMsgId() {
+      
+      msgId_ = 0;
       onChanged();
       return this;
     }
@@ -637,19 +578,7 @@ private static final long serialVersionUID = 0L;
      *邮件ID
      * </pre>
      *
-     * <code>required int64 mailId = 2;</code>
-     * @return Whether the mailId field is set.
-     */
-    @java.lang.Override
-    public boolean hasMailId() {
-      return ((bitField0_ & 0x00000002) != 0);
-    }
-    /**
-     * <pre>
-     *邮件ID
-     * </pre>
-     *
-     * <code>required int64 mailId = 2;</code>
+     * <code>int64 mailId = 2;</code>
      * @return The mailId.
      */
     @java.lang.Override
@@ -661,12 +590,12 @@ private static final long serialVersionUID = 0L;
      *邮件ID
      * </pre>
      *
-     * <code>required int64 mailId = 2;</code>
+     * <code>int64 mailId = 2;</code>
      * @param value The mailId to set.
      * @return This builder for chaining.
      */
     public Builder setMailId(long value) {
-      bitField0_ |= 0x00000002;
+      
       mailId_ = value;
       onChanged();
       return this;
@@ -676,11 +605,11 @@ private static final long serialVersionUID = 0L;
      *邮件ID
      * </pre>
      *
-     * <code>required int64 mailId = 2;</code>
+     * <code>int64 mailId = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearMailId() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      
       mailId_ = 0L;
       onChanged();
       return this;
@@ -692,19 +621,7 @@ private static final long serialVersionUID = 0L;
      *状态 0新邮件、1已读、2已领取道具、3删除
      * </pre>
      *
-     * <code>required int32 state = 3;</code>
-     * @return Whether the state field is set.
-     */
-    @java.lang.Override
-    public boolean hasState() {
-      return ((bitField0_ & 0x00000004) != 0);
-    }
-    /**
-     * <pre>
-     *状态 0新邮件、1已读、2已领取道具、3删除
-     * </pre>
-     *
-     * <code>required int32 state = 3;</code>
+     * <code>int32 state = 3;</code>
      * @return The state.
      */
     @java.lang.Override
@@ -716,12 +633,12 @@ private static final long serialVersionUID = 0L;
      *状态 0新邮件、1已读、2已领取道具、3删除
      * </pre>
      *
-     * <code>required int32 state = 3;</code>
+     * <code>int32 state = 3;</code>
      * @param value The state to set.
      * @return This builder for chaining.
      */
     public Builder setState(int value) {
-      bitField0_ |= 0x00000004;
+      
       state_ = value;
       onChanged();
       return this;
@@ -731,11 +648,11 @@ private static final long serialVersionUID = 0L;
      *状态 0新邮件、1已读、2已领取道具、3删除
      * </pre>
      *
-     * <code>required int32 state = 3;</code>
+     * <code>int32 state = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      
       state_ = 0;
       onChanged();
       return this;
@@ -766,7 +683,7 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  @java.lang.Deprecated public static final com.google.protobuf.Parser<ModifyMailRequest>
+  private static final com.google.protobuf.Parser<ModifyMailRequest>
       PARSER = new com.google.protobuf.AbstractParser<ModifyMailRequest>() {
     @java.lang.Override
     public ModifyMailRequest parsePartialFrom(

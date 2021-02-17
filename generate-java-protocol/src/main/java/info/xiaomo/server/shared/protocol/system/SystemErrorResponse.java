@@ -20,8 +20,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private SystemErrorResponse() {
-    mid_ = 10006;
-    errorCode_ = 1;
+    msgId_ = 0;
+    errorCode_ = 0;
     msg_ = "";
   }
 
@@ -45,7 +45,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -58,32 +57,20 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
             int rawValue = input.readEnum();
-              @SuppressWarnings("deprecation")
-            info.xiaomo.server.shared.protocol.Mid.MID value = info.xiaomo.server.shared.protocol.Mid.MID.valueOf(rawValue);
-            if (value == null) {
-              unknownFields.mergeVarintField(1, rawValue);
-            } else {
-              bitField0_ |= 0x00000001;
-              mid_ = rawValue;
-            }
+
+            msgId_ = rawValue;
             break;
           }
           case 16: {
             int rawValue = input.readEnum();
-              @SuppressWarnings("deprecation")
-            info.xiaomo.server.shared.protocol.system.SystemErroCode value = info.xiaomo.server.shared.protocol.system.SystemErroCode.valueOf(rawValue);
-            if (value == null) {
-              unknownFields.mergeVarintField(2, rawValue);
-            } else {
-              bitField0_ |= 0x00000002;
-              errorCode_ = rawValue;
-            }
+
+            errorCode_ = rawValue;
             break;
           }
           case 26: {
-            com.google.protobuf.ByteString bs = input.readBytes();
-            bitField0_ |= 0x00000004;
-            msg_ = bs;
+            java.lang.String s = input.readStringRequireUtf8();
+
+            msg_ = s;
             break;
           }
           default: {
@@ -118,32 +105,31 @@ private static final long serialVersionUID = 0L;
             info.xiaomo.server.shared.protocol.system.SystemErrorResponse.class, info.xiaomo.server.shared.protocol.system.SystemErrorResponse.Builder.class);
   }
 
-  private int bitField0_;
-  public static final int MID_FIELD_NUMBER = 1;
-  private int mid_;
+  public static final int MSGID_FIELD_NUMBER = 1;
+  private int msgId_;
   /**
    * <pre>
    *消息id
    * </pre>
    *
-   * <code>optional .MID mid = 1 [default = SystemErrorRes];</code>
-   * @return Whether the mid field is set.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The enum numeric value on the wire for msgId.
    */
-  @java.lang.Override public boolean hasMid() {
-    return ((bitField0_ & 0x00000001) != 0);
+  @java.lang.Override public int getMsgIdValue() {
+    return msgId_;
   }
   /**
    * <pre>
    *消息id
    * </pre>
    *
-   * <code>optional .MID mid = 1 [default = SystemErrorRes];</code>
-   * @return The mid.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The msgId.
    */
-  @java.lang.Override public info.xiaomo.server.shared.protocol.Mid.MID getMid() {
+  @java.lang.Override public info.xiaomo.server.shared.protocol.msg.MsgId getMsgId() {
     @SuppressWarnings("deprecation")
-    info.xiaomo.server.shared.protocol.Mid.MID result = info.xiaomo.server.shared.protocol.Mid.MID.valueOf(mid_);
-    return result == null ? info.xiaomo.server.shared.protocol.Mid.MID.SystemErrorRes : result;
+    info.xiaomo.server.shared.protocol.msg.MsgId result = info.xiaomo.server.shared.protocol.msg.MsgId.valueOf(msgId_);
+    return result == null ? info.xiaomo.server.shared.protocol.msg.MsgId.UNRECOGNIZED : result;
   }
 
   public static final int ERRORCODE_FIELD_NUMBER = 2;
@@ -153,24 +139,24 @@ private static final long serialVersionUID = 0L;
    *错误码
    * </pre>
    *
-   * <code>optional .SystemErroCode errorCode = 2;</code>
-   * @return Whether the errorCode field is set.
+   * <code>.SystemErrorCode errorCode = 2;</code>
+   * @return The enum numeric value on the wire for errorCode.
    */
-  @java.lang.Override public boolean hasErrorCode() {
-    return ((bitField0_ & 0x00000002) != 0);
+  @java.lang.Override public int getErrorCodeValue() {
+    return errorCode_;
   }
   /**
    * <pre>
    *错误码
    * </pre>
    *
-   * <code>optional .SystemErroCode errorCode = 2;</code>
+   * <code>.SystemErrorCode errorCode = 2;</code>
    * @return The errorCode.
    */
-  @java.lang.Override public info.xiaomo.server.shared.protocol.system.SystemErroCode getErrorCode() {
+  @java.lang.Override public info.xiaomo.server.shared.protocol.system.SystemErrorCode getErrorCode() {
     @SuppressWarnings("deprecation")
-    info.xiaomo.server.shared.protocol.system.SystemErroCode result = info.xiaomo.server.shared.protocol.system.SystemErroCode.valueOf(errorCode_);
-    return result == null ? info.xiaomo.server.shared.protocol.system.SystemErroCode.HallNotFind : result;
+    info.xiaomo.server.shared.protocol.system.SystemErrorCode result = info.xiaomo.server.shared.protocol.system.SystemErrorCode.valueOf(errorCode_);
+    return result == null ? info.xiaomo.server.shared.protocol.system.SystemErrorCode.UNRECOGNIZED : result;
   }
 
   public static final int MSG_FIELD_NUMBER = 3;
@@ -180,19 +166,7 @@ private static final long serialVersionUID = 0L;
    *错误信息
    * </pre>
    *
-   * <code>optional string msg = 3;</code>
-   * @return Whether the msg field is set.
-   */
-  @java.lang.Override
-  public boolean hasMsg() {
-    return ((bitField0_ & 0x00000004) != 0);
-  }
-  /**
-   * <pre>
-   *错误信息
-   * </pre>
-   *
-   * <code>optional string msg = 3;</code>
+   * <code>string msg = 3;</code>
    * @return The msg.
    */
   @java.lang.Override
@@ -204,9 +178,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        msg_ = s;
-      }
+      msg_ = s;
       return s;
     }
   }
@@ -215,7 +187,7 @@ private static final long serialVersionUID = 0L;
    *错误信息
    * </pre>
    *
-   * <code>optional string msg = 3;</code>
+   * <code>string msg = 3;</code>
    * @return The bytes for msg.
    */
   @java.lang.Override
@@ -247,13 +219,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeEnum(1, mid_);
+    if (msgId_ != info.xiaomo.server.shared.protocol.msg.MsgId.Base.getNumber()) {
+      output.writeEnum(1, msgId_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (errorCode_ != info.xiaomo.server.shared.protocol.system.SystemErrorCode.Default.getNumber()) {
       output.writeEnum(2, errorCode_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (!getMsgBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, msg_);
     }
     unknownFields.writeTo(output);
@@ -265,15 +237,15 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (msgId_ != info.xiaomo.server.shared.protocol.msg.MsgId.Base.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(1, mid_);
+        .computeEnumSize(1, msgId_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (errorCode_ != info.xiaomo.server.shared.protocol.system.SystemErrorCode.Default.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(2, errorCode_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (!getMsgBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, msg_);
     }
     size += unknownFields.getSerializedSize();
@@ -291,19 +263,10 @@ private static final long serialVersionUID = 0L;
     }
     info.xiaomo.server.shared.protocol.system.SystemErrorResponse other = (info.xiaomo.server.shared.protocol.system.SystemErrorResponse) obj;
 
-    if (hasMid() != other.hasMid()) return false;
-    if (hasMid()) {
-      if (mid_ != other.mid_) return false;
-    }
-    if (hasErrorCode() != other.hasErrorCode()) return false;
-    if (hasErrorCode()) {
-      if (errorCode_ != other.errorCode_) return false;
-    }
-    if (hasMsg() != other.hasMsg()) return false;
-    if (hasMsg()) {
-      if (!getMsg()
-          .equals(other.getMsg())) return false;
-    }
+    if (msgId_ != other.msgId_) return false;
+    if (errorCode_ != other.errorCode_) return false;
+    if (!getMsg()
+        .equals(other.getMsg())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -315,18 +278,12 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasMid()) {
-      hash = (37 * hash) + MID_FIELD_NUMBER;
-      hash = (53 * hash) + mid_;
-    }
-    if (hasErrorCode()) {
-      hash = (37 * hash) + ERRORCODE_FIELD_NUMBER;
-      hash = (53 * hash) + errorCode_;
-    }
-    if (hasMsg()) {
-      hash = (37 * hash) + MSG_FIELD_NUMBER;
-      hash = (53 * hash) + getMsg().hashCode();
-    }
+    hash = (37 * hash) + MSGID_FIELD_NUMBER;
+    hash = (53 * hash) + msgId_;
+    hash = (37 * hash) + ERRORCODE_FIELD_NUMBER;
+    hash = (53 * hash) + errorCode_;
+    hash = (37 * hash) + MSG_FIELD_NUMBER;
+    hash = (53 * hash) + getMsg().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -464,12 +421,12 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      mid_ = 10006;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      errorCode_ = 1;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      msgId_ = 0;
+
+      errorCode_ = 0;
+
       msg_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
+
       return this;
     }
 
@@ -496,21 +453,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public info.xiaomo.server.shared.protocol.system.SystemErrorResponse buildPartial() {
       info.xiaomo.server.shared.protocol.system.SystemErrorResponse result = new info.xiaomo.server.shared.protocol.system.SystemErrorResponse(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
-      }
-      result.mid_ = mid_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        to_bitField0_ |= 0x00000002;
-      }
+      result.msgId_ = msgId_;
       result.errorCode_ = errorCode_;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        to_bitField0_ |= 0x00000004;
-      }
       result.msg_ = msg_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -559,14 +504,13 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(info.xiaomo.server.shared.protocol.system.SystemErrorResponse other) {
       if (other == info.xiaomo.server.shared.protocol.system.SystemErrorResponse.getDefaultInstance()) return this;
-      if (other.hasMid()) {
-        setMid(other.getMid());
+      if (other.msgId_ != 0) {
+        setMsgIdValue(other.getMsgIdValue());
       }
-      if (other.hasErrorCode()) {
-        setErrorCode(other.getErrorCode());
+      if (other.errorCode_ != 0) {
+        setErrorCodeValue(other.getErrorCodeValue());
       }
-      if (other.hasMsg()) {
-        bitField0_ |= 0x00000004;
+      if (!other.getMsg().isEmpty()) {
         msg_ = other.msg_;
         onChanged();
       }
@@ -598,49 +542,63 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    private int bitField0_;
 
-    private int mid_ = 10006;
+    private int msgId_ = 0;
     /**
      * <pre>
      *消息id
      * </pre>
      *
-     * <code>optional .MID mid = 1 [default = SystemErrorRes];</code>
-     * @return Whether the mid field is set.
+     * <code>.MsgId msgId = 1;</code>
+     * @return The enum numeric value on the wire for msgId.
      */
-    @java.lang.Override public boolean hasMid() {
-      return ((bitField0_ & 0x00000001) != 0);
+    @java.lang.Override public int getMsgIdValue() {
+      return msgId_;
     }
     /**
      * <pre>
      *消息id
      * </pre>
      *
-     * <code>optional .MID mid = 1 [default = SystemErrorRes];</code>
-     * @return The mid.
-     */
-    @java.lang.Override
-    public info.xiaomo.server.shared.protocol.Mid.MID getMid() {
-      @SuppressWarnings("deprecation")
-      info.xiaomo.server.shared.protocol.Mid.MID result = info.xiaomo.server.shared.protocol.Mid.MID.valueOf(mid_);
-      return result == null ? info.xiaomo.server.shared.protocol.Mid.MID.SystemErrorRes : result;
-    }
-    /**
-     * <pre>
-     *消息id
-     * </pre>
-     *
-     * <code>optional .MID mid = 1 [default = SystemErrorRes];</code>
-     * @param value The mid to set.
+     * <code>.MsgId msgId = 1;</code>
+     * @param value The enum numeric value on the wire for msgId to set.
      * @return This builder for chaining.
      */
-    public Builder setMid(info.xiaomo.server.shared.protocol.Mid.MID value) {
+    public Builder setMsgIdValue(int value) {
+      
+      msgId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *消息id
+     * </pre>
+     *
+     * <code>.MsgId msgId = 1;</code>
+     * @return The msgId.
+     */
+    @java.lang.Override
+    public info.xiaomo.server.shared.protocol.msg.MsgId getMsgId() {
+      @SuppressWarnings("deprecation")
+      info.xiaomo.server.shared.protocol.msg.MsgId result = info.xiaomo.server.shared.protocol.msg.MsgId.valueOf(msgId_);
+      return result == null ? info.xiaomo.server.shared.protocol.msg.MsgId.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     *消息id
+     * </pre>
+     *
+     * <code>.MsgId msgId = 1;</code>
+     * @param value The msgId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMsgId(info.xiaomo.server.shared.protocol.msg.MsgId value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
-      mid_ = value.getNumber();
+      
+      msgId_ = value.getNumber();
       onChanged();
       return this;
     }
@@ -649,56 +607,71 @@ private static final long serialVersionUID = 0L;
      *消息id
      * </pre>
      *
-     * <code>optional .MID mid = 1 [default = SystemErrorRes];</code>
+     * <code>.MsgId msgId = 1;</code>
      * @return This builder for chaining.
      */
-    public Builder clearMid() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      mid_ = 10006;
+    public Builder clearMsgId() {
+      
+      msgId_ = 0;
       onChanged();
       return this;
     }
 
-    private int errorCode_ = 1;
+    private int errorCode_ = 0;
     /**
      * <pre>
      *错误码
      * </pre>
      *
-     * <code>optional .SystemErroCode errorCode = 2;</code>
-     * @return Whether the errorCode field is set.
+     * <code>.SystemErrorCode errorCode = 2;</code>
+     * @return The enum numeric value on the wire for errorCode.
      */
-    @java.lang.Override public boolean hasErrorCode() {
-      return ((bitField0_ & 0x00000002) != 0);
+    @java.lang.Override public int getErrorCodeValue() {
+      return errorCode_;
     }
     /**
      * <pre>
      *错误码
      * </pre>
      *
-     * <code>optional .SystemErroCode errorCode = 2;</code>
+     * <code>.SystemErrorCode errorCode = 2;</code>
+     * @param value The enum numeric value on the wire for errorCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setErrorCodeValue(int value) {
+      
+      errorCode_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *错误码
+     * </pre>
+     *
+     * <code>.SystemErrorCode errorCode = 2;</code>
      * @return The errorCode.
      */
     @java.lang.Override
-    public info.xiaomo.server.shared.protocol.system.SystemErroCode getErrorCode() {
+    public info.xiaomo.server.shared.protocol.system.SystemErrorCode getErrorCode() {
       @SuppressWarnings("deprecation")
-      info.xiaomo.server.shared.protocol.system.SystemErroCode result = info.xiaomo.server.shared.protocol.system.SystemErroCode.valueOf(errorCode_);
-      return result == null ? info.xiaomo.server.shared.protocol.system.SystemErroCode.HallNotFind : result;
+      info.xiaomo.server.shared.protocol.system.SystemErrorCode result = info.xiaomo.server.shared.protocol.system.SystemErrorCode.valueOf(errorCode_);
+      return result == null ? info.xiaomo.server.shared.protocol.system.SystemErrorCode.UNRECOGNIZED : result;
     }
     /**
      * <pre>
      *错误码
      * </pre>
      *
-     * <code>optional .SystemErroCode errorCode = 2;</code>
+     * <code>.SystemErrorCode errorCode = 2;</code>
      * @param value The errorCode to set.
      * @return This builder for chaining.
      */
-    public Builder setErrorCode(info.xiaomo.server.shared.protocol.system.SystemErroCode value) {
+    public Builder setErrorCode(info.xiaomo.server.shared.protocol.system.SystemErrorCode value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
+      
       errorCode_ = value.getNumber();
       onChanged();
       return this;
@@ -708,12 +681,12 @@ private static final long serialVersionUID = 0L;
      *错误码
      * </pre>
      *
-     * <code>optional .SystemErroCode errorCode = 2;</code>
+     * <code>.SystemErrorCode errorCode = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearErrorCode() {
-      bitField0_ = (bitField0_ & ~0x00000002);
-      errorCode_ = 1;
+      
+      errorCode_ = 0;
       onChanged();
       return this;
     }
@@ -724,18 +697,7 @@ private static final long serialVersionUID = 0L;
      *错误信息
      * </pre>
      *
-     * <code>optional string msg = 3;</code>
-     * @return Whether the msg field is set.
-     */
-    public boolean hasMsg() {
-      return ((bitField0_ & 0x00000004) != 0);
-    }
-    /**
-     * <pre>
-     *错误信息
-     * </pre>
-     *
-     * <code>optional string msg = 3;</code>
+     * <code>string msg = 3;</code>
      * @return The msg.
      */
     public java.lang.String getMsg() {
@@ -744,9 +706,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          msg_ = s;
-        }
+        msg_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -757,7 +717,7 @@ private static final long serialVersionUID = 0L;
      *错误信息
      * </pre>
      *
-     * <code>optional string msg = 3;</code>
+     * <code>string msg = 3;</code>
      * @return The bytes for msg.
      */
     public com.google.protobuf.ByteString
@@ -778,7 +738,7 @@ private static final long serialVersionUID = 0L;
      *错误信息
      * </pre>
      *
-     * <code>optional string msg = 3;</code>
+     * <code>string msg = 3;</code>
      * @param value The msg to set.
      * @return This builder for chaining.
      */
@@ -787,7 +747,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  
       msg_ = value;
       onChanged();
       return this;
@@ -797,11 +757,11 @@ private static final long serialVersionUID = 0L;
      *错误信息
      * </pre>
      *
-     * <code>optional string msg = 3;</code>
+     * <code>string msg = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearMsg() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      
       msg_ = getDefaultInstance().getMsg();
       onChanged();
       return this;
@@ -811,7 +771,7 @@ private static final long serialVersionUID = 0L;
      *错误信息
      * </pre>
      *
-     * <code>optional string msg = 3;</code>
+     * <code>string msg = 3;</code>
      * @param value The bytes for msg to set.
      * @return This builder for chaining.
      */
@@ -820,7 +780,8 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  checkByteStringIsUtf8(value);
+      
       msg_ = value;
       onChanged();
       return this;
@@ -851,7 +812,7 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  @java.lang.Deprecated public static final com.google.protobuf.Parser<SystemErrorResponse>
+  private static final com.google.protobuf.Parser<SystemErrorResponse>
       PARSER = new com.google.protobuf.AbstractParser<SystemErrorResponse>() {
     @java.lang.Override
     public SystemErrorResponse parsePartialFrom(

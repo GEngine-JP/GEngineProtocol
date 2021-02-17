@@ -12,35 +12,26 @@ public interface UseSkillRequestOrBuilder extends
    *消息id
    * </pre>
    *
-   * <code>optional .MID mid = 1 [default = UseSkillReq];</code>
-   * @return Whether the mid field is set.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The enum numeric value on the wire for msgId.
    */
-  boolean hasMid();
+  int getMsgIdValue();
   /**
    * <pre>
    *消息id
    * </pre>
    *
-   * <code>optional .MID mid = 1 [default = UseSkillReq];</code>
-   * @return The mid.
+   * <code>.MsgId msgId = 1;</code>
+   * @return The msgId.
    */
-  info.xiaomo.server.shared.protocol.Mid.MID getMid();
+  info.xiaomo.server.shared.protocol.msg.MsgId getMsgId();
 
   /**
    * <pre>
    *技能配置ID
    * </pre>
    *
-   * <code>optional int32 skillId = 2;</code>
-   * @return Whether the skillId field is set.
-   */
-  boolean hasSkillId();
-  /**
-   * <pre>
-   *技能配置ID
-   * </pre>
-   *
-   * <code>optional int32 skillId = 2;</code>
+   * <code>int32 skillId = 2;</code>
    * @return The skillId.
    */
   int getSkillId();

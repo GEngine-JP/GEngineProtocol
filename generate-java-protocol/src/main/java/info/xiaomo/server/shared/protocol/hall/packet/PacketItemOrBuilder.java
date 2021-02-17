@@ -12,16 +12,7 @@ public interface PacketItemOrBuilder extends
    *唯一Id
    * </pre>
    *
-   * <code>required int64 id = 1;</code>
-   * @return Whether the id field is set.
-   */
-  boolean hasId();
-  /**
-   * <pre>
-   *唯一Id
-   * </pre>
-   *
-   * <code>required int64 id = 1;</code>
+   * <code>int64 id = 1;</code>
    * @return The id.
    */
   long getId();
@@ -31,16 +22,7 @@ public interface PacketItemOrBuilder extends
    *配置Id
    * </pre>
    *
-   * <code>required int32 configId = 2;</code>
-   * @return Whether the configId field is set.
-   */
-  boolean hasConfigId();
-  /**
-   * <pre>
-   *配置Id
-   * </pre>
-   *
-   * <code>required int32 configId = 2;</code>
+   * <code>int32 configId = 2;</code>
    * @return The configId.
    */
   int getConfigId();
@@ -50,16 +32,7 @@ public interface PacketItemOrBuilder extends
    *数量
    * </pre>
    *
-   * <code>required int32 num = 3;</code>
-   * @return Whether the num field is set.
-   */
-  boolean hasNum();
-  /**
-   * <pre>
-   *数量
-   * </pre>
-   *
-   * <code>required int32 num = 3;</code>
+   * <code>int32 num = 3;</code>
    * @return The num.
    */
   int getNum();
