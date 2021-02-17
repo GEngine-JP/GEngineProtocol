@@ -1,4 +1,5 @@
-option java_package = "info.xiaomo.server.protocol";
+option java_multiple_files = true;
+option java_package = "info.xiaomo.server.shared.protocol.server";
 import "Mid.proto";
 
 //注册服务器

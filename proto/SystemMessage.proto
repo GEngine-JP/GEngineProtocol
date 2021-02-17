@@ -1,4 +1,5 @@
-option java_package = "info.xiaomo.server.protocol.system";
+option java_multiple_files = true;
+option java_package = "info.xiaomo.server.shared.protocol.system";
 import "Mid.proto";
 
 
