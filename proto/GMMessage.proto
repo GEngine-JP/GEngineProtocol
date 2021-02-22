@@ -1,5 +1,5 @@
 syntax = "proto3";
-option java_package = "info.xiaomo.server.shared.protocol.gameserver.gm";
+option java_package = "info.xiaomo.server.shared.protocol.gm";
 option java_multiple_files = true;
 
 
