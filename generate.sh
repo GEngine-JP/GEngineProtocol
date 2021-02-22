@@ -10,8 +10,10 @@ TS_TARGET_PATH=generate-ts-protocol/src
 
 echo "开始清理老代码"
 rm -rf Code/
-rm -rf ${JAVA_TARGET_PATH}/*
-rm -rf ${TS_TARGET_PATH}/*
+# shellcheck disable=SC2115
+rm -rf "${JAVA_TARGET_PATH}/*"
+# shellcheck disable=SC2115
+rm -rf "${TS_TARGET_PATH}/*"
 
 if [ ! -d JAVA_TARGET_PATH ]; then
 	mkdir -p ${JAVA_TARGET_PATH}
@@ -72,10 +74,13 @@ echo "开始生成java代码"
 #echo "开始生成python代码"
 #./protoc --proto_path=proto --python_out=${PYTHON_TARGET_PATH} ${SOURCE_FOLDER}/*
 
-echo "开始生成ts代码"
-for line in `ls ${SOURCE_FOLDER}`
-do
- pbjs -t static-module -w commonjs -o ${TS_TARGET_PATH}/${line}.js ${SOURCE_FOLDER}/${line}
- pbts -o ${TS_TARGET_PATH}/${line}.d.ts ${TS_TARGET_PATH}/${line}.js
-done
+#echo "开始生成ts代码"
+## shellcheck disable=SC2045
+## shellcheck disable=SC2006
+#for line in `ls ${SOURCE_FOLDER}`
+#do
+# # shellcheck disable=SC2086
+# pbjs -t static-module -w commonjs -o ${TS_TARGET_PATH}/${line}.js ${SOURCE_FOLDER}/"${line}"
+# pbts -o ${TS_TARGET_PATH}/"${line}".d.ts ${TS_TARGET_PATH}/"${line}".js
+#done
 
