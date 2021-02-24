@@ -2,14 +2,18 @@ syntax = "proto3";
 option java_package = "info.xiaomo.server.shared.protocol.user";
 option java_multiple_files = true;
 
-message LoginRequest {
-  int32 sex = 1;
-  int64 userId = 2;
-  string loginName = 3;
+import "MessageId.proto";
+
+message ReqUserLogin {
+  UserMsgId msgId = 1;
+  int32 sex = 2;
+  int64 userId = 3;
+  string loginName = 4;
 }
 
-message LoginResponse {
-  int32 sex = 1;
-  int64 userId = 2;
-  string loginName = 3;
+message ResUserLogin {
+  UserMsgId msgId = 1;
+  int32 sex = 2;
+  int64 userId = 3;
+  string loginName = 4;
 }

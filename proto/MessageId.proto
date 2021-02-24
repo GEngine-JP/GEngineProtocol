@@ -1,0 +1,16 @@
+syntax = "proto3";
+option java_package = "info.xiaomo.server.shared.protocol.msg";
+option java_multiple_files = true;
+
+enum GMMsgId{
+  UNKNOWN = 0;
+  CloseServerRequest = 1;
+  CloseServerResponse = 2;
+}
+
+
+enum UserMsgId{
+  KNOWN = 0;
+  LoginRequest = 20001;
+  LoginResponse = 20002;
+}

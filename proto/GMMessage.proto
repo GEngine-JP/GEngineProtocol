@@ -2,11 +2,14 @@ syntax = "proto3";
 option java_package = "info.xiaomo.server.shared.protocol.gm";
 option java_multiple_files = true;
 
+import "MessageId.proto";
 
-message CloseServerRequest {
-  string resMsg = 1;
+message ReqGMCloseServer {
+  GMMsgId msgId = 1;
+  string resMsg = 2;
 }
 
-message CloseServerResponse {
-  string resMsg = 1;
+message ResGMCloseServer {
+  GMMsgId msgId = 1;
+  string resMsg = 2;
 }
