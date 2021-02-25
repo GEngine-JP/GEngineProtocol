@@ -9,32 +9,32 @@ package info.xiaomo.server.shared.protocol.msg;
 public enum GMMsgId
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
-   * <code>UNKNOWN = 0;</code>
+   * <code>GmUnknown = 0;</code>
    */
-  UNKNOWN(0),
+  GmUnknown(0),
   /**
-   * <code>CloseServerRequest = 1;</code>
+   * <code>CloseServerRequest = 201001;</code>
    */
-  CloseServerRequest(1),
+  CloseServerRequest(201001),
   /**
-   * <code>CloseServerResponse = 2;</code>
+   * <code>CloseServerResponse = 201002;</code>
    */
-  CloseServerResponse(2),
+  CloseServerResponse(201002),
   UNRECOGNIZED(-1),
   ;
 
   /**
-   * <code>UNKNOWN = 0;</code>
+   * <code>GmUnknown = 0;</code>
    */
-  public static final int UNKNOWN_VALUE = 0;
+  public static final int GmUnknown_VALUE = 0;
   /**
-   * <code>CloseServerRequest = 1;</code>
+   * <code>CloseServerRequest = 201001;</code>
    */
-  public static final int CloseServerRequest_VALUE = 1;
+  public static final int CloseServerRequest_VALUE = 201001;
   /**
-   * <code>CloseServerResponse = 2;</code>
+   * <code>CloseServerResponse = 201002;</code>
    */
-  public static final int CloseServerResponse_VALUE = 2;
+  public static final int CloseServerResponse_VALUE = 201002;
 
 
   public final int getNumber() {
@@ -61,9 +61,9 @@ public enum GMMsgId
    */
   public static GMMsgId forNumber(int value) {
     switch (value) {
-      case 0: return UNKNOWN;
-      case 1: return CloseServerRequest;
-      case 2: return CloseServerResponse;
+      case 0: return GmUnknown;
+      case 201001: return CloseServerRequest;
+      case 201002: return CloseServerResponse;
       default: return null;
     }
   }

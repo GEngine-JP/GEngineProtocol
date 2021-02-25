@@ -3,14 +3,14 @@ option java_package = "info.xiaomo.server.shared.protocol.msg";
 option java_multiple_files = true;
 
 enum GMMsgId{
-  UNKNOWN = 0;
-  CloseServerRequest = 1;
-  CloseServerResponse = 2;
+  GmUnknown = 0;
+  CloseServerRequest = 201001;
+  CloseServerResponse = 201002;
 }
 
 
 enum UserMsgId{
-  KNOWN = 0;
-  LoginRequest = 20001;
-  LoginResponse = 20002;
+  UserUnknown = 0;
+  LoginRequest = 101001;
+  LoginResponse = 101002;
 }

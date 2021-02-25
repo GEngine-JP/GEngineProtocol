@@ -62,9 +62,9 @@ fi
 echo "开始生成java代码"
 ./protoc --proto_path=proto --java_out=${JAVA_TARGET_PATH} ${SOURCE_FOLDER}/*
 
-#echo "开始生成c#代码"
-#./protoc --proto_path=proto --csharp_out=${CS_TARGET_PATH} ${SOURCE_FOLDER}/*
-#
+echo "开始生成c#代码"
+./protoc --proto_path=proto --csharp_out=${CS_TARGET_PATH} ${SOURCE_FOLDER}/*
+
 #echo "开始生成c++代码"
 #./protoc --proto_path=proto --cpp_out=${CPP_TARGET_PATH} ${SOURCE_FOLDER}/*
 #

@@ -197,7 +197,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (msgId_ != info.xiaomo.server.shared.protocol.msg.UserMsgId.KNOWN.getNumber()) {
+    if (msgId_ != info.xiaomo.server.shared.protocol.msg.UserMsgId.UserUnknown.getNumber()) {
       output.writeEnum(1, msgId_);
     }
     if (sex_ != 0) {
@@ -218,7 +218,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (msgId_ != info.xiaomo.server.shared.protocol.msg.UserMsgId.KNOWN.getNumber()) {
+    if (msgId_ != info.xiaomo.server.shared.protocol.msg.UserMsgId.UserUnknown.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(1, msgId_);
     }

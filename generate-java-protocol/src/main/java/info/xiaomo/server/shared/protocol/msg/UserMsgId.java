@@ -9,32 +9,32 @@ package info.xiaomo.server.shared.protocol.msg;
 public enum UserMsgId
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
-   * <code>KNOWN = 0;</code>
+   * <code>UserUnknown = 0;</code>
    */
-  KNOWN(0),
+  UserUnknown(0),
   /**
-   * <code>LoginRequest = 20001;</code>
+   * <code>LoginRequest = 101001;</code>
    */
-  LoginRequest(20001),
+  LoginRequest(101001),
   /**
-   * <code>LoginResponse = 20002;</code>
+   * <code>LoginResponse = 101002;</code>
    */
-  LoginResponse(20002),
+  LoginResponse(101002),
   UNRECOGNIZED(-1),
   ;
 
   /**
-   * <code>KNOWN = 0;</code>
+   * <code>UserUnknown = 0;</code>
    */
-  public static final int KNOWN_VALUE = 0;
+  public static final int UserUnknown_VALUE = 0;
   /**
-   * <code>LoginRequest = 20001;</code>
+   * <code>LoginRequest = 101001;</code>
    */
-  public static final int LoginRequest_VALUE = 20001;
+  public static final int LoginRequest_VALUE = 101001;
   /**
-   * <code>LoginResponse = 20002;</code>
+   * <code>LoginResponse = 101002;</code>
    */
-  public static final int LoginResponse_VALUE = 20002;
+  public static final int LoginResponse_VALUE = 101002;
 
 
   public final int getNumber() {
@@ -61,9 +61,9 @@ public enum UserMsgId
    */
   public static UserMsgId forNumber(int value) {
     switch (value) {
-      case 0: return KNOWN;
-      case 20001: return LoginRequest;
-      case 20002: return LoginResponse;
+      case 0: return UserUnknown;
+      case 101001: return LoginRequest;
+      case 101002: return LoginResponse;
       default: return null;
     }
   }
