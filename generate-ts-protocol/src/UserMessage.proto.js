@@ -9,26 +9,27 @@ var $Reader = $protobuf.Reader, $Writer = $protobuf.Writer, $util = $protobuf.ut
 // Exported root namespace
 var $root = $protobuf.roots["default"] || ($protobuf.roots["default"] = {});
 
-$root.LoginRequest = (function() {
+$root.ReqUserLogin = (function() {
 
     /**
-     * Properties of a LoginRequest.
-     * @exports ILoginRequest
-     * @interface ILoginRequest
-     * @property {number|null} [sex] LoginRequest sex
-     * @property {number|Long|null} [userId] LoginRequest userId
-     * @property {string|null} [loginName] LoginRequest loginName
+     * Properties of a ReqUserLogin.
+     * @exports IReqUserLogin
+     * @interface IReqUserLogin
+     * @property {UserMsgId|null} [msgId] ReqUserLogin msgId
+     * @property {number|null} [sex] ReqUserLogin sex
+     * @property {number|Long|null} [userId] ReqUserLogin userId
+     * @property {string|null} [loginName] ReqUserLogin loginName
      */
 
     /**
-     * Constructs a new LoginRequest.
-     * @exports LoginRequest
-     * @classdesc Represents a LoginRequest.
-     * @implements ILoginRequest
+     * Constructs a new ReqUserLogin.
+     * @exports ReqUserLogin
+     * @classdesc Represents a ReqUserLogin.
+     * @implements IReqUserLogin
      * @constructor
-     * @param {ILoginRequest=} [properties] Properties to set
+     * @param {IReqUserLogin=} [properties] Properties to set
      */
-    function LoginRequest(properties) {
+    function ReqUserLogin(properties) {
         if (properties)
             for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
@@ -36,100 +37,113 @@ $root.LoginRequest = (function() {
     }
 
     /**
-     * LoginRequest sex.
+     * ReqUserLogin msgId.
+     * @member {UserMsgId} msgId
+     * @memberof ReqUserLogin
+     * @instance
+     */
+    ReqUserLogin.prototype.msgId = 0;
+
+    /**
+     * ReqUserLogin sex.
      * @member {number} sex
-     * @memberof LoginRequest
+     * @memberof ReqUserLogin
      * @instance
      */
-    LoginRequest.prototype.sex = 0;
+    ReqUserLogin.prototype.sex = 0;
 
     /**
-     * LoginRequest userId.
+     * ReqUserLogin userId.
      * @member {number|Long} userId
-     * @memberof LoginRequest
+     * @memberof ReqUserLogin
      * @instance
      */
-    LoginRequest.prototype.userId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+    ReqUserLogin.prototype.userId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
 
     /**
-     * LoginRequest loginName.
+     * ReqUserLogin loginName.
      * @member {string} loginName
-     * @memberof LoginRequest
+     * @memberof ReqUserLogin
      * @instance
      */
-    LoginRequest.prototype.loginName = "";
+    ReqUserLogin.prototype.loginName = "";
 
     /**
-     * Creates a new LoginRequest instance using the specified properties.
+     * Creates a new ReqUserLogin instance using the specified properties.
      * @function create
-     * @memberof LoginRequest
+     * @memberof ReqUserLogin
      * @static
-     * @param {ILoginRequest=} [properties] Properties to set
-     * @returns {LoginRequest} LoginRequest instance
+     * @param {IReqUserLogin=} [properties] Properties to set
+     * @returns {ReqUserLogin} ReqUserLogin instance
      */
-    LoginRequest.create = function create(properties) {
-        return new LoginRequest(properties);
+    ReqUserLogin.create = function create(properties) {
+        return new ReqUserLogin(properties);
     };
 
     /**
-     * Encodes the specified LoginRequest message. Does not implicitly {@link LoginRequest.verify|verify} messages.
+     * Encodes the specified ReqUserLogin message. Does not implicitly {@link ReqUserLogin.verify|verify} messages.
      * @function encode
-     * @memberof LoginRequest
+     * @memberof ReqUserLogin
      * @static
-     * @param {ILoginRequest} message LoginRequest message or plain object to encode
+     * @param {IReqUserLogin} message ReqUserLogin message or plain object to encode
      * @param {$protobuf.Writer} [writer] Writer to encode to
      * @returns {$protobuf.Writer} Writer
      */
-    LoginRequest.encode = function encode(message, writer) {
+    ReqUserLogin.encode = function encode(message, writer) {
         if (!writer)
             writer = $Writer.create();
+        if (message.msgId != null && Object.hasOwnProperty.call(message, "msgId"))
+            writer.uint32(/* id 1, wireType 0 =*/8).int32(message.msgId);
         if (message.sex != null && Object.hasOwnProperty.call(message, "sex"))
-            writer.uint32(/* id 1, wireType 0 =*/8).int32(message.sex);
+            writer.uint32(/* id 2, wireType 0 =*/16).int32(message.sex);
         if (message.userId != null && Object.hasOwnProperty.call(message, "userId"))
-            writer.uint32(/* id 2, wireType 0 =*/16).int64(message.userId);
+            writer.uint32(/* id 3, wireType 0 =*/24).int64(message.userId);
         if (message.loginName != null && Object.hasOwnProperty.call(message, "loginName"))
-            writer.uint32(/* id 3, wireType 2 =*/26).string(message.loginName);
+            writer.uint32(/* id 4, wireType 2 =*/34).string(message.loginName);
         return writer;
     };
 
     /**
-     * Encodes the specified LoginRequest message, length delimited. Does not implicitly {@link LoginRequest.verify|verify} messages.
+     * Encodes the specified ReqUserLogin message, length delimited. Does not implicitly {@link ReqUserLogin.verify|verify} messages.
      * @function encodeDelimited
-     * @memberof LoginRequest
+     * @memberof ReqUserLogin
      * @static
-     * @param {ILoginRequest} message LoginRequest message or plain object to encode
+     * @param {IReqUserLogin} message ReqUserLogin message or plain object to encode
      * @param {$protobuf.Writer} [writer] Writer to encode to
      * @returns {$protobuf.Writer} Writer
      */
-    LoginRequest.encodeDelimited = function encodeDelimited(message, writer) {
+    ReqUserLogin.encodeDelimited = function encodeDelimited(message, writer) {
         return this.encode(message, writer).ldelim();
     };
 
     /**
-     * Decodes a LoginRequest message from the specified reader or buffer.
+     * Decodes a ReqUserLogin message from the specified reader or buffer.
      * @function decode
-     * @memberof LoginRequest
+     * @memberof ReqUserLogin
      * @static
      * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
      * @param {number} [length] Message length if known beforehand
-     * @returns {LoginRequest} LoginRequest
+     * @returns {ReqUserLogin} ReqUserLogin
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    LoginRequest.decode = function decode(reader, length) {
+    ReqUserLogin.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.LoginRequest();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ReqUserLogin();
         while (reader.pos < end) {
             var tag = reader.uint32();
             switch (tag >>> 3) {
             case 1:
-                message.sex = reader.int32();
+                message.msgId = reader.int32();
                 break;
             case 2:
-                message.userId = reader.int64();
+                message.sex = reader.int32();
                 break;
             case 3:
+                message.userId = reader.int64();
+                break;
+            case 4:
                 message.loginName = reader.string();
                 break;
             default:
@@ -141,32 +155,41 @@ $root.LoginRequest = (function() {
     };
 
     /**
-     * Decodes a LoginRequest message from the specified reader or buffer, length delimited.
+     * Decodes a ReqUserLogin message from the specified reader or buffer, length delimited.
      * @function decodeDelimited
-     * @memberof LoginRequest
+     * @memberof ReqUserLogin
      * @static
      * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @returns {LoginRequest} LoginRequest
+     * @returns {ReqUserLogin} ReqUserLogin
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    LoginRequest.decodeDelimited = function decodeDelimited(reader) {
+    ReqUserLogin.decodeDelimited = function decodeDelimited(reader) {
         if (!(reader instanceof $Reader))
             reader = new $Reader(reader);
         return this.decode(reader, reader.uint32());
     };
 
     /**
-     * Verifies a LoginRequest message.
+     * Verifies a ReqUserLogin message.
      * @function verify
-     * @memberof LoginRequest
+     * @memberof ReqUserLogin
      * @static
      * @param {Object.<string,*>} message Plain object to verify
      * @returns {string|null} `null` if valid, otherwise the reason why it is not
      */
-    LoginRequest.verify = function verify(message) {
+    ReqUserLogin.verify = function verify(message) {
         if (typeof message !== "object" || message === null)
             return "object expected";
+        if (message.msgId != null && message.hasOwnProperty("msgId"))
+            switch (message.msgId) {
+            default:
+                return "msgId: enum value expected";
+            case 0:
+            case 101001:
+            case 101002:
+                break;
+            }
         if (message.sex != null && message.hasOwnProperty("sex"))
             if (!$util.isInteger(message.sex))
                 return "sex: integer expected";
@@ -180,17 +203,31 @@ $root.LoginRequest = (function() {
     };
 
     /**
-     * Creates a LoginRequest message from a plain object. Also converts values to their respective internal types.
+     * Creates a ReqUserLogin message from a plain object. Also converts values to their respective internal types.
      * @function fromObject
-     * @memberof LoginRequest
+     * @memberof ReqUserLogin
      * @static
      * @param {Object.<string,*>} object Plain object
-     * @returns {LoginRequest} LoginRequest
+     * @returns {ReqUserLogin} ReqUserLogin
      */
-    LoginRequest.fromObject = function fromObject(object) {
-        if (object instanceof $root.LoginRequest)
+    ReqUserLogin.fromObject = function fromObject(object) {
+        if (object instanceof $root.ReqUserLogin)
             return object;
-        var message = new $root.LoginRequest();
+        var message = new $root.ReqUserLogin();
+        switch (object.msgId) {
+        case "UserUnknown":
+        case 0:
+            message.msgId = 0;
+            break;
+        case "LoginRequest":
+        case 101001:
+            message.msgId = 101001;
+            break;
+        case "LoginResponse":
+        case 101002:
+            message.msgId = 101002;
+            break;
+        }
         if (object.sex != null)
             message.sex = object.sex | 0;
         if (object.userId != null)
@@ -208,19 +245,20 @@ $root.LoginRequest = (function() {
     };
 
     /**
-     * Creates a plain object from a LoginRequest message. Also converts values to other types if specified.
+     * Creates a plain object from a ReqUserLogin message. Also converts values to other types if specified.
      * @function toObject
-     * @memberof LoginRequest
+     * @memberof ReqUserLogin
      * @static
-     * @param {LoginRequest} message LoginRequest
+     * @param {ReqUserLogin} message ReqUserLogin
      * @param {$protobuf.IConversionOptions} [options] Conversion options
      * @returns {Object.<string,*>} Plain object
      */
-    LoginRequest.toObject = function toObject(message, options) {
+    ReqUserLogin.toObject = function toObject(message, options) {
         if (!options)
             options = {};
         var object = {};
         if (options.defaults) {
+            object.msgId = options.enums === String ? "UserUnknown" : 0;
             object.sex = 0;
             if ($util.Long) {
                 var long = new $util.Long(0, 0, false);
@@ -229,6 +267,8 @@ $root.LoginRequest = (function() {
                 object.userId = options.longs === String ? "0" : 0;
             object.loginName = "";
         }
+        if (message.msgId != null && message.hasOwnProperty("msgId"))
+            object.msgId = options.enums === String ? $root.UserMsgId[message.msgId] : message.msgId;
         if (message.sex != null && message.hasOwnProperty("sex"))
             object.sex = message.sex;
         if (message.userId != null && message.hasOwnProperty("userId"))
@@ -242,39 +282,40 @@ $root.LoginRequest = (function() {
     };
 
     /**
-     * Converts this LoginRequest to JSON.
+     * Converts this ReqUserLogin to JSON.
      * @function toJSON
-     * @memberof LoginRequest
+     * @memberof ReqUserLogin
      * @instance
      * @returns {Object.<string,*>} JSON object
      */
-    LoginRequest.prototype.toJSON = function toJSON() {
+    ReqUserLogin.prototype.toJSON = function toJSON() {
         return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
     };
 
-    return LoginRequest;
+    return ReqUserLogin;
 })();
 
-$root.LoginResponse = (function() {
+$root.ResUserLogin = (function() {
 
     /**
-     * Properties of a LoginResponse.
-     * @exports ILoginResponse
-     * @interface ILoginResponse
-     * @property {number|null} [sex] LoginResponse sex
-     * @property {number|Long|null} [userId] LoginResponse userId
-     * @property {string|null} [loginName] LoginResponse loginName
+     * Properties of a ResUserLogin.
+     * @exports IResUserLogin
+     * @interface IResUserLogin
+     * @property {UserMsgId|null} [msgId] ResUserLogin msgId
+     * @property {number|null} [sex] ResUserLogin sex
+     * @property {number|Long|null} [userId] ResUserLogin userId
+     * @property {string|null} [loginName] ResUserLogin loginName
      */
 
     /**
-     * Constructs a new LoginResponse.
-     * @exports LoginResponse
-     * @classdesc Represents a LoginResponse.
-     * @implements ILoginResponse
+     * Constructs a new ResUserLogin.
+     * @exports ResUserLogin
+     * @classdesc Represents a ResUserLogin.
+     * @implements IResUserLogin
      * @constructor
-     * @param {ILoginResponse=} [properties] Properties to set
+     * @param {IResUserLogin=} [properties] Properties to set
      */
-    function LoginResponse(properties) {
+    function ResUserLogin(properties) {
         if (properties)
             for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
@@ -282,100 +323,113 @@ $root.LoginResponse = (function() {
     }
 
     /**
-     * LoginResponse sex.
+     * ResUserLogin msgId.
+     * @member {UserMsgId} msgId
+     * @memberof ResUserLogin
+     * @instance
+     */
+    ResUserLogin.prototype.msgId = 0;
+
+    /**
+     * ResUserLogin sex.
      * @member {number} sex
-     * @memberof LoginResponse
+     * @memberof ResUserLogin
      * @instance
      */
-    LoginResponse.prototype.sex = 0;
+    ResUserLogin.prototype.sex = 0;
 
     /**
-     * LoginResponse userId.
+     * ResUserLogin userId.
      * @member {number|Long} userId
-     * @memberof LoginResponse
+     * @memberof ResUserLogin
      * @instance
      */
-    LoginResponse.prototype.userId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+    ResUserLogin.prototype.userId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
 
     /**
-     * LoginResponse loginName.
+     * ResUserLogin loginName.
      * @member {string} loginName
-     * @memberof LoginResponse
+     * @memberof ResUserLogin
      * @instance
      */
-    LoginResponse.prototype.loginName = "";
+    ResUserLogin.prototype.loginName = "";
 
     /**
-     * Creates a new LoginResponse instance using the specified properties.
+     * Creates a new ResUserLogin instance using the specified properties.
      * @function create
-     * @memberof LoginResponse
+     * @memberof ResUserLogin
      * @static
-     * @param {ILoginResponse=} [properties] Properties to set
-     * @returns {LoginResponse} LoginResponse instance
+     * @param {IResUserLogin=} [properties] Properties to set
+     * @returns {ResUserLogin} ResUserLogin instance
      */
-    LoginResponse.create = function create(properties) {
-        return new LoginResponse(properties);
+    ResUserLogin.create = function create(properties) {
+        return new ResUserLogin(properties);
     };
 
     /**
-     * Encodes the specified LoginResponse message. Does not implicitly {@link LoginResponse.verify|verify} messages.
+     * Encodes the specified ResUserLogin message. Does not implicitly {@link ResUserLogin.verify|verify} messages.
      * @function encode
-     * @memberof LoginResponse
+     * @memberof ResUserLogin
      * @static
-     * @param {ILoginResponse} message LoginResponse message or plain object to encode
+     * @param {IResUserLogin} message ResUserLogin message or plain object to encode
      * @param {$protobuf.Writer} [writer] Writer to encode to
      * @returns {$protobuf.Writer} Writer
      */
-    LoginResponse.encode = function encode(message, writer) {
+    ResUserLogin.encode = function encode(message, writer) {
         if (!writer)
             writer = $Writer.create();
+        if (message.msgId != null && Object.hasOwnProperty.call(message, "msgId"))
+            writer.uint32(/* id 1, wireType 0 =*/8).int32(message.msgId);
         if (message.sex != null && Object.hasOwnProperty.call(message, "sex"))
-            writer.uint32(/* id 1, wireType 0 =*/8).int32(message.sex);
+            writer.uint32(/* id 2, wireType 0 =*/16).int32(message.sex);
         if (message.userId != null && Object.hasOwnProperty.call(message, "userId"))
-            writer.uint32(/* id 2, wireType 0 =*/16).int64(message.userId);
+            writer.uint32(/* id 3, wireType 0 =*/24).int64(message.userId);
         if (message.loginName != null && Object.hasOwnProperty.call(message, "loginName"))
-            writer.uint32(/* id 3, wireType 2 =*/26).string(message.loginName);
+            writer.uint32(/* id 4, wireType 2 =*/34).string(message.loginName);
         return writer;
     };
 
     /**
-     * Encodes the specified LoginResponse message, length delimited. Does not implicitly {@link LoginResponse.verify|verify} messages.
+     * Encodes the specified ResUserLogin message, length delimited. Does not implicitly {@link ResUserLogin.verify|verify} messages.
      * @function encodeDelimited
-     * @memberof LoginResponse
+     * @memberof ResUserLogin
      * @static
-     * @param {ILoginResponse} message LoginResponse message or plain object to encode
+     * @param {IResUserLogin} message ResUserLogin message or plain object to encode
      * @param {$protobuf.Writer} [writer] Writer to encode to
      * @returns {$protobuf.Writer} Writer
      */
-    LoginResponse.encodeDelimited = function encodeDelimited(message, writer) {
+    ResUserLogin.encodeDelimited = function encodeDelimited(message, writer) {
         return this.encode(message, writer).ldelim();
     };
 
     /**
-     * Decodes a LoginResponse message from the specified reader or buffer.
+     * Decodes a ResUserLogin message from the specified reader or buffer.
      * @function decode
-     * @memberof LoginResponse
+     * @memberof ResUserLogin
      * @static
      * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
      * @param {number} [length] Message length if known beforehand
-     * @returns {LoginResponse} LoginResponse
+     * @returns {ResUserLogin} ResUserLogin
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    LoginResponse.decode = function decode(reader, length) {
+    ResUserLogin.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.LoginResponse();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ResUserLogin();
         while (reader.pos < end) {
             var tag = reader.uint32();
             switch (tag >>> 3) {
             case 1:
-                message.sex = reader.int32();
+                message.msgId = reader.int32();
                 break;
             case 2:
-                message.userId = reader.int64();
+                message.sex = reader.int32();
                 break;
             case 3:
+                message.userId = reader.int64();
+                break;
+            case 4:
                 message.loginName = reader.string();
                 break;
             default:
@@ -387,32 +441,41 @@ $root.LoginResponse = (function() {
     };
 
     /**
-     * Decodes a LoginResponse message from the specified reader or buffer, length delimited.
+     * Decodes a ResUserLogin message from the specified reader or buffer, length delimited.
      * @function decodeDelimited
-     * @memberof LoginResponse
+     * @memberof ResUserLogin
      * @static
      * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @returns {LoginResponse} LoginResponse
+     * @returns {ResUserLogin} ResUserLogin
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    LoginResponse.decodeDelimited = function decodeDelimited(reader) {
+    ResUserLogin.decodeDelimited = function decodeDelimited(reader) {
         if (!(reader instanceof $Reader))
             reader = new $Reader(reader);
         return this.decode(reader, reader.uint32());
     };
 
     /**
-     * Verifies a LoginResponse message.
+     * Verifies a ResUserLogin message.
      * @function verify
-     * @memberof LoginResponse
+     * @memberof ResUserLogin
      * @static
      * @param {Object.<string,*>} message Plain object to verify
      * @returns {string|null} `null` if valid, otherwise the reason why it is not
      */
-    LoginResponse.verify = function verify(message) {
+    ResUserLogin.verify = function verify(message) {
         if (typeof message !== "object" || message === null)
             return "object expected";
+        if (message.msgId != null && message.hasOwnProperty("msgId"))
+            switch (message.msgId) {
+            default:
+                return "msgId: enum value expected";
+            case 0:
+            case 101001:
+            case 101002:
+                break;
+            }
         if (message.sex != null && message.hasOwnProperty("sex"))
             if (!$util.isInteger(message.sex))
                 return "sex: integer expected";
@@ -426,17 +489,31 @@ $root.LoginResponse = (function() {
     };
 
     /**
-     * Creates a LoginResponse message from a plain object. Also converts values to their respective internal types.
+     * Creates a ResUserLogin message from a plain object. Also converts values to their respective internal types.
      * @function fromObject
-     * @memberof LoginResponse
+     * @memberof ResUserLogin
      * @static
      * @param {Object.<string,*>} object Plain object
-     * @returns {LoginResponse} LoginResponse
+     * @returns {ResUserLogin} ResUserLogin
      */
-    LoginResponse.fromObject = function fromObject(object) {
-        if (object instanceof $root.LoginResponse)
+    ResUserLogin.fromObject = function fromObject(object) {
+        if (object instanceof $root.ResUserLogin)
             return object;
-        var message = new $root.LoginResponse();
+        var message = new $root.ResUserLogin();
+        switch (object.msgId) {
+        case "UserUnknown":
+        case 0:
+            message.msgId = 0;
+            break;
+        case "LoginRequest":
+        case 101001:
+            message.msgId = 101001;
+            break;
+        case "LoginResponse":
+        case 101002:
+            message.msgId = 101002;
+            break;
+        }
         if (object.sex != null)
             message.sex = object.sex | 0;
         if (object.userId != null)
@@ -454,19 +531,20 @@ $root.LoginResponse = (function() {
     };
 
     /**
-     * Creates a plain object from a LoginResponse message. Also converts values to other types if specified.
+     * Creates a plain object from a ResUserLogin message. Also converts values to other types if specified.
      * @function toObject
-     * @memberof LoginResponse
+     * @memberof ResUserLogin
      * @static
-     * @param {LoginResponse} message LoginResponse
+     * @param {ResUserLogin} message ResUserLogin
      * @param {$protobuf.IConversionOptions} [options] Conversion options
      * @returns {Object.<string,*>} Plain object
      */
-    LoginResponse.toObject = function toObject(message, options) {
+    ResUserLogin.toObject = function toObject(message, options) {
         if (!options)
             options = {};
         var object = {};
         if (options.defaults) {
+            object.msgId = options.enums === String ? "UserUnknown" : 0;
             object.sex = 0;
             if ($util.Long) {
                 var long = new $util.Long(0, 0, false);
@@ -475,6 +553,8 @@ $root.LoginResponse = (function() {
                 object.userId = options.longs === String ? "0" : 0;
             object.loginName = "";
         }
+        if (message.msgId != null && message.hasOwnProperty("msgId"))
+            object.msgId = options.enums === String ? $root.UserMsgId[message.msgId] : message.msgId;
         if (message.sex != null && message.hasOwnProperty("sex"))
             object.sex = message.sex;
         if (message.userId != null && message.hasOwnProperty("userId"))
@@ -488,17 +568,49 @@ $root.LoginResponse = (function() {
     };
 
     /**
-     * Converts this LoginResponse to JSON.
+     * Converts this ResUserLogin to JSON.
      * @function toJSON
-     * @memberof LoginResponse
+     * @memberof ResUserLogin
      * @instance
      * @returns {Object.<string,*>} JSON object
      */
-    LoginResponse.prototype.toJSON = function toJSON() {
+    ResUserLogin.prototype.toJSON = function toJSON() {
         return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
     };
 
-    return LoginResponse;
+    return ResUserLogin;
+})();
+
+/**
+ * GMMsgId enum.
+ * @exports GMMsgId
+ * @enum {number}
+ * @property {number} GmUnknown=0 GmUnknown value
+ * @property {number} CloseServerRequest=201001 CloseServerRequest value
+ * @property {number} CloseServerResponse=201002 CloseServerResponse value
+ */
+$root.GMMsgId = (function() {
+    var valuesById = {}, values = Object.create(valuesById);
+    values[valuesById[0] = "GmUnknown"] = 0;
+    values[valuesById[201001] = "CloseServerRequest"] = 201001;
+    values[valuesById[201002] = "CloseServerResponse"] = 201002;
+    return values;
+})();
+
+/**
+ * UserMsgId enum.
+ * @exports UserMsgId
+ * @enum {number}
+ * @property {number} UserUnknown=0 UserUnknown value
+ * @property {number} LoginRequest=101001 LoginRequest value
+ * @property {number} LoginResponse=101002 LoginResponse value
+ */
+$root.UserMsgId = (function() {
+    var valuesById = {}, values = Object.create(valuesById);
+    values[valuesById[0] = "UserUnknown"] = 0;
+    values[valuesById[101001] = "LoginRequest"] = 101001;
+    values[valuesById[101002] = "LoginResponse"] = 101002;
+    return values;
 })();
 
 module.exports = $root;

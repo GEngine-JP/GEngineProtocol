@@ -1,204 +1,230 @@
 import * as $protobuf from "protobufjs";
-/** Properties of a LoginRequest. */
-export interface ILoginRequest {
+/** Properties of a ReqUserLogin. */
+export interface IReqUserLogin {
 
-    /** LoginRequest sex */
+    /** ReqUserLogin msgId */
+    msgId?: (UserMsgId|null);
+
+    /** ReqUserLogin sex */
     sex?: (number|null);
 
-    /** LoginRequest userId */
+    /** ReqUserLogin userId */
     userId?: (number|Long|null);
 
-    /** LoginRequest loginName */
+    /** ReqUserLogin loginName */
     loginName?: (string|null);
 }
 
-/** Represents a LoginRequest. */
-export class LoginRequest implements ILoginRequest {
+/** Represents a ReqUserLogin. */
+export class ReqUserLogin implements IReqUserLogin {
 
     /**
-     * Constructs a new LoginRequest.
+     * Constructs a new ReqUserLogin.
      * @param [properties] Properties to set
      */
-    constructor(properties?: ILoginRequest);
+    constructor(properties?: IReqUserLogin);
 
-    /** LoginRequest sex. */
+    /** ReqUserLogin msgId. */
+    public msgId: UserMsgId;
+
+    /** ReqUserLogin sex. */
     public sex: number;
 
-    /** LoginRequest userId. */
+    /** ReqUserLogin userId. */
     public userId: (number|Long);
 
-    /** LoginRequest loginName. */
+    /** ReqUserLogin loginName. */
     public loginName: string;
 
     /**
-     * Creates a new LoginRequest instance using the specified properties.
+     * Creates a new ReqUserLogin instance using the specified properties.
      * @param [properties] Properties to set
-     * @returns LoginRequest instance
+     * @returns ReqUserLogin instance
      */
-    public static create(properties?: ILoginRequest): LoginRequest;
+    public static create(properties?: IReqUserLogin): ReqUserLogin;
 
     /**
-     * Encodes the specified LoginRequest message. Does not implicitly {@link LoginRequest.verify|verify} messages.
-     * @param message LoginRequest message or plain object to encode
+     * Encodes the specified ReqUserLogin message. Does not implicitly {@link ReqUserLogin.verify|verify} messages.
+     * @param message ReqUserLogin message or plain object to encode
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(message: ILoginRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+    public static encode(message: IReqUserLogin, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
-     * Encodes the specified LoginRequest message, length delimited. Does not implicitly {@link LoginRequest.verify|verify} messages.
-     * @param message LoginRequest message or plain object to encode
+     * Encodes the specified ReqUserLogin message, length delimited. Does not implicitly {@link ReqUserLogin.verify|verify} messages.
+     * @param message ReqUserLogin message or plain object to encode
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(message: ILoginRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+    public static encodeDelimited(message: IReqUserLogin, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
-     * Decodes a LoginRequest message from the specified reader or buffer.
+     * Decodes a ReqUserLogin message from the specified reader or buffer.
      * @param reader Reader or buffer to decode from
      * @param [length] Message length if known beforehand
-     * @returns LoginRequest
+     * @returns ReqUserLogin
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): LoginRequest;
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ReqUserLogin;
 
     /**
-     * Decodes a LoginRequest message from the specified reader or buffer, length delimited.
+     * Decodes a ReqUserLogin message from the specified reader or buffer, length delimited.
      * @param reader Reader or buffer to decode from
-     * @returns LoginRequest
+     * @returns ReqUserLogin
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): LoginRequest;
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ReqUserLogin;
 
     /**
-     * Verifies a LoginRequest message.
+     * Verifies a ReqUserLogin message.
      * @param message Plain object to verify
      * @returns `null` if valid, otherwise the reason why it is not
      */
     public static verify(message: { [k: string]: any }): (string|null);
 
     /**
-     * Creates a LoginRequest message from a plain object. Also converts values to their respective internal types.
+     * Creates a ReqUserLogin message from a plain object. Also converts values to their respective internal types.
      * @param object Plain object
-     * @returns LoginRequest
+     * @returns ReqUserLogin
      */
-    public static fromObject(object: { [k: string]: any }): LoginRequest;
+    public static fromObject(object: { [k: string]: any }): ReqUserLogin;
 
     /**
-     * Creates a plain object from a LoginRequest message. Also converts values to other types if specified.
-     * @param message LoginRequest
+     * Creates a plain object from a ReqUserLogin message. Also converts values to other types if specified.
+     * @param message ReqUserLogin
      * @param [options] Conversion options
      * @returns Plain object
      */
-    public static toObject(message: LoginRequest, options?: $protobuf.IConversionOptions): { [k: string]: any };
+    public static toObject(message: ReqUserLogin, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
     /**
-     * Converts this LoginRequest to JSON.
+     * Converts this ReqUserLogin to JSON.
      * @returns JSON object
      */
     public toJSON(): { [k: string]: any };
 }
 
-/** Properties of a LoginResponse. */
-export interface ILoginResponse {
+/** Properties of a ResUserLogin. */
+export interface IResUserLogin {
 
-    /** LoginResponse sex */
+    /** ResUserLogin msgId */
+    msgId?: (UserMsgId|null);
+
+    /** ResUserLogin sex */
     sex?: (number|null);
 
-    /** LoginResponse userId */
+    /** ResUserLogin userId */
     userId?: (number|Long|null);
 
-    /** LoginResponse loginName */
+    /** ResUserLogin loginName */
     loginName?: (string|null);
 }
 
-/** Represents a LoginResponse. */
-export class LoginResponse implements ILoginResponse {
+/** Represents a ResUserLogin. */
+export class ResUserLogin implements IResUserLogin {
 
     /**
-     * Constructs a new LoginResponse.
+     * Constructs a new ResUserLogin.
      * @param [properties] Properties to set
      */
-    constructor(properties?: ILoginResponse);
+    constructor(properties?: IResUserLogin);
 
-    /** LoginResponse sex. */
+    /** ResUserLogin msgId. */
+    public msgId: UserMsgId;
+
+    /** ResUserLogin sex. */
     public sex: number;
 
-    /** LoginResponse userId. */
+    /** ResUserLogin userId. */
     public userId: (number|Long);
 
-    /** LoginResponse loginName. */
+    /** ResUserLogin loginName. */
     public loginName: string;
 
     /**
-     * Creates a new LoginResponse instance using the specified properties.
+     * Creates a new ResUserLogin instance using the specified properties.
      * @param [properties] Properties to set
-     * @returns LoginResponse instance
+     * @returns ResUserLogin instance
      */
-    public static create(properties?: ILoginResponse): LoginResponse;
+    public static create(properties?: IResUserLogin): ResUserLogin;
 
     /**
-     * Encodes the specified LoginResponse message. Does not implicitly {@link LoginResponse.verify|verify} messages.
-     * @param message LoginResponse message or plain object to encode
+     * Encodes the specified ResUserLogin message. Does not implicitly {@link ResUserLogin.verify|verify} messages.
+     * @param message ResUserLogin message or plain object to encode
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(message: ILoginResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+    public static encode(message: IResUserLogin, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
-     * Encodes the specified LoginResponse message, length delimited. Does not implicitly {@link LoginResponse.verify|verify} messages.
-     * @param message LoginResponse message or plain object to encode
+     * Encodes the specified ResUserLogin message, length delimited. Does not implicitly {@link ResUserLogin.verify|verify} messages.
+     * @param message ResUserLogin message or plain object to encode
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(message: ILoginResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+    public static encodeDelimited(message: IResUserLogin, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
-     * Decodes a LoginResponse message from the specified reader or buffer.
+     * Decodes a ResUserLogin message from the specified reader or buffer.
      * @param reader Reader or buffer to decode from
      * @param [length] Message length if known beforehand
-     * @returns LoginResponse
+     * @returns ResUserLogin
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): LoginResponse;
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ResUserLogin;
 
     /**
-     * Decodes a LoginResponse message from the specified reader or buffer, length delimited.
+     * Decodes a ResUserLogin message from the specified reader or buffer, length delimited.
      * @param reader Reader or buffer to decode from
-     * @returns LoginResponse
+     * @returns ResUserLogin
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): LoginResponse;
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ResUserLogin;
 
     /**
-     * Verifies a LoginResponse message.
+     * Verifies a ResUserLogin message.
      * @param message Plain object to verify
      * @returns `null` if valid, otherwise the reason why it is not
      */
     public static verify(message: { [k: string]: any }): (string|null);
 
     /**
-     * Creates a LoginResponse message from a plain object. Also converts values to their respective internal types.
+     * Creates a ResUserLogin message from a plain object. Also converts values to their respective internal types.
      * @param object Plain object
-     * @returns LoginResponse
+     * @returns ResUserLogin
      */
-    public static fromObject(object: { [k: string]: any }): LoginResponse;
+    public static fromObject(object: { [k: string]: any }): ResUserLogin;
 
     /**
-     * Creates a plain object from a LoginResponse message. Also converts values to other types if specified.
-     * @param message LoginResponse
+     * Creates a plain object from a ResUserLogin message. Also converts values to other types if specified.
+     * @param message ResUserLogin
      * @param [options] Conversion options
      * @returns Plain object
      */
-    public static toObject(message: LoginResponse, options?: $protobuf.IConversionOptions): { [k: string]: any };
+    public static toObject(message: ResUserLogin, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
     /**
-     * Converts this LoginResponse to JSON.
+     * Converts this ResUserLogin to JSON.
      * @returns JSON object
      */
     public toJSON(): { [k: string]: any };
+}
+
+/** GMMsgId enum. */
+export enum GMMsgId {
+    GmUnknown = 0,
+    CloseServerRequest = 201001,
+    CloseServerResponse = 201002
+}
+
+/** UserMsgId enum. */
+export enum UserMsgId {
+    UserUnknown = 0,
+    LoginRequest = 101001,
+    LoginResponse = 101002
 }
