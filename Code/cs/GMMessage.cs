@@ -22,11 +22,11 @@ public static partial class GMMessageReflection {
   static GMMessageReflection() {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
-          "Cg9HTU1lc3NhZ2UucHJvdG8aD01lc3NhZ2VJZC5wcm90byI7ChBSZXFHTUNs",
-          "b3NlU2VydmVyEhcKBW1zZ0lkGAEgASgOMgguR01Nc2dJZBIOCgZyZXNNc2cY",
-          "AiABKAkiOwoQUmVzR01DbG9zZVNlcnZlchIXCgVtc2dJZBgBIAEoDjIILkdN",
-          "TXNnSWQSDgoGcmVzTXNnGAIgASgJQikKJWluZm8ueGlhb21vLnNlcnZlci5z",
-          "aGFyZWQucHJvdG9jb2wuZ21QAWIGcHJvdG8z"));
+          "Cg9HTU1lc3NhZ2UucHJvdG8aD01lc3NhZ2VJZC5wcm90byI5ChBSZXFHTUNs",
+          "b3NlU2VydmVyEhUKBW1zZ0lkGAEgASgOMgYuTXNnSWQSDgoGcmVzTXNnGAIg",
+          "ASgJIjkKEFJlc0dNQ2xvc2VTZXJ2ZXISFQoFbXNnSWQYASABKA4yBi5Nc2dJ",
+          "ZBIOCgZyZXNNc2cYAiABKAlCKQolaW5mby54aWFvbW8uc2VydmVyLnNoYXJl",
+          "ZC5wcm90b2NvbC5nbVABYgZwcm90bzM="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { global::MessageIdReflection.Descriptor, },
         new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -79,9 +79,9 @@ public sealed partial class ReqGMCloseServer : pb::IMessage<ReqGMCloseServer>
 
   /// <summary>Field number for the "msgId" field.</summary>
   public const int MsgIdFieldNumber = 1;
-  private global::GMMsgId msgId_ = global::GMMsgId.GmUnknown;
+  private global::MsgId msgId_ = global::MsgId.Unknown;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public global::GMMsgId MsgId {
+  public global::MsgId MsgId {
     get { return msgId_; }
     set {
       msgId_ = value;
@@ -120,7 +120,7 @@ public sealed partial class ReqGMCloseServer : pb::IMessage<ReqGMCloseServer>
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override int GetHashCode() {
     int hash = 1;
-    if (MsgId != global::GMMsgId.GmUnknown) hash ^= MsgId.GetHashCode();
+    if (MsgId != global::MsgId.Unknown) hash ^= MsgId.GetHashCode();
     if (ResMsg.Length != 0) hash ^= ResMsg.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
@@ -138,7 +138,7 @@ public sealed partial class ReqGMCloseServer : pb::IMessage<ReqGMCloseServer>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     output.WriteRawMessage(this);
   #else
-    if (MsgId != global::GMMsgId.GmUnknown) {
+    if (MsgId != global::MsgId.Unknown) {
       output.WriteRawTag(8);
       output.WriteEnum((int) MsgId);
     }
@@ -155,7 +155,7 @@ public sealed partial class ReqGMCloseServer : pb::IMessage<ReqGMCloseServer>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (MsgId != global::GMMsgId.GmUnknown) {
+    if (MsgId != global::MsgId.Unknown) {
       output.WriteRawTag(8);
       output.WriteEnum((int) MsgId);
     }
@@ -172,7 +172,7 @@ public sealed partial class ReqGMCloseServer : pb::IMessage<ReqGMCloseServer>
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
     int size = 0;
-    if (MsgId != global::GMMsgId.GmUnknown) {
+    if (MsgId != global::MsgId.Unknown) {
       size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) MsgId);
     }
     if (ResMsg.Length != 0) {
@@ -189,7 +189,7 @@ public sealed partial class ReqGMCloseServer : pb::IMessage<ReqGMCloseServer>
     if (other == null) {
       return;
     }
-    if (other.MsgId != global::GMMsgId.GmUnknown) {
+    if (other.MsgId != global::MsgId.Unknown) {
       MsgId = other.MsgId;
     }
     if (other.ResMsg.Length != 0) {
@@ -210,7 +210,7 @@ public sealed partial class ReqGMCloseServer : pb::IMessage<ReqGMCloseServer>
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
           break;
         case 8: {
-          MsgId = (global::GMMsgId) input.ReadEnum();
+          MsgId = (global::MsgId) input.ReadEnum();
           break;
         }
         case 18: {
@@ -232,7 +232,7 @@ public sealed partial class ReqGMCloseServer : pb::IMessage<ReqGMCloseServer>
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
           break;
         case 8: {
-          MsgId = (global::GMMsgId) input.ReadEnum();
+          MsgId = (global::MsgId) input.ReadEnum();
           break;
         }
         case 18: {
@@ -287,9 +287,9 @@ public sealed partial class ResGMCloseServer : pb::IMessage<ResGMCloseServer>
 
   /// <summary>Field number for the "msgId" field.</summary>
   public const int MsgIdFieldNumber = 1;
-  private global::GMMsgId msgId_ = global::GMMsgId.GmUnknown;
+  private global::MsgId msgId_ = global::MsgId.Unknown;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public global::GMMsgId MsgId {
+  public global::MsgId MsgId {
     get { return msgId_; }
     set {
       msgId_ = value;
@@ -328,7 +328,7 @@ public sealed partial class ResGMCloseServer : pb::IMessage<ResGMCloseServer>
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override int GetHashCode() {
     int hash = 1;
-    if (MsgId != global::GMMsgId.GmUnknown) hash ^= MsgId.GetHashCode();
+    if (MsgId != global::MsgId.Unknown) hash ^= MsgId.GetHashCode();
     if (ResMsg.Length != 0) hash ^= ResMsg.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
@@ -346,7 +346,7 @@ public sealed partial class ResGMCloseServer : pb::IMessage<ResGMCloseServer>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     output.WriteRawMessage(this);
   #else
-    if (MsgId != global::GMMsgId.GmUnknown) {
+    if (MsgId != global::MsgId.Unknown) {
       output.WriteRawTag(8);
       output.WriteEnum((int) MsgId);
     }
@@ -363,7 +363,7 @@ public sealed partial class ResGMCloseServer : pb::IMessage<ResGMCloseServer>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (MsgId != global::GMMsgId.GmUnknown) {
+    if (MsgId != global::MsgId.Unknown) {
       output.WriteRawTag(8);
       output.WriteEnum((int) MsgId);
     }
@@ -380,7 +380,7 @@ public sealed partial class ResGMCloseServer : pb::IMessage<ResGMCloseServer>
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
     int size = 0;
-    if (MsgId != global::GMMsgId.GmUnknown) {
+    if (MsgId != global::MsgId.Unknown) {
       size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) MsgId);
     }
     if (ResMsg.Length != 0) {
@@ -397,7 +397,7 @@ public sealed partial class ResGMCloseServer : pb::IMessage<ResGMCloseServer>
     if (other == null) {
       return;
     }
-    if (other.MsgId != global::GMMsgId.GmUnknown) {
+    if (other.MsgId != global::MsgId.Unknown) {
       MsgId = other.MsgId;
     }
     if (other.ResMsg.Length != 0) {
@@ -418,7 +418,7 @@ public sealed partial class ResGMCloseServer : pb::IMessage<ResGMCloseServer>
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
           break;
         case 8: {
-          MsgId = (global::GMMsgId) input.ReadEnum();
+          MsgId = (global::MsgId) input.ReadEnum();
           break;
         }
         case 18: {
@@ -440,7 +440,7 @@ public sealed partial class ResGMCloseServer : pb::IMessage<ResGMCloseServer>
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
           break;
         case 8: {
-          MsgId = (global::GMMsgId) input.ReadEnum();
+          MsgId = (global::MsgId) input.ReadEnum();
           break;
         }
         case 18: {

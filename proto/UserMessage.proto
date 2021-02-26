@@ -5,14 +5,14 @@ option java_multiple_files = true;
 import "MessageId.proto";
 
 message ReqUserLogin {
-  UserMsgId msgId = 1;
+  MsgId msgId = 1;
   int32 sex = 2;
   int64 userId = 3;
   string loginName = 4;
 }
 
 message ResUserLogin {
-  UserMsgId msgId = 1;
+  MsgId msgId = 1;
   int32 sex = 2;
   int64 userId = 3;
   string loginName = 4;

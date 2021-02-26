@@ -5,11 +5,11 @@ option java_multiple_files = true;
 import "MessageId.proto";
 
 message ReqGMCloseServer {
-  GMMsgId msgId = 1;
+  MsgId msgId = 1;
   string resMsg = 2;
 }
 
 message ResGMCloseServer {
-  GMMsgId msgId = 1;
+  MsgId msgId = 1;
   string resMsg = 2;
 }

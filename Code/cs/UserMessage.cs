@@ -22,13 +22,12 @@ public static partial class UserMessageReflection {
   static UserMessageReflection() {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
-          "ChFVc2VyTWVzc2FnZS5wcm90bxoPTWVzc2FnZUlkLnByb3RvIlkKDFJlcVVz",
-          "ZXJMb2dpbhIZCgVtc2dJZBgBIAEoDjIKLlVzZXJNc2dJZBILCgNzZXgYAiAB",
-          "KAUSDgoGdXNlcklkGAMgASgDEhEKCWxvZ2luTmFtZRgEIAEoCSJZCgxSZXNV",
-          "c2VyTG9naW4SGQoFbXNnSWQYASABKA4yCi5Vc2VyTXNnSWQSCwoDc2V4GAIg",
-          "ASgFEg4KBnVzZXJJZBgDIAEoAxIRCglsb2dpbk5hbWUYBCABKAlCKwonaW5m",
-          "by54aWFvbW8uc2VydmVyLnNoYXJlZC5wcm90b2NvbC51c2VyUAFiBnByb3Rv",
-          "Mw=="));
+          "ChFVc2VyTWVzc2FnZS5wcm90bxoPTWVzc2FnZUlkLnByb3RvIlUKDFJlcVVz",
+          "ZXJMb2dpbhIVCgVtc2dJZBgBIAEoDjIGLk1zZ0lkEgsKA3NleBgCIAEoBRIO",
+          "CgZ1c2VySWQYAyABKAMSEQoJbG9naW5OYW1lGAQgASgJIlUKDFJlc1VzZXJM",
+          "b2dpbhIVCgVtc2dJZBgBIAEoDjIGLk1zZ0lkEgsKA3NleBgCIAEoBRIOCgZ1",
+          "c2VySWQYAyABKAMSEQoJbG9naW5OYW1lGAQgASgJQisKJ2luZm8ueGlhb21v",
+          "LnNlcnZlci5zaGFyZWQucHJvdG9jb2wudXNlclABYgZwcm90bzM="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { global::MessageIdReflection.Descriptor, },
         new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,9 +82,9 @@ public sealed partial class ReqUserLogin : pb::IMessage<ReqUserLogin>
 
   /// <summary>Field number for the "msgId" field.</summary>
   public const int MsgIdFieldNumber = 1;
-  private global::UserMsgId msgId_ = global::UserMsgId.UserUnknown;
+  private global::MsgId msgId_ = global::MsgId.Unknown;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public global::UserMsgId MsgId {
+  public global::MsgId MsgId {
     get { return msgId_; }
     set {
       msgId_ = value;
@@ -148,7 +147,7 @@ public sealed partial class ReqUserLogin : pb::IMessage<ReqUserLogin>
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override int GetHashCode() {
     int hash = 1;
-    if (MsgId != global::UserMsgId.UserUnknown) hash ^= MsgId.GetHashCode();
+    if (MsgId != global::MsgId.Unknown) hash ^= MsgId.GetHashCode();
     if (Sex != 0) hash ^= Sex.GetHashCode();
     if (UserId != 0L) hash ^= UserId.GetHashCode();
     if (LoginName.Length != 0) hash ^= LoginName.GetHashCode();
@@ -168,7 +167,7 @@ public sealed partial class ReqUserLogin : pb::IMessage<ReqUserLogin>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     output.WriteRawMessage(this);
   #else
-    if (MsgId != global::UserMsgId.UserUnknown) {
+    if (MsgId != global::MsgId.Unknown) {
       output.WriteRawTag(8);
       output.WriteEnum((int) MsgId);
     }
@@ -193,7 +192,7 @@ public sealed partial class ReqUserLogin : pb::IMessage<ReqUserLogin>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (MsgId != global::UserMsgId.UserUnknown) {
+    if (MsgId != global::MsgId.Unknown) {
       output.WriteRawTag(8);
       output.WriteEnum((int) MsgId);
     }
@@ -218,7 +217,7 @@ public sealed partial class ReqUserLogin : pb::IMessage<ReqUserLogin>
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
     int size = 0;
-    if (MsgId != global::UserMsgId.UserUnknown) {
+    if (MsgId != global::MsgId.Unknown) {
       size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) MsgId);
     }
     if (Sex != 0) {
@@ -241,7 +240,7 @@ public sealed partial class ReqUserLogin : pb::IMessage<ReqUserLogin>
     if (other == null) {
       return;
     }
-    if (other.MsgId != global::UserMsgId.UserUnknown) {
+    if (other.MsgId != global::MsgId.Unknown) {
       MsgId = other.MsgId;
     }
     if (other.Sex != 0) {
@@ -268,7 +267,7 @@ public sealed partial class ReqUserLogin : pb::IMessage<ReqUserLogin>
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
           break;
         case 8: {
-          MsgId = (global::UserMsgId) input.ReadEnum();
+          MsgId = (global::MsgId) input.ReadEnum();
           break;
         }
         case 16: {
@@ -298,7 +297,7 @@ public sealed partial class ReqUserLogin : pb::IMessage<ReqUserLogin>
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
           break;
         case 8: {
-          MsgId = (global::UserMsgId) input.ReadEnum();
+          MsgId = (global::MsgId) input.ReadEnum();
           break;
         }
         case 16: {
@@ -363,9 +362,9 @@ public sealed partial class ResUserLogin : pb::IMessage<ResUserLogin>
 
   /// <summary>Field number for the "msgId" field.</summary>
   public const int MsgIdFieldNumber = 1;
-  private global::UserMsgId msgId_ = global::UserMsgId.UserUnknown;
+  private global::MsgId msgId_ = global::MsgId.Unknown;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public global::UserMsgId MsgId {
+  public global::MsgId MsgId {
     get { return msgId_; }
     set {
       msgId_ = value;
@@ -428,7 +427,7 @@ public sealed partial class ResUserLogin : pb::IMessage<ResUserLogin>
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override int GetHashCode() {
     int hash = 1;
-    if (MsgId != global::UserMsgId.UserUnknown) hash ^= MsgId.GetHashCode();
+    if (MsgId != global::MsgId.Unknown) hash ^= MsgId.GetHashCode();
     if (Sex != 0) hash ^= Sex.GetHashCode();
     if (UserId != 0L) hash ^= UserId.GetHashCode();
     if (LoginName.Length != 0) hash ^= LoginName.GetHashCode();
@@ -448,7 +447,7 @@ public sealed partial class ResUserLogin : pb::IMessage<ResUserLogin>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     output.WriteRawMessage(this);
   #else
-    if (MsgId != global::UserMsgId.UserUnknown) {
+    if (MsgId != global::MsgId.Unknown) {
       output.WriteRawTag(8);
       output.WriteEnum((int) MsgId);
     }
@@ -473,7 +472,7 @@ public sealed partial class ResUserLogin : pb::IMessage<ResUserLogin>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (MsgId != global::UserMsgId.UserUnknown) {
+    if (MsgId != global::MsgId.Unknown) {
       output.WriteRawTag(8);
       output.WriteEnum((int) MsgId);
     }
@@ -498,7 +497,7 @@ public sealed partial class ResUserLogin : pb::IMessage<ResUserLogin>
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
     int size = 0;
-    if (MsgId != global::UserMsgId.UserUnknown) {
+    if (MsgId != global::MsgId.Unknown) {
       size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) MsgId);
     }
     if (Sex != 0) {
@@ -521,7 +520,7 @@ public sealed partial class ResUserLogin : pb::IMessage<ResUserLogin>
     if (other == null) {
       return;
     }
-    if (other.MsgId != global::UserMsgId.UserUnknown) {
+    if (other.MsgId != global::MsgId.Unknown) {
       MsgId = other.MsgId;
     }
     if (other.Sex != 0) {
@@ -548,7 +547,7 @@ public sealed partial class ResUserLogin : pb::IMessage<ResUserLogin>
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
           break;
         case 8: {
-          MsgId = (global::UserMsgId) input.ReadEnum();
+          MsgId = (global::MsgId) input.ReadEnum();
           break;
         }
         case 16: {
@@ -578,7 +577,7 @@ public sealed partial class ResUserLogin : pb::IMessage<ResUserLogin>
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
           break;
         case 8: {
-          MsgId = (global::UserMsgId) input.ReadEnum();
+          MsgId = (global::MsgId) input.ReadEnum();
           break;
         }
         case 16: {

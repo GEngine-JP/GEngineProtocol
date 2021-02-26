@@ -22,29 +22,31 @@ public static partial class MessageIdReflection {
   static MessageIdReflection() {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
-          "Cg9NZXNzYWdlSWQucHJvdG8qTQoHR01Nc2dJZBINCglHbVVua25vd24QABIY",
-          "ChJDbG9zZVNlcnZlclJlcXVlc3QQqaIMEhkKE0Nsb3NlU2VydmVyUmVzcG9u",
-          "c2UQqqIMKkUKCVVzZXJNc2dJZBIPCgtVc2VyVW5rbm93bhAAEhIKDExvZ2lu",
-          "UmVxdWVzdBCJlQYSEwoNTG9naW5SZXNwb25zZRCKlQZCKgomaW5mby54aWFv",
-          "bW8uc2VydmVyLnNoYXJlZC5wcm90b2NvbC5tc2dQAWIGcHJvdG8z"));
+          "Cg9NZXNzYWdlSWQucHJvdG8qcgoFTXNnSWQSCwoHVW5rbm93bhAAEhIKDExv",
+          "Z2luUmVxdWVzdBCJlQYSEwoNTG9naW5SZXNwb25zZRCKlQYSGAoSQ2xvc2VT",
+          "ZXJ2ZXJSZXF1ZXN0EKmiDBIZChNDbG9zZVNlcnZlclJlc3BvbnNlEKqiDEIq",
+          "CiZpbmZvLnhpYW9tby5zZXJ2ZXIuc2hhcmVkLnByb3RvY29sLm1zZ1ABYgZw",
+          "cm90bzM="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::GMMsgId), typeof(global::UserMsgId), }, null, null));
+        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::MsgId), }, null, null));
   }
   #endregion
 
 }
 #region Enums
-public enum GMMsgId {
-  [pbr::OriginalName("GmUnknown")] GmUnknown = 0,
-  [pbr::OriginalName("CloseServerRequest")] CloseServerRequest = 201001,
-  [pbr::OriginalName("CloseServerResponse")] CloseServerResponse = 201002,
-}
-
-public enum UserMsgId {
-  [pbr::OriginalName("UserUnknown")] UserUnknown = 0,
+public enum MsgId {
+  [pbr::OriginalName("Unknown")] Unknown = 0,
+  /// <summary>
+  /// user group:101
+  /// </summary>
   [pbr::OriginalName("LoginRequest")] LoginRequest = 101001,
   [pbr::OriginalName("LoginResponse")] LoginResponse = 101002,
+  /// <summary>
+  /// gm group: 201
+  /// </summary>
+  [pbr::OriginalName("CloseServerRequest")] CloseServerRequest = 201001,
+  [pbr::OriginalName("CloseServerResponse")] CloseServerResponse = 201002,
 }
 
 #endregion
